@@ -66,6 +66,7 @@
     color: #333;
     line-height: 22px;
     text-align: center;
+    text-decoration: none;
 }
 
 #footer .cc_bulkorder .txt, #footer .footer_cc .list {
