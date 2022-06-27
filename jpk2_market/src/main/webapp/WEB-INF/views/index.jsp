@@ -31,18 +31,23 @@
         <!-- Masthead-->
         <header class="masthead bg-primary text-white text-center">
             <div class="container d-flex align-items-center flex-column">
+            	<img class="k_nava" src="resources/img/k_tpk.PNG" alt="..."  style="width: 1150px;  height: 380px;"/>
+            
                 <!-- Masthead Avatar Image-->
-                <!-- <img class="masthead-avatar mb-5" src="resources/assets/img/avataaars.svg" alt="..." /> -->
+                <!-- <img class="" src="resources/assets/img/avataaars.svg" alt="..." /> -->
+                
                 <!-- Masthead Heading-->
-                <h1 class="masthead-heading text-uppercase mb-0">Hello, JPK2 Market</h1>
+                <!-- <h1 class="masthead-heading text-uppercase mb-0">Hello, JPK2 Market</h1> -->
                 <!-- Icon Divider-->
-                <div class="divider-custom divider-light">
+                <!-- <div class="divider-custom divider-light">
                     <div class="divider-custom-line"></div>
                     <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
                     <div class="divider-custom-line"></div>
                 </div>
-                <!-- Masthead Subheading-->
-                <p class="masthead-subheading font-weight-light mb-0">Rocket Kurly</p>
+                Masthead Subheading
+                <p class="masthead-subheading font-weight-light mb-0">Rocket Kurly</p> -->
+                
+                
             </div>
         </header>
         <!-- Portfolio Section-->
@@ -64,7 +69,7 @@
                             <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                                 <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
-                            <img class="img-fluid" src="resources/assets/img/portfolio/cabin.png" alt="..." />
+                            <img class="img-fluid" src="resources/img/k_cake.png" alt="..." />
                         </div>
                     </div>
                     <!-- Portfolio Item 2-->
@@ -73,7 +78,7 @@
                             <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                                 <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
-                            <img class="img-fluid" src="resources/assets/img/portfolio/cake.png" alt="..." />
+                            <img class="img-fluid" src="resources/img/k_egg.png" alt="..." />
                         </div>
                     </div>
                     <!-- Portfolio Item 3-->
@@ -82,7 +87,7 @@
                             <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                                 <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
-                            <img class="img-fluid" src="resources/assets/img/portfolio/circus.png" alt="..." />
+                            <img class="img-fluid" src="resources/img/k_tomato.png" alt="..." />
                         </div>
                     </div>
                     <!-- Portfolio Item 4-->
