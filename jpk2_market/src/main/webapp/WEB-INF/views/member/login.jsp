@@ -4,6 +4,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
+
+
 <title>로그인</title>
 <style>
 	#login {margin:auto; padding:0px 20px 0px 20px; float:center; Width:60%; text-align:center;}
@@ -11,7 +13,9 @@
 	#login_2 {margin:auto; padding:0px 20px 0px 20px; float:center; Width:60%; text-align:center;}
 	#login_3 {margin:auto; padding:0px 0px 0px 0px; float:center; Width:25%; text-align:right; font-size:8px;}
 	#login_4 {margin:auto; padding:0px 20px 0px 20px; float:center; Width:60%; text-align:center;}
+	#login_content {padding-top:260px; height:1040px;}
 </style>
+
 <script>
   function check(){  
   var fm = document.frm;   
@@ -33,6 +37,11 @@
   </script>
 </head>
 <body>
+<!-- 헤더연결 -->
+<jsp:include page="../header.jsp"></jsp:include>
+
+
+<div id="login_content">
 <form name="frm">
 <div id="login">
 <div id="login_1">
@@ -53,5 +62,9 @@
 </div>
 </div>
 </form>
+</div>
+
+<!-- 푸터 연결 -->
+<jsp:include page="../footer.jsp"></jsp:include>
 </body>
 </html>
