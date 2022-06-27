@@ -104,7 +104,7 @@
     <input type="text" id="detailAddress" placeholder="상세주소"></label><p/>
     <label>성별<input type="radio" name="gender" value="m"> 남자 </label>
     <label><input type="radio" name="gender" value="m"> 여자 </label>
-    <input type ="text" name="member_birth" value="" maxlength="10" placeholder="YYYY/MM/DD">
+    <input type ="text" name="member_birth" value="생년월일" maxlength="10" placeholder="YYYY/MM/DD">
     <hr>
     <label><input type="radio" name="term_1">이용약관동의  전체 동의합니다. 선택항목에 동의하지 않은 경우도 회원가입 및 일반적인 서비스를 이용할 수 있습니다.</label><p/>
 	<label><input type="radio" name="term_2">이용약관 동의(필수) &nbsp;&nbsp;&nbsp;&nbsp;약관보기></label><p/>
