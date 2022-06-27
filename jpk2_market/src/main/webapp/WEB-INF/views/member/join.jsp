@@ -11,7 +11,6 @@
  height:1040px;
  text-align:center;
 
- 
 }
 
 </style>
