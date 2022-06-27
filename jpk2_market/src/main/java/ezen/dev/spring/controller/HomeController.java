@@ -17,12 +17,12 @@ import org.springframework.web.multipart.MultipartFile;
 public class HomeController {
 	
 	@GetMapping("/")//get방식 요청 처리
-	public String home1() {
+	public String index1() {
 		return "index";
 	}
 	
-	@GetMapping("/home.do")//get방식 요청 처리
-	public String home2() {
+	@GetMapping("/index.do")//get방식 요청 처리
+	public String index2() {
 		return "index";
 	}
 	

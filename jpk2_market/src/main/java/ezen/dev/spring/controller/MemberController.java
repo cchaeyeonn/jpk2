@@ -38,7 +38,7 @@ public class MemberController {
 		
 		String viewPage = null;
 		if(result==1) {
-			viewPage = "redirect:/home.do";
+			viewPage = "redirect:/index.do";
 		}else{
 			viewPage = "member/join";
 		}
@@ -90,7 +90,7 @@ public class MemberController {
 			HttpSession session = request.getSession();
 			session.setAttribute("member_id", member_id);//회원인증 추가	
 			session.setAttribute("member_grade", member_grade);//회원등급 추가
-			viewPage = "redirect:/home.do";
+			viewPage = "redirect:/index.do";
 		
 		}else{
 			viewPage = "member/login";
@@ -117,7 +117,7 @@ public class MemberController {
 		HttpSession session = request.getSession();
 		session.invalidate();
 		
-		return "redirect:/home.do";
+		return "redirect:/index.do";
 	}
 	
 }
