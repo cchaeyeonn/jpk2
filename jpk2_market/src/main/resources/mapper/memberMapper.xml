@@ -5,7 +5,7 @@
 <mapper namespace = "ezen.dev.spring.member">
 
 	<insert id="joinMember" parameterType="memberVo">
-		insert into member(member_id, member_pw, member_name, member_phone) 
+		insert into fm_member(member_id, member_pw, member_name, member_email, member_phone, member_addr1,member_addr2, member_gender, member_term1, member_term2) 
 		 values(#{member_id}, #{member_pw}, #{member_name}, #{member_phone})
 	</insert>
 	
@@ -14,19 +14,19 @@
 	</select> -->
 	
 	<select id="loginMember" parameterType="map" resultType="map">
-		select count(*) as member_auth, member_grade from member where member_id=#{member_id} and member_pw=#{member_pw}
+		select count(*) as member_auth, member_grade from fm_member where member_id=#{member_id} and member_pw=#{member_pw}
 	</select>
 	
 	<select id="getMemberInfo" parameterType="string" resultType="memberVo">
-		select member_id, member_name, member_pw, member_phone from member where member_id=#{member_id}
+		select member_id, member_name, member_pw, member_phone from fm_member where member_id=#{member_id}
 	</select>
 
 	<select id="checkId" parameterType="string" resultType="int">
-		select count(*) from member where member_id=#{member_id}
+		select count(*) from fm_member where member_id=#{member_id}
 	</select>
 	
 	<select id="checkEmail" parameterType="string" resultType="int">
-		select count(*) from member where member_email=#{member_email}
+		select count(*) from fm_member where member_email=#{member_email}
 	</select>
 
 

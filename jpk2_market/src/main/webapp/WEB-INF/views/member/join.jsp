@@ -150,7 +150,7 @@
     <label><input type="radio" name="term_1">이용약관동의  전체 동의합니다. 선택항목에 동의하지 않은 경우도 회원가입 및 일반적인 서비스를 이용할 수 있습니다.</label><p/>
 	<label><input type="radio" name="term_2">이용약관 동의(필수) &nbsp;&nbsp;&nbsp;&nbsp;약관보기></label><p/>
 	<label><input type="radio" name="term_3">개인정보 수집·이용동의(필수) &nbsp;&nbsp;&nbsp;&nbsp;약관보기></label><p/>
-	<label><input type="radio" name="term_4">본인은 만 14세 이상입니다.(필수)</label>
+	<label><input type="radio" name="term_4">본인은 만 14세 이상입니다.(필수)</label><p/>
 	<input type="submit" value="가입하기">
 </form> 
 </div>
