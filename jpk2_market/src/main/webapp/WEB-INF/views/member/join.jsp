@@ -4,6 +4,16 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<style>
+
+#join_content{
+ padding-top:260px;
+ height:1040px;
+ text-align:center;
+ 
+}
+
+</style>
 <title>회원 가입</title>
     <!-- 카카오 주소 api -->
     <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
@@ -113,9 +123,12 @@
 </head>
 
 <body>
+<!-- 헤더연결 -->
+<jsp:include page="../header.jsp"></jsp:include>
 
 <h3>회원정보를 입력해주세요</h3>
 
+<div id="join_content">
 <form name="joinForm" action="/spring/joinProcess.do" method="post">
 	<label>아이디 <input type="email" name="member_id" id="member_id" value="" maxlength="80" placeholder="아이디(이메일)" />
 	<input type="button" id="checkId" value="중복확인"/><br/></label>
@@ -141,5 +154,8 @@
 	<label><input type="radio" name="term_4">본인은 만 14세 이상입니다.(필수)</label>
 	<input type="submit" value="가입하기">
 </form> 
+</div>
+<!-- 푸터 연결 -->
+<jsp:include page="../footer.jsp"></jsp:include>
 </body>
 </html>        
