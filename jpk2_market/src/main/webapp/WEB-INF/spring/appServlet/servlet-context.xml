@@ -21,7 +21,14 @@
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
 	
-	<context:component-scan base-package="ezen.dev.spring" />
+	<!-- 파일 업로드 -->
+	<beans:bean id="multipartResolver" 
+	              class="org.springframework.web.multipart.support.StandardServletMultipartResolver">
+	</beans:bean>
+	
+	<context:component-scan base-package="ezen.dev.spring.controller" />
+	<context:component-scan base-package="ezen.dev.spring.dao" />
+	<context:component-scan base-package="ezen.dev.spring.service" />
 	
 	
 	
