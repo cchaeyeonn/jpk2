@@ -1,0 +1,33 @@
+@charset "UTF-8";
+
+
+/* homme.jsp */
+
+.wrap{
+		min-height:980px;
+		height:100%;
+		}
+		
+html,body{
+			width:100%;
+			min-height:100%;
+			margin:0;}
+			
+#userMenu{
+	width:1050px;
+	
+	
+}
+			
+#main{
+		height:1400px;}
+		
+#main-inner{
+		height:100%;
+		padding-left:140px;
+		padding-right:140px;}
+
+#footer{
+		
+			bottom:0;
+}

@@ -20,33 +20,13 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
 	-->
+	
+	
+	<!-- css 받아오는 부분 -->
+	<link rel="stylesheet" type="text/css" href="resources/css2/style.css">
+	
     
-    
-<style>
-.wrap{
-		min-height:980px;
-		height:100%;
-		}
-		
-html,body{
-			width:100%;
-			min-height:100%;
-			margin:0;}
-			
-#main{
-		height:1400px;}
-		
-#main-inner{
-		height:100%;
-		padding-left:140px;
-		padding-right:140px;}
-
-#footer{
-		
-			bottom:0;
-}
-    
-    </style>
+   
     
   </head>
   <body>
@@ -54,39 +34,8 @@ html,body{
 	<div class="container">
 		<div class="b-example-divider"></div>
 		
-			<header class="p-3 mb-3 border-bottom">
-			   <div class="container">
-			     <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-			       <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none">
-			         <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"/></svg>
-			       </a>
+			<jsp:include page="header.jsp"></jsp:include>
 			
-			       <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-			         <li><a href="#" class="nav-link px-2 link-secondary">신상품</a></li>
-			         <li><a href="#" class="nav-link px-2 link-dark">베스트</a></li>
-			         <li><a href="#" class="nav-link px-2 link-dark">알뜰쇼핑</a></li>
-			         <li><a href="#" class="nav-link px-2 link-dark">특가/혜택</a></li>
-			       </ul>
-			
-			       <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
-			         <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
-			       </form>
-			
-			       <div class="dropdown text-end">
-			         <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
-			           <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle">
-			         </a>
-			         <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1">
-			           <li><a class="dropdown-item" href="#">New project...</a></li>
-			           <li><a class="dropdown-item" href="#">Settings</a></li>
-			           <li><a class="dropdown-item" href="#">Profile</a></li>
-			           <li><hr class="dropdown-divider"></li>
-			           <li><a class="dropdown-item" href="#">Sign out</a></li>
-			         </ul>
-			       </div>
-			     </div>
-			   </div>
-			 </header>
 	
 	</div>
 	<div id="main">
@@ -95,7 +44,9 @@ html,body{
 		</div>
 	
 	</div>
-	<footer id="footer" class="bd-footer py-5 mt-5 bg-light">
+		<%-- <jsp:include page="footer.jsp"></jsp:include> --%>
+	
+	<!-- <footer id="footer" class="bd-footer py-5 mt-5 bg-light">
   <div class="container py-5">
     <div class="row">
       <div class="col-lg-3 mb-3">
@@ -153,7 +104,7 @@ html,body{
       </div>
     </div>
   </div>
-</footer>
+</footer> -->
    
 </div>
  <script src="/docs/5.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
