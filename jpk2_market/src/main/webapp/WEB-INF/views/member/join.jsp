@@ -37,23 +37,13 @@
 
                 document.getElementById('postcode').value = data.zonecode;
                 document.getElementById("member_addr_1").value = roadAddr;
-         
+                document.getElementById("member_addr_2").focus();
 
-                var guideTextBox = document.getElementById("guide");
-
-                if(data.autoRoadAddress) {
-                    var expRoadAddr = data.autoRoadAddress + extraRoadAddr;
-                    guideTextBox.innerHTML = '(예상 도로명 주소 : ' + expRoadAddr + ')';
-                    guideTextBox.style.display = 'block';
-
-                } else {
-                    guideTextBox.innerHTML = '';
-                    guideTextBox.style.display = 'none';
-                }
+               
               }
           }).open();
        }
-     </script>
+    </script>
     <!-- jquery 스크립트 -->
 	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
 	<!-- 아이디 중복검사 스크립트 -->
