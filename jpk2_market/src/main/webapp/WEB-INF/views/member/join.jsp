@@ -130,6 +130,7 @@
 	<div style="height:20px"><span id="result_checkEmail" style="font-size:12px;"></span></div>	
 	<label>휴대폰<input type="tel" name="member_phone"  value="" autocomplete="off" placeholder="휴대폰 번호"></label><p/>
 	<label>주소
+	<input type="text" id="postcode" name="postcode" placeholder="우편번호">
     <input type="button" onclick="execDaumPostcode()" value="우편번호 찾기"><br>
     <input type="text" id="member_addr_1" name="member_addr_1" placeholder="도로명주소">
     <input type="text" id="member_addr_2" name="member_addr_2" placeholder="상세주소"></label><p/>
