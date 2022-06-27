@@ -10,6 +10,7 @@
  padding-top:260px;
  height:1040px;
  text-align:center;
+
  
 }
 
