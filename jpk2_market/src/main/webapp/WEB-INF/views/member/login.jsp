@@ -58,7 +58,7 @@
 <a>아이디 찾기</a> | <a>비밀번호 찾기</a></div>
 <div id="login_4">
 <p><input type="button" value="로그인" onclick="check();"></p>
-<input type="button" value="회원가입" onclick="">
+<input type="button" value="회원가입" onclick="location.href='join.do'">
 </div>
 </div>
 </form>
