@@ -63,6 +63,7 @@
   --bs-body-color: #212529;
   --bs-body-bg: #fff;
   --stb-green: #00754a;
+  --stb-green-rgb: 0, 117, 74;
 }
 
 *,
@@ -7809,7 +7810,7 @@ textarea.form-control-lg {
 
 .bg-primary {
   --bs-bg-opacity: 1;
-  background-color: rgba(var(--bs-primary-rgb), var(--bs-bg-opacity)) !important;
+  background-color: rgba(var(--stb-green-rgb), var(--bs-bg-opacity)) !important;
 }
 
 .bg-secondary {
