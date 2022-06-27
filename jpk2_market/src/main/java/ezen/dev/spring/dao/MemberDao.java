@@ -54,5 +54,8 @@ public class MemberDao {
 	public int checkId(String id) {
 		return sqlSession.selectOne(MAPPER+".checkId", id);
 	}
+	public int checkEmail(String email) {
+		return sqlSession.selectOne(MAPPER+".checkEmail", email);
+	}
 
 }

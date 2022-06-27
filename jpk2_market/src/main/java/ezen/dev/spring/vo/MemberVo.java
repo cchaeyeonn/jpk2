@@ -3,22 +3,58 @@ package ezen.dev.spring.vo;
 import java.util.Date;
 
 public class MemberVo {
-	private int member_idx;
+	private int midx;
 	private String member_id;
-	private String member_name;
 	private String member_pw;
+	private String member_name;
+	private String member_email;
 	private String member_phone;
-	private Date member_regdate;
-	
+	private String member_addr;
+	private String member_gender;
+	private String member_birth;
+	private String member_joindate;
 	private int member_grade;
 	private String member_delyn;
 	private Date member_deldate;
 	
-	public Date getMember_regdate() {
-		return member_regdate;
+	
+	
+
+	public int getMidx() {
+		return midx;
 	}
-	public void setMember_regdate(Date member_regdate) {
-		this.member_regdate = member_regdate;
+	public void setMidx(int midx) {
+		this.midx = midx;
+	}
+	public String getMember_email() {
+		return member_email;
+	}
+	public void setMember_email(String member_email) {
+		this.member_email = member_email;
+	}
+	public String getMember_addr() {
+		return member_addr;
+	}
+	public void setMember_addr(String member_addr) {
+		this.member_addr = member_addr;
+	}
+	public String getMember_gender() {
+		return member_gender;
+	}
+	public void setMember_gender(String member_gender) {
+		this.member_gender = member_gender;
+	}
+	public String getMember_birth() {
+		return member_birth;
+	}
+	public void setMember_birth(String member_birth) {
+		this.member_birth = member_birth;
+	}
+	public String getMember_joindate() {
+		return member_joindate;
+	}
+	public void setMember_joindate(String member_joindate) {
+		this.member_joindate = member_joindate;
 	}
 	public int getMember_grade() {
 		return member_grade;
@@ -38,12 +74,7 @@ public class MemberVo {
 	public void setMember_deldate(Date member_deldate) {
 		this.member_deldate = member_deldate;
 	}
-	public int getMember_idx() {
-		return member_idx;
-	}
-	public void setMember_idx(int member_idx) {
-		this.member_idx = member_idx;
-	}
+
 	public String getMember_id() {
 		return member_id;
 	}

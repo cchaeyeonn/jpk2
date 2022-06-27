@@ -76,9 +76,38 @@
 			});
 			
 		});
-	
-	
-	
+
+	</script>
+	<!-- 이메일 중복검사 스크립트 -->
+	<script>
+		$(function(){
+			
+			$("#checkEmail").click(function(){
+				
+				let member_email = $("#member_email").val();
+				
+				$.ajax({
+					type:'post',
+					url:"/spring/checkEmail.do",
+					data: {"member_email":member_email},
+					success: function(data){
+						if(data == "N"){
+							result = "사용 가능한 이메일입니다.";
+							$("#result_checkEmail").html(result).css("color", "green");
+							$("#member_email").trigger("focus");
+						}else{
+							result = "이미 사용중인 이메일입니다.";
+							$("#result_checkEmail").html(result).css("color", "red");
+							$("#member_email").val("").trigger("focus");
+						}
+					},
+					error: function(error){alert(error);}
+				});
+			
+			});
+			
+		});
+
 	</script>
 
 </head>
@@ -95,8 +124,8 @@
 	<label>비밀번호확인 <input type="password" name="member_pw2"  value="" maxlength="20" placeholder="비밀번호 확인"></label><p/>   
 	<label>이름<input type="text" name="member_name" maxlength="40" value="" placeholder="이름"></label><p/>
 	<label>이메일<input type="email" name="member_email" maxlength="80" value="" placeholder="이메일">
-	<input type="button" id="checkId" value="중복확인"/></label><br/>
-	<div style="height:20px"><span id="result_checkId" style="font-size:12px;"></span></div>	
+	<input type="button" id="checkEmail" value="중복확인"/></label><br/>
+	<div style="height:20px"><span id="result_checkEmail" style="font-size:12px;"></span></div>	
 	<label>휴대폰<input type="tel" name="member_phone"  value="" autocomplete="off" placeholder="휴대폰 번호"></label><p/>
 	<label>주소
     <input type="button" onclick="execDaumPostcode()" value="우편번호 찾기"><br>
