@@ -4,10 +4,19 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title></title>
-</head>
-<body>
-  <script>
+
+
+<title>로그인</title>
+<style>
+	#login {margin:auto; padding:0px 20px 0px 20px; float:center; Width:60%; text-align:center;}
+	#login_1 {margin:auto; padding:0px 20px 0px 20px; float:center; Width:60%; text-align:center;}
+	#login_2 {margin:auto; padding:0px 20px 0px 20px; float:center; Width:60%; text-align:center;}
+	#login_3 {margin:auto; padding:0px 0px 0px 0px; float:center; Width:25%; text-align:right; font-size:8px;}
+	#login_4 {margin:auto; padding:0px 20px 0px 20px; float:center; Width:60%; text-align:center;}
+	#login_content {padding-top:260px; height:1040px;}
+</style>
+
+<script>
   function check(){  
   var fm = document.frm;   
   if (fm.memberId.value==""){
@@ -25,25 +34,37 @@
   
     return;
   }  
-  </script>  
-</HEAD>
-<BODY>
+  </script>
+</head>
+<body>
+<!-- 헤더연결 -->
+<jsp:include page="../header.jsp"></jsp:include>
+
+
+<div id="login_content">
 <form name="frm">
-<div>
+<div id="login">
+<div id="login_1">
 로그인
 </div>
-<div>
+<div id="login_2">
 <p><input type="text" name="memberId" size="30" placeholder="아이디를 입력해주세요"></p>
-<input type="password" name="memberPw" size="30" placeholder="비밀번호를 입력해주세요">
+<p><input type="password" name="memberPw" size="30" placeholder="비밀번호를 입력해주세요"></p>
+</div>
+<div id="login_3">
 <!-- <p><input type="button" value="아이디찾기" onclick=""> 
 |
 <input type="button" value="비밀번호찾기" onclick=""></p> -->
-<p><a>아이디찾기</a>|<a>비밀번호찾기</a></p>
-</div>
-<div>
-<input type="button" value="로그인" onclick="check();"> 
+<a>아이디 찾기</a> | <a>비밀번호 찾기</a></div>
+<div id="login_4">
+<p><input type="button" value="로그인" onclick="check();"></p>
 <input type="button" value="회원가입" onclick="">
 </div>
+</div>
 </form>
+</div>
+
+<!-- 푸터 연결 -->
+<jsp:include page="../footer.jsp"></jsp:include>
 </body>
 </html>
