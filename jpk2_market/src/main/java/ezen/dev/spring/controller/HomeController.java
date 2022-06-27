@@ -18,12 +18,12 @@ public class HomeController {
 	
 	@GetMapping("/")//get방식 요청 처리
 	public String home1() {
-		return "home";
+		return "index";
 	}
 	
 	@GetMapping("/home.do")//get방식 요청 처리
 	public String home2() {
-		return "home";
+		return "index";
 	}
 	
 	@GetMapping("/fileUpload.do")//get방식 요청 처리
