@@ -56,11 +56,11 @@
 						<li><a a style="text-decoration:none;" class="link" href="">이용안내</a></li>
 					</ul>
 					법인명 (상호) : 주식회사 <span class="bar">I</span> 사업자등록번호 : 123-45-678910
-					<a href="" target="_blank" class="link">사업자정보 확인</a> <br>
+					<a style="text-decoration:none;" href="" target="_blank" class="link">사업자정보 확인</a> <br>
 					통신판매업 : 제 2022-전북전주-0627 호 <span class="bar">I</span> 개인정보보호책임자 : <br>
 					주소 : 전북 전주시 <span class="bar">I</span> 대표이사 : <br> 팩스: 070 -
 					7500 - 6098 <span class="bar">I</span> 이메일 : <a
-						href="1234@naver.com" class="link">help@help.com</a> <br>
+						style="text-decoration:none;" href="1234@naver.com" class="link">help@help.com</a> <br>
 
 					<ul class="list_sns">
 						<li><a href="https://instagram.com/" class="link_sns"
