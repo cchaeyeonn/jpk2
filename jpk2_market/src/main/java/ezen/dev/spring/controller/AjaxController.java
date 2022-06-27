@@ -34,6 +34,20 @@ public class AjaxController {
 		
 		return result;
 	}
+	@PostMapping("/checkEmail.do")
+	//@ResponseBody //Ajax통신의 응답내용을 보내는 것을 표시
+	public String checkEmail(@RequestParam("member_email") String email) {
+		
+		System.out.println("email: "+email);
+		
+		String result="N";//중복된 이메일 없음
+		
+		int flag = ajaxService.checkId(email);
+		
+		if(flag == 1) result = "Y";//중복된 이메일 있음
+		
+		return result;
+	}
 	
 	
 	
