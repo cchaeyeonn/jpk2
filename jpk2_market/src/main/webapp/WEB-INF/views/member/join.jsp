@@ -14,6 +14,7 @@
 
 </style>
 <title>회원 가입</title>
+
     <!-- 카카오 주소 api -->
     <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
     <script>
@@ -35,15 +36,16 @@
                     extraRoadAddr = ' (' + extraRoadAddr + ')';
                 }
 
-                document.getElementById('postcode').value = data.zonecode;
-                document.getElementById("member_addr_1").value = roadAddr;
-                document.getElementById("member_addr_2").focus();
+                document.getElementById('postcode').value = data.zonecode;	//우편번호
+                document.getElementById("member_addr_1").value = roadAddr;	//도로명주소
+                document.getElementById("member_addr_2").focus();			//상세주소 (창이꺼지면서 상세주소에 focus가 가도록)
 
                
               }
           }).open();
        }
     </script>
+    
     <!-- jquery 스크립트 -->
 	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
 	<!-- 아이디 중복검사 스크립트 -->
@@ -145,6 +147,7 @@
 	<input type="submit" value="가입하기">
 </form> 
 </div>
+
 <!-- 푸터 연결 -->
 <jsp:include page="../footer.jsp"></jsp:include>
 </body>
