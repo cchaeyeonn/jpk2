@@ -40,14 +40,14 @@
 	
 		$(function(){
 			
-			$("#checkId").focusout(function(){
-				
+			$("#member_id").focusout(function(){
+				alert("jquery");
 				let member_id = $("#member_id").val();
 				
 				$.ajax({
 					type:'post',
 					url:"/spring/checkId.do",
-					data: {"member_id":member_id},
+					data: {"member_id":member_id},				
 					success: function(data){
 						if(data == "N"){
 							result = "사용 가능한 아이디입니다.";
@@ -66,7 +66,7 @@
 			
 			// 이메일 중복검사 스크립트 -->
 			
-			$("#checkEmail").focusout(function(){
+			$("#member_email").focusout(function(){
 				
 				let member_email = $("#member_email").val();
 				
