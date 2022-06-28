@@ -46,7 +46,7 @@
 	}
 	#login_content {
 	padding-top:260px;
-	height:1040px;
+	min-height:1040px;
 	}
 </style>
 
