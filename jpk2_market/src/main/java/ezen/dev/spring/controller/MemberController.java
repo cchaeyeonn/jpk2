@@ -37,7 +37,7 @@ public class MemberController {
 		
 		String viewPage = null;
 		if(result==1) {
-			viewPage = "redirect:/spring/login.do";
+			viewPage = "redirect:/login.do";
 		}else{
 			viewPage = "member/join";
 		}

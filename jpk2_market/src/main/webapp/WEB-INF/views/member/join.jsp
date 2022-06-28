@@ -44,7 +44,7 @@
 	<label>휴대폰&nbsp;<input type="text" name="member_phone"  value="" autocomplete="off" placeholder="휴대폰 번호"></label><p/>
 	<input type="text" id="postcode" name="postcode" placeholder="우편번호" disabled>
     <input type="button" onclick="execDaumPostcode()" value="우편번호 찾기"><br>
-    <label>주소&nbsp;<input type="text" id="member_addr_1" name="member_addr1" placeholder="도로명주소" disabled>
+    <label>주소&nbsp;<input type="text" id="member_addr_1" name="member_addr1" placeholder="도로명주소">
     <input type="text" id="member_addr_2" name="member_addr2" placeholder="상세주소"></label><p/>
     <label>성별&nbsp;<input type="radio" name="member_gender" value="m"> 남자 </label>
     <label><input type="radio" name="member_gender" value="f"> 여자 </label><p/>
