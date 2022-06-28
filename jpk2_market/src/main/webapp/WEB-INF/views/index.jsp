@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="utf-8">
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
@@ -8,6 +7,9 @@
         <meta name="description" content="" />
         <meta name="author" content="" />
         <title>Rocket Kurly</title>
+        <!-- jQuery library (served from Google) -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="resources/assets/favicon.ico" />
         
@@ -18,6 +20,19 @@
         <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="resources/css/styles.css" rel="stylesheet" />
+        
+        <!-- 이미지 슬라이드 -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.min.css" rel="stylesheet" />
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.min.js"></script>
+
+		<!-- 이미지 슬라이드 스크립트-->
+		<script>
+		$(document).ready(function(){
+			  $('.bxslider').bxSlider();
+			});
+		</script>
+		
+		
     </head>
     <body id="page-top">
     
@@ -31,7 +46,7 @@
         <!-- Masthead-->
         <header class="masthead bg-primary text-white text-center">
             <div class="container d-flex align-items-center flex-column">
-            	<img class="k_nava" src="resources/img/k_tpk.PNG" alt="..."  style="width: 1150px;  height: 380px;"/>
+            	<!-- <img class="k_nava" src="resources/img/k_tpk.PNG" alt="..."  style="width: 1150px;  height: 380px;"/> -->
             
                 <!-- Masthead Avatar Image-->
                 <!-- <img class="" src="resources/assets/img/avataaars.svg" alt="..." /> -->
@@ -49,12 +64,21 @@
                 
                 
             </div>
+            
+            <!-- 이미지 슬라이드  -->
+            <ul class="bxslider">
+				  <li><img src="resources/img/main_1.png" /></li>
+				  <li><img src="resources/img/main_2.png" /></li>
+				  <li><img src="resources/img/main_3.png" /></li>
+				<!--   <li><img src="/images/pic4.jpg" /></li> -->
+			</ul>
+
         </header>
         <!-- Portfolio Section-->
         <section class="page-section portfolio" id="portfolio">
             <div class="container">
                 <!-- Portfolio Section Heading-->
-                <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">이 상품 어때요? 수정</h2>
+                <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">이 상품 어때요?</h2>
                 <!-- Icon Divider-->
                 <div class="divider-custom">
                     <div class="divider-custom-line"></div>
@@ -81,7 +105,8 @@
                             <img class="img-fluid" src="resources/img/k_egg.png" alt="..."  />
                         </div>
                     </div>
-                    <!-- Portfolio Item 3-->
+                   
+ <!-- Portfolio Item 3-->
                     <div class="col-md-6 col-lg-4 mb-5">
                         <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal3">
                             <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
@@ -147,7 +172,8 @@
                 </div>
             </div>
         </section>
-      <!-- About Section-->
+  
+<!-- About Section-->
          <!--  <section class="page-section bg-primary text-white mb-0" id="about">
             <div class="container">
                 About Section Heading
@@ -213,7 +239,8 @@
                                 <label for="phone">Phone number</label>
                                 <div class="invalid-feedback" data-sb-feedback="phone:required">A phone number is required.</div>
                             </div>
-                            <!-- Message input-->
+                           
+ <!-- Message input-->
                             <div class="form-floating mb-3">
                                 <textarea class="form-control" id="message" type="text" placeholder="Enter your message here..." style="height: 10rem" data-sb-validations="required"></textarea>
                                 <label for="message">Message</label>
@@ -284,7 +311,8 @@
                 </div>
             </div>
         </div>
-        <!-- Portfolio Modal 2-->
+       
+ <!-- Portfolio Modal 2-->
         <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" aria-labelledby="portfolioModal2" aria-hidden="true">
             <div class="modal-dialog modal-xl">
                 <div class="modal-content">
@@ -348,7 +376,8 @@
                 </div>
             </div>
         </div>
-        <!-- Portfolio Modal 4-->
+       
+ <!-- Portfolio Modal 4-->
         <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" aria-labelledby="portfolioModal4" aria-hidden="true">
             <div class="modal-dialog modal-xl">
                 <div class="modal-content">
@@ -412,7 +441,8 @@
                 </div>
             </div>
         </div>
-        <!-- Portfolio Modal 6-->
+      
+ <!-- Portfolio Modal 6-->
         <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" aria-labelledby="portfolioModal6" aria-hidden="true">
             <div class="modal-dialog modal-xl">
                 <div class="modal-content">
