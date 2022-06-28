@@ -32,13 +32,13 @@
 
 <div id="join_content">
 <form name="joinForm" action="/spring/joinProcess.do" method="post">
-	<label>아이디&nbsp;<input type="email" name="member_id" id="member_id" value="" maxlength="80" placeholder="아이디(이메일)" />
+	<label>아이디&nbsp;<input type="email" name="member_id" id="member_id" value="" maxlength="80" placeholder="아이디(이메일)"></label>
 	
 	<div style="height:20px"><span id="result_checkId" style="font-size:12px;"></span></div>
 	<label>비밀번호&nbsp;<input type="password" name="member_pw"  value="" maxlength="20" placeholder="비밀번호"></label><br>    
 	<label>비밀번호확인&nbsp;<input type="password" name="member_pw2"  value="" maxlength="20" placeholder="비밀번호 확인"></label><p/>   
 	<label>이름&nbsp;<input type="text" name="member_name" maxlength="40" value="" placeholder="이름"></label><p/>
-	<label>이메일&nbsp;<input type="email" name="member_email" maxlength="80" value="" placeholder="이메일">
+	<label>이메일&nbsp;<input type="email" name="member_email" maxlength="80" value="" placeholder="이메일"></label>
 	
 	<div style="height:20px"><span id="result_checkEmail" style="font-size:12px;"></span></div>	
 	<label>휴대폰&nbsp;<input type="tel" name="member_phone"  value="" autocomplete="off" placeholder="휴대폰 번호"></label><p/>
@@ -48,7 +48,7 @@
     <input type="text" id="member_addr_2" name="member_addr_2" placeholder="상세주소"></label><p/>
     <label>성별&nbsp;<input type="radio" name="gender" value="m"> 남자 </label>
     <label><input type="radio" name="gender" value="f"> 여자 </label><p/>
-    <label>생년월일&nbsp;<input type ="text" name="member_birth" value="" maxlength="10" placeholder="YYYY/MM/DD"></label>
+    <label>생년월일&nbsp;<input type ="date" name="member_birth" value="2022/01/01"></label>
     <hr>
     <div class="checkbox_group">
     <label><input type="checkbox" id="chk_all">&nbsp;이용약관에 대해 전체 동의합니다. 선택항목에 동의하지 않은 경우도 회원가입 및 일반적인 서비스를 이용할 수 있습니다.</label><p/>
