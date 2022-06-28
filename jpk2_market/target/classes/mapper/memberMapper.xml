@@ -5,8 +5,8 @@
 <mapper namespace = "ezen.dev.spring.member">
 
 	<insert id="joinMember" parameterType="memberVo">
-		insert into fm_member(member_id, member_pw, member_name, member_email, member_phone, member_addr1,member_addr2, member_gender, member_term1, member_term2) 
-		 values(#{member_id}, #{member_pw}, #{member_name}, #{member_phone})
+		insert into fm_member(member_id, member_pw, member_name, member_email, member_phone, member_addr1, member_addr2, member_gender, member_birth, member_term1, member_term2) 
+		 values(#{member_id}, #{member_pw}, #{member_name}, #{member_email}, #{member_phone}, #{member_addr1}, #{member_addr2}, #{member_gender}, #{member_birth}, #{member_term1}, #{member_term2})
 	</insert>
 	
 	<!-- <select id="loginMember" parameterType="memberVo" resultType="map">

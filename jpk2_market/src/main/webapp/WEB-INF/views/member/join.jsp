@@ -44,17 +44,17 @@
 	<label>휴대폰&nbsp;<input type="tel" name="member_phone"  value="" autocomplete="off" placeholder="휴대폰 번호"></label><p/>
 	<input type="text" id="postcode" name="postcode" placeholder="우편번호" disabled>
     <input type="button" onclick="execDaumPostcode()" value="우편번호 찾기"><br>
-    <label>주소&nbsp;<input type="text" id="member_addr_1" name="member_addr_1" placeholder="도로명주소" disabled>
-    <input type="text" id="member_addr_2" name="member_addr_2" placeholder="상세주소"></label><p/>
-    <label>성별&nbsp;<input type="radio" name="gender" value="m"> 남자 </label>
-    <label><input type="radio" name="gender" value="f"> 여자 </label><p/>
+    <label>주소&nbsp;<input type="text" id="member_addr_1" name="member_addr1" placeholder="도로명주소" disabled>
+    <input type="text" id="member_addr_2" name="member_addr2" placeholder="상세주소"></label><p/>
+    <label>성별&nbsp;<input type="radio" name="member_gender" value="m"> 남자 </label>
+    <label><input type="radio" name="member_gender" value="f"> 여자 </label><p/>
     <label>생년월일&nbsp;<input type ="date" name="member_birth" value="2022/01/01"></label>
     <hr>
     <div class="checkbox_group">
     <label><input type="checkbox" id="chk_all">&nbsp;이용약관에 대해 전체 동의합니다. 선택항목에 동의하지 않은 경우도 회원가입 및 일반적인 서비스를 이용할 수 있습니다.</label><p/>
-	<label><input type="checkbox" class="del-chk" name="term_1" value="1">&nbsp;이용약관 동의(필수) &nbsp;&nbsp;&nbsp;&nbsp;약관보기></label><p/>
-	<label><input type="checkbox" class="del-chk" name="term_2" value="1">&nbsp;개인정보 수집·이용동의(필수) &nbsp;&nbsp;&nbsp;&nbsp;약관보기></label><p/>
-	<label><input type="checkbox" class="del-chk" name="term_3" value="1">&nbsp;본인은 만 14세 이상입니다.(필수)</label><p/>
+	<label><input type="checkbox" class="del-chk" name="member_term1" value="1">&nbsp;이용약관 동의(필수) &nbsp;&nbsp;&nbsp;&nbsp;약관보기></label><p/>
+	<label><input type="checkbox" class="del-chk" name="member_term2" value="1">&nbsp;개인정보 수집·이용동의(필수) &nbsp;&nbsp;&nbsp;&nbsp;약관보기></label><p/>
+	<label><input type="checkbox" class="del-chk" name="member_term3" value="1">&nbsp;본인은 만 14세 이상입니다.(필수)</label><p/>
 	</div>
 	<input type="submit" value="가입하기">
 	<a href="/spring/"><input type="button" value="뒤로가기"></a>
