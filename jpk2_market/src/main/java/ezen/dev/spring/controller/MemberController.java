@@ -88,7 +88,7 @@ public class MemberController {
 		if(member_auth==1) {
 			HttpSession session = request.getSession();
 			session.setAttribute("member_id", member_id);//�쉶�썝�씤利� 異붽�	
-			session.setAttribute("member_grade", member_grade);//�쉶�썝�벑湲� 異붽�
+			//session.setAttribute("member_grade", member_grade);//�쉶�썝�벑湲� 異붽�
 			viewPage = "redirect:/index.do";
 		
 		}else{

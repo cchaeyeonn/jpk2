@@ -19,16 +19,16 @@
 <script>
   function check(){  
   var fm = document.frm;   
-  if (fm.memberId.value==""){
+  if (fm.member_id.value==""){
   		alert("아이디를 입력해주세요");
-  		fm.memberId.focus();
+  		fm.member_id.focus();
   		return;
-  }else if (fm.memberPw.value==""){
+  }else if (fm.member_pw.value==""){
   		alert("비밀번호를 입력해주세요");
-  		fm.memberPwd.focus();
+  		fm.member_pw.focus();
   		return;
   }
-  		fm.action = "";
+  		fm.action = "<%=request.getContextPath()%>/loginProcess.do";
   		fm.method = "post";
   		fm.submit();  
   
@@ -48,8 +48,8 @@
 로그인
 </div>
 <div id="login_2">
-<p><input type="text" name="memberId" size="30" placeholder="아이디를 입력해주세요"></p>
-<p><input type="password" name="memberPw" size="30" placeholder="비밀번호를 입력해주세요"></p>
+<p><input type="text" name="member_id" size="30" placeholder="아이디를 입력해주세요"></p>
+<p><input type="password" name="member_pw" size="30" placeholder="비밀번호를 입력해주세요"></p>
 </div>
 <div id="login_3">
 <!-- <p><input type="button" value="아이디찾기" onclick=""> 
