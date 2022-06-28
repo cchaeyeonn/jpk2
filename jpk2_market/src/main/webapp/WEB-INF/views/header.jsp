@@ -54,7 +54,7 @@
             </div>            
         </nav>
         
-        <div class="navbar-shrink" id="innerNav_1" style="padding-top: 110px; height:158px;">
+        <div class="fixed-top2" id="innerNav_1" style="padding-top: 110px; height:158px;">
 	        <ul>
 			    <li style="	float:left;"><a href="#">전체 카테고리</a></li>
 			    <li style="	float:left;"><a href="#">신상품</a></li>
