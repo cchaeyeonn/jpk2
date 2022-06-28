@@ -52,7 +52,7 @@
 	<script>
 		$(function(){
 			
-			$("#checkId").click(function(){
+			$("#checkId").focusout(function(){
 				
 				let member_id = $("#member_id").val();
 				
@@ -83,7 +83,7 @@
 	<script>
 		$(function(){
 			
-			$("#checkEmail").click(function(){
+			$("#checkEmail").focusout(function(){
 				
 				let member_email = $("#member_email").val();
 				
@@ -138,13 +138,13 @@ $(document).on('click','.del-chk',function(){
 <div id="join_content">
 <form name="joinForm" action="/spring/joinProcess.do" method="post">
 	<label>아이디&nbsp;<input type="email" name="member_id" id="member_id" value="" maxlength="80" placeholder="아이디(이메일)" />
-	<input type="button" id="checkId" value="중복확인"/><br/></label>
+	
 	<div style="height:20px"><span id="result_checkId" style="font-size:12px;"></span></div>
 	<label>비밀번호&nbsp;<input type="password" name="member_pw"  value="" maxlength="20" placeholder="비밀번호"></label><br>    
 	<label>비밀번호확인&nbsp;<input type="password" name="member_pw2"  value="" maxlength="20" placeholder="비밀번호 확인"></label><p/>   
 	<label>이름&nbsp;<input type="text" name="member_name" maxlength="40" value="" placeholder="이름"></label><p/>
 	<label>이메일&nbsp;<input type="email" name="member_email" maxlength="80" value="" placeholder="이메일">
-	<input type="button" id="checkEmail" value="중복확인"/></label><br/>
+	
 	<div style="height:20px"><span id="result_checkEmail" style="font-size:12px;"></span></div>	
 	<label>휴대폰&nbsp;<input type="tel" name="member_phone"  value="" autocomplete="off" placeholder="휴대폰 번호"></label><p/>
 	<input type="text" id="postcode" name="postcode" placeholder="우편번호" disabled>
