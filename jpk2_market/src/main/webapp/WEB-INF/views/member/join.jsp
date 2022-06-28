@@ -93,7 +93,7 @@
 						if(data == "N"){
 							result = "사용 가능한 이메일입니다.";
 							$("#result_checkEmail").html(result).css("color", "green");
-							$("#member_email").trigger("focus");
+							$("#member_memberphone").trigger("focus");
 						}else{
 							result = "이미 사용중인 이메일입니다.";
 							$("#result_checkEmail").html(result).css("color", "red");
