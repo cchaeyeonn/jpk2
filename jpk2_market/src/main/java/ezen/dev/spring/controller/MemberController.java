@@ -20,7 +20,7 @@ public class MemberController {
 	
 	private MemberService memberService;
 	
-	@Autowired //자동 의존 주입: 생성자 방식
+	@Autowired //�옄�룞 �쓽議� 二쇱엯: �깮�꽦�옄 諛⑹떇
 	public MemberController(MemberService memberService) {
 		this.memberService = memberService;
 	}
@@ -32,13 +32,12 @@ public class MemberController {
 	
 	@PostMapping("/joinProcess.do")
 	public String joinProcess(MemberVo memberVo) {
-		//요청매핑이 있는 메소드의 매개변수에 Vo나 자바클래스가 있는 경우 전달된 값을 그 객체에 매핑시켜줌
-		//이러한 객체를 커맨드 객체라고 함.
+		
 		int result=memberService.join(memberVo);
 		
 		String viewPage = null;
 		if(result==1) {
-			viewPage = "redirect:/index.do";
+			viewPage = "redirect:/spring/login.do";
 		}else{
 			viewPage = "member/join";
 		}
@@ -53,17 +52,17 @@ public class MemberController {
 	
 	/*
 	 * @PostMapping("/loginProcess.do") public String loginProcess(MemberVo
-	 * memberVo, HttpServletRequest request) { //요청매핑이 있는 메소드의 매개변수에 Vo나 자바클래스가 있는
-	 * 경우 전달된 값을 그 객체에 매핑시켜줌 //이러한 객체를 커맨드 객체라고 함.
+	 * memberVo, HttpServletRequest request) { //�슂泥�留ㅽ븨�씠 �엳�뒗 硫붿냼�뱶�쓽 留ㅺ컻蹂��닔�뿉 Vo�굹 �옄諛뷀겢�옒�뒪媛� �엳�뒗
+	 * 寃쎌슦 �쟾�떖�맂 媛믪쓣 洹� 媛앹껜�뿉 留ㅽ븨�떆耳쒖쨲 //�씠�윭�븳 媛앹껜瑜� 而ㅻ㎤�뱶 媛앹껜�씪怨� �븿.
 	 * 
 	 * HashMap<String, Long> resultMap=memberService.login(memberVo); long
-	 * member_auth = resultMap.get("member_auth");//회원인증 long member_grade =
-	 * resultMap.get("member_grade");//회원등급
+	 * member_auth = resultMap.get("member_auth");//�쉶�썝�씤利� long member_grade =
+	 * resultMap.get("member_grade");//�쉶�썝�벑湲�
 	 * 
 	 * String viewPage = null; if(member_auth==1) { HttpSession session =
 	 * request.getSession(); session.setAttribute("member_id",
-	 * memberVo.getMember_id());//회원인증 추가 session.setAttribute("member_grade",
-	 * member_grade);//회원등급 추가 viewPage = "redirect:/home.do";
+	 * memberVo.getMember_id());//�쉶�썝�씤利� 異붽� session.setAttribute("member_grade",
+	 * member_grade);//�쉶�썝�벑湲� 異붽� viewPage = "redirect:/home.do";
 	 * 
 	 * }else{ viewPage = "member/login"; }
 	 * 
@@ -75,21 +74,21 @@ public class MemberController {
 			 					@RequestParam("member_pw") String member_pw, 
 			 					HttpServletRequest request) {
 
-		//2개의 전달값을 HashMap객체에 저장해서 MyBatis 입력값으로 사용
+		//2媛쒖쓽 �쟾�떖媛믪쓣 HashMap媛앹껜�뿉 ���옣�빐�꽌 MyBatis �엯�젰媛믪쑝濡� �궗�슜
 		HashMap<String, String> loginInfo = new HashMap<String, String>();
 		loginInfo.put("member_id", member_id);
 		loginInfo.put("member_pw", member_pw);
 		
-		//2개의 결과값을 얻고자 HashMap 객체 사용
+		//2媛쒖쓽 寃곌낵媛믪쓣 �뼸怨좎옄 HashMap 媛앹껜 �궗�슜
 		HashMap<String, Long> resultMap=memberService.login(loginInfo);
-		long member_auth = resultMap.get("member_auth");//회원인증
-		long member_grade = resultMap.get("member_grade");//회원등급
+		long member_auth = resultMap.get("member_auth");//�쉶�썝�씤利�
+		long member_grade = resultMap.get("member_grade");//�쉶�썝�벑湲�
 		
 		String viewPage = null;
 		if(member_auth==1) {
 			HttpSession session = request.getSession();
-			session.setAttribute("member_id", member_id);//회원인증 추가	
-			session.setAttribute("member_grade", member_grade);//회원등급 추가
+			session.setAttribute("member_id", member_id);//�쉶�썝�씤利� 異붽�	
+			session.setAttribute("member_grade", member_grade);//�쉶�썝�벑湲� 異붽�
 			viewPage = "redirect:/index.do";
 		
 		}else{
@@ -101,12 +100,12 @@ public class MemberController {
 	
 	@GetMapping("/memberInfo.do")
 	public String memberInfo(Model model, HttpServletRequest request) {
-		//회원정보를 가져오기 위해 세션객체에 저장된 member_id 이용
+		//�쉶�썝�젙蹂대�� 媛��졇�삤湲� �쐞�빐 �꽭�뀡媛앹껜�뿉 ���옣�맂 member_id �씠�슜
 		HttpSession session = request.getSession();
 		String member_id = (String)session.getAttribute("member_id");
 		
 		MemberVo memberVo = memberService.getMemberInfo(member_id);
-		//Spring MVC에서 Controller에서 생성되는 Model객체는 뷰단(JSP페이지)에서 참조 가능
+		//Spring MVC�뿉�꽌 Controller�뿉�꽌 �깮�꽦�릺�뒗 Model媛앹껜�뒗 酉곕떒(JSP�럹�씠吏�)�뿉�꽌 李몄“ 媛��뒫
 		model.addAttribute("memberVo", memberVo);
 		
 		return "member/memberInfo";

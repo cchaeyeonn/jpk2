@@ -1,7 +1,5 @@
 package ezen.dev.spring.vo;
 
-import java.util.Date;
-
 public class MemberVo {
 	private int midx;
 	private String member_id;
@@ -10,10 +8,10 @@ public class MemberVo {
 	private String member_email;
 	private String member_phone;
 	private String member_gender;
-	private Date member_birth;
-	private Date member_joindate;
+	private String member_birth;
+	private String member_joindate;
 	private String member_delyn;
-	private Date member_delyndate;
+	private String member_delyndate;
 	private int member_grade;
 	private int member_term1;
 	private int member_term2;
@@ -62,16 +60,16 @@ public class MemberVo {
 	public void setMember_gender(String member_gender) {
 		this.member_gender = member_gender;
 	}
-	public Date getMember_birth() {
+	public String getMember_birth() {
 		return member_birth;
 	}
-	public void setMember_birth(Date member_birth) {
+	public void setMember_birth(String member_birth) {
 		this.member_birth = member_birth;
 	}
-	public Date getMember_joindate() {
+	public String getMember_joindate() {
 		return member_joindate;
 	}
-	public void setMember_joindate(Date member_joindate) {
+	public void setMember_joindate(String member_joindate) {
 		this.member_joindate = member_joindate;
 	}
 	public String getMember_delyn() {
@@ -80,10 +78,10 @@ public class MemberVo {
 	public void setMember_delyn(String member_delyn) {
 		this.member_delyn = member_delyn;
 	}
-	public Date getMember_delyndate() {
+	public String getMember_delyndate() {
 		return member_delyndate;
 	}
-	public void setMember_delyndate(Date member_delyndate) {
+	public void setMember_delyndate(String member_delyndate) {
 		this.member_delyndate = member_delyndate;
 	}
 	public int getMember_grade() {
