@@ -32,6 +32,21 @@
 			});
 		</script>
 		
+		<style>
+		.bx-wrapper {
+	position: relative;
+	margin-bottom: 60px;
+	padding: 0;
+	-ms-touch-action: pan-y;
+	touch-action: pan-y;
+	-moz-box-shadow: 0 0 5px #ffffff !important;
+	-webkit-box-shadow: 0 0 5px #ffffff !important;
+	box-shadow: 0 0 5px #ffffff !important;
+	border: 9px solid #fff !important;
+	background: #fff
+}
+		</style>
+		
 		
     </head>
     <body id="page-top">
