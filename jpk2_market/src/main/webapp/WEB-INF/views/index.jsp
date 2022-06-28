@@ -47,16 +47,20 @@
 	}
 	
 	
-	#topButton {
-	position: fixed; 
-	right: 2%; 
-	bottom: 50px; 
-	display: none; 
-	z-index: 999;
-	}
+	
+	
+		#topButton {
+		position: fixed; 
+		right: 2%; 
+		bottom: 50px; 
+		display: none; 
+		z-index: 999;
+		}
 
 		</style>
 		
+		
+		<!-- topbutton 스크립트 시작 -->
 		<script>
 		
 		$(window).scroll(function() {
@@ -78,8 +82,10 @@
 
 		
 		</script>
+		<!-- topbutton 스크립트 끝 -->
 		
     </head>
+    
     <body id="page-top">
     
     
@@ -169,7 +175,7 @@
                             <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                                 <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
-                            <img class="img-fluid" src="resources/assets/img/portfolio/game.png" alt="..." />
+                            <img class="img-fluid" src="resources/img/k_abocado.png" alt="..." />
                         </div>
                     </div>
                     <!-- Portfolio Item 5-->
@@ -178,7 +184,7 @@
                             <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                                 <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
-                            <img class="img-fluid" src="resources/assets/img/portfolio/safe.png" alt="..." />
+                            <img class="img-fluid" src="resources/img/k_chickenbreast.png" alt="..." />
                         </div>
                     </div>
                     <!-- Portfolio Item 6-->
@@ -187,7 +193,7 @@
                             <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                                 <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
-                            <img class="img-fluid" src="resources/assets/img/portfolio/submarine.png" alt="..." />
+                            <img class="img-fluid" src="resources/img/k_yang.png" alt="..." />
                         </div>
                     </div>
               		 <!-- Portfolio Item 7-->
@@ -196,7 +202,7 @@
                             <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                                 <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
-                            <img class="img-fluid" src="resources/img/k_cake.png" alt="..." />
+                            <img class="img-fluid" src="resources/img/k_blueberry.png" alt="..." />
                         </div>
                     </div>
                      <!-- Portfolio Item 8-->
@@ -205,7 +211,7 @@
                             <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                                 <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
-                            <img class="img-fluid" src="resources/img/k_cake.png" alt="..." />
+                            <img class="img-fluid" src="resources/img/k_bondabug.png" alt="..." />
                         </div>
                     </div>
                      <!-- Portfolio Item 9-->
@@ -214,7 +220,7 @@
                             <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                                 <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
-                            <img class="img-fluid" src="resources/img/k_cake.png" alt="..." />
+                            <img class="img-fluid" src="resources/img/k_watermelon.png" alt="..." />
                         </div>
                     </div>
                 </div>
