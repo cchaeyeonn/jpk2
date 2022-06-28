@@ -137,32 +137,32 @@ $(document).on('click','.del-chk',function(){
 
 <div id="join_content">
 <form name="joinForm" action="/spring/joinProcess.do" method="post">
-	<label>아이디 <input type="email" name="member_id" id="member_id" value="" maxlength="80" placeholder="아이디(이메일)" />
+	<label>아이디&nbsp;<input type="email" name="member_id" id="member_id" value="" maxlength="80" placeholder="아이디(이메일)" />
 	<input type="button" id="checkId" value="중복확인"/><br/></label>
 	<div style="height:20px"><span id="result_checkId" style="font-size:12px;"></span></div>
-	<label>비밀번호 <input type="password" name="member_pw"  value="" maxlength="20" placeholder="비밀번호"></label>  <p/>       
-	<label>비밀번호확인 <input type="password" name="member_pw2"  value="" maxlength="20" placeholder="비밀번호 확인"></label><p/>   
-	<label>이름<input type="text" name="member_name" maxlength="40" value="" placeholder="이름"></label><p/>
-	<label>이메일<input type="email" name="member_email" maxlength="80" value="" placeholder="이메일">
+	<label>비밀번호&nbsp;<input type="password" name="member_pw"  value="" maxlength="20" placeholder="비밀번호"></label><br>    
+	<label>비밀번호확인&nbsp;<input type="password" name="member_pw2"  value="" maxlength="20" placeholder="비밀번호 확인"></label><p/>   
+	<label>이름&nbsp;<input type="text" name="member_name" maxlength="40" value="" placeholder="이름"></label><p/>
+	<label>이메일&nbsp;<input type="email" name="member_email" maxlength="80" value="" placeholder="이메일">
 	<input type="button" id="checkEmail" value="중복확인"/></label><br/>
 	<div style="height:20px"><span id="result_checkEmail" style="font-size:12px;"></span></div>	
-	<label>휴대폰<input type="tel" name="member_phone"  value="" autocomplete="off" placeholder="휴대폰 번호"></label><p/>
-	<label>주소
+	<label>휴대폰&nbsp;<input type="tel" name="member_phone"  value="" autocomplete="off" placeholder="휴대폰 번호"></label><p/>
 	<input type="text" id="postcode" name="postcode" placeholder="우편번호" disabled>
     <input type="button" onclick="execDaumPostcode()" value="우편번호 찾기"><br>
-    <input type="text" id="member_addr_1" name="member_addr_1" placeholder="도로명주소" disabled>
+    <label>주소&nbsp;<input type="text" id="member_addr_1" name="member_addr_1" placeholder="도로명주소" disabled>
     <input type="text" id="member_addr_2" name="member_addr_2" placeholder="상세주소"></label><p/>
-    <label>성별<input type="radio" name="gender" value="m"> 남자 </label>
-    <label><input type="radio" name="gender" value="f"> 여자 </label>
-    <label>생년월일<input type ="text" name="member_birth" value="" maxlength="10" placeholder="YYYY/MM/DD"></label>
+    <label>성별&nbsp;<input type="radio" name="gender" value="m"> 남자 </label>
+    <label><input type="radio" name="gender" value="f"> 여자 </label><p/>
+    <label>생년월일&nbsp;<input type ="text" name="member_birth" value="" maxlength="10" placeholder="YYYY/MM/DD"></label>
     <hr>
     <div class="checkbox_group">
-    <label><input type="checkbox" id="chk_all">이용약관동의 전체 동의합니다. 선택항목에 동의하지 않은 경우도 회원가입 및 일반적인 서비스를 이용할 수 있습니다.</label><p/>
-	<label><input type="checkbox" class="del-chk" name="term_1" value="1">이용약관 동의(필수) &nbsp;&nbsp;&nbsp;&nbsp;약관보기></label><p/>
-	<label><input type="checkbox" class="del-chk" name="term_2" value="1">개인정보 수집·이용동의(필수) &nbsp;&nbsp;&nbsp;&nbsp;약관보기></label><p/>
-	<label><input type="checkbox" class="del-chk" name="term_3" value="1">본인은 만 14세 이상입니다.(필수)</label><p/>
+    <label><input type="checkbox" id="chk_all">&nbsp;이용약관에 대해 전체 동의합니다. 선택항목에 동의하지 않은 경우도 회원가입 및 일반적인 서비스를 이용할 수 있습니다.</label><p/>
+	<label><input type="checkbox" class="del-chk" name="term_1" value="1">&nbsp;이용약관 동의(필수) &nbsp;&nbsp;&nbsp;&nbsp;약관보기></label><p/>
+	<label><input type="checkbox" class="del-chk" name="term_2" value="1">&nbsp;개인정보 수집·이용동의(필수) &nbsp;&nbsp;&nbsp;&nbsp;약관보기></label><p/>
+	<label><input type="checkbox" class="del-chk" name="term_3" value="1">&nbsp;본인은 만 14세 이상입니다.(필수)</label><p/>
 	</div>
 	<input type="submit" value="가입하기">
+	<a href="/spring/"><input type="button" value="뒤로가기"></a>
 </form> 
 </div>
 
