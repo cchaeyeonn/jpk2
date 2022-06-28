@@ -110,7 +110,23 @@
 		});
 
 	</script>
+<script>
+$(document).on('click','#chk_all',function(){
+	if($('#chk_all').is(':checked')){
+		$('.del-chk').prop('checked',true);
+		}else{
+			$('.del-chk').prop('checked',false);
+			}
+});
+$(document).on('click','.del-chk',function(){
+	if($('input[class=del-chk]:checked').length==$('.del-chk').length){
+		$('#chk_all').prop('checked',true);
+		}else{
+			$('#chk_all').prop('checked',false);
+			}
+});
 
+</script>
 </head>
 
 <body>
@@ -140,10 +156,12 @@
     <label><input type="radio" name="gender" value="f"> 여자 </label>
     <label>생년월일<input type ="text" name="member_birth" value="" maxlength="10" placeholder="YYYY/MM/DD"></label>
     <hr>
-    <label><input type="checkbox" name="term_1">이용약관동의 전체 동의합니다. 선택항목에 동의하지 않은 경우도 회원가입 및 일반적인 서비스를 이용할 수 있습니다.</label><p/>
-	<label><input type="checkbox" name="term_2" value="1">이용약관 동의(필수) &nbsp;&nbsp;&nbsp;&nbsp;약관보기></label><p/>
-	<label><input type="checkbox" name="term_3" value="1">개인정보 수집·이용동의(필수) &nbsp;&nbsp;&nbsp;&nbsp;약관보기></label><p/>
-	<label><input type="checkbox" name="term_4" value="1">본인은 만 14세 이상입니다.(필수)</label><p/>
+    <div class="checkbox_group">
+    <label><input type="checkbox" id="chk_all">이용약관동의 전체 동의합니다. 선택항목에 동의하지 않은 경우도 회원가입 및 일반적인 서비스를 이용할 수 있습니다.</label><p/>
+	<label><input type="checkbox" class="del-chk" name="term_1" value="1">이용약관 동의(필수) &nbsp;&nbsp;&nbsp;&nbsp;약관보기></label><p/>
+	<label><input type="checkbox" class="del-chk" name="term_2" value="1">개인정보 수집·이용동의(필수) &nbsp;&nbsp;&nbsp;&nbsp;약관보기></label><p/>
+	<label><input type="checkbox" class="del-chk" name="term_3" value="1">본인은 만 14세 이상입니다.(필수)</label><p/>
+	</div>
 	<input type="submit" value="가입하기">
 </form> 
 </div>
