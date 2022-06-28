@@ -43,10 +43,41 @@
 	-webkit-box-shadow: 0 0 5px #ffffff !important;
 	box-shadow: 0 0 5px #ffffff !important;
 	border: 9px solid #fff !important;
-	background: #fff
-}
+	background: #fff;
+	}
+	
+	
+	#topButton {
+	position: fixed; 
+	right: 2%; 
+	bottom: 50px; 
+	display: none; 
+	z-index: 999;
+	}
+
 		</style>
 		
+		<script>
+		
+		$(window).scroll(function() {
+		    // top button controll
+		    if ($(this).scrollTop() > 500) {
+		        $('#topButton').fadeIn();
+		    } else {
+		        $('#topButton').fadeOut();
+		    }
+		});
+		
+		
+		$(document).ready(function() {
+			  // Top Button click event handler
+			  $("#topButtonImg").click(function() {
+			    $('html, body').animate({scrollTop:0}, '300');
+			  });
+			});
+
+		
+		</script>
 		
     </head>
     <body id="page-top">
@@ -56,7 +87,9 @@
     	
     	
 
-        
+        <!-- 누르면 상단으로 가는 top버튼 시작 -->
+        <div id="topButton" style="cursor: pointer"><img src="resources//img/topbutton.png" id="topButtonImg"></div>
+        <!-- 누르면 상단으로 가는 top버튼 끝 -->
         
         <!-- Masthead-->
         <header class="masthead bg-primary text-white text-center">
