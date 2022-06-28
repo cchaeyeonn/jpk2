@@ -21,6 +21,11 @@ public class ProductController {
 		this.productService = productService;
 	}
 	
+	@GetMapping("/product.do")//get방식 요청 처리
+	public String product() {
+		return "product/product";
+	}
+	
 	
 	
 	
