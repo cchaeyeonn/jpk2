@@ -35,27 +35,27 @@
 <form name="joinForm" action="/spring/joinProcess.do" method="post">
 
 
-	<label>아이디&nbsp;<input type="email" class="form-control" name="member_id" id="member_id" value="" maxlength="80" placeholder="아이디(이메일)"></label>
+	아이디&nbsp;<label><input type="email" class="form-control" name="member_id" id="member_id" value="" maxlength="80" placeholder="아이디(이메일)"></label>
 	<div style="height:20px"><span id="result_checkId" style="font-size:12px;"></span></div>
-	<label>비밀번호&nbsp;<input type="password" class="form-control" name="member_pw" id="member_password1" value="" maxlength="20" placeholder="비밀번호"></label><br>
+	비밀번호&nbsp;<label><input type="password" class="form-control" name="member_pw" id="member_password1" value="" maxlength="20" placeholder="비밀번호"></label><br>
 	<div style="height:20px"><span id="result_password1" style="font-size:12px;"></span></div>     
-	<label>비밀번호확인&nbsp;<input type="password" class="form-control" name="member_pw2" id="member_password2" value="" maxlength="20" placeholder="비밀번호 확인"></label><p/>
+	비밀번호확인&nbsp;<label><input type="password" class="form-control" name="member_pw2" id="member_password2" value="" maxlength="20" placeholder="비밀번호 확인"></label><p/>
 	<div style="height:20px"><span id="result_password2" style="font-size:12px;"></span></div>   
-	<label>이름&nbsp;<input type="text" class="form-control" id="member_name" name="member_name" maxlength="40" value="" placeholder="이름"></label><p/>
+	이름&nbsp;<label><input type="text" class="form-control" id="member_name" name="member_name" maxlength="40" value="" placeholder="이름"></label><p/>
 	<div style="height:20px"><span id="result_name" style="font-size:12px;"></span></div>
-	<label>이메일&nbsp;<input type="email" class="form-control" id="member_email" name="member_email" maxlength="80" value="" placeholder="이메일"></label>	
+	이메일&nbsp;<label><input type="email" class="form-control" id="member_email" name="member_email" maxlength="80" value="" placeholder="이메일"></label>	
 	<div style="height:20px"><span id="result_checkEmail" style="font-size:12px;"></span></div>	
-	<label>휴대폰&nbsp;<input type="text" class="form-control" id="member_phone" name="member_phone"  value="" autocomplete="off" placeholder="휴대폰 번호"></label><p/>
+	휴대폰&nbsp;<label><input type="text" class="form-control" id="member_phone" name="member_phone"  value="" autocomplete="off" placeholder="휴대폰 번호"></label><p/>
 	<div style="height:20px"><span id="result_phone" style="font-size:12px;"></span></div>
 	<input type="text" id="postcode" class="form-control" name="postcode" placeholder="우편번호" disabled>
     <input type="button" onclick="execDaumPostcode()" class="btn btn-outline-success" value="우편번호 찾기"><br>
-    <label>주소&nbsp;<input type="text" id="member_addr_1" class="form-control" name="member_addr1" placeholder="도로명주소">
+    주소&nbsp;<label><input type="text" id="member_addr_1" class="form-control" name="member_addr1" placeholder="도로명주소">
     <input type="text" id="member_addr_2" class="form-control" name="member_addr2" placeholder="상세주소"></label><p/>
     <div style="height:20px"><span id="result_addr" style="font-size:12px;"></span></div>
-    <label>성별&nbsp;<input type="radio" name="member_gender" value="m"> 남자 </label>
+    성별&nbsp;<label><input type="radio" name="member_gender" value="m"> 남자 </label>
     <label><input type="radio" name="member_gender" value="f"> 여자 </label><p/>
     <div style="height:20px"><span id="result_gender" style="font-size:12px;"></span></div>
-    <label>생년월일&nbsp;<input type ="date" class="form-control" id="member_birth" name="member_birth" value="2022-01-01"></label>
+    생년월일&nbsp;<label><input type ="date" class="form-control" id="member_birth" name="member_birth" value="2022-01-01"></label>
     <div style="height:20px"><span id="result_birth" style="font-size:12px;"></span></div>
     <hr>
     <div class="checkbox_group">
