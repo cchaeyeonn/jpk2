@@ -56,7 +56,7 @@
     성별&nbsp;<label><input type="radio" class="custom-control custom-radio" name="member_gender" value="m"> 남자 </label>
     <label><input type="radio" class="custom-control custom-radio" name="member_gender" value="f"> 여자 </label><p/>
     <div style="height:20px"><span id="result_gender" style="font-size:12px;"></span></div>
-    생년월일&nbsp;<label><input type ="date" class="form-control" id="member_birth" name="member_birth" value="2022-01-01"></label>
+    생년월일&nbsp;<label><input type ="date" class="form-control" id="member_birth" name="member_birth" value="" onclick="maxDate()"></label>
     <div style="height:20px"><span id="result_birth" style="font-size:12px;"></span></div>
     <hr>
     
