@@ -129,6 +129,7 @@
           if(!getMail.test($("#member_id").val())){
            result = "이메일 형식으로 입력하세요";
 	       $("#result_checkId").html(result).css("color", "red");
+	       $("#member_id").val("");
            $("#member_id").focus();
            return false;
           }
@@ -146,6 +147,7 @@
           if(!reg.test($("#member_password1").val())){
            result = "영문 대문자와 소문자, 숫자, 특수문자를 하나 이상 포함하여 8~16자가 되어야 합니다";
 	       $("#result_password1").html(result).css("color", "red");
+	       $("#member_password1").val("");
            $("#member_password1").focus();
            return false;
              }
@@ -154,6 +156,7 @@
           if($("#member_id").val() == $("#member_password1").val()){
              result = "아이디와 비밀번호가 같습니다";
 	       $("#result_password1").html(result).css("color", "red");
+	       $("#member_password1").val("");
            $("#member_password1").focus();
                      return false;
            }
@@ -179,6 +182,7 @@
 			if($("#member_name").val() == ""){
               result = "이름을 입력해주세요";
 	          $("#result_name").html(result).css("color", "red");
+	          $("#member_name").val("");
               $("#member_name").focus();
               return false;
           }
@@ -193,6 +197,7 @@
 			if(!getMail.test($("#member_email").val())){
            result = "이메일 형식으로 입력하세요";
 	       $("#result_checkEmail").html(result).css("color", "red");
+	       $("#member_email").val("");
            $("#member_email").focus();
            return false;
           }
