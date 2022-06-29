@@ -65,7 +65,7 @@
 	<label><input type="checkbox" class="del-chk" value="1" name="member_term3">&nbsp;본인은 만 14세 이상입니다.(필수)</label><p/>
 	</div>
 	<div style="height:20px"><span id="result_term" style="font-size:12px;"></span></div>
-	<input type="submit" class="btn btn-outline-success" value="가입하기">
+	<input type="submit" class="btn btn-outline-success" id="submit" value="가입하기">
 	<a href="/spring/"><input type="button" class="btn btn-outline-success" value="뒤로가기"></a>
 </form> 
 </div>

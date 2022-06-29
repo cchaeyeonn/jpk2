@@ -116,7 +116,8 @@
 
 		  // 유효성 검사
 		  // 아이디 유효성 검사
-		  $(document).on('click','.btn btn-outline-success',function(){
+		  $(document).on('click','#submit',function(){
+			
 		  if($("#member_id").val() == ""){
            result = "아이디를 입력해주세요";
 	       $("#result_checkId").html(result).css("color", "red");
