@@ -33,10 +33,11 @@
           }).open();
        }
     
+
     
   
 	
-	// 아이디 중복검사 스크립트 -->
+	// 아이디 중복검사 스크립트 이하 제이쿼리 활용 -->
 	
 		$(function(){
 			
@@ -148,6 +149,7 @@
            result = "영문 대문자와 소문자, 숫자, 특수문자를 하나 이상 포함하여 8~16자가 되어야 합니다";
 	       $("#result_password1").html(result).css("color", "red");
 	       $("#member_password1").val("");
+	       $("#member_password2").val("");
            $("#member_password1").focus();
            return false;
              }
@@ -209,6 +211,56 @@
               $("#member_phone").focus();
               return false;
           }
+           // 핸드폰 번호 형식 유효성 검사
+           
+           $("#member_phone").on('keydown', function(e){
+          // 숫자만 입력받기
+        var trans_num = $(this).val().replace(/-/gi,'');
+	    var k = e.keyCode;
+				
+	if(trans_num.length >= 11 && ((k >= 48 && k <=126) || (k >= 12592 && k <= 12687 || k==32 || k==229 || (k>=45032 && k<=55203)) ))
+	{
+  	    e.preventDefault();
+	}
+    }).on('blur', function(){ // 포커스를 잃었을때 실행합니다.
+        if($(this).val() == '') return;
+
+        // 기존 번호에서 - 를 삭제합니다.
+        var trans_num = $(this).val().replace(/-/gi,'');
+      
+        // 입력값이 있을때만 실행합니다.
+        if(trans_num != null && trans_num != '')
+        {
+            // 총 핸드폰 자리수는 11글자이거나, 10자여야 합니다.
+            if(trans_num.length==11 || trans_num.length==10) 
+            {   
+                // 유효성 체크
+                var regExp_ctn = /^(01[016789]{1}|02|0[3-9]{1}[0-9]{1})([0-9]{3,4})([0-9]{4})$/;
+                if(regExp_ctn.test(trans_num))
+                {
+                    // 유효성 체크에 성공하면 하이픈을 넣고 값을 바꿔줍니다.
+                    trans_num = trans_num.replace(/^(01[016789]{1}|02|0[3-9]{1}[0-9]{1})-?([0-9]{3,4})-?([0-9]{4})$/, "$1-$2-$3");                  
+                    $(this).val(trans_num);
+                }
+                else
+                {
+                    result = "유효하지 않은 전화번호 입니다.";
+	                $("#result_phone").html(result).css("color", "red");
+                    $("#member_phone").focus();
+                }
+            }
+            else 
+            {
+                result = "유효하지 않은 전화번호 입니다.";
+	                $("#result_phone").html(result).css("color", "red");
+	                $("#member_phone").val("");
+                    $("#member_phone").focus();
+              }
+           }
+       });
+          
+          
+          
 		   // 주소 유효성 검사
 		    if($("#member_addr_1").val() == ""){
               result = "주소를 입력해주세요";
@@ -228,11 +280,7 @@
 			
 			
 		 }
-			//생년월일이 오늘이 최대값이 되도록 설정
-			var now_utc = Date.now();
-			var timeOff = new Date().getTimezoneOffset()*60000;
-			var today = new Date(now_utc-timeOff).toISOString().split("T")[0];
-			document.getElementById("date").setAttribute("max", today);
+			
 			
 		   
 		    //생년월일 유효성 검사

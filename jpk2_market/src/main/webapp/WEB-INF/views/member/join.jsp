@@ -22,6 +22,7 @@
 	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
 	<!-- js파일 연결  -->
 	<script src="${pageContext.request.contextPath}/resources/js/join.js "></script>
+	
 </head>
 
 <body>
