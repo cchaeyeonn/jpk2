@@ -6,7 +6,7 @@
 
 	<typeAliases>
 		<typeAlias alias="memberVo" type="ezen.dev.spring.vo.MemberVo"/>
-
+		<typeAlias alias="productVo" type="ezen.dev.spring.vo.ProductVo"/>
 	</typeAliases>  
 
 </configuration>  
