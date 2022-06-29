@@ -52,7 +52,7 @@
     <label>주소&nbsp;<input type="text" id="member_addr_1" class="form-control" name="member_addr1" placeholder="도로명주소">
     <input type="text" id="member_addr_2" class="form-control" name="member_addr2" placeholder="상세주소"></label><p/>
     <div style="height:20px"><span id="result_addr" style="font-size:12px;"></span></div>
-    <label>성별&nbsp;<input type="radio" name="member_gender" value="m"> 남자 </label><p/>
+    <label>성별&nbsp;<input type="radio" name="member_gender" value="m"> 남자 </label>
     <label><input type="radio" name="member_gender" value="f"> 여자 </label><p/>
     <div style="height:20px"><span id="result_gender" style="font-size:12px;"></span></div>
     <label>생년월일&nbsp;<input type ="date" class="form-control" id="member_birth" name="member_birth" value="2022-01-01"></label>
