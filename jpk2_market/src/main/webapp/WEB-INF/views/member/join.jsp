@@ -40,7 +40,7 @@
 	<label>비밀번호&nbsp;<input type="password" class="form-control" name="member_pw"  value="" maxlength="20" placeholder="비밀번호"></label><br>    
 	<label>비밀번호확인&nbsp;<input type="password" class="form-control" name="member_pw2"  value="" maxlength="20" placeholder="비밀번호 확인"></label><p/>   
 	<label>이름&nbsp;<input type="text" class="form-control" name="member_name" maxlength="40" value="" placeholder="이름"></label><p/>
-	<label>이메일&nbsp;<input type="email" class="form-control" name="member_email" maxlength="80" value="" placeholder="이메일"></label>
+	<label>이메일&nbsp;<input type="email" class="form-control" id="member_email" name="member_email" maxlength="80" value="" placeholder="이메일"></label>
 	
 	<div style="height:20px"><span id="result_checkEmail" style="font-size:12px;"></span></div>	
 	<label>휴대폰&nbsp;<input type="text" class="form-control" name="member_phone"  value="" autocomplete="off" placeholder="휴대폰 번호"></label><p/>
