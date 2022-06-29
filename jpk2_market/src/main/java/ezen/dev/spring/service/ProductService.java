@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import ezen.dev.spring.dao.AdminDao;
 import ezen.dev.spring.dao.ProductDao;
 import ezen.dev.spring.vo.MemberVo;
+import ezen.dev.spring.vo.ProductVo;
 
 @Service
 public class ProductService {
@@ -17,6 +18,10 @@ public class ProductService {
 	@Autowired
 	public ProductService(ProductDao productDao) {
 		this.productDao = productDao;
+	}
+	public ProductVo getProductInfo(String p_name) {
+		 
+		return productDao.getProductInfo(p_name);
 	}
 	
 }

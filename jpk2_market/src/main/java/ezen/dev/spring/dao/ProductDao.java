@@ -8,11 +8,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import ezen.dev.spring.vo.MemberVo;
+import ezen.dev.spring.vo.ProductVo;
 
 @Repository
 public class ProductDao {
 
-	//MyBatis瑜� �씠�슜�빐�꽌 DB�옉�뾽: SqlSession 媛앹껜 �븘�슂
+	//MyBatis�몴占� 占쎌뵠占쎌뒠占쎈퉸占쎄퐣 DB占쎌삂占쎈씜: SqlSession 揶쏆빘猿� 占쎈툡占쎌뒄
 	
 	private SqlSession sqlSession;
 	
@@ -21,6 +22,9 @@ public class ProductDao {
 	@Autowired
 	public ProductDao(SqlSession sqlSession) {
 		this.sqlSession = sqlSession;
+	}
+	public ProductVo getProductInfo(String p_name) {
+		return sqlSession.selectOne(MAPPER+".getProductInfo", p_name);
 	}
 	
 	

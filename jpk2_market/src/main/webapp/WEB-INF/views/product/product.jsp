@@ -39,29 +39,29 @@
 		<div id="product">
 		<div id="product_img">상품 사진</div>
 		<div id="product_detail">상품 제목<p/>
-		ex)닭가슴살
+		${ProductVo.p_name}
 		<hr>
 		상품 가격<p/>
-		ex)15000원<p/>
+		${ProductVo.p_price}<p/>
 		<a href="/spring/"><input type="button" value="장바구니"></a>
 		<hr>
 		상품 판매 단위<p/>
-		ex)1개
+		${ProductVo.p_unit}
 		<hr>
 		상품 중량/용량<p/>
-		ex)300g
+		${ProductVo.p_weight}
 		<hr>
 		배송 구분<p/>
-		ex)새벽 배송 가능
+		${ProductVo.p_delivery}
 		<hr>
 		포장 타입<p/>
-		ex)비닐팩
+		${ProductVo.p_package}
 		<hr>
 		알레르기 정보<p/>
-		ex)닭 뭐 뭐 어쩌구
+		${ProductVo.p_allergy}
 		<hr>
 		유통기한<p/>
-		ex)제조기한 후 10일 내
+		${ProductVo.p_limitdate}
 		</div>
 		</div>
 		<div id="home_button"><a href="/spring/"><input type="button" value="메인으로"></a></div><p/>

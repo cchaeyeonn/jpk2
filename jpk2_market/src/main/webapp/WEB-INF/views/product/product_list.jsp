@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@page import="ezen.dev.spring.vo.ProductVo" %>
+<% ProductVo pv = (ProductVo)request.getAttribute("pv");%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,7 +24,7 @@
                 <div class="row justify-content-center">
                     <!-- Portfolio Item 1 -->
                     <div class="col-md-6 col-lg-4 mb-5">
-                        <a href="/spring/product.do" ><input type="hidden" values=${pidx}><div class="portfolio-item mx-auto" data-bs-toggle="modal" href='/spring/product.do';>
+                        <a href="/spring/product.do?=${p_name}" ><input type="hidden" values="p_name:1"><div class="portfolio-item mx-auto" data-bs-toggle="modal" href='/spring/product.do';>
                             <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                                 <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
