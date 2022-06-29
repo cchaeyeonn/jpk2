@@ -226,7 +226,7 @@
 			var now_utc = Date.now();
 			var timeOff = new Date().getTimezoneOffset()*60000;
 			var today = new Date(now_utc-timeOff).toISOString().split("T")[0];
-			document.getElementById("Date").setAttribute("max", today);
+			document.getElementById("date").setAttribute("max", today);
 			
 		   
 		    //생년월일 유효성 검사
@@ -239,7 +239,7 @@
 			if (!$("input:checked[Name='member_termall']").is(":checked")){
 			  result = "약관을 동의해주세요";
 	          $("#result_term").html(result).css("color", "red"); 
-		   return false;
+		     return false;
 	      }else if (!$("input:checked[Name='member_term1']").is(":checked")){
 			  result = "약관을 동의해주세요";
 	          $("#result_term").html(result).css("color", "red"); 
