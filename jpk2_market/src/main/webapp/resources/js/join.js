@@ -41,7 +41,7 @@
 		$(function(){
 			
 			$("#member_id").focusout(function(){
-				alert("jquery");
+				
 				let member_id = $("#member_id").val();
 				
 				$.ajax({

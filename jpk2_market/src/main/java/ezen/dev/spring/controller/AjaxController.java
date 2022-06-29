@@ -42,7 +42,7 @@ public class AjaxController {
 		
 		String result="N";//중복된 이메일 없음
 		
-		int flag = ajaxService.checkId(email);
+		int flag = ajaxService.checkEmail(email);
 		
 		if(flag == 1) result = "Y";//중복된 이메일 있음
 		

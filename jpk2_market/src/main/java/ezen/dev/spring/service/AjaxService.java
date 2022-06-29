@@ -21,7 +21,11 @@ public class AjaxService {
 		result = memberDao.checkId(id);
 		return result;
 	}
-	
+	public int checkEmail(String email) {
+		int result=0;
+		result = memberDao.checkEmail(email);
+		return result;
+	}
 	
 
 
