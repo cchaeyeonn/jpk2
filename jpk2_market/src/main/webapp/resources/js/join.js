@@ -116,13 +116,14 @@
 
 		  // 유효성 검사
 		  // 아이디 유효성 검사
+		  $(document).on('click','.btn btn-outline-success',function(){
 		  if($("#member_id").val() == ""){
            result = "아이디를 입력해주세요";
 	       $("#result_checkId").html(result).css("color", "red");
            $("#member_id").focus();
            return false;
           }
-        
+          
           // 아이디 형식 유효성 검사
           if(!getMail.test($("#member_id").val())){
            result = "이메일 형식으로 입력하세요";
@@ -255,7 +256,7 @@
 		   return false;
 	      }
 
-
+         });
 			
 		});
 
