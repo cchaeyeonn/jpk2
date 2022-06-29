@@ -215,7 +215,7 @@
               return false;
           }
             //성별 유효성 검사
-		   	if($("input[name=gender]:radio:checked").length < 1){
+		   	if($("input[name=member_gender]:radio:checked").length < 1){
 			  result = "성별을 선택하세요";
 	          $("#result_gender").html(result).css("color", "red");
               return false;
