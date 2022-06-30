@@ -26,10 +26,10 @@ public class ProductController {
 		this.productService = productService;
 	}
 	
-	/*
-	 * @GetMapping("/product.do")//get諛⑹떇 �슂泥� 泥섎━ public String product() { return
-	 * "product/product"; }
-	 */	
+
+	@GetMapping("/product.do") public String product()
+	{ return "product/product_detail"; }
+
 	@RequestMapping(value="/Product.do")
 	public String ProductInfo(Model model, HttpServletRequest request) {
 		//占쎌돳占쎌뜚占쎌젟癰귣�占쏙옙 揶쏉옙占쎌죬占쎌궎疫뀐옙 占쎌맄占쎈퉸 占쎄쉭占쎈�▼첎�빘猿쒙옙肉� 占쏙옙占쎌삢占쎈쭆 member_id 占쎌뵠占쎌뒠
