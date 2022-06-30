@@ -39,29 +39,29 @@
 		<div id="product">
 		<div id="product_img">상품 사진</div>
 		<div id="product_detail">상품 제목<p/>
-		${ProductVo.p_name}
+		${productVo.p_name}
 		<hr>
 		상품 가격<p/>
-		${ProductVo.p_price}<p/>
+		${productVo.p_price}<p/>
 		<a href="/spring/"><input type="button" value="장바구니"></a>
 		<hr>
 		상품 판매 단위<p/>
-		${ProductVo.p_unit}
+		${productVo.p_unit}
 		<hr>
 		상품 중량/용량<p/>
-		${ProductVo.p_weight}
+		${productVo.p_weight}
 		<hr>
 		배송 구분<p/>
-		${ProductVo.p_delivery}
+		${productVo.p_delivery}
 		<hr>
 		포장 타입<p/>
-		${ProductVo.p_package}
+		${productVo.p_package}
 		<hr>
 		알레르기 정보<p/>
-		${ProductVo.p_allergy}
+		${productVo.p_allergy}
 		<hr>
 		유통기한<p/>
-		${ProductVo.p_limitdate}
+		${productVo.p_limitdate}
 		</div>
 		</div>
 		<div id="home_button"><a href="/spring/"><input type="button" value="메인으로"></a></div><p/>

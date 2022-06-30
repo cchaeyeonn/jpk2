@@ -19,9 +19,9 @@ public class ProductService {
 	public ProductService(ProductDao productDao) {
 		this.productDao = productDao;
 	}
-	public ProductVo getProductInfo(String p_name) {
-		 
-		return productDao.getProductInfo(p_name);
+	
+	public List<ProductVo> getProductList() {
+		return productDao.getProductList();
 	}
 	
 }

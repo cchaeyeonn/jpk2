@@ -30,17 +30,18 @@ public class ProductController {
 	@GetMapping("/product.do") public String product()
 	{ return "product/product_detail"; }
 
-	@RequestMapping(value="/Product.do")
-	public String ProductInfo(Model model, HttpServletRequest request) {
-		//占쎌돳占쎌뜚占쎌젟癰귣�占쏙옙 揶쏉옙占쎌죬占쎌궎疫뀐옙 占쎌맄占쎈퉸 占쎄쉭占쎈�▼첎�빘猿쒙옙肉� 占쏙옙占쎌삢占쎈쭆 member_id 占쎌뵠占쎌뒠
-		HttpSession session = request.getSession();
-		String p_name = (String)session.getAttribute("p_name");
+	
+	@GetMapping("/productList.do")
+	public String getMemberList(Model model) {
 		
-		ProductVo productVo = productService.getProductInfo(p_name);
-		model.addAttribute("productVo", productVo);
+		List<ProductVo> productList = productService.getProductList();
+		//紐⑤뜽媛앹껜�뿉 �쉶�썝紐⑸줉�쓣 異붽��븿
+		model.addAttribute("productList",productList);
 		
-		return "product/product";
+		return "product/product_list";
 	}
+
+
 	
 	
 }
