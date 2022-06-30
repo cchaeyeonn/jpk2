@@ -13,7 +13,7 @@ public class ProductVo {
 	private String p_limitdate;
 	private String p_delyn;
 	private String p_type;
-	
+	private String p_tag;
 	
 	public int getPidx() {
 		return pidx;
@@ -93,5 +93,5 @@ public class ProductVo {
 	public void setP_tag(String p_tag) {
 		this.p_tag = p_tag;
 	}
-	private String p_tag;
+
 }

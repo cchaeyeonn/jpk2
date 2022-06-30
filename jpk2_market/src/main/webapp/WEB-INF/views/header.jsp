@@ -56,12 +56,20 @@
 						</li>
                         <li class="nav-item mx-0 mx-lg-1">
                         <%
+		                     if (session.getAttribute("member_id") == null){
+	                          	out.print("<a class='nav-link py-3 px-0 px-lg-3 rounded' href='"+request.getContextPath()+"/join.do'>회원가입</a>");
+	                         	}%>
+	                   	<% 
+		                    	long grade = 0L;
+	                         if (session.getAttribute("member_grade") != null) {grade = (long)session.getAttribute("member_grade");}
+				        	 if ( grade >= 1){out.print("<a class='nav-link py-3 px-0 px-lg-3 rounded' href='"+request.getContextPath()+"/admin.do'>관리자페이지</a>");}%>
+                       <%--  <%
 						if (session.getAttribute("member_id") == null){
 							out.print("<a class='nav-link py-3 px-0 px-lg-3 rounded' href='"+request.getContextPath()+"/join.do'>회원가입</a>");
 							}else{
 							
-							}%>
-							
+							}%> --%>
+							</li>
 							<!-- <a class="nav-link py-3 px-0 px-lg-3 rounded" href="/spring/join.do">회원가입</a></li> -->
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#contact">고객센터</a></li>
                     </ul>

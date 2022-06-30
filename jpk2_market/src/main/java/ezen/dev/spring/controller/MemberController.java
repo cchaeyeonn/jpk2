@@ -20,7 +20,7 @@ public class MemberController {
 	
 	private MemberService memberService;
 	
-	@Autowired //�옄�룞 �쓽議� 二쇱엯: �깮�꽦�옄 諛⑹떇
+	@Autowired //占쎌쁽占쎈짗 占쎌벥鈺곤옙 雅뚯눘�뿯: 占쎄문占쎄쉐占쎌쁽 獄쎻뫗�뻼
 	public MemberController(MemberService memberService) {
 		this.memberService = memberService;
 	}
@@ -52,17 +52,17 @@ public class MemberController {
 	
 	/*
 	 * @PostMapping("/loginProcess.do") public String loginProcess(MemberVo
-	 * memberVo, HttpServletRequest request) { //�슂泥�留ㅽ븨�씠 �엳�뒗 硫붿냼�뱶�쓽 留ㅺ컻蹂��닔�뿉 Vo�굹 �옄諛뷀겢�옒�뒪媛� �엳�뒗
-	 * 寃쎌슦 �쟾�떖�맂 媛믪쓣 洹� 媛앹껜�뿉 留ㅽ븨�떆耳쒖쨲 //�씠�윭�븳 媛앹껜瑜� 而ㅻ㎤�뱶 媛앹껜�씪怨� �븿.
+	 * memberVo, HttpServletRequest request) { //占쎌뒄筌ｏ옙筌띲끋釉⑨옙�뵠 占쎌뿳占쎈뮉 筌롫뗄�꺖占쎈굡占쎌벥 筌띲끆而삭퉪占쏙옙�땾占쎈퓠 Vo占쎄돌 占쎌쁽獄쏅�寃�占쎌삋占쎈뮞揶쏉옙 占쎌뿳占쎈뮉
+	 * 野껋럩�뒭 占쎌읈占쎈뼎占쎈쭆 揶쏅�れ뱽 域뱄옙 揶쏆빘猿쒙옙肉� 筌띲끋釉⑨옙�뻻�녹뮇夷� //占쎌뵠占쎌쑎占쎈립 揶쏆빘猿쒐몴占� �뚣끇�렎占쎈굡 揶쏆빘猿쒙옙�뵬�⑨옙 占쎈맙.
 	 * 
 	 * HashMap<String, Long> resultMap=memberService.login(memberVo); long
-	 * member_auth = resultMap.get("member_auth");//�쉶�썝�씤利� long member_grade =
-	 * resultMap.get("member_grade");//�쉶�썝�벑湲�
+	 * member_auth = resultMap.get("member_auth");//占쎌돳占쎌뜚占쎌뵥筌앾옙 long member_grade =
+	 * resultMap.get("member_grade");//占쎌돳占쎌뜚占쎈쾻疫뀐옙
 	 * 
 	 * String viewPage = null; if(member_auth==1) { HttpSession session =
 	 * request.getSession(); session.setAttribute("member_id",
-	 * memberVo.getMember_id());//�쉶�썝�씤利� 異붽� session.setAttribute("member_grade",
-	 * member_grade);//�쉶�썝�벑湲� 異붽� viewPage = "redirect:/home.do";
+	 * memberVo.getMember_id());//占쎌돳占쎌뜚占쎌뵥筌앾옙 �빊遺쏙옙 session.setAttribute("member_grade",
+	 * member_grade);//占쎌돳占쎌뜚占쎈쾻疫뀐옙 �빊遺쏙옙 viewPage = "redirect:/home.do";
 	 * 
 	 * }else{ viewPage = "member/login"; }
 	 * 
@@ -74,21 +74,21 @@ public class MemberController {
 			 					@RequestParam("member_pw") String member_pw, 
 			 					HttpServletRequest request) {
 
-		//2媛쒖쓽 �쟾�떖媛믪쓣 HashMap媛앹껜�뿉 ���옣�빐�꽌 MyBatis �엯�젰媛믪쑝濡� �궗�슜
+		//2揶쏆뮇�벥 占쎌읈占쎈뼎揶쏅�れ뱽 HashMap揶쏆빘猿쒙옙肉� 占쏙옙占쎌삢占쎈퉸占쎄퐣 MyBatis 占쎌뿯占쎌젾揶쏅�れ몵嚥∽옙 占쎄텢占쎌뒠
 		HashMap<String, String> loginInfo = new HashMap<String, String>();
 		loginInfo.put("member_id", member_id);
 		loginInfo.put("member_pw", member_pw);
 		
-		//2媛쒖쓽 寃곌낵媛믪쓣 �뼸怨좎옄 HashMap 媛앹껜 �궗�슜
+		//2揶쏆뮇�벥 野껉퀗�궢揶쏅�れ뱽 占쎈섯�⑥쥙�쁽 HashMap 揶쏆빘猿� 占쎄텢占쎌뒠
 		HashMap<String, Long> resultMap=memberService.login(loginInfo);
-		long member_auth = resultMap.get("member_auth");//�쉶�썝�씤利�
-		long member_grade = resultMap.get("member_grade");//�쉶�썝�벑湲�
+		long member_auth = resultMap.get("member_auth");//占쎌돳占쎌뜚占쎌뵥筌앾옙
+		long member_grade = resultMap.get("member_grade");//占쎌돳占쎌뜚占쎈쾻疫뀐옙
 		
 		String viewPage = null;
 		if(member_auth==1) {
 			HttpSession session = request.getSession();
-			session.setAttribute("member_id", member_id);//�쉶�썝�씤利� 異붽�	
-			//session.setAttribute("member_grade", member_grade);//�쉶�썝�벑湲� 異붽�
+			session.setAttribute("member_id", member_id);//占쎌돳占쎌뜚占쎌뵥筌앾옙 �빊遺쏙옙	
+			session.setAttribute("member_grade", member_grade);//占쎌돳占쎌뜚占쎈쾻疫뀐옙 �빊遺쏙옙
 			viewPage = "redirect:/index.do";
 		
 		}else{
@@ -100,12 +100,12 @@ public class MemberController {
 	
 	@GetMapping("/memberInfo.do")
 	public String memberInfo(Model model, HttpServletRequest request) {
-		//�쉶�썝�젙蹂대�� 媛��졇�삤湲� �쐞�빐 �꽭�뀡媛앹껜�뿉 ���옣�맂 member_id �씠�슜
+		//占쎌돳占쎌뜚占쎌젟癰귣�占쏙옙 揶쏉옙占쎌죬占쎌궎疫뀐옙 占쎌맄占쎈퉸 占쎄쉭占쎈�▼첎�빘猿쒙옙肉� 占쏙옙占쎌삢占쎈쭆 member_id 占쎌뵠占쎌뒠
 		HttpSession session = request.getSession();
 		String member_id = (String)session.getAttribute("member_id");
 		
 		MemberVo memberVo = memberService.getMemberInfo(member_id);
-		//Spring MVC�뿉�꽌 Controller�뿉�꽌 �깮�꽦�릺�뒗 Model媛앹껜�뒗 酉곕떒(JSP�럹�씠吏�)�뿉�꽌 李몄“ 媛��뒫
+		//Spring MVC占쎈퓠占쎄퐣 Controller占쎈퓠占쎄퐣 占쎄문占쎄쉐占쎈┷占쎈뮉 Model揶쏆빘猿쒙옙�뮉 �뀎怨뺣뼊(JSP占쎈읂占쎌뵠筌욑옙)占쎈퓠占쎄퐣 筌〓챷�� 揶쏉옙占쎈뮟
 		model.addAttribute("memberVo", memberVo);
 		
 		return "member/memberInfo";
