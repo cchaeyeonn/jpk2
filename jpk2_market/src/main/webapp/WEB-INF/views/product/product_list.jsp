@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@page import="ezen.dev.spring.vo.ProductVo" %>
-<% ProductVo pv = (ProductVo)request.getAttribute("pv");%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -23,17 +23,23 @@
                <!--  Portfolio Grid Items -->
                 <div class="row justify-content-center">
                     <!-- Portfolio Item 1 -->
+                     <c:forEach items="${productList}" var="productList">
                     <div class="col-md-6 col-lg-4 mb-5">
-                        <a href="/spring/product.do" ><input type="hidden" values="p_name:1"><div class="portfolio-item mx-auto" data-bs-toggle="modal" href='/spring/product.do';>
+                        <a href="/spring/product.do" ><input type="hidden" values="p_name:1">
+                        <div class="portfolio-item mx-auto" data-bs-toggle="model">
                             <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
-                            ${productVo.p_name}
-                            ${productVo.p_price}
-                            ${productVo.p_type}
+                                <div class="portfolio-item-caption-content text-center text-white">
+                                <img class="img-fluid" src="resources/img/k_cake.png" alt="..."  />
+                           			 ${productList.p_name}
+                          			 ${productList.p_price}
+                           			 ${productList.p_type}                           		
+                                <i class="fas fa-plus fa-3x"></i>
+                                </div>
                             </div>
                         </div></a>
                     </div>
-                    <!-- Portfolio Item 2 -->
+                   </c:forEach>
+                  <!-- <!--   Portfolio Item 2
                     <div class="col-md-6 col-lg-4 mb-5">
                         <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal2">
                             <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
@@ -43,7 +49,7 @@
                         </div>
                     </div>
                    
-					<!--  Portfolio Item 3 -->
+					 Portfolio Item 3
                     <div class="col-md-6 col-lg-4 mb-5">
                         <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal3">
                             <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
@@ -52,7 +58,7 @@
                             <img class="img-fluid" src="resources/img/k_tomato.png" alt="..." />
                         </div>
                     </div>
-                    <!-- Portfolio Item 4 -->
+                    Portfolio Item 4
                     <div class="col-md-6 col-lg-4 mb-5">
                         <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal4">
                             <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
@@ -61,7 +67,7 @@
                             <img class="img-fluid" src="resources/img/k_abocado.png" alt="..." />
                         </div>
                     </div>
-                    <!-- Portfolio Item 5 -->
+                    Portfolio Item 5
                     <div class="col-md-6 col-lg-4 mb-5">
                         <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal5">
                             <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
@@ -70,7 +76,7 @@
                             <img class="img-fluid" src="resources/img/k_chickenbreast.png" alt="..." />
                         </div>
                     </div>
-                    <!-- Portfolio Item 6 -->
+                    Portfolio Item 6
                     <div class="col-md-6 col-lg-4 mb-5">
                         <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal6">
                             <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
@@ -79,7 +85,7 @@
                             <img class="img-fluid" src="resources/img/k_yang.png" alt="..." />
                         </div>
                     </div>
-              		 <!-- Portfolio Item 7 -->
+              		 Portfolio Item 7
                     <div class="col-md-6 col-lg-4 mb-5">
                         <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal1">
                             <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
@@ -88,7 +94,7 @@
                             <img class="img-fluid" src="resources/img/k_blueberry.png" alt="..." />
                         </div>
                     </div>
-                     <!-- Portfolio Item 8 -->
+                     Portfolio Item 8
                     <div class="col-md-6 col-lg-4 mb-5">
                         <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal1">
                             <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
@@ -97,7 +103,7 @@
                             <img class="img-fluid" src="resources/img/k_bondabug.png" alt="..." />
                         </div>
                     </div>
-                     <!-- Portfolio Item 9 -->
+                     Portfolio Item 9
                     <div class="col-md-6 col-lg-4 mb-5">
                         <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal1">
                             <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
@@ -105,8 +111,8 @@
                             </div>
                             <img class="img-fluid" src="resources/img/k_watermelon.png" alt="..." />
                         </div>
-                    </div>
-                </div>
+                    </div>-->
+                </div> 
             </div>
         </section>
         

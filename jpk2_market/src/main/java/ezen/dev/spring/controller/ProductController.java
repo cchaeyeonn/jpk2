@@ -32,10 +32,10 @@ public class ProductController {
 
 	
 	@GetMapping("/productList.do")
-	public String getMemberList(Model model) {
+	public String getProductList(Model model) {
 		
 		List<ProductVo> productList = productService.getProductList();
-		//紐⑤뜽媛앹껜�뿉 �쉶�썝紐⑸줉�쓣 異붽��븿
+		
 		model.addAttribute("productList",productList);
 		
 		return "product/product_list";

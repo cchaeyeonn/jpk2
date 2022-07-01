@@ -15,26 +15,29 @@ public class AdminController {
 	
 	private AdminService adminService;
 	
-	@Autowired //자동 의존 주입: 생성자 방식
+	@Autowired //�옄�룞 �쓽議� 二쇱엯: �깮�꽦�옄 諛⑹떇
 	public AdminController(AdminService adminService) {
 		this.adminService = adminService;
 	}
 	
-	@GetMapping("/admin.do")//get방식 요청 처리
+	@GetMapping("/admin.do")//get諛⑹떇 �슂泥� 泥섎━
 	public String adminHome() {
 		return "admin/admin_home";
 	}
 	
-	@GetMapping("/memberList.do")//get방식 요청 처리
+	@GetMapping("/memberList.do")//get諛⑹떇 �슂泥� 泥섎━
 	public String getMemberList(Model model) {
 		
 		List<MemberVo> memberList = adminService.getMemberList();
-		//모델객체에 회원목록을 추가함
+		//紐⑤뜽媛앹껜�뿉 �쉶�썝紐⑸줉�쓣 異붽��븿
 		model.addAttribute("memberList",memberList);
 		
 		return "admin/admin_memberList";
 	}
-	
+	@GetMapping("/productAdd.do")//get諛⑹떇 �슂泥� 泥섎━
+	public String adminProductAdd() {
+		return "admin/admin_product_add";
+	}
 	
 	
 }
