@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="utf-8">
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -129,7 +130,11 @@
 
         </header>
         <!-- Portfolio Section-->
-        <%@include file="product/product_list.jsp" %>
+       <c:import url="/productList.do">
+       		<c:param name="p_name" value="${p_name}"/>
+       		<c:param name="p_price" value="${p_price}"/>
+       		<c:param name="p_type" value="${p_type}"/>
+       </c:import>
 <%--         <jsp:include page="/WEB-INF/views/product/product_list.jsp"></jsp:include> --%>
         
 
