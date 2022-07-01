@@ -6,9 +6,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import ezen.dev.spring.service.AdminService;
 import ezen.dev.spring.vo.MemberVo;
+import ezen.dev.spring.vo.ProductVo;
 
 @Controller
 public class AdminController {
@@ -38,6 +40,19 @@ public class AdminController {
 	public String adminProductAdd() {
 		return "admin/admin_product_add";
 	}
-	
+	@PostMapping("/productAddProcess.do")
+	public String productAddProcess(ProductVo productVo) {
+		
+		int result=adminService.productAddProcess(productVo);
+		
+		String viewPage = null;
+		if(result==1) {
+			viewPage = "redirect:/admin.do";
+		}else{
+			viewPage = "admin/admin_product_add";
+		}
+		
+		return viewPage;
+	}
 	
 }

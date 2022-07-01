@@ -10,7 +10,7 @@
 	#product{
 		padding-left:10%;
 		padding-right:10%; 
-		height:1000px; 
+		height:1500px; 
 		padding-top:260px;
 		}
 	#product_img{
@@ -35,9 +35,10 @@
 
     <!-- 헤더 연결 -->
     <jsp:include page="../header.jsp"></jsp:include> 
-	<form>
+	<form name="productAddForm" action="/spring/productAddProcess.do" method="post">
 		<div id="product">
-		<div id="product_img">상품 사진</div>
+		<div id="product_img">상품 사진
+		<input type="text" name="p_filename"></div>
 		<div id="product_detail">상품 제목<p/>
 		<input type="text" name="p_name">
 		<hr>
@@ -61,9 +62,15 @@
 		<hr>
 		유통기한<p/>
 		<input type="text" name="p_limitdate">
+		<hr>
+		타입<p/>
+		<input type="text" name="p_type">
+		<hr>
+		태그<p/>
+		<input type="text" name="p_tag">
 		</div>
 		</div>
-		<div id="home_button"><a href="/productAddProcess.do"><input type="button" value="등록하기"></a></div><p/>
+		<div id="home_button"><input type="submit" value="등록하기"></div><p/>
 	</form>
     <!-- 푸터 연결 -->
     <jsp:include page="../footer.jsp"></jsp:include>
