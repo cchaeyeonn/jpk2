@@ -130,12 +130,16 @@
 
         </header>
         <!-- Portfolio Section-->
-       <c:import url="/productList.do">
+     <!--   <c:import url="/productList.do">
        		<c:param name="p_name" value="${p_name}"/>
        		<c:param name="p_price" value="${p_price}"/>
        		<c:param name="p_type" value="${p_type}"/>
-       </c:import>
-<%--         <jsp:include page="/WEB-INF/views/product/product_list.jsp"></jsp:include> --%>
+       </c:import> -->
+         <jsp:include page="/WEB-INF/views/product/product_list.jsp">
+            <jsp:param name="p_name" value="${p_name}"/>
+       		<jsp:param name="p_price" value="${p_price}"/>
+       		<jsp:param name="p_type" value="${p_type}"/>
+         </jsp:include>
         
 
 
