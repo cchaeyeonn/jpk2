@@ -129,7 +129,8 @@
 
         </header>
         <!-- Portfolio Section-->
-        <jsp:include page="/WEB-INF/views/product/product_list.jsp"></jsp:include>
+        <%@include file="product/product_list.jsp" %>
+<%--         <jsp:include page="/WEB-INF/views/product/product_list.jsp"></jsp:include> --%>
         
 
 

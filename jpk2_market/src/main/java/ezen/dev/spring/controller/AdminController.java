@@ -27,19 +27,21 @@ public class AdminController {
 		return "admin/admin_home";
 	}
 	
-	@GetMapping("/memberList.do")//get諛⑹떇 �슂泥� 泥섎━
+	@GetMapping("/memberList.do")
 	public String getMemberList(Model model) {
 		
 		List<MemberVo> memberList = adminService.getMemberList();
-		//紐⑤뜽媛앹껜�뿉 �쉶�썝紐⑸줉�쓣 異붽��븿
+
 		model.addAttribute("memberList",memberList);
 		
 		return "admin/admin_memberList";
 	}
-	@GetMapping("/productAdd.do")//get諛⑹떇 �슂泥� 泥섎━
+	
+	@GetMapping("/productAdd.do")
 	public String adminProductAdd() {
 		return "admin/admin_product_add";
 	}
+	
 	@PostMapping("/productAddProcess.do")
 	public String productAddProcess(ProductVo productVo) {
 		

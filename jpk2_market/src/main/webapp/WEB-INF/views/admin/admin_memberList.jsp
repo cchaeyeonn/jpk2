@@ -18,14 +18,15 @@
 		<th>전화번호</th><th>가입일시</th><th>삭제여부</th><th>삭제일</th>
 	</tr>
 	
-	<c:forEach var="memberVo" items="${memberList}">
+<%-- 	<c:forEach var="memberVo" items="${memberList}">
 		<tr>
 			<td>${memberVo.member_idx}</td><td>${memberVo.member_name}</td><td>${memberVo.member_id}</td>
 			<td>${memberVo.member_pw}</td><td>${memberVo.member_grade}</td><td>${memberVo.member_phone}</td>
 			<td>${memberVo.member_regdate}</td><td>${memberVo.member_delyn}</td><td>${memberVo.member_deldate}</td>
 		</tr>
-	</c:forEach>
+	</c:forEach> --%>
 </table>
 	<a href="/spring/admin.do">관리자 메인페이지</a>
+	<a href="/spring/productList.do">상품아 나와라</a>
 </body>
 </html>

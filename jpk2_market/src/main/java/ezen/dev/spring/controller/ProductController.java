@@ -27,8 +27,9 @@ public class ProductController {
 	}
 	
 
-	@GetMapping("/product.do") public String product()
-	{ return "product/product_detail"; }
+	@GetMapping("/product.do") public String product(){
+		return "product/product_detail";
+	}
 
 	
 	@GetMapping("/productList.do")
@@ -39,9 +40,7 @@ public class ProductController {
 		model.addAttribute("productList",productList);
 		
 		return "product/product_list";
+		}
+	
 	}
 
-
-	
-	
-}
