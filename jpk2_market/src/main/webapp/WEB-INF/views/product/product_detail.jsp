@@ -36,6 +36,7 @@
     <!-- 헤더 연결 -->
     <jsp:include page="../header.jsp"></jsp:include> 
 	<form>
+		<input type="hidden" value="${productVo.pidx}">
 		<div id="product">
 		<div id="product_img">상품 사진</div>
 		<div id="product_detail">상품 제목<p/>

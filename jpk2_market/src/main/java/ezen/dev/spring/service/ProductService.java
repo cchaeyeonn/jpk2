@@ -23,5 +23,10 @@ public class ProductService {
 	public List<ProductVo> getProductList() {
 		return productDao.getProductList();
 	}
+
+	public ProductVo getProductInfo(Integer pidx) {
+		
+		return productDao.getProductInfo(pidx);
+	}
 	
 }

@@ -27,7 +27,12 @@ public class ProductController {
 	}
 	
 
-	@GetMapping("/product.do") public String product(){
+	@GetMapping("/product_detail.do")
+	public String product_Detail(Model model, HttpServletRequest request){
+		HttpSession session = request.getSession();
+		Integer pidx = (Integer)session.getAttribute("pidx");
+		ProductVo productVo = productService.getProductInfo(pidx);
+		model.addAttribute("productVo",productVo);
 		return "product/product_detail";
 	}
 
