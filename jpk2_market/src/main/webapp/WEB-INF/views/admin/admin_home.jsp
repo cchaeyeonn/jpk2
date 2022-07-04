@@ -12,7 +12,7 @@
 <hr/>
 
 	<a href="/spring/memberList.do">회원목록보기</a><p/>
-	<a href="/spring/home.do">메인페이지</a>
+	<a href="/spring/index.do">메인페이지</a>
 	<a href="/spring/productAdd.do">상품등록페이지</a>
 
 </body>
