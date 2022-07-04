@@ -24,7 +24,7 @@ public class ProductDao {
 	public List<ProductVo> getProductList() {
 		return sqlSession.selectList(MAPPER+".getProductList");
 	}
-	public ProductVo getProductInfo(Integer pidx) {
+	public ProductVo getProductInfo(String pidx) {
 
 		return sqlSession.selectOne(MAPPER+".getProductInfo", pidx);
 	}

@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import ezen.dev.spring.service.AdminService;
 import ezen.dev.spring.service.ProductService;
@@ -28,11 +29,15 @@ public class ProductController {
 	
 
 	@GetMapping("/product_detail.do")
-	public String product_Detail(Model model, HttpServletRequest request){
-		HttpSession session = request.getSession();
-		Integer pidx = (Integer)session.getAttribute("pidx");
+	public String product_Detail(@RequestParam String pidx, Model model, HttpServletRequest request){
+		
+		
+//		String pidx = (String)session.getAttribute("productVo.pidx");
+
 		ProductVo productVo = productService.getProductInfo(pidx);
+		
 		model.addAttribute("productVo",productVo);
+		
 		return "product/product_detail";
 	}
 

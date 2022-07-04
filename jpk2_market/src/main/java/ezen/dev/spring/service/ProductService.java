@@ -24,7 +24,7 @@ public class ProductService {
 		return productDao.getProductList();
 	}
 
-	public ProductVo getProductInfo(Integer pidx) {
+	public ProductVo getProductInfo(String pidx) {
 		
 		return productDao.getProductInfo(pidx);
 	}

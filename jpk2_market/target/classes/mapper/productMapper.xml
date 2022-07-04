@@ -4,7 +4,7 @@
 
 <mapper namespace = "ezen.dev.spring.product">
 
-	<select id="getProductInfo" parameterType="Integer" resultType="productVo">
+	<select id="getProductInfo" parameterType="String" resultType="productVo">
 		select * from fm_product where pidx=#{pidx}
 	</select>
 	<select id="getProductList" resultType="productVo">
