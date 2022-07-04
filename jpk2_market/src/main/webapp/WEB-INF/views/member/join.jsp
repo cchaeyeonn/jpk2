@@ -112,12 +112,12 @@
          </tr>
          
          <tr>
-            <td></td>
+            <td>주소</td>
             <td><input type="text" id="postcode" class="" name="postcode" placeholder="우편번호" disabled></td>
             <td><input type="button" onclick="execDaumPostcode()" class="btn btn-outline-success" value="우편번호 찾기"></td>
          </tr>
          <tr>
-            <td>주소</td>
+            <td></td>
             <td><input type="text" id="member_addr_1" class="form-control" name="member_addr1" placeholder="도로명주소"></td>
             <td><input type="text" id="member_addr_2" class="form-control" name="member_addr2" placeholder="상세주소"></td>
          </tr>
