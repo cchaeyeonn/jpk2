@@ -108,7 +108,6 @@ public class AdminController {
 			model.addAttribute("p_system_filename",p_system_filename);
 			viewPage = "admin/admin_home";
 		}
-		System.out.println("midx"+midx_mp);
 		return viewPage;
 	}
 	
