@@ -68,7 +68,7 @@ public class AdminController {
 		String upload_dir = "resources/product_image/";
 		
 		String realPath = request.getServletContext().getRealPath(upload_dir);
-		
+		System.out.println("이클립스로 저장된 파일의 실제 경로: " + realPath);
 		String fullPath = realPath+p_system_filename;
 		uploadFile.transferTo(new File(fullPath));
 		
