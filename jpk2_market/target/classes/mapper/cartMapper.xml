@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace = "ezen.dev.spring.cart">
+
+	
+	
+	<select id="getCartInfo" parameterType="string" resultType="cartVo">
+		select * from fm_product_cart a inner join fm_member b on a.midx_mc = b.midx where b.member_id = #{member_id}
+	</select>
+
+	
+
+
+</mapper>

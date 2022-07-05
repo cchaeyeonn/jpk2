@@ -1,5 +1,6 @@
 eclipse.preferences.version=1
 encoding//src/main/java/ezen/dev/spring/controller/AdminController.java=UTF-8
+encoding//src/main/java/ezen/dev/spring/controller/CartController.java=UTF-8
 encoding//src/main/java/ezen/dev/spring/controller/MemberController.java=UTF-8
 encoding//src/main/java/ezen/dev/spring/controller/ProductController.java=UTF-8
 encoding//src/main/java/ezen/dev/spring/dao/AdminDao.java=UTF-8

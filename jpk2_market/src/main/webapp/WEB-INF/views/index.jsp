@@ -129,7 +129,7 @@
 			</ul>
 
         </header>
-        
+        <div><a href="/spring/cart_main.do?member_id=${member_id}"><input type="button" value="장바구니"></a></div><p/>
         <div>
 			  <c:import url="/productList.do">
 			             <c:param name="p_name" value="${p_name}"/>
