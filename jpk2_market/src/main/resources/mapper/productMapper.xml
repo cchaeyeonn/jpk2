@@ -8,7 +8,7 @@
 		select * from fm_product where pidx=#{pidx}
 	</select>
 	<select id="getProductList" resultType="productVo">
-		select * from fm_product
+		select * from fm_product where p_delyn='N'
 	</select>
 
 </mapper>
