@@ -31,7 +31,7 @@
 			}
 </style>
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/modal.css">
-<script src="${pageContext.request.contextPath}/resources/js/modal.js"></script>
+
 
 </head>
 <body>
@@ -71,7 +71,10 @@
 		<input type="button" id="btn-modal" value="장바구니"></div><p/>
 		<!--<a href="/spring/cart_insert.do"><input type="button" value="장바구니"></a></div><p/> -->
 		
-		
+	<div id="container">
+        <h2>Lorem Ipsum</h2>
+        <div id="lorem-ipsum"></div>
+    </div>
     <div id="modal" class="modal-overlay">
         <div class="modal-window">
             <div class="title">
@@ -92,4 +95,5 @@
     <!-- 푸터 연결 -->
     <jsp:include page="../footer.jsp"></jsp:include>
 </body>
+<script src="${pageContext.request.contextPath}/resources/js/modal.js"></script>
 </html>
