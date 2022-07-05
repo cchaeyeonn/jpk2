@@ -5,10 +5,28 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>회원목록</title>
+
+<style>
+	#ad_memberlist_inner{
+		min-height:1040px;
+		padding-top:230px;
+		text-align:center;
+}
+
+	#adl_button{
+	padding: 20px;
+    border-radius: 34px;
+    margin: 20px;
+	}
+
+</style>
+<title>회원 목록</title>
 </head>
 <body>
+<!-- 헤더 연결 -->
+<jsp:include page="../header.jsp"></jsp:include> 
 
+<div id="ad_memberlist_inner">
 <h3>회원목록</h3>
 <hr/>
 
@@ -26,7 +44,17 @@
 		</tr>
 	</c:forEach> --%>
 </table>
-	<a href="/spring/admin.do">관리자 메인페이지</a>
-	<a href="/spring/productList.do">상품아 나와라</a>
+
+<input id="adl_button" type="button" class="btn btn-outline-success" value="관리자 메인페이지" onclick="location.href='/spring/admin.do'"><br>
+<input id="adl_button" type="button" class="btn btn-outline-success" value="상품아 나와라" onclick="location.href='/spring/productList.do'"><br>
+
+<!-- 	<a href="/spring/admin.do">관리자 메인페이지</a>
+	<a href="/spring/productList.do">상품아 나와라</a> -->
+	
+</div>
+
+<!-- 푸터 연결 -->
+<jsp:include page="../footer.jsp"></jsp:include>
+
 </body>
 </html>
