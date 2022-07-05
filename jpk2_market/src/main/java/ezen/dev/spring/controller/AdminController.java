@@ -66,7 +66,7 @@ public class AdminController {
 		String extension = p_filename.substring(dot_idx+1);
 		String fileName2 = fileName1 + new SimpleDateFormat("_yyyyMMdd_hhmmss").format(System.currentTimeMillis());
 		String p_system_filename = fileName2+"."+extension;
-		String upload_dir = "resources/product_image/";
+		String upload_dir = "/resources/product_image/";
 		String realPath = request.getServletContext().getRealPath(upload_dir);
 		String fullPath = realPath+p_system_filename;
 		uploadFile.transferTo(new File(fullPath));

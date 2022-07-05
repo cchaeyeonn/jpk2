@@ -37,13 +37,13 @@
     <jsp:include page="../header.jsp"></jsp:include> 
 	<form>
 		<div id="product">
-		<div id="product_img">상품 사진</div>
+		<div id="product_img">상품 사진<p/>
+		<img src="${pageContext.request.contextPath}/resources/product_image/${p_filename}"></div>
 		<div id="product_detail">상품 제목<p/>
 		${productVo.p_name}
 		<hr>
 		상품 가격<p/>
 		${productVo.p_price}<p/>
-		<a href="/spring/"><input type="button" value="장바구니"></a>
 		<hr>
 		상품 판매 단위<p/>
 		${productVo.p_unit}
@@ -64,7 +64,8 @@
 		${productVo.p_limitdate}
 		</div>
 		</div>
-		<div id="home_button"><a href="/spring/"><input type="button" value="메인으로"></a></div><p/>
+		<div id="home_button"><a href="/spring/"><input type="button" value="메인으로"></a>
+		<a href="/spring/cart_insert.do"><input type="button" value="장바구니"></a></div><p/>
 	</form>
     <!-- 푸터 연결 -->
     <jsp:include page="../footer.jsp"></jsp:include>

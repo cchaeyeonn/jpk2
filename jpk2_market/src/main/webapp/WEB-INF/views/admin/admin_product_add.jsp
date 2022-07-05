@@ -68,7 +68,6 @@
 		<hr>
 		태그<p/>
 		<input type="text" name="p_tag">
-		<input type="text" name="midx" value="<%session.getAttribute("midx"); %>">
 		</div>
 		</div>
 		<div id="home_button"><input type="submit" value="등록하기"></div><p/>
