@@ -41,7 +41,7 @@
 	<form>
 		<div id="product">
 		<div id="product_img">상품 사진<p/>
-		<img src="${pageContext.request.contextPath}/resources/product_image/${productVo.p_filename}"></div>
+		<img src="${pageContext.request.contextPath}/resources/product_image/${productVo.p_system_filename}"></div>
 		<div id="product_detail">상품 제목<p/>
 		${productVo.p_name}
 		<hr>

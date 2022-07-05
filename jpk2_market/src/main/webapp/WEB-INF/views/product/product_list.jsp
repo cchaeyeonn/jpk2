@@ -29,7 +29,7 @@
                         <div class="portfolio-item mx-auto" data-bs-toggle="modal">
                             <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                                 <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i>
-                                <img class="img-fluid" src="${pageContext.request.contextPath}/resources/product_image/${productVo.p_filename}" alt="..."  />
+                                <img class="img-fluid" src="${pageContext.request.contextPath}/resources/product_image/${productVo.p_system_filename}" alt="..."  />
                                 ${productVo.p_name}
                           		${productVo.p_price}
                            		${productVo.p_type}
