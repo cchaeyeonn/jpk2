@@ -30,6 +30,7 @@
 			float:center;
 			}
 </style>
+
 </head>
 <body>
     <!-- 헤더 연결 -->
