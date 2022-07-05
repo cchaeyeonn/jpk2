@@ -28,10 +28,11 @@ public class AdminDao {
 		return sqlSession.selectList(MAPPER+".getMemberList");
 	}
 
-	public int productAdd(ProductVo productVo) {
+	public int addProduct(ProductVo productVo) {
 		
-		return sqlSession.insert(MAPPER+".productAdd", productVo);
+		return sqlSession.insert(MAPPER+".addProduct", productVo);
 		
 	}
+
 
 }

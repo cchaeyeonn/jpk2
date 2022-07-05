@@ -14,6 +14,8 @@ public class ProductVo {
 	private String p_delyn;
 	private String p_type;
 	private String p_tag;
+	private String p_system_filename;
+	private int midx_mp;
 	
 	public int getPidx() {
 		return pidx;
@@ -93,5 +95,16 @@ public class ProductVo {
 	public void setP_tag(String p_tag) {
 		this.p_tag = p_tag;
 	}
-
+	public String getP_system_filename() {
+		return p_system_filename;
+	}
+	public void setP_system_filename(String p_system_filename) {
+		this.p_system_filename = p_system_filename;
+	}
+	public int getMidx_mp() {
+		return midx_mp;
+	}
+	public void setMidx_mp(int midx_mp) {
+		this.midx_mp = midx_mp;
+	}
 }

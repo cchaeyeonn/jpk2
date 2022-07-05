@@ -83,12 +83,14 @@ public class MemberController {
 		HashMap<String, Long> resultMap=memberService.login(loginInfo);
 		long member_auth = resultMap.get("member_auth");//占쎌돳占쎌뜚占쎌뵥筌앾옙
 		long member_grade = resultMap.get("member_grade");//占쎌돳占쎌뜚占쎈쾻疫뀐옙
+		long midx = resultMap.get("midx");
 		
 		String viewPage = null;
 		if(member_auth==1) {
 			HttpSession session = request.getSession();
 			session.setAttribute("member_id", member_id);//占쎌돳占쎌뜚占쎌뵥筌앾옙 �빊遺쏙옙	
 			session.setAttribute("member_grade", member_grade);//占쎌돳占쎌뜚占쎈쾻疫뀐옙 �빊遺쏙옙
+			session.setAttribute("midx", midx);
 			viewPage = "redirect:/index.do";
 		
 		}else{

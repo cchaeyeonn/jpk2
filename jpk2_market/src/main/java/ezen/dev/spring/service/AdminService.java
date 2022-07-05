@@ -23,12 +23,8 @@ public class AdminService {
 		return adminDao.getMemberList();
 	}
 
-	public int productAddProcess(ProductVo productVo) {
-		int result=0;
-		
-		result = adminDao.productAdd(productVo);
-		
-		return result;
+	public int addProduct(ProductVo productVo) {
+		return adminDao.addProduct(productVo);
 	}
 	
 }

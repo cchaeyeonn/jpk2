@@ -14,7 +14,7 @@
 	</select> -->
 	
 	<select id="loginMember" parameterType="map" resultType="map">
-		select count(*) as member_auth, member_grade from fm_member where member_id=#{member_id} and member_pw=#{member_pw}
+		select count(*) as member_auth, member_grade, midx from fm_member where member_id=#{member_id} and member_pw=#{member_pw};
 	</select>
 	
 	<select id="getMemberInfo" parameterType="string" resultType="memberVo">

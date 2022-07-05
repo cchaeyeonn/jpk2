@@ -35,10 +35,10 @@
 
     <!-- 헤더 연결 -->
     <jsp:include page="../header.jsp"></jsp:include> 
-	<form name="productAddForm" action="/spring/productAddProcess.do" method="post">
+	<form name="productAddForm" action="/spring/addProductProcess.do" method="post" enctype="multipart/form-data">
 		<div id="product">
 		<div id="product_img">상품 사진
-		<input type="text" name="p_filename"></div>
+		<input type="file" name="p_filename"></div>
 		<div id="product_detail">상품 제목<p/>
 		<input type="text" name="p_name">
 		<hr>
@@ -60,7 +60,7 @@
 		알레르기 정보<p/>
 		<input type="text" name="p_allergy">
 		<hr>
-		유통기한<p/>
+		유통기한<p/>  
 		<input type="text" name="p_limitdate">
 		<hr>
 		타입<p/>
@@ -68,6 +68,7 @@
 		<hr>
 		태그<p/>
 		<input type="text" name="p_tag">
+		<input type="text" name="midx" value="<%session.getAttribute("midx"); %>">
 		</div>
 		</div>
 		<div id="home_button"><input type="submit" value="등록하기"></div><p/>
