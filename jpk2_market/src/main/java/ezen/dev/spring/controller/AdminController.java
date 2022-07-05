@@ -5,7 +5,6 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.List;
 
-import javax.security.auth.message.callback.PrivateKeyCallback.Request;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -66,10 +65,13 @@ public class AdminController {
 		String extension = p_filename.substring(dot_idx+1);
 		String fileName2 = fileName1 + new SimpleDateFormat("_yyyyMMdd_hhmmss").format(System.currentTimeMillis());
 		String p_system_filename = fileName2+"."+extension;
-		String upload_dir = "/resources/product_image/";
+		String upload_dir = "resources/product_image/";
+		
 		String realPath = request.getServletContext().getRealPath(upload_dir);
+		
 		String fullPath = realPath+p_system_filename;
 		uploadFile.transferTo(new File(fullPath));
+		
 		int result=0;
 		
 		midx_mp=Integer.parseInt(String.valueOf(session.getAttribute("midx")));
