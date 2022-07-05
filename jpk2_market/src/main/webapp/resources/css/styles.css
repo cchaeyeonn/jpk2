@@ -11381,28 +11381,29 @@ html {
   width:100%;
 }
 #innerNav_1 a{
-	 text-decoration:none;
-	 color:#333333;
+    text-decoration:none;
+    color:#333333;
+    width: fit-content;
+    
 }
 
 #innerNav_1 a:hover{
-	color:#00754a;
-	border-bottom: 1px solid #00754a;
+   color:#00754a;
+   border-bottom: 1px solid #00754a;
 }
 #innerNav_1 li{
-	list-style:none;
-	margin-right:50px;
-	}
-	
+   list-style:none;
+   /* margin-right:50px; */
+   }
+   
 #innerNav_1 ul{
-	float:left;
-	height:100%;
-	width:100%;
-	/* line-height:50px; 
-	text-align:center;*/
-	margin-left:270px;
+   float:left;
+   height:100%;
+   width:100%;
+   /* line-height:50px; 
+   text-align:center;*/
+   margin-left:270px;
 }
-
 	
 #mainNav .navbar-brand {
   color: #00754a;

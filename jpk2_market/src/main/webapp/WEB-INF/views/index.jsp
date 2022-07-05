@@ -9,7 +9,7 @@
         <meta name="author" content="" />
         <title>Rocket Kurly</title>
         <!-- jQuery library (served from Google) -->
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="resources/assets/favicon.ico" />
@@ -24,75 +24,75 @@
         
         <!-- 이미지 슬라이드 -->
         <link href="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.min.css" rel="stylesheet" />
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.min.js"></script>
 
-		<!-- 이미지 슬라이드 스크립트-->
-		<script>
-		$(document).ready(function(){
-			  $('.bxslider').bxSlider();
-			});
-		</script>
-		
-		<style>
-		.bx-wrapper {
-			position: relative;
-			margin-bottom: 60px;
-			padding: 0;
-			-ms-touch-action: pan-y;
-			touch-action: pan-y;
-			-moz-box-shadow: 0 0 5px #ffffff !important;
-			-webkit-box-shadow: 0 0 5px #ffffff !important;
-			box-shadow: 0 0 5px #ffffff !important;
-			border: 9px solid #fff !important;
-			background: #fff;
-			}
-	
-	
-	
-	
-		#topButton {
-		position: fixed; 
-		right: 2%; 
-		bottom: 50px; 
-		display: none; 
-		z-index: 999;
-		}
+      <!-- 이미지 슬라이드 스크립트-->
+      <script>
+      $(document).ready(function(){
+           $('.bxslider').bxSlider();
+         });
+      </script>
+      
+      <style>
+      .bx-wrapper {
+         position: relative;
+         margin-bottom: 60px;
+         padding: 0;
+         -ms-touch-action: pan-y;
+         touch-action: pan-y;
+         -moz-box-shadow: 0 0 5px #ffffff !important;
+         -webkit-box-shadow: 0 0 5px #ffffff !important;
+         box-shadow: 0 0 5px #ffffff !important;
+         border: 9px solid #fff !important;
+         background: #fff;
+         }
+   
+   
+   
+   
+      #topButton {
+      position: fixed; 
+      right: 2%; 
+      bottom: 50px; 
+      display: none; 
+      z-index: 999;
+      }
 
-		</style>
-		
-		
-		<!-- topbutton 스크립트 시작 -->
-		<script>
-		
-		$(window).scroll(function() {
-		    // top button controll
-		    if ($(this).scrollTop() > 500) {
-		        $('#topButton').fadeIn();
-		    } else {
-		        $('#topButton').fadeOut();
-		    }
-		});
-		
-		
-		$(document).ready(function() {
-			  // Top Button click event handler
-			  $("#topButtonImg").click(function() {
-			    $('html, body').animate({scrollTop:0}, '300');
-			  });
-			});
+      </style>
+      
+      
+      <!-- topbutton 스크립트 시작 -->
+      <script>
+      
+      $(window).scroll(function() {
+          // top button controll
+          if ($(this).scrollTop() > 500) {
+              $('#topButton').fadeIn();
+          } else {
+              $('#topButton').fadeOut();
+          }
+      });
+      
+      
+      $(document).ready(function() {
+           // Top Button click event handler
+           $("#topButtonImg").click(function() {
+             $('html, body').animate({scrollTop:0}, '300');
+           });
+         });
 
-		
-		</script>
-		<!-- topbutton 스크립트 끝 -->
-		
+      
+      </script>
+      <!-- topbutton 스크립트 끝 -->
+      
     </head>
     
     <body id="page-top">
     
-    	<!-- 헤더 연결 -->
-    	<jsp:include page="header.jsp"></jsp:include> 
-    	
-    	
+       <!-- 헤더 연결 -->
+       <jsp:include page="header.jsp"></jsp:include> 
+       
+       
 
         <!-- 누르면 상단으로 가는 top버튼 시작 -->
         <div id="topButton" style="cursor: pointer"><img src="resources//img/topbutton.png" id="topButtonImg"></div>
@@ -101,7 +101,7 @@
         <!-- Masthead-->
         <header class="masthead bg-primary text-white text-center">
             <div class="container d-flex align-items-center flex-column">
-            	<!-- <img class="k_nava" src="resources/img/k_tpk.PNG" alt="..."  style="width: 1150px;  height: 380px;"/> -->
+               <!-- <img class="k_nava" src="resources/img/k_tpk.PNG" alt="..."  style="width: 1150px;  height: 380px;"/> -->
             
                 <!-- Masthead Avatar Image-->
                 <!-- <img class="" src="resources/assets/img/avataaars.svg" alt="..." /> -->
@@ -122,20 +122,20 @@
             
             <!-- 이미지 슬라이드  -->
             <ul class="bxslider">
-				  <li><img src="resources/img/main_1.png" /></li>
-				  <li><img src="resources/img/main_2.png" /></li>
-				  <li><img src="resources/img/main_3.png" /></li>
-				<!--   <li><img src="/images/pic4.jpg" /></li> -->
-			</ul>
+              <li><img src="resources/img/main_1.png" /></li>
+              <li><img src="resources/img/main_2.png" /></li>
+              <li><img src="resources/img/main_3.png" /></li>
+            <!--   <li><img src="/images/pic4.jpg" /></li> -->
+         </ul>
 
         </header>
-        <div><a href="/spring/cart_main.do?member_id=${member_id}"><input type="button" value="장바구니"></a></div><p/>
+       
         <div>
-			  <c:import url="/productList.do">
-			             <c:param name="p_name" value="${p_name}"/>
-			             <c:param name="p_price" value="${p_price}"/>
-			             <c:param name="p_type" value="${p_type}"/>
-			       </c:import> 
+           <c:import url="/productList.do">
+                      <c:param name="p_name" value="${p_name}"/>
+                      <c:param name="p_price" value="${p_price}"/>
+                      <c:param name="p_type" value="${p_type}"/>
+                </c:import> 
         </div>
         
 
