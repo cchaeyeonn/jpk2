@@ -30,6 +30,9 @@
 			float:center;
 			}
 </style>
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/modal.css">
+<script src="${pageContext.request.contextPath}/resources/js/modal.js"></script>
+
 </head>
 <body>
 
@@ -65,7 +68,26 @@
 		</div>
 		</div>
 		<div id="home_button"><a href="/spring/"><input type="button" value="메인으로"></a>
-		<a href="/spring/cart_insert.do"><input type="button" value="장바구니"></a></div><p/>
+		<input type="button" id="btn-modal" value="장바구니"></div><p/>
+		<!--<a href="/spring/cart_insert.do"><input type="button" value="장바구니"></a></div><p/> -->
+		
+		
+    <div id="modal" class="modal-overlay">
+        <div class="modal-window">
+            <div class="title">
+                <h2>모달</h2>
+            </div>
+            <div class="close-area">X</div>
+            <div class="content">
+                <p>가나다라마바사 아자차카타파하</p>
+                <p>가나다라마바사 아자차카타파하</p>
+                <p>가나다라마바사 아자차카타파하</p>
+                <p>가나다라마바사 아자차카타파하</p>
+                
+            </div>
+        </div>
+    </div>
+
 	</form>
     <!-- 푸터 연결 -->
     <jsp:include page="../footer.jsp"></jsp:include>
