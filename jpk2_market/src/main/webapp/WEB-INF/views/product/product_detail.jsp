@@ -31,7 +31,7 @@
 			}
 </style>
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/modal.css">
-<script src="${pageContext.request.contextPath}/resources/js/modal.js"></script>
+
 
 </head>
 <body>
@@ -95,4 +95,5 @@
     <!-- 푸터 연결 -->
     <jsp:include page="../footer.jsp"></jsp:include>
 </body>
+<script src="${pageContext.request.contextPath}/resources/js/modal.js"></script>
 </html>
