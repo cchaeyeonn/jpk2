@@ -11389,7 +11389,7 @@ html {
 
 #innerNav_1 a:hover{
    color:#00754a;
-   border-bottom: 1px solid #00754a;
+   /* border-bottom: 1px solid #00754a; */
 }
 #innerNav_1 li{
    list-style:none;
