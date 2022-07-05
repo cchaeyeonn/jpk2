@@ -7,6 +7,9 @@
 <title>장바구니</title>
 <style>
 
+	#cart_inner{
+		min-height: 1040px;
+	}
 	#product{
 		padding-left:10%;
 		padding-right:10%; 
@@ -35,6 +38,13 @@
 <body>
     <!-- 헤더 연결 -->
     <jsp:include page="../header.jsp"></jsp:include> 	
+    
+    <div id="cart_inner">
+    
+    </div>
+    
+    <!-- 푸터 연결 -->
+    <jsp:include page="../footer.jsp"></jsp:include>
 
 </body>
 </html>
