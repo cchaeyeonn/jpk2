@@ -71,10 +71,7 @@
 		<input type="button" id="btn-modal" value="장바구니"></div><p/>
 		<!--<a href="/spring/cart_insert.do"><input type="button" value="장바구니"></a></div><p/> -->
 		
-	<div id="container">
-        <h2>Lorem Ipsum</h2>
-        <div id="lorem-ipsum"></div>
-    </div>
+
     <div id="modal" class="modal-overlay">
         <div class="modal-window">
             <div class="title">
