@@ -11414,6 +11414,7 @@ html {
    /* line-height:50px; 
    text-align:center;*/
    margin-left:270px;
+   margin-top:5px;
 }
 	
 #mainNav .navbar-brand {
@@ -11504,7 +11505,7 @@ html {
 
 @media (min-width: 992px) {
   .masthead {
-    padding-top: calc(6rem + 104px);
+    /* padding-top: calc(6rem + 104px); */
     padding-bottom: 6rem;
   }
   .masthead .masthead-heading {
