@@ -58,7 +58,7 @@
     <!-- 금액 -->
     ${cartVo.p_price}원
     <!-- 삭제버튼 -->
-    <button id="btn_delete"></button>
+    <button id="btn_delete">X</button>
     <hr>
     </c:forEach>
     </div>
