@@ -36,8 +36,17 @@
 			text-align:center; 
 			float:center;
 			}
+	#target{
+	border-collapse : collapse;
+	width:100%;
+	height:100%;
+    
+	}	
+	
 </style>
-
+<!-- jquery 스크립트 -->
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script src="${pageContext.request.contextPath}/resources/js/cart.js "></script>
 </head>
 <body>
     <!-- 헤더 연결 -->
@@ -45,23 +54,41 @@
     <form >
     <div id="cart_inner">
     <h2 style="text-align:center;"> 장바구니</h2>
-    <input type="checkbox" id="select_btn">전체 선택() ㅣ 선택 삭제 <hr>
-    
+    <input type="checkbox" id="chk_all">전체 선택() ㅣ 선택 삭제 <hr>
+    <table id="target">
     <c:forEach items="${cartList}" var="cartVo">
-    <input type="checkbox" id="target_btn">
+    <tr>
+    <td>
+    <input type="checkbox" class="del-chk">
+    </td>
+    <td>
     <!-- 사진 -->
     <img class="img-fluid" src="${pageContext.request.contextPath}/resources/product_image/ ${cartVo.p_system_filename}" alt="..."  />
+    </td>
+    <td>
     <!-- 상품명 -->
     ${cartVo.p_name}
+    </td>
+    <td>
     <!-- 수량 버튼 -->
-    <button id="btn_minus">-</button><input type="number">number<button id="btn_plus">+</button>
+    <button id="btn_minus" >-</button>
+    <input type="text"  id="pop_out" value="0" readonly="readonly" style="text-align:center;"/>
+    <button id="btn_plus"  >+</button>
+    </td>
+    <td>
     <!-- 금액 -->
     ${cartVo.p_price}원
+    </td>
+    <td>
     <!-- 삭제버튼 -->
     <button id="btn_delete">X</button>
-    <hr>
+    </td>
+    </tr>
     </c:forEach>
+    </table>
     </div>
+    
+   
     </form>
     <!-- 푸터 연결 -->
     <jsp:include page="../footer.jsp"></jsp:include>
