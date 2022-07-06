@@ -29,6 +29,9 @@
 			text-align:center; 
 			float:center;
 			}
+.modal-background{
+	z-index:3;
+}
 			
 /* 스크롤 막기 코드1 */
 html, body {
@@ -116,7 +119,7 @@ background-color: #15967d;
 		<!-- <input type="button" id="btn-modal" value="장바구니"> -->
 		
 <!-- 모달 부분 시작 -->
-		<a class="open button">장바구니</a></div><p/>
+		<a class="open button" id="homebutton_1">장바구니</a></div><p/>
 		<!--<a href="/spring/cart_insert.do"><input type="button" value="장바구니"></a></div><p/> -->
 		
 
