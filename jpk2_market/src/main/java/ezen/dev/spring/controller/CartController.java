@@ -38,8 +38,8 @@ public class CartController {
 		HttpSession session = request.getSession();
 		Integer midx =Integer.parseInt(String.valueOf(session.getAttribute("midx")));
 		
-		List<CartVo> cartList = cartService.getCartList();		
-		model.addAttribute("cartVo", cartList);
+		List<CartVo> cartList = cartService.getCartList(midx);		
+		model.addAttribute("cartList", cartList);
 		
 		return "cart/cart_main";
 	}

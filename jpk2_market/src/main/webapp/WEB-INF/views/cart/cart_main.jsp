@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>    
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
 <!DOCTYPE html>
 <html>
 <head>
@@ -46,6 +46,7 @@
     <div id="cart_inner">
     <h2 style="text-align:center;"> 장바구니</h2>
     <input type="checkbox" id="select_btn">전체 선택() ㅣ 선택 삭제 <hr>
+    
     <c:forEach items="${cartList}" var="cartVo">
     <input type="checkbox" id="target_btn">
     <!-- 사진 -->
@@ -54,7 +55,10 @@
     ${cartVo.p_name}
     <!-- 수량 버튼 -->
     <button id="btn_minus">-</button><input type="number">number<button id="btn_plus">+</button>
-    
+    <!-- 금액 -->
+    ${cartVo.p_price}원
+    <!-- 삭제버튼 -->
+    <button id="btn_delete"></button>
     <hr>
     </c:forEach>
     </div>

@@ -27,8 +27,8 @@ public class CartDao {
 	
 	
 
-	public List<CartVo> getCartList() {
-		return sqlSession.selectList(MAPPER+".getCartList");
+	public List<CartVo> getCartList(Integer midx) {
+		return sqlSession.selectList(MAPPER+".getCartList",midx);
 	}
 
 	

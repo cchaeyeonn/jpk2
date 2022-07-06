@@ -24,8 +24,8 @@ public class CartService {
 	
 	
 
-	public List<CartVo> getCartList() {
-		return cartDao.getCartList();
+	public List<CartVo> getCartList(Integer midx) {
+		return cartDao.getCartList(midx);
 	}
 
 }
