@@ -29,52 +29,7 @@
 			text-align:center; 
 			float:center;
 			}
-.modal-background{
-	z-index:3;
-}
-			
-/* 스크롤 막기 코드1 */
-html, body {
-  overflow: auto;
-  height: 100%;
-}
 
-.button {
-  background-color: #15967d;
-  color: white;
-  padding: 10px;
-  cursor: pointer;
-}
-
-#homebutton_1{
-background-color: #15967d;
-  color: white;
-  padding: 10px;
-  cursor: pointer;
-}
-
-/* 스크롤 막기 코드2 */
-.modal-background {
-  display: none;
-  overflow: hidden;
-  justify-content: center;
-  align-items: center;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, .6);
-}
-
-/* 스크롤 막기 코드3 */
-.modal-content {
-  overflow: auto;
-  width: 50%;
-  height: 400px;
-  padding: 2em;
-  background-color: #fff;
-}
 </style>
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/modal.css">
 
@@ -119,6 +74,7 @@ background-color: #15967d;
 		<!-- <input type="button" id="btn-modal" value="장바구니"> -->
 		
 <!-- 모달 부분 시작 -->
+
 		<a class="open button" id="homebutton_1">장바구니</a></div><p/>
 		<!--<a href="/spring/cart_insert.do"><input type="button" value="장바구니"></a></div><p/> -->
 		
@@ -128,12 +84,14 @@ background-color: #15967d;
 </div> -->
 <div class="modal-background">
   <div class="modal-content">
+  <div class="close area" style="width:10px; margin-left:367px;">X</div>
     <h3>장바구니 제목</h3>
     	내용
-    <a class="close button">close modal</a>
+    <!-- <a class="close button">close modal</a> -->
   </div>
 </div>
 <!-- 모달 부분 끝 -->
+
 
 
 <!--     <div id="modal" class="modal-overlay">

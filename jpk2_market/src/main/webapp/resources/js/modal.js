@@ -30,16 +30,17 @@ modal.addEventListener("click", e => {
 window.addEventListener("keyup", e => {
     if(isModalOn() && e.key === "Escape") {
         modalOff()
-    }
+    }    
+})*/
 
-    
-})
 
-*/
+
 
 document.querySelectorAll(".open").forEach(element => element.addEventListener("click", () => {
-            document.querySelector(".modal-background").style.display = "flex";
+	document.querySelector(".modal-background").style.display = "flex";
         }));
-        document.querySelectorAll(".close").forEach(element => element.addEventListener("click", () => {
-            document.querySelector(".modal-background").style.display = "none";
+document.querySelectorAll(".close").forEach(element => element.addEventListener("click", () => {
+	document.querySelector(".modal-background").style.display = "none";
         }));
+
+
