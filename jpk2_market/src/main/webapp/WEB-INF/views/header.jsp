@@ -103,7 +103,7 @@ a{text-decoration:none; color:#333;}
                <li style="float: left;"><a href="#">베스트</a></li>
                <li style="float: left;"><a href="#">알뜰쇼핑</a></li>
                <li style="float: left;"><a href="#">특가/혜택</a></li>
-            <li><a href="/spring/cart_main.do?member_id=${member_id}" style="margin-left: 710px;"><input type="image" value="장바구니" src="resources/img/cart.png" width=30px; ></a></li>
+            <li><a href="/spring/cart_main.do?midx=${midx}" style="margin-left: 710px;"><input type="image" value="장바구니" src="resources/img/cart.png" width=30px; ></a></li>
            </ul>
                  
           </div>
