@@ -19,7 +19,6 @@
   --bs-orange: #fd7e14;
   --bs-yellow: #ffc107;
   --bs-green: #198754;
-  --bs-teal: #1abc9c;
   --bs-cyan: #0dcaf0;
   --bs-white: #fff;
   --bs-gray: #6c757d;
@@ -5533,7 +5532,9 @@ textarea.form-control-lg {
   position: relative;
   display: flex;
   flex-direction: column;
-  width: 100%;
+  /* width: 100%; */
+  width:445px;
+  height:330px;
   pointer-events: auto;
   background-color: #fff;
   background-clip: padding-box;

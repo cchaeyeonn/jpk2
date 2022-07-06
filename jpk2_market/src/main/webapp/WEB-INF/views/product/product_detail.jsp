@@ -29,6 +29,49 @@
 			text-align:center; 
 			float:center;
 			}
+			
+/* 스크롤 막기 코드1 */
+html, body {
+  overflow: auto;
+  height: 100%;
+}
+
+.button {
+  background-color: #15967d;
+  color: white;
+  padding: 10px;
+  cursor: pointer;
+}
+
+#homebutton_1{
+background-color: #15967d;
+  color: white;
+  padding: 10px;
+  cursor: pointer;
+}
+
+/* 스크롤 막기 코드2 */
+.modal-background {
+  display: none;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, .6);
+}
+
+/* 스크롤 막기 코드3 */
+.modal-content {
+  overflow: auto;
+  width: 50%;
+  height: 400px;
+  padding: 2em;
+  background-color: #fff;
+}
 </style>
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/modal.css">
 
@@ -67,12 +110,30 @@
 		${productVo.p_limitdate}
 		</div>
 		</div>
-		<div id="home_button"><a href="/spring/"><input type="button" value="메인으로"></a>
-		<input type="button" id="btn-modal" value="장바구니"></div><p/>
+		<div id="home_button">
+		<a href="/spring/" id="homebutton_1">메인</a>
+		<!-- <input type="button" id="homebutton_1" value="메인으로"></a> -->
+		<!-- <input type="button" id="btn-modal" value="장바구니"> -->
+		
+<!-- 모달 부분 시작 -->
+		<a class="open button">장바구니</a></div><p/>
 		<!--<a href="/spring/cart_insert.do"><input type="button" value="장바구니"></a></div><p/> -->
 		
 
-    <div id="modal" class="modal-overlay">
+<!-- <div class="content">
+	<a class="open button">장바구니</a>
+</div> -->
+<div class="modal-background">
+  <div class="modal-content">
+    <h3>장바구니 제목</h3>
+    	내용
+    <a class="close button">close modal</a>
+  </div>
+</div>
+<!-- 모달 부분 끝 -->
+
+
+<!--     <div id="modal" class="modal-overlay">
         <div class="modal-window">
             <div class="title">
                 <h2>모달</h2>
@@ -86,7 +147,10 @@
                 
             </div>
         </div>
-    </div>
+    </div> -->
+    
+   
+
 
 	</form>
     <!-- 푸터 연결 -->
