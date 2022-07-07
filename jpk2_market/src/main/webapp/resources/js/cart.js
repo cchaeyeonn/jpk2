@@ -26,11 +26,17 @@ $('#btn_minus').on('click',function(){
 	    
         $('#pop_out').attr('value',number-=1);
         
+        if(number<=0){
+        alert('더이상 줄일수 없습니다.');
+        number=1;
+        }
+        
         $('#pop_out').text(number);
         });
 
 $(document).on('click','#btn_plus',function(){
 	    number = parseInt(number)
+	    
         $('#pop_out').attr('value',number+=1);
 
 
