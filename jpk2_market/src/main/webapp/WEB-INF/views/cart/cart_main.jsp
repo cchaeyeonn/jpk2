@@ -71,9 +71,11 @@
     </td>
     <td>
     <!-- 수량 버튼 -->
-    <button id="btn_minus" >-</button>
+    
+    <input type="button" id="btn_minus" value="-">
     <input type="text"  id="pop_out" value="0" readonly="readonly" style="text-align:center;"/>
-    <button id="btn_plus"  >+</button>
+    <input type="button" id="btn_plus" value="+"  >
+   
     </td>
     <td>
     <!-- 금액 -->

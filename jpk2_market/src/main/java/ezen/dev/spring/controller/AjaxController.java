@@ -7,44 +7,44 @@ import org.springframework.web.bind.annotation.RestController;
 
 import ezen.dev.spring.service.AjaxService;
 
-//Ajax통신 지원을 위해 pom.xml에 의존모듈(jackson)을 추가해 줌
+//Ajax�넻�떊 吏��썝�쓣 �쐞�빐 pom.xml�뿉 �쓽議대え�뱢(jackson)�쓣 異붽��빐 以�
 
 //@Controller
-@RestController //Spring4버전부터 지원. @Controller + @ResponseBody 기능
+@RestController //Spring4踰꾩쟾遺��꽣 吏��썝. @Controller + @ResponseBody 湲곕뒫
 public class AjaxController {
 	
 	private AjaxService ajaxService;
 	
-	@Autowired //자동 의존 주입: 생성자 방식
+	@Autowired 
 	public AjaxController(AjaxService ajaxService) {
 		this.ajaxService = ajaxService;
 	}
 	
 	@PostMapping("/checkId.do")
-	//@ResponseBody //Ajax통신의 응답내용을 보내는 것을 표시
+	//@ResponseBody //Ajax�넻�떊�쓽 �쓳�떟�궡�슜�쓣 蹂대궡�뒗 寃껋쓣 �몴�떆
 	public String checkId(@RequestParam("member_id") String id) {
 		
 		System.out.println("id: "+id);
 		
-		String result="N";//중복된 아이디 없음
+		String result="N";//以묐났�맂 �븘�씠�뵒 �뾾�쓬
 		
 		int flag = ajaxService.checkId(id);
 		
-		if(flag == 1) result = "Y";//중복된 아이디 있음
+		if(flag == 1) result = "Y";//以묐났�맂 �븘�씠�뵒 �엳�쓬
 		
 		return result;
 	}
 	@PostMapping("/checkEmail.do")
-	//@ResponseBody //Ajax통신의 응답내용을 보내는 것을 표시
+	//@ResponseBody //Ajax�넻�떊�쓽 �쓳�떟�궡�슜�쓣 蹂대궡�뒗 寃껋쓣 �몴�떆
 	public String checkEmail(@RequestParam("member_email") String email) {
 		
 		System.out.println("email: "+email);
 		
-		String result="N";//중복된 이메일 없음
+		String result="N";//以묐났�맂 �씠硫붿씪 �뾾�쓬
 		
 		int flag = ajaxService.checkEmail(email);
 		
-		if(flag == 1) result = "Y";//중복된 이메일 있음
+		if(flag == 1) result = "Y";//以묐났�맂 �씠硫붿씪 �엳�쓬
 		
 		return result;
 	}
