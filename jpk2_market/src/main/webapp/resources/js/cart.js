@@ -20,19 +20,25 @@ $(document).on('click','.del-chk',function(){
 	      
 // + - 버튼
 let number = $('#pop_out').val();
-    
+   
 $('#btn_minus').on('click',function(){
 	    number = parseInt(number)
-	    
-        $('#pop_out').attr('value',number-1);
+	    $('#pop_out').attr('value',number-1);
+	    return;
         });
+		
+		
 
 $(document).on('click','#btn_plus',function(){
 	    number = parseInt(number)
         $('#pop_out').attr('value',number+1);
 
 
+return;
+	   });
+	
 
-	   });  
+
+
 	    
   });
