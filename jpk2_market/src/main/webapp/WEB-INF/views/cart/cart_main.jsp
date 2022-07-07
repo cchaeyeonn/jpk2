@@ -63,7 +63,7 @@
     </td>
     <td>
     <!-- 사진 -->
-    <img class="img-fluid" src="${pageContext.request.contextPath}/resources/product_image/ ${cartVo.p_system_filename}" alt="..."  />
+    <img class="img-fluid" src="${pageContext.request.contextPath}/resources/product_image/${cartVo.p_system_filename}" alt="..."  />
     </td>
     <td>
     <!-- 상품명 -->

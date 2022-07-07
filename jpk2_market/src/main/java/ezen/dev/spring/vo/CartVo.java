@@ -41,7 +41,6 @@ public class CartVo {
 	public void setPbidx(int pbidx) {
 		this.pbidx = pbidx;
 	}
-
 	public String getP_check() {
 		return p_check;
 	}
