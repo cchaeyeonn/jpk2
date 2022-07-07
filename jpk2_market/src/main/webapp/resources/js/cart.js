@@ -42,5 +42,6 @@ $(document).on('click','#btn_plus',function(){
 
 		$('#pop_out').text(number);
 	   });  
+	    	
 	    		
   });
