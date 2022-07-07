@@ -92,7 +92,7 @@ list-style-image:url("resources/img/icon.png");
         
         
    <div class="fixed-top2" id="innerNav_1"
-            style="padding-top: 110px; height: 158px;">
+            style="padding-top: 110px; height: 178px;">
             <ul class="menu" style="margin-top:28px;">
                <li style="float: left;"><a href="#">전체 카테고리</a>
                <ul class="depth_1">
