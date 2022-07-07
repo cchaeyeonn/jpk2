@@ -25,10 +25,11 @@ public class HomeController {
 	public String index2() {
 		return "index";
 	}
+
 	
-	@GetMapping("/fileUpload.do")//get諛⑹떇 �슂泥� 泥섎━
-	public String fileUpload() {
-		return "gallery/fileUpload";
+	@GetMapping("/service_center.do")
+	public String service_center() {
+		return "service_center/service_center_main";
 	}
 	
 	/* Spring MVC�뿉�꽌 �뙆�씪 �뾽濡쒕뱶 援ы쁽�쓣 �쐞�븳 議곗튂�뱾
