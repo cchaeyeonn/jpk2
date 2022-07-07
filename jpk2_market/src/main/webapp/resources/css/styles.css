@@ -19,7 +19,6 @@
   --bs-orange: #fd7e14;
   --bs-yellow: #ffc107;
   --bs-green: #198754;
-  --bs-teal: #1abc9c;
   --bs-cyan: #0dcaf0;
   --bs-white: #fff;
   --bs-gray: #6c757d;
@@ -5533,7 +5532,9 @@ textarea.form-control-lg {
   position: relative;
   display: flex;
   flex-direction: column;
-  width: 100%;
+  /* width: 100%; */
+  width:445px;
+  height:330px;
   pointer-events: auto;
   background-color: #fff;
   background-clip: padding-box;
@@ -6529,7 +6530,8 @@ textarea.form-control-lg {
   top: 0;
   right: 0;
   left: 0;
-  z-index: 1030;
+  /* z-index: 1030; */
+  z-index:2;
 }
 
 .fixed-top2{
@@ -6537,7 +6539,8 @@ textarea.form-control-lg {
   top: 0;
   right: 0;
   left: 0;
-  z-index: 1020;
+  /* z-index: 1020; */
+  z-index:1;
 
 }
 
@@ -11399,10 +11402,11 @@ html {
    color:#00754a;
    /* border-bottom: 1px solid #00754a; */
 }
-#innerNav_1 li{
-   list-style:none;
-   /* margin-right:50px; */
-   }
+
+/* #innerNav_1 li{
+    list-style:none; 
+    margin-right:50px; 
+   } */
    
 #innerNav_1 ul{
    float:left;
@@ -11411,6 +11415,7 @@ html {
    /* line-height:50px; 
    text-align:center;*/
    margin-left:270px;
+   /* margin-top:14.3px; */
 }
 	
 #mainNav .navbar-brand {
@@ -11501,7 +11506,7 @@ html {
 
 @media (min-width: 992px) {
   .masthead {
-    padding-top: calc(6rem + 104px);
+    /* padding-top: calc(6rem + 104px); */
     padding-bottom: 6rem;
   }
   .masthead .masthead-heading {

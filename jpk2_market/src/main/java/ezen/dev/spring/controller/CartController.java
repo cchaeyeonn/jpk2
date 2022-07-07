@@ -30,16 +30,16 @@ public class CartController {
 		this.cartService = cartService;
 	}
 	
+	
 
 	@GetMapping("/cart_main.do")
 	public String cart_main(Model model, HttpServletRequest request){
 		
 		HttpSession session = request.getSession();
-		String member_id = (String)session.getAttribute("member_id");
+		Integer midx =Integer.parseInt(String.valueOf(session.getAttribute("midx")));
 		
-		CartVo cartVo = cartService.getCartInfo(member_id);
-		//Spring MVC占쎈퓠占쎄퐣 Controller占쎈퓠占쎄퐣 占쎄문占쎄쉐占쎈┷占쎈뮉 Model揶쏆빘猿쒙옙�뮉 �뀎怨뺣뼊(JSP占쎈읂占쎌뵠筌욑옙)占쎈퓠占쎄퐣 筌〓챷�� 揶쏉옙占쎈뮟
-		model.addAttribute("cartVo", cartVo);
+		List<CartVo> cartList = cartService.getCartList(midx);		
+		model.addAttribute("cartList", cartList);
 		
 		return "cart/cart_main";
 	}

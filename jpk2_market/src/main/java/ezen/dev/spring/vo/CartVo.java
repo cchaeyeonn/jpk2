@@ -6,8 +6,35 @@ public class CartVo {
 	private int p_amount;
 	private int midx_mc;
 	private int pidx_pc;
+	private String p_name;
+	private String p_filename;
+	private String p_price;
+	private String p_system_filename;
 	
-	
+	public String getP_name() {
+		return p_name;
+	}
+	public void setP_name(String p_name) {
+		this.p_name = p_name;
+	}
+	public String getP_filename() {
+		return p_filename;
+	}
+	public void setP_filename(String p_filename) {
+		this.p_filename = p_filename;
+	}
+	public String getP_price() {
+		return p_price;
+	}
+	public void setP_price(String p_price) {
+		this.p_price = p_price;
+	}
+	public String getP_system_filename() {
+		return p_system_filename;
+	}
+	public void setP_system_filename(String p_system_filename) {
+		this.p_system_filename = p_system_filename;
+	}
 	public int getPbidx() {
 		return pbidx;
 	}

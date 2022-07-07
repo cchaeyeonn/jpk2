@@ -33,10 +33,13 @@ a{text-decoration:none; color:#333;}
 .menu > li{position:relative; float:left; margin-right:5px;}
 .menu > li > a{display:block; padding:0 15px; height:40px; line-height:40px; color:#fff;}
 .menu > li:hover .depth_1 {display:block;}
-.menu .depth_1{display:none; position:fixed; left:15px;  }
+.menu .depth_1{display:none; position:fixed; left: 41px; background-color: white; border: 1px solid #0000001a; }
 .menu .depth_1 a{display:block; margin:5px; /* padding:5px; */  color:#fff;}
 
+#icon1 {
 
+list-style-image:url("resources/img/icon.png");
+}
 </style>
     
 </head>
@@ -90,20 +93,23 @@ a{text-decoration:none; color:#333;}
         
    <div class="fixed-top2" id="innerNav_1"
             style="padding-top: 110px; height: 158px;">
-            <ul class="menu">
+            <ul class="menu" style="margin-top:28px;">
                <li style="float: left;"><a href="#">전체 카테고리</a>
-                  <ul class="depth_1">
-                     <li><a href="#">채소/과일</a></li>
-                     <li><a href="#">정육</a></li>
-                     <li><a href="#">과자</a></li>
-                     <li><a href="#">베이커리</a></li>
+               <ul class="depth_1">
+                     <li id="icon1"><a href="#">채소/과일</a></li>
+                     <li id="icon1"><a href="#">정육</a></li>
+                     <li id="icon1"><a href="#">과자</a></li>
+                     <li id="icon1"><a href="#">베이커리</a></li>
+
 
                   </ul></li>
                <li style="float: left;"><a href="#">신상품</a></li>
                <li style="float: left;"><a href="#">베스트</a></li>
                <li style="float: left;"><a href="#">알뜰쇼핑</a></li>
                <li style="float: left;"><a href="#">특가/혜택</a></li>
-            <li><a href="/spring/cart_main.do?member_id=${member_id}" style="margin-left: 710px;"><input type="image" value="장바구니" src="resources/img/cart.png" width=30px; ></a></li>
+            <%-- <li><a href="/spring/cart_main.do?midx=${midx}" style="margin-left: 710px;"><input type="image" value="장바구니" src="resources/img/cart.png" width=30px; ></a></li> --%>
+             <li><a href="/spring/cart_main.do?midx=${midx}" style="margin-left: 710px;"><img src="resources/img/cart.png" onmouseover="this.src='resources/img/cart2.png';" onmouseout="this.src='resources/img/cart.png';" alt="장바구니" width=30px; /></a></li>
+           
            </ul>
                  
           </div>

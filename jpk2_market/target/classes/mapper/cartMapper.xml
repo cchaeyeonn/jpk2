@@ -6,8 +6,9 @@
 
 	
 	
-	<select id="getCartInfo" parameterType="string" resultType="cartVo">
-		select * from fm_product_cart a inner join fm_member b on a.midx_mc = b.midx where b.member_id = #{member_id}
+
+	<select id="getCartList"  parameterType="Integer" resultType="cartVo">
+		select * from fm_member a inner JOIN fm_product_cart b on a.midx = b.midx_mc inner join fm_product c on a.midx = c.midx_mp where a.midx like #{midx}
 	</select>
 
 	

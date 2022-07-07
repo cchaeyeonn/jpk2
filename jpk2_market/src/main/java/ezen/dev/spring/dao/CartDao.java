@@ -1,6 +1,7 @@
 package ezen.dev.spring.dao;
 
 import java.util.HashMap;
+import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,6 +9,7 @@ import org.springframework.stereotype.Repository;
 
 import ezen.dev.spring.vo.CartVo;
 import ezen.dev.spring.vo.MemberVo;
+import ezen.dev.spring.vo.ProductVo;
 
 @Repository
 public class CartDao {
@@ -25,8 +27,8 @@ public class CartDao {
 	
 	
 
-	public CartVo getCartInfo(String member_id) {
-		return sqlSession.selectOne(MAPPER+".getCartInfo", member_id);
+	public List<CartVo> getCartList(Integer midx) {
+		return sqlSession.selectList(MAPPER+".getCartList",midx);
 	}
 
 	

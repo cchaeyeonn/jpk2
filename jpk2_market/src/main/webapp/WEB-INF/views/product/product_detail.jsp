@@ -29,6 +29,7 @@
 			text-align:center; 
 			float:center;
 			}
+
 </style>
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/modal.css">
 
@@ -67,12 +68,33 @@
 		${productVo.p_limitdate}
 		</div>
 		</div>
-		<div id="home_button"><a href="/spring/"><input type="button" value="메인으로"></a>
-		<input type="button" id="btn-modal" value="장바구니"></div><p/>
+		<div id="home_button">
+		<a href="/spring/" id="homebutton_1">메인</a>
+		<!-- <input type="button" id="homebutton_1" value="메인으로"></a> -->
+		<!-- <input type="button" id="btn-modal" value="장바구니"> -->
+		
+<!-- 모달 부분 시작 -->
+
+		<a class="open button" id="homebutton_1">장바구니</a></div><p/>
 		<!--<a href="/spring/cart_insert.do"><input type="button" value="장바구니"></a></div><p/> -->
 		
 
-    <div id="modal" class="modal-overlay">
+<!-- <div class="content">
+	<a class="open button">장바구니</a>
+</div> -->
+<div class="modal-background">
+  <div class="modal-content">
+  <div class="close area" style="width:10px; margin-left:367px;">X</div>
+    <h3>장바구니 제목</h3>
+    	내용
+    <!-- <a class="close button">close modal</a> -->
+  </div>
+</div>
+<!-- 모달 부분 끝 -->
+
+
+
+<!--     <div id="modal" class="modal-overlay">
         <div class="modal-window">
             <div class="title">
                 <h2>모달</h2>
@@ -86,7 +108,10 @@
                 
             </div>
         </div>
-    </div>
+    </div> -->
+    
+   
+
 
 	</form>
     <!-- 푸터 연결 -->

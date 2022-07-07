@@ -1,4 +1,4 @@
-const loremIpsum = document.getElementById("lorem-ipsum")
+/*const loremIpsum = document.getElementById("lorem-ipsum")
 fetch("https://baconipsum.com/api/?type=all-meat&paras=200&format=html")
     .then(response => response.text())
     .then(result => loremIpsum.innerHTML = result)
@@ -30,8 +30,17 @@ modal.addEventListener("click", e => {
 window.addEventListener("keyup", e => {
     if(isModalOn() && e.key === "Escape") {
         modalOff()
-    }
+    }    
+})*/
 
-    
-})
+
+
+
+document.querySelectorAll(".open").forEach(element => element.addEventListener("click", () => {
+	document.querySelector(".modal-background").style.display = "flex";
+        }));
+document.querySelectorAll(".close").forEach(element => element.addEventListener("click", () => {
+	document.querySelector(".modal-background").style.display = "none";
+        }));
+
 
