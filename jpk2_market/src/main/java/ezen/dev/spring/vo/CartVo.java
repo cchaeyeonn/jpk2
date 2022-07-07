@@ -2,7 +2,7 @@ package ezen.dev.spring.vo;
 
 public class CartVo {
 	private int pbidx;
-	private String P_check;
+	private String p_check;
 	private int p_amount;
 	private int midx_mc;
 	private int pidx_pc;
@@ -41,11 +41,12 @@ public class CartVo {
 	public void setPbidx(int pbidx) {
 		this.pbidx = pbidx;
 	}
+
 	public String getP_check() {
-		return P_check;
+		return p_check;
 	}
 	public void setP_check(String p_check) {
-		P_check = p_check;
+		this.p_check = p_check;
 	}
 	public int getP_amount() {
 		return p_amount;
