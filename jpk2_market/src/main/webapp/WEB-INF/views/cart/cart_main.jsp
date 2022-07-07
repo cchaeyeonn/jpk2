@@ -73,7 +73,7 @@
     <!-- 수량 버튼 -->
     
     <input type="button" id="btn_minus" value="-">
-    <input type="text"  id="pop_out" value="0" readonly="readonly" style="text-align:center;"/>
+    <input type="text"  id="pop_out" value="1" readonly="readonly" style="text-align:center;"/>
     <input type="button" id="btn_plus" value="+"  >
    
     </td>
