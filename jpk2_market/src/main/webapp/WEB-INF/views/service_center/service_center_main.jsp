@@ -10,6 +10,7 @@
 
 #service_center_inner{
    min-height:1040px;
+   padding-top:200px;
 
 }
 
@@ -24,6 +25,9 @@
 
 	<div id="service_center_inner">
 	
+	<a class="nav-link py-3 px-0 px-lg-3 rounded" href="/spring/notice_board.do">공지사항</a>
+	<a class="nav-link py-3 px-0 px-lg-3 rounded" href="/spring/faq_board.do">자주하는 질문</a>
+	<a class="nav-link py-3 px-0 px-lg-3 rounded" href="/spring/qna_board.do">1:1 문의</a>
 	
 	
 	
