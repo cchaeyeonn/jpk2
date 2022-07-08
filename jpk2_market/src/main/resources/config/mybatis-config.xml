@@ -8,6 +8,7 @@
 		<typeAlias alias="memberVo" type="ezen.dev.spring.vo.MemberVo"/>
 		<typeAlias alias="productVo" type="ezen.dev.spring.vo.ProductVo"/>
 		<typeAlias alias="cartVo" type="ezen.dev.spring.vo.CartVo"/>
+		<typeAlias alias="NoticeVo" type="ezen.dev.spring.vo.NoticeVo"/>
 	</typeAliases>  
 
 </configuration>  

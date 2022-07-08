@@ -9,8 +9,8 @@
 <style>
 
 #faq_inner{
-   min-height:1040px;
-   padding-top:200px;
+/*    min-height:1040px;
+   padding-top:200px; */
 
 }
 
