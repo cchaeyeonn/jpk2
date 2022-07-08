@@ -30,5 +30,9 @@ public class AdminService {
 	public List<ProductVo> getProductList(Integer midx) {
 		return adminDao.getProductList(midx);
 	}
+
+	public int delProduct(ProductVo productVo) {
+		return adminDao.delProduct(productVo);
+	}
 	
 }

@@ -25,12 +25,12 @@ public class AdminController {
 	
 	private AdminService adminService;
 	
-	@Autowired //�옄�룞 �쓽議� 二쇱엯: �깮�꽦�옄 諛⑹떇
+	@Autowired
 	public AdminController(AdminService adminService) {
 		this.adminService = adminService;
 	}
 	
-	@GetMapping("/admin.do")//get諛⑹떇 �슂泥� 泥섎━
+	@GetMapping("/admin.do")
 	public String adminHome() {
 		return "admin/admin_home";
 	}
@@ -124,5 +124,31 @@ public class AdminController {
 		
 		return "admin/admin_productList";
 	}
+	@GetMapping("/adminProductDelyn.do")
+	public String delProduct(@RequestParam Integer pidx, HttpServletRequest request) {
+		
+		HttpSession session = request.getSession();
+		Integer midx =Integer.parseInt(String.valueOf(session.getAttribute("midx")));
+		ProductVo productVo = new ProductVo();
+		
+		productVo.setMidx_mp(midx);
+		productVo.setPidx(pidx);
+		
+		
+		int result = adminService.delProduct(productVo);
+		String viewPage="/adminProductList.do";
+		
+		if(result==1) {
+			
+			request.setAttribute("massage", "삭제가 완료되었습니다.");
+			request.setAttribute("url","/adminProductList.do");
+		}else {
+			request.setAttribute("massage", "삭제하는 과정에서 오류가 발생했습니다.");
+			request.setAttribute("url","/adminProductList.do");
+		}
+		return viewPage;
+		
+	}
+	
 	
 }

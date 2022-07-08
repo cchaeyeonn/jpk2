@@ -38,5 +38,9 @@ public class AdminDao {
 		return sqlSession.selectList(MAPPER+".getProductList", midx);
 	}
 
+	public int delProduct(ProductVo productVo) {
+		return sqlSession.update(MAPPER+".delProduct",productVo);
+	}
+
 
 }
