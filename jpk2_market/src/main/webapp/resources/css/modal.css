@@ -70,10 +70,11 @@ html, body {
 }
 
 .button {
-  background-color: #15967d;
+  background-color: #ffffff;
   color: white;
   padding: 10px;
   cursor: pointer;
+  width: 99px;
 }
 
 #homebutton_1{

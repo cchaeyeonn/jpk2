@@ -28,4 +28,9 @@ public class CartService {
 		return cartDao.getCartList(midx);
 	}
 
+	public int addCart(CartVo cartVo) {
+		return cartDao.addCart(cartVo);
+	}
+	
+	
 }

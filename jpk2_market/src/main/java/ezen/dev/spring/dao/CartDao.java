@@ -30,7 +30,12 @@ public class CartDao {
 	public List<CartVo> getCartList(Integer midx) {
 		return sqlSession.selectList(MAPPER+".getCartList",midx);
 	}
-
+    
+     public int addCart(CartVo cartVo) {
+		
+		return sqlSession.insert(MAPPER+".addCart", cartVo);
+		
+	}
 	
 
 }

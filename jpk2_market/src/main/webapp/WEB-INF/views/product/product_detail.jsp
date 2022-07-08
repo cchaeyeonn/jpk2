@@ -29,6 +29,11 @@
 			text-align:center; 
 			float:center;
 			}
+    .button box{
+            display : inline-block;
+    
+    
+    }
 
 </style>
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/modal.css">
@@ -39,7 +44,8 @@
 
     <!-- 헤더 연결 -->
     <jsp:include page="../header.jsp"></jsp:include> 
-	<form>
+	<form name="cartAddForm" action="/spring/addCartProcess.do" method="post">
+	   <input type="hidden"  name="pidx_pc" value="${productVo.pidx} ">
 		<div id="product">
 		<div id="product_img">상품 사진<p/>
 		<img src="${pageContext.request.contextPath}/resources/product_image/${productVo.p_system_filename}"></div>
@@ -88,9 +94,18 @@
 <div class="modal-background">
   <div class="modal-content">
   <div class="close area" style="width:10px; margin-left:367px;">X</div>
-    <h3>장바구니 제목</h3>
-    	내용
-    <!-- <a class="close button">close modal</a> -->
+  <div id="product-info">
+    ${productVo.p_name}
+    <b>${productVo.p_price}원</b>
+    
+    <div class="button box" style="float: right;">
+    <input type="button" id="btn_minus" value="-">
+    <input type="text" name="p_amount" id="pop_out" value="1" readonly="readonly" style="text-align:center; width: 48px;"/>
+    <input type="button" id="btn_plus" value="+">
+    </div>
+    </div>
+    <b>합계</b>
+    <input type="submit" id="btn_insert_cart" value="장바구니 담기" >
   </div>
 </div>
 <!-- 모달 부분 끝 -->
