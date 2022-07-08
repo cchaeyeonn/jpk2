@@ -136,7 +136,7 @@ public class AdminController {
 		
 		
 		int result = adminService.delProduct(productVo);
-		String viewPage="/adminProductList.do";
+		String viewPage="admin/adminProductList";
 		
 		if(result==1) {
 			return viewPage;
