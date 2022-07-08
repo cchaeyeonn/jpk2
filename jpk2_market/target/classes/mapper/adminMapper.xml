@@ -16,7 +16,7 @@
 		select * from fm_product a inner join fm_member b on a.midx_mp = b.midx where a.midx_mp = #{midx} and a.p_delyn = 'N'
 	</select>
 	<update id="delProduct" parameterType="productVo">
-		update fm_product set p_delyn = 'Y' where pidx= #{pidx} and midx_mp = #{midx}
+		update fm_product set p_delyn = 'Y' where pidx= #{pidx} and midx_mp = #{midx_mp}
 	</update>
 
 </mapper>
