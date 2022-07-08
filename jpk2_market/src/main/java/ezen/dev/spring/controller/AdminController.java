@@ -125,13 +125,13 @@ public class AdminController {
 		return "admin/admin_productList";
 	}
 	@GetMapping("/adminProductDelyn.do")
-	public String delProduct(@RequestParam Integer pidx, HttpServletRequest request) {
+	public String delProduct(@RequestParam("pidx") Integer pidx, HttpServletRequest request) {
 		
 		HttpSession session = request.getSession();
-		Integer midx =Integer.parseInt(String.valueOf(session.getAttribute("midx")));
+		Integer midx_mp =Integer.parseInt(String.valueOf(session.getAttribute("midx")));
 		ProductVo productVo = new ProductVo();
 		
-		productVo.setMidx_mp(midx);
+		productVo.setMidx_mp(midx_mp);
 		productVo.setPidx(pidx);
 		
 		
@@ -139,12 +139,8 @@ public class AdminController {
 		String viewPage="/adminProductList.do";
 		
 		if(result==1) {
-			
-			request.setAttribute("massage", "삭제가 완료되었습니다.");
-			request.setAttribute("url","/adminProductList.do");
-		}else {
-			request.setAttribute("massage", "삭제하는 과정에서 오류가 발생했습니다.");
-			request.setAttribute("url","/adminProductList.do");
+			return viewPage;
+
 		}
 		return viewPage;
 		

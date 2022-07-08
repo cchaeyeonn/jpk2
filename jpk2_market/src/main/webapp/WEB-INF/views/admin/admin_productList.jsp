@@ -41,11 +41,13 @@
 		<th>상품포장</th><th>알러지</th><th>상품유통기한</th><th>상품타입</th><th>상품태그</th><th>상품삭제</th>
 	</tr>
 <c:forEach var="productVo" items="${productList}">
+<form action="/spring/adminProductDelyn.do">
 	<tr>
 		<td>${productVo.pidx}</td><td>${productVo.p_name }</td><td>${productVo.p_price }</td><td>${productVo.p_unit }</td><td>${productVo.p_delivery }</td><td>${productVo.p_weight }</td>
 		<td>${productVo.p_package }</td><td>${productVo.p_allergy }</td><td>${productVo.p_limitdate }</td>
-		<td>${productVo.p_type }</td><td>${productVo.p_tag }</td><td><input type="button" value="상세" onclick="location.href='/spring/adminProductDelyn.do'"></td>
+		<td>${productVo.p_type }</td><td>${productVo.p_tag }</td><td><input type="hidden" name="pidx" value="${productVo.pidx}"><input type="submit" value="삭제"></a></td>
 	</tr>
+</form>
 </c:forEach>	
 </table>
 
