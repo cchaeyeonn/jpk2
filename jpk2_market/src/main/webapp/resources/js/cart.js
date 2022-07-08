@@ -23,13 +23,16 @@ let number = $('#pop_out').val();
     
 $('#btn_minus').on('click',function(){
 	    number = parseInt(number)
-	    
-        $('#pop_out').attr('value',number-=1);
+	     
         
-        if(number<=0){
+        
+        if(number<=1){
         alert('더이상 줄일수 없습니다.');
         number=1;
-        }
+        }else{
+	
+        $('#pop_out').attr('value',number-=1);   	
+     }
         
         $('#pop_out').text(number);
         });
