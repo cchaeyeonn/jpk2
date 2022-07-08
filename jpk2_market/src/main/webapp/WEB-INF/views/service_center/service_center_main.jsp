@@ -71,6 +71,30 @@ min-height:1040px;
             <c:param name="n_writedate" value="${n_writedate}"/>
             <c:param name="midx_mn" value="${midx_mn}"/>
         </c:import> 
+        
+        <c:import url="/faq_board.do">
+            <c:param name="fidx" value="${fidx}"/>
+            <c:param name="f_category" value="${f_category}"/>
+            <c:param name="f_title" value="${f_title}"/>
+            <c:param name="f_content" value="${f_content}"/>
+            <c:param name="f_delyn" value="${f_delyn}"/>
+        </c:import> 
+        
+        <c:import url="/qna_board.do">
+            <c:param name="qidx" value="${qidx}"/>
+            <c:param name="q_category" value="${q_category}"/>
+            <c:param name="q_title" value="${q_title}"/>
+            <c:param name="q_content" value="${q_content}"/>
+            <c:param name="q_writedate" value="${q_writedate}"/>
+            <c:param name="q_delyn" value="${q_delyn}"/>
+            <c:param name="q_originqiex" value="${q_originqiex}"/>
+            <c:param name="q_depth" value="${q_depth}"/>
+            <c:param name="q_level_" value="${q_level_}"/>
+            <c:param name="q_redate" value="${q_redate}"/>
+            <c:param name="q_redelyn" value="${q_redelyn}"/>
+            <c:param name="midx_mq" value="${midx_mq}"/>
+            
+        </c:import> 
 		</div>
 		
 	</div>

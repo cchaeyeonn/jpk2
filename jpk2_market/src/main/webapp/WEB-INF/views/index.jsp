@@ -139,8 +139,11 @@
                       <c:param name="p_name" value="${p_name}"/>
                       <c:param name="p_price" value="${p_price}"/>
                       <c:param name="p_type" value="${p_type}"/>
-                </c:import> 
+           </c:import>
+           
         </div>
+        
+        
         
 
 

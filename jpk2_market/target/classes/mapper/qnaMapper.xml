@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace = "ezen.dev.spring.service_center">
+
+<!-- 	<select id="getNoticeInfo" parameterType="String" resultType="noticeVo">
+		select * from fm_notice
+	</select> -->
+	
+	<select id="getQnaList" resultType="qnaVo">
+		select * from fm_qna where q_delyn='N'
+	</select>
+
+</mapper>

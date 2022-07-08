@@ -9,6 +9,8 @@
 		<typeAlias alias="productVo" type="ezen.dev.spring.vo.ProductVo"/>
 		<typeAlias alias="cartVo" type="ezen.dev.spring.vo.CartVo"/>
 		<typeAlias alias="NoticeVo" type="ezen.dev.spring.vo.NoticeVo"/>
+		<typeAlias alias="FaqVo" type="ezen.dev.spring.vo.FaqVo"/>
+		<typeAlias alias="QnaVo" type="ezen.dev.spring.vo.QnaVo"/>
 	</typeAliases>  
 
 </configuration>  

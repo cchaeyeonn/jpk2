@@ -9,5 +9,7 @@ encoding//src/main/java/ezen/dev/spring/controller/NoticeController.java=UTF-8
 encoding//src/main/java/ezen/dev/spring/controller/ProductController.java=UTF-8
 encoding//src/main/java/ezen/dev/spring/controller/QnaController.java=UTF-8
 encoding//src/main/java/ezen/dev/spring/dao/AdminDao.java=UTF-8
+encoding//src/main/java/ezen/dev/spring/dao/FaqDao.java=UTF-8
 encoding//src/main/java/ezen/dev/spring/dao/NoticeDao.java=UTF-8
 encoding//src/main/java/ezen/dev/spring/dao/ProductDao.java=UTF-8
+encoding//src/main/java/ezen/dev/spring/dao/QnaDao.java=UTF-8

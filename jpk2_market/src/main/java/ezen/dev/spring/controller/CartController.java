@@ -84,7 +84,9 @@ public class CartController {
 			model.addAttribute("midx_mc",midx_mc);
 			model.addAttribute("pidx_pc",pidx_pc);
 			
-			viewPage = "product/product_detail";
+			
+			
+			viewPage = "cart/cart_main";
 		}
 		return viewPage;
 	}
