@@ -72,6 +72,9 @@
 		<hr>
 		유통기한<p/>
 		${productVo.p_limitdate}
+		<hr>
+		타입<p/>
+		${productVo.p_type}
 		</div>
 		</div>
 		<div id="home_button">

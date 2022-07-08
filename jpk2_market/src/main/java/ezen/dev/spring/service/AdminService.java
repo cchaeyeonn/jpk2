@@ -26,5 +26,9 @@ public class AdminService {
 	public int addProduct(ProductVo productVo) {
 		return adminDao.addProduct(productVo);
 	}
+
+	public List<ProductVo> getProductList(Integer midx) {
+		return adminDao.getProductList(midx);
+	}
 	
 }

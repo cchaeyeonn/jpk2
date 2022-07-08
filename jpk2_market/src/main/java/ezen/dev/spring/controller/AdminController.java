@@ -112,5 +112,17 @@ public class AdminController {
 		}
 		return viewPage;
 	}
+	@GetMapping("/adminProductList.do")
+	public String getProductList(Model model, HttpServletRequest request) {
+		
+		HttpSession session = request.getSession();
+		Integer midx =Integer.parseInt(String.valueOf(session.getAttribute("midx")));
+		
+		List<ProductVo> productList = adminService.getProductList(midx);
+
+		model.addAttribute("productList",productList);
+		
+		return "admin/admin_productList";
+	}
 	
 }
