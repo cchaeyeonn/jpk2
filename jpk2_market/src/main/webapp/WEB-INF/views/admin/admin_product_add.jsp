@@ -64,7 +64,15 @@
 		<input type="text" name="p_limitdate">
 		<hr>
 		타입<p/>
-		<input type="text" name="p_type">
+		<select name="p_type">
+			<option value="채소/과일">채소/과일</option>
+			<option value="정육">정육</option>
+			<option value="생선/해산물">생선/해산물</option>
+			<option value="과자">과자</option>
+			<option value="베이커리">베이커리</option>
+			<option value="가공식품">가공식품</option>
+			<option value="기타">기타</option>
+		</select>
 		<hr>
 		태그<p/>
 		<input type="text" name="p_tag">

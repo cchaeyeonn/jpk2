@@ -34,5 +34,9 @@ public class AdminDao {
 		
 	}
 
+	public List<ProductVo> getProductList(Integer midx) {
+		return sqlSession.selectList(MAPPER+".getProductList", midx);
+	}
+
 
 }
