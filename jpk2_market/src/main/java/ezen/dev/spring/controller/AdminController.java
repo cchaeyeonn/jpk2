@@ -133,16 +133,10 @@ public class AdminController {
 		
 		productVo.setMidx_mp(midx_mp);
 		productVo.setPidx(pidx);
-		
-		
-		int result = adminService.delProduct(productVo);
-		String viewPage="admin/adminProductList";
-		
-		if(result==1) {
-			return viewPage;
+		adminService.delProduct(productVo);
 
-		}
-		return viewPage;
+
+		return "admin/admin_home";
 		
 	}
 	
