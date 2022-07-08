@@ -32,7 +32,6 @@
                                 <img class="img-fluid" src="${pageContext.request.contextPath}/resources/product_image/${productVo.p_system_filename}" alt="..."  />
                                 ${productVo.p_name}
                           		${productVo.p_price}
-                           		${productVo.p_type}
                                 </div>
                             </div>
                         </div></a>
