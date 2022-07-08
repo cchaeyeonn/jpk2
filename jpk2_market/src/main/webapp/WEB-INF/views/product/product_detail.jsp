@@ -96,9 +96,11 @@
   <div class="modal-content">
   <div class="close area" style="width:10px; margin-left:367px;">X</div>
   <div id="product-info">
-    ${productVo.p_name}
-    <b>${productVo.p_price}원</b>
+     ${productVo.p_name}
+    <hr>
     
+    <b>${productVo.p_price}원</b>
+     
     <div class="button box" style="float: right;">
     <input type="button" id="btn_minus" value="-">
     <input type="text" name="p_amount" id="pop_out" value="1" readonly="readonly" style="text-align:center; width: 48px;"/>

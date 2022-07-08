@@ -29,15 +29,15 @@ public class CartController {
 	
 	private CartService cartService;
 	
-	@Autowired(required=false)
+	@Autowired
 	public CartController(CartService cartService) {
 		this.cartService = cartService;
 		
 	}
 	
 	private ProductService productService;
-	@Autowired(required=false) 
-	public CartController(ProductService productService) {
+	@Autowired 
+	public void setProductService(ProductService productService) {
 		this.productService = productService;
 		
 	}
