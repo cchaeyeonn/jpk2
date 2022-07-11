@@ -28,6 +28,9 @@ public class NoticeDao {
 	public int insertNotice(NoticeVo noticeVo) {
 		return sqlSession.insert(MAPPER+".insertNotice", noticeVo);
 	}
+	public NoticeVo getNoticeInfo(Integer nidx) {
+		return sqlSession.selectOne(MAPPER+".getNoticeInfo", nidx);
+	}
 
 
 }
