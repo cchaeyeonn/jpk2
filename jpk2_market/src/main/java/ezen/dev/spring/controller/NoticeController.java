@@ -50,8 +50,8 @@ private NoticeService noticeService;
 	}
 	
 	
-	@PostMapping("/notice_wirteProcess.do")
-	public String notice_wirteProcess(
+	@PostMapping("/notice_writeProcess.do")
+	public String notice_writeProcess(
 			String n_category, String n_title, String n_content, String n_writedate, Integer midx_mn, Model model, HttpServletRequest request)
 					throws IllegalStateException, IOException {
 			
@@ -67,7 +67,7 @@ private NoticeService noticeService;
 		noticeVo.setN_content(n_content);
 		noticeVo.setN_writedate(n_writedate);
 		noticeVo.setMidx_mn(midx_mn);
-		System.out.println("1");
+		
 
 		result = noticeService.insertNotice(noticeVo);
 		String viewPage="service_center/notice_write";
@@ -78,12 +78,26 @@ private NoticeService noticeService;
 			model.addAttribute("n_content",n_content);
 			model.addAttribute("n_writedate",n_writedate);
 			model.addAttribute("midx",midx_mn);
-			System.out.println("2");
 			viewPage = "redirect:/service_center.do";
-			System.out.println("3");
+			
 		}
 		return viewPage;
 	}
+	
+	@GetMapping("/notice_detail.do")
+	public String notice_detail(@RequestParam ("nidx") Integer nidx, Model model, HttpServletRequest request){
+		
+		
+//		String pidx = (String)session.getAttribute("productVo.pidx");
+
+		NoticeVo noticeVo = noticeService.getNoticeInfo(nidx);
+		
+		model.addAttribute("NoticeVo",noticeVo);
+		
+		return "service_center/notice_detail";
+	}
+	
+	
 	
 	
 	

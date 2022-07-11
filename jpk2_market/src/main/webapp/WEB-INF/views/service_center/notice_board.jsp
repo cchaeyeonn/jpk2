@@ -27,7 +27,7 @@
 <table border="1">
 <tr>
 <td>번호</td>
-<td>카테고리</td>
+<td></td>
 <td>제목</td>
 <td>내용</td>
 
@@ -36,8 +36,8 @@
           
 <tr>
 <td>${noticeVo.nidx}</td>
-<td>${noticeVo.n_category}</td>
-<td>${noticeVo.n_title}</td>
+<td>[${noticeVo.n_category}]</td>
+<td><a href="/spring/notice_detail.do?nidx=${noticeVo.nidx}">${noticeVo.n_title}</a></td>
 <td>${noticeVo.n_content}</td>
 </tr>
  </c:forEach>
