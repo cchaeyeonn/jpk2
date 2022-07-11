@@ -1,8 +1,11 @@
 package ezen.dev.spring.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import ezen.dev.spring.dao.CartDao;
 import ezen.dev.spring.dao.MemberDao;
 import ezen.dev.spring.vo.MemberVo;
 
@@ -15,6 +18,14 @@ public class AjaxService {
 	public AjaxService(MemberDao memberDao) {
 		this.memberDao = memberDao;
 	}
+	
+	private CartDao cartDao;
+	
+	@Autowired
+	public void setCartDao(CartDao cartDao) {
+		this.cartDao = cartDao;
+		
+	}
 
 	public int checkId(String id) {
 		int result=0;
@@ -25,6 +36,9 @@ public class AjaxService {
 		int result=0;
 		result = memberDao.checkEmail(email);
 		return result;
+	}
+	public int deleteCartInfo(List<Integer> cart_idx_list) {
+		return cartDao.deleteCartInfo(cart_idx_list);
 	}
 	
 

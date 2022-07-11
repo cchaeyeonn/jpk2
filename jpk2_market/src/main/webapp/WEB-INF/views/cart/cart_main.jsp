@@ -54,12 +54,13 @@
     <form >
     <div id="cart_inner">
     <h2 style="text-align:center;"> 장바구니</h2>
-    <input type="checkbox" id="chk_all">전체 선택() ㅣ 선택 삭제 <hr>
+    <input type="checkbox" id="chk_all">전체 선택 ㅣ 
+    <input type="button" value="선택 삭제" id="cart_delete"> <hr>
     <table id="target">
     <c:forEach items="${cartList}" var="cartVo">
-    <tr>
+    <tr id="product_target">
     <td>
-    <input type="checkbox" class="del-chk">
+    <input type="checkbox" class="del-chk" value="${cartVo.pbidx}">
     </td>
     <td>
     <!-- 사진 -->

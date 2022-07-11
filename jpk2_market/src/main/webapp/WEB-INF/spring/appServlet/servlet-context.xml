@@ -28,19 +28,20 @@
 	
 
 	<!-- 인터셉터 등록 -->
-	<beans:bean id="AuthLoginInterceptor" class="ezen.dev.spring.interceptor.AuthLoginInterceptor">
-	</beans:bean>
+	
 	<interceptors>
 		<interceptor>
 			<mapping path="/*.do"/>
-			<exclude-mapping path="/**/spring/index.do"/>
-			<exclude-mapping path="/**/spring/home.do"/>
+			<exclude-mapping path="/index.do"/>
 			<exclude-mapping path="/**/login.do"/>
 			<exclude-mapping path="/**/join.do"/>
 			<exclude-mapping path="/**/joinProcess.do"/>
 			<exclude-mapping path="/**/loginProcess.do"/>
 			<exclude-mapping path="/**/resources/**"/>
-			<beans:ref bean="AuthLoginInterceptor"/>
+			<exclude-mapping path="/**/productList.do"/>
+			<beans:bean id="AuthLoginInterceptor" class="ezen.dev.spring.interceptor.AuthLoginInterceptor">
+	        </beans:bean>
+			
 		</interceptor>
 	</interceptors>
 
