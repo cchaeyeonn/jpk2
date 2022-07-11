@@ -32,11 +32,11 @@
 	</beans:bean>
 	<interceptors>
 		<interceptor>
-			<mapping path="/**"/>
-			<exclude-mapping path="/**/spring/"/>
+			<mapping path="/*.do"/>
 			<exclude-mapping path="/**/spring/index.do"/>
 			<exclude-mapping path="/**/login.do"/>
 			<exclude-mapping path="/**/join.do"/>
+			<exclude-mapping path="/**/joinProcess.do"/>
 			<exclude-mapping path="/**/loginProcess.do"/>
 			<exclude-mapping path="/**/resources/**"/>
 			<beans:ref bean="AuthLoginInterceptor"/>
