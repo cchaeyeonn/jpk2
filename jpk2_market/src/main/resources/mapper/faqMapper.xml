@@ -12,4 +12,7 @@
 		select * from fm_faq where f_delyn='N'
 	</select>
 
+	<insert id="insertFaq" parameterType="faqVo">
+		insert into fm_faq (f_category, f_title, f_content) values(#{f_category},#{f_title},#{f_content})
+	</insert>
 </mapper>

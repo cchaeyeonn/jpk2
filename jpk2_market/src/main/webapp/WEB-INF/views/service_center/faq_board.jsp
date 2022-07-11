@@ -43,5 +43,12 @@
  </c:forEach>
 </table>
 
+<% 
+   long grade = 0L;
+  if (session.getAttribute("member_grade") != null) {grade = (long)session.getAttribute("member_grade");}
+  if ( grade >= 1){out.print("<a class='nav-link py-3 px-0 px-lg-3 rounded' href='"+request.getContextPath()+"/faq_wirte.do'>글쓰기</a>");}
+  
+  %>
+
 </body>
 </html>

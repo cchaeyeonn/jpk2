@@ -27,12 +27,12 @@ public class FaqDao {
 		return sqlSession.selectList(MAPPER+".getFaqList");
 	}
 
+	public int insertFaq(FaqVo faqVo) {
+		return sqlSession.insert(MAPPER+".insertFaq",faqVo);
+	}
+
 	
-	/*
-	 * public NoticeVo getNoticeInfo(String nidx) {
-	 * 
-	 * return sqlSession.selectOne(MAPPER+".getNoticeInfo", nidx); }
-	 */
+
 	
 
 
