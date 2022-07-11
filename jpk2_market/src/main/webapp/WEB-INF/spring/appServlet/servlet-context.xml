@@ -42,6 +42,7 @@
 			<beans:bean id="AuthLoginInterceptor" class="ezen.dev.spring.interceptor.AuthLoginInterceptor">
 	        </beans:bean>
 			
+			
 		</interceptor>
 	</interceptors>
 
