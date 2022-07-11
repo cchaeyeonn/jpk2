@@ -86,7 +86,7 @@ public class CartController {
 			
 			
 			
-			viewPage = "cart/cart_main";
+			viewPage = "product/product_detail";
 		}
 		return viewPage;
 	}

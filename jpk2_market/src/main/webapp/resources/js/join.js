@@ -50,7 +50,7 @@
 		$(function(){
 			
 			 var getMail = RegExp(/^[A-Za-z0-9_\.\-]+@[A-Za-z0-9\-]+\.[A-Za-z0-9\-]+/);
-             let reg = RegExp(/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^*()\-_=+\\\|\[\]{};:\'",.<>\/?]).{8,16}$/);
+             let reg = RegExp(/^(?=.*\d)(?=.*[a-zA-Z])[0-9a-zA-Z]{8,16}$/);
 
 			
 			
@@ -131,10 +131,13 @@
            result = "아이디를 입력해주세요";
 	       $("#result_checkId").html(result).css("color", "red");
            $("#member_id").focus();
+           
            return false;
           }
+          });
           
           // 아이디 형식 유효성 검사
+          $(document).on('click','#submit',function(){          
           if(!getMail.test($("#member_id").val())){
            result = "이메일 형식으로 입력하세요";
 	       $("#result_checkId").html(result).css("color", "red");
@@ -142,27 +145,33 @@
            $("#member_id").focus();
            return false;
           }
-
+          });
+          
+          
+           
           // 비밀번호 유효성 검사
-	      if($("#member_pw").val() == ""){
+          $(document).on('click','#submit',function(){
+	      if($("#member_password1").val() == ""){
            result = "비밀번호를 입력하세요";
 	       $("#result_password1").html(result).css("color", "red");
            $("#member_password1").focus();
            return false;
              }
-      
-          // 비밀번호 형식 유효성 검사( 영문 대문자와 소문자, 숫자, 특수문자를 하나 이상 포함하여 8~16자가 되는지 검사를 한다.)
-          
+            });
+          // 비밀번호 형식 유효성 검사( 8 ~ 16자 영문, 숫자 조합으로만 입력 되는지 검사를 한다.)
+          $("#member_password1").focusout(function(){
           if(!reg.test($("#member_password1").val())){
-           result = "영문 대문자와 소문자, 숫자, 특수문자를 하나 이상 포함하여 8~16자가 되어야 합니다";
+           result = "8 ~ 16자 영문, 숫자 조합으로만 입력 되어야 합니다";
 	       $("#result_password1").html(result).css("color", "red");
 	       $("#member_password1").val("");
 	       $("#member_password2").val("");
            $("#member_password1").focus();
            return false;
              }
+            });
              
           // 비밀번호가 아이디와 같지 않도록 하는 유효성 검사
+          $(document).on('click','#submit',function(){
           if($("#member_id").val() == $("#member_password1").val()){
              result = "아이디와 비밀번호가 같습니다";
 	       $("#result_password1").html(result).css("color", "red");
@@ -170,16 +179,21 @@
            $("#member_password1").focus();
                      return false;
            }
+           });
+           
  
           // 비밀번호 확인란  공백 유효성 검사
+           $(document).on('click','#submit',function(){
           if($("#member_password2").val() == ""){
            result = "비밀번호 확인란을 입력해주세요";
 	       $("#result_password2").html(result).css("color", "red");
            $("#member_password2").focus();
            return false;
              }
+             });
 	
            // 비밀번호 확인 유효성 검사
+           $("#member_password2").focusout(function(){
 		   if($("#member_password1").val() != $("#member_password2").val()){
               result = "비밀번호가 서로 다릅니다";
 	          $("#result_password2").html(result).css("color", "red");
@@ -187,8 +201,10 @@
               $("#member_password2").val("");
               $("#member_password1").focus();
               return false;
-               }	
+               }
+               });	
 			// 이름 유효성 검사
+			$("#member_name").focusout(function(){
 			if($("#member_name").val() == ""){
               result = "이름을 입력해주세요";
 	          $("#result_name").html(result).css("color", "red");
@@ -196,14 +212,19 @@
               $("#member_name").focus();
               return false;
           }
+          });
+          
 			// 이메일 유효성 검사
+			$(document).on('click','#submit',function(){
 			if($("#member_email").val() == ""){
               result = "이메일을 입력해주세요";
 	          $("#result_checkEmail").html(result).css("color", "red");
               $("#member_email").focus();
               return false;
           }
+          });
 			// 이메일 형식 유효성 검사
+			$(document).on('click','#submit',function(){
 			if(!getMail.test($("#member_email").val())){
            result = "이메일 형식으로 입력하세요";
 	       $("#result_checkEmail").html(result).css("color", "red");
@@ -211,14 +232,16 @@
            $("#member_email").focus();
            return false;
           }
+          });
            // 핸드폰 번호 유효성 검사
-          
+          $("#member_phone").focusout(function(){
 			if($("#member_phone").val() == ""){
               result = "핸드폰 번호를 입력해주세요";
 	          $("#result_phone").html(result).css("color", "red");
               $("#member_phone").focus();
               return false;
           }
+          });
            // 핸드폰 번호 형식 유효성 검사
            
            $("#member_phone").on('keydown', function(e){
@@ -270,6 +293,7 @@
           
           
 		   // 주소 유효성 검사
+		   $(document).on('click','#submit',function(){
 		    if($("#member_addr_1").val() == ""){
               result = "주소를 입력해주세요";
 	          $("#result_addr").html(result).css("color", "red");
@@ -280,24 +304,29 @@
 	          $("#result_addr").html(result).css("color", "red");
               return false;
           }
+          });
             //성별 유효성 검사
+            
+            $(document).on('click','#submit',function(){
 		   	if($("input[name=member_gender]:radio:checked").length < 1){
 			  result = "성별을 선택하세요";
 	          $("#result_gender").html(result).css("color", "red");
               return false;
-			
-			
+
 		 }
-			
+		});	
 			
 		   
 		    //생년월일 유효성 검사
+		    $("#member_birth").focusout(function(){
 		     if($("#member_birth").val() == ""){
               result = "생년월일을 입력해주세요";
 	          $("#result_birth").html(result).css("color", "red");
               return false;
           }
+          });
 			//약관 유효성 검사
+			$(document).on('click','#submit',function(){
 			if (!$("input:checked[Name='member_termall']").is(":checked")){
 			  result = "약관을 동의해주세요";
 	          $("#result_term").html(result).css("color", "red"); 
@@ -317,10 +346,11 @@
 	          $("#result_term").html(result).css("color", "red"); 
 		   return false;
 	      }
+	      });
 
          });
 			
-		});
+		
 
 
 	
