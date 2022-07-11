@@ -1,5 +1,7 @@
 package ezen.dev.spring.interceptor;
 
+import java.io.PrintWriter;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -17,7 +19,10 @@ public class AuthLoginInterceptor extends HandlerInterceptorAdapter{
 			Object obj = session.getAttribute("midx");
 			
 			if(obj==null) {
-				response.sendRedirect("/spring/login.do");
+				response.setCharacterEncoding("UTF-8");
+				PrintWriter out = response.getWriter();
+				out.println("<script>alert('로그인이 필요한 서비스 입니다.'); location.href='/spring/login.do';</script>");
+				out.flush();
 				return false;
 			}
 			
