@@ -345,7 +345,7 @@
 	          $("#result_gender").html(result).css("color", "red");
 
 		 }
-			else if($("input[name=member_gender]:radio:checked").length == 0){
+			else if($("input[name=member_gender]:radio:checked").length == 1){
 				  result = " ";
 		          $("#result_gender").html(result).css("color", "red");
 		          return false;
@@ -374,14 +374,9 @@
 		     if($("#member_birth").val() == ""){
               result = "생년월일을 입력해주세요";
 	          $("#result_birth").html(result).css("color", "red");
-<<<<<<< HEAD
-              
-=======
 	          
 
->>>>>>> branch 'master' of https://github.com/cchaeyeonn/jpk2.git
           }
-		    return false;
           });
           
             
