@@ -18,8 +18,8 @@
     
     <delete id="deleteCartInfo" parameterType="list">
 		delete from fm_product_cart where pbidx in 
-		<foreach collection="list" item="cart_idx" open="(" separator="," close=")" >
-			#{pbidx}
+		<foreach collection="list" item="cartidxList" open="(" separator="," close=")" >
+			#{cartidxList}
 		</foreach>
 	
 	</delete>

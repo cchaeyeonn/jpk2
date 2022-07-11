@@ -36,8 +36,8 @@ public class CartDao {
 		return sqlSession.insert(MAPPER+".addCart", cartVo);
 		
 	}
-     public int deleteCartInfo(List<Integer> cart_idx_list) {
- 		return sqlSession.delete(MAPPER+".deleteCartInfo", cart_idx_list);
+     public int deleteCartInfo(List<Integer> cartidxList) {
+ 		return sqlSession.delete(MAPPER+".deleteCartInfo", cartidxList);
  	}
 	
 

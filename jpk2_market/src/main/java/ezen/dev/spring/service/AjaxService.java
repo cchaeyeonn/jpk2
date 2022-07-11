@@ -37,8 +37,8 @@ public class AjaxService {
 		result = memberDao.checkEmail(email);
 		return result;
 	}
-	public int deleteCartInfo(List<Integer> cart_idx_list) {
-		return cartDao.deleteCartInfo(cart_idx_list);
+	public int deleteCartInfo(List<Integer> cartidxList) {
+		return cartDao.deleteCartInfo(cartidxList);
 	}
 	
 
