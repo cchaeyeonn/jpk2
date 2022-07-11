@@ -120,15 +120,18 @@
             <td></td>
             <td><input type="text" id="member_addr_1" class="form-control" name="member_addr1" placeholder="도로명주소"></td>
             <td><input type="text" id="member_addr_2" class="form-control" name="member_addr2" placeholder="상세주소"></td>
+            <td><div style="height:20px"><span id="result_addr" style="font-size:12px;"></span></div></td>
          </tr>
          <tr>
             <td>성별</td>
             <td><input type="radio" class="custom-control custom-radio" name="member_gender" value="m"> 남자 
                 <input type="radio" class="custom-control custom-radio" name="member_gender" value="f"> 여자</td>
+                <td><div style="height:20px"><span id="result_gender" style="font-size:12px;"></span></div></td>
          </tr>
          <tr>
             <td>생년월일</td>
             <td><input type ="date" class="form-control" id="member_birth" name="member_birth" value="" onclick="maxDate()"></td>
+            <td><div style="height:20px"><span id="result_birth" style="font-size:12px;"></span></div></td>
          </tr>
          
       
