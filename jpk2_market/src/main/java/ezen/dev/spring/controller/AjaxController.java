@@ -23,7 +23,6 @@ public class AjaxController {
 	}
 	
 	@PostMapping("/checkId.do")
-	//@ResponseBody //Ajax�넻�떊�쓽 �쓳�떟�궡�슜�쓣 蹂대궡�뒗 寃껋쓣 �몴�떆
 	public String checkId(@RequestParam("member_id") String id) {
 		
 		System.out.println("id: "+id);
@@ -37,7 +36,6 @@ public class AjaxController {
 		return result;
 	}
 	@PostMapping("/checkEmail.do")
-	//@ResponseBody //Ajax�넻�떊�쓽 �쓳�떟�궡�슜�쓣 蹂대궡�뒗 寃껋쓣 �몴�떆
 	public String checkEmail(@RequestParam("member_email") String email) {
 		
 		System.out.println("email: "+email);

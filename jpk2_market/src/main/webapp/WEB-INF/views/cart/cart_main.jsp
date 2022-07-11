@@ -50,14 +50,42 @@
 </head>
 <body>
     <!-- 헤더 연결 -->
-    <jsp:include page="../header.jsp"></jsp:include> 	
-    <form >
+    <jsp:include page="../header.jsp"></jsp:include>
+ 
     <div id="cart_inner">
     <h2 style="text-align:center;"> 장바구니</h2>
     <input type="checkbox" id="chk_all">전체 선택 ㅣ 
     <input type="button" value="선택 삭제" id="cart_delete"> <hr>
     <table id="target">
     <c:forEach items="${cartList}" var="cartVo">
+    <form >
+    <script>
+    $(function(){
+    let number = $('#${cartVo.pbidx}_pop_out').val();
+    
+    $('#${cartVo.pbidx}_btn_minus').on('click',function(){
+    	    number = parseInt(number)
+            if(number<=1){
+            alert('더이상 줄일수 없습니다.');
+            number=1;
+            }else{
+    	
+            $('#${cartVo.pbidx}_pop_out').attr('value',number-=1);   	
+         }
+            
+            $('#${cartVo.pbidx}_pop_out').text(number);
+            });
+
+    $('#${cartVo.pbidx}_btn_plus').on('click',function(){
+    	    number = parseInt(number)
+    	    
+            $('#${cartVo.pbidx}_pop_out').attr('value',number+=1);
+
+    		$('#${cartVo.pbidx}_pop_out').text(number);
+    	   });  
+    });
+    </script>
+ 
     <tr id="product_target">
     <td>
     <input type="checkbox" class="del-chk" value="${cartVo.pbidx}">
@@ -73,9 +101,9 @@
     <td>
     <!-- 수량 버튼 -->
     
-    <input type="button" id="btn_minus" value="-">
-    <input type="text"  id="pop_out" value="1" readonly="readonly" style="text-align:center;"/>
-    <input type="button" id="btn_plus" value="+"  >
+    <input type="button" id="${cartVo.pbidx}_btn_minus" value="-">
+    <input type="text"  id="${cartVo.pbidx}_pop_out" value="1" readonly="readonly" style="text-align:center;"/>
+    <input type="button" id="${cartVo.pbidx}_btn_plus" value="+"  >
    
     </td>
     <td>
@@ -87,12 +115,13 @@
     <button id="btn_delete">X</button>
     </td>
     </tr>
+    </form>
     </c:forEach>
     </table>
     </div>
     
    
-    </form>
+ 
     <!-- 푸터 연결 -->
     <jsp:include page="../footer.jsp"></jsp:include>
 

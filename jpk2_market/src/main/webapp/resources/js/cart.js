@@ -12,7 +12,7 @@ $("#cart_delete").click(function(){
 			
 			$.ajax({
 				type: "post",
-				url: "${pageContext.request.contextPath}/cart_delete.do",
+				url: "/spring/cart_delete.do",
 				data: {
 					"cart_idx_arr": cart_idx_arr
 				},
@@ -52,32 +52,7 @@ $(document).on('click','.del-chk',function(){
             });
 	      
 // + - 버튼
-let number = $('#pop_out').val();
-    
-$('#btn_minus').on('click',function(){
-	    number = parseInt(number)
-	     
-        
-        
-        if(number<=1){
-        alert('더이상 줄일수 없습니다.');
-        number=1;
-        }else{
-	
-        $('#pop_out').attr('value',number-=1);   	
-     }
-        
-        $('#pop_out').text(number);
-        });
 
-$(document).on('click','#btn_plus',function(){
-	    number = parseInt(number)
-	    
-        $('#pop_out').attr('value',number+=1);
-
-
-		$('#pop_out').text(number);
-	   });  
 	   
    
 	   
