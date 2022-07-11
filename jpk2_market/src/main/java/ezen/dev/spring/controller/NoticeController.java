@@ -67,6 +67,7 @@ private NoticeService noticeService;
 		noticeVo.setN_content(n_content);
 		noticeVo.setN_writedate(n_writedate);
 		noticeVo.setMidx_mn(midx_mn);
+		System.out.println("1");
 
 		result = noticeService.insertNotice(noticeVo);
 		String viewPage="service_center/notice_write";
@@ -77,7 +78,9 @@ private NoticeService noticeService;
 			model.addAttribute("n_content",n_content);
 			model.addAttribute("n_writedate",n_writedate);
 			model.addAttribute("midx",midx_mn);
-			viewPage = "service_center/notice_board";
+			System.out.println("2");
+			viewPage = "redirect:/service_center.do";
+			System.out.println("3");
 		}
 		return viewPage;
 	}
