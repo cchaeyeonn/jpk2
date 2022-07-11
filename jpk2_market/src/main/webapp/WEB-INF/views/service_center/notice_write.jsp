@@ -62,10 +62,10 @@
 			<td><input type="text" name="n_content"></td>
 			</tr>
 			</table>
-			</form>
+			
 		</div>
 		<div id="notice_write_button"><input type="submit" value="작성하기"></div><p/>
-	
+	</form>
     <!-- 푸터 연결 -->
     <jsp:include page="../footer.jsp"></jsp:include>
 </body>
