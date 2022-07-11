@@ -6,6 +6,7 @@ import java.text.SimpleDateFormat;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -43,10 +44,43 @@ private FaqService faqService;
 	}
 	
 
-	
-	
-	
-	
+		@GetMapping("/faq_wirte.do")
+	public String _write() {
+			
+			return "service_center/faq_write";
+		}
+		
+	@PostMapping("/faq_writeProcess.do")
+	public String faq_writeProcess(
+			String f_category, String f_title, String f_content, Model model, HttpServletRequest request)
+				throws IllegalStateException, IOException {
+		
+			HttpSession session = request.getSession();
+			
+			int result=0;
+			
+			FaqVo faqVo = new FaqVo();
+			faqVo.setF_category(f_category);
+			faqVo.setF_title(f_title);
+			faqVo.setF_content(f_content);
+			faqVo.setF_delyn(f_content);
+			System.out.println("1");
+			
+			result = faqService.insertFaq(faqVo);
+			String viewPage="service_center/faq_write";
+			
+			if(result ==1) {
+				model.addAttribute("f_category",f_category);
+				model.addAttribute("f_title",f_title);
+				model.addAttribute("f_content",f_content);
+				System.out.println("2");
+				viewPage = "redirect:/service_center.do";
+				System.out.println("3");
+			}
+			return viewPage;
+			
+		
+	}
 	
 	
 	

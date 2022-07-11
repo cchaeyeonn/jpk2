@@ -29,4 +29,11 @@ public class FaqService {
 		return faqDao.getFaqList();
 	}
 
+
+	public int insertFaq(FaqVo faqVo) {
+		return faqDao.insertFaq(faqVo);
+	}
+
+
+
 }
