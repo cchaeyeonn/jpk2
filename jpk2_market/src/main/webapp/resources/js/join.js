@@ -400,6 +400,7 @@
 			  result = "약관을 동의해주세요";
 	          $("#result_term").html(result).css("color", "red"); 
 		   return false;
+		   
 	      }
 	      });
 	      
