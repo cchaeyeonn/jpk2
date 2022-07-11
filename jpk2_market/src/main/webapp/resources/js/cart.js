@@ -8,6 +8,7 @@ $("#cart_delete").click(function(){
 			//삭제 체크박스를 체크한 jQuery객체들로부터 member_idx값을 배열에 저장
 			$("input:checked").each(function(index, item){
 				cart_idx_arr[index] = $(item).val();
+				
 			});
 			
 			$.ajax({

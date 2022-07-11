@@ -1,5 +1,6 @@
 package ezen.dev.spring.controller;
 
+import java.util.Arrays;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -49,11 +50,11 @@ public class AjaxController {
 		return result;
 	}
 	@PostMapping("/cart_delete.do")
-	public String adminDeleteInfo(@RequestParam("cart_idx_arr[]") List<Integer> cart_idx_list) {
+	public String adminDeleteInfo(@RequestParam("cart_idx_arr[]") List<Integer> cartidxList) {
 		
 		String result="N";//회원삭제 실패
-		
-		int flag = ajaxService.deleteCartInfo(cart_idx_list);
+		System.out.println(cartidxList);
+		int flag = ajaxService.deleteCartInfo(cartidxList);
 		
 		if(flag != 0) result = "Y";//회원삭제 성공
 		
