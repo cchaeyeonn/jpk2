@@ -124,8 +124,8 @@
          </tr>
          <tr>
             <td>성별</td>
-            <td><input type="radio" class="custom-control custom-radio" name="member_gender" value="m"> 남자 
-                <input type="radio" class="custom-control custom-radio" name="member_gender" value="f"> 여자</td>
+            <td><input type="radio" id="custom-control custom-radio" name="member_gender" value="m"> 남자 
+                <input type="radio" id="custom-control custom-radio" name="member_gender" value="f"> 여자</td>
                 <td><div style="height:20px"><span id="result_gender" style="font-size:12px;"></span></div></td>
          </tr>
          <tr>

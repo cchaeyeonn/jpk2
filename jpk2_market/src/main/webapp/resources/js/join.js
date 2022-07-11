@@ -351,16 +351,35 @@
 		          return false;
 			} 
 		});	
-			
+			$("input:radio[name=member_gender]").click(function(){
+               if($("input[name=member_gender]:radio:checked").length == 1){
+				  result = " ";
+		          $("#result_gender").html(result).css("color", "red");
+		          
+				
+				}
+			});
 		   
 		    //생년월일 유효성 검사
+		    $("#member_birth").focusout(function(){
+             if($("#member_birth").val() != ""){
+              result = " ";
+	          $("#result_birth").html(result).css("color", "red");
+            return false;
+          }
+          });
+		    
+		    
             $(document).on('click','#submit',function(){
 		     if($("#member_birth").val() == ""){
               result = "생년월일을 입력해주세요";
 	          $("#result_birth").html(result).css("color", "red");
-              return false;
+	          
+
           }
           });
+          
+            
 			//약관 유효성 검사
 			$(document).on('click','#submit',function(){
 			if (!$("input:checked[Name='member_termall']").is(":checked")){
@@ -383,6 +402,18 @@
 		   return false;
 	      }
 	      });
+	      
+	      $("#chk_all").click(function(){
+		   result = "";
+	          $("#result_term").html(result).css("color", "red"); 
+		  
+		
+		
+	});
+	      
+	      
+	      
+	      
 
          });
 			
