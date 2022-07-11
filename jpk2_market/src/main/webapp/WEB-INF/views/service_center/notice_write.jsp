@@ -44,7 +44,7 @@
 	
 		<div id="notice_main_inner">
 			
-			<form name="notice_write_Form" action="/spring/notice_wirteProcess.do" method="post" >
+			<form name="notice_write_Form" action="/spring/notice_writeProcess.do" method="post" >
 			<table>
 			<tr>
 				<td>카테고리</td>

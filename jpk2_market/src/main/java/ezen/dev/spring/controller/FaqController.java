@@ -64,7 +64,7 @@ private FaqService faqService;
 			faqVo.setF_title(f_title);
 			faqVo.setF_content(f_content);
 			faqVo.setF_delyn(f_content);
-			System.out.println("1");
+			
 			
 			result = faqService.insertFaq(faqVo);
 			String viewPage="service_center/faq_write";
@@ -73,9 +73,9 @@ private FaqService faqService;
 				model.addAttribute("f_category",f_category);
 				model.addAttribute("f_title",f_title);
 				model.addAttribute("f_content",f_content);
-				System.out.println("2");
+				
 				viewPage = "redirect:/service_center.do";
-				System.out.println("3");
+			
 			}
 			return viewPage;
 			

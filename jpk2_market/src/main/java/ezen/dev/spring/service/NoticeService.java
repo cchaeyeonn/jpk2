@@ -30,5 +30,10 @@ public class NoticeService {
 		return noticeDao.insertNotice(noticeVo);
 	}
 
+	public NoticeVo getNoticeInfo(Integer nidx) {
+		
+		return noticeDao.getNoticeInfo(nidx);
+	}
+
 	
 }
