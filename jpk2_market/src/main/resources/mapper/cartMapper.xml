@@ -8,7 +8,7 @@
 	
 
 	<select id="getCartList"  parameterType="Integer" resultType="cartVo">
-		select * from fm_member a inner JOIN fm_product_cart b on a.midx = b.midx_mc inner join fm_product c on a.midx = c.midx_mp where a.midx like #{midx}
+		select * from fm_member a inner JOIN fm_product_cart b on a.midx = b.midx_mc inner join fm_product c on a.midx = c.midx_mp where a.midx like #{midx} and p_delyn='N'
 	</select>
 
     <insert id="addCart" parameterType="cartVo">
@@ -16,6 +16,13 @@
 		 values(#{p_amount}, #{midx_mc}, #{pidx_pc})
 	</insert>
     
+    <delete id="deleteCartInfo" parameterType="list">
+		delete from fm_product_cart where pbidx in 
+		<foreach collection="list" item="cart_idx" open="(" separator="," close=")" >
+			#{pbidx}
+		</foreach>
+	
+	</delete>
 	
 
 

@@ -1,5 +1,7 @@
 package ezen.dev.spring.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -21,7 +23,6 @@ public class AjaxController {
 	}
 	
 	@PostMapping("/checkId.do")
-	//@ResponseBody //Ajax�넻�떊�쓽 �쓳�떟�궡�슜�쓣 蹂대궡�뒗 寃껋쓣 �몴�떆
 	public String checkId(@RequestParam("member_id") String id) {
 		
 		System.out.println("id: "+id);
@@ -35,7 +36,6 @@ public class AjaxController {
 		return result;
 	}
 	@PostMapping("/checkEmail.do")
-	//@ResponseBody //Ajax�넻�떊�쓽 �쓳�떟�궡�슜�쓣 蹂대궡�뒗 寃껋쓣 �몴�떆
 	public String checkEmail(@RequestParam("member_email") String email) {
 		
 		System.out.println("email: "+email);
@@ -45,6 +45,17 @@ public class AjaxController {
 		int flag = ajaxService.checkEmail(email);
 		
 		if(flag == 1) result = "Y";//以묐났�맂 �씠硫붿씪 �엳�쓬
+		
+		return result;
+	}
+	@PostMapping("/cart_delete.do")
+	public String adminDeleteInfo(@RequestParam("cart_idx_arr[]") List<Integer> cart_idx_list) {
+		
+		String result="N";//회원삭제 실패
+		
+		int flag = ajaxService.deleteCartInfo(cart_idx_list);
+		
+		if(flag != 0) result = "Y";//회원삭제 성공
 		
 		return result;
 	}
