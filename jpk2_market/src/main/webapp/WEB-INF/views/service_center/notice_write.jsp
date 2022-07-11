@@ -43,7 +43,9 @@
     <jsp:include page="../header.jsp"></jsp:include> 
 	
 		<div id="notice_main_inner">
-			<table><form name="notice_write_Form" action="/spring/notice_wirteProcess.do" method="post" ><!-- enctype="multipart/form-data" -->
+			
+			<form name="notice_write_Form" action="/spring/notice_wirteProcess.do" method="post" >
+			<table>
 			<tr>
 				<td>카테고리</td>
 				<td><select name="n_category">
@@ -59,8 +61,8 @@
 			<td>내용</td>
 			<td><input type="text" name="n_content"></td>
 			</tr>
-			</form>
 			</table>
+			</form>
 		</div>
 		<div id="notice_write_button"><input type="submit" value="작성하기"></div><p/>
 	

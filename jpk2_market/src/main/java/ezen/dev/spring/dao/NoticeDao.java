@@ -25,13 +25,9 @@ public class NoticeDao {
 	public List<NoticeVo> getNoticeList() {
 		return sqlSession.selectList(MAPPER+".getNoticeList");
 	}
-	
-	/*
-	 * public NoticeVo getNoticeInfo(String nidx) {
-	 * 
-	 * return sqlSession.selectOne(MAPPER+".getNoticeInfo", nidx); }
-	 */
-	
+	public int insertNotice(NoticeVo noticeVo) {
+		return sqlSession.insert(MAPPER+".insertNotice", noticeVo);
+	}
 
 
 }

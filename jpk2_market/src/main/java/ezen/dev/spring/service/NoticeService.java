@@ -26,5 +26,9 @@ public class NoticeService {
 		return noticeDao.getNoticeList();
 	}
 
+	public int insertNotice(NoticeVo noticeVo) {
+		return noticeDao.insertNotice(noticeVo);
+	}
+
 	
 }
