@@ -345,7 +345,7 @@
 	          $("#result_gender").html(result).css("color", "red");
 
 		 }
-			else if($("input[name=member_gender]:radio:checked").length == 1){
+			else if($("input[name=member_gender]:radio:checked").length == 0){
 				  result = " ";
 		          $("#result_gender").html(result).css("color", "red");
 		          return false;
@@ -358,8 +358,9 @@
 		     if($("#member_birth").val() == ""){
               result = "생년월일을 입력해주세요";
 	          $("#result_birth").html(result).css("color", "red");
-              return false;
+              
           }
+		    return false;
           });
 			//약관 유효성 검사
 			$(document).on('click','#submit',function(){
