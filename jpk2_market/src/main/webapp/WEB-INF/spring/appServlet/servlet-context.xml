@@ -35,7 +35,6 @@
 			<mapping path="/**"/>
 			<exclude-mapping path="/**/spring/"/>
 			<exclude-mapping path="/**/spring/index.do"/>
-			<exclude-mapping path="/**/spring/home.do"/>
 			<exclude-mapping path="/**/login.do"/>
 			<exclude-mapping path="/**/join.do"/>
 			<exclude-mapping path="/**/loginProcess.do"/>
