@@ -13,8 +13,6 @@ import ezen.dev.spring.vo.ProductVo;
 
 @Repository
 public class CartDao {
-
-	//MyBatis를 이용해서 DB작업: SqlSession 객체 필요
 	
 	private SqlSession sqlSession;
 	
@@ -24,21 +22,14 @@ public class CartDao {
 	public CartDao(SqlSession sqlSession) {
 		this.sqlSession = sqlSession;
 	}
-	
-	
-
 	public List<CartVo> getCartList(Integer midx) {
 		return sqlSession.selectList(MAPPER+".getCartList",midx);
 	}
-    
      public int addCart(CartVo cartVo) {
 		
 		return sqlSession.insert(MAPPER+".addCart", cartVo);
-		
 	}
      public int deleteCartInfo(List<Integer> cart_idx_list) {
  		return sqlSession.delete(MAPPER+".deleteCartInfo", cart_idx_list);
  	}
-	
-
 }

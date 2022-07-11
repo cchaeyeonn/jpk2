@@ -58,7 +58,7 @@
     <input type="button" value="선택 삭제" id="cart_delete"> <hr>
     <table id="target">
     <c:forEach items="${cartList}" var="cartVo">
-    <form >
+    <form>
     <script>
     $(function(){
     let number = $('#${cartVo.pbidx}_pop_out').val();
