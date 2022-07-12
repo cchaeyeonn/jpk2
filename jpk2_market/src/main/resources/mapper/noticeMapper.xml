@@ -16,7 +16,7 @@
 		insert into fm_notice (n_category,n_title,n_content,n_writedate,midx_mn) values(#{n_category},#{n_title},#{n_content},#{n_writedate},#{midx_mn})
 	</insert>
 	
-		<select id="getNoticeInfo" parameterType="String" resultType="noticeVo">
+	<select id="noticedetail" parameterType="String" resultType="noticeVo">
 		select * from fm_notice where nidx=#{nidx}
 	</select>
 

@@ -30,9 +30,8 @@ public class NoticeService {
 		return noticeDao.insertNotice(noticeVo);
 	}
 
-	public NoticeVo Noticedetail(String nidx) {
-		
-		return noticeDao.Noticedetail(nidx);
+	public NoticeVo noticedetail(String nidx) {
+		return noticeDao.noticedetail(nidx);
 	}
 
 	 
