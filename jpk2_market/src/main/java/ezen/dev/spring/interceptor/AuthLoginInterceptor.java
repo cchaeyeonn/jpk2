@@ -21,7 +21,7 @@ public class AuthLoginInterceptor extends HandlerInterceptorAdapter{
 			if(obj==null) {
 				response.setCharacterEncoding("UTF-8");
 				PrintWriter out = response.getWriter();
-				out.println("<script>alert('·Î±×ÀÎÀÌ ÇÊ¿äÇÑ ¼­ºñ½º ÀÔ´Ï´Ù.'); location.href='/spring/login.do';</script>");
+				out.println("<script>alert('ë¡œê·¸ì¸ì´ í•„ìš”í•œ ì„œë¹„ìŠ¤ì…ë‹ˆë‹¤.'); location.href='/spring/login.do';</script>");
 				out.flush();
 				return false;
 			}
