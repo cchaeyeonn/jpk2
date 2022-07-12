@@ -12,6 +12,7 @@
 #faq_inner{
 /*    min-height:1040px;
    padding-top:200px; */
+   margin-left:154px;
 
 }
 #ftable_1{
@@ -39,7 +40,7 @@
 <h3>자주하는 질문</h3>
 	
 
-<table border="1">
+<table border="1" style="text-align:center">
 <tr>
 <td>번호</td>
 <td>카테고리</td>
