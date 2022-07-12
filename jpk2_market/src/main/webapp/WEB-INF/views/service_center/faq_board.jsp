@@ -14,6 +14,21 @@
    padding-top:200px; */
 
 }
+#ftable_1{
+	width:50px;
+}
+
+#ftable_2{
+	width:200px;
+}
+
+#ftable_3{
+	width:300px;
+}
+
+#ftable_4{
+	width:400px;
+}
 
 </style>
 
@@ -22,7 +37,7 @@
 
 <div id="faq_inner">
 <h3>자주하는 질문</h3>
-</div>	
+	
 
 <table border="1">
 <tr>
@@ -35,13 +50,14 @@
 <c:forEach items="${faqList}" var="faqVo">
           
 <tr>
-<td>${faqVo.fidx}</td>
-<td>${faqVo.f_category}</td>
-<td><a href="/spring/faq_detail.do?fidx=${faqVo.fidx}">${faqVo.f_title}</a></td>
-<td>${faqVo.f_content}</td>
+<td id="ftable_1">${faqVo.fidx}</td>
+<td id="ftable_2">${faqVo.f_category}</td>
+<td id="ftable_3"><a href="/spring/faq_detail.do?fidx=${faqVo.fidx}">${faqVo.f_title}</a></td>
+<td id="ftable_4">${faqVo.f_content}</td>
 </tr>
  </c:forEach>
 </table>
+</div>
 
 <% 
    long grade = 0L;

@@ -30,7 +30,7 @@ public class FaqDao {
 	public int insertFaq(FaqVo faqVo) {
 		return sqlSession.insert(MAPPER+".insertFaq",faqVo);
 	}
-	public FaqVo getFaqInfo(Integer fidx) {
+	public FaqVo getFaqInfo(String fidx) {
 		return sqlSession.selectOne(MAPPER+".getFaqInfo",fidx);
 	}
 
