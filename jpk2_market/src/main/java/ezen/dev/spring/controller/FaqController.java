@@ -81,6 +81,17 @@ private FaqService faqService;
 			
 		
 	}
+		@GetMapping("/faq_detail.do")
+		public String faq_detail(@RequestParam ("fidx") Integer fidx, Model model, HttpServletRequest request){
+			
+			FaqVo faqVo = faqService.getFaqInfo(fidx);
+			
+			model.addAttribute("FaqVo, faqVo");
+			
+			return "service_center/faq_detail";
+			
+		}
+
 	
 	
 	

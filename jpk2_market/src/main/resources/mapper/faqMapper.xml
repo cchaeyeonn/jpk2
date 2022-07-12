@@ -15,4 +15,8 @@
 	<insert id="insertFaq" parameterType="faqVo">
 		insert into fm_faq (f_category, f_title, f_content) values(#{f_category},#{f_title},#{f_content})
 	</insert>
+	
+	<select id="getFaqInfo" parameterType="String" resultType="faqVo">
+	select * from fm_faq where fidx=#{fidx}
+	</select>
 </mapper>

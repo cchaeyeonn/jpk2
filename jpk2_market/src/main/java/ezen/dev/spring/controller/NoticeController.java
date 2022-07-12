@@ -13,6 +13,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -85,17 +87,19 @@ private NoticeService noticeService;
 	}
 	
 	@GetMapping("/notice_detail.do")
-	public String notice_detail(@RequestParam ("nidx") Integer nidx, Model model, HttpServletRequest request){
+	public String notice_detail(@RequestParam ("nidx") String nidx, Model model, HttpServletRequest request){
 		
 		
-//		String pidx = (String)session.getAttribute("productVo.pidx");
+		//String nidx = (String)session.getAttribute("noticeVo.nidx");
 
-		NoticeVo noticeVo = noticeService.getNoticeInfo(nidx);
+		NoticeVo noticeVo = noticeService.Noticedetail(nidx);
 		
 		model.addAttribute("NoticeVo",noticeVo);
 		
 		return "service_center/notice_detail";
 	}
+	
+
 	
 	
 	
