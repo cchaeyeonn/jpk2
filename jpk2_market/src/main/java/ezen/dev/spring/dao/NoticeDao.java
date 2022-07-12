@@ -28,8 +28,8 @@ public class NoticeDao {
 	public int insertNotice(NoticeVo noticeVo) {//공지사항 글쓰기
 		return sqlSession.insert(MAPPER+".insertNotice", noticeVo);
 	}
-	public NoticeVo Noticedetail(String nidx) {//공지사항 자세히보기
-		return sqlSession.selectOne(MAPPER+".getNoticeInfo", nidx);
+	public NoticeVo noticedetail(String nidx) {//공지사항 자세히보기
+		return sqlSession.selectOne(MAPPER+".noticedetail", nidx);
 	}
 
 
