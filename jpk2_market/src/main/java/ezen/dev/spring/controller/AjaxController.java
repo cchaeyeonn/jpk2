@@ -53,7 +53,7 @@ public class AjaxController {
 	public String adminDeleteInfo(@RequestParam("cart_idx_arr[]") List<Integer> cartidxList) {
 		
 		String result="N";//회원삭제 실패
-		System.out.println(cartidxList);
+		
 		int flag = ajaxService.deleteCartInfo(cartidxList);
 		
 		if(flag != 0) result = "Y";//회원삭제 성공
