@@ -37,7 +37,7 @@
 <tr>
 <td>${faqVo.fidx}</td>
 <td>${faqVo.f_category}</td>
-<td>${faqVo.f_title}</td>
+<td><a href="/spring/faq_detail.do?fidx=${faqVo.fidx}">${faqVo.f_title}</a></td>
 <td>${faqVo.f_content}</td>
 </tr>
  </c:forEach>

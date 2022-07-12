@@ -35,5 +35,11 @@ public class FaqService {
 	}
 
 
+	public FaqVo getFaqInfo(Integer fidx) {
+
+		return faqDao.getFaqInfo(fidx);
+	}
+
+
 
 }
