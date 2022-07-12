@@ -6,7 +6,7 @@ $("#cart_delete").click(function(){
 			let cart_idx_arr = new Array();
 			
 			//삭제 체크박스를 체크한 jQuery객체들로부터 member_idx값을 배열에 저장
-			$("input:checked").each(function(index, item){
+			$(".del-chk").each(function(index, item){
 				cart_idx_arr[index] = $(item).val();
 				
 			});
@@ -37,13 +37,13 @@ $("#cart_delete").click(function(){
 	
 	
 //체크박스 전체 동작 관련 스크립트 
-/* $(document).on('click','#chk_all',function(){
+ $(document).on('click','#chk_all',function(){
 	       if($('#chk_all').is(':checked')){
 		    $('.del-chk').prop('checked',true);
 		     }else{
 		    	$('.del-chk').prop('checked',false);
 			  }
-               }); */
+               }); 
 $(document).on('click','.del-chk',function(){
            if($('input[class=del-chk]:checked').length==$('.del-chk').length){
            $('#chk_all').prop('checked',true);
