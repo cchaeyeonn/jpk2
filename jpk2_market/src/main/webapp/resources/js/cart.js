@@ -17,6 +17,7 @@ $("#cart_delete").click(function(){
 				data: {
 					"cart_idx_arr": cart_idx_arr
 				},
+				traditional : true,
 				success: function(data){
 					if(data == "N"){
 						alert("장바구니삭제 실패!");
