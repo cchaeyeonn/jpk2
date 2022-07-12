@@ -6,7 +6,7 @@ $("#cart_delete").click(function(){
 			let cart_idx_arr = new Array();
 			
 			//삭제 체크박스를 체크한 jQuery객체들로부터 member_idx값을 배열에 저장
-			$(".del-chk").each(function(index, item){
+			$("input[class='del-chk']:checked").each(function(index, item){
 				cart_idx_arr[index] = $(item).val();
 				
 			});
@@ -17,15 +17,16 @@ $("#cart_delete").click(function(){
 				data: {
 					"cart_idx_arr": cart_idx_arr
 				},
+				async: false,
 				success: function(data){
 					if(data == "N"){
 						alert("장바구니삭제 실패!");
 					}else{
 						//회원목록에서 삭제 체크된 회원정보를 테이블에서 삭제하기
-						$("tr:has(input:checked)").remove();
+						/*$("tr:has(input:checked)").remove();*/
 					}
 				},
-				error: function(error){ alert("장바구니삭제 중 에러발생"); }
+				error: function(error){ alert("장바구니가 비었습니다!"); }
 			});
 			
 		});		
@@ -42,12 +43,13 @@ $("#btn_delete").click(function(){
 				data: {
 					"pbidx":pbidx
 				},
+				async: false,
 				success: function(data){
 					if(data == "N"){
 						alert("해당 항목의 체크박스를 체크해주세요");
 					}else{
 						//회원목록에서 삭제 체크된 회원정보를 테이블에서 삭제하기
-						$("tr:has(input:checked)").remove();
+						/*$("tr:has(input:checked)").remove();*/
 					}
 				},
 				error: function(error){ alert("장바구니삭제 중 에러발생"); }
