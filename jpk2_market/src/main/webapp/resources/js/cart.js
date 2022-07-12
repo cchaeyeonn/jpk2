@@ -17,7 +17,6 @@ $("#cart_delete").click(function(){
 				data: {
 					"cart_idx_arr": cart_idx_arr
 				},
-				traditional : true,
 				success: function(data){
 					if(data == "N"){
 						alert("장바구니삭제 실패!");
@@ -37,14 +36,14 @@ $("#cart_delete").click(function(){
 	
 	
 	
-//체크박스 전체 동작 관련 스크립트
-$(document).on('click','#chk_all',function(){
+//체크박스 전체 동작 관련 스크립트 
+/* $(document).on('click','#chk_all',function(){
 	       if($('#chk_all').is(':checked')){
 		    $('.del-chk').prop('checked',true);
 		     }else{
 		    	$('.del-chk').prop('checked',false);
 			  }
-               });
+               }); */
 $(document).on('click','.del-chk',function(){
            if($('input[class=del-chk]:checked').length==$('.del-chk').length){
            $('#chk_all').prop('checked',true);
@@ -53,7 +52,7 @@ $(document).on('click','.del-chk',function(){
 			}
             });
 	      
-// + - 버튼
+// + - 버튼 
 
 	   
    
