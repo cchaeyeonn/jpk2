@@ -32,4 +32,8 @@ public class CartDao {
      public int deleteCartInfo(List<Integer> cartidxList) {
  		return sqlSession.delete(MAPPER+".deleteCartInfo", cartidxList);
  	}
+     public int deleteCartInfoOne(Integer pbidx) {
+  		return sqlSession.delete(MAPPER+".deleteCartInfoOne", pbidx);
+  	} 
+     
 }

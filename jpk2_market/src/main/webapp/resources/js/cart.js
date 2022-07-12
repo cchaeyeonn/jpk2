@@ -29,6 +29,32 @@ $("#cart_delete").click(function(){
 			});
 			
 		});		
+		
+$("#btn_delete").click(function(){
+			
+			let pbidx = $("#btn_delete").val();
+			
+		
+			
+			$.ajax({
+				type: "post",
+				url: "/spring/cart_deleteOne.do",
+				data: {
+					"pbidx":pbidx
+				},
+				success: function(data){
+					if(data == "N"){
+						alert("체크박스를 체크해주세요");
+					}else{
+						//회원목록에서 삭제 체크된 회원정보를 테이블에서 삭제하기
+						$("tr:has(input:checked)").remove();
+					}
+				},
+				error: function(error){ alert("장바구니삭제 중 에러발생"); }
+			});
+			
+		});				
+		
 	
 	
 	

@@ -86,7 +86,7 @@
     });
     </script>
  
-    <tr id="product_target">
+    <tr id="${cartVo.pbidx}_product_target">
     <td>
     <input type="checkbox" class="del-chk" value="${cartVo.pbidx}">
     </td>
@@ -112,7 +112,7 @@
     </td>
     <td>
     <!-- 삭제버튼 -->
-    <button id="btn_delete">X</button>
+    <button id="btn_delete" value="${cartVo.pbidx}">X</button>
     </td>
     </tr>
     </form>

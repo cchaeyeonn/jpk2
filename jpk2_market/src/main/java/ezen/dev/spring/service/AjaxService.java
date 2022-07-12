@@ -40,6 +40,9 @@ public class AjaxService {
 	public int deleteCartInfo(List<Integer> cartidxList) {
 		return cartDao.deleteCartInfo(cartidxList);
 	}
+	public int deleteCartInfoOne(Integer pbidx) {
+		return cartDao.deleteCartInfoOne(pbidx);
+	}
 	
 
 

@@ -50,11 +50,22 @@ public class AjaxController {
 		return result;
 	}
 	@PostMapping("/cart_delete.do")
-	public String adminDeleteInfo(@RequestParam("cart_idx_arr[]") List<Integer> cartidxList) {
+	public String cartDeleteInfo(@RequestParam("cart_idx_arr[]") List<Integer> cartidxList) {
 		
 		String result="N";//회원삭제 실패
 		
 		int flag = ajaxService.deleteCartInfo(cartidxList);
+		
+		if(flag != 0) result = "Y";//회원삭제 성공
+		
+		return result;
+	}
+	@PostMapping("/cart_deleteOne.do")
+	public String cartDeleteInfoOne(@RequestParam("pbidx") Integer pbidx) {
+		
+		String result="N";//회원삭제 실패
+		
+		int flag = ajaxService.deleteCartInfoOne(pbidx);
 		
 		if(flag != 0) result = "Y";//회원삭제 성공
 		
