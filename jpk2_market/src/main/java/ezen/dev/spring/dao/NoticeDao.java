@@ -22,13 +22,13 @@ public class NoticeDao {
 	public NoticeDao(SqlSession sqlSession) {
 		this.sqlSession = sqlSession;
 	}
-	public List<NoticeVo> getNoticeList() {
+	public List<NoticeVo> getNoticeList() {	//공지사항 리스트
 		return sqlSession.selectList(MAPPER+".getNoticeList");
 	}
-	public int insertNotice(NoticeVo noticeVo) {
+	public int insertNotice(NoticeVo noticeVo) {//공지사항 글쓰기
 		return sqlSession.insert(MAPPER+".insertNotice", noticeVo);
 	}
-	public NoticeVo getNoticeInfo(Integer nidx) {
+	public NoticeVo Noticedetail(String nidx) {//공지사항 자세히보기
 		return sqlSession.selectOne(MAPPER+".getNoticeInfo", nidx);
 	}
 

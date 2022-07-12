@@ -13,6 +13,22 @@
 /* 	min-height:1040px;*/
 	padding-top:200px; 
 	}
+	
+#ntable_1{
+	width:50px;
+}
+
+#ntable_2{
+	width:200px;
+}
+
+#ntable_3{
+	width:300px;
+}
+
+#ntable_4{
+	width:400px;
+}
 </style>
 
 
@@ -24,10 +40,10 @@
 <h3>공지사항</h3>
 </div>	
 
-<table border="1">
+<table border="1" style="text-align:center">
 <tr>
-<td>번호</td>
 <td></td>
+<td>구분</td>
 <td>제목</td>
 <td>내용</td>
 
@@ -35,10 +51,10 @@
 <c:forEach items="${noticeList}" var="noticeVo">
           
 <tr>
-<td>${noticeVo.nidx}</td>
-<td>[${noticeVo.n_category}]</td>
-<td><a href="/spring/notice_detail.do?nidx=${noticeVo.nidx}">${noticeVo.n_title}</a></td>
-<td>${noticeVo.n_content}</td>
+<td id="ntable_1">${noticeVo.nidx}</td>
+<td id="ntable_2">[${noticeVo.n_category}]</td>
+<td id="ntable_3"><a href="/spring/notice_detail.do?nidx=${noticeVo.nidx}">${noticeVo.n_title}</a></td>
+<td id="ntable_4">${noticeVo.n_content}</td>
 </tr>
  </c:forEach>
 </table>
