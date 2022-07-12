@@ -34,11 +34,37 @@
     
     
     } */
+    
+    #notice_detail{
+    padding-top:200px;
+    margin-left:320px;
+    margin-top:100px;
+    min-height:1040px;
+    }
+    
+    #nd_table1{
+    	width:200px;
+    }
+    
+    #nd_table2{
+    	width:200px;
+    }
+    
+    #nd_table3{
+    	width:400px;
+    	    }
+    
+    #nd_table4{
+    	width:600px;
+    }
+    
+
+    
 
 </style>
 <%-- <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/modal.css"> --%>
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
-<script src="${pageContext.request.contextPath}/resources/js/cart.js "></script>
+<%-- <script src="${pageContext.request.contextPath}/resources/js/cart.js "></script> --%>
 
 </head>
 <body>
@@ -46,28 +72,32 @@
     <!-- 헤더 연결 -->
     <jsp:include page="../header.jsp"></jsp:include> 
 	<form name="insertnotice_form" action="/spring/notice_writeProcess.do" method="post">
-	   <input type="hidden"  name="nidx_mn" value="${noticeVo.nidx} ">
+	   <input type="hidden"  name="nidx" value="${noticeVo.nidx} ">
 		<div id="notice">
 		
-		<div id="notice_detail">
-		
-		<table>
-		<tr>
-		<td>번호</td><td>${noticeVo.nidx}</td>
-		<td></td><td>${noticeVo.n_category}</td>
-		<td>제목</td><td>${noticeVo.n_title}</td>
-		<td>내용</td><td>${noticeVo.n_content}</td>
-		</tr>
-		
-		
-		</table>
+			<div id="notice_detail">
+			
+				<table id="notice_table">
+				<tr>
+				<td id="nd_table1">번호</td><td>${noticeVo.nidx}</td>
+				</tr>
+				<tr>
+				<td id="nd_table2"></td><td>${noticeVo.n_category}</td>
+				</tr>
+				<tr>
+				<td id="nd_table3">제목</td><td>${noticeVo.n_title}</td>
+				</tr>
+				<tr>
+				<td id="nd_table4">내용</td><td>${noticeVo.n_content}</td>
+				</tr>
+				<tr>
+				<td><a href="/spring/" id="homebutton_1">메인</a></td>
+				</tr>
+				
+				
+				</table>
+			</div>
 		</div>
-		</div>
-		<div id="home_button">
-		<a href="/spring/" id="homebutton_1">메인</a>
-		<!-- <input type="button" id="homebutton_1" value="메인으로"></a> -->
-		<!-- <input type="button" id="btn-modal" value="장바구니"> -->
-		
 
 
    
