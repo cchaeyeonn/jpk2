@@ -41,8 +41,11 @@
 			<exclude-mapping path="/**/productList.do"/>
 			<beans:bean id="AuthLoginInterceptor" class="ezen.dev.spring.interceptor.AuthLoginInterceptor">
 	        </beans:bean>
-			
-			
+		</interceptor>
+		<interceptor>
+		<mapping path="/**/joinProcess.do"/>
+		<beans:bean id="EmailLoginInterceptor" class="ezen.dev.spring.interceptor.EmailLoginInterceptor">
+		</beans:bean>
 		</interceptor>
 	</interceptors>
 
