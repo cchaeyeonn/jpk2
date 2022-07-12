@@ -87,14 +87,14 @@ private NoticeService noticeService;
 	}
 	
 	@GetMapping("/notice_detail.do")
-	public String notice_detail(@RequestParam ("nidx") String nidx, Model model, HttpServletRequest request){
+	public String notice_detail(@RequestParam String nidx, Model model, HttpServletRequest request){
 		
 		
 		//String nidx = (String)session.getAttribute("noticeVo.nidx");
 
-		NoticeVo noticeVo = noticeService.Noticedetail(nidx);
+		NoticeVo noticeVo = noticeService.noticedetail(nidx);
 		
-		model.addAttribute("NoticeVo",noticeVo);
+		model.addAttribute("noticeVo",noticeVo);
 		
 		return "service_center/notice_detail";
 	}
