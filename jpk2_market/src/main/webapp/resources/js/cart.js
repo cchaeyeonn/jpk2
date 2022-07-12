@@ -44,7 +44,7 @@ $("#btn_delete").click(function(){
 				},
 				success: function(data){
 					if(data == "N"){
-						alert("체크박스를 체크해주세요");
+						alert("해당 항목의 체크박스를 체크해주세요");
 					}else{
 						//회원목록에서 삭제 체크된 회원정보를 테이블에서 삭제하기
 						$("tr:has(input:checked)").remove();
