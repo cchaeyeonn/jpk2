@@ -6531,7 +6531,7 @@ textarea.form-control-lg {
   right: 0;
   left: 0;
   /* z-index: 1030; */
-  z-index:5;
+  z-index:10001;
 }
 
 .fixed-top2{
@@ -6540,7 +6540,7 @@ textarea.form-control-lg {
   right: 0;
   left: 0;
   /* z-index: 1020; */
-  z-index:4;
+  z-index:10000;
 
 }
 
