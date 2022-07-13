@@ -77,6 +77,7 @@ public class CartController {
 		cartVo.setMidx_mc(midx_mc);
 		cartVo.setPidx_pc(pidx_pc);
 		
+		
 		String pidx_pc_=Integer.toString(pidx_pc);
 		
         ProductVo productVo = productService.getProductInfo(pidx_pc_);
