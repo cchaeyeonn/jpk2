@@ -9,22 +9,22 @@
 
 <style>
 
-#servive_main_inner{
-margin-left:200px;
-}
-
-#service_center_cate{
-
-	padding-top:200px;
-	width:155px;
-	float:left;
-
-}
-#service_board{
-min-height:1040px;
-}
-#service_board_inner{
-}
+	#servive_main_inner{
+	margin-left:200px;
+	}
+	
+	#service_center_cate{
+	
+		padding-top:200px;
+		width:155px;
+		float:left;
+	
+	}
+	#service_board{
+	min-height:1040px;
+	}
+	#service_board_inner{
+	}
 
 </style>
 

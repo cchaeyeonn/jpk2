@@ -62,23 +62,23 @@
          }
    
    
-      #topButton {
-      position: fixed; 
-      right: 2%; 
-      bottom: 50px; 
-      display: none; 
-      z-index: 999;
-      }
-      
-      #index_inner{
-      min-height: 1040px;
-      }
+/* 	      #topButton {
+	      position: fixed; 
+	      right: 2%; 
+	      bottom: 50px; 
+	      display: none; 
+	      z-index: 999;
+	      }
+	      
+	      #index_inner{
+	      min-height: 1040px;
+	      } */
 
       </style>
       
       
       
-      <!-- topbutton 스크립트 시작 -->
+<!--       topbutton 스크립트 시작
       <script>
       
       $(window).scroll(function() {
@@ -99,7 +99,7 @@
          });
       
       </script>
-      <!-- topbutton 스크립트 끝 -->
+      topbutton 스크립트 끝 -->
       
       
     </head>
@@ -111,11 +111,11 @@
        
        
 
-        <!-- 누르면 상단으로 가는 top버튼 시작 -->
+<!--         누르면 상단으로 가는 top버튼 시작
         <div id="topButton" style="cursor: pointer"><img src="resources//img/topbutton.png" id="topButtonImg"></div>
-        <!-- 누르면 상단으로 가는 top버튼 끝 -->
+        누르면 상단으로 가는 top버튼 끝 -->
         
-        <!-- Masthead-->
+        <!-- 헤더 카테고리와 이미지 슬라이드 구역 시작 -->
         <header class="masthead bg-primary text-white text-center">
             <div class="container d-flex align-items-center flex-column">
                <!-- <img class="k_nava" src="resources/img/k_tpk.PNG" alt="..."  style="width: 1150px;  height: 380px;"/> -->
@@ -146,6 +146,7 @@
          </ul>
 
         </header>
+        <!-- 헤더 카테고리와 이미지 슬라이드 구역 끝 -->
        
         <div id="index_inner">
            <c:import url="/productList.do">
