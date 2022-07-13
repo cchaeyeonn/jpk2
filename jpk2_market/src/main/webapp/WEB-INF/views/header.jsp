@@ -36,8 +36,9 @@ a{text-decoration:none; color:#333;}
 .menu .depth_1{display:none; position:fixed; left: 41px; background-color: white; border: 1px solid #0000001a; }
 .menu .depth_1 a{display:block; margin:5px; /* padding:5px; */  color:#fff;}
 
-#icon1 {
 
+/* 카테고리 아이콘 이미지 */
+#icon1 {
 list-style-image:url("resources/img/icon.png");
 }
 </style>
