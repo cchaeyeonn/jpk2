@@ -39,6 +39,14 @@ a{text-decoration:none;} /* a태그에 텍스트 밑줄을 없애줌*/
 .menu .depth_1{display:none; position:fixed; left: 41px; background-color: white; border: 1px solid #0000001a; }
 .menu .depth_1 a{display:block; margin:5px; /* padding:5px; */  color:#fff;}
 
+#cart_count{
+	background-color: #bbbba270;
+    width: 22px;
+    height: 22px;
+    float: right;
+    border-radius: 35px;
+    text-align: center;
+}
 
 </style>
     
@@ -117,7 +125,7 @@ a{text-decoration:none;} /* a태그에 텍스트 밑줄을 없애줌*/
              <li style="float:right; width:0px;">
              <a href="/spring/cart_main.do?midx=${midx}" style="float:right;">
              <img src="resources/img/cart.png" onmouseover="this.src='resources/img/cart2.png';" onmouseout="this.src='resources/img/cart.png';" alt="장바구니" width=30px; /></a>
-             <span id="cart_count">${result_}</span></li>
+             <div id="cart_count">${result_}</div></li>
            </ul>
                  
           </div>

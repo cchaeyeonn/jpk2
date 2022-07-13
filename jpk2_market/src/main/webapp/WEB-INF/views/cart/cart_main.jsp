@@ -57,12 +57,14 @@
     <!-- 헤더 연결 -->
     <jsp:include page="../header.jsp"></jsp:include>
  
+ 	<form>
     <div id="cart_inner">
     <h2 style="text-align:center;"> 장바구니</h2>
     <input type="checkbox" id="chk_all">전체 선택 ㅣ 
-    <input type="button" value="선택 삭제" id="cart_delete"><hr>
+    <!--<input type="button" value="선택 삭제" id="cart_delete">-->
+    <button id="cart_delete"  value="선택 삭제">선택 삭제</button><hr>
+    </form>
     
-    <!--<button id="cart_delete"  value="선택 삭제">선택 삭제</button>-->
        
     <table id="target">
     <c:forEach items="${cartList}" var="cartVo">
