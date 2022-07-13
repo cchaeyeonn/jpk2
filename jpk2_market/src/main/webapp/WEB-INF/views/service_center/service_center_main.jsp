@@ -51,6 +51,7 @@ min-height:1040px;
 		
 		
 		<div>
+		<!-- 공지사항 연결 -->
 		<c:import url="/notice_board.do">
             <c:param name="nidx" value="${nidx}"/>
             <c:param name="n_category" value="${n_category}"/>
@@ -60,6 +61,7 @@ min-height:1040px;
             <c:param name="midx_mn" value="${midx_mn}"/>
         </c:import> 
         
+        <!-- faq 연결 -->
         <c:import url="/faq_board.do">
             <c:param name="fidx" value="${fidx}"/>
             <c:param name="f_category" value="${f_category}"/>
@@ -68,6 +70,7 @@ min-height:1040px;
             <c:param name="f_delyn" value="${f_delyn}"/>
         </c:import> 
         
+        <!-- qna 연결 -->
         <c:import url="/qna_board.do">
             <c:param name="qidx" value="${qidx}"/>
             <c:param name="q_category" value="${q_category}"/>

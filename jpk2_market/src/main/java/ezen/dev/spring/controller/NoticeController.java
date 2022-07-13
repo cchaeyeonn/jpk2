@@ -41,7 +41,7 @@ private NoticeService noticeService;
 	@GetMapping("/notice_board.do")
 	public String service_center(Model model) {
 		
-		List<NoticeVo> noticeList = noticeService.getNoticeList();//서비스를 호출
+		List<NoticeVo> noticeList = noticeService.getNoticeList(); //서비스를 호출
 		
 		model.addAttribute("noticeList",noticeList); //(키,값)
 		
@@ -70,7 +70,7 @@ private NoticeService noticeService;
 		
 		midx_mn=Integer.parseInt(String.valueOf(session.getAttribute("midx")));
 		
-		NoticeVo noticeVo = new NoticeVo();
+		NoticeVo noticeVo = new NoticeVo(); //notice라는 이름으로 메모리에 공간을 할당
 		noticeVo.setN_category(n_category);
 		noticeVo.setN_title(n_title);
 		noticeVo.setN_content(n_content);

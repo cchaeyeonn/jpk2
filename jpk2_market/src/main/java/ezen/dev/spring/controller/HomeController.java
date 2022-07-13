@@ -1,17 +1,8 @@
 package ezen.dev.spring.controller;
 
-import java.io.File;
-import java.io.IOException;
-import java.text.SimpleDateFormat;
-
-import javax.servlet.http.HttpServletRequest;
-
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.multipart.MultipartFile;
+
 
 @Controller
 public class HomeController {
@@ -27,6 +18,7 @@ public class HomeController {
 	}
 
 	
+	//고객센터
 	@GetMapping("/service_center.do")
 	public String service_center() {
 		return "service_center/service_center_main";

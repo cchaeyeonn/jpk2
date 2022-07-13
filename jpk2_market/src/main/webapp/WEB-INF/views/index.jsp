@@ -60,8 +60,6 @@
          }
    
    
-   
-   
       #topButton {
       position: fixed; 
       right: 2%; 
@@ -77,12 +75,13 @@
       </style>
       
       
+      
       <!-- topbutton 스크립트 시작 -->
       <script>
       
       $(window).scroll(function() {
           // top button controll
-          if ($(this).scrollTop() > 500) {
+          if ($(this).scrollTop() > 500) { 	//500만큼 내려가면 topbutton 보임
               $('#topButton').fadeIn();
           } else {
               $('#topButton').fadeOut();
@@ -93,15 +92,13 @@
       $(document).ready(function() {
            // Top Button click event handler
            $("#topButtonImg").click(function() {
-             $('html, body').animate({scrollTop:0}, '300');
+             $('html, body').animate({scrollTop:0}, '300'); //버튼을 누르면 제일 위까지 부드럽게 올라옴
            });
          });
-
-      
-      
       
       </script>
       <!-- topbutton 스크립트 끝 -->
+      
       
     </head>
     
