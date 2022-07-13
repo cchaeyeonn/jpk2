@@ -12,9 +12,10 @@ import javax.servlet.http.HttpServletRequest;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.javamail.JavaMailSender;
+import org.springframework.stereotype.Service;
 
 import ezen.dev.spring.dao.MemberDao;
-
+@Service
 public class EmailService {
 	
 	@Autowired
