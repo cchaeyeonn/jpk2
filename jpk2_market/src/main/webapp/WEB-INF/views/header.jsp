@@ -110,8 +110,8 @@ a{text-decoration:none;} /* a태그에 텍스트 밑줄을 없애줌*/
             
              <!-- 마우스 올리면 이미지 변경 onmouseover 이벤트 -->
              <li><a href="/spring/cart_main.do?midx=${midx}" style="float:right;">
-             <img src="resources/img/cart.png" onmouseover="this.src='resources/img/cart2.png';" onmouseout="this.src='resources/img/cart.png';" alt="장바구니" width=30px; /></a></li>
-           
+             <img src="resources/img/cart.png" onmouseover="this.src='resources/img/cart2.png';" onmouseout="this.src='resources/img/cart.png';" alt="장바구니" width=30px; /></a>
+             ${result_}</li>
            </ul>
                  
           </div>

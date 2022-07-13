@@ -63,7 +63,11 @@ public class CartController {
 		HttpSession session = request.getSession();
 		
 		int result=0;
-		
+		if(session.getAttribute("result_")==null) {
+			session.setAttribute("result_", 0);
+			
+		}
+		int result_=Integer.parseInt(String.valueOf(session.getAttribute("result_")));
 		midx_mc=Integer.parseInt(String.valueOf(session.getAttribute("midx")));
 		//session 값은  object형으로 Integer형으로 바꾸기 위해 String을 거치고 parseInt를 통해 Integer로 바꾼다.
 		int p_amount_ = Integer.parseInt(p_amount);
@@ -83,10 +87,12 @@ public class CartController {
 		String viewPage="product/product_detail";
 
 		if(result ==1) {
+			
 			model.addAttribute("p_amount",p_amount_);
 			model.addAttribute("midx_mc",midx_mc);
 			model.addAttribute("pidx_pc",pidx_pc);
 			
+			session.setAttribute("result_", result_+=1);
 			
 			
 			viewPage = "product/product_detail";

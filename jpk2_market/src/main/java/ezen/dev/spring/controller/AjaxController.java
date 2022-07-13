@@ -3,7 +3,11 @@ package ezen.dev.spring.controller;
 import java.util.Arrays;
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -50,22 +54,28 @@ public class AjaxController {
 		return result;
 	}
 	@PostMapping("/cart_delete.do")
-	public String cartDeleteInfo(@RequestParam("cart_idx_arr[]") List<Integer> cartidxList) {
+	public String cartDeleteInfo(@RequestParam("cart_idx_arr[]") List<Integer> cartidxList,HttpServletRequest request) {
 		
 		String result="N";//회원삭제 실패
-		
+		HttpSession session = request.getSession();
+		int result_=Integer.parseInt(String.valueOf(session.getAttribute("result_")));
 		int flag = ajaxService.deleteCartInfo(cartidxList);
+		result_ = result_-flag;
+		session.setAttribute("result_", result_);
 		
 		if(flag != 0) result = "Y";//회원삭제 성공
 		
 		return result;
 	}
 	@PostMapping("/cart_deleteOne.do")
-	public String cartDeleteInfoOne(@RequestParam("pbidx") Integer pbidx) {
-		
+	public String cartDeleteInfoOne(@RequestParam("pbidx") Integer pbidx,HttpServletRequest request) {
+		HttpSession session = request.getSession();
+		int result_=Integer.parseInt(String.valueOf(session.getAttribute("result_")));
 		String result="N";//회원삭제 실패
 		
 		int flag = ajaxService.deleteCartInfoOne(pbidx);
+		result_ = result_-flag;
+		session.setAttribute("result_", result_);
 		
 		if(flag != 0) result = "Y";//회원삭제 성공
 		
