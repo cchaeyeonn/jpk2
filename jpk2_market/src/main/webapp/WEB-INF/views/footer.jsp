@@ -6,8 +6,56 @@
 <meta charset="UTF-8">
 	<!-- footer CSS -->
 	<link rel="stylesheet" href="./resources/css/footertest.css">
+	
+	<style>
+		  #topButton {
+		      position: fixed; 
+		      right: 2%; 
+		      bottom: 50px; 
+		      display: none; 
+		      z-index: 999;
+	      }
+	      
+	      #index_inner{
+	      	min-height: 1040px;
+	      }
+	</style>
+	
+	<!-- topbutton 스크립트 시작 -->
+      <script>
+      
+      $(window).scroll(function() {
+          // top button controll
+          if ($(this).scrollTop() > 500) { 	//500만큼 내려가면 topbutton 보임
+              $('#topButton').fadeIn();
+          } else {
+              $('#topButton').fadeOut();
+          }
+      });
+      
+      
+      $(document).ready(function() {
+           // Top Button click event handler
+           $("#topButtonImg").click(function() {
+             $('html, body').animate({scrollTop:0}, '300'); //버튼을 누르면 제일 위까지 부드럽게 올라옴
+           });
+         });
+      
+      </script>
+      <!-- topbutton 스크립트 끝 -->
+      
 </head>
 <body>
+
+
+
+
+<!-- 누르면 상단으로 가는 top버튼 시작 -->
+        <div id="topButton" style="cursor: pointer"><img src="resources//img/topbutton.png" id="topButtonImg"></div>
+        <!-- 누르면 상단으로 가는 top버튼 끝 -->
+
+
+
 <!-- Footer-->
 	<div id="footer">
 		<div class="footer-top">

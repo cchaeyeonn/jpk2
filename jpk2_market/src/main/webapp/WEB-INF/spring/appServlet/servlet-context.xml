@@ -43,6 +43,10 @@
 			<!-- resources값(js,css) 또한 활용해야하기 때문에 예외처리 -->
 			<exclude-mapping path="/**/resources/**"/>
 			<exclude-mapping path="/**/productList.do"/>
+			<exclude-mapping path="/**/checkId.do"/>
+			<exclude-mapping path="/**/checkEmail.do"/>
+			<exclude-mapping path="/**/cart_delete.do"/>
+			<exclude-mapping path="/**/cart_deleteOne.do"/>
 			<beans:bean id="AuthLoginInterceptor" class="ezen.dev.spring.interceptor.AuthLoginInterceptor">
 	        </beans:bean>
 		</interceptor>
