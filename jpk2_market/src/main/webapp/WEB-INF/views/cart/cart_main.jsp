@@ -102,7 +102,7 @@
     <!-- 수량 버튼 -->
     
     <input type="button" id="${cartVo.pbidx}_btn_minus" value="-">
-    <input type="text"  id="${cartVo.pbidx}_pop_out" value="1" readonly="readonly" style="text-align:center;"/>
+    <input type="text"  id="${cartVo.pbidx}_pop_out" value="${cartVo.p_amount}" readonly="readonly" style="text-align:center;"/>
     <input type="button" id="${cartVo.pbidx}_btn_plus" value="+"  >
    
     </td>
