@@ -110,8 +110,8 @@
 				
           // 약관 전체 체크 박스관련 스크립트 
           $(document).on('click','#chk_all',function(){
-	       if($('#chk_all').is(':checked')){
-		    $('.del-chk').prop('checked',true);
+	       if($('#chk_all').is(':checked')){   //$("선택요소").is("비교할 요소 또는 표현식) : 특정요소가 선택요소와 관련값 또는 현재의 상태 등을 확인 후 Boolean 값 true, false로 반환
+		    $('.del-chk').prop('checked',true); //prop(): ()안에 값이 하나일 경우 속성값을 가져오고 두개일 경우 첫번째 값에 두번째 값을 부여한다. 속성값 관련 메소드로 보면 된다.
 		     }else{
 		    	$('.del-chk').prop('checked',false);
 			  }

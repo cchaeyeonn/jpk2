@@ -1,5 +1,8 @@
 package ezen.dev.spring.vo;
 
+
+// 조인을 했다고 하더라도 Vo는 별개다. DB와 Class는 분리 되어있기 때문이다.
+
 public class CartVo {
 	private int pbidx;
 	private String p_check;

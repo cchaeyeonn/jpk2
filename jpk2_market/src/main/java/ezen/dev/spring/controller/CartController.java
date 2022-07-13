@@ -41,7 +41,8 @@ public class CartController {
 		this.productService = productService;
 		
 	}
-	
+	// 컨트롤러 - Service - dao는 반드시 1:1:1 매칭이 되어야 하는것은 아니다.
+	// 지금처럼 한 컨트롤러에 2개의 서비스를 연결하는것도 가능하다. 주로 사용하는 Service는 생성자방식, 사용 빈도수가 낮은 Service는 set방식으로 객체 주입을 한다.
 
 
 	@GetMapping("/cart_main.do")
@@ -64,7 +65,9 @@ public class CartController {
 		int result=0;
 		
 		midx_mc=Integer.parseInt(String.valueOf(session.getAttribute("midx")));
+		//session 값은  object형으로 Integer형으로 바꾸기 위해 String을 거치고 parseInt를 통해 Integer로 바꾼다.
 		int p_amount_ = Integer.parseInt(p_amount);
+		//String형인 P_amount를 int형으로 바꾼다.
 		CartVo cartVo = new CartVo();
 		cartVo.setP_amount(p_amount_);
 		cartVo.setMidx_mc(midx_mc);
