@@ -17,19 +17,22 @@ public class NoticeService {
 	
 	private NoticeDao noticeDao;
 	
-	@Autowired
+	@Autowired //해당 변수 및 메서드에 스프링이 관리하는 Bean을 자동으로 매핑
 	public NoticeService(NoticeDao noticeDao) {
 		this.noticeDao = noticeDao;
 	}
 	
+	//공지사항 리스트
 	public List<NoticeVo> getNoticeList() {
 		return noticeDao.getNoticeList();
 	}
 
+	//공지사항 글쓰기
 	public int insertNotice(NoticeVo noticeVo) {
 		return noticeDao.insertNotice(noticeVo);
 	}
 
+	//공지사항 자세히보기
 	public NoticeVo noticedetail(String nidx) {
 		return noticeDao.noticedetail(nidx);
 	}
