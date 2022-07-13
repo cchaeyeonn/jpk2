@@ -109,9 +109,10 @@ a{text-decoration:none;} /* a태그에 텍스트 밑줄을 없애줌*/
             <%-- <li><a href="/spring/cart_main.do?midx=${midx}" style="margin-left: 710px;"><input type="image" value="장바구니" src="resources/img/cart.png" width=30px; ></a></li> --%>
             
              <!-- 마우스 올리면 이미지 변경 onmouseover 이벤트 -->
-             <li><a href="/spring/cart_main.do?midx=${midx}" style="float:right;">
+             <li style="float:right; width:0px;">
+             <a href="/spring/cart_main.do?midx=${midx}" style="float:right;">
              <img src="resources/img/cart.png" onmouseover="this.src='resources/img/cart2.png';" onmouseout="this.src='resources/img/cart.png';" alt="장바구니" width=30px; /></a>
-             ${result_}</li>
+             <span id="cart_count">${result_}</span></li>
            </ul>
                  
           </div>
