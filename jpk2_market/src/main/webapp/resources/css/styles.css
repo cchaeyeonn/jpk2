@@ -605,6 +605,12 @@ progress {
   height: 100%;
 }
 
+.img-fluid2 {
+  max-width: 50%;
+  height: 45%;
+}
+
+
 .img-thumbnail {
   padding: 0.25rem;
   background-color: #fff;
@@ -6753,6 +6759,14 @@ textarea.form-control-lg {
 
 .d-flex {
   display: flex !important;
+   
+}
+
+.d-flex2 {
+  display: flex !important;
+  align-items: center;
+  
+   
 }
 
 .d-inline-flex {
@@ -6980,6 +6994,9 @@ textarea.form-control-lg {
 	width: 249px !important;
 }
 
+.w-149 {
+	width: 149px !important;
+}
 .mw-100 {
   max-width: 100% !important;
 }
@@ -7010,6 +7027,10 @@ textarea.form-control-lg {
 
 .h-320{
 	height: 354px !important;
+}
+
+.h-220{
+	height: 254px !important;
 }
 
 .h-auto {

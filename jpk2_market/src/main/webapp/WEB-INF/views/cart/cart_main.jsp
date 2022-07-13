@@ -95,7 +95,9 @@
     </td>
     <td>
     <!-- 사진 -->
-    <img class="img-fluid" src="${pageContext.request.contextPath}/resources/product_image/${cartVo.p_system_filename}" alt="..."  />
+    <div class="portfolio-item-caption d-flex2 align-items-center justify-content-center h-220 w-149">
+    <img class="img-fluid2" src="${pageContext.request.contextPath}/resources/product_image/${cartVo.p_system_filename}" alt="..."  />
+    </div>
     </td>
     <td>
     <!-- 상품명 -->
