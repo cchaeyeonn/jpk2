@@ -24,6 +24,7 @@ $("#cart_delete").click(function(){
 					}else{
 						//회원목록에서 삭제 체크된 회원정보를 테이블에서 삭제하기
 						$("tr:has(input:checked)").remove();
+						
 					}
 				},
 				error: function(error){ alert("장바구니가 비었습니다!"); }
