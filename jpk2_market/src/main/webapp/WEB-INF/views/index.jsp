@@ -26,13 +26,25 @@
         <link href="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.min.css" rel="stylesheet" />
       <script src="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.min.js"></script>
 
-      <!-- 이미지 슬라이드 스크립트-->
+
+      <!-- 이미지 슬라이드 스크립트 -->
       <script>
-      $(document).ready(function(){
-           $('.bxslider').bxSlider();
-         });
+      $(document).ready(function () {
+    	        $('.bxslider').bxSlider({ // 클래스명 주의!
+    	            auto: true, // 자동으로 애니메이션 시작
+    	            speed: 500,  // 애니메이션 속도
+    	            pause: 5000,  // 애니메이션 유지 시간 (1000은 1초)
+    	            mode: 'horizontal', // 슬라이드 모드 ('fade', 'horizontal', 'vertical' 이 있음)
+    	            /* autoControls: true, // 시작 및 중지버튼 보여짐, 따로 기능없이 보여지기만해서 주석처리 함 */
+    	            pager: true, // 페이지 표시 보여짐
+    			    autoHover: true,   // 마우스 호버시 정지 여부
+
+    	        });
+    	    });
+
       </script>
       
+      <!-- 이미지 슬라이드 css -->    
       <style>
       .bx-wrapper {
          position: relative;
@@ -85,6 +97,8 @@
            });
          });
 
+      
+      
       
       </script>
       <!-- topbutton 스크립트 끝 -->
