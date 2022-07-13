@@ -31,7 +31,7 @@
 ul{list-style:none;} /* ul li태그에 리스트 스타일을 없앰,없어도 괜찮은데 새로고침할때 li 점 기호가 보여서 집어넣음 */
 #icon1 {list-style-image:url("resources/img/icon.png");} /* 카테고리 아이콘 이미지 */
 a{text-decoration:none;} /* a태그에 텍스트 밑줄을 없애줌*/
-.menu > li > a{display:block; padding:0 15px; height:40px; line-height:40px; color:#fff;}
+.menu > li > a{padding:0 15px; height:40px; line-height:40px; color:#fff;}
 .menu > li:hover .depth_1 {display:block;}
 .menu .depth_1{display:none; position:fixed; left: 41px; background-color: white; border: 1px solid #0000001a; }
 .menu .depth_1 a{display:block; margin:5px; /* padding:5px; */  color:#fff;}
@@ -92,7 +92,7 @@ a{text-decoration:none;} /* a태그에 텍스트 밑줄을 없애줌*/
 <!-- 카테고리, 장바구니 로고 시작 -->
    <div class="fixed-top2" id="innerNav_1"
             style="padding-top: 110px; height: 178px;">
-            <ul class="menu" style="margin-top:28px;">
+            <ul class="menu" style="margin-top:28px; width:1323px; ">
                <li style="float: left;"><a href="#">전체 카테고리</a>
                <ul class="depth_1">
                      <li id="icon1"><a href="#">채소/과일</a></li>
@@ -109,7 +109,7 @@ a{text-decoration:none;} /* a태그에 텍스트 밑줄을 없애줌*/
             <%-- <li><a href="/spring/cart_main.do?midx=${midx}" style="margin-left: 710px;"><input type="image" value="장바구니" src="resources/img/cart.png" width=30px; ></a></li> --%>
             
              <!-- 마우스 올리면 이미지 변경 onmouseover 이벤트 -->
-             <li><a href="/spring/cart_main.do?midx=${midx}" style="margin-left: 1222px;">
+             <li><a href="/spring/cart_main.do?midx=${midx}" style="float:right;">
              <img src="resources/img/cart.png" onmouseover="this.src='resources/img/cart2.png';" onmouseout="this.src='resources/img/cart.png';" alt="장바구니" width=30px; /></a></li>
            
            </ul>
