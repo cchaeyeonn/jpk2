@@ -51,8 +51,9 @@
     
 
 </style>
-<%-- <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/modal.css"> --%>
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+<%-- <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/modal.css"> --%>
 <%-- <script src="${pageContext.request.contextPath}/resources/js/cart.js "></script> --%>
 
 </head>

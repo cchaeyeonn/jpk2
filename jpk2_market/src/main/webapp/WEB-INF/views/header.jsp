@@ -43,6 +43,7 @@ a{text-decoration:none;} /* a태그에 텍스트 밑줄을 없애줌*/
 <body>
 
 <!-- Navigation-->
+<!-- 상단 로고, 로그인부분 시작-->
         <nav class="navbar navbar-expand-lg bg-white text-uppercase fixed-top" id="mainNav">
             <div class="container">
                 <a class="navbar-brand" href="/spring/">JPK2</a>
@@ -85,9 +86,10 @@ a{text-decoration:none;} /* a태그에 텍스트 밑줄을 없애줌*/
                 </div>
             </div>            
         </nav>
+<!-- 상단 로고, 로그인부분 끝-->
         
         
-        
+<!-- 카테고리, 장바구니 로고 시작 -->
    <div class="fixed-top2" id="innerNav_1"
             style="padding-top: 110px; height: 178px;">
             <ul class="menu" style="margin-top:28px;">
@@ -113,6 +115,7 @@ a{text-decoration:none;} /* a태그에 텍스트 밑줄을 없애줌*/
            </ul>
                  
           </div>
+<!-- 카테고리, 장바구니 로고 끝 -->
    
 </body>
 </html>

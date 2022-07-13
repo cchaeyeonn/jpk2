@@ -10,11 +10,6 @@
 
 <style>
 
-#qna_inner{
-/*    min-height:1040px;
-   padding-top:200px; */
-
-}
 
 </style>
 
