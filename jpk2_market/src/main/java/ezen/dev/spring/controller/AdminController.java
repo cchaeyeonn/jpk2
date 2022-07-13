@@ -52,6 +52,7 @@ public class AdminController {
 	}
 	
 	@PostMapping("/addProductProcess.do")
+	//jsp에 추가된 파일의 이름만 가져옴
 	public String productAddProcess(@RequestParam("p_filename") MultipartFile uploadFile,
 			String p_name, String p_price, String p_unit, String p_weight, String p_delivery,
 			String p_package, String p_allergy, String p_limitdate, String p_type, String p_tag,
@@ -61,21 +62,24 @@ public class AdminController {
 		String p_filename = uploadFile.getOriginalFilename();
 		
 		int dot_idx = p_filename.lastIndexOf(".");
+		//파일이름을 확장자와 나눔
 		String fileName1 = p_filename.substring(0, dot_idx);
 		String extension = p_filename.substring(dot_idx+1);
+		//그러한 파일이름에 시간을 붙여 시스템 파일이름으로 재구성
 		String fileName2 = fileName1 + new SimpleDateFormat("_yyyyMMdd_hhmmss").format(System.currentTimeMillis());
 		String p_system_filename = fileName2+"."+extension;
 		String upload_dir = "resources/product_image/";
 		
+		//저장되는 실제경로
 		String realPath = request.getServletContext().getRealPath(upload_dir);
-		System.out.println("이클립스로 저장된 파일의 실제 경로: " + realPath);
 		String fullPath = realPath+p_system_filename;
 		uploadFile.transferTo(new File(fullPath));
 		
 		int result=0;
 		
+		//db에는 midx값이 unsigned이기 때문에 int가 아닌 integer를 사용함
 		midx_mp=Integer.parseInt(String.valueOf(session.getAttribute("midx")));
-		
+		//productVo에 담을 값을 전부 소환
 		ProductVo productVo = new ProductVo();
 		productVo.setP_name(p_name);
 		productVo.setP_price(p_price);
@@ -90,11 +94,12 @@ public class AdminController {
 		productVo.setMidx_mp(midx_mp);
 		productVo.setP_filename(p_filename);
 		productVo.setP_system_filename(p_system_filename);
-
+		//이를 맵퍼로 가져가 실행하고
 		result = adminService.addProduct(productVo);
 		String viewPage="admin/admin_product_add";
 
 		if(result ==1) {
+			//위를 성공하면 모델에 담는다
 			model.addAttribute("p_name",p_name);
 			model.addAttribute("p_price",p_price);
 			model.addAttribute("p_unit",p_unit);

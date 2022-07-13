@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import ezen.dev.spring.service.EmailService;
 import ezen.dev.spring.service.MemberService;
 import ezen.dev.spring.vo.MemberVo;
 
@@ -19,11 +20,14 @@ import ezen.dev.spring.vo.MemberVo;
 public class MemberController {
 	
 	private MemberService memberService;
+	private EmailService emailService;
+	
 	
 	@Autowired //占쎌쁽占쎈짗 占쎌벥鈺곤옙 雅뚯눘�뿯: 占쎄문占쎄쉐占쎌쁽 獄쎻뫗�뻼
 	public MemberController(MemberService memberService) {
 		this.memberService = memberService;
 	}
+	
 	
 	@GetMapping("/join.do")
 	public String join() {
@@ -31,18 +35,12 @@ public class MemberController {
 	}
 	
 	@PostMapping("/joinProcess.do")
-	public String joinProcess(MemberVo memberVo) {
+	public String joinProcess(MemberVo memberVo, HttpServletRequest request) {
+		emailService.mailSendWithMemberKey(memberVo.getMember_email(),memberVo.getMember_id(), request);
+
+		memberService.join(memberVo);
 		
-		int result=memberService.join(memberVo);
-		
-		String viewPage = null;
-		if(result==1) {
-			viewPage = "redirect:/login.do";
-		}else{
-			viewPage = "member/join";
-		}
-		
-		return viewPage;
+		return "redirect:/";
 	}
 	
 	@GetMapping("/login.do")
@@ -120,5 +118,10 @@ public class MemberController {
 		
 		return "redirect:/index.do";
 	}
-	
+	@GetMapping("/authSucess.do")
+	public String key_alterConfirm(@RequestParam("member_id") String member_id, @RequestParam("member_key") String key) {
+		emailService.alter_memberKey_service(member_id, key);
+		
+		return "member/joinSucess";
+	}
 }

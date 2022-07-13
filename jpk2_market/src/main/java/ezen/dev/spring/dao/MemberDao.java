@@ -58,4 +58,13 @@ public class MemberDao {
 		return sqlSession.selectOne(MAPPER+".checkEmail", email);
 	}
 
+	public int getKey(HashMap<String, String>getKey) {
+		return sqlSession.update(MAPPER+".getKey", getKey);
+		
+	}
+
+	public int alter_memberKey(HashMap<String, String> getKey) {
+		return sqlSession.update(MAPPER+".alterKey",getKey);
+	}
+
 }
