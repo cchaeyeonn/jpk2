@@ -28,6 +28,11 @@
 	<select id="checkEmail" parameterType="string" resultType="int">
 		select count(*) from fm_member where member_email=#{member_email}
 	</select>
-
+	<update id="getKey"	parameterType="Map">
+		update fm_member set member_key=#{member_key} where member_id=#{member_id}
+	</update>
+	<update id="alter_memberKey" parameterType="Map">
+		update fm_member set member_key='Y' where member_id=#{member_id} and member_key=#{member_key}
+	</update>
 
 </mapper>

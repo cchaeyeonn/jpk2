@@ -31,22 +31,22 @@
 	
 	<interceptors>
 		<interceptor>
+		<!-- 로그인 인터셉터의 구간은 전구간 -->
 			<mapping path="/*.do"/>
+			<!-- 아래는 예외구간 즉, 로그인이 없어도 갈수 있는 구간
+			-->
 			<exclude-mapping path="/index.do"/>
 			<exclude-mapping path="/**/login.do"/>
 			<exclude-mapping path="/**/join.do"/>
 			<exclude-mapping path="/**/joinProcess.do"/>
 			<exclude-mapping path="/**/loginProcess.do"/>
+			<!-- resources값(js,css) 또한 활용해야하기 때문에 예외처리 -->
 			<exclude-mapping path="/**/resources/**"/>
 			<exclude-mapping path="/**/productList.do"/>
 			<beans:bean id="AuthLoginInterceptor" class="ezen.dev.spring.interceptor.AuthLoginInterceptor">
 	        </beans:bean>
 		</interceptor>
-		<interceptor>
-		<mapping path="/**/joinProcess.do"/>
-		<beans:bean id="EmailLoginInterceptor" class="ezen.dev.spring.interceptor.EmailLoginInterceptor">
-		</beans:bean>
-		</interceptor>
+
 	</interceptors>
 
 <!-- 이메일 인증 관련 -->

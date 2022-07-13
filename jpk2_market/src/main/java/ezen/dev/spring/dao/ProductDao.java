@@ -21,6 +21,7 @@ public class ProductDao {
 	public ProductDao(SqlSession sqlSession) {
 		this.sqlSession = sqlSession;
 	}
+	
 	public List<ProductVo> getProductList() {
 		return sqlSession.selectList(MAPPER+".getProductList");
 	}

@@ -29,26 +29,24 @@ public class ProductController {
 	
 
 	@GetMapping("/product_detail.do")
+	//requestparam으로 product_list.jsp에 뿌려진 pidx를 받아옴
 	public String product_Detail(@RequestParam String pidx, Model model, HttpServletRequest request){
-		
-		
-//		String pidx = (String)session.getAttribute("productVo.pidx");
-
+		//그러한 pidx값을 활용하여 해당하는 상품의 데이터 값을 받아옴
 		ProductVo productVo = productService.getProductInfo(pidx);
-		
+		//그러한 값을 model에 담은뒤
 		model.addAttribute("productVo",productVo);
-		
+		//product_detail에 뿌려줌
 		return "product/product_detail";
 	}
 
 	
 	@GetMapping("/productList.do")
 	public String getProductList(Model model) {
-		
+		//product테이블에 있는 데이터를 리스트화 함
 		List<ProductVo> productList = productService.getProductList();
-		
+		//그러한 리스트를 model에 담음
 		model.addAttribute("productList",productList);
-		
+		//그러한 값을 product_list.jsp에 뿌려줌
 		return "product/product_list";
 		}
 	

@@ -17,7 +17,13 @@ public class MemberVo {
 	private int member_term2;
 	private String member_addr1;
 	private String member_addr2;
-	
+	private String member_key;
+	public String getMember_key() {
+		return member_key;
+	}
+	public void setMember_key(String member_key) {
+		this.member_key = member_key;
+	}
 	public int getMidx() {
 		return midx;
 	}
