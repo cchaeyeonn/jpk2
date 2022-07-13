@@ -21,7 +21,7 @@
 <h3>1:1 문의</h3>
 </div>	
 
-<table border="1">
+<table border="1" class="table table-hover">
 <tr>
 <td>번호</td>
 <td>카테고리</td>
