@@ -26,7 +26,10 @@ public class AjaxService {
 		this.cartDao = cartDao;
 		
 	}
-
+	// 컨트롤러 - Service - dao는 반드시 1:1:1 매칭이 되어야 하는것은 아니다.
+		// 지금처럼 한 Service에 2개의 서비스를 연결하는것도 가능하다. 주로 사용하는 Dao는 생성자방식, 사용 빈도수가 낮은 Dao는 set방식으로 객체 주입을 한다.
+	
+	
 	public int checkId(String id) {
 		int result=0;
 		result = memberDao.checkId(id);

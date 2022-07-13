@@ -28,11 +28,11 @@ public class AjaxController {
 		
 		System.out.println("id: "+id);
 		
-		String result="N";//以묐났�맂 �븘�씠�뵒 �뾾�쓬
+		String result="N"; 
 		
 		int flag = ajaxService.checkId(id);
 		
-		if(flag == 1) result = "Y";//以묐났�맂 �븘�씠�뵒 �엳�쓬
+		if(flag == 1) result = "Y";
 		
 		return result;
 	}
@@ -41,11 +41,11 @@ public class AjaxController {
 		
 		System.out.println("email: "+email);
 		
-		String result="N";//以묐났�맂 �씠硫붿씪 �뾾�쓬
+		String result="N";
 		
 		int flag = ajaxService.checkEmail(email);
 		
-		if(flag == 1) result = "Y";//以묐났�맂 �씠硫붿씪 �엳�쓬
+		if(flag == 1) result = "Y";
 		
 		return result;
 	}
