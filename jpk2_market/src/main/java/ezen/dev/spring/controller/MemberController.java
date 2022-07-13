@@ -10,6 +10,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import ezen.dev.spring.service.EmailService;
@@ -20,7 +22,7 @@ import ezen.dev.spring.vo.MemberVo;
 public class MemberController {
 	
 	private MemberService memberService;
-	private EmailService emailService;
+
 	
 	
 	@Autowired //占쎌쁽占쎈짗 占쎌벥鈺곤옙 雅뚯눘�뿯: 占쎄문占쎄쉐占쎌쁽 獄쎻뫗�뻼
@@ -28,13 +30,18 @@ public class MemberController {
 		this.memberService = memberService;
 	}
 	
+	private EmailService emailService;
+	@Autowired
+	public void setEmailService(EmailService emailService) {
+		this.emailService = emailService;
+	}
 	
 	@GetMapping("/join.do")
 	public String join() {
 		return "member/join";
 	}
 	
-	@PostMapping("/joinProcess.do")
+	@RequestMapping(value="/joinProcess.do", method = RequestMethod.GET)
 	public String joinProcess(MemberVo memberVo, HttpServletRequest request) {
 		emailService.mailSendWithMemberKey(memberVo.getMember_email(),memberVo.getMember_id(), request);
 

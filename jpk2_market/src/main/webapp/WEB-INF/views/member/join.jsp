@@ -51,7 +51,7 @@
 <h3>회원정보를 입력해주세요</h3>
 
 <div id="join_content">
-<form name="joinForm" action="/spring/joinProcess.do" method="post">
+<form name="joinForm" action="${pageContext.request.contextPath}/joinProcess.do" method="post">
 
    <div id="join_1">
    
