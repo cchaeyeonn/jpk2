@@ -41,8 +41,11 @@ public class MemberController {
 		return "member/join";
 	}
 	
-	@RequestMapping(value="/joinProcess.do", method = RequestMethod.GET)
+	@RequestMapping(value="/joinProcess.do", method = RequestMethod.POST)
 	public String joinProcess(MemberVo memberVo, HttpServletRequest request) {
+		
+		
+		
 		emailService.mailSendWithMemberKey(memberVo.getMember_email(),memberVo.getMember_id(), request);
 
 		memberService.join(memberVo);
