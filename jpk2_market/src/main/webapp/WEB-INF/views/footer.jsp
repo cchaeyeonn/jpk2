@@ -6,6 +6,8 @@
 <meta charset="UTF-8">
 	<!-- footer CSS -->
 	<link rel="stylesheet" href="./resources/css/footertest.css">
+	<!-- Core theme CSS (includes Bootstrap)-->
+    <link href="resources/css/styles.css" rel="stylesheet" />
 	
 	<style>
 		  #topButton {
@@ -23,6 +25,7 @@
 	
 	<!-- topbutton 스크립트 시작 -->
       <script>
+      
       
       $(window).scroll(function() {
           // top button controll

@@ -31,6 +31,11 @@
 	width:400px;
 }
 
+/* 
+#table_button{
+	margin-left:155px;
+} */
+
 </style>
 
 </head>
@@ -39,8 +44,8 @@
 <div id="faq_inner">
 <h3>자주하는 질문</h3>
 	
-
-<table border="1" style="text-align:center">
+<div id="table_button">
+<table border="1" style="text-align:center" class="table table-hover">
 <tr>
 <td>번호</td>
 <td>카테고리</td>
@@ -66,6 +71,6 @@
   if ( grade >= 1){out.print("<a class='nav-link py-3 px-0 px-lg-3 rounded' href='"+request.getContextPath()+"/faq_wirte.do'>글쓰기</a>");}
   
   %>
-
+</div>
 </body>
 </html>
