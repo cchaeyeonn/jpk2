@@ -42,6 +42,11 @@
 	height:100%;
     
 	}	
+	.img-fluid{
+	
+	
+	
+	}
 	
 </style>
 <!-- jquery 스크립트 -->
