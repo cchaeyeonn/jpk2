@@ -4,18 +4,17 @@
 
 <mapper namespace = "ezen.dev.spring.service_center">
 
-<!-- 	<select id="getNoticeInfo" parameterType="String" resultType="noticeVo">
-		select * from fm_notice
-	</select> -->
-	
+	<!-- 공지사항 리스트 -->
 	<select id="getNoticeList" resultType="noticeVo">
 		select * from fm_notice where n_delyn='N'
 	</select>
 	
+	<!-- 공지사항 글쓰기 -->
 	<insert id="insertNotice" parameterType="noticeVo">
 		insert into fm_notice (n_category,n_title,n_content,n_writedate,midx_mn) values(#{n_category},#{n_title},#{n_content},#{n_writedate},#{midx_mn})
 	</insert>
 	
+	<!-- 공지사항 자세히보기-->
 	<select id="noticedetail" parameterType="String" resultType="noticeVo">
 		select * from fm_notice where nidx=#{nidx}
 	</select>
