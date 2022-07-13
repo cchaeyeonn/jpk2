@@ -55,7 +55,10 @@
     <div id="cart_inner">
     <h2 style="text-align:center;"> 장바구니</h2>
     <input type="checkbox" id="chk_all">전체 선택 ㅣ 
-    <input type="button" value="선택 삭제" id="cart_delete"> <hr>
+    <input type="button" value="선택 삭제" id="cart_delete"><hr>
+    
+    <!--<button id="cart_delete"  value="선택 삭제">선택 삭제</button>-->
+       
     <table id="target">
     <c:forEach items="${cartList}" var="cartVo">
     <form>
@@ -102,7 +105,7 @@
     <!-- 수량 버튼 -->
     
     <input type="button" id="${cartVo.pbidx}_btn_minus" value="-">
-    <input type="text"  id="${cartVo.pbidx}_pop_out" value="1" readonly="readonly" style="text-align:center;"/>
+    <input type="text"  id="${cartVo.pbidx}_pop_out" value="${cartVo.p_amount}" readonly="readonly" style="text-align:center;"/>
     <input type="button" id="${cartVo.pbidx}_btn_plus" value="+"  >
    
     </td>

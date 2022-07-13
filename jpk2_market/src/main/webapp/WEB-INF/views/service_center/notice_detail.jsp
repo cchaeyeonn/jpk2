@@ -43,20 +43,9 @@
     }
     
     #nd_table1{
-    	width:200px;
+    	width:150px;
     }
-    
-    #nd_table2{
-    	width:200px;
-    }
-    
-    #nd_table3{
-    	width:400px;
-    	    }
-    
-    #nd_table4{
-    	width:600px;
-    }
+
     
 
     
@@ -82,13 +71,13 @@
 				<td id="nd_table1">번호</td><td>${noticeVo.nidx}</td>
 				</tr>
 				<tr>
-				<td id="nd_table2"></td><td>${noticeVo.n_category}</td>
+				<td id="nd_table1">구분</td><td>[${noticeVo.n_category}]</td>
 				</tr>
 				<tr>
-				<td id="nd_table3">제목</td><td>${noticeVo.n_title}</td>
+				<td id="nd_table1">제목</td><td>${noticeVo.n_title}</td>
 				</tr>
 				<tr>
-				<td id="nd_table4">내용</td><td>${noticeVo.n_content}</td>
+				<td id="nd_table1">내용</td><td>${noticeVo.n_content}</td>
 				</tr>
 				<tr>
 				<td><a href="/spring/" id="homebutton_1">메인</a></td>

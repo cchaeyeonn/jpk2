@@ -23,47 +23,54 @@ import ezen.dev.spring.service.NoticeService;
 import ezen.dev.spring.vo.NoticeVo;
 import ezen.dev.spring.vo.ProductVo;
 
-@Controller
+
+
+@Controller	//클래스에 컨트롤러 어노테이션 추가
+//컨트롤러의 역할을 수행한다고 명시(해당 클래스를 컨트롤러로 사용한다고 스프링 프레임워크에 알린다)
+//필요한 비즈니스 로직을 호출하여 전달할 모델과 이동할 뷰 정보를 dispatherservlet에 반환
 public class NoticeController {
 	
 private NoticeService noticeService;
 	
-	@Autowired
+	@Autowired	//객체생성 시점에 스프링 컨테이너에서 해당 스프링빈을 찾아서 주입
 	public NoticeController(NoticeService noticeService) {
-		this.noticeService = noticeService;
+		this.noticeService = noticeService;	//생성자
 	}
 	
+	//공지사항 리스트
 	@GetMapping("/notice_board.do")
 	public String service_center(Model model) {
 		
-		List<NoticeVo> noticeList = noticeService.getNoticeList();
+		List<NoticeVo> noticeList = noticeService.getNoticeList(); //서비스를 호출
 		
-		model.addAttribute("noticeList",noticeList);
+		model.addAttribute("noticeList",noticeList); //(키,값)
 		
 		return "service_center/notice_board";
 	}
 	
 	
 	
-		@GetMapping("/notice_wirte.do")
+	//공지사항 글쓰기
+	@GetMapping("/notice_wirte.do")
 	public String notice_write() {
 		
 		return "service_center/notice_write";
 	}
 	
 	
+	//공지사항 글쓰기 과정
 	@PostMapping("/notice_writeProcess.do")
 	public String notice_writeProcess(
 			String n_category, String n_title, String n_content, String n_writedate, Integer midx_mn, Model model, HttpServletRequest request)
 					throws IllegalStateException, IOException {
 			
-			HttpSession session = request.getSession();
+		HttpSession session = request.getSession(); //세션 사용
 			
-			int result=0;
+		int result=0;
 		
 		midx_mn=Integer.parseInt(String.valueOf(session.getAttribute("midx")));
 		
-		NoticeVo noticeVo = new NoticeVo();
+		NoticeVo noticeVo = new NoticeVo(); //notice라는 이름으로 메모리에 공간을 할당
 		noticeVo.setN_category(n_category);
 		noticeVo.setN_title(n_title);
 		noticeVo.setN_content(n_content);
@@ -86,8 +93,10 @@ private NoticeService noticeService;
 		return viewPage;
 	}
 	
+	
+	//공지사항 자세히
 	@GetMapping("/notice_detail.do")
-	public String notice_detail(@RequestParam String nidx, Model model, HttpServletRequest request){
+	public String notice_detail(@RequestParam String nidx, Model model, HttpServletRequest request){ //@RequestParam을 이용해서 값을 받아옴
 		
 		
 		//String nidx = (String)session.getAttribute("noticeVo.nidx");

@@ -26,13 +26,27 @@
         <link href="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.min.css" rel="stylesheet" />
       <script src="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.min.js"></script>
 
-      <!-- 이미지 슬라이드 스크립트-->
+
+      <!-- 이미지 슬라이드 스크립트 -->
       <script>
-      $(document).ready(function(){
-           $('.bxslider').bxSlider();
-         });
+      $(document).ready(function () {
+    	        $('.bxslider').bxSlider({ // 클래스명 주의!
+    	            auto: true, // 자동으로 애니메이션 시작
+    	            speed: 500,  // 애니메이션 속도
+    	            pause: 5000,  // 애니메이션 유지 시간 (1000은 1초)
+    	            mode: 'horizontal', // 슬라이드 모드 ('fade', 'horizontal', 'vertical' 이 있음)
+    	            /* autoControls: true, // 시작 및 중지버튼 보여짐, 따로 기능없이 보여지기만해서 주석처리 함 */
+    	            pager: true, // 페이지 표시 보여짐
+    			    autoHover: true,   // 마우스 호버시 정지 여부
+
+    	        });
+    	    });
+      
+
       </script>
       
+      <!-- 이미지 슬라이드 css -->    
+     
       <style>
       .bx-wrapper {
          position: relative;
@@ -46,8 +60,6 @@
          border: 9px solid #fff !important;
          background: #fff;
          }
-   
-   
    
    
       #topButton {
@@ -65,12 +77,13 @@
       </style>
       
       
+      
       <!-- topbutton 스크립트 시작 -->
       <script>
       
       $(window).scroll(function() {
           // top button controll
-          if ($(this).scrollTop() > 500) {
+          if ($(this).scrollTop() > 500) { 	//500만큼 내려가면 topbutton 보임
               $('#topButton').fadeIn();
           } else {
               $('#topButton').fadeOut();
@@ -81,13 +94,13 @@
       $(document).ready(function() {
            // Top Button click event handler
            $("#topButtonImg").click(function() {
-             $('html, body').animate({scrollTop:0}, '300');
+             $('html, body').animate({scrollTop:0}, '300'); //버튼을 누르면 제일 위까지 부드럽게 올라옴
            });
          });
-
       
       </script>
       <!-- topbutton 스크립트 끝 -->
+      
       
     </head>
     
