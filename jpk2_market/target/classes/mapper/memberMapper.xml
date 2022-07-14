@@ -29,5 +29,11 @@
 		select count(*) from fm_member where member_email=#{member_email}
 	</select>
 
-
+	<select id="chkAuth" resultType="memberVo">
+		select * from fm_member where member_key=#{member_key}
+	</select>
+	
+	<update id="successAuth">
+		update fm_member set member_auth='Y' where member_id=#{member_id}
+	</update>
 </mapper>

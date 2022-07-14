@@ -50,7 +50,7 @@
 
 <div style="margin: 100px;">
 		<br>
-		<h3>안녕하세요, ${param.member_id} 님</h3>
+		<h3>안녕하세요, ${param.member_name} 님</h3>
 		<br>
 		<p>환영합니다!</p>
 		<br>

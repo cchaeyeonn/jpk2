@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import ezen.dev.spring.service.CartService;
 import ezen.dev.spring.service.MemberService;
@@ -46,13 +47,28 @@ public class MemberController {
 	}
 	
 	@RequestMapping(value="/joinProcess.do", method = RequestMethod.POST)
-	public String joinProcess(MemberVo memberVo, HttpServletRequest request) {
+	public String joinProcess(MemberVo memberVo, RedirectAttributes rttr, HttpServletRequest request) throws Exception {
 		
 		memberService.join(memberVo);
-	
-		return "redirect:/login.do";
+		rttr.addFlashAttribute("msg","가입시 사용한 이메일로 인증해주세요");
+		return "redirect:/";
 	}
-	
+	@RequestMapping(value = "/emailConfirm", method = RequestMethod.GET)
+	public String emailConfirm(@RequestParam("authKey")String authKey,
+			Model model, RedirectAttributes rttr) throws Exception{
+		if(authKey == null) {
+		rttr.addFlashAttribute("msg","인증키가 잘못되었습니다. 다시 인증해 주세요");
+		return "redirect:/";
+		}
+		MemberVo memberVo = memberService.userAuth(authKey);
+		if(memberVo == null) {
+			rttr.addFlashAttribute("msg","잘못된 접근 입니다. 다시 인증해 주세요");
+			return "redirect:/";
+		}
+		model.addAttribute("member_name",memberVo.getMember_name());
+		return "member/joinSucess";
+	}
+	 
 	@GetMapping("/login.do")
 	public String login() {
 		return "member/login";

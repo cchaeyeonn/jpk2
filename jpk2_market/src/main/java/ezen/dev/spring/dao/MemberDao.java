@@ -48,13 +48,16 @@ public class MemberDao {
 		return sqlSession.selectOne(MAPPER+".checkEmail", email);
 	}
 
-	public int getKey(HashMap<String, String>getKey) {
-		return sqlSession.update(MAPPER+".getKey", getKey);
+	public MemberVo chkAuth(String authKey) throws Exception{
+
+		return sqlSession.selectOne(MAPPER+".chkAuth", authKey);
+	}
+
+	public void successAuth(MemberVo memberVo) throws Exception{
+		sqlSession.update(MAPPER+".successAuth", memberVo);
 		
 	}
 
-	public int alter_memberKey(HashMap<String, String> getKey) {
-		return sqlSession.update(MAPPER+".alterKey",getKey);
-	}
+
 
 }

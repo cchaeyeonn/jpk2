@@ -18,6 +18,14 @@ public class MemberVo {
 	private String member_addr1;
 	private String member_addr2;
 	private String member_key;
+	private String member_auth;
+	
+	public String getMember_auth() {
+		return member_auth;
+	}
+	public void setMember_auth(String member_auth) {
+		this.member_auth = member_auth;
+	}
 	public String getMember_key() {
 		return member_key;
 	}
