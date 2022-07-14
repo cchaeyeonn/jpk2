@@ -24,7 +24,10 @@
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="resources/css/styles.css" rel="stylesheet" />
         
+        
 <style>
+
+
 
 /* 드롭다운 메뉴 css */
 *{margin:0; padding:0;} /* 전체영역에서 여백을 없애줌 */
@@ -47,6 +50,8 @@ a{text-decoration:none;} /* a태그에 텍스트 밑줄을 없애줌*/
 
 </style>
     
+
+
 </head>
 <body>
 
