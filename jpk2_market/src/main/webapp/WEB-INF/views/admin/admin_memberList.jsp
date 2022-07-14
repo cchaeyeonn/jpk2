@@ -36,13 +36,13 @@
 		<th>전화번호</th><th>가입일시</th><th>삭제여부</th><th>삭제일</th>
 	</tr>
 	
-<%-- 	<c:forEach var="memberVo" items="${memberList}">
+ 	<c:forEach var="memberVo" items="${memberList}">
 		<tr>
-			<td>${memberVo.member_idx}</td><td>${memberVo.member_name}</td><td>${memberVo.member_id}</td>
+			<td>${memberVo.member_id}</td><td>${memberVo.member_name}</td><td>${memberVo.member_id}</td>
 			<td>${memberVo.member_pw}</td><td>${memberVo.member_grade}</td><td>${memberVo.member_phone}</td>
-			<td>${memberVo.member_regdate}</td><td>${memberVo.member_delyn}</td><td>${memberVo.member_deldate}</td>
+			<td>${memberVo.member_joindate}</td><td>${memberVo.member_delyn}</td><td>${memberVo.member_delyndate}</td>
 		</tr>
-	</c:forEach> --%>
+	</c:forEach> 
 </table>
 
 <input id="adl_button" type="button" class="btn btn-outline-success" value="관리자 메인페이지" onclick="location.href='/spring/admin.do'"><br>

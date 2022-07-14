@@ -73,8 +73,9 @@ public class MemberController {
 		long member_auth = resultMap.get("member_auth");//占쎌돳占쎌뜚占쎌뵥筌앾옙
 		long member_grade = resultMap.get("member_grade");//占쎌돳占쎌뜚占쎈쾻疫뀐옙
 		long midx = resultMap.get("midx");
+		//Long형을 int형으로 변환
 		int midx_ = (int)midx;
-		//장바구니 정보 추가
+		//장바구니 정보 추가(한 매핑안에서 두개의 메소드가 진행되도록 구현)
 		int count = cartService.cart_count(midx_);
 		
 		
