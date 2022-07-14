@@ -107,6 +107,7 @@
     </div>
     </td>
     <td>
+    
     <!-- 상품명 -->
     ${cartVo.p_name}
     </td>

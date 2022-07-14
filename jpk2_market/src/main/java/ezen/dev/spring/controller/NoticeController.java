@@ -51,7 +51,7 @@ private NoticeService noticeService;
 	
 	
 	//공지사항 글쓰기
-	@GetMapping("/notice_wirte.do")
+	@GetMapping("/notice_write.do")
 	public String notice_write() {
 		
 		return "service_center/notice_write";
@@ -96,7 +96,7 @@ private NoticeService noticeService;
 	
 	//공지사항 자세히
 	@GetMapping("/notice_detail.do")
-	public String notice_detail(@RequestParam String nidx, Model model, HttpServletRequest request){ //@RequestParam을 이용해서 값을 받아옴
+	public String notice_detail(@RequestParam String nidx, Model model){ //@RequestParam을 이용해서 값을 받아옴
 		
 		
 		//String nidx = (String)session.getAttribute("noticeVo.nidx");
@@ -109,6 +109,21 @@ private NoticeService noticeService;
 	}
 	
 
+	//공지사항 수정하기 이동
+	@GetMapping("/notice_modify.do")
+	public String notice_modify(Model model, String nidx){
+		NoticeVo noticeVo = noticeService.noticedetail(nidx);
+		model.addAttribute("noticeVo",noticeVo);
+		return "service_center/notice_modify";
+	}
+		
+	//공지사항 수정하기 post
+/*	@GetMapping("/notice_modifyprocess.do")
+	public String notice_modifyprocess(Model model, String nidx, NoticeVo noticeVo){
+		noticeService.noticemodify(noticeVo);
+		return "redirect:service_center/notice_modify";
+	}*/
+	
 	
 	
 	

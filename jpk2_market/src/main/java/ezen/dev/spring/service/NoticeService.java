@@ -36,6 +36,10 @@ public class NoticeService {
 	public NoticeVo noticedetail(String nidx) {
 		return noticeDao.noticedetail(nidx);
 	}
-
+	
+	//공지사항 수정하기
+/*	public void noticemodify(NoticeVo noticeVo) {
+		noticeDao.modifyNotice(noticeVo);
+	}*/
 	 
 }

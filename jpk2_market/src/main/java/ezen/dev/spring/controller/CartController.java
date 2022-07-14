@@ -62,7 +62,12 @@ public class CartController {
 		
 		HttpSession session = request.getSession();
 		
+		//result : productAddProcess의 쿼리가 잘 실행되었는지를 확인
+		//result_ : cart_count 개수를 담기 위해 만든 변수
+		
 		int result=0;
+
+		// nullPointException을 방지 하기위해 null값일 경우 0으로 바꿈
 		if(session.getAttribute("result_")==null) {
 			session.setAttribute("result_", 0);
 			

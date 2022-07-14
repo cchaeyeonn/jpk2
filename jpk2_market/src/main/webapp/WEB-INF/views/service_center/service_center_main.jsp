@@ -9,6 +9,9 @@
 
 <style>
 
+	#service_board{
+		margin-left: 154px;
+	}
 	#servive_main_inner{
 	margin-left:200px;
 	}
