@@ -31,6 +31,11 @@ public class CartService {
 	public int addCart(CartVo cartVo) {
 		return cartDao.addCart(cartVo);
 	}
+	public int cart_count(int midx_) {
+		int result=0;
+		result = cartDao.cart_count(midx_);
+		return result;
+	}
 	
 	
 }

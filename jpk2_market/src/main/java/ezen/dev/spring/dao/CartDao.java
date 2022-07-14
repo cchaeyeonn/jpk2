@@ -35,5 +35,8 @@ public class CartDao {
      public int deleteCartInfoOne(Integer pbidx) {
   		return sqlSession.delete(MAPPER+".deleteCartInfoOne", pbidx);
   	} 
+     public int cart_count(int midx_) {
+ 		return sqlSession.selectOne(MAPPER+".cart_count", midx_);
+ 	}
      
 }
