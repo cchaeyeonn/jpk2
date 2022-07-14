@@ -109,6 +109,48 @@ private NoticeService noticeService;
 	}
 	
 
+	//공지사항 수정하기
+	@GetMapping("/notice_update.do")
+	public String notice_update() {
+		
+		return "service_center/notice_update";
+	}
+		
+	
+	//공지사항 수정하기 과정
+		@PostMapping("/notice_updateProcess.do")
+		public String notice_updateProcess(
+				String n_category, String n_title, String n_content, String n_writedate, Integer midx_mn, Model model, HttpServletRequest request)
+						throws IllegalStateException, IOException {
+				
+			HttpSession session = request.getSession(); //세션 사용
+				
+			int result=0;
+			
+			midx_mn=Integer.parseInt(String.valueOf(session.getAttribute("midx")));
+			
+			NoticeVo noticeVo = new NoticeVo(); //notice라는 이름으로 메모리에 공간을 할당
+			noticeVo.setN_category(n_category);
+			noticeVo.setN_title(n_title);
+			noticeVo.setN_content(n_content);
+			noticeVo.setN_writedate(n_writedate);
+			noticeVo.setMidx_mn(midx_mn);
+			
+
+			result = noticeService.insertNotice(noticeVo);
+			String viewPage="service_center/notice_update";
+
+			if(result ==1) {
+				model.addAttribute("n_category",n_category);
+				model.addAttribute("n_title",n_title);
+				model.addAttribute("n_content",n_content);
+				model.addAttribute("n_writedate",n_writedate);
+				model.addAttribute("midx",midx_mn);
+				viewPage = "redirect:/service_center.do";
+				
+			}
+			return viewPage;
+		}
 	
 	
 	
