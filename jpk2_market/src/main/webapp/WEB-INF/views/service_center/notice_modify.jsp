@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -45,7 +46,21 @@
 	
 		<div id="notice_main_inner">
 			
-			<form name="notice_write_Form" action="/spring/notice_updateProcess.do" method="post" >
+			<form name="modify" method="POST" action="${path}/service_center/notice_modify?no=${nidx}">
+			
+			<div>카테고리</div>
+			<div>제목 :</div>
+			<div><input name="n_title" value="${noticeVo.n_title}" type="text" ></div>
+			<div>내용 :</div>
+			<div><input name="n_content" value="${noticeVo.n_content}" type="text" ></div>
+			
+			<div>
+			<input type="submit" class="btn btn-outline-info" value="완료"/>
+			<input type="reset" class="btn btn-outline-into" value="리셋"/>
+			</div>
+			</form>
+			
+			<%-- <form name="notice_modify_Form" action="/spring/notice_modifyProcess.do" method="post" >
 			<table>
 			<tr>
 				<td>카테고리</td>
@@ -56,16 +71,16 @@
 			</tr>
 			<tr>
 			<td>제목</td>
-			<td><input type="text" name="n_title"></td>
+			<td><input type="text" name="n_title">${noticeVo.n_title}</td>
 			</tr>
 			<tr>
 			<td>내용</td>
-			<td><input type="text" name="n_content"></td>
+			<td><input type="text" name="n_content">${noticeVo.n_content}</td>
 			</tr>
 			<tr>
 			<td><input type="submit" value="작성하기"></td>
 			</tr>
-			</table>
+			</table> --%>
 			
 		</div>
 		

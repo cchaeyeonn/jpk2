@@ -42,5 +42,9 @@ public class NoticeDao {
 		return sqlSession.selectOne(MAPPER+".noticedetail", nidx);
 	}
 
+	/*
+	 * //공지사항 수정하기 public int modifyNotice(NoticeVo noticeVo) { return
+	 * sqlSession.modify(MAPPER+".modifyNotice", noticeVo); }
+	 */
 
 }
