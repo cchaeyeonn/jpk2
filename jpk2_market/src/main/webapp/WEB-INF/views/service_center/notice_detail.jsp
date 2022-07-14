@@ -82,20 +82,34 @@
 				<td id="nd_table1">내용</td><td>${noticeVo.n_content}</td>
 				</tr>
 				<tr>
-				<td><a href="/spring/" id="homebutton_1">메인</a></td>
+				<td><a href="/spring/" id="homebutton_1">메인</a>
+				<c:if test="${member_grade != null}">
+				<c:if test="${member_grade >= 1}">
+					<a class='nav-link py-3 px-0 px-lg-3 rounded' style='display:inline;' href='/spring/notice_modify.do?nidx=${noticeVo.nidx}'>수정하기</a>
+				</c:if>
+		    </c:if>
+				
+				</td>
 				</tr>
 				
 				
 				</table>
-				 <%
+				<%--  <%
 				  long grade = 0L;
 				  if (session.getAttribute("member_grade") != null){
 					  grade = (long)session.getAttribute("member_grade");
 					  }
 				  if ( grade >= 1){
+<<<<<<< HEAD
 					  out.print("<a class='nav-link py-3 px-0 px-lg-3 rounded' style='display:inline;' href='/spring/notice_modify.do?nidx=${noticeVo.nidx}'>수정하기</a>");
 					  }%>
+=======
+					  out.print("<a class='nav-link py-3 px-0 px-lg-3 rounded' style='display:inline;' href='"+request.getContextPath()+"/notice_modify.do?nidx="+${noticeVo.nidx}+"'>수정하기</a>");
+					  }%>  --%>
+			<!-- class='nav-link py-3 px-0 px-lg-3 rounded' style='display:inline;' -->
+>>>>>>> branch 'master' of https://github.com/cchaeyeonn/jpk2.git
 			
+<<<<<<< HEAD
 <%-- 			<c:if test="${member_grade} != null">
 					long grade = 0L;
 					grade = (long)${member_grade};
@@ -104,6 +118,9 @@
 					out.print("<a class='nav-link py-3 px-0 px-lg-3 rounded' style='display:inline;' href='/spring/notice_modify.do?nidx=${noticeVo.nidx}'>수정하기</a>");
 				</c:if>
 		    </c:if>
+=======
+			
+>>>>>>> branch 'master' of https://github.com/cchaeyeonn/jpk2.git
 			
 			</div>
 		</div>
