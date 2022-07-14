@@ -45,6 +45,7 @@
 	</c:forEach> 
 </table>
 
+
 <input id="adl_button" type="button" class="btn btn-outline-success" value="관리자 메인페이지" onclick="location.href='/spring/admin.do'"><br>
 <input id="adl_button" type="button" class="btn btn-outline-success" value="상품아 나와라" onclick="location.href='/spring/productList.do'"><br>
 
