@@ -14,7 +14,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import ezen.dev.spring.service.CartService;
 import ezen.dev.spring.service.MemberService;
+import ezen.dev.spring.service.ProductService;
 import ezen.dev.spring.vo.MemberVo;
 
 @Controller
@@ -28,6 +30,15 @@ public class MemberController {
 	public MemberController(MemberService memberService) {
 		this.memberService = memberService;
 	}
+	
+	private CartService cartService;
+	
+	@Autowired
+	public void setCartService(CartService cartService) {
+		this.cartService = cartService;
+		
+	} 
+	
 	
 	@GetMapping("/join.do")
 	public String join() {
@@ -62,6 +73,10 @@ public class MemberController {
 		long member_auth = resultMap.get("member_auth");//占쎌돳占쎌뜚占쎌뵥筌앾옙
 		long member_grade = resultMap.get("member_grade");//占쎌돳占쎌뜚占쎈쾻疫뀐옙
 		long midx = resultMap.get("midx");
+		int midx_ = (int)midx;
+		//장바구니 정보 추가
+		int count = cartService.cart_count(midx_);
+		
 		
 		String viewPage = null;
 		if(member_auth==1) {
@@ -69,6 +84,7 @@ public class MemberController {
 			session.setAttribute("member_id", member_id);//占쎌돳占쎌뜚占쎌뵥筌앾옙 �빊遺쏙옙	
 			session.setAttribute("member_grade", member_grade);//占쎌돳占쎌뜚占쎈쾻疫뀐옙 �빊遺쏙옙
 			session.setAttribute("midx", midx);
+			session.setAttribute("result_", count);
 			viewPage = "redirect:/index.do";
 		
 		}else{

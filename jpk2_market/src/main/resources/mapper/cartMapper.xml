@@ -29,6 +29,10 @@
 		delete from fm_product_cart where pbidx = #{pbidx}
 	</delete>
 	
+	<select id="cart_count" parameterType="int" resultType="int">
+		select count(*) from fm_product_cart where midx_mc=#{midx}
+	</select>
+	
 
 
 </mapper>
