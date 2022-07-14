@@ -15,13 +15,13 @@
 		}
 	#product_img{
 			float:left; 
-			width:50%; 
-			height:50%;
+			/* width:50%; 
+			height:50%; */
 			}
 	#product_detail{
 			float:right; 
 			width:50%; 
-			height:50%;
+			/* height:50%; */
 			}
 	#home_button{
 			padding-left:10%; 
@@ -48,7 +48,7 @@
 	<form name="cartAddForm" action="/spring/addCartProcess.do" method="post">
 	   <input type="hidden"  name="pidx_pc" value="${productVo.pidx} ">
 		<div id="product">
-		<div id="product_img">상품 사진<p/>
+		<div id="product_img">
 		<img src="${pageContext.request.contextPath}/resources/product_image/${productVo.p_system_filename}"></div>
 		<div id="product_detail">상품 제목<p/>
 		${productVo.p_name}
