@@ -18,5 +18,10 @@
 	<select id="noticedetail" parameterType="String" resultType="noticeVo">
 		select * from fm_notice where nidx=#{nidx}
 	</select>
+	
+	<!-- 공지사항 수정하기 -->
+<!--  	<update id="modifyNotice" parameterType="notice">
+		update fm_notice set n_title=#{n_title}, n_content=#{n_content} where nidx=#{nidx}
+	</update> -->
 
 </mapper>
