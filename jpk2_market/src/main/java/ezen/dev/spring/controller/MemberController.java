@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import ezen.dev.spring.service.EmailService;
 import ezen.dev.spring.service.MemberService;
 import ezen.dev.spring.vo.MemberVo;
 
@@ -30,12 +29,6 @@ public class MemberController {
 		this.memberService = memberService;
 	}
 	
-	private EmailService emailService;
-	@Autowired
-	public void setEmailService(EmailService emailService) {
-		this.emailService = emailService;
-	}
-	
 	@GetMapping("/join.do")
 	public String join() {
 		return "member/join";
@@ -44,13 +37,9 @@ public class MemberController {
 	@RequestMapping(value="/joinProcess.do", method = RequestMethod.POST)
 	public String joinProcess(MemberVo memberVo, HttpServletRequest request) {
 		
-		int result = memberService.join(memberVo);
-		if(result==1) {
-			emailService.mailSendWithMemberKey(memberVo.getMember_email(),memberVo.getMember_id(), request);
-			return "redirect:/";
-		}
-		
-		return "redirect:/";
+		memberService.join(memberVo);
+	
+		return "redirect:/login.do";
 	}
 	
 	@GetMapping("/login.do")
@@ -109,10 +98,5 @@ public class MemberController {
 		
 		return "redirect:/index.do";
 	}
-	@GetMapping("/authSucess.do")
-	public String key_alterConfirm(@RequestParam("member_id") String member_id, @RequestParam("member_key") String key) {
-		emailService.alter_memberKey_service(member_id, key);
-		
-		return "member/joinSucess";
-	}
+
 }
