@@ -41,11 +41,14 @@ public class MemberController {
 		return "member/join";
 	}
 	
-	@RequestMapping(value="/joinProcess.do", method = RequestMethod.GET)
+	@RequestMapping(value="/joinProcess.do", method = RequestMethod.POST)
 	public String joinProcess(MemberVo memberVo, HttpServletRequest request) {
-		emailService.mailSendWithMemberKey(memberVo.getMember_email(),memberVo.getMember_id(), request);
-
-		memberService.join(memberVo);
+		
+		int result = memberService.join(memberVo);
+		if(result==1) {
+			emailService.mailSendWithMemberKey(memberVo.getMember_email(),memberVo.getMember_id(), request);
+			return "redirect:/";
+		}
 		
 		return "redirect:/";
 	}
@@ -54,25 +57,6 @@ public class MemberController {
 	public String login() {
 		return "member/login";
 	}
-	
-	/*
-	 * @PostMapping("/loginProcess.do") public String loginProcess(MemberVo
-	 * memberVo, HttpServletRequest request) { //占쎌뒄筌ｏ옙筌띲끋釉⑨옙�뵠 占쎌뿳占쎈뮉 筌롫뗄�꺖占쎈굡占쎌벥 筌띲끆而삭퉪占쏙옙�땾占쎈퓠 Vo占쎄돌 占쎌쁽獄쏅�寃�占쎌삋占쎈뮞揶쏉옙 占쎌뿳占쎈뮉
-	 * 野껋럩�뒭 占쎌읈占쎈뼎占쎈쭆 揶쏅�れ뱽 域뱄옙 揶쏆빘猿쒙옙肉� 筌띲끋釉⑨옙�뻻�녹뮇夷� //占쎌뵠占쎌쑎占쎈립 揶쏆빘猿쒐몴占� �뚣끇�렎占쎈굡 揶쏆빘猿쒙옙�뵬�⑨옙 占쎈맙.
-	 * 
-	 * HashMap<String, Long> resultMap=memberService.login(memberVo); long
-	 * member_auth = resultMap.get("member_auth");//占쎌돳占쎌뜚占쎌뵥筌앾옙 long member_grade =
-	 * resultMap.get("member_grade");//占쎌돳占쎌뜚占쎈쾻疫뀐옙
-	 * 
-	 * String viewPage = null; if(member_auth==1) { HttpSession session =
-	 * request.getSession(); session.setAttribute("member_id",
-	 * memberVo.getMember_id());//占쎌돳占쎌뜚占쎌뵥筌앾옙 �빊遺쏙옙 session.setAttribute("member_grade",
-	 * member_grade);//占쎌돳占쎌뜚占쎈쾻疫뀐옙 �빊遺쏙옙 viewPage = "redirect:/home.do";
-	 * 
-	 * }else{ viewPage = "member/login"; }
-	 * 
-	 * return viewPage; }
-	 */
 	
 	@PostMapping("/loginProcess.do")
 	public String loginProcess(@RequestParam("member_id") String member_id,

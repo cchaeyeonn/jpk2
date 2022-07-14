@@ -24,7 +24,10 @@
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="resources/css/styles.css" rel="stylesheet" />
         
+        
 <style>
+
+
 
 /* 드롭다운 메뉴 css */
 *{margin:0; padding:0;} /* 전체영역에서 여백을 없애줌 */
@@ -49,6 +52,8 @@ a{text-decoration:none;} /* a태그에 텍스트 밑줄을 없애줌*/
 
 
     
+
+
 </head>
 <body>
 
@@ -122,8 +127,26 @@ a{text-decoration:none;} /* a태그에 텍스트 밑줄을 없애줌*/
              <li style="float:right; width:0px;">
              <a href="/spring/cart_main.do?midx=${midx}" style="float:right;">
              <img src="resources/img/cart.png" onmouseover="this.src='resources/img/cart2.png';" onmouseout="this.src='resources/img/cart.png';" alt="장바구니" width=30px; /></a>
+<<<<<<< HEAD
              <div id="cart_count">${result_}</div>
              </li>
+=======
+             
+             
+             <%-- <div id="cart_count">${result_}</div></li> --%>
+             
+             
+             <%if(session.getAttribute("result_") == null){
+            	 session.setAttribute("result_", 0);
+             }
+             else{
+                  if ((Integer)session.getAttribute("result_") != 0){
+                     out.println("<div id='cart_count'>"+(Integer)session.getAttribute("result_")+"</div>");
+                     }else{
+                     }
+                     }%>
+                     </li>
+>>>>>>> branch 'master' of https://github.com/cchaeyeonn/jpk2.git
            </ul>
                  
           </div>

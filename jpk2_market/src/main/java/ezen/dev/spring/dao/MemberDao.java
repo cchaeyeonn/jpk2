@@ -27,16 +27,6 @@ public class MemberDao {
 		
 		return sqlSession.insert(MAPPER+".joinMember", memberVo);
 	}
-
-	/*
-	 * public HashMap<String, Long> loginMember(MemberVo memberVo) { HashMap<String,
-	 * Long> resultMap = sqlSession.selectOne(MAPPER+".loginMember", memberVo);
-	 * 
-	 * System.out.println("resultMap:"+resultMap);
-	 * 
-	 * if(resultMap.get("member_auth") == 0) { resultMap.put("member_grade", 0L); }
-	 * return resultMap; }
-	 */
 	
 	public HashMap<String, Long> loginMember(HashMap<String, String> loginInfo) {
 		HashMap<String, Long> resultMap = sqlSession.selectOne(MAPPER+".loginMember", loginInfo);

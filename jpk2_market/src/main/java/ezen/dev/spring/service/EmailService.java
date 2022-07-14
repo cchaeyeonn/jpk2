@@ -22,6 +22,7 @@ public class EmailService {
 	private JavaMailSender mailSender;
 	@Autowired
 	private SqlSessionTemplate sqlSession;
+	@Autowired
 	private MemberDao memberDao;
 	
 	private String init() {
