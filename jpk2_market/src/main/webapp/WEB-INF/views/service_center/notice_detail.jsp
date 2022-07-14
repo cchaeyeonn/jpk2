@@ -60,6 +60,7 @@
 </head>
 <body>
 
+
     <!-- 헤더 연결 -->
     <jsp:include page="../header.jsp"></jsp:include> 
 	<form name="insertnotice_form" action="/spring/notice_writeProcess.do" method="post">
