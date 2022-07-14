@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace = "ezen.dev.spring.member">
+<mapper namespace = "ezen.dev.spring.dao">
 
 	<insert id="joinMember" parameterType="memberVo">
 		insert into fm_member(member_id, member_pw, member_name, member_email, member_phone, member_addr1, member_addr2, member_gender, member_birth, member_term1, member_term2) 
