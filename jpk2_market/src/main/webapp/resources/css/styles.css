@@ -610,6 +610,13 @@ progress {
   height: 45%;
 }
 
+.img-fluid3 {
+  width: 430px !important;
+  height: 552px !important;
+  margin: 171px;
+  margin-top: 27px;
+}
+
 
 .img-thumbnail {
   padding: 0.25rem;
