@@ -54,7 +54,7 @@ public class MemberController {
 		return "redirect:/";
 	}
 	@RequestMapping(value = "/emailConfirm", method = RequestMethod.GET)
-	public String emailConfirm(@RequestParam("authKey")String authKey,
+	public String emailConfirm(@RequestParam("key")String authKey,
 			Model model, RedirectAttributes rttr) throws Exception{
 		if(authKey == null) {
 		rttr.addFlashAttribute("msg","인증키가 잘못되었습니다. 다시 인증해 주세요");
