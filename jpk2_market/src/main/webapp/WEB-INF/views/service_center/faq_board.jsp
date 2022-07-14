@@ -11,8 +11,8 @@
 
 #faq_inner{
 /*    min-height:1040px;
-   padding-top:200px; */
-   margin-left:154px;
+   padding-top:200px; 
+   margin-left:154px;*/
 
 }
 #ftable_1{
@@ -68,7 +68,7 @@
 <% 
    long grade = 0L;
   if (session.getAttribute("member_grade") != null) {grade = (long)session.getAttribute("member_grade");}
-  if ( grade >= 1){out.print("<a class='nav-link py-3 px-0 px-lg-3 rounded' href='"+request.getContextPath()+"/faq_wirte.do'>글쓰기</a>");}
+  if ( grade >= 1){out.print("<a class='nav-link py-3 px-0 px-lg-3 rounded' style='display:inline;' href='"+request.getContextPath()+"/faq_wirte.do'>글쓰기</a>");}
   
   %>
 </div>
