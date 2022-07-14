@@ -93,9 +93,8 @@
 					  grade = (long)session.getAttribute("member_grade");
 					  }
 				  if ( grade >= 1){
-					  <a href='<c:url value='/service_center/notice_detail?nidx=${noticeVo.nidx}'/>' >수정</a>
-					  }%> 
-			<!-- class='nav-link py-3 px-0 px-lg-3 rounded' style='display:inline;' -->
+					  out.print("<a class='nav-link py-3 px-0 px-lg-3 rounded' style='display:inline;' href='/spring/notice_modify.do?nidx=${noticeVo.nidx}'>수정하기</a>");
+					  }%>
 			
 <%-- 			<c:if test="${member_grade} != null">
 					long grade = 0L;
@@ -104,7 +103,7 @@
 				<c:if test="${member_grade} >= 1">
 					out.print("<a class='nav-link py-3 px-0 px-lg-3 rounded' style='display:inline;' href='/spring/notice_modify.do?nidx=${noticeVo.nidx}'>수정하기</a>");
 				</c:if>
-		    </c:if>--%>
+		    </c:if>
 			
 			</div>
 		</div>
