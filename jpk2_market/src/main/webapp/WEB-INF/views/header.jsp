@@ -121,6 +121,7 @@ a{text-decoration:none;} /* a태그에 텍스트 밑줄을 없애줌*/
                <li style="float: left;"><a href="#">특가/혜택</a></li>
             <%-- <li><a href="/spring/cart_main.do?midx=${midx}" style="margin-left: 710px;"><input type="image" value="장바구니" src="resources/img/cart.png" width=30px; ></a></li> --%>
             
+            
              <!-- 마우스 올리면 이미지 변경 onmouseover 이벤트 -->
              <li style="float:right; width:0px;">
              <a href="/spring/cart_main.do?midx=${midx}" style="float:right;">
