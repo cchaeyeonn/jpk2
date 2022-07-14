@@ -124,10 +124,15 @@ a{text-decoration:none;} /* a태그에 텍스트 밑줄을 없애줌*/
              
              <%-- <div id="cart_count">${result_}</div></li> --%>
              
-             <%
+             
+             <%if(session.getAttribute("result_") == null){
+            	 session.setAttribute("result_", 0);
+             }
+             else{
                   if ((Integer)session.getAttribute("result_") != 0){
                      out.println("<div id='cart_count'>"+(Integer)session.getAttribute("result_")+"</div>");
                      }else{
+                     }
                      }%>
                      </li>
            </ul>
