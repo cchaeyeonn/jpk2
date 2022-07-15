@@ -51,8 +51,14 @@
 		<table id="faq_table">
 		<tr>
 		<td id="fd_table1">번호</td><td>${faqVo.fidx}</td>
-		<td id="fd_table2"></td><td>${faqVo.f_category}</td>
+		</tr>
+		<tr>
+		<td id="fd_table2">카테고리</td><td>${faqVo.f_category}</td>
+		</tr>
+		<tr>
 		<td id="fd_table3">제목</td><td>${faqVo.f_title}</td>
+		</tr>
+		<tr>
 		<td id="fd_table4">내용</td><td>${faqVo.f_content}</td>
 		</tr>
 		
