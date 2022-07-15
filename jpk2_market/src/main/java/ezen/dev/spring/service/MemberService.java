@@ -29,7 +29,9 @@ public class MemberService {
 	
 	//회원가입 처리 메소드:join()
 	public void join(MemberVo memberVo) throws Exception {
+		
 		String key = new TempKey().generateKey(20);
+		
 		memberVo.setMember_key(key);
 		
 		memberDao.joinMember(memberVo);
@@ -42,20 +44,11 @@ public class MemberService {
 				.append("<a href='http://localhost:8080/spring/emailConfirm?authkey=")
 				.append(key)
 				.append("'target='_blank'>이메일 인증 확인</a>")
-				.append("<input type='hidden' value='")
-				.append(key)
-				.append("'>")
 				.toString());
 		sendMail.setFrom("zoszo@jbnu.ac.kr", "jpk2");
 		sendMail.setTo(memberVo.getMember_email());
 		sendMail.send();
 	}
-
-
-	/*
-	 * public HashMap<String, Long> login(MemberVo memberVo) { return
-	 * memberDao.loginMember(memberVo); }
-	 */
 	
 	public HashMap<String, Long> login(HashMap<String,String> loginInfo) {
 		return memberDao.loginMember(loginInfo);
