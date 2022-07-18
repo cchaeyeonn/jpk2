@@ -29,7 +29,7 @@ $("#cart_delete").click(function(){
 						
 					}
 				},
-				error: function(error){ alert("장바구니가 비었습니다!"); }
+				error: function(error){ alert("체크박스를 체크해주세요"); }
 			});
 			
 		});		

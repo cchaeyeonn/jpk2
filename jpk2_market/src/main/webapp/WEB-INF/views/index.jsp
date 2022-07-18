@@ -35,7 +35,7 @@
     	            speed: 500,  // 애니메이션 속도
     	            pause: 5000,  // 애니메이션 유지 시간 (1000은 1초)
     	            mode: 'horizontal', // 슬라이드 모드 ('fade', 'horizontal', 'vertical' 이 있음)
-    	            /* autoControls: true, // 시작 및 중지버튼 보여짐, 따로 기능없이 보여지기만해서 주석처리 함 */
+    	            /* autoControls: true, // 시작 및 중지버튼 */
     	            pager: true, // 페이지 표시 보여짐
     			    autoHover: true,   // 마우스 호버시 정지 여부
 
@@ -47,7 +47,7 @@
       
       <!-- 이미지 슬라이드 css -->    
      
-      <style>
+     <style>
       .bx-wrapper {
          position: relative;
          margin-bottom: 60px;
@@ -60,21 +60,25 @@
          border: 9px solid #fff !important;
          background: #fff;
          }
+      .bx-wrapper .bx-prev {
+		left: 265px;
+		background: url("resources/img/controls.png") 0 -32px no-repeat
+		}
+		
+	 .bx-wrapper .bx-prev:focus, .bx-wrapper .bx-prev:hover {
+		background-position: 0 0
+		}
+		
+	 .bx-wrapper .bx-next {
+		right: 262px;
+		background: url("resources/img/controls.png") -43px -32px no-repeat
+		}
+		
+	 .bx-wrapper .bx-next:focus, .bx-wrapper .bx-next:hover {
+		background-position: -43px 0
+		}
    
-   
-/* 	      #topButton {
-	      position: fixed; 
-	      right: 2%; 
-	      bottom: 50px; 
-	      display: none; 
-	      z-index: 999;
-	      }
-	      
-	      #index_inner{
-	      min-height: 1040px;
-	      } */
-
-      </style>
+    </style>
       
       
       

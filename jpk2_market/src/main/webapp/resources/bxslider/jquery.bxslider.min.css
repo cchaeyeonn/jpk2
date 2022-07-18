@@ -87,8 +87,8 @@ ul.bxslider {
 	line-height: 0
 }
 
-.bx-wrapper .bx-prev {
-	left: 10px;
+/* .bx-wrapper .bx-prev {
+	left: 288px !important;
 	background: url(images/controls.png) 0 -32px no-repeat
 }
 
@@ -103,7 +103,7 @@ ul.bxslider {
 
 .bx-wrapper .bx-next:focus, .bx-wrapper .bx-next:hover {
 	background-position: -43px 0
-}
+} */
 
 .bx-wrapper .bx-controls-direction a {
 	position: absolute;

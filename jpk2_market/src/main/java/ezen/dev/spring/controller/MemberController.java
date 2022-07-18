@@ -88,20 +88,25 @@ public class MemberController {
 		
 		//2揶쏆뮇�벥 野껉퀗�궢揶쏅�れ뱽 占쎈섯�⑥쥙�쁽 HashMap 揶쏆빘猿� 占쎄텢占쎌뒠
 		HashMap<String, Long> resultMap=memberService.login(loginInfo);
-		long member_auth = resultMap.get("member_auth");//占쎌돳占쎌뜚占쎌뵥筌앾옙
 		long member_grade = resultMap.get("member_grade");//占쎌돳占쎌뜚占쎈쾻疫뀐옙
 		long midx = resultMap.get("midx");
 		//Long형을 int형으로 변환
 		int midx_ = (int)midx;
 		//장바구니 정보 추가(한 매핑안에서 두개의 메소드가 진행되도록 구현)
 		int count = cartService.cart_count(midx_);
+
 		
 		//상품번호를 배열에 담아 세션에 저장
 		ArrayList<Integer> pidx_pc_arr = new ArrayList<Integer>();
 		pidx_pc_arr = cartService.cart_pidx_pc(midx_);
 		
+
+		String member_auth = memberService.getAuthInfo(member_id);
+		System.out.println("인증값 "+member_auth);
+
 		String viewPage = null;
-		if(member_auth==1) {
+		String Success="Y";
+		if(member_auth.equals(Success)) {
 			HttpSession session = request.getSession();
 			session.setAttribute("member_id", member_id);//占쎌돳占쎌뜚占쎌뵥筌앾옙 �빊遺쏙옙	
 			session.setAttribute("member_grade", member_grade);//占쎌돳占쎌뜚占쎈쾻疫뀐옙 �빊遺쏙옙
