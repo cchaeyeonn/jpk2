@@ -49,6 +49,11 @@
 	}
 	
 </style>
+<!-- 외부 js에서 ${pageContext.request.contextPath}를 사용할 수 있게 세션에 값을 저장 -->
+<script type="text/javascript" charset="utf-8">
+	sessionStorage.setItem("contextpath", "${pageContext.request.contextPath}");
+	
+</script>
 <!-- jquery 스크립트 -->
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script src="${pageContext.request.contextPath}/resources/js/cart.js "></script>
@@ -58,6 +63,7 @@
     <jsp:include page="../header.jsp"></jsp:include>
  
  	<form>
+ 	
     <div id="cart_inner">
     <h2 style="text-align:center;"> 장바구니</h2>
     <input type="checkbox" id="chk_all">전체 선택 ㅣ 
@@ -69,6 +75,8 @@
     <table id="target">
     <c:forEach items="${cartList}" var="cartVo">
     <form>
+    <input type="hidden"  id="pidx_pc" value="${cartVo.pidx_pc} ">
+    <!-- 외부 js의 경우 el및 jstl이 적용되지 않는다. 그렇기 때문에 수량관련 +-버튼 스크립트를  forEach문 안에 따로 작성했다. -->
     <script>
     $(function(){
     let number = $('#${cartVo.pbidx}_pop_out').val();

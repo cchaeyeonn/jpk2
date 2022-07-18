@@ -1,5 +1,6 @@
 package ezen.dev.spring.controller;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import ezen.dev.spring.service.AjaxService;
+import ezen.dev.spring.service.CartService;
 
 //Ajax�넻�떊 吏��썝�쓣 �쐞�빐 pom.xml�뿉 �쓽議대え�뱢(jackson)�쓣 異붽��빐 以�
 
@@ -26,6 +28,14 @@ public class AjaxController {
 	public AjaxController(AjaxService ajaxService) {
 		this.ajaxService = ajaxService;
 	}
+	
+    private CartService cartService;
+	
+	@Autowired
+	public void setCartService(CartService cartService) {
+		this.cartService = cartService;
+		
+	} 
 	
 	@PostMapping("/checkId.do")
 	public String checkId(@RequestParam("member_id") String id) {
@@ -53,6 +63,7 @@ public class AjaxController {
 		
 		return result;
 	}
+	
 	@PostMapping("/cart_delete.do")
 	public String cartDeleteInfo(@RequestParam("cart_idx_arr[]") List<Integer> cartidxList,HttpServletRequest request) {
 		
@@ -62,6 +73,10 @@ public class AjaxController {
 		int flag = ajaxService.deleteCartInfo(cartidxList);
 		result_ = result_-flag;
 		session.setAttribute("result_", result_);
+		int midx_=Integer.parseInt(String.valueOf(session.getAttribute("midx")));
+		ArrayList<Integer> pidx_pc_arr = new ArrayList<Integer>();
+		pidx_pc_arr = cartService.cart_pidx_pc(midx_);
+		session.setAttribute("pidx_pc_arr", pidx_pc_arr);
 		
 		if(flag != 0) result = "Y";//회원삭제 성공
 		
@@ -76,6 +91,12 @@ public class AjaxController {
 		int flag = ajaxService.deleteCartInfoOne(pbidx);
 		result_ = result_-flag;
 		session.setAttribute("result_", result_);
+		
+		int midx_=Integer.parseInt(String.valueOf(session.getAttribute("midx")));
+		ArrayList<Integer> pidx_pc_arr = new ArrayList<Integer>();
+		pidx_pc_arr = cartService.cart_pidx_pc(midx_);
+		session.setAttribute("pidx_pc_arr", pidx_pc_arr);
+		
 		
 		if(flag != 0) result = "Y";//회원삭제 성공
 		

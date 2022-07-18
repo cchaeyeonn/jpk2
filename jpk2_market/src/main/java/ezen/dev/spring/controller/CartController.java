@@ -3,6 +3,7 @@ package ezen.dev.spring.controller;
 import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -64,7 +65,8 @@ public class CartController {
 		
 		//result : productAddProcess의 쿼리가 잘 실행되었는지를 확인
 		//result_ : cart_count 개수를 담기 위해 만든 변수
-		
+		ArrayList<Integer> pidx_pc_arr = new ArrayList<Integer>();
+		pidx_pc_arr = (ArrayList<Integer>) session.getAttribute("pidx_pc_arr");
 		int result=0;
 
 		// nullPointException을 방지 하기위해 null값일 경우 0으로 바꿈
@@ -88,21 +90,41 @@ public class CartController {
         ProductVo productVo = productService.getProductInfo(pidx_pc_);
 		
 		model.addAttribute("productVo",productVo);
-
-		result = cartService.addCart(cartVo);
 		String viewPage="product/product_detail";
+		if(pidx_pc_arr.contains(pidx_pc) && result_!=0) {
+			result = cartService.updateCart(cartVo);
+			
+			if(result ==1) {
+				
+				model.addAttribute("p_amount",p_amount_);
+				model.addAttribute("midx_mc",midx_mc);
+				model.addAttribute("pidx_pc",pidx_pc);
+				
+				
+				
+				
+				viewPage = "product/product_detail";
+			
+			
+		}
+		}else {
+		
+		result = cartService.addCart(cartVo);
+		
 
 		if(result ==1) {
 			
 			model.addAttribute("p_amount",p_amount_);
 			model.addAttribute("midx_mc",midx_mc);
 			model.addAttribute("pidx_pc",pidx_pc);
-			
+			pidx_pc_arr.add(pidx_pc);
 			session.setAttribute("result_", result_+=1);
-			
+			session.setAttribute("pidx_pc_arr", pidx_pc_arr);
 			
 			viewPage = "product/product_detail";
 		}
+		
+	}	
 		return viewPage;
 	}
 	

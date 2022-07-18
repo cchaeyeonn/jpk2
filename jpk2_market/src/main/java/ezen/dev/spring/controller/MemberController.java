@@ -1,8 +1,15 @@
 package ezen.dev.spring.controller;
 
+
+import java.util.ArrayList;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
 import java.util.HashMap;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -47,23 +54,35 @@ public class MemberController {
 	}
 	
 	@RequestMapping(value="/joinProcess.do", method = RequestMethod.POST)
-	public String joinProcess(MemberVo memberVo, RedirectAttributes rttr, HttpServletRequest request) throws Exception {
+	public String joinProcess(MemberVo memberVo, RedirectAttributes rttr, HttpServletRequest request, HttpServletResponse response) throws Exception {
 		
 		memberService.join(memberVo);
-		rttr.addFlashAttribute("msg","가입시 사용한 이메일로 인증해주세요");
+		response.setContentType("text/html; charset=UTF-8");
+		response.setCharacterEncoding("UTF-8");
+		PrintWriter out=response.getWriter();
+		out.println("<script>alert('가입하실 때 작성하신 이메일에서 인증을 해주세요.');</script>");
+		out.flush();
 		return "redirect:/";
 	}
 	@RequestMapping(value = "/emailConfirm", method = RequestMethod.GET)
 	public String emailConfirm(@RequestParam("authkey") String authKey,
-			Model model, RedirectAttributes rttr) throws Exception{
+			Model model, RedirectAttributes rttr, HttpServletResponse response) throws Exception{
 		System.out.println("authKey"+authKey);
 		if(authKey == null) {
-		rttr.addFlashAttribute("msg","인증키가 잘못되었습니다. 다시 인증해 주세요");
-		return "redirect:/";
+			response.setContentType("text/html; charset=UTF-8");
+			response.setCharacterEncoding("UTF-8");
+			PrintWriter out=response.getWriter();
+			out.println("<script>alert('인증키가 잘못되었습니다. 다시 인증해주세요.');</script>");
+			out.flush();
+			return "redirect:/";
 		}
 		MemberVo memberVo = memberService.userAuth(authKey);
 		if(memberVo == null) {
-			rttr.addFlashAttribute("msg","잘못된 접근 입니다. 다시 인증해 주세요");
+			response.setContentType("text/html; charset=UTF-8");
+			response.setCharacterEncoding("UTF-8");
+			PrintWriter out=response.getWriter();
+			out.println("<script>alert('잘못된 접근입니다. 다시 인증해주세요.');</script>");
+			out.flush();
 			return "redirect:/";
 		}
 		model.addAttribute("member_name",memberVo.getMember_name());
@@ -78,7 +97,7 @@ public class MemberController {
 	@PostMapping("/loginProcess.do")
 	public String loginProcess(@RequestParam("member_id") String member_id,
 			 					@RequestParam("member_pw") String member_pw, 
-			 					HttpServletRequest request) {
+			 					HttpServletRequest request, HttpServletResponse response) throws IOException {
 
 		//2揶쏆뮇�벥 占쎌읈占쎈뼎揶쏅�れ뱽 HashMap揶쏆빘猿쒙옙肉� 占쏙옙占쎌삢占쎈퉸占쎄퐣 MyBatis 占쎌뿯占쎌젾揶쏅�れ몵嚥∽옙 占쎄텢占쎌뒠
 		HashMap<String, String> loginInfo = new HashMap<String, String>();
@@ -87,15 +106,32 @@ public class MemberController {
 		
 		//2揶쏆뮇�벥 野껉퀗�궢揶쏅�れ뱽 占쎈섯�⑥쥙�쁽 HashMap 揶쏆빘猿� 占쎄텢占쎌뒠
 		HashMap<String, Long> resultMap=memberService.login(loginInfo);
+		String viewPage = null;
+
 		long member_grade = resultMap.get("member_grade");//占쎌돳占쎌뜚占쎈쾻疫뀐옙
 		long midx = resultMap.get("midx");
+		String midxs = Long.toString(midx);
+		if(midxs==null) {
+		response.setContentType("text/html; charset=UTF-8");
+		response.setCharacterEncoding("UTF-8");
+		PrintWriter out=response.getWriter();
+		out.println("<script>alert('올바르지않은 정보입니다. 아이디 혹은 비밀번호를 확인해주세요.');</script>");
+		out.flush();
+		viewPage = "member/login";
+		}
 		//Long형을 int형으로 변환
 		int midx_ = (int)midx;
 		//장바구니 정보 추가(한 매핑안에서 두개의 메소드가 진행되도록 구현)
 		int count = cartService.cart_count(midx_);
+
+		
+		//상품번호를 배열에 담아 세션에 저장
+		ArrayList<Integer> pidx_pc_arr = new ArrayList<Integer>();
+		pidx_pc_arr = cartService.cart_pidx_pc(midx_);
+		
+
 		String member_auth = memberService.getAuthInfo(member_id);
 		System.out.println("인증값 "+member_auth);
-		String viewPage = null;
 		String Success="Y";
 		if(member_auth.equals(Success)) {
 			HttpSession session = request.getSession();
@@ -103,9 +139,15 @@ public class MemberController {
 			session.setAttribute("member_grade", member_grade);//占쎌돳占쎌뜚占쎈쾻疫뀐옙 �빊遺쏙옙
 			session.setAttribute("midx", midx);
 			session.setAttribute("result_", count);
+			session.setAttribute("pidx_pc_arr", pidx_pc_arr);
 			viewPage = "redirect:/index.do";
 		
 		}else{
+			response.setContentType("text/html; charset=UTF-8");
+			response.setCharacterEncoding("UTF-8");
+			PrintWriter out=response.getWriter();
+			out.println("<script>alert('인증이 필요한 계정입니다. 가입시에 작성한 이메일을 확인해주세요.');</script>");
+			out.flush();
 			viewPage = "member/login";
 		}
 		
@@ -131,6 +173,20 @@ public class MemberController {
 		session.invalidate();
 		
 		return "redirect:/index.do";
+	}
+	@GetMapping("/findId.do")
+	public String findId() {
+		return "member/memberFindId";
+	}
+	@RequestMapping(value="/findIdProcess.do",  method = RequestMethod.POST)
+	public String findIdProcess(@RequestParam("member_name") String member_name, @RequestParam("member_email") String member_email, Model model) {
+	HashMap<String, String> findId = new HashMap<String, String>();
+	findId.put("member_name", member_name);
+	findId.put("member_email", member_email);
+	MemberVo memberVo = memberService.getIdInfo(findId);
+	model.addAttribute("memberVo",memberVo);
+	
+	return "member/memberFindIdResult";
 	}
 
 }

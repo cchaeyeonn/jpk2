@@ -1,11 +1,17 @@
 $(function(){
+
+  var ctx = getContextPath();
+  function getContextPath() {
+  return sessionStorage.getItem("contextpath");
+}
 	
 // 카트삭제 ajax
 $("#cart_delete").click(function(){
 			
 			let cart_idx_arr = new Array();
 			
-			//삭제 체크박스를 체크한 jQuery객체들로부터 member_idx값을 배열에 저장
+			
+			//삭제 체크박스를 체크한 jQuery객체들로부터 cart_idx값을 배열에 저장
 			$("input[class='del-chk']:checked").each(function(index, item){
 				cart_idx_arr[index] = $(item).val();
 				
@@ -13,9 +19,10 @@ $("#cart_delete").click(function(){
 			
 			$.ajax({
 				type: "post",
-				url: "/spring/cart_delete.do",
+				url: ctx+"/cart_delete.do",
 				data: {
-					"cart_idx_arr": cart_idx_arr
+					"cart_idx_arr": cart_idx_arr,
+					
 				},
 				async: false,
 				success: function(data){
@@ -27,7 +34,7 @@ $("#cart_delete").click(function(){
 						
 					}
 				},
-				error: function(error){ alert("장바구니가 비었습니다!"); }
+				error: function(error){ alert("체크박스를 체크해주세요"); }
 			});
 			
 		});		
@@ -40,7 +47,7 @@ $("#btn_delete").click(function(){
 			
 			$.ajax({
 				type: "post",
-				url: "/spring/cart_deleteOne.do",
+				url: ctx+"/cart_deleteOne.do",
 				data: {
 					"pbidx":pbidx
 				},
