@@ -33,6 +33,7 @@ private FaqService faqService;
 	}
 	
 	
+	//faq 리스트
 	@GetMapping("/faq_board.do")
 	public String service_center(Model model) {
 		
@@ -43,13 +44,15 @@ private FaqService faqService;
 		return "service_center/faq_board";
 	}
 	
-
+		//faq 글쓰기
 		@GetMapping("/faq_wirte.do")
 	public String _write() {
 			
 			return "service_center/faq_write";
 		}
+	
 		
+	//faq 글쓰기 과정
 	@PostMapping("/faq_writeProcess.do")
 	public String faq_writeProcess(
 			String f_category, String f_title, String f_content, Model model, HttpServletRequest request)
@@ -80,7 +83,8 @@ private FaqService faqService;
 			return viewPage;
 			
 		
-	}
+	}	
+		//faq 자세히
 		@GetMapping("/faq_detail.do")
 		public String faq_detail(@RequestParam String fidx, Model model){
 			
@@ -92,6 +96,7 @@ private FaqService faqService;
 			
 		}
 		
+		//faq 수정하기로 이동
 		@GetMapping("/faq_update.do")
 		public String faq_modify(Model model, String fidx) {
 			FaqVo faqVo = faqService.faqdetail(fidx);
@@ -129,7 +134,19 @@ private FaqService faqService;
 			}
 			return viewPage;
 		}
-
-	
+		
+		//faq 삭제
+		@GetMapping("/faq_delyn.do")
+		public String delFaq(@RequestParam("fidx") Integer fidx, HttpServletRequest request) {
+			
+			HttpSession session = request.getSession();
+			FaqVo faqVo = new FaqVo();
+			
+			faqVo.setFidx(fidx);
+			faqService.delFaq(faqVo);
+			
+			return "service_center/service_center_main";
+			
+		}
 	
 }

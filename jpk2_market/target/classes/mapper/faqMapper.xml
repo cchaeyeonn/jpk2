@@ -8,10 +8,12 @@
 		select * from fm_notice
 	</select> -->
 	
+	<!-- faq 리스트 -->
 	<select id="getFaqList" resultType="faqVo">
 		select * from fm_faq where f_delyn='N'
 	</select>
-
+	
+	<!-- faq 글쓰기 -->
 	<insert id="insertFaq" parameterType="faqVo">
 		insert into fm_faq (f_category, f_title, f_content) values(#{f_category},#{f_title},#{f_content})
 	</insert>
@@ -20,12 +22,19 @@
 	select * from fm_faq where fidx=#{fidx}
 	</select>
 	
+	<!-- faq 수정하기 -->
 	<update id="updateFaq" parameterType="faqVo">
 		update fm_faq set f_title=#{f_title}, f_content=#{f_content} where fidx=#{fidx}
 	</update>
 	
-
+	<!-- faq 자세히보기-->
 	<select id="faqdetail" parameterType="String" resultType="faqVo">
 		select * from fm_faq where fidx=#{fidx}
 	</select>
+	
+	<!-- faq 삭제하기 -->
+	<update id="delFaq" parameterType="faqVo">
+		update fm_faq set f_delyn = 'Y' where fidx= #{fidx} 
+	</update>
+	
 </mapper>
