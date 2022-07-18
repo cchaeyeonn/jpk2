@@ -184,8 +184,10 @@ public class MemberController {
 	findId.put("member_name", member_name);
 	findId.put("member_email", member_email);
 	MemberVo memberVo = memberService.getIdInfo(findId);
+	if(memberVo==null) {
+		return "member/memberFindIdFail";
+	}
 	model.addAttribute("memberVo",memberVo);
-	
 	return "member/memberFindIdResult";
 	}
 
