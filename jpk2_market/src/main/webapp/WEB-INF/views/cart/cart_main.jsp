@@ -58,6 +58,7 @@
     <jsp:include page="../header.jsp"></jsp:include>
  
  	<form>
+ 	
     <div id="cart_inner">
     <h2 style="text-align:center;"> 장바구니</h2>
     <input type="checkbox" id="chk_all">전체 선택 ㅣ 
@@ -69,6 +70,7 @@
     <table id="target">
     <c:forEach items="${cartList}" var="cartVo">
     <form>
+    <input type="hidden"  id="pidx_pc" value="${cartVo.pidx_pc} ">
     <script>
     $(function(){
     let number = $('#${cartVo.pbidx}_pop_out').val();

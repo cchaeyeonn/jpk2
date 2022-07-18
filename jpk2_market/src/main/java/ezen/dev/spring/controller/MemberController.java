@@ -1,7 +1,11 @@
 package ezen.dev.spring.controller;
 
+
+import java.util.ArrayList;
+
 import java.io.IOException;
 import java.io.PrintWriter;
+
 import java.util.HashMap;
 
 import javax.servlet.http.HttpServletRequest;
@@ -119,6 +123,13 @@ public class MemberController {
 		int midx_ = (int)midx;
 		//장바구니 정보 추가(한 매핑안에서 두개의 메소드가 진행되도록 구현)
 		int count = cartService.cart_count(midx_);
+
+		
+		//상품번호를 배열에 담아 세션에 저장
+		ArrayList<Integer> pidx_pc_arr = new ArrayList<Integer>();
+		pidx_pc_arr = cartService.cart_pidx_pc(midx_);
+		
+
 		String member_auth = memberService.getAuthInfo(member_id);
 		System.out.println("인증값 "+member_auth);
 		String Success="Y";
@@ -128,6 +139,7 @@ public class MemberController {
 			session.setAttribute("member_grade", member_grade);//占쎌돳占쎌뜚占쎈쾻疫뀐옙 �빊遺쏙옙
 			session.setAttribute("midx", midx);
 			session.setAttribute("result_", count);
+			session.setAttribute("pidx_pc_arr", pidx_pc_arr);
 			viewPage = "redirect:/index.do";
 		
 		}else{

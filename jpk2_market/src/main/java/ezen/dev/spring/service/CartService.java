@@ -1,5 +1,6 @@
 package ezen.dev.spring.service;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
@@ -36,6 +37,12 @@ public class CartService {
 		result = cartDao.cart_count(midx_);
 		return result;
 	}
-	
+	public int updateCart(CartVo cartVo) {
+		return cartDao.updateCart(cartVo);
+	} 
+	public ArrayList<Integer> cart_pidx_pc(int midx_) {
+		 
+		return  (ArrayList<Integer>) cartDao.cart_pidx_pc(midx_);
+	}
 	
 }

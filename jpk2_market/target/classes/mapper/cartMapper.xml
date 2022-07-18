@@ -33,6 +33,13 @@
 		select count(*) from fm_product_cart where midx_mc=#{midx}
 	</select>
 	
+	<update id="updateCart" parameterType="cartVo">
+		update fm_product_cart set p_amount = p_amount+#{p_amount} where midx_mc=#{midx_mc} and pidx_pc=#{pidx_pc}
+	</update>
+	
+	<select id="cart_pidx_pc"  parameterType="int" resultType="Integer">
+		select pidx_pc from fm_product_cart a inner join fm_member b on a.midx_mc = b.midx inner join fm_product c on a.pidx_pc = c.pidx where b.midx like #{midx} and p_delyn='N'
+	</select>
 
 
 </mapper>
