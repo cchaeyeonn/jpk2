@@ -18,6 +18,7 @@ import ezen.dev.spring.vo.MemberVo;
 public class MemberService {
 	
 	private MemberDao memberDao;
+	@Autowired
 	private JavaMailSenderImpl mailSender;
 	
 	@Autowired
@@ -28,7 +29,9 @@ public class MemberService {
 	
 	//회원가입 처리 메소드:join()
 	public void join(MemberVo memberVo) throws Exception {
-		String key = new TempKey().generateKey(30);
+		
+		String key = new TempKey().generateKey(20);
+		
 		memberVo.setMember_key(key);
 		
 		memberDao.joinMember(memberVo);
@@ -46,12 +49,6 @@ public class MemberService {
 		sendMail.setTo(memberVo.getMember_email());
 		sendMail.send();
 	}
-
-
-	/*
-	 * public HashMap<String, Long> login(MemberVo memberVo) { return
-	 * memberDao.loginMember(memberVo); }
-	 */
 	
 	public HashMap<String, Long> login(HashMap<String,String> loginInfo) {
 		return memberDao.loginMember(loginInfo);
@@ -64,9 +61,9 @@ public class MemberService {
 	}
 
 
-	public MemberVo userAuth(String authKey) throws Exception {
+	public MemberVo userAuth(String member_Key) throws Exception {
 		MemberVo memberVo = new MemberVo();
-		memberVo = memberDao.chkAuth(authKey);
+		memberVo = memberDao.chkAuth(member_Key);
 		if(memberVo!=null) {
 			try {
 				memberDao.successAuth(memberVo);
@@ -75,6 +72,11 @@ public class MemberService {
 			}
 		}
 		return memberVo;
+	}
+
+
+	public String getAuthInfo(String member_id) {
+		return memberDao.getAuthInfo(member_id);
 	}
 
 }

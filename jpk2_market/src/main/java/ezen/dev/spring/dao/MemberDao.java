@@ -58,6 +58,10 @@ public class MemberDao {
 		
 	}
 
+	public String getAuthInfo(String member_id) {
+		return sqlSession.selectOne(MAPPER+".getAuthInfo",member_id);
+	}
+
 
 
 }
