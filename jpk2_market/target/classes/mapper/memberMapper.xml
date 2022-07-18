@@ -18,7 +18,7 @@
 	</select>
 	
 	<select id="getMemberInfo" parameterType="string" resultType="memberVo">
-		select member_id, member_name, member_pw, member_phone from fm_member where member_id=#{member_id}
+		select * from fm_member where member_id=#{member_id}
 	</select>
 
 	<select id="checkId" parameterType="string" resultType="int">
@@ -36,4 +36,8 @@
 	<update id="successAuth">
 		update fm_member set member_auth='Y' where member_id=#{member_id}
 	</update>
+	
+	<select id="getAuthInfo" resultType="String">
+		select member_auth from fm_member where member_id=#{member_id}
+	</select>
 </mapper>
