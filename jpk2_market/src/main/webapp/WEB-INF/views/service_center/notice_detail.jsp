@@ -86,7 +86,8 @@
 				<td><a href="/spring/" id="homebutton_1">메인</a>
 				<c:if test="${member_grade != null}">
 				<c:if test="${member_grade >= 1}">
-					<a class='nav-link py-3 px-0 px-lg-3 rounded' style='display:inline;' href='/spring/notice_modify.do?nidx=${noticeVo.nidx}'>수정하기</a>
+					<a class='nav-link py-3 px-0 px-lg-3 rounded' style='display:inline;' href='/spring/notice_update.do?nidx=${noticeVo.nidx}'>수정하기</a>
+					<a class='nav-link py-3 px-0 px-lg-3 rounded' style='display:inline;' href='/spring/notice_delyn.do?nidx=${noticeVo.nidx}'>삭제하기</a>
 				</c:if>
 		    </c:if>
 				

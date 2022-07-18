@@ -46,7 +46,7 @@
 	
 		<div id="notice_main_inner">
 			
-			<form name="modify" method="POST" action="${path}/service_center/notice_modify?no=${nidx}">
+			<form name="update" method="POST" action="${pageContext.request.contextPath}/notice_updateprocess.do?nidx=${noticeVo.nidx}">
 			
 			<div>카테고리</div>
 			<div>제목 :</div>
