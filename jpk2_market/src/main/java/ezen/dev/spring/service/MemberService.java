@@ -79,4 +79,10 @@ public class MemberService {
 		return memberDao.getAuthInfo(member_id);
 	}
 
+
+	public MemberVo getIdInfo(HashMap<String, String> findId) {
+
+		return memberDao.getIdInfo(findId);
+	}
+
 }

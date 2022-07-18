@@ -48,6 +48,8 @@
 			<exclude-mapping path="/**/cart_delete.do"/>
 			<exclude-mapping path="/**/cart_deleteOne.do"/>
 			<exclude-mapping path="/**/authSucess.do"/>
+			<exclude-mapping path="/**/findId.do"/>
+			<exclude-mapping path="/**/findIdProcess.do"/>						
 			<beans:bean id="AuthLoginInterceptor" class="ezen.dev.spring.interceptor.AuthLoginInterceptor">
 	        </beans:bean>
 		</interceptor>

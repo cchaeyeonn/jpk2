@@ -62,6 +62,11 @@ public class MemberDao {
 		return sqlSession.selectOne(MAPPER+".getAuthInfo",member_id);
 	}
 
+	public MemberVo getIdInfo(HashMap<String, String> findId) {
+
+		return sqlSession.selectOne(MAPPER+".getIdInfo", findId);
+	}
+
 
 
 }
