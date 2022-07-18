@@ -1,4 +1,9 @@
 $(function(){
+
+  var ctx = getContextPath();
+  function getContextPath() {
+  return sessionStorage.getItem("contextpath");
+}
 	
 // 카트삭제 ajax
 $("#cart_delete").click(function(){
@@ -14,7 +19,7 @@ $("#cart_delete").click(function(){
 			
 			$.ajax({
 				type: "post",
-				url: "/spring/cart_delete.do",
+				url: ctx+"/cart_delete.do",
 				data: {
 					"cart_idx_arr": cart_idx_arr,
 					
@@ -42,7 +47,7 @@ $("#btn_delete").click(function(){
 			
 			$.ajax({
 				type: "post",
-				url: "/spring/cart_deleteOne.do",
+				url: ctx+"/cart_deleteOne.do",
 				data: {
 					"pbidx":pbidx
 				},

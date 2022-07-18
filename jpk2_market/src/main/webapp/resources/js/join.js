@@ -52,7 +52,10 @@
 			 var getMail = RegExp(/^[A-Za-z0-9_\.\-]+@[A-Za-z0-9\-]+\.[A-Za-z0-9\-]+/);
              let reg = RegExp(/^(?=.*\d)(?=.*[a-zA-Z])[0-9a-zA-Z]{8,16}$/);
 
-			
+			var ctx = getContextPath();
+            function getContextPath() {
+            return sessionStorage.getItem("contextpath");
+            }
 			
 			
 			
@@ -62,7 +65,7 @@
 				
 				$.ajax({
 					type:'post',
-					url:"/spring/checkId.do",
+					url:ctx+"/checkId.do",
 					data: {"member_id":member_id},				
 					success: function(data){
 						if(data == "N"){
@@ -89,7 +92,7 @@
 				
 				$.ajax({
 					type:'post',
-					url:"/spring/checkEmail.do",
+					url:ctx+"/checkEmail.do",
 					data: {"member_email":member_email},
 					success: function(data){
 						if(data == "N"){
