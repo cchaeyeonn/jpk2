@@ -19,4 +19,13 @@
 	<select id="getFaqInfo" parameterType="String" resultType="faqVo">
 	select * from fm_faq where fidx=#{fidx}
 	</select>
+	
+	<update id="updateFaq" parameterType="faqVo">
+		update fm_faq set f_title=#{f_title}, f_content=#{f_content} where fidx=#{fidx}
+	</update>
+	
+
+	<select id="faqdetail" parameterType="String" resultType="faqVo">
+		select * from fm_faq where fidx=#{fidx}
+	</select>
 </mapper>

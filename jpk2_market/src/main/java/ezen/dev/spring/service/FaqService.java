@@ -41,5 +41,16 @@ public class FaqService {
 	}
 
 
+	public int updateFaq(FaqVo faqVo) {
+	
+		return faqDao.updateFaq(faqVo);
+	}
+
+
+	public FaqVo faqdetail(String fidx) {
+		return faqDao.faqdetail(fidx);
+	}
+
+
 
 }

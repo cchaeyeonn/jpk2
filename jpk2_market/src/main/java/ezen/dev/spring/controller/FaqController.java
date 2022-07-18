@@ -63,7 +63,7 @@ private FaqService faqService;
 			faqVo.setF_category(f_category);
 			faqVo.setF_title(f_title);
 			faqVo.setF_content(f_content);
-			faqVo.setF_delyn(f_content);
+
 			
 			
 			result = faqService.insertFaq(faqVo);
@@ -82,7 +82,7 @@ private FaqService faqService;
 		
 	}
 		@GetMapping("/faq_detail.do")
-		public String faq_detail(@RequestParam String fidx, Model model, HttpServletRequest request){
+		public String faq_detail(@RequestParam String fidx, Model model){
 			
 			FaqVo faqVo = faqService.getFaqInfo(fidx);
 			
@@ -91,8 +91,45 @@ private FaqService faqService;
 			return "service_center/faq_detail";
 			
 		}
+		
+		@GetMapping("/faq_update.do")
+		public String faq_modify(Model model, String fidx) {
+			FaqVo faqVo = faqService.faqdetail(fidx);
+			model.addAttribute("faqVo",faqVo);
+			return "service_center/faq_update";
+			
+		}
+		
+		//faq 수정
+		@PostMapping("/faq_updateprocess.do")
+		public String faq_updateprocess(@RequestParam String fidx, String f_category, String f_title, String f_content, Model model, HttpServletRequest request) {
+			
+			HttpSession session = request.getSession();
+			
+			int result = 0;
+			
+			FaqVo faqVo = new FaqVo();
+			
+			int fidx_ = Integer.parseInt(fidx);
+			
+			faqVo.setF_category(f_category);
+			faqVo.setF_content(f_content);
+			faqVo.setF_title(f_title);
+			faqVo.setFidx(fidx_);
+			
+			result = faqService.updateFaq(faqVo);
+			String viewPage="service_center/faq_update";
+			
+			if(result == 1) {
+				model.addAttribute("f_category",f_category);
+				model.addAttribute("f_content",f_content);
+				model.addAttribute("f_title",f_title);
+				model.addAttribute("faqVo",faqVo);
+				viewPage = "service_center/faq_detail";
+			}
+			return viewPage;
+		}
 
-	
 	
 	
 }

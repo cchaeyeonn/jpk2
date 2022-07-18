@@ -104,7 +104,7 @@
 		</table>
 		<div style="padding-left:929px;">
 		<!-- <a href="/spring/" id="homebutton_1">메인</a> -->
-		<a href="#" class="btn btn-primary">수정</a>
+		<a class='btn btn-primary' href='/spring/faq_update.do?fidx=${faqVo.fidx}'>수정하기</a>
 		<a href="/spring/service_center.do" class="btn btn-primary">글목록</a>
 		</div>
 		
