@@ -11,6 +11,7 @@
 		<typeAlias alias="NoticeVo" type="ezen.dev.spring.vo.NoticeVo"/>
 		<typeAlias alias="FaqVo" type="ezen.dev.spring.vo.FaqVo"/>
 		<typeAlias alias="QnaVo" type="ezen.dev.spring.vo.QnaVo"/>
+		<typeAlias alias="MailHandler" type="ezen.dev.spring.email.MailHandler"/>
 	</typeAliases>  
 
 </configuration>  

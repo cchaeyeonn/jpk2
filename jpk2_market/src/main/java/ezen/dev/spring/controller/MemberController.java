@@ -1,5 +1,6 @@
 package ezen.dev.spring.controller;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 import javax.servlet.http.HttpServletRequest;
@@ -54,8 +55,9 @@ public class MemberController {
 		return "redirect:/";
 	}
 	@RequestMapping(value = "/emailConfirm", method = RequestMethod.GET)
-	public String emailConfirm(@RequestParam("authKey")String authKey,
+	public String emailConfirm(@RequestParam("authkey") String authKey,
 			Model model, RedirectAttributes rttr) throws Exception{
+		System.out.println("authKey"+authKey);
 		if(authKey == null) {
 		rttr.addFlashAttribute("msg","인증키가 잘못되었습니다. 다시 인증해 주세요");
 		return "redirect:/";
@@ -94,6 +96,9 @@ public class MemberController {
 		//장바구니 정보 추가(한 매핑안에서 두개의 메소드가 진행되도록 구현)
 		int count = cartService.cart_count(midx_);
 		
+		//상품번호를 배열에 담아 세션에 저장
+		ArrayList<Integer> pidx_pc_arr = new ArrayList<Integer>();
+		pidx_pc_arr = cartService.cart_pidx_pc(midx_);
 		
 		String viewPage = null;
 		if(member_auth==1) {
@@ -102,6 +107,7 @@ public class MemberController {
 			session.setAttribute("member_grade", member_grade);//占쎌돳占쎌뜚占쎈쾻疫뀐옙 �빊遺쏙옙
 			session.setAttribute("midx", midx);
 			session.setAttribute("result_", count);
+			session.setAttribute("pidx_pc_arr", pidx_pc_arr);
 			viewPage = "redirect:/index.do";
 		
 		}else{

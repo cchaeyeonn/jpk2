@@ -1,5 +1,6 @@
 package ezen.dev.spring.dao;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
@@ -38,5 +39,14 @@ public class CartDao {
      public int cart_count(int midx_) {
  		return sqlSession.selectOne(MAPPER+".cart_count", midx_);
  	}
+     public int updateCart(CartVo cartVo) {
+ 		
+ 		return sqlSession.update(MAPPER+".updateCart", cartVo);
+    }
+     public List<Integer> cart_pidx_pc(int midx_) {
+    	return sqlSession.selectList(MAPPER+".cart_pidx_pc", midx_);
+    	
+    }	 
+  
      
 }
