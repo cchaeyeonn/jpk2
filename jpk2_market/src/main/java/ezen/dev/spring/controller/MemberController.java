@@ -50,23 +50,35 @@ public class MemberController {
 	}
 	
 	@RequestMapping(value="/joinProcess.do", method = RequestMethod.POST)
-	public String joinProcess(MemberVo memberVo, RedirectAttributes rttr, HttpServletRequest request) throws Exception {
+	public String joinProcess(MemberVo memberVo, RedirectAttributes rttr, HttpServletRequest request, HttpServletResponse response) throws Exception {
 		
 		memberService.join(memberVo);
-		rttr.addFlashAttribute("msg","가입시 사용한 이메일로 인증해주세요");
+		response.setContentType("text/html; charset=UTF-8");
+		response.setCharacterEncoding("UTF-8");
+		PrintWriter out=response.getWriter();
+		out.println("<script>alert('가입하실 때 작성하신 이메일에서 인증을 해주세요.');</script>");
+		out.flush();
 		return "redirect:/";
 	}
 	@RequestMapping(value = "/emailConfirm", method = RequestMethod.GET)
 	public String emailConfirm(@RequestParam("authkey") String authKey,
-			Model model, RedirectAttributes rttr) throws Exception{
+			Model model, RedirectAttributes rttr, HttpServletResponse response) throws Exception{
 		System.out.println("authKey"+authKey);
 		if(authKey == null) {
-		rttr.addFlashAttribute("msg","인증키가 잘못되었습니다. 다시 인증해 주세요");
-		return "redirect:/";
+			response.setContentType("text/html; charset=UTF-8");
+			response.setCharacterEncoding("UTF-8");
+			PrintWriter out=response.getWriter();
+			out.println("<script>alert('인증키가 잘못되었습니다. 다시 인증해주세요.');</script>");
+			out.flush();
+			return "redirect:/";
 		}
 		MemberVo memberVo = memberService.userAuth(authKey);
 		if(memberVo == null) {
-			rttr.addFlashAttribute("msg","잘못된 접근 입니다. 다시 인증해 주세요");
+			response.setContentType("text/html; charset=UTF-8");
+			response.setCharacterEncoding("UTF-8");
+			PrintWriter out=response.getWriter();
+			out.println("<script>alert('잘못된 접근입니다. 다시 인증해주세요.');</script>");
+			out.flush();
 			return "redirect:/";
 		}
 		model.addAttribute("member_name",memberVo.getMember_name());
@@ -90,15 +102,25 @@ public class MemberController {
 		
 		//2揶쏆뮇�벥 野껉퀗�궢揶쏅�れ뱽 占쎈섯�⑥쥙�쁽 HashMap 揶쏆빘猿� 占쎄텢占쎌뒠
 		HashMap<String, Long> resultMap=memberService.login(loginInfo);
+		String viewPage = null;
+
 		long member_grade = resultMap.get("member_grade");//占쎌돳占쎌뜚占쎈쾻疫뀐옙
 		long midx = resultMap.get("midx");
+		String midxs = Long.toString(midx);
+		if(midxs==null) {
+		response.setContentType("text/html; charset=UTF-8");
+		response.setCharacterEncoding("UTF-8");
+		PrintWriter out=response.getWriter();
+		out.println("<script>alert('올바르지않은 정보입니다. 아이디 혹은 비밀번호를 확인해주세요.');</script>");
+		out.flush();
+		viewPage = "member/login";
+		}
 		//Long형을 int형으로 변환
 		int midx_ = (int)midx;
 		//장바구니 정보 추가(한 매핑안에서 두개의 메소드가 진행되도록 구현)
 		int count = cartService.cart_count(midx_);
 		String member_auth = memberService.getAuthInfo(member_id);
 		System.out.println("인증값 "+member_auth);
-		String viewPage = null;
 		String Success="Y";
 		if(member_auth.equals(Success)) {
 			HttpSession session = request.getSession();
