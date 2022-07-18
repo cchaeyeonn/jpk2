@@ -28,5 +28,10 @@ public class QnaService {
 		return qnaDao.getQnaList();
 	}
 
+	//qna 글쓰기
+	public int insertQna(QnaVo qnaVo) {
+		return qnaDao.insertQna(qnaVo);
+	}
+
 	
 }

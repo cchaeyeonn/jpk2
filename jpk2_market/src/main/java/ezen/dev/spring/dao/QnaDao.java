@@ -27,6 +27,11 @@ public class QnaDao {
 		return sqlSession.selectList(MAPPER+".getQnaList");
 	}
 	
+	//qna 글쓰기
+	public int insertQna(QnaVo qnaVo) {
+		return sqlSession.insert(MAPPER+".insertQna", qnaVo);
+	}
+	
 	/*
 	 * public NoticeVo getNoticeInfo(String nidx) {
 	 * 
