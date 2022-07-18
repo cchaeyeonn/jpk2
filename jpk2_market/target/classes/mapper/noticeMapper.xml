@@ -20,8 +20,13 @@
 	</select>
 	
 	<!-- 공지사항 수정하기 -->
-<!--  	<update id="modifyNotice" parameterType="notice">
+  	<update id="updateNotice" parameterType="noticeVo">
 		update fm_notice set n_title=#{n_title}, n_content=#{n_content} where nidx=#{nidx}
-	</update> -->
+	</update>
+	
+	<!-- 공지사항 삭제하기 -->
+	<update id="delNotice" parameterType="noticeVo">
+		update fm_notice set n_delyn = 'Y' where nidx= #{nidx} and midx_mn = #{midx_mn}
+	</update>
 
 </mapper>

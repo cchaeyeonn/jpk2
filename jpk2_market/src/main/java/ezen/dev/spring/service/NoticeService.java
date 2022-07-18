@@ -38,8 +38,25 @@ public class NoticeService {
 	}
 	
 	//공지사항 수정하기
-/*	public void noticemodify(NoticeVo noticeVo) {
-		noticeDao.modifyNotice(noticeVo);
+	public int updateNotice(NoticeVo noticeVo) {
+		return noticeDao.updateNotice(noticeVo);
+	}
+
+	//공지사항 삭제하기
+	public int delNotice(NoticeVo noticeVo) {
+		return noticeDao.delNotice(noticeVo);
+		
+	}
+
+/*	public void noticeupdate() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	
+	//공지사항 수정하기
+	public int updateNotice(NoticeVo noticeVo) {
+		return noticeDao.updateNotice(noticeVo);
 	}*/
 	 
 }

@@ -125,7 +125,11 @@
 				
 				<c:if test="${member_grade != null}">
 				<c:if test="${member_grade >= 1}">
-					<a class="btn btn-primary" href='/spring/notice_modify.do?nidx=${noticeVo.nidx}'>수정</a>
+
+					<a class='btn btn-primary' href='/spring/notice_update.do?nidx=${noticeVo.nidx}'>수정하기</a>
+					<a class='btn btn-primary' href='/spring/notice_delyn.do?nidx=${noticeVo.nidx}'>삭제하기</a>
+
+
 				</c:if>
 				<a href="/spring/service_center.do" class="btn btn-primary">글목록</a>
 		    </c:if>
