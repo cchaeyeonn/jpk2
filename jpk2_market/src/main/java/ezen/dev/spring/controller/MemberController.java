@@ -174,5 +174,19 @@ public class MemberController {
 		
 		return "redirect:/index.do";
 	}
+	@GetMapping("/findId.do")
+	public String findId() {
+		return "member/memberFindId";
+	}
+	@RequestMapping(value="/findIdProcess.do",  method = RequestMethod.POST)
+	public String findIdProcess(@RequestParam("member_name") String member_name, @RequestParam("member_email") String member_email, Model model) {
+	HashMap<String, String> findId = new HashMap<String, String>();
+	findId.put("member_name", member_name);
+	findId.put("member_email", member_email);
+	MemberVo memberVo = memberService.getIdInfo(findId);
+	model.addAttribute("memberVo",memberVo);
+	
+	return "member/memberFindIdResult";
+	}
 
 }

@@ -89,7 +89,7 @@
 <!-- <p><input type="button" value="아이디찾기" onclick=""> 
 |
 <input type="button" value="비밀번호찾기" onclick=""></p> -->
-<a>아이디 찾기</a> | <a>비밀번호 찾기</a></div>
+<a href="findId.do">아이디 찾기</a> | <a>비밀번호 찾기</a></div>
 <div id="login_4">
 
 <input type="button" class="btn btn-outline-success" value="로그인" onclick="check();">
