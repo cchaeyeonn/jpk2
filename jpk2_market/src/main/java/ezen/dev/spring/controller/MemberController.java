@@ -1,8 +1,11 @@
 package ezen.dev.spring.controller;
 
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.HashMap;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -78,7 +81,7 @@ public class MemberController {
 	@PostMapping("/loginProcess.do")
 	public String loginProcess(@RequestParam("member_id") String member_id,
 			 					@RequestParam("member_pw") String member_pw, 
-			 					HttpServletRequest request) {
+			 					HttpServletRequest request, HttpServletResponse response) throws IOException {
 
 		//2揶쏆뮇�벥 占쎌읈占쎈뼎揶쏅�れ뱽 HashMap揶쏆빘猿쒙옙肉� 占쏙옙占쎌삢占쎈퉸占쎄퐣 MyBatis 占쎌뿯占쎌젾揶쏅�れ몵嚥∽옙 占쎄텢占쎌뒠
 		HashMap<String, String> loginInfo = new HashMap<String, String>();
@@ -106,6 +109,11 @@ public class MemberController {
 			viewPage = "redirect:/index.do";
 		
 		}else{
+			response.setContentType("text/html; charset=UTF-8");
+			response.setCharacterEncoding("UTF-8");
+			PrintWriter out=response.getWriter();
+			out.println("<script>alert('인증이 필요한 계정입니다. 가입시에 작성한 이메일을 확인해주세요.');</script>");
+			out.flush();
 			viewPage = "member/login";
 		}
 		
