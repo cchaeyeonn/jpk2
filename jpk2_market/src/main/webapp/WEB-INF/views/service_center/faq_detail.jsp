@@ -103,9 +103,17 @@
 		</tbody>
 		</table>
 		<div style="padding-left:929px;">
+		
+		<c:if test="${member_grade != null}">
+		<c:if test="${member_grade >= 1}">
+				
 		<!-- <a href="/spring/" id="homebutton_1">메인</a> -->
 		<a class='btn btn-primary' href='/spring/faq_update.do?fidx=${faqVo.fidx}'>수정하기</a>
+		<a class='btn btn-primary' href='/spring/faq_delyn.do?fidx=${faqVo.fidx}'>삭제하기</a>
+		
+		</c:if>
 		<a href="/spring/service_center.do" class="btn btn-primary">글목록</a>
+		</c:if>
 		</div>
 		
 		</div>

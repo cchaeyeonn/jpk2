@@ -40,6 +40,9 @@ public class FaqDao {
 		return sqlSession.selectOne(MAPPER+".faqdetail",fidx);
 		
 	}
+	public int delFaq(FaqVo faqVo) {
+		return sqlSession.update(MAPPER+".delFaq",faqVo);
+	}
 
 	
 
