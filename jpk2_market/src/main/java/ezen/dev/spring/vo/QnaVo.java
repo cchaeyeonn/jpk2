@@ -13,6 +13,8 @@ public class QnaVo {
 	private String q_redate;
 	private String q_redelyn;
 	private int midx_mq;
+	
+	
 	public int getQidx() {
 		return qidx;
 	}

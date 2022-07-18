@@ -30,7 +30,8 @@
 	</delete>
 	
 	<select id="cart_count" parameterType="int" resultType="int">
-		select count(*) from fm_product_cart where midx_mc=#{midx}
+		<!-- select count(*) from fm_product_cart where midx_mc=#{midx} -->
+		select count(*) from fm_product_cart a inner join fm_product b on a.pidx_pc = b.pidx where a.midx_mc = #{midx} and p_delyn='N' 
 	</select>
 	
 	<update id="updateCart" parameterType="cartVo">

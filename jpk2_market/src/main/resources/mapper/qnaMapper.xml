@@ -11,5 +11,11 @@
 	<select id="getQnaList" resultType="qnaVo">
 		select * from fm_qna where q_delyn='N'
 	</select>
+	
+	
+	<!-- qna 글쓰기 -->
+	<insert id="insertQna" parameterType="qnaVo">
+		insert into fm_qna (q_category,q_title,q_content,q_writedate,q_originqidx,q_depth,q_redate,midx_mq) values(#{q_category},#{q_title},#{q_content},#{q_writedate},#{q_originqidx},0,#{q_redate},#{midx_mq})
+	</insert>
 
 </mapper>
