@@ -74,4 +74,9 @@ public class MemberService {
 		return memberVo;
 	}
 
+
+	public String getAuthInfo(String member_id) {
+		return memberDao.getAuthInfo(member_id);
+	}
+
 }
