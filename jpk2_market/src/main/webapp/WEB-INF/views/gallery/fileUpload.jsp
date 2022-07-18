@@ -9,7 +9,7 @@
 <body>
 	<h3>파일업로드</h3>
 	
-	<form method="post" action="/spring/fileUploadProcess.do" enctype="multipart/form-data">
+	<form method="post" action="${pageContext.request.contextPath}/fileUploadProcess.do" enctype="multipart/form-data">
 		<table border="1px">
 			<tr>
 				<td>내용</td>
@@ -22,7 +22,7 @@
 				<td colspan="2" align="center">
 					<input type="submit" value="파일업로드"/>&nbsp;|&nbsp;
 					<input type="reset" value="취소"/>&nbsp;|&nbsp;
-					<input type="button" value="메인페이지" onclick="document.location.href='/spring/home.do'"/>
+					<input type="button" value="메인페이지" onclick="document.location.href='${pageContext.request.contextPath}/home.do'"/>
 				</td>
 			</tr>
 		</table>

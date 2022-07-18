@@ -45,7 +45,7 @@
 
     <!-- 헤더 연결 -->
     <jsp:include page="../header.jsp"></jsp:include> 
-	<form name="cartAddForm" action="/spring/addCartProcess.do" method="post">
+	<form name="cartAddForm" action="${pageContext.request.contextPath}/addCartProcess.do" method="post">
 	   <input type="hidden"  name="pidx_pc" value="${productVo.pidx} ">
 		<div id="product">
 		<div id="product_img">
@@ -79,7 +79,7 @@
 		</div>
 		</div>
 		<div id="home_button">
-		<a href="/spring/" id="homebutton_1">메인</a>
+		<a href="${pageContext.request.contextPath}/" id="homebutton_1">메인</a>
 		<!-- <input type="button" id="homebutton_1" value="메인으로"></a> -->
 		<!-- <input type="button" id="btn-modal" value="장바구니"> -->
 		

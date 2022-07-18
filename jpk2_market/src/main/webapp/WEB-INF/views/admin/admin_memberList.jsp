@@ -46,8 +46,8 @@
 </table>
 
 
-<input id="adl_button" type="button" class="btn btn-outline-success" value="관리자 메인페이지" onclick="location.href='/spring/admin.do'"><br>
-<input id="adl_button" type="button" class="btn btn-outline-success" value="상품아 나와라" onclick="location.href='/spring/productList.do'"><br>
+<input id="adl_button" type="button" class="btn btn-outline-success" value="관리자 메인페이지" onclick="location.href='${pageContext.request.contextPath}/admin.do'"><br>
+<input id="adl_button" type="button" class="btn btn-outline-success" value="상품아 나와라" onclick="location.href='${pageContext.request.contextPath}/productList.do'"><br>
 
 <!-- 	<a href="/spring/admin.do">관리자 메인페이지</a>
 	<a href="/spring/productList.do">상품아 나와라</a> -->

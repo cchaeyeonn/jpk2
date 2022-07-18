@@ -35,7 +35,7 @@
 
     <!-- 헤더 연결 -->
     <jsp:include page="../header.jsp"></jsp:include> 
-	<form name="productAddForm" action="/spring/addProductProcess.do" method="post" enctype="multipart/form-data">
+	<form name="productAddForm" action="${pageContext.request.contextPath}/addProductProcess.do" method="post" enctype="multipart/form-data">
 		<div id="product">
 		<div id="product_img">상품 사진
 		<input type="file" name="p_filename"></div>

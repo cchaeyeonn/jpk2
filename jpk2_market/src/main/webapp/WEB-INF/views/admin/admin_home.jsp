@@ -35,10 +35,10 @@
 <hr/>
 
 <div id="adh_inner2">
-<input id="adh_button" type="button" class="btn btn-outline-success" value="회원목록보기" onclick="location.href='/spring/memberList.do'"><br>
-<input id="adh_button" type="button" class="btn btn-outline-success" value="메인페이지" onclick="location.href='/spring/index.do'"><br>
-<input id="adh_button" type="button" class="btn btn-outline-success" value="상품등록페이지" onclick="location.href='/spring/productAdd.do'"><br>
-<input id="adl_button" type="button" class="btn btn-outline-success" value="내가 등록한 상품목록" onclick="location.href='/spring/adminProductList.do'"><br>
+<input id="adh_button" type="button" class="btn btn-outline-success" value="회원목록보기" onclick="location.href='${pageContext.request.contextPath}/memberList.do'"><br>
+<input id="adh_button" type="button" class="btn btn-outline-success" value="메인페이지" onclick="location.href='${pageContext.request.contextPath}/index.do'"><br>
+<input id="adh_button" type="button" class="btn btn-outline-success" value="상품등록페이지" onclick="location.href='${pageContext.request.contextPath}/productAdd.do'"><br>
+<input id="adl_button" type="button" class="btn btn-outline-success" value="내가 등록한 상품목록" onclick="location.href='${pageContext.request.contextPath}/adminProductList.do'"><br>
 </div>
 
 <!--
