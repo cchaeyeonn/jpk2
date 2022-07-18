@@ -106,19 +106,18 @@ public class MemberController {
 		
 		//2揶쏆뮇�벥 野껉퀗�궢揶쏅�れ뱽 占쎈섯�⑥쥙�쁽 HashMap 揶쏆빘猿� 占쎄텢占쎌뒠
 		HashMap<String, Long> resultMap=memberService.login(loginInfo);
-		String viewPage = null;
-
-		long member_grade = resultMap.get("member_grade");//占쎌돳占쎌뜚占쎈쾻疫뀐옙
-		long midx = resultMap.get("midx");
-		String midxs = Long.toString(midx);
-		if(midxs==null) {
+		if(resultMap.get("midx")==null) {
 		response.setContentType("text/html; charset=UTF-8");
 		response.setCharacterEncoding("UTF-8");
 		PrintWriter out=response.getWriter();
 		out.println("<script>alert('올바르지않은 정보입니다. 아이디 혹은 비밀번호를 확인해주세요.');</script>");
 		out.flush();
-		viewPage = "member/login";
+		return "member/login";
 		}
+		
+		long member_grade = resultMap.get("member_grade");//占쎌돳占쎌뜚占쎈쾻疫뀐옙
+		long midx = resultMap.get("midx");
+
 		//Long형을 int형으로 변환
 		int midx_ = (int)midx;
 		//장바구니 정보 추가(한 매핑안에서 두개의 메소드가 진행되도록 구현)
@@ -140,7 +139,7 @@ public class MemberController {
 			session.setAttribute("midx", midx);
 			session.setAttribute("result_", count);
 			session.setAttribute("pidx_pc_arr", pidx_pc_arr);
-			viewPage = "redirect:/index.do";
+			return "redirect:/index.do";
 		
 		}else{
 			response.setContentType("text/html; charset=UTF-8");
@@ -148,10 +147,9 @@ public class MemberController {
 			PrintWriter out=response.getWriter();
 			out.println("<script>alert('인증이 필요한 계정입니다. 가입시에 작성한 이메일을 확인해주세요.');</script>");
 			out.flush();
-			viewPage = "member/login";
+			return "member/login";
 		}
 		
-		return viewPage;
 	}
 	
 	@GetMapping("/memberInfo.do")

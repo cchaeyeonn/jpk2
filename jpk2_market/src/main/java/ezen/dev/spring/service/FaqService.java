@@ -52,5 +52,11 @@ public class FaqService {
 	}
 
 
+	public int delFaq(FaqVo faqVo) {
+		return faqDao.delFaq(faqVo);
+		
+	}
+
+
 
 }
