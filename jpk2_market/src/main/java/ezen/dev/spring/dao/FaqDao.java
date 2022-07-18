@@ -33,6 +33,13 @@ public class FaqDao {
 	public FaqVo getFaqInfo(String fidx) {
 		return sqlSession.selectOne(MAPPER+".getFaqInfo",fidx);
 	}
+	public int updateFaq(FaqVo faqVo) {
+		return sqlSession.update(MAPPER+".updateFaq",faqVo);
+	}
+	public FaqVo faqdetail(String fidx) {
+		return sqlSession.selectOne(MAPPER+".faqdetail",fidx);
+		
+	}
 
 	
 

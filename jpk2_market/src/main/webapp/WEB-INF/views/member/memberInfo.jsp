@@ -27,8 +27,8 @@
 			<td>${memberVo.member_phone}</td>
 		</tr>
 	</table><p/>
-	<a href="/spring/updateMember.do">정보수정</a>&nbsp;&nbsp;
-	<a href="/spring/deleteMember.do">회원탈퇴</a>
+	<a href="${pageContext.request.contextPath}/updateMember.do">정보수정</a>&nbsp;&nbsp;
+	<a href="${pageContext.request.contextPath}/deleteMember.do">회원탈퇴</a>
 
 </body>
 </html>

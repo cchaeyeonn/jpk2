@@ -25,7 +25,7 @@
                     <!-- Portfolio Item 1 -->
                      <c:forEach items="${productList}" var="productVo">
                     <div class="col-md-6 col-lg-4 mb-5" >
-                        <a href="/spring/product_detail.do?pidx=${productVo.pidx}">
+                        <a href="${pageContext.request.contextPath}/product_detail.do?pidx=${productVo.pidx}">
                         <div class="portfolio-item mx-auto" data-bs-toggle="modal">
                             <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-320 w-249">
                                 <div class="portfolio-item-caption-content text-center text-black"><!-- <i class="fas fa-plus fa-3x"></i> -->
