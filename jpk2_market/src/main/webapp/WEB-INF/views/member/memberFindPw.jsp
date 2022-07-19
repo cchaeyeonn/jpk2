@@ -6,30 +6,30 @@
 <meta charset="UTF-8">
 
 
-<title>로그인</title>
+<title>비밀번호찾기</title>
 <style>
-	#login {
+	#findPw {
 	margin:auto; 
 	padding:0px 20px 0px 20px; 
 	float:center; 
 	Width:60%; 
 	text-align:center;
 	}
-	#login_1 {
+	#findPw_1 {
 	margin:auto; 
 	padding:0px 20px 0px 20px; 
 	float:center; 
 	Width:60%; 
 	text-align:center;
 	}
-	#login_2 {
+	#findPw_2 {
 	margin:auto; 
 	padding:0px 20px 0px 20px; 
 	float:center; 
 	Width:60%; 
 	text-align:center;
 	}
-	#login_3 {
+	#findPw_3 {
 	margin:auto; 
 	padding:0px 0px 0px 0px; 
 	float:center; 
@@ -37,14 +37,14 @@
 	text-align:right; 
 	font-size:8px;
 	}
-	#login_4 {
+	#findPw_4 {
 	margin:auto; 
 	padding:0px 20px 0px 20px; 
 	float:center; 
 	Width:60%; 
 	text-align:center;
 	}
-	#login_content {
+	#findPw_content {
 	padding-top:260px;
 	min-height:1040px;
 	}
@@ -57,12 +57,12 @@
   		alert("아이디를 입력해주세요");
   		fm.member_id.focus();
   		return;
-  }else if (fm.member_pw.value==""){
-  		alert("비밀번호를 입력해주세요");
-  		fm.member_pw.focus();
+  }else if (fm.member_email.value==""){
+  		alert("이메일을 입력해주세요");
+  		fm.member_email.focus();
   		return;
   }
-  		fm.action = "<%=request.getContextPath()%>/loginProcess.do";
+  		fm.action = "<%=request.getContextPath()%>/findPwProcess.do";
   		fm.method = "post";
   		fm.submit();  
   
@@ -75,25 +75,21 @@
 <jsp:include page="../header.jsp"></jsp:include>
 
 
-<div id="login_content">
+<div id="findPw_content">
 <form name="frm">
-<div id="login">
-<div id="login_1">
-로그인
+<div id="findPw">
+<div id="findPw_1">
+정보를 입력해 주세요
 </div>
-<div id="login_2">
+<div id="findPw_2">
 <p><input type="text" class="form-control" name="member_id" size="30" placeholder="아이디를 입력해주세요"></p>
-<p><input type="password" class="form-control" name="member_pw" size="30" placeholder="비밀번호를 입력해주세요"></p>
+<p><input type="text" class="form-control" name="member_email" size="30" placeholder="이메일주소를 입력해주세요"></p>
 </div>
-<div id="login_3">
-<!-- <p><input type="button" value="아이디찾기" onclick=""> 
-|
-<input type="button" value="비밀번호찾기" onclick=""></p> -->
-<a href="findId.do">아이디 찾기</a> | <a href="findPw.do">비밀번호 찾기</a></div>
-<div id="login_4">
-
-<input type="button" class="btn btn-outline-success" value="로그인" onclick="check();">
-<input type="button" class="btn btn-outline-success" value="회원가입" onclick="location.href='join.do'">
+<div id="findPw_3">
+</div>
+<div id="findPw_4">
+<input type="button" class="btn btn-outline-success" value="확인" onclick="check();">
+<input type="button" class="btn btn-outline-success" value="뒤로" onclick="location.href='index.do'">
 </div>
 </div>
 </form>
