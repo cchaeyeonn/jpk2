@@ -64,6 +64,7 @@ public class MemberController {
 		out.flush();
 		return "/";
 	}
+	
 	@RequestMapping(value = "/emailConfirm", method = RequestMethod.GET)
 	public String emailConfirm(@RequestParam("authkey") String authKey,
 			Model model, RedirectAttributes rttr, HttpServletResponse response) throws Exception{
@@ -173,10 +174,12 @@ public class MemberController {
 		
 		return "redirect:/index.do";
 	}
+	
 	@GetMapping("/findId.do")
 	public String findId() {
 		return "member/memberFindId";
 	}
+	
 	@RequestMapping(value="/findIdProcess.do",  method = RequestMethod.POST)
 	public String findIdProcess(@RequestParam("member_name") String member_name, @RequestParam("member_email") String member_email, Model model) {
 	HashMap<String, String> findId = new HashMap<String, String>();
@@ -189,13 +192,18 @@ public class MemberController {
 	model.addAttribute("memberVo",memberVo);
 	return "member/memberFindIdResult";
 	}
+	
 	@GetMapping("/findPw.do")
 	public String findPw() {
 		return "member/memberFindPw";
 	}
+	
 	@RequestMapping(value="/findPwProcess.do",  method = RequestMethod.POST)
 	public String findPwProcess(MemberVo memberVo) throws Exception {
-	memberService.setTempPw(memberVo);
+	int set = memberService.setTempPw(memberVo);
+	if (set==0) {
+		return "member/memberFindPwFail";
+	}
 	return "member/memberFindPwResult";
 	}
 	

@@ -87,11 +87,11 @@ public class MemberService {
 	}
 
 
-	public void setTempPw(MemberVo memberVo) throws Exception{
+	public int setTempPw(MemberVo memberVo) throws Exception{
 		
 		String key = new TempKey().generateKey(6);
 		memberVo.setMember_pw(key);
-		memberDao.setTempPw(memberVo);
+
 		
 		MailHandler sendMail = new MailHandler(mailSender);
 		sendMail.setSubject("임시 비밀번호 안내");
@@ -106,7 +106,7 @@ public class MemberService {
 		sendMail.setFrom("zoszo@jbnu.ac.kr", "jpk2");
 		sendMail.setTo(memberVo.getMember_email());
 		sendMail.send();
-		
+		return memberDao.setTempPw(memberVo);
 	}
 
 }
