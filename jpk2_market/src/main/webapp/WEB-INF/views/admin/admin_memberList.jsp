@@ -11,14 +11,20 @@
 		min-height:1040px;
 		padding-top:230px;
 		text-align:center;
+		margin-left:320px;
+		margin-right:320px;
 }
+
+	#memberlist_table{
+		padding-left:285px;
+	}
 
 	#adl_button{
 	padding: 20px;
     border-radius: 34px;
     margin: 20px;
 	}
-
+ 
 </style>
 <title>회원 목록</title>
 </head>
@@ -29,8 +35,8 @@
 <div id="ad_memberlist_inner">
 <h3>회원목록</h3>
 <hr/>
-
-<table border="1px">
+<div id="memberlist_table">
+<table border="1px" stlye="text-align:center;">
 	<tr>
 		<th>회원번호</th><th>이름</th><th>아이디</th><th>비밀번호</th><th>회원등급</th>
 		<th>전화번호</th><th>가입일시</th><th>삭제여부</th><th>삭제일</th>
@@ -44,7 +50,7 @@
 		</tr>
 	</c:forEach> 
 </table>
-
+</div>
 
 <input id="adl_button" type="button" class="btn btn-outline-success" value="관리자 메인페이지" onclick="location.href='${pageContext.request.contextPath}/admin.do'"><br>
 <input id="adl_button" type="button" class="btn btn-outline-success" value="상품아 나와라" onclick="location.href='${pageContext.request.contextPath}/productList.do'"><br>

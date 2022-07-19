@@ -91,7 +91,7 @@ a{text-decoration:none;} /* a태그에 텍스트 밑줄을 없애줌*/
                         	out.print("<a class='nav-link py-3 px-0 px-lg-3 rounded' href='"+request.getContextPath()+"/admin.do'>관리자페이지</a>");
                         	}
                         else if ((session.getAttribute("member_id") != null) && grade == 0){
-                        	out.print("<a class='nav-link py-3 px-0 px-lg-3 rounded' href='"+request.getContextPath()+"/mypage.do'>마이페이지</a>");
+                        	out.print("<a class='nav-link py-3 px-0 px-lg-3 rounded' href='"+request.getContextPath()+"/memberInfo.do'>마이페이지</a>");
                         }
                         
                         %>
