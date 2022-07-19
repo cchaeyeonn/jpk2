@@ -32,6 +32,11 @@
 } 
 
 </style>
+<!-- 외부 js에서 ${pageContext.request.contextPath}를 사용할 수 있게 세션에 값을 저장 -->
+<script type="text/javascript" charset="utf-8">
+	sessionStorage.setItem("contextpath", "${pageContext.request.contextPath}");
+	
+</script>
 <title>회원 가입</title>
 
     <!-- 카카오 주소 api -->

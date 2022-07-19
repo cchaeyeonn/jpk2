@@ -3,10 +3,24 @@
 <!DOCTYPE html>
 <html>
 <head>
+
+<style>
+#memberInfo_inner{
+	min-height:1040px;
+	margin-left:315px;
+	padding-top:260px;
+}
+
+</style>
 <meta charset="UTF-8">
 <title>회원정보</title>
 </head>
 <body>
+
+	<!-- 헤더 연결 -->
+	<jsp:include page="../header.jsp"></jsp:include>
+	
+	<div id="memberInfo_inner">
 	<h3>회원정보</h3>
 	<table border="1px">
 		<tr>
@@ -29,6 +43,12 @@
 	</table><p/>
 	<a href="${pageContext.request.contextPath}/updatePw.do">비밀번호 변경</a>&nbsp;&nbsp;
 	<a href="${pageContext.request.contextPath}/deleteMember.do">회원탈퇴</a>
+	
+	</div>
 
+	<!-- 푸터 연결 -->
+	<jsp:include page="../footer.jsp"></jsp:include>
+	
+	
 </body>
 </html>

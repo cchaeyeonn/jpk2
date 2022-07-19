@@ -34,7 +34,12 @@
 		min-height:1040px;
 		padding-top:300px;
 		margin-left:320px;
+		margin-right:320px;
 	}
+	#td_l{
+		width:20%;
+	}
+
 			
 </style>
 
@@ -68,26 +73,27 @@
 		<div id="notice_main_inner">
 			
 			<form name="notice_write_Form" ><!-- action="/spring/notice_writeProcess.do" method="post" -->
-			<table>
+			<table class="table table-striped" style="width:100%;">
 			<tr>
-				<td>카테고리</td>
+				<td id="td_l">카테고리</td>
 				<td><select name="n_category">
 					<option value="배송">배송</option>
 					<option value="기타">기타</option>
 				</select></td>
 			</tr>
 			<tr>
-			<td>제목</td>
-			<td><input type="text" name="n_title"></td>
+			<td id="td_l">제목</td>
+			<td><input type="text" name="n_title" class="form-control" style="width:560px;"></td>
 			</tr>
 			<tr>
-			<td>내용</td>
-			<td><input type="text" name="n_content"></td>
+			<td id="td_l">내용</td>
+			<td><textarea input type="text" name="n_content" class="form-control" style="width:560px; height:300px;"></textarea></td>
 			</tr>
 			<tr>
-			<td><input type="button" value="작성하기" onclick="check();"></td>
+			<td></td><td><input type="button" value="작성하기" class='btn btn-primary' onclick="check();"></td>
 			</tr>
 			</table>
+			
 			
 		</div>
 		

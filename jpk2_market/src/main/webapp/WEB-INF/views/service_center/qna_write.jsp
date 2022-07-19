@@ -34,9 +34,37 @@
 		min-height:1040px;
 		padding-top:300px;
 		margin-left:320px;
+		margin-right:320px;
 	}
 			
+	#td_l{
+		width:20%;
+	}
+	
 </style>
+
+<script>
+  function check(){  
+  var fm = document.notice_write_Form;   
+  if (fm.q_title.value==""){
+  		alert("제목을 입력해주세요.");
+  		fm.q_title.focus();
+  		return;
+  } else if (fm.q_content.value==""){
+  		alert("내용을 입력해주세요.");
+  		fm.q_content.focus();
+  		return;
+  }
+  
+   		fm.action = "<%=request.getContextPath()%>/qna_writeProcess.do";
+  		fm.method = "post";
+  		fm.submit();  
+  
+    return; 
+  }  
+  </script>
+  
+  
 </head>
 <body>
 
@@ -45,25 +73,25 @@
 	
 		<div id="qna_main_inner">
 			
-			<form name="notice_write_Form" action="/spring/qna_writeProcess.do" method="post" >
-			<table>
+			<form name="notice_write_Form"><!-- action="/spring/qna_writeProcess.do" method="post" --> 
+			<table class="table table-striped" style="width:100%;">
 			<tr>
-				<td>카테고리</td>
-				<td><select name="n_category">
+				<td id="td_l">카테고리</td>
+				<td><select name="q_category">
 					<option value="배송">배송</option>
 					<option value="기타">기타</option>
 				</select></td>
 			</tr>
 			<tr>
-			<td>제목</td>
-			<td><input type="text" name="n_title"></td>
+			<td id="td_l">제목</td>
+			<td><input type="text" name="q_title" class="form-control" style="width:560px;"></td>
 			</tr>
 			<tr>
-			<td>내용</td>
-			<td><input type="text" name="n_content"></td>
+			<td id="td_l">내용</td>
+			<td><textarea input type="text" name="q_content" class="form-control" style="width:560px; height:300px;"></textarea></td>
 			</tr>
 			<tr>
-			<td><input type="submit" value="작성하기"></td>
+			<td></td><td><input type="button" value="작성하기" class='btn btn-primary' onclick="check();"></td>
 			</tr>
 			</table>
 			

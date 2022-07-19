@@ -62,8 +62,9 @@ public class MemberController {
 		PrintWriter out=response.getWriter();
 		out.println("<script>alert('가입하실 때 작성하신 이메일에서 인증을 해주세요.');</script>");
 		out.flush();
-		return "redirect:/";
+		return "/";
 	}
+	
 	@RequestMapping(value = "/emailConfirm", method = RequestMethod.GET)
 	public String emailConfirm(@RequestParam("authkey") String authKey,
 			Model model, RedirectAttributes rttr, HttpServletResponse response) throws Exception{
@@ -74,7 +75,7 @@ public class MemberController {
 			PrintWriter out=response.getWriter();
 			out.println("<script>alert('인증키가 잘못되었습니다. 다시 인증해주세요.');</script>");
 			out.flush();
-			return "redirect:/";
+			return "/";
 		}
 		MemberVo memberVo = memberService.userAuth(authKey);
 		if(memberVo == null) {
@@ -83,7 +84,7 @@ public class MemberController {
 			PrintWriter out=response.getWriter();
 			out.println("<script>alert('잘못된 접근입니다. 다시 인증해주세요.');</script>");
 			out.flush();
-			return "redirect:/";
+			return "/";
 		}
 		model.addAttribute("member_name",memberVo.getMember_name());
 		return "member/joinSucess";
@@ -136,7 +137,14 @@ public class MemberController {
 			session.setAttribute("result_", count);
 			session.setAttribute("pidx_pc_arr", pidx_pc_arr);
 			return "redirect:/index.do";
-		
+			
+		}else if(member_pw.length()==6) {
+			response.setContentType("text/html; charset=UTF-8");
+			response.setCharacterEncoding("UTF-8");
+			PrintWriter out=response.getWriter();
+			out.println("<script>alert('임시비밀번호로 로그인하셨습니다. 비밀번호를 변경해주세요');</script>");
+			out.flush();
+			return "/";
 		}else{
 			response.setContentType("text/html; charset=UTF-8");
 			response.setCharacterEncoding("UTF-8");
@@ -166,10 +174,12 @@ public class MemberController {
 		
 		return "redirect:/index.do";
 	}
+	
 	@GetMapping("/findId.do")
 	public String findId() {
 		return "member/memberFindId";
 	}
+	
 	@RequestMapping(value="/findIdProcess.do",  method = RequestMethod.POST)
 	public String findIdProcess(@RequestParam("member_name") String member_name, @RequestParam("member_email") String member_email, Model model) {
 	HashMap<String, String> findId = new HashMap<String, String>();
@@ -182,14 +192,19 @@ public class MemberController {
 	model.addAttribute("memberVo",memberVo);
 	return "member/memberFindIdResult";
 	}
+	
 	@GetMapping("/findPw.do")
 	public String findPw() {
 		return "member/memberFindPw";
 	}
+	
 	@RequestMapping(value="/findPwProcess.do",  method = RequestMethod.POST)
-	public String findPwProcess(MemberVo memberVo, Model model) throws Exception {
-	memberService.setTempPw(memberVo);
-	return "member/memberFindIdResult";
+	public String findPwProcess(MemberVo memberVo) throws Exception {
+	int set = memberService.setTempPw(memberVo);
+	if (set==0) {
+		return "member/memberFindPwFail";
+	}
+	return "member/memberFindPwResult";
 	}
 	
 	@GetMapping("/updatePw.do")
