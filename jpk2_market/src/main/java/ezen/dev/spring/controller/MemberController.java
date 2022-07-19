@@ -34,7 +34,7 @@ public class MemberController {
 
 	
 	
-	@Autowired //占쎌쁽占쎈짗 占쎌벥鈺곤옙 雅뚯눘�뿯: 占쎄문占쎄쉐占쎌쁽 獄쎻뫗�뻼
+	@Autowired
 	public MemberController(MemberService memberService) {
 		this.memberService = memberService;
 	}
@@ -98,13 +98,9 @@ public class MemberController {
 	public String loginProcess(@RequestParam("member_id") String member_id,
 			 					@RequestParam("member_pw") String member_pw, 
 			 					HttpServletRequest request, HttpServletResponse response) throws IOException {
-
-		//2揶쏆뮇�벥 占쎌읈占쎈뼎揶쏅�れ뱽 HashMap揶쏆빘猿쒙옙肉� 占쏙옙占쎌삢占쎈퉸占쎄퐣 MyBatis 占쎌뿯占쎌젾揶쏅�れ몵嚥∽옙 占쎄텢占쎌뒠
 		HashMap<String, String> loginInfo = new HashMap<String, String>();
 		loginInfo.put("member_id", member_id);
 		loginInfo.put("member_pw", member_pw);
-		
-		//2揶쏆뮇�벥 野껉퀗�궢揶쏅�れ뱽 占쎈섯�⑥쥙�쁽 HashMap 揶쏆빘猿� 占쎄텢占쎌뒠
 		HashMap<String, Long> resultMap=memberService.login(loginInfo);
 		if(resultMap.get("midx")==null) {
 		response.setContentType("text/html; charset=UTF-8");
@@ -115,7 +111,7 @@ public class MemberController {
 		return "member/login";
 		}
 		
-		long member_grade = resultMap.get("member_grade");//占쎌돳占쎌뜚占쎈쾻疫뀐옙
+		long member_grade = resultMap.get("member_grade");
 		long midx = resultMap.get("midx");
 
 		//Long형을 int형으로 변환
@@ -134,8 +130,8 @@ public class MemberController {
 		String Success="Y";
 		if(member_auth.equals(Success)) {
 			HttpSession session = request.getSession();
-			session.setAttribute("member_id", member_id);//占쎌돳占쎌뜚占쎌뵥筌앾옙 �빊遺쏙옙	
-			session.setAttribute("member_grade", member_grade);//占쎌돳占쎌뜚占쎈쾻疫뀐옙 �빊遺쏙옙
+			session.setAttribute("member_id", member_id);	
+			session.setAttribute("member_grade", member_grade);
 			session.setAttribute("midx", midx);
 			session.setAttribute("result_", count);
 			session.setAttribute("pidx_pc_arr", pidx_pc_arr);
@@ -154,12 +150,10 @@ public class MemberController {
 	
 	@GetMapping("/memberInfo.do")
 	public String memberInfo(Model model, HttpServletRequest request) {
-		//占쎌돳占쎌뜚占쎌젟癰귣�占쏙옙 揶쏉옙占쎌죬占쎌궎疫뀐옙 占쎌맄占쎈퉸 占쎄쉭占쎈�▼첎�빘猿쒙옙肉� 占쏙옙占쎌삢占쎈쭆 member_id 占쎌뵠占쎌뒠
 		HttpSession session = request.getSession();
 		String member_id = (String)session.getAttribute("member_id");
 		
 		MemberVo memberVo = memberService.getMemberInfo(member_id);
-		//Spring MVC占쎈퓠占쎄퐣 Controller占쎈퓠占쎄퐣 占쎄문占쎄쉐占쎈┷占쎈뮉 Model揶쏆빘猿쒙옙�뮉 �뀎怨뺣뼊(JSP占쎈읂占쎌뵠筌욑옙)占쎈퓠占쎄퐣 筌〓챷�� 揶쏉옙占쎈뮟
 		model.addAttribute("memberVo", memberVo);
 		
 		return "member/memberInfo";
@@ -188,5 +182,22 @@ public class MemberController {
 	model.addAttribute("memberVo",memberVo);
 	return "member/memberFindIdResult";
 	}
+	@GetMapping("/findPw.do")
+	public String findPw() {
+		return "member/memberFindPw";
+	}
+	@RequestMapping(value="/findPwProcess.do",  method = RequestMethod.POST)
+	public String findPwProcess(@RequestParam("member_id") String member_id, @RequestParam("member_email") String member_email, Model model) {
+	HashMap<String, String> findPw = new HashMap<String, String>();
+	findPw.put("member_id", member_id);
+	findPw.put("member_email", member_email);
+	MemberVo memberVo = memberService.getIdInfo(findPw);
+	if(memberVo==null) {
+		return "member/memberFindIdFail";
+	}
+	model.addAttribute("memberVo",memberVo);
+	return "member/memberFindIdResult";
+	}
+	
 
 }
