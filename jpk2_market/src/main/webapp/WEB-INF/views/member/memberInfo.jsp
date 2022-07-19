@@ -15,19 +15,19 @@
 			<td>${memberVo.member_id}</td>
 		</tr>
 		<tr>
-			<td>비밀번호</td>
-			<td>${memberVo.member_pw}</td>
-		</tr>
-		<tr>
 			<td>이름</td>
 			<td>${memberVo.member_name}</td>
+		</tr>
+		<tr>
+			<td>이메알</td>
+			<td>${memberVo.member_email}</td>
 		</tr>
 		<tr>
 			<td>전화번호</td>
 			<td>${memberVo.member_phone}</td>
 		</tr>
 	</table><p/>
-	<a href="${pageContext.request.contextPath}/updateMember.do">정보수정</a>&nbsp;&nbsp;
+	<a href="${pageContext.request.contextPath}/updatePw.do">비밀번호 변경</a>&nbsp;&nbsp;
 	<a href="${pageContext.request.contextPath}/deleteMember.do">회원탈퇴</a>
 
 </body>

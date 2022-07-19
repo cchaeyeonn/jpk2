@@ -19,6 +19,7 @@ public class MemberVo {
 	private String member_addr2;
 	private String member_key;
 	private String member_auth;
+	private String now_pw;
 	
 	public String getMember_auth() {
 		return member_auth;
@@ -127,6 +128,12 @@ public class MemberVo {
 	}
 	public void setMember_addr2(String member_addr2) {
 		this.member_addr2 = member_addr2;
+	}
+	public String getNow_pw() {
+		return now_pw;
+	}
+	public void setNow_pw(String now_pw) {
+		this.now_pw = now_pw;
 	}
 
 }
