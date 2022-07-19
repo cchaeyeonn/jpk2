@@ -36,9 +36,31 @@
 	}
 			
 </style>
+
+<script>
+  function check(){  
+  var fm = document.faq_write_Form;   
+  if (fm.f_title.value==""){
+  		alert("제목을 입력해주세요.");
+  		fm.f_title.focus();
+  		return;
+  } else if (fm.f_content.value==""){
+  		alert("내용을 입력해주세요.");
+  		fm.f_content.focus();
+  		return;
+  }
+  
+   		fm.action = "<%=request.getContextPath()%>/faq_writeProcess.do";
+  		fm.method = "post";
+  		fm.submit();  
+  
+    return; 
+  }  
+  </script>
+
 </head>
 <body>
-    <form name="faq_write_Form" action="/spring/faq_writeProcess.do" method="post" >
+    <form name="faq_write_Form"><!-- action="/spring/faq_writeProcess.do" method="post" --> 
     <!-- 헤더 연결 -->
     <jsp:include page="../header.jsp"></jsp:include> 
 	
@@ -62,7 +84,7 @@
 			
 			</table>
 		</div>
-		<div id="faq_write_button"><input type="submit" value="작성하기"></div><p/>
+		<div id="faq_write_button"><input type="button" value="작성하기" onclick="check();"></div><p/>
 	</form>
     <!-- 푸터 연결 -->
     <jsp:include page="../footer.jsp"></jsp:include>
