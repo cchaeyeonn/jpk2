@@ -83,16 +83,16 @@
 			<td><input type="text" name="f_content"></td>
 			</tr>
 			<tr>
-			<td><input type="submit" value="작성하기"></td>
+			<td><input type="button" value="작성하기" onclick="check();"></td>
 			</tr>
 	
 			</table>
 		</div>
-<<<<<<< HEAD
-		<div id="faq_write_button"><input type="button" value="작성하기" onclick="check();"></div><p/>
-=======
+
+		<!-- <div id="faq_write_button"><input type="button" value="작성하기" onclick="check();"></div><p/> -->
+
 		<!-- <div id="faq_write_button"><input type="submit" value="작성하기"></div><p/> -->
->>>>>>> branch 'master' of https://github.com/cchaeyeonn/jpk2.git
+
 	</form>
     <!-- 푸터 연결 -->
     <jsp:include page="../footer.jsp"></jsp:include>
