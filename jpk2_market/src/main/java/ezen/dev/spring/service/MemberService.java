@@ -98,7 +98,7 @@ public class MemberService {
 		sendMail.setText(
 				new StringBuffer()
 				.append("<h1>임시비밀번호가 주어집니다.</h1>")
-				.append("임시비밀번호로 로그인 후 반드시 비밀번호를 변경해주세요")
+				.append("임시비밀번호로 로그인 후 반드시 비밀번호를 변경해주세요.<p/>")
 				.append("임시비밀번호:")
 				.append(key)
 				.append("<a href='http://localhost:8080/spring/login.do'>로그인</a>")
