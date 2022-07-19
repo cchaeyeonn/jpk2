@@ -216,7 +216,7 @@ public class MemberController {
 	@PostMapping("/updatePwProcess.do")
 	public String updatePwProcess(@RequestParam("member_pw1") String member_pw,@RequestParam("now_pw") String now_pw, MemberVo memberVo, Model model,HttpServletRequest request) throws Exception {
 	HttpSession session = request.getSession();
-	int midx_ = (int) session.getAttribute("midx");
+	Integer midx_ =Integer.parseInt(String.valueOf(session.getAttribute("midx")));
 	memberVo.setNow_pw(now_pw);
 	memberVo.setMember_pw(member_pw);
 	memberVo.setMidx(midx_);
