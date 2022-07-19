@@ -37,6 +37,28 @@
 	}
 			
 </style>
+
+<script>
+  function check(){  
+  var fm = document.notice_write_Form;   
+  if (fm.n_title.value==""){
+  		alert("제목을 입력해주세요.");
+  		fm.n_title.focus();
+  		return;
+  } else if (fm.n_content.value==""){
+  		alert("내용을 입력해주세요.");
+  		fm.n_content.focus();
+  		return;
+  }
+  
+   		fm.action = "<%=request.getContextPath()%>/notice_writeProcess.do";
+  		fm.method = "post";
+  		fm.submit();  
+  
+    return; 
+  }  
+  </script>
+  
 </head>
 <body>
 
@@ -45,7 +67,7 @@
 	
 		<div id="notice_main_inner">
 			
-			<form name="notice_write_Form" action="/spring/notice_writeProcess.do" method="post" >
+			<form name="notice_write_Form" ><!-- action="/spring/notice_writeProcess.do" method="post" -->
 			<table>
 			<tr>
 				<td>카테고리</td>
@@ -63,7 +85,7 @@
 			<td><input type="text" name="n_content"></td>
 			</tr>
 			<tr>
-			<td><input type="submit" value="작성하기"></td>
+			<td><input type="button" value="작성하기" onclick="check();"></td>
 			</tr>
 			</table>
 			
