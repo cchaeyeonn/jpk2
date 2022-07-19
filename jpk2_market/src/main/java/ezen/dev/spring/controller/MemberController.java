@@ -187,15 +187,8 @@ public class MemberController {
 		return "member/memberFindPw";
 	}
 	@RequestMapping(value="/findPwProcess.do",  method = RequestMethod.POST)
-	public String findPwProcess(@RequestParam("member_id") String member_id, @RequestParam("member_email") String member_email, Model model) {
-	HashMap<String, String> findPw = new HashMap<String, String>();
-	findPw.put("member_id", member_id);
-	findPw.put("member_email", member_email);
-	MemberVo memberVo = memberService.getIdInfo(findPw);
-	if(memberVo==null) {
-		return "member/memberFindIdFail";
-	}
-	model.addAttribute("memberVo",memberVo);
+	public String findPwProcess(MemberVo memberVo, Model model) throws Exception {
+	memberService.setTempPw(memberVo);
 	return "member/memberFindIdResult";
 	}
 	

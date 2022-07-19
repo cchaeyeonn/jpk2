@@ -67,6 +67,10 @@ public class MemberDao {
 		return sqlSession.selectOne(MAPPER+".getIdInfo", findId);
 	}
 
+	public void setTempPw(MemberVo memberVo) throws Exception{
+		sqlSession.update(MAPPER+".setTempPw", memberVo);
+	}
+
 
 
 }

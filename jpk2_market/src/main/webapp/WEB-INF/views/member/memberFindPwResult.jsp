@@ -8,28 +8,28 @@
 
 <title>아이디찾기</title>
 <style>
-	#findId {
+	#findPw {
 	margin:auto; 
 	padding:0px 20px 0px 20px; 
 	float:center; 
 	Width:60%; 
 	text-align:center;
 	}
-	#findId_1 {
+	#findPw_1 {
 	margin:auto; 
 	padding:0px 20px 0px 20px; 
 	float:center; 
 	Width:60%; 
 	text-align:center;
 	}
-	#findId_2 {
+	#findPw_2 {
 	margin:auto; 
 	padding:0px 20px 0px 20px; 
 	float:center; 
 	Width:60%; 
 	text-align:center;
 	}
-	#findId_3 {
+	#findPw_3 {
 	margin:auto; 
 	padding:0px 0px 0px 0px; 
 	float:center; 
@@ -37,14 +37,14 @@
 	text-align:right; 
 	font-size:8px;
 	}
-	#findId_4 {
+	#findPw_4 {
 	margin:auto; 
 	padding:0px 20px 0px 20px; 
 	float:center; 
 	Width:60%; 
 	text-align:center;
 	}
-	#findId_content {
+	#findPw_content {
 	padding-top:260px;
 	min-height:1040px;
 	}
@@ -55,18 +55,18 @@
 <jsp:include page="../header.jsp"></jsp:include>
 
 
-<div id="findId_content">
+<div id="findPw_content">
 <form name="frm">
-<div id="findId">
-<div id="findId_1">
-${memberVo.member_name}님의 아이디는
+<div id="findPw">
+<div id="findPw_1">
+임시비밀번호가 제공됩니다.
 </div>
-<div id="findId_2">
-${memberVo.member_id}입니다.
+<div id="findPw_2">
+입력하신 이메일에서 확인하셔서 임시비밀번호로 로그인해주세요
 </div>
-<div id="findId_3">
+<div id="findPw_3">
 </div>
-<div id="findId_4">
+<div id="findPw_4">
 <input type="button" class="btn btn-outline-success" value="로그인" onclick="location.href='login.do'">
 <input type="button" class="btn btn-outline-success" value="뒤로" onclick="location.href='index.do'">
 </div>

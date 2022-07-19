@@ -1,5 +1,6 @@
 package ezen.dev.spring.service;
 
+import java.io.UnsupportedEncodingException;
 import java.util.HashMap;
 
 import javax.mail.MessagingException;
@@ -83,6 +84,29 @@ public class MemberService {
 	public MemberVo getIdInfo(HashMap<String, String> findId) {
 
 		return memberDao.getIdInfo(findId);
+	}
+
+
+	public void setTempPw(MemberVo memberVo) throws Exception{
+		
+		String key = new TempKey().generateKey(6);
+		memberVo.setMember_pw(key);
+		memberDao.setTempPw(memberVo);
+		
+		MailHandler sendMail = new MailHandler(mailSender);
+		sendMail.setSubject("임시 비밀번호 안내");
+		sendMail.setText(
+				new StringBuffer()
+				.append("<h1>임시비밀번호가 주어집니다.</h1>")
+				.append("임시비밀번호로 로그인 후 반드시 비밀번호를 변경해주세요")
+				.append("임시비밀번호:")
+				.append(key)
+				.append("<a href='http://localhost:8080/spring/login.do'>로그인</a>")
+				.toString());
+		sendMail.setFrom("zoszo@jbnu.ac.kr", "jpk2");
+		sendMail.setTo(memberVo.getMember_email());
+		sendMail.send();
+		
 	}
 
 }
