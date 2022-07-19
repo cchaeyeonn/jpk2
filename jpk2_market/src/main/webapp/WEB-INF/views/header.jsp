@@ -84,8 +84,17 @@ a{text-decoration:none;} /* a태그에 텍스트 밑줄을 없애줌*/
                                }%>
                          <% 
                              long grade = 0L;
-                            if (session.getAttribute("member_grade") != null) {grade = (long)session.getAttribute("member_grade");}
-                        if ( grade >= 1){out.print("<a class='nav-link py-3 px-0 px-lg-3 rounded' href='"+request.getContextPath()+"/admin.do'>관리자페이지</a>");}%>
+                            if (session.getAttribute("member_grade") != null) {
+                            	grade = (long)session.getAttribute("member_grade");
+                            	}
+                        if ( grade >= 1){
+                        	out.print("<a class='nav-link py-3 px-0 px-lg-3 rounded' href='"+request.getContextPath()+"/admin.do'>관리자페이지</a>");
+                        	}
+                        else if ((session.getAttribute("member_id") != null) && grade == 0){
+                        	out.print("<a class='nav-link py-3 px-0 px-lg-3 rounded' href='"+request.getContextPath()+"/mypage.do'>마이페이지</a>");
+                        }
+                        
+                        %>
                        <%--  <%
                   if (session.getAttribute("member_id") == null){
                      out.print("<a class='nav-link py-3 px-0 px-lg-3 rounded' href='"+request.getContextPath()+"/join.do'>회원가입</a>");
