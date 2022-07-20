@@ -139,7 +139,6 @@
     </form>
     </c:forEach>
     </table>
-    </div>
     <div id="for_order">
     <table id="for_order_table" border="1">
     <tr>
@@ -162,7 +161,7 @@
     
     
     </div>
-    
+    </div>
    
    
  
