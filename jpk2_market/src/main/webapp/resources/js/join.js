@@ -65,7 +65,7 @@
 				
 				$.ajax({
 					type:'post',
-					url:ctx+"/checkId.do",
+					url:"/checkId.do",
 					data: {"member_id":member_id},				
 					success: function(data){
 						if(data == "N"){

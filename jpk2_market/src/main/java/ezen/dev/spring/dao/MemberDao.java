@@ -72,5 +72,9 @@ public class MemberDao {
 	}
 
 
+	public void setUpdatePw(MemberVo memberVo) {
+		sqlSession.update(MAPPER+".setUpdatePw", memberVo);
+		
+	}
 
 }
