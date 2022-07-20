@@ -346,6 +346,7 @@
 		   	if($("input[name=member_gender]:radio:checked").length < 1){
 			  result = "성별을 선택하세요";
 	          $("#result_gender").html(result).css("color", "red");
+	          return false;
 
 		 }
 			else if($("input[name=member_gender]:radio:checked").length == 1){
