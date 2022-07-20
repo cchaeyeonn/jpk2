@@ -123,13 +123,13 @@
     <!-- 수량 버튼 -->
     
     <input type="button" id="${cartVo.pbidx}_btn_minus" value="-">
-    <input type="text"  id="${cartVo.pbidx}_pop_out" value="${cartVo.p_amount}" readonly="readonly" style="text-align:center;"/>
+    <input type="text"  id="${cartVo.pbidx}_pop_out" class="amount" value="${cartVo.p_amount}" readonly="readonly" style="text-align:center;"/>
     <input type="button" id="${cartVo.pbidx}_btn_plus" value="+">
    
     </td>
     <td>
     <!-- 금액 -->
-    ${cartVo.p_price}원
+    <span class="price">${cartVo.p_price}원</span>
     </td>
     <td>
     <!-- 삭제버튼 -->
@@ -144,7 +144,7 @@
     <table id="for_order_table" border="1">
     <tr>
     <td>상품금액</td>
-    <td></td>
+    <td id="totalprice"></td>
     </tr>
     <tr>
     <td>상품할인금액</td>

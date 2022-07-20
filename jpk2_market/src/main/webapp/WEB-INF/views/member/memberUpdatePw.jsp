@@ -90,11 +90,11 @@
 <form name="frm">
 <div id="updatePw">
 <div id="updatePw_1"> 현재 비밀번호
-<p><input type="text" class="form-control" name="now_pw" size="30" placeholder="현재 비밀번호를 입력해주세요"></p>
+<p><input type="password" class="form-control" name="now_pw" size="30" placeholder="현재 비밀번호를 입력해주세요"></p>
 </div>
 <div id="updatePw_2"> 변경할 비밀번호
-<p><input type="text" class="form-control" name="member_pw1" size="30" placeholder="변경할 비밀번호를 입력해주세요"></p>
-<p><input type="text" class="form-control" name="member_pw2" size="30" placeholder="변경할 비밀번호를 다시 입력해주세요"></p>
+<p><input type="password" class="form-control" name="member_pw1" size="30" placeholder="변경할 비밀번호를 입력해주세요"></p>
+<p><input type="password" class="form-control" name="member_pw2" size="30" placeholder="변경할 비밀번호를 다시 입력해주세요"></p>
 </div>
 <div id="updatePw_3">
 </div>

@@ -65,7 +65,7 @@
 				
 				$.ajax({
 					type:'post',
-					url:"/checkId.do",
+					url:ctx+"/checkId.do",
 					data: {"member_id":member_id},				
 					success: function(data){
 						if(data == "N"){
@@ -129,7 +129,7 @@
 
 		  // 유효성 검사
 		  // 아이디 유효성 검사
-		  $(document).on('click','#submit',function(){
+		  $(document).on('click','#trigger',function(){
 			
 		  if($("#member_id").val() == ""){
            result = "아이디를 입력해주세요";
@@ -141,7 +141,7 @@
           });
           
           // 아이디 형식 유효성 검사
-          $(document).on('click','#submit',function(){          
+          $(document).on('click','#trigger',function(){          
           if(!getMail.test($("#member_id").val())){
            result = "이메일 형식으로 입력하세요";
 	       $("#result_checkId").html(result).css("color", "red");
@@ -154,7 +154,7 @@
           
            
           // 비밀번호 유효성 검사
-          $(document).on('click','#submit',function(){
+          $(document).on('click','#trigger',function(){
 	      if($("#member_password1").val() == ""){
            result = "비밀번호를 입력하세요";
 	       $("#result_password1").html(result).css("color", "red");
@@ -187,7 +187,7 @@
             });
              
           // 비밀번호가 아이디와 같지 않도록 하는 유효성 검사
-          $(document).on('click','#submit',function(){
+          $(document).on('click','#trigger',function(){
           if($("#member_id").val() == $("#member_password1").val()){
              result = "아이디와 비밀번호가 같습니다";
 	       $("#result_password1").html(result).css("color", "red");
@@ -199,7 +199,7 @@
            
  
           // 비밀번호 확인란  공백 유효성 검사
-           $(document).on('click','#submit',function(){
+           $(document).on('click','#trigger',function(){
           if($("#member_password2").val() == ""){
            result = "비밀번호 확인란을 입력해주세요";
 	       $("#result_password2").html(result).css("color", "red");
@@ -240,7 +240,7 @@
           });
           
 			// 이메일 유효성 검사
-			$(document).on('click','#submit',function(){
+			$(document).on('click','#trigger',function(){
 			if($("#member_email").val() == ""){
               result = "이메일을 입력해주세요";
 	          $("#result_checkEmail").html(result).css("color", "red");
@@ -249,7 +249,7 @@
           }
           });
 			// 이메일 형식 유효성 검사
-			$(document).on('click','#submit',function(){
+			$(document).on('click','#trigger',function(){
 			if(!getMail.test($("#member_email").val())){
            result = "이메일 형식으로 입력하세요";
 	       $("#result_checkEmail").html(result).css("color", "red");
@@ -327,7 +327,7 @@
           
           
 		   // 주소 유효성 검사
-		   $(document).on('click','#submit',function(){
+		   $(document).on('click','#trigger',function(){
 		    if($("#member_addr_1").val() == ""){
               result = "주소를 입력해주세요";
 	          $("#result_addr").html(result).css("color", "red");
@@ -342,7 +342,7 @@
 		   
 		   
             //성별 유효성 검사
-            $(document).on('click','#submit',function(){
+            $(document).on('click','#trigger',function(){
 		   	if($("input[name=member_gender]:radio:checked").length < 1){
 			  result = "성별을 선택하세요";
 	          $("#result_gender").html(result).css("color", "red");
@@ -373,7 +373,7 @@
           });
 		    
 		    
-            $(document).on('click','#submit',function(){
+            $(document).on('click','#trigger',function(){
 		     if($("#member_birth").val() == ""){
               result = "생년월일을 입력해주세요";
 	          $("#result_birth").html(result).css("color", "red");
@@ -384,7 +384,7 @@
           
             
 			//약관 유효성 검사
-			$(document).on('click','#submit',function(){
+			$(document).on('click','#trigger',function(){
 			if (!$("input:checked[Name='member_termall']").is(":checked")){
 			  result = "약관을 동의해주세요";
 	          $("#result_term").html(result).css("color", "red"); 
