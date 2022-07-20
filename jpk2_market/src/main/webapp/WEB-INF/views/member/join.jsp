@@ -165,7 +165,7 @@
    <div style="height:20px"><span id="result_term" style="font-size:12px;"></span></div>
      </div>
    <div id="join_button">
-   <input type="submit" class="btn btn-outline-success" id="submit"  value="가입하기">
+   <input type="submit" class="btn btn-outline-success" id="sudmit" value="가입하기">
    <a href="${pageContext.request.contextPath}/"><input type="button" class="btn btn-outline-success" value="뒤로가기"></a>
     </div>
 </form> 
