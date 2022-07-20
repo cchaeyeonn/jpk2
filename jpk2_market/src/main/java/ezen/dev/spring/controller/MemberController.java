@@ -53,6 +53,7 @@ public class MemberController {
 		return "member/join";
 	}
 	
+	
 	@PostMapping("/joinProcess.do")
 	public String joinProcess(MemberVo memberVo, RedirectAttributes rttr, HttpServletRequest request, HttpServletResponse response) throws Exception {
 		

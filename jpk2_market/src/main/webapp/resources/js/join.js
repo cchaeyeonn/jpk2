@@ -351,7 +351,7 @@
 			else if($("input[name=member_gender]:radio:checked").length == 1){
 				  result = " ";
 		          $("#result_gender").html(result).css("color", "red");
-		          return false;
+		          
 			} 
 		});	
 			$("input:radio[name=member_gender]").click(function(){
