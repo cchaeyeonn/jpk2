@@ -19,10 +19,10 @@ public class HomeController {
 
 	
 	//고객센터
-	@GetMapping("/service_center.do")
+	/*@GetMapping("/service_center.do")
 	public String service_center() {
 		return "service_center/service_center_main";
-	}
+	}*/
 	
 	/* Spring MVC�뿉�꽌 �뙆�씪 �뾽濡쒕뱶 援ы쁽�쓣 �쐞�븳 議곗튂�뱾
 	 * 

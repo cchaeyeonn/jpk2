@@ -15,6 +15,25 @@
    margin-left:154px;*/
 
 }
+
+	#service_center_cate{
+	
+		padding-top:200px;
+		width:155px;
+		float:left;
+	
+	}
+	
+	#servive_main_inner{
+	margin-left:200px;
+	min-height:1040px;
+	}
+	
+	#faq_inner{
+	padding-top:200px; 
+	}
+	
+	
 #ftable_1{
 	width:50px;
 }
@@ -31,16 +50,30 @@
 	width:400px;
 }
 
-/* 
+ 
 #table_button{
 	margin-left:155px;
-} */
+} 
 
 </style>
 
 </head>
 <body>
 
+
+	<!-- 헤더 연결 -->
+	<jsp:include page="../header.jsp"></jsp:include>
+	
+<div id="servive_main_inner">
+	<div id="service_center_cate">
+	
+		<a href="/spring/notice_board.do" class="nav-link py-3 px-0 px-lg-3 rounded" id="open_notice">공지사항</a>
+		<a href="/spring/faq_board.do" class="nav-link py-3 px-0 px-lg-3 rounded" id="open_faq">자주하는 질문</a>
+		<a href="/spring/qna_board.do" class="nav-link py-3 px-0 px-lg-3 rounded" id="open_qna" >1:1 문의</a>
+	
+	</div>
+	
+	
 <div id="faq_inner">
 <h3>자주하는 질문</h3>
 	
@@ -63,7 +96,7 @@
 </tr>
  </c:forEach>
 </table>
-</div>
+
 
 <% 
    long grade = 0L;
@@ -72,5 +105,10 @@
   
   %>
 </div>
+</div>
+</div>
+	<!-- 푸터 연결 -->
+	<jsp:include page="../footer.jsp"></jsp:include>
+	
 </body>
 </html>
