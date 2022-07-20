@@ -144,7 +144,7 @@ public class MemberController {
 			PrintWriter out=response.getWriter();
 			out.println("<script>alert('임시비밀번호로 로그인하셨습니다. 비밀번호를 변경해주세요');</script>");
 			out.flush();
-			return "/";
+			return "member/memberUpdatePw";
 		}else{
 			response.setContentType("text/html; charset=UTF-8");
 			response.setCharacterEncoding("UTF-8");
@@ -214,16 +214,21 @@ public class MemberController {
 	
 	
 	@PostMapping("/updatePwProcess.do")
-	public String updatePwProcess(@RequestParam("member_pw1") String member_pw,@RequestParam("now_pw") String now_pw, MemberVo memberVo, Model model,HttpServletRequest request) throws Exception {
+	public String updatePwProcess(@RequestParam("member_pw1") String member_pw,@RequestParam("now_pw") String now_pw, MemberVo memberVo, Model model,HttpServletRequest request,HttpServletResponse response) throws Exception {
 	HttpSession session = request.getSession();
 	Integer midx_ =Integer.parseInt(String.valueOf(session.getAttribute("midx")));
 	memberVo.setNow_pw(now_pw);
 	memberVo.setMember_pw(member_pw);
 	memberVo.setMidx(midx_);
 	memberService.setUpdatePw(memberVo);
+	response.setContentType("text/html; charset=UTF-8");
+	response.setCharacterEncoding("UTF-8");
+	PrintWriter out=response.getWriter();
+	out.println("<script>alert('비밀번호가 변경되었습니다. 다시 로그인해주세요.');</script>");
+	out.flush();
 	session.invalidate();
 	
-	return "redirect:/login.do";
+	return "member/login";
 	}
 	
 	
