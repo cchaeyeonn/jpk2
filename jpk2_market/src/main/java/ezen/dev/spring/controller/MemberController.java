@@ -53,7 +53,7 @@ public class MemberController {
 		return "member/join";
 	}
 	
-	@RequestMapping(value="/joinProcess.do", method = RequestMethod.POST)
+	@PostMapping("/joinProcess.do")
 	public String joinProcess(MemberVo memberVo, RedirectAttributes rttr, HttpServletRequest request, HttpServletResponse response) throws Exception {
 		
 		memberService.join(memberVo);
@@ -62,7 +62,7 @@ public class MemberController {
 		PrintWriter out=response.getWriter();
 		out.println("<script>alert('가입하실 때 작성하신 이메일에서 인증을 해주세요.');</script>");
 		out.flush();
-		return "/";
+		return "/index";
 	}
 	
 	@RequestMapping(value = "/emailConfirm", method = RequestMethod.GET)
@@ -75,7 +75,7 @@ public class MemberController {
 			PrintWriter out=response.getWriter();
 			out.println("<script>alert('인증키가 잘못되었습니다. 다시 인증해주세요.');</script>");
 			out.flush();
-			return "/";
+			return "/index";
 		}
 		MemberVo memberVo = memberService.userAuth(authKey);
 		if(memberVo == null) {
@@ -84,7 +84,7 @@ public class MemberController {
 			PrintWriter out=response.getWriter();
 			out.println("<script>alert('잘못된 접근입니다. 다시 인증해주세요.');</script>");
 			out.flush();
-			return "/";
+			return "/index";
 		}
 		model.addAttribute("member_name",memberVo.getMember_name());
 		return "member/joinSucess";

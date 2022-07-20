@@ -103,7 +103,7 @@ a{text-decoration:none;} /* a태그에 텍스트 밑줄을 없애줌*/
                      }%> --%>
                      </li>
                      <!-- <a class="nav-link py-3 px-0 px-lg-3 rounded" href="/spring/join.do">회원가입</a></li> -->
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="/spring/service_center.do">고객센터</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="/spring/notice_board.do">고객센터</a></li>
                     </ul>
                 </div>
             </div>            

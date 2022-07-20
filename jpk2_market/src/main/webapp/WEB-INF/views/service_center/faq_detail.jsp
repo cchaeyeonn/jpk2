@@ -8,10 +8,10 @@
 <style>
    
     #faq_detail{
-    padding-top:200px;
-    margin-left:320px;
-    margin-top:100px;
-    min-height:1040px;
+	    padding-top:200px;
+	    /* margin-left:320px; */
+	    margin-top:100px;
+	    min-height:1040px;
     }
     
     #fd_table1{
@@ -31,10 +31,10 @@
     }
     
     #service_board{
-	margin-left: 154px;
+		margin-left: 154px;
 	}
 	#servive_main_inner{
-	margin-left:200px;
+		margin-left:200px;
 	}
 	
 	#service_center_cate{
@@ -45,7 +45,7 @@
 	
 	}
 	#service_board{
-	min-height:1040px;
+		min-height:1040px;
 	}
 	#service_board_inner{
 	}
@@ -66,9 +66,9 @@
     <div id="servive_main_inner">
 	<div id="service_center_cate">
 	
-		<a class="nav-link py-3 px-0 px-lg-3 rounded" id="open_notice">공지사항</a>
-		<a class="nav-link py-3 px-0 px-lg-3 rounded" id="open_faq">자주하는 질문</a>
-		<a class="nav-link py-3 px-0 px-lg-3 rounded" id="open_qna" >1:1 문의</a>
+		<a href="/spring/notice_board.do" class="nav-link py-3 px-0 px-lg-3 rounded" id="open_notice">공지사항</a>
+		<a href="/spring/faq_board.do" class="nav-link py-3 px-0 px-lg-3 rounded" id="open_faq">자주하는 질문</a>
+		<a href="/spring/qna_board.do" class="nav-link py-3 px-0 px-lg-3 rounded" id="open_qna" >1:1 문의</a>
 	
 	</div>
 	
@@ -112,7 +112,7 @@
 		<a class='btn btn-primary' href='/spring/faq_delyn.do?fidx=${faqVo.fidx}'>삭제하기</a>
 		
 		</c:if>
-		<a href="/spring/service_center.do" class="btn btn-primary">글목록</a>
+		<a href="/spring/faq_board.do" class="btn btn-primary">글목록</a>
 		</c:if>
 		</div>
 		

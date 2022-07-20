@@ -37,6 +37,15 @@
 		margin-right:320px;
 	}
 	
+		#service_center_cate{
+	
+		padding-top:200px;
+		width:155px;
+		float:left;
+	
+	}
+	
+	
 	#td_l{
 		width:20%;
 	}
@@ -69,6 +78,15 @@
     <form name="faq_write_Form"><!-- action="/spring/faq_writeProcess.do" method="post" --> 
     <!-- 헤더 연결 -->
     <jsp:include page="../header.jsp"></jsp:include> 
+    
+    	<div id="service_center_cate">
+	
+		<a href="/spring/notice_board.do" class="nav-link py-3 px-0 px-lg-3 rounded" id="open_notice">공지사항</a>
+		<a href="/spring/faq_board.do" class="nav-link py-3 px-0 px-lg-3 rounded" id="open_faq">자주하는 질문</a>
+		<a href="/spring/qna_board.do" class="nav-link py-3 px-0 px-lg-3 rounded" id="open_qna" >1:1 문의</a>
+	
+	</div>
+	
 	
 		<div id="faq_main_inner">
 			<table class="table table-striped" style="width:100%;"><!-- enctype="multipart/form-data" -->
