@@ -30,6 +30,11 @@
    margin: 0 649px 0 812px;
     padding-block: 20px;
 } 
+#emaill-inner{
+	min-height:1040px;
+	margin-left:200px;
+	margin-top:230px;
+}
 
 </style>
 <title>회원 가입</title>
@@ -47,7 +52,7 @@
 <!-- 헤더연결 -->
 <jsp:include page="../header.jsp"></jsp:include>
 
-
+<div id="emaill-inner">
 <div style="margin: 100px;">
 		<br>
 		<h3>안녕하세요, ${memberVo.member_name} 님</h3>
@@ -59,7 +64,7 @@
 		<p>로그인 하시면 홈페이지 내의 모든 서비스를 이용하실 수 있습니다.</p>
 		<br> <a href="${pageContext.request.contextPath}/login.do">로그인 페이지로 이동하기</a>
 	</div>
-
+</div>
 <!-- 푸터 연결 -->
 <jsp:include page="../footer.jsp"></jsp:include>
 </body>
