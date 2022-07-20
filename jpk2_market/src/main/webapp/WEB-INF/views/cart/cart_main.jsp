@@ -124,7 +124,7 @@
     
     <input type="button" id="${cartVo.pbidx}_btn_minus" value="-">
     <input type="text"  id="${cartVo.pbidx}_pop_out" value="${cartVo.p_amount}" readonly="readonly" style="text-align:center;"/>
-    <input type="button" id="${cartVo.pbidx}_btn_plus" value="+"  >
+    <input type="button" id="${cartVo.pbidx}_btn_plus" value="+">
    
     </td>
     <td>
@@ -139,6 +139,28 @@
     </form>
     </c:forEach>
     </table>
+    </div>
+    <div id="for_order">
+    <table id="for_order_table" border="1">
+    <tr>
+    <td>상품금액</td>
+    <td></td>
+    </tr>
+    <tr>
+    <td>상품할인금액</td>
+    <td></td>
+    </tr>
+    <tr>
+    <td>배송비</td>
+    <td></td>
+    </tr>
+    <tr>
+    <td>결제예정금액</td>
+    <td></td>
+    </tr>
+    </table>
+    
+    
     </div>
     
    
