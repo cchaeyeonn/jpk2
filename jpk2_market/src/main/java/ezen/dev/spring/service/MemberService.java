@@ -42,7 +42,7 @@ public class MemberService {
 		sendMail.setText(
 				new StringBuffer()
 				.append("<h1>메일인증</h1>")
-				.append("<a href='http://localhost:8080/spring/emailConfirm?authkey=")
+				.append("<a href='http://localhost:8090/spring/emailConfirm?authkey=")
 				.append(key)
 				.append("'target='_blank'>이메일 인증 확인</a>")
 				.toString());
