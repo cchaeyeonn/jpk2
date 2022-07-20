@@ -87,7 +87,7 @@ private NoticeService noticeService;
 			model.addAttribute("n_content",n_content);
 			model.addAttribute("n_writedate",n_writedate);
 			model.addAttribute("midx",midx_mn);
-			viewPage = "redirect:/service_center.do";
+			viewPage = "redirect:/notice_board.do";
 			
 		}
 		return viewPage;
@@ -214,7 +214,7 @@ private NoticeService noticeService;
 		noticeService.delNotice(noticeVo);
 
 
-		return "service_center/service_center_main";
+		return "service_center/notice_board";
 		
 	}
 	

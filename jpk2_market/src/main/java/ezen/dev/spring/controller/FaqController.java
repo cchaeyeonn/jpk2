@@ -77,7 +77,7 @@ private FaqService faqService;
 				model.addAttribute("f_title",f_title);
 				model.addAttribute("f_content",f_content);
 				
-				viewPage = "redirect:/service_center.do";
+				viewPage = "redirect:/faq_board.do";
 			
 			}
 			return viewPage;
@@ -145,7 +145,7 @@ private FaqService faqService;
 			faqVo.setFidx(fidx);
 			faqService.delFaq(faqVo);
 			
-			return "service_center/service_center_main";
+			return "service_center/faq_board";
 			
 		}
 	

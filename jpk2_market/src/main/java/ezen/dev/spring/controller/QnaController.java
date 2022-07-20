@@ -83,7 +83,7 @@ private QnaService qnaService;
 				/* model.addAttribute("q_originqidx",q_originqidx); */
 				model.addAttribute("midx",midx_mq);
 				model.addAttribute("q_depth",q_depth);
-				viewPage = "redirect:/service_center.do";
+				viewPage = "redirect:/qna_board.do";
 				
 			}
 			return viewPage;
