@@ -213,7 +213,6 @@ private NoticeService noticeService;
 		noticeVo.setNidx(nidx);
 		noticeService.delNotice(noticeVo);
 
-
 		return "service_center/notice_board";
 		
 	}

@@ -8,10 +8,10 @@
 <style>
    
     #faq_detail{
-    padding-top:200px;
-    margin-left:320px;
-    margin-top:100px;
-    min-height:1040px;
+	    padding-top:200px;
+	    /* margin-left:320px; */
+	    margin-top:100px;
+	    min-height:1040px;
     }
     
     #fd_table1{
@@ -31,10 +31,10 @@
     }
     
     #service_board{
-	margin-left: 154px;
+		margin-left: 154px;
 	}
 	#servive_main_inner{
-	margin-left:200px;
+		margin-left:200px;
 	}
 	
 	#service_center_cate{
@@ -45,7 +45,7 @@
 	
 	}
 	#service_board{
-	min-height:1040px;
+		min-height:1040px;
 	}
 	#service_board_inner{
 	}
