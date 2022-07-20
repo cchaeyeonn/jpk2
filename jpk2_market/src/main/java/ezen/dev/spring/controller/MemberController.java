@@ -207,5 +207,27 @@ public class MemberController {
 	return "member/memberFindPwResult";
 	}
 	
+	@GetMapping("/updatePw.do")
+	public String updatePw() {
+		return "member/memberUpdatePw";
+	}
+	
+	
+	@PostMapping("/updatePwProcess.do")
+	public String updatePwProcess(@RequestParam("member_pw1") String member_pw,@RequestParam("now_pw") String now_pw, MemberVo memberVo, Model model,HttpServletRequest request) throws Exception {
+	HttpSession session = request.getSession();
+	Integer midx_ =Integer.parseInt(String.valueOf(session.getAttribute("midx")));
+	memberVo.setNow_pw(now_pw);
+	memberVo.setMember_pw(member_pw);
+	memberVo.setMidx(midx_);
+	memberService.setUpdatePw(memberVo);
+	session.invalidate();
+	
+	return "redirect:/login.do";
+	}
+	
+	
+	
+	
 
 }

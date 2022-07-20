@@ -108,5 +108,13 @@ public class MemberService {
 		sendMail.send();
 		return memberDao.setTempPw(memberVo);
 	}
+	
+
+
+
+	public void setUpdatePw(MemberVo memberVo) {
+		memberDao.setUpdatePw(memberVo);
+		
+	}
 
 }
