@@ -46,6 +46,13 @@ public class AjaxService {
 	public int deleteCartInfoOne(Integer pbidx) {
 		return cartDao.deleteCartInfoOne(pbidx);
 	}
+
+
+	public int checkPw(MemberVo memberVo) {
+		int result=0;
+		result = memberDao.checkPw(memberVo);
+		return result;
+	}
 	
 
 

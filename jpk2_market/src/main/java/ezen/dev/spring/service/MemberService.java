@@ -41,15 +41,33 @@ public class MemberService {
 		sendMail.setSubject("서비스 이메일 인증");
 		sendMail.setText(
 				new StringBuffer()
-				.append("<h1>메일인증</h1>")
-				.append("<a href='http://localhost:8090/spring/emailConfirm?authkey=")
-				.append(key)
-				.append("'target='_blank'>이메일 인증 확인</a>")
-				.toString());
+				.append("<!DOCTYPE html>")
+				.append("<html>")
+				.append("<head>")
+				.append("</head>")
+				.append("<body>")
+				.append("<div style=\"font-family: 'Apple SD Gothic Neo', 'sans-serif' !important; width: 400px; height: 600px; border-top: 4px solid #02b875; padding: 30px 0; box-sizing: border-box;\">"
+						+"<h1 style=\"margin: 0; padding: 0 5px; font-size: 28px; font-weight: 400;\">"
+						+"<span style=\"font-size: 15px; margin: 0 0 10px 3px;\">JPK2</span><br />"
+						+"<span style=\"color: #02b875\">메일인증</span> 안내입니다."
+						+"</h1>\n"+"<p style=\"font-size: 16px; line-height: 26px; margin-top: 50px; padding: 0 5px;\">"
+						+memberVo.getMember_name()+"님 안녕하세요.<br />"
+						+"JPK2에 가입해 주셔서 진심으로 감사드립니다.<br />"
+						+"아래 <b style=\"color: #02b875\">'메일 인증'</b> 버튼을 클릭하여 회원가입을 완료해 주세요.<br />"
+						+"감사합니다."+"</p>"
+						+"<a style=\"color: #FFF; text-decoration: none; text-align: center;\""
+						+"href=\"http://localhost:8090/spring/emailConfirm?authkey=" + key + "\"target=\"_blank\">"
+						+"<p style=\"display: inline-block; width: 210px; height: 45px; margin: 30px 5px 40px; background: #02b875; line-height: 45px; vertical-align: middle; font-size: 16px;\">"
+						+"메일 인증</p>"
+						+"</a>"
+						+"<div style=\"border-top: 1px solid #DDD; padding: 5px;\"></div>"
+						+"</div>")
+						.toString());
 		sendMail.setFrom("zoszo@jbnu.ac.kr", "jpk2");
 		sendMail.setTo(memberVo.getMember_email());
 		sendMail.send();
 	}
+	
 	
 	public HashMap<String, Long> login(HashMap<String,String> loginInfo) {
 		return memberDao.loginMember(loginInfo);
