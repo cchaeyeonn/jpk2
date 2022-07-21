@@ -34,6 +34,104 @@
     padding-block: 20px;
 } 
 
+
+
+.chk_all,
+.del-chk1,
+.del-chk2,
+.del-chk3 {
+  height: 20px;
+  width: 20px;
+  background-color: transparent;
+  border: 2px solid #000;
+  border-radius: 5px;
+  box-sizing: border-box;
+  position: relative;
+  display: inline-block;
+  transition: border-color ease 0.2s;
+  cursor: pointer;
+}
+
+.chk_all::before, .chk_all::after,
+.del-chk1::before, .del-chk1::after,
+.del-chk2::before, .del-chk2::after,
+.del-chk3::before, .del-chk3::after{
+  position: absolute;
+  height: 0;
+  width: 4px;
+  background-color: #34b93d;
+  box-sizing: border-box;
+  display: inline-block;
+  transform-origin: left top;
+  border-radius: 5px;
+  content: ' ';
+  transition: opacity ease 0.5;
+}
+.chk_all::before,
+.del-chk1::before,
+.del-chk2::before,
+.del-chk3::before{
+  top: 14.4px;
+  left: 8.2px;
+  box-shadow: 0 0 0 1px transparent;
+  transform: rotate(-135deg);
+}
+.chk_all::after,
+.del-chk1::after,
+.del-chk2::after,
+.del-chk3::after{
+  top: 7.4px;
+  left: 1px;
+  transform: rotate(-45deg);
+}
+
+input[id="chk_all"]:checked + .chk_all,
+input[id="del-chk"]:checked + .del-chk1,
+input[id="del-chk2"]:checked + .del-chk2,
+input[id="del-chk3"]:checked + .del-chk3 {
+  border-color: #34b93d;
+}
+
+input[id="chk_all"]:checked + .chk_all::after,
+input[id="del-chk"]:checked + .del-chk1::after,
+input[id="del-chk2"]:checked + .del-chk2::after,
+input[id="del-chk3"]:checked + .del-chk3::after{
+  height: 10px;
+  animation: bottomcheck 0.2s ease 0s forwards;
+}
+
+input[id="chk_all"]:checked + .chk_all::before,
+input[id="del-chk"]:checked + .del-chk1::before,
+input[id="del-chk2"]:checked + .del-chk2::before,
+input[id="del-chk3"]:checked + .del-chk3::before{
+  height: 24px;
+  animation: topcheck 0.4s ease 0s forwards;
+}
+
+  input[type=checkbox] {
+	display: none;
+}
+
+@keyframes bottomcheck {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: 10px;
+  }
+}
+@keyframes topcheck {
+  0% {
+    height: 0;
+  }
+  50% {
+    height: 0;
+  }
+  100% {
+    height: 24px;
+  }
+}
+
 </style>
 <!-- 외부 js에서 ${pageContext.request.contextPath}를 사용할 수 있게 세션에 값을 저장 -->
 <script type="text/javascript" charset="utf-8">
@@ -129,7 +227,9 @@
             <td></td>
             <td><input type="text" id="member_addr_1" class="form-control" name="member_addr1" placeholder="도로명주소"></td>
             <td><input type="text" id="member_addr_2" class="form-control" name="member_addr2" placeholder="상세주소"></td>
-            <td><div style="height:20px"><span id="result_addr" style="font-size:12px;"></span></div></td>
+         </tr>
+         <tr>
+            <td></td><td><div style="height:20px"><span id="result_addr" style="font-size:12px;"></span></div></td>
          </tr>
          <tr><td>&nbsp;</td><td></td></tr>
          <tr>
@@ -149,7 +249,9 @@
          <hr>
          <table>
          <tr>
-         <td><input type="checkbox" id="chk_all" name="member_termall"></td>
+         <td>
+         <input type="checkbox" id="chk_all" name="member_termall">
+         <label for="chk_all" class="chk_all"></label></td>
          <td>이용약관에 대해 전체 동의합니다.</td>
          </tr>
          
@@ -159,17 +261,23 @@
          <tr><td>&nbsp;</td><td></td></tr>
          
          <tr>
-         <td><input type="checkbox" class="del-chk" name="member_term1" value="1"></td>
+         <td>
+         <input type="checkbox" id="del-chk" class="del-chk" name="member_term1" value="1">
+         <label for="del-chk" class="del-chk1"></label></td>
          <td>이용약관 동의 (필수)&nbsp;&nbsp;&nbsp;&nbsp;약관보기</td>
          </tr>
          
          <tr>
-         <td><input type="checkbox" class="del-chk" name="member_term2" value="1"></td>
+         <td>
+         <input type="checkbox" id="del-chk2" class="del-chk" name="member_term2" value="1">
+         <label for="del-chk2" class="del-chk2"></label></td>
          <td>개인정보 수집·이용동의 (필수) &nbsp;&nbsp;&nbsp;&nbsp;약관보기</td>
          </tr>
          
          <tr>
-         <td><input type="checkbox" class="del-chk" value="1" name="member_term3"></td>
+         <td>
+         <input type="checkbox" id="del-chk3" class="del-chk" name="member_term3" value="1" >
+         <label for="del-chk3" class="del-chk3"></label></td>
          <td>본인은 만 14세 이상입니다. (필수)</td>
          </tr>
          
