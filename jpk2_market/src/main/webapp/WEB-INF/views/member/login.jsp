@@ -50,7 +50,38 @@
 	min-height:1040px;
 	}
 </style>
-
+<script src="https://www.google.com/recaptcha/api.js"></script>
+<script>
+$(function() {
+$('#login').click(function() {
+		var captcha = 1;
+		$.ajax({
+            url: '/spring/verifyRecaptcha.do',
+            type: 'post',
+            data: {
+                recaptcha: $("#g-recaptcha-response").val()
+            },
+            success: function(data) {
+                switch (data) {
+                    case 0:
+                        console.log("자동 가입 방지 봇 통과");
+                        captcha = 0;
+                		break;
+                    case 1:
+                        alert("자동 가입 방지 봇을 확인 한뒤 진행 해 주세요.");
+                        break;
+                    default:
+                        alert("자동 가입 방지 봇을 실행 하던 중 오류가 발생 했습니다. [Error bot Code : " + Number(data) + "]");
+                   		break;
+                }
+            }
+        });
+		if(captcha != 0) {
+			return false;
+		} 
+});
+});
+</script>
 <script>
   function check(){  
   var fm = document.frm;   
@@ -94,8 +125,9 @@
 <a href="findId.do">아이디 찾기</a> | <a href="findPw.do">비밀번호 찾기</a></div>
 <div id="login_4">
 
-<input type="button" class="btn btn-outline-success" value="로그인" onclick="check();">
-<input type="button" class="btn btn-outline-success" value="회원가입" onclick="location.href='join.do'">
+<input type="button" class="btn btn-outline-success" id="login" value="로그인" onclick="check();">
+<input type="button" class="btn btn-outline-success" value="회원가입" onclick="location.href='join.do'"><p/>
+<div class="g-recaptcha" data-sitekey="6LeBRQkhAAAAACTyIP4B7vc9o1dUHQwpBd80IsGn"></div>
 </div>
 </div>
 </form>
