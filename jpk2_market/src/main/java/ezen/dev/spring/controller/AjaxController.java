@@ -8,22 +8,28 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import ezen.dev.spring.config.RecaptchaConfig;
 import ezen.dev.spring.service.AjaxService;
 import ezen.dev.spring.service.CartService;
 import ezen.dev.spring.vo.MemberVo;
 
-//Ajax�넻�떊 吏��썝�쓣 �쐞�빐 pom.xml�뿉 �쓽議대え�뱢(jackson)�쓣 異붽��빐 以�
+
 
 //@Controller
-@RestController //Spring4踰꾩쟾遺��꽣 吏��썝. @Controller + @ResponseBody 湲곕뒫
+@RestController
+@PropertySource("classpath:recaptchar.properties")
 public class AjaxController {
 	
 	private AjaxService ajaxService;
+	@Value("${recaptcha.secretKey}")
+	private String secretKey;
 	
 	@Autowired 
 	public AjaxController(AjaxService ajaxService) {
@@ -119,6 +125,19 @@ public class AjaxController {
 		return result;
 	}
 	
+	@PostMapping("/verifyRecaptcha.do")
+	public int VerifyRecaptcha(HttpServletRequest request) {
+		RecaptchaConfig.setSecretKey(secretKey);
+		String gRecaptchaResponse = request.getParameter("recaptcha");
+		try {
+			if(RecaptchaConfig.verify(gRecaptchaResponse))
+				return 0;
+			else return 1;
+		}catch(Exception e) {
+			e.printStackTrace();
+			return -1;
+		}
+	}
 	
 	
 }
