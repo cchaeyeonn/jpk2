@@ -132,7 +132,7 @@ $('#btn_minus').on('click',function(){
 		 
 		
       	}
-      	alert(totalprice+amount+price);
+      
 	 $('#totalprice').text(totalprice);  
 	}   
 	
