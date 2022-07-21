@@ -57,12 +57,12 @@ public class MemberController {
 	@PostMapping("/joinProcess.do")
 	public String joinProcess(MemberVo memberVo, RedirectAttributes rttr, HttpServletRequest request, HttpServletResponse response) throws Exception {
 		
-		memberService.join(memberVo);
 		response.setContentType("text/html; charset=UTF-8");
 		response.setCharacterEncoding("UTF-8");
 		PrintWriter out=response.getWriter();
 		out.println("<script>alert('가입하실 때 작성하신 이메일에서 인증을 해주세요.');</script>");
 		out.flush();
+		memberService.join(memberVo);
 		return "index";
 	}
 	
@@ -226,6 +226,7 @@ public class MemberController {
 	response.setCharacterEncoding("UTF-8");
 	PrintWriter out=response.getWriter();
 	out.println("<script>alert('비밀번호가 변경되었습니다. 다시 로그인해주세요.');</script>");
+	out.flush();
 	session.invalidate();
 
 	return "member/login";
