@@ -49,7 +49,11 @@
 	min-height:1040px;
 	}
 </style>
-<script src="${pageContext.request.contextPath}/resources/js/memberUpdatePw.js "></script>
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script type="text/javascript" charset="utf-8">
+	sessionStorage.setItem("contextpath", "${pageContext.request.contextPath}");
+</script>
+
 <script>
   function check(){  
   var fm = document.frm;   
@@ -108,5 +112,6 @@
 
 <!-- 푸터 연결 -->
 <jsp:include page="../footer.jsp"></jsp:include>
+<script src="${pageContext.request.contextPath}/resources/js/memberUpdatePw.js "></script>
 </body>
 </html>

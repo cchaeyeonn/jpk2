@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import ezen.dev.spring.service.AjaxService;
 import ezen.dev.spring.service.CartService;
+import ezen.dev.spring.vo.MemberVo;
 
 //Ajax�넻�떊 吏��썝�쓣 �쐞�빐 pom.xml�뿉 �쓽議대え�뱢(jackson)�쓣 異붽��빐 以�
 
@@ -64,13 +65,15 @@ public class AjaxController {
 		return result;
 	}
 	@PostMapping("/checkPw.do")
-	public String checkPw(@RequestParam("now_pw") String pw) {
-		
-		System.out.println("pw: "+pw);
-		
+	public String checkPw(MemberVo memberVo, @RequestParam("now_pw") String pw, HttpServletRequest request) {
+		HttpSession session = request.getSession();
 		String result="N"; 
 		
-		int flag = ajaxService.checkPw(pw);
+		memberVo.setNow_pw(pw);
+		Integer midx_ =Integer.parseInt(String.valueOf(session.getAttribute("midx")));
+		memberVo.setMidx(midx_);
+		
+		int flag = ajaxService.checkPw(memberVo);
 		
 		if(flag == 1) result = "Y";
 		
