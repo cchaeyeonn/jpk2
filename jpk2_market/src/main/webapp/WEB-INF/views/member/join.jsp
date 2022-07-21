@@ -6,13 +6,15 @@
 <meta charset="UTF-8">
 <style>
 
-#join_1{
+#join_content{
+
    /*  margin-left: 804px;
     padding-top: 193px;
     width: 100%; */
-    
+   /*  margin-left:297px;
+    margin-right:316px; */
     padding-top:235px;
-    /* min-height:1040px; */
+    min-height:1040px;
    justify-content: center;
    caption-side: bottom;
     border-collapse: collapse;
@@ -24,6 +26,7 @@
  .checkbox_group{
    margin: 0 254px 0 701px;
     padding-block: 20px;
+    display:flxed;
 }
 
 #join_button{
@@ -53,13 +56,13 @@
 <jsp:include page="../header.jsp"></jsp:include>
 
 
-<h3>회원정보를 입력해주세요</h3>
+
 
 <div id="join_content">
 <form name="joinForm" action="${pageContext.request.contextPath}/joinProcess.do" method="post">
 
    <div id="join_1">
-   
+   <h3>회원정보를 입력해주세요</h3>
    <table>
       <tbody>
          <tr>
@@ -138,28 +141,58 @@
             <td><input type ="date" class="form-control" id="member_birth" name="member_birth" value="" onclick="maxDate()"></td>
             <td><div style="height:20px"><span id="result_birth" style="font-size:12px;"></span></div></td>
          </tr>
+         </table>
          
-      
+         <hr>
+         <table>
+         <tr>
+         <td><input type="checkbox" id="chk_all" name="member_termall"></td>
+         <td>이용약관에 대해 전체 동의합니다.</td>
+         </tr>
          
-      
+         <tr>
+         <td></td>
+         <td>선택항목에 동의하지 않은 경우도 회원가입 및 일반적인 서비스를 이용할 수 있습니다.</td></tr>
+         
+         <tr>
+         <td><input type="checkbox" class="del-chk" name="member_term1" value="1"></td>
+         <td>이용약관 동의(필수)&nbsp;&nbsp;&nbsp;&nbsp;약관보기</td>
+         </tr>
+         
+         <tr>
+         <td><input type="checkbox" class="del-chk" name="member_term2" value="1"></td>
+         <td>개인정보 수집·이용동의(필수) &nbsp;&nbsp;&nbsp;&nbsp;약관보기</td>
+         </tr>
+         
+         <tr>
+         <td><input type="checkbox" class="del-chk" value="1" name="member_term3"></td>
+         <td>본인은 만 14세 이상입니다.(필수)</td>
+         </tr>
+         
+         <tr>
+         <td></td>
+         <td><input type="submit" class="btn btn-outline-success" id="trigger"  value="가입하기"><a href="${pageContext.request.contextPath}/"><input type="button" class="btn btn-outline-success" value="뒤로가기"></a></td>
+         
+         
+         </tr>
       </tbody>
-   
    </table>
    </div>
 
-    <div class="checkbox_group">
+<!--     <div class="checkbox_group">
     <label><input type="checkbox" id="chk_all" name="member_termall">&nbsp;이용약관에 대해 전체 동의합니다.</label><p/>
     <label>선택항목에 동의하지 않은 경우도 회원가입 및 일반적인 서비스를 이용할 수 있습니다.</label><p/>
    <label><input type="checkbox" class="del-chk" name="member_term1" value="1">&nbsp;이용약관 동의(필수) &nbsp;&nbsp;&nbsp;&nbsp;약관보기></label><p/>
    <label><input type="checkbox" class="del-chk" name="member_term2" value="1">&nbsp;개인정보 수집·이용동의(필수) &nbsp;&nbsp;&nbsp;&nbsp;약관보기></label><p/>
    <label><input type="checkbox" class="del-chk" value="1" name="member_term3">&nbsp;본인은 만 14세 이상입니다.(필수)</label><p/>
    <div style="height:20px"><span id="result_term" style="font-size:12px;"></span></div>
-     </div>
-   <div id="join_button">
+     </div> -->
+ <%--   <div id="join_button">
    <input type="submit" class="btn btn-outline-success" id="trigger"  value="가입하기">
    <a href="${pageContext.request.contextPath}/"><input type="button" class="btn btn-outline-success" value="뒤로가기"></a>
-    </div>
+    </div> --%>
 </form> 
+
 </div>
 
 
