@@ -158,7 +158,7 @@ $("#${cartVo.pbidx}_btn_plus").click(function(){
 	});
     
 $("#btn_delete_${cartVo.pbidx}").click(function(){
-	alert("#btn_delete_${cartVo.pbidx}");
+	
 	let pbidx = $("#btn_delete_${cartVo.pbidx}").val();
 	
 
