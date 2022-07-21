@@ -47,8 +47,8 @@
 		update fm_member set member_pw=#{member_pw} where member_id=#{member_id} and member_email=#{member_email}
 	</update>
 	
-	<select id="checkPw" parameterType="string" resultType="int">
-		select count(*) from fm_member where member_pw = #{now_pw}
+	<select id="checkPw" parameterType="memberVo" resultType="int">
+		select count(*) from fm_member where member_pw = #{now_pw} and midx=#{midx}
 	</select>
 		
 	<!-- 비밀번호 수정 -->

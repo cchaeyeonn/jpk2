@@ -48,9 +48,9 @@ public class AjaxService {
 	}
 
 
-	public int checkPw(String pw) {
+	public int checkPw(MemberVo memberVo) {
 		int result=0;
-		result = memberDao.checkPw(pw);
+		result = memberDao.checkPw(memberVo);
 		return result;
 	}
 	
