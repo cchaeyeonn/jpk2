@@ -73,7 +73,8 @@
     
        
     <table id="target">
-    <c:forEach items="${cartList}" var="cartVo">
+    <c:set var="total" value="0"/>
+    <c:forEach items="${cartList}" var="cartVo" varStatus="status">
     <form>
     <input type="hidden"  id="pidx_pc" value="${cartVo.pidx_pc} ">
     <!-- 외부 js의 경우 el및 jstl이 적용되지 않는다. 그렇기 때문에 수량관련 +-버튼 스크립트를  forEach문 안에 따로 작성했다. -->
@@ -137,13 +138,14 @@
     </td>
     </tr>
     </form>
+    <c:set var="total" value="${total + cartVo.p_amount*cartVo.p_price }"/>
     </c:forEach>
     </table>
     <div id="for_order">
     <table id="for_order_table" border="1">
     <tr>
     <td>상품금액</td>
-    <td id="totalprice"></td>
+    <td id="totalprice"><c:out value="${total}"/></td>
     </tr>
     <tr>
     <td>상품할인금액</td>
