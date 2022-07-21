@@ -63,6 +63,19 @@ public class AjaxController {
 		
 		return result;
 	}
+	@PostMapping("/checkPw.do")
+	public String checkPw(@RequestParam("now_pw") String pw) {
+		
+		System.out.println("pw: "+pw);
+		
+		String result="N"; 
+		
+		int flag = ajaxService.checkPw(pw);
+		
+		if(flag == 1) result = "Y";
+		
+		return result;
+	}
 	
 	@PostMapping("/cart_delete.do")
 	public String cartDeleteInfo(@RequestParam("cart_idx_arr[]") List<Integer> cartidxList,HttpServletRequest request) {

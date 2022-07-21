@@ -51,11 +51,13 @@
 </style>
     <!-- jquery 스크립트 -->
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+
 <script>
 $(document).on('click','#trigger',function(){if($("#member_id").val() != "",$("#member_email").val() != ""){
         $("#trigger").hide();
         }});
 </script>
+
 <script>
   function check(){  
   var fm = document.frm;   
@@ -88,8 +90,8 @@ $(document).on('click','#trigger',function(){if($("#member_id").val() != "",$("#
 정보를 입력해 주세요
 </div>
 <div id="findPw_2">
-<p><input type="text" class="form-control" name="member_id" size="30" placeholder="아이디를 입력해주세요"></p>
-<p><input type="text" class="form-control" name="member_email" size="30" placeholder="이메일주소를 입력해주세요"></p>
+<p><input type="text" class="form-control" id="member_id" name="member_id" size="30" placeholder="아이디를 입력해주세요"></p>
+<p><input type="text" class="form-control" id="member_id" name="member_email" size="30" placeholder="이메일주소를 입력해주세요"></p>
 </div>
 <div id="findPw_3">
 </div>

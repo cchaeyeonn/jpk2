@@ -49,7 +49,7 @@
 	min-height:1040px;
 	}
 </style>
-
+<script src="${pageContext.request.contextPath}/resources/js/memberUpdatePw.js "></script>
 <script>
   function check(){  
   var fm = document.frm;   
@@ -90,14 +90,14 @@
 <form name="frm">
 <div id="updatePw">
 <div id="updatePw_1"> 현재 비밀번호
-<p><input type="password" class="form-control" name="now_pw" size="30" placeholder="현재 비밀번호를 입력해주세요"></p>
+<p><input type="password" class="form-control" id="now_pw" name="now_pw" size="30" placeholder="현재 비밀번호를 입력해주세요"></p>
+<div style="height:20px"><span id="result_checkPw" style="font-size:12px;"></span></div>
 </div>
 <div id="updatePw_2"> 변경할 비밀번호
-<p><input type="password" class="form-control" name="member_pw1" size="30" placeholder="변경할 비밀번호를 입력해주세요"></p>
-<p><input type="password" class="form-control" name="member_pw2" size="30" placeholder="변경할 비밀번호를 다시 입력해주세요"></p>
+<p><input type="password" class="form-control" id="member_pw1" name="member_pw1" size="30" placeholder="변경할 비밀번호를 입력해주세요"></p>
+<p><input type="password" class="form-control" id="member_pw2" name="member_pw2" size="30" placeholder="변경할 비밀번호를 다시 입력해주세요"></p>
 </div>
-<div id="updatePw_3">
-</div>
+<div style="height:20px"><span id="result_password" style="font-size:12px;"></span></div>
 <div id="updatePw_4">
 <input type="button" class="btn btn-outline-success" value="확인" onclick="check();">
 <input type="button" class="btn btn-outline-success" value="뒤로" onclick="location.href='index.do'">

@@ -47,6 +47,9 @@ public class MemberDao {
 	public int checkEmail(String email) {
 		return sqlSession.selectOne(MAPPER+".checkEmail", email);
 	}
+	public int checkPw(String pw) {
+		return sqlSession.selectOne(MAPPER+".checkPw", pw);
+	}
 
 	public MemberVo chkAuth(String authKey) throws Exception{
 

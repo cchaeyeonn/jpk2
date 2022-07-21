@@ -415,7 +415,7 @@
 		
 		
 	});
-	
+	//로딩중 버튼이 사라짐
 	   $(document).on('click','#trigger',function(){if($("input:checked[Name='member_termall']").is(":checked"), $("#member_birth").val() != "",
          $("#member_phone").val()!="", $("#member_addr_1").val() != "", $("#member_addr_2").val() != "",
          $("#member_email").val() != "", $("#member_name").val() != "", $("#member_password1").val() != "",
