@@ -13,6 +13,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -22,6 +24,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import ezen.dev.spring.config.RecaptchaConfig;
 import ezen.dev.spring.service.CartService;
 import ezen.dev.spring.service.MemberService;
 import ezen.dev.spring.service.ProductService;
@@ -31,7 +34,6 @@ import ezen.dev.spring.vo.MemberVo;
 public class MemberController {
 	
 	private MemberService memberService;
-
 	
 	
 	@Autowired
@@ -63,7 +65,7 @@ public class MemberController {
 		out.println("<script>alert('가입하실 때 작성하신 이메일에서 인증을 해주세요.');</script>");
 		out.flush();
 		memberService.join(memberVo);
-		return "index";
+		return "member/login";
 	}
 	
 	@RequestMapping(value = "/emailConfirm", method = RequestMethod.GET)
@@ -100,6 +102,7 @@ public class MemberController {
 	public String loginProcess(@RequestParam("member_id") String member_id,
 			 					@RequestParam("member_pw") String member_pw, 
 			 					HttpServletRequest request, HttpServletResponse response) throws IOException {
+		
 		HashMap<String, String> loginInfo = new HashMap<String, String>();
 		loginInfo.put("member_id", member_id);
 		loginInfo.put("member_pw", member_pw);
