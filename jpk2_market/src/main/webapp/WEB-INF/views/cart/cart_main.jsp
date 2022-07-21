@@ -52,7 +52,6 @@
 <!-- 외부 js에서 ${pageContext.request.contextPath}를 사용할 수 있게 세션에 값을 저장 -->
 <script type="text/javascript" charset="utf-8">
 	sessionStorage.setItem("contextpath", "${pageContext.request.contextPath}");
-	
 </script>
 <!-- jquery 스크립트 -->
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
@@ -77,31 +76,117 @@
     <c:forEach items="${cartList}" var="cartVo" varStatus="status">
     <form>
     <input type="hidden"  id="pidx_pc" value="${cartVo.pidx_pc} ">
+    <input type="hidden"  id="pbidx" value="${cartVo.pbidx} ">
     <!-- 외부 js의 경우 el및 jstl이 적용되지 않는다. 그렇기 때문에 수량관련 +-버튼 스크립트를  forEach문 안에 따로 작성했다. -->
     <script>
     $(function(){
-    let number = $('#${cartVo.pbidx}_pop_out').val();
+    	let number = $('#${cartVo.pbidx}_pop_out').val();
+   //minus 버튼
+    $("#${cartVo.pbidx}_btn_minus").click(function(){
+		
+		
+        let midx_mc = ${cartVo.midx_mc}
+        let pidx_pc = ${cartVo.pidx_pc}
+		 number = parseInt(number)
+         if(number<=1){
+         alert('더이상 줄일수 없습니다.');
+         number=1;
+         }else{
+ 	
+         $('#${cartVo.pbidx}_pop_out').attr('value',number-=1);   	
+      }
+         
+         $('#${cartVo.pbidx}_pop_out').text(number);
+	
+		
+		$.ajax({
+			type: "post",
+			url: "${pageContext.request.contextPath}/cart_amount.do",
+			data: {
+				"number":number,
+				"midx_mc":midx_mc,
+				"pidx_pc":pidx_pc
+			},
+			async: false,
+			success: function(data){
+				if(data == "N"){
+					alert("db와 연동되지 않았습니다");
+				}else{
+					
+					location.reload();
+				}
+				
+			},
+			error: function(error){ alert("수량 수정 중 에러발생"); }
+		});
+		
+	});
+
+
+    //plus 버튼
+$("#${cartVo.pbidx}_btn_plus").click(function(){
+		
+		
+        let midx_mc = ${cartVo.midx_mc}
+        let pidx_pc = ${cartVo.pidx_pc}
+		 number = parseInt(number)
+        $('#${cartVo.pbidx}_pop_out').attr('value',number+=1);   	 
+         $('#${cartVo.pbidx}_pop_out').text(number);
+	
+		
+		$.ajax({
+			type: "post",
+			url: "${pageContext.request.contextPath}/cart_amount.do",
+			data: {
+				"number":number,
+				"midx_mc":midx_mc,
+				"pidx_pc":pidx_pc
+			},
+			async: false,
+			success: function(data){
+				if(data == "N"){
+					alert("db와 연동되지 않았습니다");
+				}else{
+					
+					location.reload();
+				}
+				
+			},
+			error: function(error){ alert("수량 수정 중 에러발생"); }
+		});
+		
+	});
     
-    $('#${cartVo.pbidx}_btn_minus').on('click',function(){
-    	    number = parseInt(number)
-            if(number<=1){
-            alert('더이상 줄일수 없습니다.');
-            number=1;
-            }else{
-    	
-            $('#${cartVo.pbidx}_pop_out').attr('value',number-=1);   	
-         }
-            
-            $('#${cartVo.pbidx}_pop_out').text(number);
-            });
+$("#btn_delete_${cartVo.pbidx}").click(function(){
+	
+	let pbidx = $("#btn_delete_${cartVo.pbidx}").val();
+	
 
-    $('#${cartVo.pbidx}_btn_plus').on('click',function(){
-    	    number = parseInt(number)
-    	    
-            $('#${cartVo.pbidx}_pop_out').attr('value',number+=1);
-
-    		$('#${cartVo.pbidx}_pop_out').text(number);
-    	   });  
+	
+	$.ajax({
+		type: "post",
+		url: "${pageContext.request.contextPath}/cart_deleteOne.do",
+		data: {
+			"pbidx":pbidx
+		},
+		async: false,
+		success: function(data){
+			if(data == "N"){
+				alert("해당 항목의 체크박스를 체크해주세요");
+			}else{
+				
+				// 버튼 태그 이기때문에 자동 새로고침된다.
+				/*$("tr:has(input:checked)").remove();*/
+			}
+			
+		},
+		error: function(error){ alert("장바구니삭제 중 에러발생"); }
+	});
+	
+});
+    
+    
+    
     });
     </script>
  
@@ -134,7 +219,7 @@
     </td>
     <td>
     <!-- 삭제버튼 -->
-    <button id="btn_delete" value="${cartVo.pbidx}">X</button>
+    <button id="btn_delete_${cartVo.pbidx}"  value="${cartVo.pbidx}">X</button>
     </td>
     </tr>
     </form>
@@ -163,7 +248,7 @@
     
     
     </div>
-    </div>
+    
    
    
  

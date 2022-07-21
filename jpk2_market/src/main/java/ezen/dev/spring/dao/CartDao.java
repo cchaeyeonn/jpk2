@@ -46,7 +46,11 @@ public class CartDao {
      public List<Integer> cart_pidx_pc(int midx_) {
     	return sqlSession.selectList(MAPPER+".cart_pidx_pc", midx_);
     	
-    }	 
+    }
+	public int cart_amount(CartVo cartVo) {
+		
+		return sqlSession.update(MAPPER+".cart_amount", cartVo);
+	}	 
   
      
 }

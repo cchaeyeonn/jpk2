@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import ezen.dev.spring.dao.CartDao;
 import ezen.dev.spring.dao.MemberDao;
+import ezen.dev.spring.vo.CartVo;
 import ezen.dev.spring.vo.MemberVo;
 
 @Service
@@ -52,6 +53,12 @@ public class AjaxService {
 		int result=0;
 		result = memberDao.checkPw(memberVo);
 		return result;
+	}
+
+
+	public int cart_amount(CartVo cartVo) {
+		
+		return cartDao.cart_amount(cartVo);
 	}
 	
 

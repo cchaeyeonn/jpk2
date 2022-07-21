@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 import ezen.dev.spring.config.RecaptchaConfig;
 import ezen.dev.spring.service.AjaxService;
 import ezen.dev.spring.service.CartService;
+import ezen.dev.spring.vo.CartVo;
 import ezen.dev.spring.vo.MemberVo;
 
 
@@ -121,6 +122,23 @@ public class AjaxController {
 		
 		
 		if(flag != 0) result = "Y";//회원삭제 성공
+		
+		return result;
+	}
+	@PostMapping("/cart_amount.do")
+	public String cartDeleteOne(CartVo cartVo, 
+			@RequestParam("number") Integer number,
+			@RequestParam("midx_mc") Integer midx_mc,
+			@RequestParam("pidx_pc") Integer pidx_pc,HttpServletRequest request) {
+		
+		
+		String result="N";
+		cartVo.setP_amount(number);
+		cartVo.setMidx_mc(midx_mc);
+		cartVo.setPidx_pc(pidx_pc);
+		
+		int flag = ajaxService.cart_amount(cartVo);
+        if(flag == 1) result = "Y";
 		
 		return result;
 	}
