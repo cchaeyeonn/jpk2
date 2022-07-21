@@ -62,12 +62,12 @@
 <form name="joinForm" action="${pageContext.request.contextPath}/joinProcess.do" method="post">
 
    <div id="join_1">
-   <h3 style="text-align:center; margin:29px;">회원정보를 입력해주세요</h3>
+   <h3 style="text-align:center; margin:29px;">회원가입</h3><hr>
    <table>
       <tbody>
          <tr>
-            <td>아이디</td>
-            <td><input type="email" class="form-control" name="member_id" id="member_id" value="" maxlength="80" placeholder="아이디(이메일)"></td>
+            <td style="width:138px;">아이디</td>
+            <td style="width:241px;"><input type="email" class="form-control" name="member_id" id="member_id" value="" maxlength="80" placeholder="아이디(이메일)"></td>
          </tr>
          <tr>
             <td></td>
@@ -121,7 +121,7 @@
          
          <tr>
             <td>주소</td>
-            <td><input type="text" id="postcode" class="" name="postcode" placeholder="우편번호" disabled></td>
+            <td><input type="text" id="postcode" class="" name="postcode" placeholder="우편번호" disabled style="height:40px; width:100px; text-align:center; border-radius:9px;"></td>
             <td><input type="button" onclick="execDaumPostcode()" class="btn btn-outline-success" value="우편번호 찾기"></td>
          </tr>
          <tr>
@@ -171,7 +171,7 @@
          
          <tr>
          <td></td>
-         <td><input type="submit" class="btn btn-outline-success" id="trigger"  value="가입하기"><a href="${pageContext.request.contextPath}/"><input type="button" class="btn btn-outline-success" value="뒤로가기"></a></td>
+         <td><input type="submit" class="btn btn-outline-success" id="trigger"  value="가입하기" style="margin-left:117px; margin-top:22px; width:353px;"></td>
          
          
          </tr>

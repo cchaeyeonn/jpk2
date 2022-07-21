@@ -24,10 +24,11 @@
 	}
 	#findId_2 {
 	margin:auto; 
-	padding:0px 20px 0px 20px; 
+	padding:17px 20px 0px 337px; 
 	float:center; 
 	Width:60%; 
 	text-align:center;
+	margin-left:65px;
 	}
 	#findId_3 {
 	margin:auto; 
@@ -79,7 +80,7 @@
 <form name="frm">
 <div id="findId">
 <div id="findId_1">
-정보를 입력해 주세요
+<h3>아이디 찾기</h3>
 </div>
 <div id="findId_2">
 <p><input type="text" class="form-control" name="member_name" size="30" placeholder="이름을 입력해주세요"></p>
@@ -89,7 +90,7 @@
 </div>
 <div id="findId_4">
 <input type="button" class="btn btn-outline-success" value="확인" onclick="check();">
-<input type="button" class="btn btn-outline-success" value="뒤로" onclick="location.href='index.do'">
+<input type="button" class="btn btn-outline-success" value="뒤로" onclick="location.href='login.do'">
 </div>
 </div>
 </form>
