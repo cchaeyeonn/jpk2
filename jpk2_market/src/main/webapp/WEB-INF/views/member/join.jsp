@@ -62,7 +62,7 @@
 <form name="joinForm" action="${pageContext.request.contextPath}/joinProcess.do" method="post">
 
    <div id="join_1">
-   <h3>회원정보를 입력해주세요</h3>
+   <h3 style="text-align:center; margin:29px;">회원정보를 입력해주세요</h3>
    <table>
       <tbody>
          <tr>

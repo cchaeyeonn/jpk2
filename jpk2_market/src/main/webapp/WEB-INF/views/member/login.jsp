@@ -24,18 +24,19 @@
 	}
 	#login_2 {
 	margin:auto; 
-	padding:0px 20px 0px 20px; 
+	padding:17px 20px 0px 337px; 
 	float:center; 
 	Width:60%; 
 	text-align:center;
+	margin-left: 65px;
 	}
 	#login_3 {
 	margin:auto; 
-	padding:0px 0px 0px 0px; 
+	padding:10px 0px 25px 0px; 
 	float:center; 
-	Width:25%; 
+	Width:20%; 
 	text-align:right; 
-	font-size:8px;
+	font-size:18px;
 	}
 	#login_4 {
 	margin:auto; 
@@ -80,7 +81,7 @@
 <form name="frm">
 <div id="login">
 <div id="login_1">
-로그인
+<h3>로그인</h3>
 </div>
 <div id="login_2">
 <p><input type="text" class="form-control" name="member_id" size="30" placeholder="아이디를 입력해주세요"></p>
