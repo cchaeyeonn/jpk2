@@ -124,18 +124,21 @@
             <td><input type="text" id="postcode" class="" name="postcode" placeholder="우편번호" disabled style="height:40px; width:100px; text-align:center; border-radius:9px;"></td>
             <td><input type="button" onclick="execDaumPostcode()" class="btn btn-outline-success" value="우편번호 찾기"></td>
          </tr>
+         <tr><td>&nbsp;</td><td></td></tr>
          <tr>
             <td></td>
             <td><input type="text" id="member_addr_1" class="form-control" name="member_addr1" placeholder="도로명주소"></td>
             <td><input type="text" id="member_addr_2" class="form-control" name="member_addr2" placeholder="상세주소"></td>
             <td><div style="height:20px"><span id="result_addr" style="font-size:12px;"></span></div></td>
          </tr>
+         <tr><td>&nbsp;</td><td></td></tr>
          <tr>
             <td>성별</td>
             <td><input type="radio" id="custom-control custom-radio" name="member_gender" value="m"> 남자 
                 <input type="radio" id="custom-control custom-radio" name="member_gender" value="f"> 여자</td>
                 <td><div style="height:20px"><span id="result_gender" style="font-size:12px;"></span></div></td>
          </tr>
+         <tr><td>&nbsp;</td><td></td></tr>
          <tr>
             <td>생년월일</td>
             <td><input type ="date" class="form-control" id="member_birth" name="member_birth" value="" onclick="maxDate()"></td>
@@ -152,21 +155,22 @@
          
          <tr>
          <td></td>
-         <td>선택항목에 동의하지 않은 경우도 회원가입 및 일반적인 서비스를 이용할 수 있습니다.</td></tr>
+         <td>(선택항목에 동의하지 않은 경우도 회원가입 및 일반적인 서비스를 이용할 수 있습니다.)</td></tr>
+         <tr><td>&nbsp;</td><td></td></tr>
          
          <tr>
          <td><input type="checkbox" class="del-chk" name="member_term1" value="1"></td>
-         <td>이용약관 동의(필수)&nbsp;&nbsp;&nbsp;&nbsp;약관보기</td>
+         <td>이용약관 동의 (필수)&nbsp;&nbsp;&nbsp;&nbsp;약관보기</td>
          </tr>
          
          <tr>
          <td><input type="checkbox" class="del-chk" name="member_term2" value="1"></td>
-         <td>개인정보 수집·이용동의(필수) &nbsp;&nbsp;&nbsp;&nbsp;약관보기</td>
+         <td>개인정보 수집·이용동의 (필수) &nbsp;&nbsp;&nbsp;&nbsp;약관보기</td>
          </tr>
          
          <tr>
          <td><input type="checkbox" class="del-chk" value="1" name="member_term3"></td>
-         <td>본인은 만 14세 이상입니다.(필수)</td>
+         <td>본인은 만 14세 이상입니다. (필수)</td>
          </tr>
          
          <tr>
