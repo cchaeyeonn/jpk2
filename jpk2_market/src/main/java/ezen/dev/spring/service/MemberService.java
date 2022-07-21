@@ -68,6 +68,7 @@ public class MemberService {
 		sendMail.send();
 	}
 	
+	
 	public HashMap<String, Long> login(HashMap<String,String> loginInfo) {
 		return memberDao.loginMember(loginInfo);
 	}
