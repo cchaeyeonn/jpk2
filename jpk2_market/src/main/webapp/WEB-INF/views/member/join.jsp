@@ -137,7 +137,7 @@ color:red;
             <td><input type="text" id="postcode" class="" name="postcode" placeholder="우편번호" disabled style="height:40px; width:100px; text-align:center; border-radius:9px;"></td>
             <td><input type="button" onclick="execDaumPostcode()" class="btn btn-outline-success" value="우편번호 찾기"></td>
          </tr>
-         <tr><td>&nbsp;</td><td></td></tr>
+         <tr><td style="height:8px;"></td><td></td></tr>
          <tr>
             <td></td>
             <td><input type="text" id="member_addr_1" class="form-control" name="member_addr1" placeholder="도로명주소"></td>
