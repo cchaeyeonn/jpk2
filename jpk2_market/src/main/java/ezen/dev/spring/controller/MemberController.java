@@ -63,7 +63,7 @@ public class MemberController {
 		out.println("<script>alert('가입하실 때 작성하신 이메일에서 인증을 해주세요.');</script>");
 		out.flush();
 		memberService.join(memberVo);
-		return "index";
+		return "member/login";
 	}
 	
 	@RequestMapping(value = "/emailConfirm", method = RequestMethod.GET)
