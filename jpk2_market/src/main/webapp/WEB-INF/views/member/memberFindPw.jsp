@@ -49,7 +49,13 @@
 	min-height:1040px;
 	}
 </style>
-
+    <!-- jquery 스크립트 -->
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script>
+$(document).on('click','#trigger',function(){if($("#member_id").val() != "",$("#member_email").val() != ""){
+        $("#trigger").hide();
+        }});
+</script>
 <script>
   function check(){  
   var fm = document.frm;   
@@ -88,7 +94,7 @@
 <div id="findPw_3">
 </div>
 <div id="findPw_4">
-<input type="button" class="btn btn-outline-success" value="확인" onclick="check();">
+<input type="button" id="trigger" class="btn btn-outline-success" value="확인" onclick="check();">
 <input type="button" class="btn btn-outline-success" value="뒤로" onclick="location.href='index.do'">
 </div>
 </div>
