@@ -45,6 +45,13 @@ color:red;
 	color: #6e6e6e;
 }
 
+#terms{
+font-size: 12px;
+	color: #6e6e6e;
+}
+
+
+
 </style>
 <!-- 외부 js에서 ${pageContext.request.contextPath}를 사용할 수 있게 세션에 값을 저장 -->
 <script type="text/javascript" charset="utf-8">
@@ -80,7 +87,7 @@ color:red;
       <tbody>
          <tr>
             <td style="width:138px;">아이디<span id="star">*</span></td>
-            <td style="width:241px;"><input type="email" class="form-control" name="member_id" id="member_id" value="" maxlength="80" placeholder="아이디(이메일)"></td>
+            <td style="width:268px;"><input type="email" class="form-control" name="member_id" id="member_id" value="" maxlength="80" placeholder="이메일 형식으로 입력해주세요"></td>
          </tr>
          <tr>
             <td></td>
@@ -89,7 +96,7 @@ color:red;
          
          <tr>
             <td>비밀번호<span id="star">*</span></td>
-            <td><input type="password" class="form-control" name="member_pw" id="member_password1" value="" maxlength="20" placeholder="비밀번호"></td>
+            <td><input type="password" class="form-control" name="member_pw" id="member_password1" value="" maxlength="20" placeholder="8~16자 영문 숫자 조합으로 입력해주세요"></td>
          </tr>
          <tr>
             <td></td>   
@@ -98,7 +105,7 @@ color:red;
          
          <tr>
             <td>비밀번호확인<span id="star">*</span></td>
-            <td><input type="password" class="form-control" name="member_pw2" id="member_password2" value="" maxlength="20" placeholder="비밀번호 확인"></td>
+            <td><input type="password" class="form-control" name="member_pw2" id="member_password2" value="" maxlength="20" placeholder="비밀번호를 한번 더 입력해주세요"></td>
          </tr>
          <tr>
             <td></td>   
@@ -107,7 +114,7 @@ color:red;
          
          <tr>
             <td>이름<span id="star">*</span></td>
-            <td><input type="text" class="form-control" id="member_name" name="member_name" maxlength="40" value="" placeholder="이름"></td>
+            <td><input type="text" class="form-control" id="member_name" name="member_name" maxlength="40" value="" placeholder="이름을 입력해주세요"></td>
          </tr>
          <tr>
             <td></td>   
@@ -116,7 +123,7 @@ color:red;
          
          <tr>
             <td>이메일<span id="star">*</span></td>
-            <td><input type="email" class="form-control" id="member_email" name="member_email" maxlength="80" value="" placeholder="이메일"></td>
+            <td><input type="email" class="form-control" id="member_email" name="member_email" maxlength="80" value="" placeholder="예) jpk2@naver.com"></td>
          </tr>
          <tr>
             <td></td>
@@ -125,7 +132,7 @@ color:red;
          
          <tr>
             <td>휴대폰<span id="star">*</span></td>
-            <td><input type="text" class="form-control" id="member_phone" name="member_phone"  value="" autocomplete="off" placeholder="휴대폰 번호"></td>
+            <td><input type="text" class="form-control" id="member_phone" name="member_phone"  value="" autocomplete="off" placeholder="숫자만 입력해주세요"></td>
          </tr>
          <tr>
             <td></td>   
@@ -134,14 +141,14 @@ color:red;
          
          <tr>
             <td>주소<span id="star">*</span></td>
-            <td><input type="text" id="postcode" class="" name="postcode" placeholder="우편번호" disabled style="height:40px; width:100px; text-align:center; border-radius:9px;"></td>
-            <td><input type="button" onclick="execDaumPostcode()" class="btn btn-outline-success" value="우편번호 찾기"></td>
+            <td><input type="text" id="postcode" class="" name="postcode" placeholder="우편번호" disabled style="height:40px; width:133px; text-align:center; border-radius:9px; font-size:13px;">
+            <input type="button" onclick="execDaumPostcode()" class="btn btn-outline-success" value="우편번호 찾기" style="margin-top:-2px; margin-left:4px;"></td><td></td>
          </tr>
          <tr><td style="height:8px;"></td><td></td></tr>
          <tr>
             <td></td>
-            <td><input type="text" id="member_addr_1" class="form-control" name="member_addr1" placeholder="도로명주소"></td>
-            <td><input type="text" id="member_addr_2" class="form-control" name="member_addr2" placeholder="상세주소"></td>
+            <td><input type="text" id="member_addr_1" class="form-control" name="member_addr1" placeholder="도로명주소"><input type="text" id="member_addr_2" class="form-control" name="member_addr2" placeholder="상세주소"></td>
+            <td></td>
             <td><div style="height:20px"><span id="result_addr" style="font-size:12px;"></span></div></td>
          </tr>
          <tr><td>&nbsp;</td><td></td></tr>
@@ -173,12 +180,12 @@ color:red;
          
          <tr>
          <td><input type="checkbox" class="del-chk" name="member_term1" value="1"></td>
-         <td>이용약관 동의 (필수)<span id="star">*</span>&nbsp;&nbsp;&nbsp;&nbsp;약관보기</td>
+         <td>이용약관 동의 (필수)<span id="star">*</span>&nbsp;&nbsp;&nbsp;&nbsp;<span id="terms">약관보기</span></td>
          </tr>
          
          <tr>
          <td><input type="checkbox" class="del-chk" name="member_term2" value="1"></td>
-         <td>개인정보 수집·이용동의 (필수)<span id="star">*</span> &nbsp;&nbsp;&nbsp;&nbsp;약관보기</td>
+         <td>개인정보 수집·이용동의 (필수)<span id="star">*</span> &nbsp;&nbsp;&nbsp;&nbsp;<span id="terms">약관보기</span></td>
          </tr>
          
          <tr>
