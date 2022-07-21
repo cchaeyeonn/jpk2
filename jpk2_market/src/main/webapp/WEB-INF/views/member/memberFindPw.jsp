@@ -24,10 +24,11 @@
 	}
 	#findPw_2 {
 	margin:auto; 
-	padding:0px 20px 0px 20px; 
+	padding:17px 20px 0px 339px; 
 	float:center; 
 	Width:60%; 
 	text-align:center;
+	margin-left:65px;
 	}
 	#findPw_3 {
 	margin:auto; 
@@ -87,7 +88,7 @@ $(document).on('click','#trigger',function(){if($("#member_id").val() != "",$("#
 <form name="frm">
 <div id="findPw">
 <div id="findPw_1">
-정보를 입력해 주세요
+<h3>비밀번호 찾기</h3>
 </div>
 <div id="findPw_2">
 <p><input type="text" class="form-control" id="member_id" name="member_id" size="30" placeholder="아이디를 입력해주세요"></p>
@@ -97,7 +98,7 @@ $(document).on('click','#trigger',function(){if($("#member_id").val() != "",$("#
 </div>
 <div id="findPw_4">
 <input type="button" id="trigger" class="btn btn-outline-success" value="확인" onclick="check();">
-<input type="button" class="btn btn-outline-success" value="뒤로" onclick="location.href='index.do'">
+<input type="button" class="btn btn-outline-success" value="뒤로" onclick="location.href='login.do'">
 </div>
 </div>
 </form>

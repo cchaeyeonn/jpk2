@@ -24,6 +24,11 @@
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="resources/css/styles.css" rel="stylesheet" />
         
+        <!-- 배너 받아오는 부분 -->
+        <script src="${pageContext.request.contextPath}/resources/js/banner.js"></script>
+        
+
+        
         
 <style>
 
@@ -48,13 +53,47 @@ a{text-decoration:none;} /* a태그에 텍스트 밑줄을 없애줌*/
     text-align: center;
 }
 
+/* .top_banner{
+	top:0px;
+	color:black;
+	background-color:#bb9292;
+	position:fixed;
+	width:100%;
+	z-index:10005;
+	
+}
+
+.banner_inner{
+	margin-left:300px;
+	margin-right:321px;
+	
+}
+
+.close_banner{
+	width:10px;
+	color:black;
+	z-index:1006;
+	position:fixed;
+	float:right;
+	margin-left:1270px;
+}
+
+.banner_content{
+	float:left;
+} */
 </style>
     
 
 
 </head>
 <body>
-
+<!-- <div class="top_banner">
+	<div class="banner_inner">
+		<div class="banner_content">상단배너</div>
+		<div class="close_banner">X</div>
+	
+	</div>
+</div> -->
 <!-- Navigation-->
 <!-- 상단 로고, 로그인부분 시작-->
         <nav class="navbar navbar-expand-lg bg-white text-uppercase fixed-top" id="mainNav">
