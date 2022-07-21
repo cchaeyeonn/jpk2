@@ -34,6 +34,7 @@
     padding-block: 20px;
 } 
 
+<<<<<<< HEAD
 
 
 .chk_all,
@@ -130,6 +131,17 @@ input[id="del-chk3"]:checked + .del-chk3::before{
   100% {
     height: 24px;
   }
+=======
+#star{
+color:red;
+}
+
+
+#star_info{
+	margin-left:531px;
+	font-size: 12px;
+	color: #6e6e6e;
+>>>>>>> branch 'master' of https://github.com/cchaeyeonn/jpk2.git
 }
 
 </style>
@@ -160,11 +172,13 @@ input[id="del-chk3"]:checked + .del-chk3::before{
 <form name="joinForm" action="${pageContext.request.contextPath}/joinProcess.do" method="post">
 
    <div id="join_1">
-   <h3 style="text-align:center; margin:29px;">회원가입</h3><hr>
+   <h3 style="text-align:center; margin:29px;">회원가입</h3>
+   <div id="star_info"><span id="star">*</span>필수입력사항</div>
+   <hr style="margin-top: 0px; !important;">
    <table>
       <tbody>
          <tr>
-            <td style="width:138px;">아이디</td>
+            <td style="width:138px;">아이디<span id="star">*</span></td>
             <td style="width:241px;"><input type="email" class="form-control" name="member_id" id="member_id" value="" maxlength="80" placeholder="아이디(이메일)"></td>
          </tr>
          <tr>
@@ -173,7 +187,7 @@ input[id="del-chk3"]:checked + .del-chk3::before{
          </tr>
          
          <tr>
-            <td>비밀번호</td>
+            <td>비밀번호<span id="star">*</span></td>
             <td><input type="password" class="form-control" name="member_pw" id="member_password1" value="" maxlength="20" placeholder="비밀번호"></td>
          </tr>
          <tr>
@@ -182,7 +196,7 @@ input[id="del-chk3"]:checked + .del-chk3::before{
          </tr>
          
          <tr>
-            <td>비밀번호확인</td>
+            <td>비밀번호확인<span id="star">*</span></td>
             <td><input type="password" class="form-control" name="member_pw2" id="member_password2" value="" maxlength="20" placeholder="비밀번호 확인"></td>
          </tr>
          <tr>
@@ -191,7 +205,7 @@ input[id="del-chk3"]:checked + .del-chk3::before{
          </tr>
          
          <tr>
-            <td>이름</td>
+            <td>이름<span id="star">*</span></td>
             <td><input type="text" class="form-control" id="member_name" name="member_name" maxlength="40" value="" placeholder="이름"></td>
          </tr>
          <tr>
@@ -200,7 +214,7 @@ input[id="del-chk3"]:checked + .del-chk3::before{
          </tr>
          
          <tr>
-            <td>이메일</td>
+            <td>이메일<span id="star">*</span></td>
             <td><input type="email" class="form-control" id="member_email" name="member_email" maxlength="80" value="" placeholder="이메일"></td>
          </tr>
          <tr>
@@ -209,7 +223,7 @@ input[id="del-chk3"]:checked + .del-chk3::before{
          </tr>
          
          <tr>
-            <td>휴대폰</td>
+            <td>휴대폰<span id="star">*</span></td>
             <td><input type="text" class="form-control" id="member_phone" name="member_phone"  value="" autocomplete="off" placeholder="휴대폰 번호"></td>
          </tr>
          <tr>
@@ -218,11 +232,11 @@ input[id="del-chk3"]:checked + .del-chk3::before{
          </tr>
          
          <tr>
-            <td>주소</td>
+            <td>주소<span id="star">*</span></td>
             <td><input type="text" id="postcode" class="" name="postcode" placeholder="우편번호" disabled style="height:40px; width:100px; text-align:center; border-radius:9px;"></td>
             <td><input type="button" onclick="execDaumPostcode()" class="btn btn-outline-success" value="우편번호 찾기"></td>
          </tr>
-         <tr><td>&nbsp;</td><td></td></tr>
+         <tr><td style="height:8px;"></td><td></td></tr>
          <tr>
             <td></td>
             <td><input type="text" id="member_addr_1" class="form-control" name="member_addr1" placeholder="도로명주소"></td>
@@ -233,14 +247,14 @@ input[id="del-chk3"]:checked + .del-chk3::before{
          </tr>
          <tr><td>&nbsp;</td><td></td></tr>
          <tr>
-            <td>성별</td>
+            <td>성별<span id="star">*</span></td>
             <td><input type="radio" id="custom-control custom-radio" name="member_gender" value="m"> 남자 
                 <input type="radio" id="custom-control custom-radio" name="member_gender" value="f"> 여자</td>
                 <td><div style="height:20px"><span id="result_gender" style="font-size:12px;"></span></div></td>
          </tr>
          <tr><td>&nbsp;</td><td></td></tr>
          <tr>
-            <td>생년월일</td>
+            <td>생년월일<span id="star">*</span></td>
             <td><input type ="date" class="form-control" id="member_birth" name="member_birth" value="" onclick="maxDate()"></td>
             <td><div style="height:20px"><span id="result_birth" style="font-size:12px;"></span></div></td>
          </tr>
@@ -261,24 +275,39 @@ input[id="del-chk3"]:checked + .del-chk3::before{
          <tr><td>&nbsp;</td><td></td></tr>
          
          <tr>
+<<<<<<< HEAD
          <td>
          <input type="checkbox" id="del-chk" class="del-chk" name="member_term1" value="1">
          <label for="del-chk" class="del-chk1"></label></td>
          <td>이용약관 동의 (필수)&nbsp;&nbsp;&nbsp;&nbsp;약관보기</td>
+=======
+         <td><input type="checkbox" class="del-chk" name="member_term1" value="1"></td>
+         <td>이용약관 동의 (필수)<span id="star">*</span>&nbsp;&nbsp;&nbsp;&nbsp;약관보기</td>
+>>>>>>> branch 'master' of https://github.com/cchaeyeonn/jpk2.git
          </tr>
          
          <tr>
+<<<<<<< HEAD
          <td>
          <input type="checkbox" id="del-chk2" class="del-chk" name="member_term2" value="1">
          <label for="del-chk2" class="del-chk2"></label></td>
          <td>개인정보 수집·이용동의 (필수) &nbsp;&nbsp;&nbsp;&nbsp;약관보기</td>
+=======
+         <td><input type="checkbox" class="del-chk" name="member_term2" value="1"></td>
+         <td>개인정보 수집·이용동의 (필수)<span id="star">*</span> &nbsp;&nbsp;&nbsp;&nbsp;약관보기</td>
+>>>>>>> branch 'master' of https://github.com/cchaeyeonn/jpk2.git
          </tr>
          
          <tr>
+<<<<<<< HEAD
          <td>
          <input type="checkbox" id="del-chk3" class="del-chk" name="member_term3" value="1" >
          <label for="del-chk3" class="del-chk3"></label></td>
          <td>본인은 만 14세 이상입니다. (필수)</td>
+=======
+         <td><input type="checkbox" class="del-chk" value="1" name="member_term3"></td>
+         <td>본인은 만 14세 이상입니다. (필수)<span id="star">*</span></td>
+>>>>>>> branch 'master' of https://github.com/cchaeyeonn/jpk2.git
          </tr>
          
          <tr>
