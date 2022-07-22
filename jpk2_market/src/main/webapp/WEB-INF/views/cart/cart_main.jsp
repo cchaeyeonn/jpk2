@@ -62,7 +62,7 @@
     <!-- 헤더 연결 -->
     <jsp:include page="../header.jsp"></jsp:include>
  
- 	<form name="orderAddForm" action="${pageContext.request.contextPath}/ordermain.do" method="post">
+ 	<form name="orderAddForm" action="${pageContext.request.contextPath}/orderSheet.do" method="post">
  	
     <div id="cart_inner">
     <h2 style="text-align:center;"> 장바구니</h2>
@@ -192,7 +192,7 @@ $("#btn_delete_${cartVo.pbidx}").click(function(){
  
     <tr id="${cartVo.pbidx}_product_target">
     <td>
-    <input type="checkbox" class="del-chk" value="${cartVo.pbidx}">
+    <input type="checkbox" class="del-chk" name="pbidx" value="${cartVo.pbidx}">
     </td>
     <td>
     <!-- 사진 -->
