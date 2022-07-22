@@ -30,10 +30,10 @@ public class OrderVo {
 	public void setOrder_delyndate(String order_delyndate) {
 		this.order_delyndate = order_delyndate;
 	}
-	public String getPbidx_pbo() {
+	public int getPbidx_pbo() {
 		return pbidx_pbo;
 	}
-	public void setPbidx_pbo(String pbidx_pbo) {
+	public void setPbidx_pbo(int pbidx_pbo) {
 		this.pbidx_pbo = pbidx_pbo;
 	}
 	
