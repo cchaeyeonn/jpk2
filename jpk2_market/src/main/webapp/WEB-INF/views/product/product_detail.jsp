@@ -54,7 +54,7 @@
 		${productVo.p_name}
 		<hr>
 		상품 가격<p/>
-		${productVo.p_price}<p/>
+		${productVo.p_price}원<p/>
 		<hr>
 		상품 판매 단위<p/>
 		${productVo.p_unit}

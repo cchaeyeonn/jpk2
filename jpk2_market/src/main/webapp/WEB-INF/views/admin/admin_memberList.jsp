@@ -36,7 +36,7 @@
 <h3>회원목록</h3>
 <hr/>
 <div id="memberlist_table">
-<table border="1px" stlye="text-align:center;">
+<table border="1px" class="table table-hover" stlye="text-align:center;" >
 	<tr>
 		<th>회원번호</th><th>이름</th><th>아이디</th><th>비밀번호</th><th>회원등급</th>
 		<th>전화번호</th><th>가입일시</th><th>삭제여부</th><th>삭제일</th>

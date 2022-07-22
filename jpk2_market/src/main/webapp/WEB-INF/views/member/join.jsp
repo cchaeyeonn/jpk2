@@ -123,7 +123,7 @@ input[id="del-chk3"]:checked + .del-chk3::before{
   animation: topcheck 0.4s ease 0s forwards;
 }
 
-  input[type=checkbox] {
+   input[type=checkbox] {
    display: none;
 }
 
