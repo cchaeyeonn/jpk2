@@ -1,6 +1,6 @@
 package ezen.dev.spring.vo;
 
-public class payVo {
+public class PayVo {
 	private int payidx;
 	private String pay_price;
 	private String pay_way;

@@ -5,7 +5,7 @@ public class OrderVo {
 	private String order_date;
 	private String order_delyn;
 	private String order_delyndate;
-	private String pbidx_po;
+	private String pbidx_pbo;
 	public int getOidx() {
 		return oidx;
 	}
@@ -30,11 +30,11 @@ public class OrderVo {
 	public void setOrder_delyndate(String order_delyndate) {
 		this.order_delyndate = order_delyndate;
 	}
-	public String getPbidx_po() {
-		return pbidx_po;
+	public String getPbidx_pbo() {
+		return pbidx_pbo;
 	}
-	public void setPbidx_po(String pbidx_po) {
-		this.pbidx_po = pbidx_po;
+	public void setPbidx_pbo(String pbidx_pbo) {
+		this.pbidx_pbo = pbidx_pbo;
 	}
 	
 	
