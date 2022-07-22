@@ -20,6 +20,7 @@
 		height:1000px; 
 		padding-top:260px;
 		}
+		
 	#product_img{
 			float:left; 
 			width:50%; 
@@ -61,14 +62,14 @@
     <!-- 헤더 연결 -->
     <jsp:include page="../header.jsp"></jsp:include>
  
- 	<form>
+ 	<form name="orderAddForm" action="${pageContext.request.contextPath}/ordermain.do" method="post">
  	
     <div id="cart_inner">
     <h2 style="text-align:center;"> 장바구니</h2>
     <input type="checkbox" id="chk_all">전체 선택 ㅣ 
     <!--<input type="button" value="선택 삭제" id="cart_delete">-->
-    <button id="cart_delete"  value="선택 삭제">선택 삭제</button><hr>
-    </form>
+    <button id="cart_delete" type="button" value="선택 삭제">선택 삭제</button><hr>
+    
     
        
     <table id="target">
@@ -175,8 +176,7 @@ $("#btn_delete_${cartVo.pbidx}").click(function(){
 				alert("해당 항목의 체크박스를 체크해주세요");
 			}else{
 				
-				// 버튼 태그 이기때문에 자동 새로고침된다.
-				/*$("tr:has(input:checked)").remove();*/
+				location.reload();
 			}
 			
 		},
@@ -208,9 +208,9 @@ $("#btn_delete_${cartVo.pbidx}").click(function(){
     <td>
     <!-- 수량 버튼 -->
     
-    <input type="button" id="${cartVo.pbidx}_btn_minus" value="-">
+    <input type="button" type="button" id="${cartVo.pbidx}_btn_minus" value="-">
     <input type="text"  id="${cartVo.pbidx}_pop_out" class="amount" value="${cartVo.p_amount}" readonly="readonly" style="text-align:center;"/>
-    <input type="button" id="${cartVo.pbidx}_btn_plus" value="+">
+    <input type="button" type="button" id="${cartVo.pbidx}_btn_plus" value="+">
    
     </td>
     <td>
@@ -219,7 +219,7 @@ $("#btn_delete_${cartVo.pbidx}").click(function(){
     </td>
     <td>
     <!-- 삭제버튼 -->
-    <button id="btn_delete_${cartVo.pbidx}"  value="${cartVo.pbidx}">X</button>
+    <button id="btn_delete_${cartVo.pbidx}" type="button" value="${cartVo.pbidx}">X</button>
     </td>
     </tr>
     </form>
@@ -234,22 +234,45 @@ $("#btn_delete_${cartVo.pbidx}").click(function(){
     </tr>
     <tr>
     <td>상품할인금액</td>
-    <td></td>
+    <c:set var="sale" value="0"/>
+    <td id="sale"><c:out value="${sale}"/>원</td>
     </tr>
     <tr>
     <td>배송비</td>
-    <td></td>
+    <c:set var="delivery_fee" value="0"/>
+    <c:choose>
+    <c:when test="${total == 0 }">
+    <c:set var="delivery_fee" value="0"/>   
+    </c:when>
+    <c:when test="${total >= 50000 }">
+    <c:set var="delivery_fee" value="0"/>   
+    </c:when>
+    <c:when test="${total < 50000 }">
+    <c:set var="delivery_fee" value="3000"/>
+    </c:when>
+    </c:choose>
+    <td id="delivery_fee"><c:out value="${delivery_fee}"/>원</td>
     </tr>
     <tr>
     <td>결제예정금액</td>
-    <td></td>
+    <td>${total - sale + delivery_fee}원</td>
+    </tr>
+    <tr>
+    <td>
+    <input type="submit" value="주문하기">
+    </td>
     </tr>
     </table>
-    
-    
     </div>
-    
+     <input type="hidden" id="total"value="${total}">
+     <input type="hidden" id="sale" value="${sale}">
+     <input type="hidden" id="delivery_fee" value="${delivery_fee}">
+     <input type="hidden" id="final_pay" value="${total - sale + delivery_fee}">
+    </div>
+     </form>
    
+   
+  
    
  
     <!-- 푸터 연결 -->

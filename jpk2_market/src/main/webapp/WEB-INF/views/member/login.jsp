@@ -93,7 +93,7 @@
 <a href="findId.do">아이디 찾기</a> | <a href="findPw.do">비밀번호 찾기</a></div>
 <div id="login_4">
 
-<input type="button" class="btn btn-outline-success" id="login" value="로그인" onclick="check();">
+<input type="button" class="btn btn-outline-success" value="로그인" onclick="check();">
 <input type="button" class="btn btn-outline-success" value="회원가입" onclick="location.href='join.do'"><p/>
 </div>
 </div>
