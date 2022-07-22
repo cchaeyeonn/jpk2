@@ -7,9 +7,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class OrderController {
 	
-	@GetMapping("/ordersheet.do")//get諛⑹떇 �슂泥� 泥섎━
-	public String ordersheet() {
-		return "order/ordersheet";
+	@GetMapping("/orderSheet.do")//get諛⑹떇 �슂泥� 泥섎━
+	public String orderSheet() {
+		return "order/orderSheet";
 	}
 	
 	
