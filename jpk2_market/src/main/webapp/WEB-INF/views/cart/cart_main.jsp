@@ -62,7 +62,7 @@
     <!-- 헤더 연결 -->
     <jsp:include page="../header.jsp"></jsp:include>
  
- 	<form name="orderAddForm" action="${pageContext.request.contextPath}/orderSheet.do" method="post">
+ 	<form name="orderAddForm" action="${pageContext.request.contextPath}/ordermain.do" method="post">
  	
     <div id="cart_inner">
     <h2 style="text-align:center;"> 장바구니</h2>
@@ -192,7 +192,7 @@ $("#btn_delete_${cartVo.pbidx}").click(function(){
  
     <tr id="${cartVo.pbidx}_product_target">
     <td>
-    <input type="checkbox" class="del-chk" name="pbidx" id="pbidx" value="${cartVo.pbidx}">
+    <input type="checkbox" class="del-chk" value="${cartVo.pbidx}">
     </td>
     <td>
     <!-- 사진 -->
@@ -203,14 +203,13 @@ $("#btn_delete_${cartVo.pbidx}").click(function(){
     <td>
     
     <!-- 상품명 -->
-    <input type="hidden" id="p_name" name="p_name" value="${cartVo.p_name}">
     ${cartVo.p_name}
     </td>
     <td>
     <!-- 수량 버튼 -->
     
     <input type="button" type="button" id="${cartVo.pbidx}_btn_minus" value="-">
-    <input type="text"  id="${cartVo.pbidx}_pop_out" class="amount" value="${cartVo.p_amount}" name="${cartVo.p_amount}" readonly="readonly" style="text-align:center;"/>
+    <input type="text"  id="${cartVo.pbidx}_pop_out" class="amount" value="${cartVo.p_amount}" readonly="readonly" style="text-align:center;"/>
     <input type="button" type="button" id="${cartVo.pbidx}_btn_plus" value="+">
    
     </td>

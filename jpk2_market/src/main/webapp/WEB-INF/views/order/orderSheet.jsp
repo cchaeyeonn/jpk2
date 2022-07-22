@@ -32,12 +32,9 @@
 주문상품<p/>
 <hr>
 <table>
-<c:forEach items="${cartList}" var="cartVo" varStatus="status">
 <tr>
-<td><div><img class="img-fluid2" src="${pageContext.request.contextPath}/resources/product_image/${cartVo.p_system_filename}" alt="..."  /></div></td>
-<td>${cartVo.p_name}</td><td>${cartVo.p_amount}</td><td>${cartVo.p_price}</td>
+<td>사진</td><td>이름</td><td>개수</td><td>가격</td>
 </tr>
-</c:forEach>
 </table>
 </div>
 <div id="orderer-info">
@@ -46,13 +43,13 @@
 <hr>
 <table>
 <tr>
-<td>성함</td><td>${memberVo.member_name}</td>
+<td></td><td></td>
 </tr>
 <tr>
-<td>휴대폰</td><td>${memberVo.member_phone}</td>
+<td></td><td></td>
 </tr>
 <tr>
-<td>이메일</td><td>${memberVo.member_email}</td>
+<td></td><td></td>
 </tr>
 </table>
 </div>
