@@ -6,9 +6,11 @@
 
 <style>
 #memberInfo_inner{
-	min-height:1040px;
-	margin-left:315px;
+	 min-height:1040px;
+	/*margin-left:315px; */
 	padding-top:260px;
+	margin-left:33%;
+	margin-right:33%;
 }
 
 </style>
@@ -21,10 +23,11 @@
 	<jsp:include page="../header.jsp"></jsp:include>
 	
 	<div id="memberInfo_inner">
+	<div id="info_inner" style="text-align:center;">
 	<h3>회원정보</h3>
-	<table border="1px">
+	<table border="1px" class="table table-hover" style="width:100%;">
 		<tr>
-			<td>아이디</td>
+			<td id="td_l" style="width:150px;">아이디</td>
 			<!-- JSP페이지에서는 Controller에서 생성된 Model객체를 EL을 이용해서 사용 가능 -->
 			<td>${memberVo.member_id}</td>
 		</tr>
@@ -33,7 +36,7 @@
 			<td>${memberVo.member_name}</td>
 		</tr>
 		<tr>
-			<td>이메알</td>
+			<td>이메일</td>
 			<td>${memberVo.member_email}</td>
 		</tr>
 		<tr>
@@ -43,7 +46,7 @@
 	</table><p/>
 	<a href="${pageContext.request.contextPath}/updatePw.do">비밀번호 변경</a>&nbsp;&nbsp;
 	<a href="${pageContext.request.contextPath}/deleteMember.do">회원탈퇴</a>
-	
+	</div>
 	</div>
 
 	<!-- 푸터 연결 -->

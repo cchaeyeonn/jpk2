@@ -13,13 +13,13 @@
 
             <div class="container">
                 <!-- Portfolio Section Heading -->
-                <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">이 상품 어때요?</h2>
+                <h2 id="p_list_title" style="padding-top:20px; padding-bottom:75px;" class="page-section-heading text-center text-uppercase text-secondary mb-0">이 상품 어때요?</h2>
                 <!-- Icon Divider -->
-                <div class="divider-custom">
+                <!-- <div class="divider-custom">
                     <div class="divider-custom-line"></div>
                     <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
                     <div class="divider-custom-line"></div>
-                </div>
+                </div> -->
                <!--  Portfolio Grid Items -->
                 <div class="row justify-content-center">
                     <!-- Portfolio Item 1 -->
@@ -31,7 +31,7 @@
                                 <div class="portfolio-item-caption-content text-center text-black"><!-- <i class="fas fa-plus fa-3x"></i> -->
                                 <img class="img-fluid" src="${pageContext.request.contextPath}/resources/product_image/${productVo.p_system_filename}" alt="..."  /><p/>
                                 ${productVo.p_name}<p/>
-                          		${productVo.p_price}<p/>
+                          		${productVo.p_price}원<p/>
                                 </div>
                             </div>
                         </div></a>
