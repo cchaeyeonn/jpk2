@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace = "ezen.dev.spring.admin">
+
+	<select id="getMemberList" resultType="memberVo">
+		select * from member
+	</select>
+	
+	<insert id="addProduct" parameterType="productVo">
+		insert into fm_product(p_name, p_filename, p_price, p_unit, p_weight, p_delivery, p_package, p_allergy, p_limitdate, p_type, p_tag, p_system_filename, midx_mp) 
+		 values(#{p_name}, #{p_filename}, #{p_price}, #{p_unit}, #{p_weight}, #{p_delivery}, #{p_package}, #{p_allergy}, #{p_limitdate}, #{p_type}, #{p_tag}, #{p_system_filename}, #{midx_mp})
+	</insert>
+		<select id="getProductList" parameterType="Integer" resultType="productVo">
+		select * from fm_product a inner join fm_member b on a.midx_mp = b.midx where a.midx_mp = #{midx} and a.p_delyn = 'N'
+	</select>
+	<update id="delProduct" parameterType="productVo">
+		update fm_product set p_delyn = 'Y' where pidx= #{pidx} and midx_mp = #{midx_mp}
+	</update>
+
+</mapper>

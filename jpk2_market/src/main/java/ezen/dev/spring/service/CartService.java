@@ -44,5 +44,11 @@ public class CartService {
 		 
 		return  (ArrayList<Integer>) cartDao.cart_pidx_pc(midx_);
 	}
+
+
+
+	public List<CartVo> getSomeCartList(HashMap<String, Integer> cartInfo) {
+		return cartDao.getSomeCartList(cartInfo);
+	}
 	
 }
