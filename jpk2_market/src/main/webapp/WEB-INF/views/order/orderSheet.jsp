@@ -23,7 +23,7 @@
         <link href="resources/css/styles.css" rel="stylesheet" />
 </head>
 <body>
-<c:import url="/header.do"></c:import> 
+    <jsp:include page="../header.jsp"></jsp:include>
 <div id="wrap">
 <h1 align="center">주문서</h1>
 <form>
@@ -75,7 +75,7 @@
 </div>
 </form>
 </div>
-<c:import url="/footer.do"></c:import>
+    <jsp:include page="../footer.jsp"></jsp:include>
  <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
