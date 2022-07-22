@@ -23,7 +23,7 @@
         <link href="resources/css/styles.css" rel="stylesheet" />
 </head>
 <body>
-    <jsp:include page="../header.jsp"></jsp:include>
+<c:import url="/header.do"></c:import> 
 <div id="wrap">
 <h1 align="center">주문서</h1>
 <form>
@@ -32,9 +32,12 @@
 주문상품<p/>
 <hr>
 <table>
+<c:forEach items="${cartList}" var="cartVo" varStatus="status">
 <tr>
-<td>사진</td><td>이름</td><td>개수</td><td>가격</td>
+<td><div><img class="img-fluid2" src="${pageContext.request.contextPath}/resources/product_image/${cartVo.p_system_filename}" alt="..."  /></div></td>
+<td>${cartVo.p_name}</td><td>${cartVo.p_amount}</td><td>${cartVo.p_price}</td>
 </tr>
+</c:forEach>
 </table>
 </div>
 <div id="orderer-info">
@@ -43,13 +46,13 @@
 <hr>
 <table>
 <tr>
-<td></td><td></td>
+<td>성함</td><td>${memberVo.member_name}</td>
 </tr>
 <tr>
-<td></td><td></td>
+<td>휴대폰</td><td>${memberVo.member_phone}</td>
 </tr>
 <tr>
-<td></td><td></td>
+<td>이메일</td><td>${memberVo.member_email}</td>
 </tr>
 </table>
 </div>
@@ -72,7 +75,7 @@
 </div>
 </form>
 </div>
-    <jsp:include page="../footer.jsp"></jsp:include>
+<c:import url="/footer.do"></c:import>
  <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
