@@ -50,6 +50,10 @@ public class CartDao {
 	public int cart_amount(CartVo cartVo) {
 		
 		return sqlSession.update(MAPPER+".cart_amount", cartVo);
+	}
+	public List<CartVo> getSomeCartList(HashMap<String, Integer> cartInfo) {
+
+		return sqlSession.selectList(MAPPER+".getSomeCartList", cartInfo);
 	}	 
   
      
