@@ -57,8 +57,8 @@ public class OrderController {
 		CartInfo.put("midx", midx);
 		CartInfo.put("pbidx", pbidx);
 		List<CartVo> cartList = cartService.getSomeCartList(CartInfo);
-		model.addAttribute(memberVo);
-		model.addAttribute(cartList);
+		model.addAttribute("memberVo", memberVo);
+		model.addAttribute("cartList", cartList);
 		
 		return"order/orderSheet";
 		
