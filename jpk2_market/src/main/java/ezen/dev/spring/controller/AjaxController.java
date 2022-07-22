@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import ezen.dev.spring.config.RecaptchaConfig;
 import ezen.dev.spring.service.AjaxService;
 import ezen.dev.spring.service.CartService;
 import ezen.dev.spring.vo.CartVo;
@@ -25,12 +24,9 @@ import ezen.dev.spring.vo.MemberVo;
 
 //@Controller
 @RestController
-@PropertySource("classpath:recaptchar.properties")
 public class AjaxController {
 	
 	private AjaxService ajaxService;
-	@Value("${recaptcha.secretKey}")
-	private String secretKey;
 	
 	@Autowired 
 	public AjaxController(AjaxService ajaxService) {
