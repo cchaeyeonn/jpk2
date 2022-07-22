@@ -36,8 +36,9 @@ $("#cart_delete").click(function(){
 					if(data == "N"){
 						alert("장바구니삭제 실패!");
 					}else{
+						location.reload();
 						
-						$("tr:has(input:checked)").remove();
+						
 						
 					}
 					
