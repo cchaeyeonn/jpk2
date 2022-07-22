@@ -16,6 +16,14 @@ public class HomeController {
 	public String index2() {
 		return "index";
 	}
+	@GetMapping("/header.do")
+	public String header() {
+		return "header";
+	}
+	@GetMapping("/footer.do")
+	public String footer() {
+		return "footer";
+	}
 
 	
 	//고객센터
