@@ -143,19 +143,6 @@ public class AjaxController {
 		return result;
 	}
 	
-	@PostMapping("/verifyRecaptcha.do")
-	public int VerifyRecaptcha(HttpServletRequest request) {
-		RecaptchaConfig.setSecretKey(secretKey);
-		String gRecaptchaResponse = request.getParameter("recaptcha");
-		try {
-			if(RecaptchaConfig.verify(gRecaptchaResponse))
-				return 0;
-			else return 1;
-		}catch(Exception e) {
-			e.printStackTrace();
-			return -1;
-		}
-	}
 	
 	
 }
