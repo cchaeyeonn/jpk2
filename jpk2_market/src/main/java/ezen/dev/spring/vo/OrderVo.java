@@ -5,7 +5,7 @@ public class OrderVo {
 	private String order_date;
 	private String order_delyn;
 	private String order_delyndate;
-	private String pbidx_pbo;
+	private int pbidx_pbo;
 	public int getOidx() {
 		return oidx;
 	}
