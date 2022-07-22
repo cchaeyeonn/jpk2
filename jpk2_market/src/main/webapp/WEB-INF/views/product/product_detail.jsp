@@ -54,9 +54,9 @@
     width:547px;
     }
     .pd_button{
-   	margin-left:117px;
+   	margin-left:430px;
    	margin-top:22px;
-   	width:353px;
+
     }
 
 </style>
@@ -74,7 +74,6 @@
 		<div id="product">
 		<div id="product_img">
 		<img class="img-fluid3" src="${pageContext.request.contextPath}/resources/product_image/${productVo.p_system_filename}"></div>
-<<<<<<< HEAD
 		<div id="product_detail"><p/>
 		<h3>${productVo.p_name}</h3>
 		<div id="product_subject">환상의 궁합 딸기&바나나(1봉/1kg)</div>
@@ -118,34 +117,6 @@
 		<a class="open button" id="homebutton_1">장바구니 담기</a>
 		</dt>
 		</dl>
-=======
-		<div id="product_detail">상품 제목<p/>
-		${productVo.p_name}
-		<hr>
-		상품 가격<p/>
-		${productVo.p_price}원<p/>
-		<hr>
-		상품 판매 단위<p/>
-		${productVo.p_unit}
-		<hr>
-		상품 중량/용량<p/>
-		${productVo.p_weight}
-		<hr>
-		배송 구분<p/>
-		${productVo.p_delivery}
-		<hr>
-		포장 타입<p/>
-		${productVo.p_package}
-		<hr>
-		알레르기 정보<p/>
-		${productVo.p_allergy}
-		<hr>
-		유통기한<p/>
-		${productVo.p_limitdate}
-		<hr>
-		타입<p/>
-		${productVo.p_type}
->>>>>>> branch 'master' of https://github.com/cchaeyeonn/jpk2.git
 		</div>
 		</div>
 		<!-- <div id="home_button"> -->
