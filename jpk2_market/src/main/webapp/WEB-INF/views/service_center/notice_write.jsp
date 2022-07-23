@@ -4,53 +4,11 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<link href="resources/css/service_center.css" rel="stylesheet" />
+
+
 <title>공지사항 글작성</title>
-<style>
 
-/* 	#product{
-		padding-left:10%;
-		padding-right:10%; 
-		height:1500px; 
-		padding-top:260px;
-		}
-	#product_img{
-			float:left; 
-			width:50%; 
-			height:50%;
-			}
-	#product_detail{
-			float:right; 
-			width:50%; 
-			height:50%;
-			}
-	#home_button{
-			padding-left:10%; 
-			padding-right:10%; 
-			text-align:center; 
-			float:center;
-			} */
-			
-	#notice_main_inner{
-		min-height:1040px;
-		padding-top:300px;
-		margin-left:320px;
-		margin-right:320px;
-	}
-		#service_center_cate{
-	
-		padding-top:200px;
-		width:155px;
-		float:left;
-	
-	}
-	
-	
-	#td_l{
-		width:20%;
-	}
-
-			
-</style>
 
 <script>
   function check(){  
@@ -84,14 +42,14 @@
 	
 		<a href="/spring/notice_board.do" class="nav-link py-3 px-0 px-lg-3 rounded" id="open_notice">공지사항</a>
 		<a href="/spring/faq_board.do" class="nav-link py-3 px-0 px-lg-3 rounded" id="open_faq">자주하는 질문</a>
-		<a href="/spring/qna_board.do" class="nav-link py-3 px-0 px-lg-3 rounded" id="open_qna" >1:1 문의</a>
+		<!-- <a href="/spring/qna_board.do" class="nav-link py-3 px-0 px-lg-3 rounded" id="open_qna" >1:1 문의</a> -->
 	
 	</div>
 	
 		<div id="notice_main_inner">
 			
 			<form name="notice_write_Form" ><!-- action="/spring/notice_writeProcess.do" method="post" -->
-			<table class="table table-striped" style="width:100%;">
+			<table class="table table-striped">
 			<tr>
 				<td id="td_l">카테고리</td>
 				<td><select name="n_category">
@@ -116,7 +74,7 @@
 		
 		
 	</form>
-	
+	</div>
 </div>
     <!-- 푸터 연결 -->
     <jsp:include page="../footer.jsp"></jsp:include>

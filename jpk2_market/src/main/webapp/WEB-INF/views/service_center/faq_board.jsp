@@ -5,57 +5,11 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<link href="resources/css/service_center.css" rel="stylesheet" />
+
+
 <title>자주하는 질문</title>
 
-<style>
-
-#faq_inner{
-/*    min-height:1040px;
-   padding-top:200px; 
-   margin-left:154px;*/
-
-}
-
-	#service_center_cate{
-	
-		padding-top:200px;
-		width:155px;
-		float:left;
-	
-	}
-	
-	#servive_main_inner{
-	margin-left:200px;
-	min-height:1040px;
-	}
-	
-	#faq_inner{
-	padding-top:200px; 
-	}
-	
-	
-#ftable_1{
-	width:50px;
-}
-
-#ftable_2{
-	width:200px;
-}
-
-#ftable_3{
-	width:300px;
-}
-
-#ftable_4{
-	width:400px;
-}
-
- 
-#table_button{
-	margin-left:155px;
-} 
-
-</style>
 
 </head>
 <body>
@@ -69,7 +23,7 @@
 	
 		<a href="/spring/notice_board.do" class="nav-link py-3 px-0 px-lg-3 rounded" id="open_notice">공지사항</a>
 		<a href="/spring/faq_board.do" class="nav-link py-3 px-0 px-lg-3 rounded" id="open_faq">자주하는 질문</a>
-		<a href="/spring/qna_board.do" class="nav-link py-3 px-0 px-lg-3 rounded" id="open_qna" >1:1 문의</a>
+		<!-- <a href="/spring/qna_board.do" class="nav-link py-3 px-0 px-lg-3 rounded" id="open_qna" >1:1 문의</a> -->
 	
 	</div>
 	
@@ -89,10 +43,10 @@
 <c:forEach items="${faqList}" var="faqVo">
           
 <tr>
-<td id="ftable_1">${faqVo.fidx}</td>
-<td id="ftable_2">${faqVo.f_category}</td>
-<td id="ftable_3"><a href="/spring/faq_detail.do?fidx=${faqVo.fidx}">${faqVo.f_title}</a></td>
-<td id="ftable_4">${faqVo.f_content}</td>
+<td id="stable_1">${faqVo.fidx}</td>
+<td id="stable_2">${faqVo.f_category}</td>
+<td id="stable_3"><a href="/spring/faq_detail.do?fidx=${faqVo.fidx}">${faqVo.f_title}</a></td>
+<td id="stable_4">${faqVo.f_content}</td>
 </tr>
  </c:forEach>
 </table>
