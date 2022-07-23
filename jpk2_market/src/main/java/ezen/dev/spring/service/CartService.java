@@ -47,8 +47,8 @@ public class CartService {
 
 
 
-	public List<CartVo> getSomeCartList(HashMap<String, Integer> cartInfo) {
-		return cartDao.getSomeCartList(cartInfo);
+	public List<CartVo> getSomeCartList(List<Integer> pbidx) {
+		return cartDao.getSomeCartList(pbidx);
 	}
 	
 }

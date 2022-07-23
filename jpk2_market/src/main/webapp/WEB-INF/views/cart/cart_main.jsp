@@ -57,12 +57,19 @@
 <!-- jquery 스크립트 -->
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script src="${pageContext.request.contextPath}/resources/js/cart.js "></script>
+<script>
+var pbidxArr = [];
+$("input[name=pbidx]:checked").each(function(){
+	var val = $(this).val();
+	pbidxArr.puch(val);
+})
+</script>
 </head>
 <body>
     <!-- 헤더 연결 -->
     <jsp:include page="../header.jsp"></jsp:include>
  
- 	<form name="orderAddForm" action="${pageContext.request.contextPath}/orderSheet.do" method="post">
+ 	<form name="orderAddForm" id="orderAddForm" action="${pageContext.request.contextPath}/orderSheet.do" method="post">
  	
     <div id="cart_inner">
     <h2 style="text-align:center;"> 장바구니</h2>
@@ -259,7 +266,8 @@ $("#btn_delete_${cartVo.pbidx}").click(function(){
     </tr>
     <tr>
     <td>
-    <input type="submit" value="주문하기">
+
+    <input type="submit" id="pbidxList" value="주문하기">
     </td>
     </tr>
     </table>
