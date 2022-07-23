@@ -17,22 +17,46 @@
 			float:left; 
 			width:50%; 
 			height:50%;
+			
 			}
 	#product_detail{
 			float:right; 
 			width:50%; 
 			height:50%;
 			}
-	#home_button{
+/* 	#home_button{
 			padding-left:10%; 
 			padding-right:10%; 
 			text-align:center; 
 			float:center;
-			}
+			} */
     .button box{
             display : inline-block;
-    
-    
+    }
+    #product_subject{
+    font-size:13px;
+    color:#8f8f8f;
+    }
+    #product_price{
+    font-size:13px;
+    margin-top:39px;
+    }
+    .pd_dt{
+    float:left;
+    width:140px;
+    color:#8f8f8f;
+    font-size:15px;
+    }
+    .pd_hr{
+    margin: 1.2rem 0;
+    color: inherit;
+    opacity:0.05;
+    width:547px;
+    }
+    .pd_button{
+   	margin-left:430px;
+   	margin-top:22px;
+
     }
 
 </style>
@@ -50,42 +74,59 @@
 		<div id="product">
 		<div id="product_img">
 		<img class="img-fluid3" src="${pageContext.request.contextPath}/resources/product_image/${productVo.p_system_filename}"></div>
-		<div id="product_detail">상품 제목<p/>
-		${productVo.p_name}
-		<hr>
-		상품 가격<p/>
-		${productVo.p_price}원<p/>
-		<hr>
-		상품 판매 단위<p/>
-		${productVo.p_unit}
-		<hr>
-		상품 중량/용량<p/>
-		${productVo.p_weight}
-		<hr>
-		배송 구분<p/>
-		${productVo.p_delivery}
-		<hr>
-		포장 타입<p/>
-		${productVo.p_package}
-		<hr>
-		알레르기 정보<p/>
-		${productVo.p_allergy}
-		<hr>
-		유통기한<p/>
-		${productVo.p_limitdate}
-		<hr>
-		타입<p/>
-		${productVo.p_type}
+		<div id="product_detail"><p/>
+		<h3>${productVo.p_name}</h3>
+		<div id="product_subject">환상의 궁합 딸기&바나나(1봉/1kg)</div>
+		
+		<div id="product_price"><h3>${productVo.p_price}원</h3></div>
+		<hr class="pd_hr">
+		<dl>
+		<dt class="pd_dt">판매 단위</dt>
+		<dd class="pd_dd">${productVo.p_unit}</dd>
+		<dt class="pd_dt">중량/용량</dt>
+		<dd>${productVo.p_weight}</dd>
+		</dl>
+		<hr class="pd_hr">
+		
+		<dl>
+		<dt class="pd_dt">배송구분</dt>
+		<dd>${productVo.p_delivery}</dd>
+		</dl>
+		<hr class="pd_hr">
+		<dl>
+		<dt class="pd_dt">포장타입</dt>
+		<dd>${productVo.p_package}</dd>
+		</dl>
+		<hr class="pd_hr">
+		<dl>
+		<dt class="pd_dt">알레르기정보</dt>
+		<dd>${productVo.p_allergy}</dd>
+		</dl>
+		<hr class="pd_hr">
+		<dl>
+		<dt class="pd_dt">유통기한</dt>
+		<dd>${productVo.p_limitdate}</dd>
+		</dl>
+		<hr class="pd_hr">
+		<dl>
+		<dt class="pd_dt">타입</dt>
+		<dd>${productVo.p_type}</dd>
+		</dl>
+		<dl>
+		<dt class="pd_button">
+		<a class="open button" id="homebutton_1">장바구니 담기</a>
+		</dt>
+		</dl>
 		</div>
 		</div>
-		<div id="home_button">
-		<a href="${pageContext.request.contextPath}/" id="homebutton_1">메인</a>
+		<!-- <div id="home_button"> -->
+		<%-- <a href="${pageContext.request.contextPath}/" id="homebutton_1">메인</a> --%>
 		<!-- <input type="button" id="homebutton_1" value="메인으로"></a> -->
 		<!-- <input type="button" id="btn-modal" value="장바구니"> -->
 		
 <!-- 모달 부분 시작 -->
 
-		<a class="open button" id="homebutton_1">장바구니</a></div><p/>
+		<!-- <a class="open button" id="homebutton_1">장바구니 담기</a></div><p/> -->
 		<!--<a href="/spring/cart_insert.do"><input type="button" value="장바구니"></a></div><p/> -->
 		
 
