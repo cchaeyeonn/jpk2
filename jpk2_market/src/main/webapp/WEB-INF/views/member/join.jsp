@@ -4,51 +4,19 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<link href="resources/css/join_login.css" rel="stylesheet" />
+
 <style>
 
-#join_content{
-
-   /*  margin-left: 804px;
-    padding-top: 193px;
-    width: 100%; */
-   /*  margin-left:297px;
-    margin-right:316px; */
+ #join_content{
     padding-top:235px;
     min-height:1040px;
    justify-content: center;
    caption-side: bottom;
     border-collapse: collapse;
     display: flex;
-    /* justify-content: space-around; */
-/*  text-align:center; */
 }
 
- .checkbox_group{
-   margin: 0 254px 0 701px;
-    padding-block: 20px;
-    display:flxed;
-}
-
-#join_button{
-   margin: 0 649px 0 812px;
-    padding-block: 20px;
-} 
-
-#star{
-color:red;
-}
-
-
-#star_info{
-	margin-left:531px;
-	font-size: 12px;
-	color: #6e6e6e;
-}
-
-#terms{
-font-size: 12px;
-	color: #6e6e6e;
-}
 
 /* 회원가입 약관 부분 시작 */
 .chk_all,

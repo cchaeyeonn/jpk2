@@ -4,39 +4,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<style>
+<link href="resources/css/join_login.css" rel="stylesheet" />
 
-#join_1{
-   /*  margin-left: 804px;
-    padding-top: 193px;
-    width: 100%; */
-    
-    padding-top:235px;
-    /* min-height:1040px; */
-   justify-content: center;
-   caption-side: bottom;
-    border-collapse: collapse;
-    display: flex;
-    /* justify-content: space-around; */
-/*  text-align:center; */
-}
 
- .checkbox_group{
-   margin: 0 254px 0 701px;
-    padding-block: 20px;
-}
-
-#join_button{
-   margin: 0 649px 0 812px;
-    padding-block: 20px;
-} 
-#emaill-inner{
-	min-height:1040px;
-	margin-left:200px;
-	margin-top:230px;
-}
-
-</style>
 <title>회원 가입</title>
 
     <!-- 카카오 주소 api -->
@@ -52,7 +22,7 @@
 <!-- 헤더연결 -->
 <jsp:include page="../header.jsp"></jsp:include>
 
-<div id="emaill-inner">
+<div id="joinfin-inner">
 <div style="margin: 100px;">
 		<br>
 		<h3>안녕하세요, ${memberVo.member_name} 님</h3>

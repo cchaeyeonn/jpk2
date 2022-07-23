@@ -1,0 +1,73 @@
+@charset "UTF-8";
+
+
+/* 로그인 부분 */
+#login_inner{
+	margin-left:33%;
+	margin-right:33%;
+}
+
+#login_1 {
+	text-align:center;
+}
+
+#login_3 {
+	text-align:right; 
+}
+
+#login_4 {
+	text-align:center;
+}
+
+#login_content {
+	padding-top:260px;
+	min-height:1040px;
+}
+
+
+/* 회원가입 성공 부분 */
+
+#joinfin-inner{
+	min-height:1040px;
+	margin-left:200px;
+	margin-top:230px;
+}
+
+
+/* 회원가입 부분 */
+/* #join_content{
+    padding-top:235px;
+    min-height:1040px;
+   justify-content: center;
+   caption-side: bottom;
+    border-collapse: collapse;
+    display: flex;
+} */
+
+ .checkbox_group{
+   margin: 0 254px 0 701px;
+    padding-block: 20px;
+    display:flxed;
+}
+
+#join_button{
+   margin: 0 649px 0 812px;
+    padding-block: 20px;
+} 
+
+#star{
+color:red;
+}
+
+
+#star_info{
+	margin-left:531px;
+	font-size: 12px;
+	color: #6e6e6e;
+}
+
+#terms{
+font-size: 12px;
+	color: #6e6e6e;
+}
+
