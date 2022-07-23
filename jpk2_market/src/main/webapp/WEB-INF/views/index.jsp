@@ -2,34 +2,38 @@
 <html lang="utf-8">
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
-        <title>Rocket Kurly</title>
-        <!-- jQuery library (served from Google) -->
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+	<meta name="description" content="" />
+	<meta name="author" content="" />
+	
+	<title>Rocket Kurly</title>
+	
+	<!-- jQuery library (served from Google) -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
-        <!-- Favicon-->
-        <link rel="icon" type="image/x-icon" href="resources/assets/favicon.ico" />
+	<!-- Favicon-->
+	<link rel="icon" type="image/x-icon" href="resources/assets/favicon.ico" />
         
-        <!-- Font Awesome icons (free version)-->
-        <script src="resources/js/scripts.js" crossorigin="anonymous"></script>
-        <!-- Google fonts-->
-        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
-        <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
-        <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="resources/css/styles.css" rel="stylesheet" />
+	<!-- Font Awesome icons (free version)-->
+	<script src="resources/js/scripts.js" crossorigin="anonymous"></script>
+	
+	<!-- Google fonts-->
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+	<link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+	
+	<!-- Core theme CSS (includes Bootstrap)-->
+	<link href="resources/css/styles.css" rel="stylesheet" />
         
-        <!-- 이미지 슬라이드 -->
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.min.css" rel="stylesheet" />
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.min.js"></script>
+	<!-- 이미지 슬라이드 -->
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.min.css" rel="stylesheet" />
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.min.js"></script>
 
-
+	
       <!-- 이미지 슬라이드 스크립트 -->
       <script>
-      $(document).ready(function () {
+      	$(document).ready(function () {
     	        $('.bxslider').bxSlider({ // 클래스명 주의!
     	            auto: true, // 자동으로 애니메이션 시작
     	            speed: 500,  // 애니메이션 속도
@@ -38,136 +42,101 @@
     	            /* autoControls: true, // 시작 및 중지버튼 */
     	            pager: true, // 페이지 표시 보여짐
     			    autoHover: true,   // 마우스 호버시 정지 여부
-
     	        });
     	    });
       
-
       </script>
       
-      <!-- 이미지 슬라이드 css -->    
-     
-     <style>
-      .bx-wrapper {
-         position: relative;
-         margin-bottom: 60px;
-         padding: 0;
-         -ms-touch-action: pan-y;
-         touch-action: pan-y;
-         -moz-box-shadow: 0 0 5px #ffffff !important;
-         -webkit-box-shadow: 0 0 5px #ffffff !important;
-         box-shadow: 0 0 5px #ffffff !important;
-         border: 9px solid #fff !important;
-         background: #fff;
+		<!-- 이미지 슬라이드 css -->    
+		<style>
+		.bx-wrapper {
+	         position: relative;
+	         margin-bottom: 60px;
+	         padding: 0;
+	         -ms-touch-action: pan-y;
+	         touch-action: pan-y;
+	         -moz-box-shadow: 0 0 5px #ffffff !important;
+	         -webkit-box-shadow: 0 0 5px #ffffff !important;
+	         box-shadow: 0 0 5px #ffffff !important;
+	         border: 9px solid #fff !important;
+	         background: #fff;
          }
-      .bx-wrapper .bx-prev {
-		left: 265px;
-		background: url("resources/img/controls.png") 0 -32px no-repeat
+		.bx-wrapper .bx-prev {
+			left: 265px;
+			background: url("resources/img/controls.png") 0 -32px no-repeat
 		}
 		
-	 .bx-wrapper .bx-prev:focus, .bx-wrapper .bx-prev:hover {
-		background-position: 0 0
+		.bx-wrapper .bx-prev:focus, .bx-wrapper .bx-prev:hover {
+			background-position: 0 0
 		}
 		
-	 .bx-wrapper .bx-next {
-		right: 262px;
-		background: url("resources/img/controls.png") -43px -32px no-repeat
+		.bx-wrapper .bx-next {
+			right: 262px;
+			background: url("resources/img/controls.png") -43px -32px no-repeat
 		}
 		
-	 .bx-wrapper .bx-next:focus, .bx-wrapper .bx-next:hover {
-		background-position: -43px 0
+		.bx-wrapper .bx-next:focus, .bx-wrapper .bx-next:hover {
+			background-position: -43px 0
 		}
    
     </style>
-      
-      
-      
-<!--       topbutton 스크립트 시작
-      <script>
-      
-      $(window).scroll(function() {
-          // top button controll
-          if ($(this).scrollTop() > 500) { 	//500만큼 내려가면 topbutton 보임
-              $('#topButton').fadeIn();
-          } else {
-              $('#topButton').fadeOut();
-          }
-      });
-      
-      
-      $(document).ready(function() {
-           // Top Button click event handler
-           $("#topButtonImg").click(function() {
-             $('html, body').animate({scrollTop:0}, '300'); //버튼을 누르면 제일 위까지 부드럽게 올라옴
-           });
-         });
-      
-      </script>
-      topbutton 스크립트 끝 -->
-      
-      
-    </head>
-    
-    <body id="page-top">
-    
-       <!-- 헤더 연결 -->
-       <jsp:include page="header.jsp"></jsp:include> 
-       
-       
 
-<!--         누르면 상단으로 가는 top버튼 시작
-        <div id="topButton" style="cursor: pointer"><img src="resources//img/topbutton.png" id="topButtonImg"></div>
-        누르면 상단으로 가는 top버튼 끝 -->
+      
+</head>
+    
+<body id="page-top">
+    
+	<!-- 헤더 연결 -->
+	<jsp:include page="header.jsp"></jsp:include> 
+       
         
-        <!-- 헤더 카테고리와 이미지 슬라이드 구역 시작 -->
-        <header class="masthead bg-primary text-white text-center">
-            <div class="container d-flex align-items-center flex-column">
-               <!-- <img class="k_nava" src="resources/img/k_tpk.PNG" alt="..."  style="width: 1150px;  height: 380px;"/> -->
+	<!-- 헤더 카테고리와 이미지 슬라이드 구역 시작 -->
+	<header class="masthead bg-primary text-white text-center">
+		<div class="container d-flex align-items-center flex-column">
+		<!-- <img class="k_nava" src="resources/img/k_tpk.PNG" alt="..."  style="width: 1150px;  height: 380px;"/> -->
             
-                <!-- Masthead Avatar Image-->
-                <!-- <img class="" src="resources/assets/img/avataaars.svg" alt="..." /> -->
+		<!-- Masthead Avatar Image-->
+		<!-- <img class="" src="resources/assets/img/avataaars.svg" alt="..." /> -->
                 
-                <!-- Masthead Heading-->
-                <!-- <h1 class="masthead-heading text-uppercase mb-0">Hello, JPK2 Market</h1> -->
-                <!-- Icon Divider-->
-                <!-- <div class="divider-custom divider-light">
+		<!-- Masthead Heading-->
+		<!-- <h1 class="masthead-heading text-uppercase mb-0">Hello, JPK2 Market</h1> -->
+		<!-- Icon Divider-->
+		<!-- <div class="divider-custom divider-light">
                     <div class="divider-custom-line"></div>
                     <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
                     <div class="divider-custom-line"></div>
-                </div>
-                Masthead Subheading
-                <p class="masthead-subheading font-weight-light mb-0">Rocket Kurly</p> -->
+		</div>
+		Masthead Subheading
+		<p class="masthead-subheading font-weight-light mb-0">Rocket Kurly</p> -->
                 
                 
-            </div>
+		</div>
             
-            <!-- 이미지 슬라이드  -->
-            <ul class="bxslider">
-              <li><img src="resources/img/main_1.png" /></li>
-              <li><img src="resources/img/main_2.png" /></li>
-              <li><img src="resources/img/main_3.png" /></li>
-            <!--   <li><img src="/images/pic4.jpg" /></li> -->
-         </ul>
+	<!-- 이미지 슬라이드  -->
+	<ul class="bxslider">
+		<li><img src="resources/img/main_1.png" /></li>
+		<li><img src="resources/img/main_2.png" /></li>
+		<li><img src="resources/img/main_3.png" /></li>
+		<!-- <li><img src="/images/pic4.jpg" /></li> -->
+	</ul>
 
-        </header>
-        <!-- 헤더 카테고리와 이미지 슬라이드 구역 끝 -->
+	</header>
+	<!-- 헤더 카테고리와 이미지 슬라이드 구역 끝 -->
        
-        <div id="index_inner">
-           <c:import url="/productList.do">
-                      <c:param name="p_name" value="${p_name}"/>
-                      <c:param name="p_price" value="${p_price}"/>
-                      <c:param name="p_type" value="${p_type}"/>
-           </c:import>
+	<div id="index_inner">
+		<c:import url="/productList.do">
+			<c:param name="p_name" value="${p_name}"/>
+			<c:param name="p_price" value="${p_price}"/>
+			<c:param name="p_type" value="${p_type}"/>
+		</c:import>
            
-        </div>
+	</div>
         
         
         
 
-
-        
         <!-- Contact Section -->
- <!--        <section class="page-section" id="contact">
+ 			<!-- <section class="page-section" id="contact">
             <div class="container">
                 Contact Section Heading
                 <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Contact Me</h2>
@@ -208,7 +177,7 @@
                                 <div class="invalid-feedback" data-sb-feedback="phone:required">A phone number is required.</div>
                             </div>
                            
- Message input
+ 							Message input
                             <div class="form-floating mb-3">
                                 <textarea class="form-control" id="message" type="text" placeholder="Enter your message here..." style="height: 10rem" data-sb-validations="required"></textarea>
                                 <label for="message">Message</label>
@@ -240,8 +209,9 @@
         </section> -->
         
         
-        <!-- 푸터 연결 -->
-        <jsp:include page="footer.jsp"></jsp:include>
+        
+	<!-- 푸터 연결 -->
+	<jsp:include page="footer.jsp"></jsp:include>
         
         
         
