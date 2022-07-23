@@ -4,53 +4,10 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>자주하는 질문 글작성</title>
-<style>
+<link href="resources/css/service_center.css" rel="stylesheet" />
 
-/* 	#product{
-		padding-left:10%;
-		padding-right:10%; 
-		height:1500px; 
-		padding-top:260px;
-		}
-	#product_img{
-			float:left; 
-			width:50%; 
-			height:50%;
-			}
-	#product_detail{
-			float:right; 
-			width:50%; 
-			height:50%;
-			}
-	#home_button{
-			padding-left:10%; 
-			padding-right:10%; 
-			text-align:center; 
-			float:center;
-			} */
-			
-	#faq_main_inner{
-		min-height:1040px;
-		padding-top:300px;
-		margin-left:320px;
-		margin-right:320px;
-	}
-	
-		#service_center_cate{
-	
-		padding-top:200px;
-		width:155px;
-		float:left;
-	
-	}
-	
-	
-	#td_l{
-		width:20%;
-	}
-			
-</style>
+<title>자주하는 질문 글작성</title>
+
 
 <script>
   function check(){  
@@ -75,21 +32,25 @@
 
 </head>
 <body>
-    <form name="faq_write_Form"><!-- action="/spring/faq_writeProcess.do" method="post" --> 
+
+    <!-- action="/spring/faq_writeProcess.do" method="post" --> 
     <!-- 헤더 연결 -->
     <jsp:include page="../header.jsp"></jsp:include> 
     
+    <div id="servive_main_inner">
     	<div id="service_center_cate">
 	
 		<a href="/spring/notice_board.do" class="nav-link py-3 px-0 px-lg-3 rounded" id="open_notice">공지사항</a>
 		<a href="/spring/faq_board.do" class="nav-link py-3 px-0 px-lg-3 rounded" id="open_faq">자주하는 질문</a>
-		<a href="/spring/qna_board.do" class="nav-link py-3 px-0 px-lg-3 rounded" id="open_qna" >1:1 문의</a>
+		<!-- <a href="/spring/qna_board.do" class="nav-link py-3 px-0 px-lg-3 rounded" id="open_qna" >1:1 문의</a> -->
 	
-	</div>
+		</div>
 	
 	
 		<div id="faq_main_inner">
-			<table class="table table-striped" style="width:100%;"><!-- enctype="multipart/form-data" -->
+		
+		<form name="faq_write_Form">
+			<table class="table table-striped"><!-- enctype="multipart/form-data" -->
 			<tr>
 				<td id="td_l">카테고리</td>
 				<td><select name="f_category">
@@ -110,13 +71,14 @@
 			</tr>
 	
 			</table>
-		</div>
+		
 
 		<!-- <div id="faq_write_button"><input type="button" value="작성하기" onclick="check();"></div><p/> -->
 
 		<!-- <div id="faq_write_button"><input type="submit" value="작성하기"></div><p/> -->
-
 	</form>
+	</div>
+	</div>
     <!-- 푸터 연결 -->
     <jsp:include page="../footer.jsp"></jsp:include>
 </body>
