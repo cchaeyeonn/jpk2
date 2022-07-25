@@ -5,27 +5,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<link href="resources/css/style_css.css" rel="stylesheet" />
 
-<style>
-	#ad_memberlist_inner{
-		min-height:1040px;
-		padding-top:230px;
-		text-align:center;
-		margin-left:320px;
-		margin-right:320px;
-}
 
-	#memberlist_table{
-		padding-left:285px;
-	}
-
-	#adl_button{
-	padding: 20px;
-    border-radius: 34px;
-    margin: 20px;
-	}
- 
-</style>
 <title>회원 목록</title>
 </head>
 <body>

@@ -120,8 +120,8 @@ input[id="del-chk3"]:checked + .del-chk3::before{
 </style>
 <!-- 외부 js에서 ${pageContext.request.contextPath}를 사용할 수 있게 세션에 값을 저장 -->
 <script type="text/javascript" charset="utf-8">
-	sessionStorage.setItem("contextpath", "${pageContext.request.contextPath}");
-	
+   sessionStorage.setItem("contextpath", "${pageContext.request.contextPath}");
+   
 </script>
 <title>회원 가입</title>
 
@@ -206,11 +206,7 @@ input[id="del-chk3"]:checked + .del-chk3::before{
          
          <tr>
             <td>주소<span id="star">*</span></td>
-<<<<<<< HEAD
-            <td><input type="text" id="postcode" class="" name="postcode" placeholder="우편번호" readonly style="height:40px; width:133px; text-align:center; border-radius:9px; font-size:13px;">
-=======
             <td><input type="text" id="postcode" class="" name="member_addrcode" placeholder="우편번호" readonly style="height:40px; width:133px; text-align:center; border-radius:9px; font-size:13px;">
->>>>>>> branch 'master' of https://github.com/cchaeyeonn/jpk2.git
             <input type="button" onclick="execDaumPostcode()" class="btn btn-outline-success" value="우편번호 찾기" style="margin-top:-2px; margin-left:4px;"></td><td></td>
          </tr>
          <tr><td style="height:8px;"></td><td></td></tr>
@@ -237,7 +233,7 @@ input[id="del-chk3"]:checked + .del-chk3::before{
          
          <hr>
          <table>
-		<tr>
+      <tr>
          <td>
          <input type="checkbox" id="chk_all" name="member_termall">
          <label for="chk_all" class="chk_all"></label></td>
