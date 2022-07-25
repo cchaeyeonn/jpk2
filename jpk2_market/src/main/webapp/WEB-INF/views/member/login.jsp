@@ -57,29 +57,30 @@
 
 
 <div id="login_content">
-<div id="login_inner">
-<form name="frm">
-<div id="login">
-<div id="login_1">
-<h3>로그인</h3>
-</div>
-<div id="login_2">
-<p><input type="text" class="form-control" name="member_id" size="30" placeholder="아이디를 입력해주세요"></p>
-<p><input type="password" class="form-control" name="member_pw" size="30" placeholder="비밀번호를 입력해주세요"></p>
-</div>
-<div id="login_3">
-<!-- <p><input type="button" value="아이디찾기" onclick=""> 
-|
-<input type="button" value="비밀번호찾기" onclick=""></p> -->
-<a href="findId.do">아이디 찾기</a> | <a href="findPw.do">비밀번호 찾기</a></div>
-<div id="login_4">
-
-<input type="button" class="btn btn-outline-success" value="로그인" onclick="check();">
-<input type="button" class="btn btn-outline-success" value="회원가입" onclick="location.href='join.do'"><p/>
-</div>
-</div>
-</form>
-</div>
+	<div id="login_inner">
+		<form name="frm">
+			<div id="login">
+				<div id="login_1">
+					<h3>로그인</h3>
+				</div>
+				<div id="login_2">
+					<p><input type="text" class="form-control" name="member_id" size="30" placeholder="아이디를 입력해주세요"></p>
+					<p><input type="password" class="form-control" name="member_pw" size="30" placeholder="비밀번호를 입력해주세요"></p>
+				</div>
+				<div id="login_3">
+					<!-- <p><input type="button" value="아이디찾기" onclick=""> 
+					|
+					<input type="button" value="비밀번호찾기" onclick=""></p> -->
+					<a href="findId.do">아이디 찾기</a> | <a href="findPw.do">비밀번호 찾기</a>
+				</div>
+				<div id="login_4">
+				
+					<input type="button" class="btn btn-outline-success" value="로그인" onclick="check();">
+					<input type="button" class="btn btn-outline-success" value="회원가입" onclick="location.href='join.do'"><p/>
+				</div>
+			</div>
+		</form>
+	</div>
 </div>
 
 <!-- 푸터 연결 -->
