@@ -4,57 +4,32 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<link href="resources/css/join_login.css" rel="stylesheet" />
 
 
 <title>로그인</title>
 <style>
-	#login_inner{
+/* 	#login_inner{
 		margin-left:33%;
 		margin-right:33%;
 	}
-/* 	#login {
-	margin:auto; 
-	padding:0px 20px 0px 20px; 
-	float:center; 
-	Width:60%; 
-	text-align:center;
-	} */
+
 	#login_1 {
-/* 	margin:auto; 
-	padding:0px 20px 0px 20px; 
-	float:center; 
-	Width:60%;  */
 	text-align:center;
 	}
-/* 	#login_2 {
-	margin:auto; 
-	padding:17px 20px 0px 337px; 
-	float:center; 
-	Width:60%; 
-	text-align:center;
-	margin-left: 65px;
-	} */
+
 	#login_3 {
-/* 	margin:auto; 
-	padding:10px 0px 25px 0px; 
-	float:center; 
-	Width:20%; 
-	font-size:18px; */
 	text-align:right; 
-	
 	}
 	#login_4 {
-/* 	margin:auto; 
-	padding:0px 20px 0px 20px; 
-	float:center; 
-	Width:60%;  */
 	text-align:center;
 	}
 	#login_content {
 	padding-top:260px;
 	min-height:1040px;
-	}
+	} */
 </style>
+
 <script>
   function check(){  
   var fm = document.frm;   
