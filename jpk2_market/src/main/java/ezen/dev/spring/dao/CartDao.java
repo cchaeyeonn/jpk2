@@ -51,9 +51,9 @@ public class CartDao {
 		
 		return sqlSession.update(MAPPER+".cart_amount", cartVo);
 	}
-	public List<CartVo> getSomeCartList(List<Integer> pbidx) {
+	public List<CartVo> getSomeCartList(List<Integer> pbidxList) {
 
-		return sqlSession.selectList(MAPPER+".getSomeCartList", pbidx);
+		return sqlSession.selectList(MAPPER+".getSomeCartList", pbidxList);
 	}	 
   
      
