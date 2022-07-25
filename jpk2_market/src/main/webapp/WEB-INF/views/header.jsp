@@ -91,6 +91,10 @@ a {
 	border-radius: 35px;
 	text-align: center;
 }
+/* .container {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+} */
 </style>
 
 
