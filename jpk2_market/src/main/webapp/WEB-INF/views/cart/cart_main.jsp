@@ -28,7 +28,7 @@
     <div id="cart_inner">
     <h2 style="text-align:center;"> 장바구니</h2>
     
-    <label for="chk_all"><input type="checkbox" id="chk_all">전체 선택</label> ㅣ 
+    <label for="chk_all"><input type="checkbox" id="chk_all" checked>전체 선택</label> ㅣ 
     <!--<input type="button" value="선택 삭제" id="cart_delete">-->
 
     <button id="cart_delete" type="button" value="선택 삭제">선택 삭제</button>
@@ -43,6 +43,37 @@
     <!-- 외부 js의 경우 el및 jstl이 적용되지 않는다. 그렇기 때문에 수량관련 +-버튼 스크립트를  forEach문 안에 따로 작성했다. -->
     <script>
     $(function(){
+    	
+    	var sum_price = parseInt($("#sum_price").val());
+    	var sale = 0;
+    	var delivery_fee = 0;
+    	var total_pay_price;
+    	var pbidx = ${cartVo.pbidx};
+    	var amount ="#"+${cartVo.pbidx}+"_pop_out";
+    	var price = "#"+${cartVo.pbidx}+"_price";
+    	if($("#chk_${cartVo.pbidx}").is(':checked')){
+    	sum_price += parseInt($(price).val())*parseInt($(amount).val());
+    	}else{
+        sum_price -= parseInt($(price).val())*parseInt($(amount).val());		
+    	}
+    	$("#sum_price").val(sum_price);
+    	
+    	
+      if(sum_price < 50000 && sum_price != 0){
+        	delivery_fee = 3000;
+        	$("#delivery_fee").text(delivery_fee+"원");
+        }else{
+        	delivery_fee = 0;
+        	$("#delivery_fee").text(delivery_fee+"원");
+        }
+    	
+    	total_pay_price = sum_price-sale+delivery_fee;
+    	
+    	$("#totalprice_result").text(sum_price+"원");
+    	$("#sale").text(sale+"원"); 
+    	$("#total_pay_price").text(total_pay_price+"원");
+    	
+    	
        let number = $('#${cartVo.pbidx}_pop_out').val();
    //minus 버튼
     $("#${cartVo.pbidx}_btn_minus").click(function(){
@@ -219,7 +250,7 @@ $("#chk_all").change(function(){
  
     <tr id="${cartVo.pbidx}_product_target">
     <td>
-    <input type="checkbox" class="del-chk" name="pbidx" id="chk_${cartVo.pbidx}" value="${cartVo.pbidx}">
+    <input type="checkbox" class="del-chk" name="pbidx" id="chk_${cartVo.pbidx}" value="${cartVo.pbidx}" checked>
     </td>
     <td>
     <!-- 사진 -->
