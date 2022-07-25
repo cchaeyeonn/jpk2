@@ -68,6 +68,7 @@
     <h2 style="text-align:center;"> 장바구니</h2>
     <input type="checkbox" id="chk_all">전체 선택 ㅣ 
     <!--<input type="button" value="선택 삭제" id="cart_delete">-->
+
     <button id="cart_delete" type="button" value="선택 삭제">선택 삭제</button>
     
     <hr style="width:65%;">
@@ -271,13 +272,7 @@ $("#btn_delete_${cartVo.pbidx}").click(function(){
      <input type="hidden" id="final_pay" value="${total - sale + delivery_fee}">
     </div>
      </form>
-     
-   
-   
-  
-  
-   
- 
+
     <!-- 푸터 연결 -->
     <jsp:include page="../footer.jsp"></jsp:include>
 
