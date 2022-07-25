@@ -67,6 +67,7 @@
         	$("#delivery_fee").text(delivery_fee+"원");
         }
     	
+     
     	total_pay_price = sum_price-sale+delivery_fee;
     	
     	$("#totalprice_result").text(sum_price+"원");
