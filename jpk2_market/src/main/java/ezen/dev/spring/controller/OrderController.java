@@ -1,5 +1,6 @@
 package ezen.dev.spring.controller;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -49,20 +50,24 @@ public class OrderController {
 	
 	
 	@PostMapping("/orderSheet.do")
-	public String orderSheet(CartVo cartVo, Model model, HttpServletRequest request, @RequestParam("pbidxArr[]") List<String> pbidxArr) {
+	public String orderSheet(CartVo cartVo, Model model, HttpServletRequest request, @RequestParam("pbidx") Integer[] pbidx) {
 		HttpSession session = request.getSession();
 		String member_id = (String)session.getAttribute("member_id");
 		MemberVo memberVo = memberService.getMemberInfo(member_id);
-		System.out.println("pbidxArr:"+pbidxArr);
-		List<Integer> pbidxList = pbidxArr.stream()
-										.map(s->Integer.parseInt(s))
-										.collect(Collectors.toList());
+
+		/*
+		 * List<Integer> pbidxList = pbidxArr.stream() .map(s->Integer.parseInt(s))
+		 * .collect(Collectors.toList());
+		 */
+		for(Integer mmm : pbidx) {
+		System.out.println("pbidx: "+ mmm);}
+
+		List<Integer> pbidxList = Arrays.asList(pbidx);
 		List<CartVo> cartList = cartService.getSomeCartList(pbidxList);
 		model.addAttribute("memberVo", memberVo);
 		model.addAttribute("cartList", cartList);
 		
 		return"order/orderSheet";
-		
 	}
 
 	

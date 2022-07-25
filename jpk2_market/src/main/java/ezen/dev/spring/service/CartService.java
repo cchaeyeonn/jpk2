@@ -47,8 +47,8 @@ public class CartService {
 
 
 
-	public List<CartVo> getSomeCartList(List<Integer> pbidx) {
-		return cartDao.getSomeCartList(pbidx);
+	public List<CartVo> getSomeCartList(List<Integer> pbidxList) {
+		return cartDao.getSomeCartList(pbidxList);
 	}
 	
 }
