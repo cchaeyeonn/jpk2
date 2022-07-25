@@ -4,32 +4,10 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>제품 상세 페이지</title>
-<style>
+<link href="resources/css/style_css.css" rel="stylesheet" />
 
-	#product{
-		padding-left:10%;
-		padding-right:10%; 
-		height:1500px; 
-		padding-top:260px;
-		}
-	#product_img{
-			float:left; 
-			width:50%; 
-			height:50%;
-			}
-	#product_detail{
-			float:right; 
-			width:50%; 
-			height:50%;
-			}
-	#home_button{
-			padding-left:10%; 
-			padding-right:10%; 
-			text-align:center; 
-			float:center;
-			}
-</style>
+<title>제품 상세 페이지</title>
+
 </head>
 <body>
 

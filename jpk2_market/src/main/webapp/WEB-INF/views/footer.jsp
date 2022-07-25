@@ -10,6 +10,9 @@
 <link href="resources/css/styles.css" rel="stylesheet" />
 
 <style>
+body{
+	min-width:850px;
+}
 #topButton {
 	position: fixed;
 	right: 2%;

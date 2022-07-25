@@ -617,6 +617,10 @@ progress {
   margin-top: 27px;
 }
 
+.img-fluid4 {
+  max-width: 12%;
+  margin-top: 8px;
+}
 
 .img-thumbnail {
   padding: 0.25rem;
