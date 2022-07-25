@@ -28,7 +28,7 @@
     <div id="cart_inner">
     <h2 style="text-align:center;"> 장바구니</h2>
     
-    <label for="chk_all"><input type="checkbox" id="chk_all">전체 선택</label> ㅣ 
+    <label for="chk_all"><input type="checkbox" id="chk_all" >전체 선택</label> ㅣ 
     <!--<input type="button" value="선택 삭제" id="cart_delete">-->
 
     <button id="cart_delete" type="button" value="선택 삭제">선택 삭제</button>
@@ -44,6 +44,7 @@
     <script>
     $(function(){
        let number = $('#${cartVo.pbidx}_pop_out').val();
+       
    //minus 버튼
     $("#${cartVo.pbidx}_btn_minus").click(function(){
       

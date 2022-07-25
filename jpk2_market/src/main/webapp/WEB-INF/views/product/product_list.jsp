@@ -24,18 +24,18 @@
                 <div class="row justify-content-center">
                     <!-- Portfolio Item 1 -->
                      <c:forEach items="${productList}" var="productVo">
-                    <div class="col-md-6 col-lg-4 mb-5" >
-                        <a href="${pageContext.request.contextPath}/product_detail.do?pidx=${productVo.pidx}">
-                        <div class="portfolio-item mx-auto" data-bs-toggle="modal">
-                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-320 w-249">
-                                <div class="portfolio-item-caption-content text-center text-black"><!-- <i class="fas fa-plus fa-3x"></i> -->
-                                <img class="img-fluid" src="${pageContext.request.contextPath}/resources/product_image/${productVo.p_system_filename}" alt="..."  /><p/>
-                                ${productVo.p_name}<p/>
-                          		${productVo.p_price}원<p/>
-                                </div>
-                            </div>
-                        </div></a>
-                    </div>
+	                    <div class="col-md-6 col-lg-4 mb-5" >
+	                        <a href="${pageContext.request.contextPath}/product_detail.do?pidx=${productVo.pidx}">
+	                        <div class="portfolio-item mx-auto" data-bs-toggle="modal">
+	                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-320 w-249">
+	                                <div class="portfolio-item-caption-content text-center text-black"><!-- <i class="fas fa-plus fa-3x"></i> -->
+	                                <img class="img-fluid" src="${pageContext.request.contextPath}/resources/product_image/${productVo.p_system_filename}" alt="..."  /><p/>
+	                                ${productVo.p_name}<p/>
+	                          		${productVo.p_price}원<p/>
+	                                </div>
+	                            </div>
+	                        </div></a>
+	                    </div>
                    </c:forEach>
  
                 </div> 

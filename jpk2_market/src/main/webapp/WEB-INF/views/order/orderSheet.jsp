@@ -118,7 +118,7 @@
 <hr>
 <div>
       배송지<p/>
-      <input type="checkbox" id="member_addr" name="member_addr">기본 배송지 입력<p/>
+      <label for="member_addr"> <input type="checkbox" id="member_addr" name="member_addr">기본 배송지 입력</label><p/>
       <input type="text" id="postcode" name="member_addrcode" placeholder="우편번호" value="" readonly>
        <input type="button" onclick="execDaumPostcode()" value="우편번호 찾기"><p/>
         <input type="text" id="member_addr_1" name="member_addr1" value="" readonly placeholder="도로명주소"><input type="text" id="member_addr_2" name="member_addr2" placeholder="상세주소"><p/>
