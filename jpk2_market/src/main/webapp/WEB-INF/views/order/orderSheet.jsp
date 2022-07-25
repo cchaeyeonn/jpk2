@@ -32,10 +32,10 @@
 주문상품<p/>
 <hr>
 <table>
-<c:forEach items="${cartList}" var="cartVo" varStatus="status">
+<c:forEach items="${orderList}" var="orderVo" varStatus="status">
 <tr>
-<td><div><img class="img-fluid2" src="${pageContext.request.contextPath}/resources/product_image/${cartVo.p_system_filename}" alt="..."  /></div></td>
-<td>${cartVo.p_name}</td><td>${cartVo.p_amount}</td><td>${cartVo.p_price}</td>
+<td><div><img class="img-fluid2" src="${pageContext.request.contextPath}/resources/product_image/${orderVo.p_system_filename}" alt="..."  /></div></td>
+<td>${orderVo.p_name}</td><td>${orderVo.p_amount}</td><td>${orderVo.p_price}</td>
 </tr>
 </c:forEach>
 </table>
