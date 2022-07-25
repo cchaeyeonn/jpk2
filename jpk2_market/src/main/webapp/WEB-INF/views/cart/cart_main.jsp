@@ -77,9 +77,7 @@
     <table id="target">
     <c:set var="total" value="0"/>
     <c:forEach items="${cartList}" var="cartVo" varStatus="status">
-    <form>
     <input type="hidden"  id="pidx_pc" value="${cartVo.pidx_pc} ">
-    <input type="hidden"  id="pbidx" value="${cartVo.pbidx} ">
     <!-- 외부 js의 경우 el및 jstl이 적용되지 않는다. 그렇기 때문에 수량관련 +-버튼 스크립트를  forEach문 안에 따로 작성했다. -->
     <script>
     $(function(){
@@ -224,13 +222,10 @@ $("#btn_delete_${cartVo.pbidx}").click(function(){
     <button id="btn_delete_${cartVo.pbidx}" type="button" value="${cartVo.pbidx}">X</button>
     </td>
     </tr>
-    </form>
     <c:set var="total" value="${total + cartVo.p_amount*cartVo.p_price }"/>
     </c:forEach>
     </table>
     </div>
-    
-    
     <div id="for_order" style="height:1040px;">
     <table id="for_order_table" border="0" style="floate:left; width:378px; height:238px; position: sticky; top:183px; right:0px; padding-top:80px; background-color:#fafafa;">
     <tr>
