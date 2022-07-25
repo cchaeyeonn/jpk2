@@ -24,7 +24,7 @@
 </head>
 <body>
     <jsp:include page="../header.jsp"></jsp:include>
-<div id="wrap">
+<div id="wrap" style="padding-top:239px;">
 <h1 align="center">주문서</h1>
 <form>
 <div id="order-product">

@@ -276,13 +276,7 @@ $("#btn_delete_${cartVo.pbidx}").click(function(){
      <input type="hidden" id="final_pay" value="${total - sale + delivery_fee}">
     </div>
      </form>
-     
-   
-   
-  
-  
-   
- 
+
     <!-- 푸터 연결 -->
     <jsp:include page="../footer.jsp"></jsp:include>
 
