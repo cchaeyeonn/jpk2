@@ -111,7 +111,16 @@ $(function(){
     <h2 style="text-align:center;"> 장바구니</h2>
     <input type="checkbox" id="chk_all">전체 선택 ㅣ 
     <!--<input type="button" value="선택 삭제" id="cart_delete">-->
+<<<<<<< HEAD
+    <button id="cart_delete" type="button" value="선택 삭제">선택 삭제</button>
+    
+    <hr style="width:65%;">
+    
+    
+    <div id="cart_1" style="float:left; width:60%; margin-right:103px;">   
+=======
     <button id="cart_delete" type="button" value="선택 삭제">선택 삭제</button><hr>
+>>>>>>> branch 'master' of https://github.com/cchaeyeonn/jpk2.git
     <table id="target">
     <c:set var="total" value="0"/>
     <c:forEach items="${cartList}" var="cartVo" varStatus="status">
@@ -263,8 +272,11 @@ $("#btn_delete_${cartVo.pbidx}").click(function(){
     <c:set var="total" value="${total + cartVo.p_amount*cartVo.p_price }"/>
     </c:forEach>
     </table>
-    <div id="for_order">
-    <table id="for_order_table" border="1">
+    </div>
+    
+    
+    <div id="for_order" style="height:1040px;">
+    <table id="for_order_table" border="0" style="floate:left; width:378px; height:238px; position: sticky; top:183px; right:0px; padding-top:80px; background-color:#fafafa;">
     <tr>
     <td>상품금액</td>
     <td id="totalprice"><c:out value="${total}"/></td>
@@ -295,11 +307,17 @@ $("#btn_delete_${cartVo.pbidx}").click(function(){
     <td>${total - sale + delivery_fee}원</td>
     </tr>
     <tr>
+<<<<<<< HEAD
+    <td colspan="2">
+     <input type="submit" class="btn btn-outline-success" value="주문하기" style="width:378px;">
+=======
     <td>
 
 <!--     <input type="button" id="pbidxList" value="주문하기" > -->
 	<input type="submit" id="pbidxList" value="주문하기">
+>>>>>>> branch 'master' of https://github.com/cchaeyeonn/jpk2.git
     </td>
+    <td></td>
     </tr>
     </table>
     </div>
