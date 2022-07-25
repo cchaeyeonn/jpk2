@@ -607,7 +607,7 @@ progress {
 
 .img-fluid2 {
   max-width: 50%;
-  height: 45%;
+  height: 80%;
 }
 
 .img-fluid3 {
@@ -6774,6 +6774,7 @@ textarea.form-control-lg {
 .d-flex2 {
   display: flex !important;
   align-items: center;
+  justify-content: space-around;
   
    
 }
@@ -7004,7 +7005,7 @@ textarea.form-control-lg {
 }
 
 .w-149 {
-	width: 149px !important;
+	width: 122px !important;
 }
 .mw-100 {
   max-width: 100% !important;
@@ -7039,7 +7040,7 @@ textarea.form-control-lg {
 }
 
 .h-220{
-	height: 254px !important;
+	height: 109px !important;
 }
 
 .h-auto {
