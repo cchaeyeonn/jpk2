@@ -16,6 +16,7 @@ public class ProductVo {
 	private String p_tag;
 	private String p_system_filename;
 	private int midx_mp;
+	private String p_secondname;
 	
 	public String getP_system_filename() {
 		return p_system_filename;
@@ -106,6 +107,12 @@ public class ProductVo {
 	}
 	public void setP_tag(String p_tag) {
 		this.p_tag = p_tag;
+	}
+	public String getP_secondname() {
+		return p_secondname;
+	}
+	public void setP_secondname(String p_secondname) {
+		this.p_secondname = p_secondname;
 	}
 
 }
