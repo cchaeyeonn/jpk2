@@ -120,8 +120,8 @@ input[id="del-chk3"]:checked + .del-chk3::before{
 </style>
 <!-- 외부 js에서 ${pageContext.request.contextPath}를 사용할 수 있게 세션에 값을 저장 -->
 <script type="text/javascript" charset="utf-8">
-	sessionStorage.setItem("contextpath", "${pageContext.request.contextPath}");
-	
+   sessionStorage.setItem("contextpath", "${pageContext.request.contextPath}");
+   
 </script>
 <title>회원 가입</title>
 
@@ -212,7 +212,7 @@ input[id="del-chk3"]:checked + .del-chk3::before{
          <tr><td style="height:8px;"></td><td></td></tr>
          <tr>
             <td></td>
-            <td><input type="text" id="member_addr_1" class="form-control" name="member_addr1" placeholder="도로명주소"><input type="text" id="member_addr_2" class="form-control" name="member_addr2" placeholder="상세주소"></td>
+            <td><input type="text" id="member_addr_1" class="form-control" name="member_addr1" readonly placeholder="도로명주소"><input type="text" id="member_addr_2" class="form-control" name="member_addr2" placeholder="상세주소"></td>
             <td></td>
             <td><div style="height:20px"><span id="result_addr" style="font-size:12px;"></span></div></td>
          </tr>
@@ -233,7 +233,7 @@ input[id="del-chk3"]:checked + .del-chk3::before{
          
          <hr>
          <table>
-		<tr>
+      <tr>
          <td>
          <input type="checkbox" id="chk_all" name="member_termall">
          <label for="chk_all" class="chk_all"></label></td>

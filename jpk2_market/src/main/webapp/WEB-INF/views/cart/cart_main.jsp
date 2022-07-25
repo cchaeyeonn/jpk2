@@ -5,51 +5,12 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>장바구니</title>
-<style>
+<link href="resources/css/style_css.css" rel="stylesheet" />
 
-	#cart_inner{
-		min-height: 1040px;
-		padding-top: 200px;
-		padding-right:315px;
-		padding-left:315px;
-	}
-	#product{
-		padding-left:10%;
-		padding-right:10%; 
-		height:1000px; 
-		padding-top:260px;
-		}
-		
-	#product_img{
-			float:left; 
-			width:50%; 
-			height:50%;
-			}
-	#product_detail{
-			float:right; 
-			width:50%; 
-			height:50%;
-			}
-	#home_button{
-			padding-left:10%; 
-			padding-right:10%; 
-			text-align:center; 
-			float:center;
-			}
-	#target{
-	border-collapse : collapse;
-	width:100%;
-	height:100%;
-    
-	}	
-	.img-fluid{
-	
-	
-	
-	}
-	
-</style>
+<title>장바구니</title>
+
+
+
 <!-- 외부 js에서 ${pageContext.request.contextPath}를 사용할 수 있게 세션에 값을 저장 -->
 <script type="text/javascript" charset="utf-8">
 	sessionStorage.setItem("contextpath", "${pageContext.request.contextPath}");
@@ -66,7 +27,8 @@
  	
     <div id="cart_inner">
     <h2 style="text-align:center;"> 장바구니</h2>
-    <input type="checkbox" id="chk_all">전체 선택 ㅣ 
+    
+    <label for="chk_all"><input type="checkbox" id="chk_all">전체 선택</label> ㅣ 
     <!--<input type="button" value="선택 삭제" id="cart_delete">-->
 
     <button id="cart_delete" type="button" value="선택 삭제">선택 삭제</button>

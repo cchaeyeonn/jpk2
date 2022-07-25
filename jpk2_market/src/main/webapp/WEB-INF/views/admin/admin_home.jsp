@@ -3,23 +3,10 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
+<meta charset="UTF-8">
+<link href="resources/css/style_css.css" rel="stylesheet" />
 	<title>관리자페이지</title>
 	
-<style>
-	#admin_home_inner{
-		min-height:1040px;
-		padding-top:230px;
-		text-align:center;
-		
-	}
-	
-	#adh_button{
-	padding: 20px;
-    border-radius: 34px;
-    margin: 20px;
-	}
-	
-</style>
 </head>
 <body>
 
