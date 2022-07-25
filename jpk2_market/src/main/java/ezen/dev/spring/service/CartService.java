@@ -45,9 +45,7 @@ public class CartService {
 		 
 		return  (ArrayList<Integer>) cartDao.cart_pidx_pc(midx_);
 	}
-
-
-
+	
 	public List<OrderVo> getSomeCartList(List<Integer> pbidxList) {
 		return cartDao.getSomeCartList(pbidxList);
 	}
