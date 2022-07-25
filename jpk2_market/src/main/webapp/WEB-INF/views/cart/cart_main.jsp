@@ -36,7 +36,7 @@
     <hr style="width:65%;">
     
     
-    <div id="cart_1" style="float:left; width:60%; margin-right:103px;">   
+    <div id="cart_1" style="float:left; width:60%;">   
     <table id="target">
     <c:set var="total" value="0"/>
     <c:forEach items="${cartList}" var="cartVo" varStatus="status">
@@ -190,7 +190,7 @@ $("#btn_delete_${cartVo.pbidx}").click(function(){
     </table>
     </div>
     <div id="for_order" style="height:1040px;">
-    <table id="for_order_table" border="0" style="floate:left; width:378px; height:238px; position: sticky; top:183px; right:0px; padding-top:80px; background-color:#fafafa;">
+    <table id="for_order_table" border="0" style="float:right; width:378px; height:238px; position: sticky; top:183px; right:0px; padding-top:80px; background-color:#fafafa;">
     <tr>
     <td>상품금액</td>
     <td id="totalprice"><c:out value="${total}"/></td>
