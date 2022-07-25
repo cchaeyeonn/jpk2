@@ -24,7 +24,7 @@
 </head>
 <body>
     <jsp:include page="../header.jsp"></jsp:include>
-<div id="wrap" style="padding-top:239px;">
+<div id="wrap" style="padding-top:239px; margin-left:467px; margin-right:396px;">
 <h1 align="center">주문서</h1>
 <form>
 <div id="order-product">
@@ -34,7 +34,7 @@
 <table>
 <c:forEach items="${orderList}" var="orderVo" varStatus="status">
 <tr>
-<td><div><img class="img-fluid2" src="${pageContext.request.contextPath}/resources/product_image/${orderVo.p_system_filename}" alt="..."  /></div></td>
+<td><div><img class="img-fluid4" src="${pageContext.request.contextPath}/resources/product_image/${orderVo.p_system_filename}" alt="..."  /></div></td>
 <td>${orderVo.p_name}</td><td>${orderVo.p_amount}</td><td>${orderVo.p_price}</td>
 </tr>
 </c:forEach>
@@ -44,9 +44,10 @@
 <!-- 세션값에 있는 midx를 이용해서 주문자의 정보를 가져옴 -->
 주문자 정보<p/>
 <hr>
+<br>
 <table>
 <tr>
-<td>성함</td><td>${memberVo.member_name}</td>
+<td style="width:187px;">성함</td><td>${memberVo.member_name}</td>
 </tr>
 <tr>
 <td>휴대폰</td><td>${memberVo.member_phone}</td>
@@ -70,8 +71,8 @@
 <!-- 단순 체크 약관 유효성 검사를 통해 체크 된 경우에만 결제가 되도록 -->
 개인정보 수집/제공<p/>
 <hr>
-<a><input type="button" value="장바구니로 돌아가기"></a>
-<a><input type="button" value="메인으로 돌아가기"></a>
+<a><input type="button" class="btn btn-outline-success" value="장바구니로 돌아가기"></a>
+<!-- <a><input type="button" class="btn btn-outline-success" value="메인으로 돌아가기"></a> -->
 </div>
 </form>
 </div>
