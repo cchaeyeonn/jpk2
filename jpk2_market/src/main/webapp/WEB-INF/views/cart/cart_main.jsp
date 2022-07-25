@@ -68,12 +68,22 @@
     <h2 style="text-align:center;"> 장바구니</h2>
     <input type="checkbox" id="chk_all">전체 선택 ㅣ 
     <!--<input type="button" value="선택 삭제" id="cart_delete">-->
+<<<<<<< HEAD
+
+=======
+>>>>>>> branch 'master' of https://github.com/cchaeyeonn/jpk2.git
     <button id="cart_delete" type="button" value="선택 삭제">선택 삭제</button>
     
     <hr style="width:65%;">
     
     
     <div id="cart_1" style="float:left; width:60%; margin-right:103px;">   
+<<<<<<< HEAD
+
+    <button id="cart_delete" type="button" value="선택 삭제">선택 삭제</button><hr>
+
+=======
+>>>>>>> branch 'master' of https://github.com/cchaeyeonn/jpk2.git
     <table id="target">
     <c:set var="total" value="0"/>
     <c:forEach items="${cartList}" var="cartVo" varStatus="status">
