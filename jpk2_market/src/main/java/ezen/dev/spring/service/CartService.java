@@ -11,6 +11,7 @@ import ezen.dev.spring.dao.CartDao;
 import ezen.dev.spring.dao.MemberDao;
 import ezen.dev.spring.vo.CartVo;
 import ezen.dev.spring.vo.MemberVo;
+import ezen.dev.spring.vo.OrderVo;
 import ezen.dev.spring.vo.ProductVo;
 
 @Service
@@ -47,7 +48,7 @@ public class CartService {
 
 
 
-	public List<CartVo> getSomeCartList(List<Integer> pbidxList) {
+	public List<OrderVo> getSomeCartList(List<Integer> pbidxList) {
 		return cartDao.getSomeCartList(pbidxList);
 	}
 	

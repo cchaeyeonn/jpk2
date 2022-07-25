@@ -10,6 +10,7 @@ import org.springframework.stereotype.Repository;
 
 import ezen.dev.spring.vo.CartVo;
 import ezen.dev.spring.vo.MemberVo;
+import ezen.dev.spring.vo.OrderVo;
 import ezen.dev.spring.vo.ProductVo;
 
 @Repository
@@ -51,7 +52,7 @@ public class CartDao {
 		
 		return sqlSession.update(MAPPER+".cart_amount", cartVo);
 	}
-	public List<CartVo> getSomeCartList(List<Integer> pbidxList) {
+	public List<OrderVo> getSomeCartList(List<Integer> pbidxList) {
 
 		return sqlSession.selectList(MAPPER+".getSomeCartList", pbidxList);
 	}	 

@@ -50,7 +50,7 @@ public class OrderController {
 	
 	
 	@PostMapping("/orderSheet.do")
-	public String orderSheet(CartVo cartVo, Model model, HttpServletRequest request, @RequestParam("pbidx") Integer[] pbidx) {
+	public String orderSheet(CartVo cartVo, OrderVo orderVo, Model model, HttpServletRequest request, @RequestParam("pbidx") Integer[] pbidx) {
 		HttpSession session = request.getSession();
 		String member_id = (String)session.getAttribute("member_id");
 		MemberVo memberVo = memberService.getMemberInfo(member_id);
@@ -63,9 +63,9 @@ public class OrderController {
 		System.out.println("pbidx: "+ mmm);}
 
 		List<Integer> pbidxList = Arrays.asList(pbidx);
-		List<CartVo> cartList = cartService.getSomeCartList(pbidxList);
+		List<OrderVo> orderList = cartService.getSomeCartList(pbidxList);
 		model.addAttribute("memberVo", memberVo);
-		model.addAttribute("cartList", cartList);
+		model.addAttribute("orderList", orderList);
 		
 		return"order/orderSheet";
 	}

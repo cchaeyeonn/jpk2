@@ -45,8 +45,11 @@
 	<update id="cart_amount" parameterType="cartVo">
 		update fm_product_cart set p_amount = #{p_amount} where midx_mc=#{midx_mc} and pidx_pc=#{pidx_pc}
 	</update>
-	<select id="getSomeCartList"  parameterType="list">
-			select * from fm_product_cart a inner join fm_member b on a.midx_mc = b.midx inner join fm_product c on a.pidx_pc = c.pidx where p_delyn='N' and pbidx= #{pbidxList}
+	<select id="getSomeCartList"  parameterType="list" resultType="orderVo">
+			select * from fm_product_cart a inner join fm_member b on a.midx_mc = b.midx inner join fm_product c on a.pidx_pc = c.pidx where p_delyn='N' and pbidx in
+		<foreach collection="list" item="pbidxList" open="(" separator="," close=")" >
+			#{pbidxList}
+		</foreach>
 	</select>
 
 </mapper>
