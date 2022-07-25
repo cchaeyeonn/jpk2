@@ -54,70 +54,32 @@
 <script type="text/javascript" charset="utf-8">
 	sessionStorage.setItem("contextpath", "${pageContext.request.contextPath}");
 </script>
-<!--     <script>
-$(function(){
-var pbidxArr[] = new Array;
-$("input[name=pbidx]:checked").each(function(){
-	var val = $(this).val();
-	pbidxArr.push(val);
-	console.log("pbidxArr.val()");
-});
-});
-</script> -->
 <!-- jquery 스크립트 -->
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script src="${pageContext.request.contextPath}/resources/js/cart.js "></script>
-
-<!-- <script>
-$(function(){
-	$("#pbidxList").click(function(){
-	/* 변수 선언 */
-	var pbidx="";
-	var pbidxArr = new Array();
-	
-	/* 반복문을 통해 넣음 */
-	<c:forEach items="${cartList}" var="cartVo" varStatus="status">
-	pbidx="#"+"${cartVo.pbidx}";
-	if($(pbidx).is("checked")){
-		pbidxArr.push("${cartVo.pbidx}")
-	}
-	</c:forEach>
-	
-	$.ajax({
-		type : "POST",
-		url : "/spring/orderSheet.do",
-		data : {
-			0:0
-			pbidxArr:pbidxArr}
-	success: function(data){
-		if(data == "N"){
-			alert("db와 연동되지 않았습니다");
-		}else{
-			
-			alert("주문서 페이지로 이동합니다");
-		}
-		})
-	})
-})
-</script> -->
 </head>
 <body>
     <!-- 헤더 연결 -->
     <jsp:include page="../header.jsp"></jsp:include>
  
-	<form name="orderAddForm" id="orderAddForm" action="${pageContext.request.contextPath}/orderSheet.do" method="post">
-<!--  	<form name="orderAddForm" id="orderAddForm"> -->
+ 	<form name="orderAddForm" action="${pageContext.request.contextPath}/orderSheet.do" method="post">
+ 	
     <div id="cart_inner">
     <h2 style="text-align:center;"> 장바구니</h2>
     <input type="checkbox" id="chk_all">전체 선택 ㅣ 
     <!--<input type="button" value="선택 삭제" id="cart_delete">-->
-    <button id="cart_delete" type="button" value="선택 삭제">선택 삭제</button><hr>
+    <button id="cart_delete" type="button" value="선택 삭제">선택 삭제</button>
+    
+    <hr style="width:65%;">
+    
+    
+    <div id="cart_1" style="float:left; width:60%; margin-right:103px;">   
     <table id="target">
     <c:set var="total" value="0"/>
     <c:forEach items="${cartList}" var="cartVo" varStatus="status">
+    <form>
     <input type="hidden"  id="pidx_pc" value="${cartVo.pidx_pc} ">
-    <input type="hidden"  id="pbidx_" value="${cartVo.pbidx} ">
-    
+    <input type="hidden"  id="pbidx" value="${cartVo.pbidx} ">
     <!-- 외부 js의 경우 el및 jstl이 적용되지 않는다. 그렇기 때문에 수량관련 +-버튼 스크립트를  forEach문 안에 따로 작성했다. -->
     <script>
     $(function(){
@@ -233,7 +195,6 @@ $("#btn_delete_${cartVo.pbidx}").click(function(){
     <tr id="${cartVo.pbidx}_product_target">
     <td>
     <input type="checkbox" class="del-chk" name="pbidx" value="${cartVo.pbidx}">
-
     </td>
     <td>
     <!-- 사진 -->
@@ -242,14 +203,17 @@ $("#btn_delete_${cartVo.pbidx}").click(function(){
     </div>
     </td>
     <td>
+    
     <!-- 상품명 -->
     ${cartVo.p_name}
     </td>
     <td>
     <!-- 수량 버튼 -->
+    
     <input type="button" type="button" id="${cartVo.pbidx}_btn_minus" value="-">
     <input type="text"  id="${cartVo.pbidx}_pop_out" class="amount" value="${cartVo.p_amount}" readonly="readonly" style="text-align:center;"/>
     <input type="button" type="button" id="${cartVo.pbidx}_btn_plus" value="+">
+   
     </td>
     <td>
     <!-- 금액 -->
@@ -260,11 +224,15 @@ $("#btn_delete_${cartVo.pbidx}").click(function(){
     <button id="btn_delete_${cartVo.pbidx}" type="button" value="${cartVo.pbidx}">X</button>
     </td>
     </tr>
+    </form>
     <c:set var="total" value="${total + cartVo.p_amount*cartVo.p_price }"/>
     </c:forEach>
     </table>
-    <div id="for_order">
-    <table id="for_order_table" border="1">
+    </div>
+    
+    
+    <div id="for_order" style="height:1040px;">
+    <table id="for_order_table" border="0" style="floate:left; width:378px; height:238px; position: sticky; top:183px; right:0px; padding-top:80px; background-color:#fafafa;">
     <tr>
     <td>상품금액</td>
     <td id="totalprice"><c:out value="${total}"/></td>
@@ -295,11 +263,10 @@ $("#btn_delete_${cartVo.pbidx}").click(function(){
     <td>${total - sale + delivery_fee}원</td>
     </tr>
     <tr>
-    <td>
-
-<!--     <input type="button" id="pbidxList" value="주문하기" > -->
-	<input type="submit" id="pbidxList" value="주문하기">
+    <td colspan="2">
+     <input type="submit" class="btn btn-outline-success" value="주문하기" style="width:378px;">
     </td>
+    <td></td>
     </tr>
     </table>
     </div>
@@ -308,11 +275,11 @@ $("#btn_delete_${cartVo.pbidx}").click(function(){
      <input type="hidden" id="delivery_fee" value="${delivery_fee}">
      <input type="hidden" id="final_pay" value="${total - sale + delivery_fee}">
     </div>
-    <input type="text" value="${pbidxArr}">
      </form>
      
    
    
+  
   
    
  
@@ -320,5 +287,4 @@ $("#btn_delete_${cartVo.pbidx}").click(function(){
     <jsp:include page="../footer.jsp"></jsp:include>
 
 </body>
-
 </html>
