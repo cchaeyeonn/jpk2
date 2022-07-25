@@ -23,25 +23,25 @@
         <link href="resources/css/styles.css" rel="stylesheet" />
             <!-- 카카오 주소 api -->
     <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
- 	<script>
-	$(function(){
-		$(document).on('click','#member_addr',function(){
-		if($("#member_addr").prop("checked")){
-			$("#postcode").val("${memberVo.member_addrcode}");
-			$("#member_addr_1").val("${memberVo.member_addr1}");
-			$("#member_addr_2").val("${memberVo.member_addr2}");
-			
-		}else{
-			$("#postcode").val("");
-			$("#member_addr_1").val("");
-			$("#member_addr_2").val("");
-		}
-		});
-	});
-	</script>
-	<script>
-	 // 카카오 주소 api 
-	   
+    <script>
+   $(function(){
+      $(document).on('click','#member_addr',function(){
+      if($("#member_addr").prop("checked")){
+         $("#postcode").val("${memberVo.member_addrcode}");
+         $("#member_addr_1").val("${memberVo.member_addr1}");
+         $("#member_addr_2").val("${memberVo.member_addr2}");
+         
+      }else{
+         $("#postcode").val("");
+         $("#member_addr_1").val("");
+         $("#member_addr_2").val("");
+      }
+      });
+   });
+   </script>
+   <script>
+    // 카카오 주소 api 
+      
     function execDaumPostcode() {
        new daum.Postcode({
            oncomplete: function(data) {
@@ -60,9 +60,9 @@
                    extraRoadAddr = ' (' + extraRoadAddr + ')';
                }
 
-               document.getElementById('postcode').value = data.zonecode;	//우편번호
-               document.getElementById("member_addr_1").value = roadAddr;	//도로명주소
-               document.getElementById("member_addr_2").focus();			//상세주소 (창이꺼지면서 상세주소에 focus가 가도록)
+               document.getElementById('postcode').value = data.zonecode;   //우편번호
+               document.getElementById("member_addr_1").value = roadAddr;   //도로명주소
+               document.getElementById("member_addr_2").focus();         //상세주소 (창이꺼지면서 상세주소에 focus가 가도록)
 
               
              }
@@ -70,17 +70,17 @@
       };       
    function maxDate(){
    var now_utc = Date.now() // 지금 날짜를 밀리초로
-								// getTimezoneOffset()은 현재 시간과의 차이를 분 단위로 반환
-	var timeOff = new Date().getTimezoneOffset()*60000; // 분단위를 밀리초로 변환
-							// new Date(now_utc-timeOff).toISOString()은 현재시간을 '2022-05-11T18:09:38.134Z'의 형식으로 반환
-	var today = new Date(now_utc-timeOff).toISOString().split("T")[0];
-	document.getElementById("member_birth").setAttribute("max", today);
+                        // getTimezoneOffset()은 현재 시간과의 차이를 분 단위로 반환
+   var timeOff = new Date().getTimezoneOffset()*60000; // 분단위를 밀리초로 변환
+                     // new Date(now_utc-timeOff).toISOString()은 현재시간을 '2022-05-11T18:09:38.134Z'의 형식으로 반환
+   var today = new Date(now_utc-timeOff).toISOString().split("T")[0];
+   document.getElementById("member_birth").setAttribute("max", today);
    };
-	</script>
+   </script>
 </head>
 <body>
     <jsp:include page="../header.jsp"></jsp:include>
-<div id="wrap" style="padding-top:239px;">
+<div id="wrap" style="padding-top:239px; margin-left:414px; margin-right:401px;">
 <h1 align="center">주문서</h1>
 <form>
 <div id="order-product">
@@ -90,7 +90,7 @@
 <table>
 <c:forEach items="${orderList}" var="orderVo" varStatus="status">
 <tr>
-<td><div><img class="img-fluid2" src="${pageContext.request.contextPath}/resources/product_image/${orderVo.p_system_filename}" alt="..."  /></div></td>
+<td><div><img class="img-fluid4" src="${pageContext.request.contextPath}/resources/product_image/${orderVo.p_system_filename}" alt="..."  /></div></td>
 <td>${orderVo.p_name}</td><td>&nbsp;&nbsp;&nbsp;</td><td>${orderVo.p_amount}&nbsp;개</td><td>&nbsp;&nbsp;&nbsp;</td><td>${orderVo.p_price}</td>
 </tr>
 </c:forEach>
@@ -117,10 +117,10 @@
 배송정보<p/>
 <hr>
 <div>
-		배송지<p/>
-		<input type="checkbox" id="member_addr" name="member_addr">기본 배송지 입력<p/>
-		<input type="text" id="postcode" name="member_addrcode" placeholder="우편번호" value="" readonly>
-    	<input type="button" onclick="execDaumPostcode()" value="우편번호 찾기"><p/>
+      배송지<p/>
+      <input type="checkbox" id="member_addr" name="member_addr">기본 배송지 입력<p/>
+      <input type="text" id="postcode" name="member_addrcode" placeholder="우편번호" value="" readonly>
+       <input type="button" onclick="execDaumPostcode()" value="우편번호 찾기"><p/>
         <input type="text" id="member_addr_1" name="member_addr1" value="" readonly placeholder="도로명주소"><input type="text" id="member_addr_2" name="member_addr2" placeholder="상세주소"><p/>
 </div>
 </div>

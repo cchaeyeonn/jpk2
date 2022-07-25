@@ -13,7 +13,7 @@
 
 <!-- 외부 js에서 ${pageContext.request.contextPath}를 사용할 수 있게 세션에 값을 저장 -->
 <script type="text/javascript" charset="utf-8">
-	sessionStorage.setItem("contextpath", "${pageContext.request.contextPath}");
+   sessionStorage.setItem("contextpath", "${pageContext.request.contextPath}");
 </script>
 <!-- jquery 스크립트 -->
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
@@ -23,8 +23,8 @@
     <!-- 헤더 연결 -->
     <jsp:include page="../header.jsp"></jsp:include>
  
- 	<form name="orderAddForm" action="${pageContext.request.contextPath}/orderSheet.do" method="post">
- 	
+    <form name="orderAddForm" action="${pageContext.request.contextPath}/orderSheet.do" method="post">
+    
     <div id="cart_inner">
     <h2 style="text-align:center;"> 장바구니</h2>
     
@@ -44,108 +44,108 @@
     <!-- 외부 js의 경우 el및 jstl이 적용되지 않는다. 그렇기 때문에 수량관련 +-버튼 스크립트를  forEach문 안에 따로 작성했다. -->
     <script>
     $(function(){
-    	let number = $('#${cartVo.pbidx}_pop_out').val();
+       let number = $('#${cartVo.pbidx}_pop_out').val();
    //minus 버튼
     $("#${cartVo.pbidx}_btn_minus").click(function(){
-		
-		
+      
+      
         let midx_mc = ${cartVo.midx_mc}
         let pidx_pc = ${cartVo.pidx_pc}
-		 number = parseInt(number)
+       number = parseInt(number)
          if(number<=1){
          alert('더이상 줄일수 없습니다.');
          number=1;
          }else{
- 	
-         $('#${cartVo.pbidx}_pop_out').attr('value',number-=1);   	
+    
+         $('#${cartVo.pbidx}_pop_out').attr('value',number-=1);      
       }
          
          $('#${cartVo.pbidx}_pop_out').text(number);
-	
-		
-		$.ajax({
-			type: "post",
-			url: "${pageContext.request.contextPath}/cart_amount.do",
-			data: {
-				"number":number,
-				"midx_mc":midx_mc,
-				"pidx_pc":pidx_pc
-			},
-			async: false,
-			success: function(data){
-				if(data == "N"){
-					alert("db와 연동되지 않았습니다");
-				}else{
-					
-					location.reload();
-				}
-				
-			},
-			error: function(error){ alert("수량 수정 중 에러발생"); }
-		});
-		
-	});
+   
+      
+      $.ajax({
+         type: "post",
+         url: "${pageContext.request.contextPath}/cart_amount.do",
+         data: {
+            "number":number,
+            "midx_mc":midx_mc,
+            "pidx_pc":pidx_pc
+         },
+         async: false,
+         success: function(data){
+            if(data == "N"){
+               alert("db와 연동되지 않았습니다");
+            }else{
+               
+               location.reload();
+            }
+            
+         },
+         error: function(error){ alert("수량 수정 중 에러발생"); }
+      });
+      
+   });
 
 
     //plus 버튼
 $("#${cartVo.pbidx}_btn_plus").click(function(){
-		
-		
+      
+      
         let midx_mc = ${cartVo.midx_mc}
         let pidx_pc = ${cartVo.pidx_pc}
-		 number = parseInt(number)
-        $('#${cartVo.pbidx}_pop_out').attr('value',number+=1);   	 
+       number = parseInt(number)
+        $('#${cartVo.pbidx}_pop_out').attr('value',number+=1);       
          $('#${cartVo.pbidx}_pop_out').text(number);
-	
-		
-		$.ajax({
-			type: "post",
-			url: "${pageContext.request.contextPath}/cart_amount.do",
-			data: {
-				"number":number,
-				"midx_mc":midx_mc,
-				"pidx_pc":pidx_pc
-			},
-			async: false,
-			success: function(data){
-				if(data == "N"){
-					alert("db와 연동되지 않았습니다");
-				}else{
-					
-					location.reload();
-				}
-				
-			},
-			error: function(error){ alert("수량 수정 중 에러발생"); }
-		});
-		
-	});
+   
+      
+      $.ajax({
+         type: "post",
+         url: "${pageContext.request.contextPath}/cart_amount.do",
+         data: {
+            "number":number,
+            "midx_mc":midx_mc,
+            "pidx_pc":pidx_pc
+         },
+         async: false,
+         success: function(data){
+            if(data == "N"){
+               alert("db와 연동되지 않았습니다");
+            }else{
+               
+               location.reload();
+            }
+            
+         },
+         error: function(error){ alert("수량 수정 중 에러발생"); }
+      });
+      
+   });
     
 $("#btn_delete_${cartVo.pbidx}").click(function(){
-	
-	let pbidx = $("#btn_delete_${cartVo.pbidx}").val();
-	
+   
+   let pbidx = $("#btn_delete_${cartVo.pbidx}").val();
+   
 
-	
-	$.ajax({
-		type: "post",
-		url: "${pageContext.request.contextPath}/cart_deleteOne.do",
-		data: {
-			"pbidx":pbidx
-		},
-		async: false,
-		success: function(data){
-			if(data == "N"){
-				alert("해당 항목의 체크박스를 체크해주세요");
-			}else{
-				
-				location.reload();
-			}
-			
-		},
-		error: function(error){ alert("장바구니삭제 중 에러발생"); }
-	});
-	
+   
+   $.ajax({
+      type: "post",
+      url: "${pageContext.request.contextPath}/cart_deleteOne.do",
+      data: {
+         "pbidx":pbidx
+      },
+      async: false,
+      success: function(data){
+         if(data == "N"){
+            alert("해당 항목의 체크박스를 체크해주세요");
+         }else{
+            
+            location.reload();
+         }
+         
+      },
+      error: function(error){ alert("장바구니삭제 중 에러발생"); }
+   });
+   
 });
     
     
@@ -190,7 +190,7 @@ $("#btn_delete_${cartVo.pbidx}").click(function(){
     </table>
     </div>
     <div id="for_order" style="height:1040px;">
-    <table id="for_order_table" border="0" style="floate:left; width:378px; height:238px; position: sticky; top:183px; right:0px; padding-top:80px; background-color:#fafafa;">
+    <table id="for_order_table" border="0" style="float:right; width:378px; height:238px; position: sticky; top:183px; right:0px; padding-top:80px; background-color:#fafafa;">
     <tr>
     <td>상품금액</td>
     <td id="totalprice"><c:out value="${total}"/></td>
