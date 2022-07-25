@@ -20,6 +20,7 @@ public class MemberVo {
 	private String member_key;
 	private String member_auth;
 	private String now_pw;
+	private String member_addrcode;
 	
 	public String getMember_auth() {
 		return member_auth;
@@ -135,5 +136,10 @@ public class MemberVo {
 	public void setNow_pw(String now_pw) {
 		this.now_pw = now_pw;
 	}
-
+	public String getMember_addrcode() {
+		return member_addrcode;
+	}
+	public void setMember_addrcode(String member_addrcode) {
+		this.member_addrcode = member_addrcode;
+	}
 }

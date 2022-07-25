@@ -56,7 +56,7 @@ public class AdminController {
 	public String productAddProcess(@RequestParam("p_filename") MultipartFile uploadFile,
 			String p_name, String p_price, String p_unit, String p_weight, String p_delivery,
 			String p_package, String p_allergy, String p_limitdate, String p_type, String p_tag,
-			Integer midx_mp , Model model, HttpServletRequest request) throws IllegalStateException, IOException {
+			Integer midx_mp , String p_secondname, Model model, HttpServletRequest request) throws IllegalStateException, IOException {
 		
 		HttpSession session = request.getSession();
 		String p_filename = uploadFile.getOriginalFilename();
@@ -94,6 +94,7 @@ public class AdminController {
 		productVo.setMidx_mp(midx_mp);
 		productVo.setP_filename(p_filename);
 		productVo.setP_system_filename(p_system_filename);
+		productVo.setP_secondname(p_secondname);
 		//이를 맵퍼로 가져가 실행하고
 		result = adminService.addProduct(productVo);
 		String viewPage="admin/admin_product_add";
@@ -113,6 +114,7 @@ public class AdminController {
 			model.addAttribute("midx",midx_mp);
 			model.addAttribute("p_filename",p_filename);
 			model.addAttribute("p_system_filename",p_system_filename);
+			model.addAttribute("p_secondname",p_secondname);
 			viewPage = "admin/admin_home";
 		}
 		return viewPage;

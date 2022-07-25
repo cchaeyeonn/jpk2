@@ -42,6 +42,9 @@
 		<div id="product_detail">상품 제목<p/>
 		<input type="text" name="p_name">
 		<hr>
+		상품 부제목<p/>
+		<input type="text" name="p_secondname"><p/>
+		<hr>
 		상품 가격<p/>
 		<input type="text" name="p_price"><p/>
 		<hr>

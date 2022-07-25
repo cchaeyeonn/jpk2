@@ -76,7 +76,7 @@
 		<img class="img-fluid3" src="${pageContext.request.contextPath}/resources/product_image/${productVo.p_system_filename}"></div>
 		<div id="product_detail"><p/>
 		<h3>${productVo.p_name}</h3>
-		<div id="product_subject">환상의 궁합 딸기&바나나(1봉/1kg)</div>
+		<div id="product_subject">${productVo.p_secondname}</div>
 		
 		<div id="product_price"><h3>${productVo.p_price}원</h3></div>
 		<hr class="pd_hr">
