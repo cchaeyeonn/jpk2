@@ -1,30 +1,30 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-	<!-- footer CSS -->
-	<link rel="stylesheet" href="./resources/css/footertest.css">
-	<!-- Core theme CSS (includes Bootstrap)-->
-    <link href="resources/css/styles.css" rel="stylesheet" />
-	
-	<style>
-		  #topButton {
-		      position: fixed; 
-		      right: 2%; 
-		      bottom: 50px; 
-		      display: none; 
-		      z-index: 999;
-	      }
-	      
-	      #index_inner{
-	      	min-height: 1040px;
-	      }
-	</style>
-	
-	<!-- topbutton 스크립트 시작 -->
-      <script>
+<!-- footer CSS -->
+<link rel="stylesheet" href="./resources/css/footertest.css">
+<!-- Core theme CSS (includes Bootstrap)-->
+<link href="resources/css/styles.css" rel="stylesheet" />
+
+<style>
+#topButton {
+	position: fixed;
+	right: 2%;
+	bottom: 50px;
+	display: none;
+	z-index: 999;
+}
+
+#index_inner {
+	min-height: 1040px;
+}
+</style>
+
+<!-- topbutton 스크립트 시작 -->
+<script>
       
       
       $(window).scroll(function() {
@@ -45,21 +45,23 @@
          });
       
       </script>
-      <!-- topbutton 스크립트 끝 -->
-      
+<!-- topbutton 스크립트 끝 -->
+
 </head>
 <body>
 
 
 
 
-<!-- 누르면 상단으로 가는 top버튼 시작 -->
-        <div id="topButton" style="cursor: pointer"><img src="resources//img/topbutton.png" id="topButtonImg"></div>
-        <!-- 누르면 상단으로 가는 top버튼 끝 -->
+	<!-- 누르면 상단으로 가는 top버튼 시작 -->
+	<div id="topButton" style="cursor: pointer">
+		<img src="resources//img/topbutton.png" id="topButtonImg">
+	</div>
+	<!-- 누르면 상단으로 가는 top버튼 끝 -->
 
 
 
-<!-- Footer-->
+	<!-- Footer-->
 	<div id="footer">
 		<div class="footer-top">
 			<div class="inner_footer">
@@ -99,19 +101,21 @@
 				</div>
 				<div class="company">
 					<ul class="list">
-						<li><a style="text-decoration:none;" class="link" href="">소개</a></li>
-						<li><a style="text-decoration:none;" class="link" href=""
+						<li><a style="text-decoration: none;" class="link" href="">소개</a></li>
+						<li><a style="text-decoration: none;" class="link" href=""
 							onclick="window.open(this.href, 'pop', 'width=1330,height=660,scrollbars=yes');return false;">소개영상</a></li>
-						<li><a style="text-decoration:none;" class="link" href="">이용약관</a></li>
-						<li><a style="text-decoration:none;" class="link emph" href="">개인정보처리방침</a></li>
-						<li><a style="text-decoration:none;" class="link" href="">이용안내</a></li>
+						<li><a style="text-decoration: none;" class="link" href="">이용약관</a></li>
+						<li><a style="text-decoration: none;" class="link emph"
+							href="">개인정보처리방침</a></li>
+						<li><a style="text-decoration: none;" class="link" href="">이용안내</a></li>
 					</ul>
 					법인명 (상호) : 주식회사 <span class="bar">I</span> 사업자등록번호 : 123-45-678910
-					<a style="text-decoration:none;" href="" target="_blank" class="link">사업자정보 확인</a> <br>
-					통신판매업 : 제 2022-전북전주-0627 호 <span class="bar">I</span> 개인정보보호책임자 : <br>
-					주소 : 전북 전주시 <span class="bar">I</span> 대표이사 : <br> 팩스: 070 -
-					7500 - 6098 <span class="bar">I</span> 이메일 : <a
-						style="text-decoration:none;" href="1234@naver.com" class="link">help@help.com</a> <br>
+					<a style="text-decoration: none;" href="" target="_blank"
+						class="link">사업자정보 확인</a> <br> 통신판매업 : 제 2022-전북전주-0627 호 <span
+						class="bar">I</span> 개인정보보호책임자 : <br> 주소 : 전북 전주시 <span
+						class="bar">I</span> 대표이사 : <br> 팩스: 070 - 7500 - 6098 <span
+						class="bar">I</span> 이메일 : <a style="text-decoration: none;"
+						href="1234@naver.com" class="link">help@help.com</a> <br>
 
 					<ul class="list_sns">
 						<li><a href="https://instagram.com/" class="link_sns"

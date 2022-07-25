@@ -1,7 +1,9 @@
 package ezen.dev.spring.controller;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -48,22 +50,26 @@ public class OrderController {
 	
 	
 	@PostMapping("/orderSheet.do")
-	public String orderSheet(CartVo cartVo, Model model, HttpServletRequest request, @RequestParam("pbidx") int pbidx) {
+	public String orderSheet(CartVo cartVo, OrderVo orderVo, Model model, HttpServletRequest request, @RequestParam("pbidx") Integer[] pbidx) {
 		HttpSession session = request.getSession();
 		String member_id = (String)session.getAttribute("member_id");
 		MemberVo memberVo = memberService.getMemberInfo(member_id);
-		Integer midx =Integer.parseInt(String.valueOf(session.getAttribute("midx")));
-		HashMap<String, Integer> CartInfo = new HashMap<String, Integer>();
-		CartInfo.put("midx", midx);
-		CartInfo.put("pbidx", pbidx);
-		List<CartVo> cartList = cartService.getSomeCartList(CartInfo);
+
+		/*
+		 * List<Integer> pbidxList = pbidxArr.stream() .map(s->Integer.parseInt(s))
+		 * .collect(Collectors.toList());
+		 */
+		for(Integer mmm : pbidx) {
+		System.out.println("pbidx: "+ mmm);}
+
+		List<Integer> pbidxList = Arrays.asList(pbidx);
+		List<OrderVo> orderList = cartService.getSomeCartList(pbidxList);
 		model.addAttribute("memberVo", memberVo);
-		model.addAttribute("cartList", cartList);
+		model.addAttribute("orderList", orderList);
 		
 		return"order/orderSheet";
-		
 	}
-	
+
 	
 	
 	
