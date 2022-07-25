@@ -38,7 +38,6 @@
     
     <div id="cart_1" style="float:left; width:60%; margin-right:103px;">   
     <table id="target">
-    <c:set var="total" value="0"/>
     <c:forEach items="${cartList}" var="cartVo" varStatus="status">
     <input type="hidden"  id="pidx_pc" value="${cartVo.pidx_pc} ">
     <!-- 외부 js의 경우 el및 jstl이 적용되지 않는다. 그렇기 때문에 수량관련 +-버튼 스크립트를  forEach문 안에 따로 작성했다. -->
@@ -148,14 +147,79 @@ $("#btn_delete_${cartVo.pbidx}").click(function(){
    
 });
     
+var total = 0;
+var sum = 0;   
+$("#chk_${cartVo.pbidx}").change(function(){
+
+	var sum_price = parseInt($("#sum_price").val());
+	var sale = 0;
+	var delivery_fee = 0;
+	var total_pay_price;
+	var pbidx = ${cartVo.pbidx};
+	var amount ="#"+${cartVo.pbidx}+"_pop_out";
+	var price = "#"+${cartVo.pbidx}+"_price";
+	if($("#chk_${cartVo.pbidx}").is(':checked')){
+	sum_price += parseInt($(price).val())*parseInt($(amount).val());
+	}else{
+    sum_price -= parseInt($(price).val())*parseInt($(amount).val());		
+	}
+	$("#sum_price").val(sum_price);
+	
+	
+  if(sum_price < 50000 && sum_price != 0){
+    	delivery_fee = 3000;
+    	$("#delivery_fee").text(delivery_fee+"원");
+    }else{
+    	delivery_fee = 0;
+    	$("#delivery_fee").text(delivery_fee+"원");
+    }
+	
+	total_pay_price = sum_price-sale+delivery_fee;
+	
+	$("#totalprice_result").text(sum_price+"원");
+	$("#sale").text(sale+"원"); 
+	$("#total_pay_price").text(total_pay_price+"원");
+	
     
-    
+});
+$("#chk_all").change(function(){
+	var sum_price = parseInt($("#sum_price").val());
+	var sale = 0;
+	var delivery_fee = 0;
+	var total_pay_price;
+	var pbidx = ${cartVo.pbidx};
+	var amount ="#"+${cartVo.pbidx}+"_pop_out";
+	var price = "#"+${cartVo.pbidx}+"_price";
+	if($("#chk_${cartVo.pbidx}").is(':checked')){
+	sum_price += parseInt($(price).val())*parseInt($(amount).val());
+	}else{
+    sum_price -= parseInt($(price).val())*parseInt($(amount).val());		
+	}
+	$("#sum_price").val(sum_price);
+	
+	
+  if(sum_price < 50000 && sum_price != 0){
+    	delivery_fee = 3000;
+    	$("#delivery_fee").text(delivery_fee+"원");
+    }else{
+    	delivery_fee = 0;
+    	$("#delivery_fee").text(delivery_fee+"원");
+    }
+	
+	total_pay_price = sum_price-sale+delivery_fee;
+	
+	$("#totalprice_result").text(sum_price+"원");
+	$("#sale").text(sale+"원"); 
+	$("#total_pay_price").text(total_pay_price+"원");
+
+
+});
     });
     </script>
  
     <tr id="${cartVo.pbidx}_product_target">
     <td>
-    <input type="checkbox" class="del-chk" name="pbidx" value="${cartVo.pbidx}">
+    <input type="checkbox" class="del-chk" name="pbidx" id="chk_${cartVo.pbidx}" value="${cartVo.pbidx}">
     </td>
     <td>
     <!-- 사진 -->
@@ -178,14 +242,13 @@ $("#btn_delete_${cartVo.pbidx}").click(function(){
     </td>
     <td>
     <!-- 금액 -->
-    <span class="price">${cartVo.p_price}원</span>
+    <span class="price"><input type="hidden" id="${cartVo.pbidx}_price" value="${cartVo.p_price}"> ${cartVo.p_price}원</span>
     </td>
     <td>
     <!-- 삭제버튼 -->
     <button id="btn_delete_${cartVo.pbidx}" type="button" value="${cartVo.pbidx}">X</button>
     </td>
     </tr>
-    <c:set var="total" value="${total + cartVo.p_amount*cartVo.p_price }"/>
     </c:forEach>
     </table>
     </div>
@@ -193,32 +256,21 @@ $("#btn_delete_${cartVo.pbidx}").click(function(){
     <table id="for_order_table" border="0" style="float:right; width:378px; height:238px; position: sticky; top:183px; right:0px; padding-top:80px; background-color:#fafafa;">
     <tr>
     <td>상품금액</td>
-    <td id="totalprice"><c:out value="${total}"/></td>
+    <td id="totalprice"><span id="totalprice_result"></span>
+    <input type="hidden" id="sum_price" value="0">
+    </td>
     </tr>
     <tr>
-    <td>상품할인금액</td>
-    <c:set var="sale" value="0"/>
-    <td id="sale"><c:out value="${sale}"/>원</td>
+    <td>상품할인금액</td>   
+    <td><span id="sale"></span></td>
     </tr>
     <tr>
     <td>배송비</td>
-    <c:set var="delivery_fee" value="0"/>
-    <c:choose>
-    <c:when test="${total == 0 }">
-    <c:set var="delivery_fee" value="0"/>   
-    </c:when>
-    <c:when test="${total >= 50000 }">
-    <c:set var="delivery_fee" value="0"/>   
-    </c:when>
-    <c:when test="${total < 50000 }">
-    <c:set var="delivery_fee" value="3000"/>
-    </c:when>
-    </c:choose>
-    <td id="delivery_fee"><c:out value="${delivery_fee}"/>원</td>
+    <td><span id="delivery_fee"></span></td>
     </tr>
     <tr>
     <td>결제예정금액</td>
-    <td>${total - sale + delivery_fee}원</td>
+    <td><span id="total_pay_price"></span></td>
     </tr>
     <tr>
     <td colspan="2">
@@ -228,10 +280,6 @@ $("#btn_delete_${cartVo.pbidx}").click(function(){
     </tr>
     </table>
     </div>
-     <input type="hidden" id="total"value="${total}">
-     <input type="hidden" id="sale" value="${sale}">
-     <input type="hidden" id="delivery_fee" value="${delivery_fee}">
-     <input type="hidden" id="final_pay" value="${total - sale + delivery_fee}">
     </div>
      </form>
 
