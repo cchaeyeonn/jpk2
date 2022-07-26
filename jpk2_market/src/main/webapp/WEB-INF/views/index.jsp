@@ -30,7 +30,13 @@
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.min.css" rel="stylesheet" />
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.min.js"></script>
 
-	
+	<script type="text/javascript">
+  function chatChannel() {
+    Kakao.Channel.chat({
+      channelPublicId: '_ZeUTxl',
+    })
+  }
+</script>
       <!-- 이미지 슬라이드 스크립트 -->
       <script>
       	$(document).ready(function () {
@@ -130,8 +136,7 @@
 			<c:param name="p_type" value="${p_type}"/>
 		</c:import>
            
-	</div>
-        
+	</div>      
         
         
 
@@ -208,7 +213,15 @@
             </div>
         </section> -->
         
-        
+        <div
+  id="kakao-talk-channel-chat-button"
+  data-channel-public-id="_tqFzxj"
+  data-title="consult"
+  data-size="small"
+  data-color="yellow"
+  data-shape="pc"
+  data-support-multiple-densities="true"
+></div>
         
 	<!-- 푸터 연결 -->
 	<jsp:include page="footer.jsp"></jsp:include>
@@ -225,4 +238,19 @@
         <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
         <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
     </body>
+    <script>
+  window.kakaoAsyncInit = function() {
+    Kakao.Channel.createChatButton({
+      container: '#kakao-talk-channel-chat-button',
+    });
+  };
+
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = 'https://developers.kakao.com/sdk/js/kakao.channel.min.js';
+    fjs.parentNode.insertBefore(js, fjs);
+  })(document, 'script', 'kakao-js-sdk');
+</script>
 </html>
