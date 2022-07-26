@@ -275,9 +275,9 @@ $(document).ready(function(){
 						<div class="input-field">
 							<span class="fas fa-lock p-2"></span> <input type="password"
 								name="member_pw" placeholder="비밀번호를 입력해주세요" required class="">
-							<button class="btn bg-white text-muted" type="button">
+							
 								<i class="far fa-eye-slash"></i>
-							</button>
+							
 						</div>
 					</div>
 					<div class="d-flex align-items-start">
