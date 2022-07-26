@@ -77,12 +77,51 @@
    document.getElementById("member_birth").setAttribute("max", today);
    };
    </script>
+   <script>
+   $(function(){
+	   $(document).on('click','#trigger',function(){
+	          if($("#member_addr_2").val() == ""){
+	           result = "상세주소를 입력해주세요";
+		       $("#result_member_addr").html(result).css("color", "red");
+	           $("#member_addr_2").focus();
+	           return false;
+	             }
+	             });
+	   $(document).on('click','#trigger',function(){
+	          if($("#member_addr_1").val() == ""){
+	           result = "주소를 입력해주세요";
+		       $("#result_member_addr").html(result).css("color", "red");
+	           $("#member_addr_1").focus();
+	           return false;
+	             }
+	             });
+	   $(document).on('click','#trigger',function(){
+	          if($("#member_addrcode").val() == ""){
+	           result = "주소를 입력해주세요";
+		       $("#result_member_addr").html(result).css("color", "red");
+	           $("#member_addrcode").focus();
+	           return false;
+	             }
+	             });
+   })
+   </script>
+   <script>
+   $(function(){
+	   $(document).on('click','#trigger',function(){
+	          if(!$("input:checked[name='order_term']").is(":checked")){
+	           result = "필수 약관입니다. 동의해주세요";
+		       $("#result_order_term").html(result).css("color", "red");
+	           return false;
+	             }
+	             });  
+   })
+   </script>
 </head>
 <body>
     <jsp:include page="../header.jsp"></jsp:include>
 <div id="wrap" style="padding-top:239px; margin-left:414px; margin-right:401px;">
 <h1 align="center">주문서</h1>
-<form>
+<form action="/spring/index.do" method="get">
 <div id="order-product">
 <!-- 장바구니에 있는 물건중 체크된 물건을 가져와서 foreach -->
 주문상품<p/>
@@ -122,6 +161,7 @@
       <input type="text" id="postcode" name="member_addrcode" placeholder="우편번호" value="" readonly>
        <input type="button" onclick="execDaumPostcode()" value="우편번호 찾기"><p/>
         <input type="text" id="member_addr_1" name="member_addr1" value="" readonly placeholder="도로명주소"><input type="text" id="member_addr_2" name="member_addr2" placeholder="상세주소"><p/>
+        <div style="height:20px"><span id="result_member_addr" style="font-size:12px;"></span></div>
 </div>
 </div>
 <div id="pay-way">
@@ -133,6 +173,10 @@
 <!-- 단순 체크 약관 유효성 검사를 통해 체크 된 경우에만 결제가 되도록 -->
 개인정보 수집/제공<p/>
 <hr>
+<div><input type="checkbox" id="order_term" name="order_term"><b>결제진행 필수 동의</b></div><p/>
+<div>결제정보 수집,이용 및 처리 동의(필수) | 전자지급 결제대행 서비스 이용약관 동의(필수) </div>
+ <div style="height:20px"><span id="result_order_term" style="font-size:12px;"></span></div>
+ <input type="submit" id="trigger" value="결제하기">
 <a href="/spring/cart_main.do"><input type="button" value="장바구니로 돌아가기"></a>
 <a href="/spring/index.do"><input type="button" value="메인으로 돌아가기"></a>
 </div>
