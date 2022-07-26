@@ -288,7 +288,6 @@ $("#chk_all").change(function(){
 });
     });
     </script>
- 
     <tr id="${cartVo.pbidx}_product_target">
     <td>
     <input type="checkbox" class="del-chk" name="pbidx" id="chk_${cartVo.pbidx}" value="${cartVo.pbidx}" checked>
