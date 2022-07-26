@@ -5,12 +5,8 @@ $(function(){
   return sessionStorage.getItem("contextpath");
 }
  
-  let number = $('#pop_out').val();
-    	    number = parseInt(number)
-            if(number<=1){
-            $('#btn_minus').prop("disabled", true);
-            number=1;
-            }
+  var index = $("#pbidx").val();
+  var cart_delete_idx = "#btn_delete_" + index;
  
  
  
@@ -78,39 +74,28 @@ $(document).on('click','.del-chk',function(){
             });
 	      
 // + - 버튼 
-
+let number = $('#pop_out').val();
 
 $('#btn_minus').on('click',function(){
-	        let number = $('#pop_out').val();
+	
     	    number = parseInt(number)
             if(number<=1){
-            $('#btn_minus').prop("disabled", true);
+            alert('더이상 줄일수 없습니다.');
             number=1;
             }else{
     	
             $('#pop_out').attr('value',number-=1);   	
          }
-            if(number<=1){
-            $('#btn_minus').prop("disabled", true);
-            number=1;
-            }
+            
             $('#pop_out').text(number);
             
             });
 
     $('#btn_plus').on('click',function(){
-	       let number = $('#pop_out').val();
     	    number = parseInt(number)
-    	    if(number>=2){
-                    $('#btn_minus').prop("disabled", false);
-                    $('#pop_out').attr('value',number+=1);
-                    }else{
+    	    
             $('#pop_out').attr('value',number+=1);
-             }
-             if(number>=2){
-                    $('#btn_minus').prop("disabled", false);
-                    
-                    }
+
     		$('#pop_out').text(number);
     		
     	   });
