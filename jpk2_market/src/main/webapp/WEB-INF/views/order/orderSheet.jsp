@@ -116,6 +116,21 @@
 	             });  
    })
    </script>
+	<script>
+	$(function(){
+	var delivery_fee = 0;
+	var total_fee = 0;
+	if("${sum_price}" < 50000 && "${sum_price}" != 0){
+        delivery_fee = 3000;
+        $("#del_price").text(delivery_fee+"원");
+     }else{
+        delivery_fee = 0;
+        $("#del_price").text(delivery_fee+"원");
+     }
+	total_fee = ${sum_price}+delivery_fee
+	$("#total_price").text(total_fee+"원")
+	})
+	</script>
 </head>
 <body>
     <jsp:include page="../header.jsp"></jsp:include>
@@ -127,12 +142,33 @@
 주문상품<p/>
 <hr>
 <table>
+
+<tr>
+<td colspan="2">상품 이름</td><td>&nbsp;&nbsp;&nbsp;</td><td>개수</td><td>&nbsp;&nbsp;&nbsp;</td><td>상품 가격</td>
+</tr>
 <c:forEach items="${orderList}" var="orderVo" varStatus="status">
+   <script>
+   $(function(){
+	   $("#${orderVo.pbidx}_p_price").text("${orderVo.p_amount}"*"${orderVo.p_price}"+"원");
+   })
+   </script>
 <tr>
 <td><div><img class="img-fluid4" src="${pageContext.request.contextPath}/resources/product_image/${orderVo.p_system_filename}" alt="..."  /></div></td>
-<td>${orderVo.p_name}</td><td>&nbsp;&nbsp;&nbsp;</td><td>${orderVo.p_amount}&nbsp;개</td><td>&nbsp;&nbsp;&nbsp;</td><td>${orderVo.p_price}</td>
+<td>${orderVo.p_name}</td><td>&nbsp;&nbsp;&nbsp;</td><td>${orderVo.p_amount}&nbsp;개</td><td>&nbsp;&nbsp;&nbsp;</td><td><span id="${orderVo.pbidx}_p_price"></span></td>
 </tr>
 </c:forEach>
+</table>
+</div>
+<div>
+결제 예정 금액<p/>
+<hr>
+<table>
+<tr>
+<td>상품 총 가격</td><td></td><td>상품 할인</td><td></td><td>배송비</td><td></td><td>총 결제 예정금액</td>
+</tr>
+<tr>
+<td><span id="sum_price">${sum_price}</span></td><td>+</td><td><span id="sale_price"></span></td><td>+</td><td><span id="del_price"></span></td><td>=</td><td><span id="total_price"></span></td>
+</tr>
 </table>
 </div>
 <div id="orderer-info">
