@@ -89,11 +89,7 @@
         let pidx_pc = ${cartVo.pidx_pc}
        number = parseInt(number)
          if(number<=1){
-<<<<<<< HEAD
-        	$("#${cartVo.pbidx}_btn_minus").attr(disabled);
-=======
          $("#${cartVo.pbidx}_btn_minus").prop("disabled", true);
->>>>>>> branch 'master' of https://github.com/cchaeyeonn/jpk2.git
          number=1;
 
          }else{
@@ -117,31 +113,6 @@
             if(data == "N"){
                alert("db와 연동되지 않았습니다");
             }else{
-<<<<<<< HEAD
-               
-               /* location.reload(); */
-            	if($("#chk_${cartVo.pbidx}").is(':checked')){
-            		sum_price -= parseInt($(price).val())*parseInt($(amount).val());    
-            	}
-            	       $("#sum_price").val(sum_price);
-            	       
-            	       
-            	      if(sum_price < 50000 && sum_price != 0){
-            	           delivery_fee = 3000;
-            	           $("#delivery_fee").text(delivery_fee+"원");
-            	        }else{
-            	           delivery_fee = 0;
-            	           $("#delivery_fee").text(delivery_fee+"원");
-            	        }
-            	       
-            	     
-            	       total_pay_price = sum_price-sale+delivery_fee;
-            	       
-            	       $("#totalprice_result").text(sum_price+"원");
-            	       $("#sale").text(sale+"원"); 
-            	       $("#total_pay_price").text(total_pay_price+"원");
-=======
-            	var sum_price = parseInt($("#sum_price").val());
             	if(number<=1){
                     $("#${cartVo.pbidx}_btn_minus").prop("disabled", true);
                     number=1;
@@ -150,8 +121,12 @@
             	
             	
             	if($("#chk_${cartVo.pbidx}").is(':checked')){
-            		sum_price -=  parseInt($(price).val());   
+            		sum_price -=  parseInt($(price).val());           		
             		$("#sum_price").val(sum_price);      
+            	       }else{
+            	    	   sum_price = 0;
+            	    	   
+            	    	   
             	       }
                     
             	if(sum_price < 50000 && sum_price != 0){
@@ -174,7 +149,6 @@
             	
             	
             	
->>>>>>> branch 'master' of https://github.com/cchaeyeonn/jpk2.git
             }
             
          },
@@ -208,29 +182,21 @@ $("#${cartVo.pbidx}_btn_plus").click(function(){
             if(data == "N"){
                alert("db와 연동되지 않았습니다");
             }else{
-<<<<<<< HEAD
                
-               /* location.reload(); */
-            	if($("#chk_${cartVo.pbidx}").is(':checked')){
-            	       sum_price += parseInt($(price).val())*parseInt($(amount).val());
-            	       }
-            	       $("#sum_price").val(sum_price);
-            	       
-            	       
-            	      if(sum_price < 50000 && sum_price != 0){
-=======
-            	var sum_price = parseInt($("#sum_price").val());
             	if(number>=2){
                     $("#${cartVo.pbidx}_btn_minus").prop("disabled", false);}
             	
             	if($("#chk_${cartVo.pbidx}").is(':checked')){
             		sum_price +=  parseInt($(price).val());
             		$("#sum_price").val(sum_price);      
+            	       }else{
+            	    	   sum_price = 0;
+            	    	   
+            	    	   
+            	    	   
             	       }
                     
-            	
             	if(sum_price < 50000 && sum_price != 0){
->>>>>>> branch 'master' of https://github.com/cchaeyeonn/jpk2.git
             	           delivery_fee = 3000;
             	           $("#delivery_fee").text(delivery_fee+"원");
             	        }else{
@@ -297,6 +263,7 @@ $("#chk_${cartVo.pbidx}").change(function(){
    }
    $("#sum_price").val(sum_price);
    
+   
   if(sum_price < 50000 && sum_price != 0){
        delivery_fee = 3000;
        $("#delivery_fee").text(delivery_fee+"원");
@@ -347,6 +314,7 @@ $("#chk_all").change(function(){
 });
     });
     </script>
+ 
     <tr id="${cartVo.pbidx}_product_target">
     <td>
     <input type="checkbox" class="del-chk" name="pbidx" id="chk_${cartVo.pbidx}" value="${cartVo.pbidx}" checked>
@@ -387,7 +355,7 @@ $("#chk_all").change(function(){
     <tr>
     <td>상품금액</td>
     <td id="totalprice"><span id="totalprice_result"></span>
-    <input type="hidden" id="sum_price" name="sum_price" value="0">
+    <input type="hidden" id="sum_price" value="0">
     </td>
     </tr>
     <tr>
