@@ -8,13 +8,13 @@
 <head>
 <meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'>
-<title>Snippet - GoSNippets</title>
+
 <link
 	href='https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css'
 	rel='stylesheet'>
 <link href='https://use.fontawesome.com/releases/v5.7.2/css/all.css'
 	rel='stylesheet'>
-
+   <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 
 <style>
 @import
@@ -106,6 +106,7 @@ a:hover {
 	text-decoration: none;
 	color: #7b4ca0
 }
+
 
 /*
 .option {
@@ -216,18 +217,23 @@ a:hover {
 	
 	
 <script>
-$(document).ready(function(){
+try{
+$(function(){
     $('.input-field i').on('click',function(){
         $('input').toggleClass('active');
         if($('input').hasClass('active')){
-            $(this).attr('class',"far fa-eye-slash")
+            $(this).attr('class',"far fa-eye fa-lg")
             .prev('input').attr('type',"text");
         }else{
-            $(this).attr('class',"far fa-eye fa-lg")
+            $(this).attr('class',"far fa-eye-slash")
             .prev('input').attr('type','password');
         }
     });
-});
+});}
+
+catch(err){
+	alert(err);
+}
 </script>
 
 <script>
@@ -277,6 +283,8 @@ $(document).ready(function(){
 								name="member_pw" placeholder="비밀번호를 입력해주세요" required class="">
 							
 								<i class="far fa-eye-slash"></i>
+								
+							
 							
 						</div>
 					</div>
