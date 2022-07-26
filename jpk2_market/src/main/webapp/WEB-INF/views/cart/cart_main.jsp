@@ -113,6 +113,7 @@
             if(data == "N"){
                alert("db와 연동되지 않았습니다");
             }else{
+            	var sum_price = parseInt($("#sum_price").val());
             	if(number<=1){
                     $("#${cartVo.pbidx}_btn_minus").prop("disabled", true);
                     number=1;
@@ -121,12 +122,8 @@
             	
             	
             	if($("#chk_${cartVo.pbidx}").is(':checked')){
-            		sum_price -=  parseInt($(price).val());           		
+            		sum_price -=  parseInt($(price).val());   
             		$("#sum_price").val(sum_price);      
-            	       }else{
-            	    	   sum_price = 0;
-            	    	   
-            	    	   
             	       }
                     
             	if(sum_price < 50000 && sum_price != 0){
@@ -182,20 +179,16 @@ $("#${cartVo.pbidx}_btn_plus").click(function(){
             if(data == "N"){
                alert("db와 연동되지 않았습니다");
             }else{
-               
+            	var sum_price = parseInt($("#sum_price").val());
             	if(number>=2){
                     $("#${cartVo.pbidx}_btn_minus").prop("disabled", false);}
             	
             	if($("#chk_${cartVo.pbidx}").is(':checked')){
             		sum_price +=  parseInt($(price).val());
             		$("#sum_price").val(sum_price);      
-            	       }else{
-            	    	   sum_price = 0;
-            	    	   
-            	    	   
-            	    	   
             	       }
                     
+            	
             	if(sum_price < 50000 && sum_price != 0){
             	           delivery_fee = 3000;
             	           $("#delivery_fee").text(delivery_fee+"원");
@@ -262,7 +255,6 @@ $("#chk_${cartVo.pbidx}").change(function(){
     sum_price -= parseInt($(price).val())*parseInt($(amount).val());      
    }
    $("#sum_price").val(sum_price);
-   
    
   if(sum_price < 50000 && sum_price != 0){
        delivery_fee = 3000;
@@ -355,7 +347,7 @@ $("#chk_all").change(function(){
     <tr>
     <td>상품금액</td>
     <td id="totalprice"><span id="totalprice_result"></span>
-    <input type="hidden" id="sum_price" value="0">
+    <input type="hidden" id="sum_price" name="sum_price" value="0">
     </td>
     </tr>
     <tr>
