@@ -43,14 +43,8 @@ public class OrderController {
 	private CartService cartService;
 	
 	
-	@GetMapping("/orderSheet1.do")
-	public String orderSheet1() {
-		return "order/orderSheet";
-	}
-	
-	
 	@PostMapping("/orderSheet.do")
-	public String orderSheet(CartVo cartVo, OrderVo orderVo, Model model, HttpServletRequest request, @RequestParam("pbidx") Integer[] pbidx) {
+	public String orderSheet(CartVo cartVo, OrderVo orderVo, Model model, HttpServletRequest request, @RequestParam("pbidx") Integer[] pbidx, @RequestParam("sum_price") String sum_price) {
 		HttpSession session = request.getSession();
 		String member_id = (String)session.getAttribute("member_id");
 		MemberVo memberVo = memberService.getMemberInfo(member_id);
@@ -66,6 +60,7 @@ public class OrderController {
 		List<OrderVo> orderList = cartService.getSomeCartList(pbidxList);
 		model.addAttribute("memberVo", memberVo);
 		model.addAttribute("orderList", orderList);
+		model.addAttribute("sum_price", sum_price);
 		
 		return"order/orderSheet";
 	}

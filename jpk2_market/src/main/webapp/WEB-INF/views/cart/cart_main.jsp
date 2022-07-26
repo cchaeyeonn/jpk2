@@ -347,7 +347,7 @@ $("#chk_all").change(function(){
     <tr>
     <td>상품금액</td>
     <td id="totalprice"><span id="totalprice_result"></span>
-    <input type="hidden" id="sum_price" value="0">
+    <input type="hidden" id="sum_price" name="sum_price" value="0">
     </td>
     </tr>
     <tr>
