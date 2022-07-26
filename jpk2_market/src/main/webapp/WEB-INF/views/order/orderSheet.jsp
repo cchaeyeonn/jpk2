@@ -167,7 +167,7 @@
 <td>상품 총 가격</td><td></td><td>상품 할인</td><td></td><td>배송비</td><td></td><td>총 결제 예정금액</td>
 </tr>
 <tr>
-<td><span id="sum_price">${sum_price}원</span></td><td>+</td><td><span id="sale_price">0원</span></td><td>+</td><td><span id="del_price"></span></td><td>=</td><td><span id="total_price"></span></td>
+<td><span id="sum_price">${sum_price}원</span></td><td>-</td><td><span id="sale_price">0원</span></td><td>+</td><td><span id="del_price"></span></td><td>=</td><td><span id="total_price"></span></td>
 </tr>
 </table>
 </div>
