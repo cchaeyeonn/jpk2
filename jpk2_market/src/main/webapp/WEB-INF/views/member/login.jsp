@@ -107,6 +107,7 @@ a:hover {
 	color: #7b4ca0
 }
 
+/*
 .option {
 	position: relative;
 	padding-left: 30px;
@@ -122,7 +123,7 @@ a:hover {
 	display: none
 }
 
-.checkmark {
+ .checkmark {
 	position: absolute;
 	top: 3px;
 	left: 0;
@@ -160,7 +161,7 @@ a:hover {
 
 .option input[type="radio"]:checked ~.checkmark:after {
 	transform: translate(-50%, -50%) scale(1)
-}
+} */
 
 .btn.btn-block {
 	border-radius: 20px;
@@ -267,6 +268,7 @@ $(document).ready(function(){
 						<div class="input-field">
 							<span class="far fa-user p-2"></span> <input type="text"
 								name="member_id" placeholder="아이디를 입력해주세요" required class="">
+								
 						</div>
 					</div>
 					<div class="form-group py-1 pb-2">
