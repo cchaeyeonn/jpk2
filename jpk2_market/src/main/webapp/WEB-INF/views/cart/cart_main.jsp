@@ -76,6 +76,11 @@
        
        
        let number = $('#${cartVo.pbidx}_pop_out').val();
+       number = parseInt(number)
+       if(number<=1){
+       $("#${cartVo.pbidx}_btn_minus").prop("disabled", true);
+       number=1;
+       }
    //minus 버튼
     $("#${cartVo.pbidx}_btn_minus").click(function(){
       
@@ -84,8 +89,13 @@
         let pidx_pc = ${cartVo.pidx_pc}
        number = parseInt(number)
          if(number<=1){
+<<<<<<< HEAD
         	$("#${cartVo.pbidx}_btn_minus").attr(disabled);
+=======
+         $("#${cartVo.pbidx}_btn_minus").prop("disabled", true);
+>>>>>>> branch 'master' of https://github.com/cchaeyeonn/jpk2.git
          number=1;
+
          }else{
     
          $('#${cartVo.pbidx}_pop_out').attr('value',number-=1);      
@@ -107,6 +117,7 @@
             if(data == "N"){
                alert("db와 연동되지 않았습니다");
             }else{
+<<<<<<< HEAD
                
                /* location.reload(); */
             	if($("#chk_${cartVo.pbidx}").is(':checked')){
@@ -129,6 +140,41 @@
             	       $("#totalprice_result").text(sum_price+"원");
             	       $("#sale").text(sale+"원"); 
             	       $("#total_pay_price").text(total_pay_price+"원");
+=======
+            	var sum_price = parseInt($("#sum_price").val());
+            	if(number<=1){
+                    $("#${cartVo.pbidx}_btn_minus").prop("disabled", true);
+                    number=1;
+                    }
+                
+            	
+            	
+            	if($("#chk_${cartVo.pbidx}").is(':checked')){
+            		sum_price -=  parseInt($(price).val());   
+            		$("#sum_price").val(sum_price);      
+            	       }
+                    
+            	if(sum_price < 50000 && sum_price != 0){
+            	           delivery_fee = 3000;
+            	           $("#delivery_fee").text(delivery_fee+"원");
+            	        }else{
+            	           delivery_fee = 0;
+            	           $("#delivery_fee").text(delivery_fee+"원");
+            	        }
+            	       
+            	     
+            	       total_pay_price = sum_price-sale+delivery_fee;
+            	       
+            	       $("#totalprice_result").text(sum_price+"원");
+            	       $("#sale").text(sale+"원"); 
+            	       $("#total_pay_price").text(total_pay_price+"원");
+            	       
+            	       
+            	      	
+            	
+            	
+            	
+>>>>>>> branch 'master' of https://github.com/cchaeyeonn/jpk2.git
             }
             
          },
@@ -162,6 +208,7 @@ $("#${cartVo.pbidx}_btn_plus").click(function(){
             if(data == "N"){
                alert("db와 연동되지 않았습니다");
             }else{
+<<<<<<< HEAD
                
                /* location.reload(); */
             	if($("#chk_${cartVo.pbidx}").is(':checked')){
@@ -171,6 +218,19 @@ $("#${cartVo.pbidx}_btn_plus").click(function(){
             	       
             	       
             	      if(sum_price < 50000 && sum_price != 0){
+=======
+            	var sum_price = parseInt($("#sum_price").val());
+            	if(number>=2){
+                    $("#${cartVo.pbidx}_btn_minus").prop("disabled", false);}
+            	
+            	if($("#chk_${cartVo.pbidx}").is(':checked')){
+            		sum_price +=  parseInt($(price).val());
+            		$("#sum_price").val(sum_price);      
+            	       }
+                    
+            	
+            	if(sum_price < 50000 && sum_price != 0){
+>>>>>>> branch 'master' of https://github.com/cchaeyeonn/jpk2.git
             	           delivery_fee = 3000;
             	           $("#delivery_fee").text(delivery_fee+"원");
             	        }else{
@@ -236,7 +296,6 @@ $("#chk_${cartVo.pbidx}").change(function(){
     sum_price -= parseInt($(price).val())*parseInt($(amount).val());      
    }
    $("#sum_price").val(sum_price);
-   
    
   if(sum_price < 50000 && sum_price != 0){
        delivery_fee = 3000;
