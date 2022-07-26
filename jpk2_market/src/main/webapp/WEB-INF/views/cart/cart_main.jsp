@@ -84,7 +84,7 @@
         let pidx_pc = ${cartVo.pidx_pc}
        number = parseInt(number)
          if(number<=1){
-         alert('더이상 줄일수 없습니다.');
+        	$("#${cartVo.pbidx}_btn_minus").attr(disabled);
          number=1;
          }else{
     
@@ -108,7 +108,27 @@
                alert("db와 연동되지 않았습니다");
             }else{
                
-               location.reload();
+               /* location.reload(); */
+            	if($("#chk_${cartVo.pbidx}").is(':checked')){
+            		sum_price -= parseInt($(price).val())*parseInt($(amount).val());    
+            	}
+            	       $("#sum_price").val(sum_price);
+            	       
+            	       
+            	      if(sum_price < 50000 && sum_price != 0){
+            	           delivery_fee = 3000;
+            	           $("#delivery_fee").text(delivery_fee+"원");
+            	        }else{
+            	           delivery_fee = 0;
+            	           $("#delivery_fee").text(delivery_fee+"원");
+            	        }
+            	       
+            	     
+            	       total_pay_price = sum_price-sale+delivery_fee;
+            	       
+            	       $("#totalprice_result").text(sum_price+"원");
+            	       $("#sale").text(sale+"원"); 
+            	       $("#total_pay_price").text(total_pay_price+"원");
             }
             
          },
@@ -143,7 +163,27 @@ $("#${cartVo.pbidx}_btn_plus").click(function(){
                alert("db와 연동되지 않았습니다");
             }else{
                
-               location.reload();
+               /* location.reload(); */
+            	if($("#chk_${cartVo.pbidx}").is(':checked')){
+            	       sum_price += parseInt($(price).val())*parseInt($(amount).val());
+            	       }
+            	       $("#sum_price").val(sum_price);
+            	       
+            	       
+            	      if(sum_price < 50000 && sum_price != 0){
+            	           delivery_fee = 3000;
+            	           $("#delivery_fee").text(delivery_fee+"원");
+            	        }else{
+            	           delivery_fee = 0;
+            	           $("#delivery_fee").text(delivery_fee+"원");
+            	        }
+            	       
+            	     
+            	       total_pay_price = sum_price-sale+delivery_fee;
+            	       
+            	       $("#totalprice_result").text(sum_price+"원");
+            	       $("#sale").text(sale+"원"); 
+            	       $("#total_pay_price").text(total_pay_price+"원");
             }
             
          },

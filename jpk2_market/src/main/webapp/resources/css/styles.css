@@ -237,11 +237,12 @@ sup {
 }
 
 a {
-  color: #1abc9c;
+  /* color: #1abc9c; */
+  color: #15967d;
   /* text-decoration: underline; */
 }
 a:hover {
-  color: #15967d;
+  color: #00754a;
 }
 
 a:not([href]):not([class]), a:not([href]):not([class]):hover {
@@ -3031,6 +3032,7 @@ textarea.form-control-lg {
   border-radius: 0.5rem;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
+
 @media (prefers-reduced-motion: reduce) {
   .btn {
     transition: none;
