@@ -98,9 +98,19 @@ a {
 </style>
 
 
+<script>
+function cart(){
+	var frm = document.frm;
+	frm.action="/spring/cart_main.do";
+	frm.method="POST";
+	frm.submit();
+	return;
+}
 
+</script>
 </head>
 <body>
+<form id="frm" name="frm">
 	<!-- <div class="top_banner">
 	<div class="banner_inner">
 		<div class="banner_content">상단배너</div>
@@ -169,7 +179,7 @@ a {
 	</nav>
 	<!-- 상단 로고, 로그인부분 끝-->
 
-
+	<input type="hidden" value="${midx}" name="midx">
 	<!-- 카테고리, 장바구니 로고 시작 -->
 	<div class="fixed-top2" id="innerNav_1"
 		style="padding-top: 110px; height: 178px;">
@@ -195,7 +205,7 @@ a {
 
 			<!-- 마우스 올리면 이미지 변경 onmouseover 이벤트 -->
 			<li style="float: right; width: 0px;"><a
-				href="/spring/cart_main.do" style="float: right;">
+				onclick="cart(${midx});" style="float: right;">
 					<img src="resources/img/cart.png"
 					onmouseover="this.src='resources/img/cart2.png';"
 					onmouseout="this.src='resources/img/cart.png';" alt="장바구니"
@@ -213,6 +223,6 @@ a {
 
 	</div>
 	<!-- 카테고리, 장바구니 로고 끝 -->
-
+</form>
 </body>
 </html>
