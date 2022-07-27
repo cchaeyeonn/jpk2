@@ -195,7 +195,7 @@ a {
 
 			<!-- 마우스 올리면 이미지 변경 onmouseover 이벤트 -->
 			<li style="float: right; width: 0px;"><a
-				href="/spring/cart_main.do?midx=${midx}" style="float: right;">
+				href="/spring/cart_main.do" style="float: right;">
 					<img src="resources/img/cart.png"
 					onmouseover="this.src='resources/img/cart2.png';"
 					onmouseout="this.src='resources/img/cart.png';" alt="장바구니"
