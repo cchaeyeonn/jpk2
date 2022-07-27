@@ -252,9 +252,17 @@ catch(err){
 }
 </script>
 
+
+
+
+
+
+</head>
+<!-- 헤더연결 -->
+<jsp:include page="../header.jsp"></jsp:include>
 <script>
   function check_login(){  
-  var fm = document.frm;   
+  var fm = document.frmt;   
   if (fm.member_id.value==""){
   		alert("아이디를 입력해주세요");
   		fm.member_id.focus();
@@ -271,13 +279,6 @@ catch(err){
     return;
   }  
 </script>
-
-
-
-
-</head>
-<!-- 헤더연결 -->
-<jsp:include page="../header.jsp"></jsp:include>
 <body oncontextmenu='return false' class='snippet-body'>
 	<div id="body_inner">
 		<div id="wrapper_inner">
@@ -285,7 +286,7 @@ catch(err){
 				<div class="h2 text-center">로그인</div>
 				<div class="h4 text-muted text-center pt-2"></div>
 				
-				<form name="frm">
+				<form name="frmt">
 					<div class="form-group">
 						<div class="input-field1">
 							<span class="far fa-user p-2"></span> <input type="text"

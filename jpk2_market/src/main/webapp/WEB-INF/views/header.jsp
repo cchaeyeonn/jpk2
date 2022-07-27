@@ -188,7 +188,7 @@ function cart(){
 				<ul class="depth_1">
 					<li id="icon1"><a href="/spring/productList_type.do?type=vegetable_fruit">채소/과일</a></li>
 					<li id="icon1"><a href="/spring/productList_type.do?type=meat">정육</a></li>
-					<li id="icon1"><a href="/spring/productList_type.do?type=fist_seafood">생선/해산물</a></li>
+					<li id="icon1"><a href="/spring/productList_type.do?type=fish_seafood">생선/해산물</a></li>
 					<li id="icon1"><a href="/spring/productList_type.do?type=snacks">과자</a></li>
 					<li id="icon1"><a href="/spring/productList_type.do?type=bakery">베이커리</a></li>
 					<li id="icon1"><a href="/spring/productList_type.do?type=processedfood">가공식품</a></li>

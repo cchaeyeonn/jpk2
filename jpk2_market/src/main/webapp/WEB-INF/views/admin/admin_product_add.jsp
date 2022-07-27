@@ -48,7 +48,7 @@
 		<select name="p_type">
 			<option value="vegetable_fruit">채소/과일</option>
 			<option value="meat">정육</option>
-			<option value="fist_seafood">생선/해산물</option>
+			<option value="fish_seafood">생선/해산물</option>
 			<option value="snacks">과자</option>
 			<option value="bakery">베이커리</option>
 			<option value="processedfood">가공식품</option>
