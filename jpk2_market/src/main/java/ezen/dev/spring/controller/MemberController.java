@@ -61,10 +61,10 @@ public class MemberController {
 		response.setContentType("text/html; charset=UTF-8");
 		response.setCharacterEncoding("UTF-8");
 		PrintWriter out=response.getWriter();
-		out.println("<script>alert('가입하실 때 작성하신 이메일에서 인증을 해주세요.');</script>");
+		out.println("<script>window.onload = function(){alert('인증메일이 발송되었습니다. 가입시 작성한 이메일을 확인해주세요.'); location.href='/spring/login.do';}</script>");
 		out.flush();
 		memberService.join(memberVo);
-		return "member/login";
+		return null;
 	}
 	
 	@RequestMapping(value = "/emailConfirm", method = RequestMethod.GET)
@@ -75,18 +75,18 @@ public class MemberController {
 			response.setContentType("text/html; charset=UTF-8");
 			response.setCharacterEncoding("UTF-8");
 			PrintWriter out=response.getWriter();
-			out.println("<script>alert('인증키가 잘못되었습니다. 다시 인증해주세요.');</script>");
+			out.println("<script>window.onload = function(){alert('인증키가 잘못되었습니다. 다시 인증해주세요.'); location.href='/spring/';}</script>");
 			out.flush();
-			return "index";
+			return null;
 		}
 		MemberVo memberVo = memberService.userAuth(authKey);
 		if(memberVo == null) {
 			response.setContentType("text/html; charset=UTF-8");
 			response.setCharacterEncoding("UTF-8");
 			PrintWriter out=response.getWriter();
-			out.println("<script>alert('잘못된 접근입니다. 다시 인증해주세요.');</script>");
+			out.println("<script>window.onload = function(){alert('잘못된 접근입니다. 다시 인증해수제요.'); location.href='/spring/';}</script>");
 			out.flush();
-			return "index";
+			return null;
 		}
 		model.addAttribute("member_name",memberVo.getMember_name());
 		return "member/joinSucess";
@@ -102,6 +102,7 @@ public class MemberController {
 			 					@RequestParam("member_pw") String member_pw, 
 			 					HttpServletRequest request, HttpServletResponse response) throws IOException {
 		
+		HttpSession session = request.getSession();
 		HashMap<String, String> loginInfo = new HashMap<String, String>();
 		loginInfo.put("member_id", member_id);
 		loginInfo.put("member_pw", member_pw);
@@ -110,9 +111,9 @@ public class MemberController {
 		response.setContentType("text/html; charset=UTF-8");
 		response.setCharacterEncoding("UTF-8");
 		PrintWriter out=response.getWriter();
-		out.println("<script>alert('올바르지않은 정보입니다. 아이디 혹은 비밀번호를 확인해주세요.');</script>");
+		out.println("<script>window.onload = function(){alert('올바르지 않은 접근입니다. 아이디 및 비밀번호를 확인해주세요.'); location.href='/spring/login.do';}</script>");
 		out.flush();
-		return "member/login";
+		return null;
 		}
 		
 		long member_grade = resultMap.get("member_grade");
@@ -133,7 +134,6 @@ public class MemberController {
 		System.out.println("인증값 "+member_auth);
 		String Success="Y";
 		if(member_auth.equals(Success)) {
-			HttpSession session = request.getSession();
 			session.setAttribute("member_id", member_id);	
 			session.setAttribute("member_grade", member_grade);
 			session.setAttribute("midx", midx);
@@ -145,16 +145,17 @@ public class MemberController {
 			response.setContentType("text/html; charset=UTF-8");
 			response.setCharacterEncoding("UTF-8");
 			PrintWriter out=response.getWriter();
-			out.println("<script>alert('임시비밀번호로 로그인하셨습니다. 비밀번호를 변경해주세요');</script>");
+			out.println("<script>window.onload = function(){alert('임시 비밀번호로 로그인하셨습니다. 비밀번호를 변경해주세요.'); location.href='/spring/updatePw.do';}</script>");
 			out.flush();
-			return "member/memberUpdatePw";
+			return null;
 		}else{
 			response.setContentType("text/html; charset=UTF-8");
 			response.setCharacterEncoding("UTF-8");
 			PrintWriter out=response.getWriter();
-			out.println("<script>alert('인증이 필요한 계정입니다. 가입시에 작성한 이메일을 확인해주세요.');</script>");
+			out.println("<script>window.onload = function(){alert('인증이 필요한 계정입니다. 가입시 작성한 이메일을 확인해주세요.'); location.href='/spring/login.do';}</script>");
 			out.flush();
-			return "member/login";
+			session.invalidate();
+			return null;
 		}
 		
 	}
@@ -227,11 +228,11 @@ public class MemberController {
 	response.setContentType("text/html; charset=UTF-8");
 	response.setCharacterEncoding("UTF-8");
 	PrintWriter out=response.getWriter();
-	out.println("<script>alert('비밀번호가 변경되었습니다. 다시 로그인해주세요.');</script>");
+	out.println("<script>window.onload = function(){alert('비밀번호가 변경되었습니다. 다시 로그인 해주세요.'); location.href='/spring/login.do';}</script>");
 	out.flush();
 	session.invalidate();
 
-	return "member/login";
+	return null;
 	}
 	
 	
