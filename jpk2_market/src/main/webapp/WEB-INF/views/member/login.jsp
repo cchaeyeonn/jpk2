@@ -65,20 +65,36 @@ body {
 	font-family: 'Poppins', sans-serif
 }
 
-.input-field {
-	border-radius: 5px;
+.input-field1 {
+	border-radius: 6px 6px 0 0;
 	padding: 5px;
 	display: flex;
 	align-items: center;
 	cursor: pointer;
-	border: 1px solid black;
-	color: #000000;
+	border: 1px solid #c3c3c3;
+	color: #c3c3c3;
 }
 
-.input-field:hover {
+.input-field2 {
+	border-radius: 0 0 6px 6px;
+	padding: 5px;
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+	border: 1px solid #c3c3c3;
+	color: #c3c3c3;
+}
+
+.input-field1:hover {
 	/* color: #198754; */
-	color: #000000;
-	border: 1px solid #000000;
+	color: #959595;
+	border: 1px solid #959595;
+}
+
+.input-field2:hover {
+	/* color: #198754; */
+	color: #959595;
+	border: 1px solid #959595;
 }
 
 input {
@@ -219,7 +235,7 @@ a:hover {
 <script>
 try{
 $(function(){
-    $('.input-field i').on('click',function(){
+    $('.input-field2 i').on('click',function(){
         $('input').toggleClass('active');
         if($('input').hasClass('active')){
             $(this).attr('class',"far fa-eye fa-lg")
@@ -269,16 +285,16 @@ catch(err){
 				<div class="h2 text-center">로그인</div>
 				<div class="h4 text-muted text-center pt-2"></div>
 				
-				<form name="frm" class="pt-3">
-					<div class="form-group py-2">
-						<div class="input-field">
+				<form name="frm">
+					<div class="form-group">
+						<div class="input-field1">
 							<span class="far fa-user p-2"></span> <input type="text"
 								name="member_id" placeholder="아이디를 입력해주세요" required class="">
 								
 						</div>
 					</div>
-					<div class="form-group py-1 pb-2">
-						<div class="input-field">
+					<div class="form-group">
+						<div class="input-field2">
 							<span class="fas fa-lock p-2"></span> <input type="password"
 								name="member_pw" placeholder="비밀번호를 입력해주세요" required class="">
 							
