@@ -162,7 +162,7 @@ a:hover {
 
 <script>
   function check(){  
-  var fm = document.frm;   
+  var fm = document.frme;   
   if (fm.member_name.value==""){
   		alert("이름을 입력해주세요");
   		fm.member_name.focus();
@@ -191,7 +191,7 @@ a:hover {
 				<div class="h2 text-center">아이디 찾기</div>
 				<div class="h4 text-muted text-center pt-2"></div>
 				
-				<form name="frm">
+				<form name="frme">
 					<div class="form-group">
 						<div class="input-field1">
 							<!-- <span class="far fa-user p-2"></span> -->
