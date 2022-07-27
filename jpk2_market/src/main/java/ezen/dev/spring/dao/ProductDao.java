@@ -29,6 +29,11 @@ public class ProductDao {
 
 		return sqlSession.selectOne(MAPPER+".getProductInfo", pidx);
 	}
+
+	public List<ProductVo> getProductListType(String p_type) {
+
+		return sqlSession.selectList(MAPPER+".getProductListType", p_type);
+	}
 	
 
 

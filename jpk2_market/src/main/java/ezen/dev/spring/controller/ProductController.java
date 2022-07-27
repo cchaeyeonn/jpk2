@@ -50,5 +50,12 @@ public class ProductController {
 		return "product/product_list";
 		}
 	
+	@GetMapping("/productList_type.do")
+	public String getProductList_type(Model model, @RequestParam("type") String p_type) {
+		List<ProductVo> productList = productService.getProductListType(p_type);
+		model.addAttribute("productList",productList);
+		return "product/product_list_type";
 	}
+	}
+	
 
