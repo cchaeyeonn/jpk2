@@ -28,5 +28,10 @@ public class ProductService {
 		
 		return productDao.getProductInfo(pidx);
 	}
+
+	public List<ProductVo> getProductListType(String p_type) {
+
+		return productDao.getProductListType(p_type);
+	}
 	
 }

@@ -53,8 +53,6 @@
        var price = "#"+${cartVo.pbidx}+"_price";
        if($("#chk_${cartVo.pbidx}").is(':checked')){
        sum_price += parseInt($(price).val())*parseInt($(amount).val());
-       }else{
-        sum_price -= parseInt($(price).val())*parseInt($(amount).val());      
        }
        $("#sum_price").val(sum_price);
        
@@ -273,21 +271,16 @@ $("#chk_${cartVo.pbidx}").change(function(){
     
 });
 $("#chk_all").change(function(){
-   var sum_price = parseInt($("#sum_price").val());
-   var sale = 0;
-   var delivery_fee = 0;
-   var total_pay_price;
-   var pbidx = ${cartVo.pbidx};
-   var amount ="#"+${cartVo.pbidx}+"_pop_out";
-   var price = "#"+${cartVo.pbidx}+"_price";
-   if($("#chk_${cartVo.pbidx}").is(':checked')){
-   sum_price += parseInt($(price).val())*parseInt($(amount).val());
-   }else{
-    sum_price -= parseInt($(price).val())*parseInt($(amount).val());      
-   }
-   $("#sum_price").val(sum_price);
+  if($("#chk_all").is(':checked')){
+	  location.reload();
+	  
+	  
+  }else{
+	sum_price = 0;  
+  }
    
-   
+  $("#sum_price").val(sum_price);
+  
   if(sum_price < 50000 && sum_price != 0){
        delivery_fee = 3000;
        $("#delivery_fee").text(delivery_fee+"원");
@@ -301,7 +294,7 @@ $("#chk_all").change(function(){
    $("#totalprice_result").text(sum_price+"원");
    $("#sale").text(sale+"원"); 
    $("#total_pay_price").text(total_pay_price+"원");
-
+  
 
 });
     });

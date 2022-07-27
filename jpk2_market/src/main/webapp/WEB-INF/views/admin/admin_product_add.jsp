@@ -46,13 +46,13 @@
 		<hr>
 		타입<p/>
 		<select name="p_type">
-			<option value="채소/과일">채소/과일</option>
-			<option value="정육">정육</option>
-			<option value="생선/해산물">생선/해산물</option>
-			<option value="과자">과자</option>
-			<option value="베이커리">베이커리</option>
-			<option value="가공식품">가공식품</option>
-			<option value="기타">기타</option>
+			<option value="vegetable_fruit">채소/과일</option>
+			<option value="meat">정육</option>
+			<option value="fish_seafood">생선/해산물</option>
+			<option value="snacks">과자</option>
+			<option value="bakery">베이커리</option>
+			<option value="processedfood">가공식품</option>
+			<option value="etc">기타</option>
 		</select>
 		<hr>
 		태그<p/>

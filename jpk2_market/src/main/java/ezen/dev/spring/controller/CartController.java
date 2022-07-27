@@ -46,7 +46,7 @@ public class CartController {
 	// 지금처럼 한 컨트롤러에 2개의 서비스를 연결하는것도 가능하다. 주로 사용하는 Service는 생성자방식, 사용 빈도수가 낮은 Service는 set방식으로 객체 주입을 한다.
 
 
-	@GetMapping("/cart_main.do")
+	@PostMapping("/cart_main.do")
 	public String cart_main(Model model, HttpServletRequest request){
 		
 		HttpSession session = request.getSession();

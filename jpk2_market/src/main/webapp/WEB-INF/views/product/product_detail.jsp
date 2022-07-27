@@ -60,8 +60,26 @@
     }
 
 </style>
+
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/modal.css">
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script>
+$(function(){
+	if("${productVo.p_type}"=="vegetable_fruit"){
+		$("#p_type").text("야채/과일");
+	}else if("${productVo.p_type}"=="meat"){
+		$("#p_type").text("정육");
+	}else if("${productVo.p_type}"=="fish_seafood"){
+		$("#p_type").text("생선/해산물");
+	}else if("${productVo.p_type}"=="bakery"){
+		$("#p_type").text("베이커리");
+	}else if("${productVo.p_type}"=="processedfood"){
+		$("#p_type").text("가공식품");
+	}else{
+		$("#p_type").text("기타");
+	}
+})
+</script>
 <script src="${pageContext.request.contextPath}/resources/js/cart.js "></script>
 
 </head>
@@ -110,7 +128,7 @@
 		<hr class="pd_hr">
 		<dl>
 		<dt class="pd_dt">타입</dt>
-		<dd>${productVo.p_type}</dd>
+		<dd><span id="p_type"></span></dd>
 		</dl>
 		<dl>
 		<dt class="pd_button">

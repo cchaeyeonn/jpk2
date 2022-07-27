@@ -98,9 +98,19 @@ a {
 </style>
 
 
+<script>
+function cart(){
+	var frm = document.frm;
+	frm.action="/spring/cart_main.do";
+	frm.method="POST";
+	frm.submit();
+	return;
+}
 
+</script>
 </head>
 <body>
+<form id="frm" name="frm">
 	<!-- <div class="top_banner">
 	<div class="banner_inner">
 		<div class="banner_content">상단배너</div>
@@ -169,17 +179,20 @@ a {
 	</nav>
 	<!-- 상단 로고, 로그인부분 끝-->
 
-
+	<input type="hidden" value="${midx}" name="midx">
 	<!-- 카테고리, 장바구니 로고 시작 -->
 	<div class="fixed-top2" id="innerNav_1"
 		style="padding-top: 110px; height: 178px;">
 		<ul class="menu" style="margin-top: 28px; width: 1323px;">
 			<li style="float: left;"><a href="#">전체 카테고리</a>
 				<ul class="depth_1">
-					<li id="icon1"><a href="#">채소/과일</a></li>
-					<li id="icon1"><a href="#">정육</a></li>
-					<li id="icon1"><a href="#">과자</a></li>
-					<li id="icon1"><a href="#">베이커리</a></li>
+					<li id="icon1"><a href="/spring/productList_type.do?type=vegetable_fruit">채소/과일</a></li>
+					<li id="icon1"><a href="/spring/productList_type.do?type=meat">정육</a></li>
+					<li id="icon1"><a href="/spring/productList_type.do?type=fish_seafood">생선/해산물</a></li>
+					<li id="icon1"><a href="/spring/productList_type.do?type=snacks">과자</a></li>
+					<li id="icon1"><a href="/spring/productList_type.do?type=bakery">베이커리</a></li>
+					<li id="icon1"><a href="/spring/productList_type.do?type=processedfood">가공식품</a></li>
+					<li id="icon1"><a href="/spring/productList_type.do?type=etc">기타</a></li>
 
 
 				</ul></li>
@@ -192,7 +205,7 @@ a {
 
 			<!-- 마우스 올리면 이미지 변경 onmouseover 이벤트 -->
 			<li style="float: right; width: 0px;"><a
-				href="/spring/cart_main.do?midx=${midx}" style="float: right;">
+				onclick="cart(${midx});" style="float: right;">
 					<img src="resources/img/cart.png"
 					onmouseover="this.src='resources/img/cart2.png';"
 					onmouseout="this.src='resources/img/cart.png';" alt="장바구니"
@@ -210,6 +223,6 @@ a {
 
 	</div>
 	<!-- 카테고리, 장바구니 로고 끝 -->
-
+</form>
 </body>
 </html>
