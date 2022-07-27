@@ -123,75 +123,14 @@ a:hover {
 	color: #7b4ca0
 }
 
-
-/*
-.option {
-	position: relative;
-	padding-left: 30px;
-	cursor: pointer
-}
-
-.option label.text-muted {
-	display: block;
-	cursor: pointer
-}
-
-.option input {
-	display: none
-}
-
- .checkmark {
-	position: absolute;
-	top: 3px;
-	left: 0;
-	height: 20px;
-	width: 20px;
-	background-color: #fff;
-	border: 1px solid #ddd;
-	border-radius: 50%;
-	cursor: pointer
-}
-
-.option input:checked ~.checkmark:after {
-	display: block
-}
-
-.option .checkmark:after {
-	content: "";
-	width: 13px;
-	height: 13px;
-	display: block;
-	background: #400485;
-	position: absolute;
-	top: 48%;
-	left: 53%;
-	border-radius: 50%;
-	transform: translate(-50%, -50%) scale(0);
-	transition: 300ms ease-in-out 0s
-}
-
-.option input[type="radio"]:checked ~.checkmark {
-	background: #fff;
-	transition: 300ms ease-in-out 0s;
-	border: 1px solid #400485
-}
-
-.option input[type="radio"]:checked ~.checkmark:after {
-	transform: translate(-50%, -50%) scale(1)
-} */
-
 .btn.btn-block {
 	border-radius: 20px;
-	/* background-color: #400485; */
 	background-color: #198754;
-	/*background-color: #90b990;*/
 	color: #fff
 }
 
 .btn.btn-block:hover {
-	/* background-color: #55268be0 */
 	background-color: #198754;
-	/*background-color: #90b990;*/
 	color: #fff
 }
 
@@ -206,7 +145,7 @@ a:hover {
 		padding: 30px 10px;
 		margin: 5px
 	}
-	.option {
+/* 	.option {
 		position: relative;
 		padding-left: 22px
 	}
@@ -222,7 +161,7 @@ a:hover {
 	}
 	#forgot {
 		font-size: 0.95rem
-	}
+	} */
 }
 </style>
 <script type='text/javascript' src=''></script>
@@ -323,9 +262,10 @@ catch(err){
 		</div>
 	</div>
 	<script type='text/javascript'></script>
+
+</body>
 <!-- 푸터 연결 -->
 <jsp:include page="../footer.jsp"></jsp:include>
-</body>
 </html>
 
 
