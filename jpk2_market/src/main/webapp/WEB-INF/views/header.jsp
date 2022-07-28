@@ -106,7 +106,6 @@ function cart(){
 	frm.submit();
 	return;
 }
-
 </script>
 </head>
 <body>
@@ -205,7 +204,7 @@ function cart(){
 
 			<!-- 마우스 올리면 이미지 변경 onmouseover 이벤트 -->
 			<li style="float: right; width: 0px;"><a
-				onclick="cart(${midx});" style="float: right;">
+				onclick="cart(${midx});" style="float: right;" id="cartbutton">
 					<img src="resources/img/cart.png"
 					onmouseover="this.src='resources/img/cart2.png';"
 					onmouseout="this.src='resources/img/cart.png';" alt="장바구니"
@@ -218,7 +217,9 @@ function cart(){
                      out.println("<div id='cart_count'>"+(Integer)session.getAttribute("result_")+"</div>");
                      }else{
                      }
-                     }%></li>
+                     }%>
+
+                     </li>
 		</ul>
 
 	</div>

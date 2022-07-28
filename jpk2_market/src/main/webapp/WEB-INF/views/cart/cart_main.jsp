@@ -18,6 +18,7 @@
 <!-- jquery 스크립트 -->
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script src="${pageContext.request.contextPath}/resources/js/cart.js "></script>
+
 </head>
 <body>
     <!-- 헤더 연결 -->
