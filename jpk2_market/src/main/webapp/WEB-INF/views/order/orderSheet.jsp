@@ -246,7 +246,8 @@
 <!-- 단순 체크 약관 유효성 검사를 통해 체크 된 경우에만 결제가 되도록 -->
 개인정보 수집/제공<p/>
 <hr>
-<div><input type="checkbox" id="order_term" name="order_term"><b>결제진행 필수 동의</b></div><p/>
+<div>
+<label for="order_term"><input type="checkbox" id="order_term" name="order_term"><b>결제진행 필수 동의</b></label></div><p/>
 <div>결제정보 수집,이용 및 처리 동의(필수) | 전자지급 결제대행 서비스 이용약관 동의(필수) </div>
  <div style="height:20px"><span id="result_order_term" style="font-size:12px;"></span></div>
  <input type="button" onclick="requestPay()" id="trigger" value="결제하기">
