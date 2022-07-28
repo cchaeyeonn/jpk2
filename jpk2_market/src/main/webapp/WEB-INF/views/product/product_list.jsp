@@ -7,6 +7,13 @@
 <head>
 <meta charset="UTF-8">
 <title>list</title>
+
+<style>
+#p_list_info{
+	text-align:left;
+}
+
+</style>
 </head>
 <body>
 
@@ -29,9 +36,14 @@
 	                        <div class="portfolio-item mx-auto" data-bs-toggle="modal">
 	                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-320 w-249">
 	                                <div class="portfolio-item-caption-content text-center text-black"><!-- <i class="fas fa-plus fa-3x"></i> -->
-	                                <a href="${pageContext.request.contextPath}/product_detail.do?pidx=${productVo.pidx}"><img class="img-fluid" src="${pageContext.request.contextPath}/resources/product_image/${productVo.p_system_filename}" alt="..."  /></a><p/>
-	                                ${productVo.p_name}<p/>
-	                          		${productVo.p_price}원<p/>
+	                                <a href="${pageContext.request.contextPath}/product_detail.do?pidx=${productVo.pidx}">
+	                                <img class="img-fluid" src="${pageContext.request.contextPath}/resources/product_image/${productVo.p_system_filename}" alt="..."  /></a><p/>
+	                                <div id="p_list_info">
+	                                	<div style="color:#ababab; font-size:13px;">${productVo.p_delivery}</div>
+		                                <div style="font-size:22px;">${productVo.p_name}</div>
+		                          		<div style="font-weight:bold";>${productVo.p_price}원</div>
+		                          		<div style="color:#ababab; font-size:12px;">${productVo.p_secondname}</div>
+	                          		</div>
 	                                </div>
 	                            </div>
 	                        </div>

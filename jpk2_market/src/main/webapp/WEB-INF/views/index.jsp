@@ -238,7 +238,7 @@
         <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
         <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
     </body>
-    <script>
+<!--     <script>
   window.kakaoAsyncInit = function() {
     Kakao.Channel.createChatButton({
       container: '#kakao-talk-channel-chat-button',
@@ -252,5 +252,5 @@
     js.src = 'https://developers.kakao.com/sdk/js/kakao.channel.min.js';
     fjs.parentNode.insertBefore(js, fjs);
   })(document, 'script', 'kakao-js-sdk');
-</script>
+</script> -->
 </html>
