@@ -73,3 +73,41 @@ user-select: none;
 #td_l{
 	width:20%;
 }
+
+/* faq css 시작 */
+.answer {
+    display: none;
+    padding-bottom: 30px;
+    font-size: 13px;
+    margin-left: 51px;
+  }
+  #faq-title {
+    font-size: 25px;
+  }
+  .faq-content {
+    border-bottom: 1px solid #e0e0e0;
+    width: 920px;
+  }
+  .question {
+    font-size: 13px;
+    padding: 30px 0;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: none;
+    width: 100%;
+    text-align: left;
+    padding: 15px;
+  }
+  .question:hover {
+    color: #198754;
+  }
+  [id$="-toggle"] {
+    margin-right: 15px;
+  }
+  #faq_box{
+  margin: 182px;
+  margin-top: 38px;
+  }
+  
+  /* faq css 끝 */
