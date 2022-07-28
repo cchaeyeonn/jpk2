@@ -21,6 +21,80 @@
         <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="resources/css/styles.css" rel="stylesheet" />
+        <!-- 아임포트 api -->
+        <script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.1.8.js"></script>
+        <script>
+        var IMP = window.IMP;
+        IMP.init("imp42068652");
+        
+    function requestPay() {
+  
+    		          if($("#member_addr_2").val() == ""){
+    		           result = "상세주소를 입력해주세요";
+    			       $("#result_member_addr").html(result).css("color", "red");
+    		           $("#member_addr_2").focus();
+    		           return false;
+    		             }
+ 
+ 
+    		          if($("#member_addr_1").val() == ""){
+    		           result = "주소를 입력해주세요";
+    			       $("#result_member_addr").html(result).css("color", "red");
+    		           $("#member_addr_1").focus();
+    		           return false;
+    		             }
+    
+    
+    		          if($("#member_addrcode").val() == ""){
+    		           result = "주소를 입력해주세요";
+    			       $("#result_member_addr").html(result).css("color", "red");
+    		           $("#member_addrcode").focus();
+    		           return false;
+    		             }
+   
+    		          if(!$("input:checked[name='order_term']").is(":checked")){
+    		           result = "필수 약관입니다. 동의해주세요";
+    			       $("#result_order_term").html(result).css("color", "red");
+    		           return false;
+    		             }
+
+
+    	
+    	
+    	
+    	
+      // IMP.request_pay(param, callback) 결제창 호출
+      IMP.request_pay({ // param
+          pg: "html5_inicis",
+          pay_method: "card",
+          merchant_uid: "ORD20180131-0000011",
+          name: "노르웨이 회전 의자",
+          amount: 100,
+          buyer_email: "gildong@gmail.com",
+          buyer_name: "홍길동",
+          buyer_tel: "010-4242-4242",
+          buyer_addr: "서울특별시 강남구 신사동",
+          buyer_postcode: "01181"
+      }, function (rsp) { // callback
+          if (rsp.success) {
+        	  var msg = '결제가 완료되었습니다.';
+        	  msg += '고유ID : ' + rsp.imp_uid;
+        	  msg += '상점 거래ID : ' + rsp.merchant_uid;
+        	  msg += '결제 금액 : ' + rsp.paid_amount;
+        	  msg += '카드 승인번호 : ' + rsp.apply_num;
+              // 결제 성공 시 로직,
+              
+          } else {
+        	  var msg = '결제에 실패하였습니다.';
+        	  msg += '에러내용 : ' + rsp.error_msg;
+
+              // 결제 실패 시 로직,
+              
+          }
+          alert(msg);
+      });
+    }
+  </script>
             <!-- 카카오 주소 api -->
     <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
     <script>
@@ -77,45 +151,7 @@
    document.getElementById("member_birth").setAttribute("max", today);
    };
    </script>
-   <script>
-   $(function(){
-	   $(document).on('click','#trigger',function(){
-	          if($("#member_addr_2").val() == ""){
-	           result = "상세주소를 입력해주세요";
-		       $("#result_member_addr").html(result).css("color", "red");
-	           $("#member_addr_2").focus();
-	           return false;
-	             }
-	             });
-	   $(document).on('click','#trigger',function(){
-	          if($("#member_addr_1").val() == ""){
-	           result = "주소를 입력해주세요";
-		       $("#result_member_addr").html(result).css("color", "red");
-	           $("#member_addr_1").focus();
-	           return false;
-	             }
-	             });
-	   $(document).on('click','#trigger',function(){
-	          if($("#member_addrcode").val() == ""){
-	           result = "주소를 입력해주세요";
-		       $("#result_member_addr").html(result).css("color", "red");
-	           $("#member_addrcode").focus();
-	           return false;
-	             }
-	             });
-   })
-   </script>
-   <script>
-   $(function(){
-	   $(document).on('click','#trigger',function(){
-	          if(!$("input:checked[name='order_term']").is(":checked")){
-	           result = "필수 약관입니다. 동의해주세요";
-		       $("#result_order_term").html(result).css("color", "red");
-	           return false;
-	             }
-	             });  
-   })
-   </script>
+
 	<script>
 	$(function(){
 	var delivery_fee = 0;
@@ -152,6 +188,7 @@
 	   $("#${orderVo.pbidx}_p_price").text("${orderVo.p_amount}"*"${orderVo.p_price}"+"원");
    })
    </script>
+   
 <tr>
 <td><div><img class="img-fluid4" src="${pageContext.request.contextPath}/resources/product_image/${orderVo.p_system_filename}" alt="..."  /></div></td>
 <td>${orderVo.p_name}</td><td>&nbsp;&nbsp;&nbsp;</td><td>${orderVo.p_amount}&nbsp;개</td><td>&nbsp;&nbsp;&nbsp;</td><td><span id="${orderVo.pbidx}_p_price"></span></td>
@@ -212,7 +249,7 @@
 <div><input type="checkbox" id="order_term" name="order_term"><b>결제진행 필수 동의</b></div><p/>
 <div>결제정보 수집,이용 및 처리 동의(필수) | 전자지급 결제대행 서비스 이용약관 동의(필수) </div>
  <div style="height:20px"><span id="result_order_term" style="font-size:12px;"></span></div>
- <input type="submit" id="trigger" value="결제하기">
+ <input type="button" onclick="requestPay()" id="trigger" value="결제하기">
 <a href="/spring/cart_main.do"><input type="button" value="장바구니로 돌아가기"></a>
 <a href="/spring/index.do"><input type="button" value="메인으로 돌아가기"></a>
 </div>
