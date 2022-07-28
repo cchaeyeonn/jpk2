@@ -73,7 +73,7 @@ public class OrderController {
 		response.setContentType("text/html; charset=UTF-8");
 		response.setCharacterEncoding("UTF-8");
 		PrintWriter out=response.getWriter();
-		out.println("<script>window.onload = function(){alert('결제할 상품을 선택해 주세요.'); location.href='/spring/cart_main.do';}</script>");
+		out.println("<script>window.onload = function(){alert('결제할 상품을 선택해 주세요.'); history.back();}</script>");
 		out.flush();
 		return null;
 	}
