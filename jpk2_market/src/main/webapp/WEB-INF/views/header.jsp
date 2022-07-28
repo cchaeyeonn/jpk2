@@ -209,7 +209,7 @@ function cart(){
 					<img src="resources/img/cart.png"
 					onmouseover="this.src='resources/img/cart2.png';"
 					onmouseout="this.src='resources/img/cart.png';" alt="장바구니"
-					width=30px; />
+					width=30px; style="cursor: pointer;"/>
 			</a> <%-- <div id="cart_count">${result_}</div></li> --%> <%if(session.getAttribute("result_") == null){
             	 session.setAttribute("result_", 0);
              }

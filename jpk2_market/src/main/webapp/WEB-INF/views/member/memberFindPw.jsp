@@ -276,9 +276,9 @@ $(document).on('click','#trigger',function(){if($("#member_id").val() != "",$("#
 					</div> -->
 					
 					
-					<input type="button" id="trigger" class="btn btn-outline-success" value="확인" onclick="check();">
+					<input style="margin-top:20px;" type="button" id="trigger" class="btn btn-outline-success" value="확인" onclick="check();">
 					<!-- <i class="fas fa-spinner fa-10x fa-spin"></i> -->
-					<input type="button" class="btn btn-outline-success" value="뒤로" onclick="location.href='login.do'">
+					<input style="margin-top:7px;" type="button" class="btn btn-outline-success" value="뒤로" onclick="location.href='login.do'">
 			
 				</form>
 			</div>

@@ -222,8 +222,8 @@ a:hover {
 					</div> -->
 					
 					<!-- <input type="button" class="btn btn-block text-center my-3" value="로그인" onclick="check_login();"> -->
-					<input type="button" class="btn btn-outline-success" value="확인" onclick="check();">
-					<input type="button" class="btn btn-outline-success" value="뒤로" onclick="location.href='login.do'">
+					<input style="margin-top:20px;" type="button" class="btn btn-outline-success" value="확인" onclick="check();">
+					<input style="margin-top:7px;" type="button" class="btn btn-outline-success" value="뒤로" onclick="location.href='login.do'">
 					<!-- <input style="margin-top: -6px !important; background-color: white; border-color: black; border: 1px solid; color: black;"
 						type="button" class="btn btn-block text-center my-3" value="회원가입"
 						onclick="location.href='join.do'">
