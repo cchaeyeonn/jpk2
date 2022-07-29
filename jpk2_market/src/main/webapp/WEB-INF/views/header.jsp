@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>  
 <!DOCTYPE html>
 <html>
 <head>
@@ -203,8 +204,8 @@ function cart(){
 			<li style="float: right; width: 0px;"><a
 				onclick="cart(${midx});" style="float: right;" id="cartbutton">
 					<img src="resources/img/cart.png"
-					onmouseover="this.src='resources/img/cart2.png';"
-					onmouseout="this.src='resources/img/cart.png';" alt="장바구니"
+					onmouseover="this.src='resources/img/cart2.png'; document.getElementById('cartDiv').style.display = 'block';"
+					onmouseout="this.src='resources/img/cart.png'; document.getElementById('cartDiv').style.display = 'none';" alt="장바구니"
 					width=30px; style="cursor: pointer;"/>
 			</a> <%-- <div id="cart_count">${result_}</div></li> --%> <%if(session.getAttribute("result_") == null){
             	 session.setAttribute("result_", 0);
@@ -215,7 +216,7 @@ function cart(){
                      }else{
                      }
                      }%>
-
+	
                      </li>
 		</ul>
 

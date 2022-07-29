@@ -24,79 +24,17 @@
         <!-- 아임포트 api -->
         <script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.1.8.js"></script>
         <script>
-        var IMP = window.IMP;
-        IMP.init("imp42068652");
+
+		var member_name = "<c:out value="${memberVo.member_name}" />";
+
+		</script>
+        <script src="${pageContext.request.contextPath}/resources/js/order.js "></script>
         
-    function requestPay() {
-  
-    		          if($("#member_addr_2").val() == ""){
-    		           result = "상세주소를 입력해주세요";
-    			       $("#result_member_addr").html(result).css("color", "red");
-    		           $("#member_addr_2").focus();
-    		           return false;
-    		             }
- 
- 
-    		          if($("#member_addr_1").val() == ""){
-    		           result = "주소를 입력해주세요";
-    			       $("#result_member_addr").html(result).css("color", "red");
-    		           $("#member_addr_1").focus();
-    		           return false;
-    		             }
-    
-    
-    		          if($("#member_addrcode").val() == ""){
-    		           result = "주소를 입력해주세요";
-    			       $("#result_member_addr").html(result).css("color", "red");
-    		           $("#member_addrcode").focus();
-    		           return false;
-    		             }
-   
-    		          if(!$("input:checked[name='order_term']").is(":checked")){
-    		           result = "필수 약관입니다. 동의해주세요";
-    			       $("#result_order_term").html(result).css("color", "red");
-    		           return false;
-    		             }
-
-
-    	
-    	
-    	
-    	
-      // IMP.request_pay(param, callback) 결제창 호출
-      IMP.request_pay({ // param
-          pg: "html5_inicis",
-          pay_method: "card",
-          merchant_uid: "ORD20180131-0000011",
-          name: "노르웨이 회전 의자",
-          amount: 100,
-          buyer_email: "gildong@gmail.com",
-          buyer_name: "홍길동",
-          buyer_tel: "010-4242-4242",
-          buyer_addr: "서울특별시 강남구 신사동",
-          buyer_postcode: "01181"
-      }, function (rsp) { // callback
-          if (rsp.success) {
-        	  var msg = '결제가 완료되었습니다.';
-        	  msg += '고유ID : ' + rsp.imp_uid;
-        	  msg += '상점 거래ID : ' + rsp.merchant_uid;
-        	  msg += '결제 금액 : ' + rsp.paid_amount;
-        	  msg += '카드 승인번호 : ' + rsp.apply_num;
-              // 결제 성공 시 로직,
-              
-          } else {
-        	  var msg = '결제에 실패하였습니다.';
-        	  msg += '에러내용 : ' + rsp.error_msg;
-
-              // 결제 실패 시 로직,
-              
-          }
-          alert(msg);
-      });
-    }
-  </script>
             <!-- 카카오 주소 api -->
     <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+    <script type="text/javascript" charset="utf-8">
+     sessionStorage.setItem("contextpath", "${pageContext.request.contextPath}");
+	</script>
     <script>
    $(function(){
       $(document).on('click','#member_addr',function(){
@@ -164,7 +102,9 @@
         $("#del_price").text(delivery_fee+"원");
      }
 	total_fee = ${sum_price}+delivery_fee
-	$("#total_price").text(total_fee+"원")
+	$("#total_price").text(total_fee+"원");
+	$("#total_price_").val(total_fee);
+	 	
 	})
 	</script>
 </head>
@@ -172,7 +112,7 @@
     <jsp:include page="../header.jsp"></jsp:include>
 <div id="wrap" style="padding-top:239px; margin-left:414px; margin-right:401px;">
 <h1 align="center">주문서</h1>
-<form action="/spring/index.do" method="get">
+<form action="${pageContext.request.contextPath}/index.do" method="get">
 <div id="order-product">
 <!-- 장바구니에 있는 물건중 체크된 물건을 가져와서 foreach -->
 주문상품<p/>
@@ -204,7 +144,10 @@
 <td>상품 총 가격</td><td></td><td>상품 할인</td><td></td><td>배송비</td><td></td><td>총 결제 예정금액</td>
 </tr>
 <tr>
-<td><span id="sum_price">${sum_price}원</span></td><td>-</td><td><span id="sale_price">0원</span></td><td>+</td><td><span id="del_price"></span></td><td>=</td><td><span id="total_price"></span></td>
+<td><span id="sum_price">${sum_price}원</span></td><td>-</td><td><span id="sale_price">0원</span></td><td>+</td><td><span id="del_price"></span></td><td>=</td>
+<td><span id="total_price"></span>
+<input type="hidden" id="total_price_" value="">
+</td>
 </tr>
 </table>
 </div>
@@ -214,7 +157,7 @@
 <hr>
 <table>
 <tr>
-<td>성함</td><td>${memberVo.member_name}</td>
+<td>성함</td><td id="member_name">${memberVo.member_name}</td>
 </tr>
 <tr>
 <td>휴대폰</td><td>${memberVo.member_phone}</td>
@@ -241,6 +184,12 @@
 <!-- 결제수단을 선택하고 이에따라 아래에 나타나는 창이 다르게 -->
 결제 수단<p/>
 <hr>
+<div>
+	<label><input type="radio"  name="method" value="card" checked> 신용카드</label>
+	<label><input type="radio"  name="method" value="trans"> 실시간계좌이체</label>
+	<label><input type="radio"  name="method" value="vbank"> 가상계좌</label>
+
+</div>
 </div>
 <div id="pay-term">
 <!-- 단순 체크 약관 유효성 검사를 통해 체크 된 경우에만 결제가 되도록 -->
@@ -251,8 +200,8 @@
 <div>결제정보 수집,이용 및 처리 동의(필수) | 전자지급 결제대행 서비스 이용약관 동의(필수) </div>
  <div style="height:20px"><span id="result_order_term" style="font-size:12px;"></span></div>
  <input type="button" onclick="requestPay()" id="trigger" value="결제하기">
-<a href="/spring/cart_main.do"><input type="button" value="장바구니로 돌아가기"></a>
-<a href="/spring/index.do"><input type="button" value="메인으로 돌아가기"></a>
+<a href="${pageContext.request.contextPath}/cart_main.do"><input type="button" value="장바구니로 돌아가기"></a>
+<a href="${pageContext.request.contextPath}/index.do"><input type="button" value="메인으로 돌아가기"></a>
 </div>
 </form>
 </div>

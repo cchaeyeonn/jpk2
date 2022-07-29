@@ -26,9 +26,7 @@
 	<!-- Core theme CSS (includes Bootstrap)-->
 	<link href="resources/css/styles.css" rel="stylesheet" />
         
-	<!-- 이미지 슬라이드 -->
-	<link href="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.min.css" rel="stylesheet" />
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.min.js"></script>
+
 
 	<script type="text/javascript">
   function chatChannel() {
@@ -238,6 +236,9 @@
         <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
         <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
     </body>
+    	<!-- 이미지 슬라이드 -->
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.min.css" rel="stylesheet" />
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.min.js"></script>
 <!--     <script>
   window.kakaoAsyncInit = function() {
     Kakao.Channel.createChatButton({
