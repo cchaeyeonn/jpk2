@@ -131,10 +131,12 @@ public class MemberController {
 		
 
 		String member_auth = memberService.getAuthInfo(member_id);
+		String member_name = memberService.getNameInfo(member_id);
 		System.out.println("인증값 "+member_auth);
 		String Success="Y";
 		if(member_auth.equals(Success)) {
-			session.setAttribute("member_id", member_id);	
+			session.setAttribute("member_id", member_id);
+			session.setAttribute("member_name", member_name);	
 			session.setAttribute("member_grade", member_grade);
 			session.setAttribute("midx", midx);
 			session.setAttribute("result_", count);

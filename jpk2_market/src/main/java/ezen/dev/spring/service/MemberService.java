@@ -97,6 +97,10 @@ public class MemberService {
 	public String getAuthInfo(String member_id) {
 		return memberDao.getAuthInfo(member_id);
 	}
+	
+	public String getNameInfo(String member_id) {
+		return memberDao.getNameInfo(member_id);
+	}
 
 
 	public MemberVo getIdInfo(HashMap<String, String> findId) {
