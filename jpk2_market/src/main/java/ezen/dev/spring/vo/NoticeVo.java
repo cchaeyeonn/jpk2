@@ -8,8 +8,15 @@ public class NoticeVo {
 	private String n_writedate;
 	private String n_delyn;
 	private int midx_mn;
+	private String member_name;
 	
 	
+	public String getMember_name() {
+		return member_name;
+	}
+	public void setMember_name(String member_name) {
+		this.member_name = member_name;
+	}
 	public int getNidx() {
 		return nidx;
 	}

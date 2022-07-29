@@ -40,6 +40,11 @@
 	<select id="getAuthInfo" resultType="String">
 		select member_auth from fm_member where member_id=#{member_id}
 	</select>
+	
+	<select id="getNameInfo" resultType="String">
+		select member_name from fm_member where member_id=#{member_id}
+	</select>
+	
 	<select id="getIdInfo" parameterType="map" resultType="memberVo">
 		select * from fm_member where member_name=#{member_name} and member_email=#{member_email}
 	</select>

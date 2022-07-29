@@ -149,10 +149,10 @@ function cart(){
                             	grade = (long)session.getAttribute("member_grade");
                             	}
                         if ( grade >= 1){
-                        	out.print("<a class='nav-link py-3 px-0 px-lg-3 rounded' href='"+request.getContextPath()+"/admin.do'>["+session.getAttribute("member_id")+"] 님</a>");
+                        	out.print("<a class='nav-link py-3 px-0 px-lg-3 rounded' href='"+request.getContextPath()+"/admin.do'>["+session.getAttribute("member_name")+"] 님</a>");
                         	}
                         else if ((session.getAttribute("member_id") != null) && grade == 0){
-                        	out.print("<a class='nav-link py-3 px-0 px-lg-3 rounded' href='"+request.getContextPath()+"/memberInfo.do'>["+session.getAttribute("member_id")+"] 님</a>");
+                        	out.print("<a class='nav-link py-3 px-0 px-lg-3 rounded' href='"+request.getContextPath()+"/memberInfo.do'>["+session.getAttribute("member_name")+"] 님</a>");
                         }
                         %>
 					</li>

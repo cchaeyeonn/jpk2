@@ -64,6 +64,10 @@ public class MemberDao {
 	public String getAuthInfo(String member_id) {
 		return sqlSession.selectOne(MAPPER+".getAuthInfo",member_id);
 	}
+	
+	public String getNameInfo(String member_id) {
+		return sqlSession.selectOne(MAPPER+".getNameInfo",member_id);
+	}
 
 	public MemberVo getIdInfo(HashMap<String, String> findId) {
 

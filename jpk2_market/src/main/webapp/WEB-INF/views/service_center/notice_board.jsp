@@ -61,7 +61,7 @@
 <td id="stable_2">[${noticeVo.n_category}]</td>
 <td id="stable_3"><a href="/spring/notice_detail.do?nidx=${noticeVo.nidx}">${noticeVo.n_title}</a></td>
 <td id="stable_4">${noticeVo.n_content}</td>
-<td>${noticeVo.midx_mn}</td>
+<td>${noticeVo.member_name}</td>
 </tr>
  </c:forEach>
 </table>

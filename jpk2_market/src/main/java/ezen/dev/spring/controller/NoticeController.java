@@ -69,13 +69,14 @@ private NoticeService noticeService;
 		int result=0;
 		
 		midx_mn=Integer.parseInt(String.valueOf(session.getAttribute("midx")));
-		
+		String member_name = (String)session.getAttribute("member_name");
 		NoticeVo noticeVo = new NoticeVo(); //notice라는 이름으로 메모리에 공간을 할당
 		noticeVo.setN_category(n_category);
 		noticeVo.setN_title(n_title);
 		noticeVo.setN_content(n_content);
 		noticeVo.setN_writedate(n_writedate);
 		noticeVo.setMidx_mn(midx_mn);
+		noticeVo.setMember_name(member_name);
 		
 
 		result = noticeService.insertNotice(noticeVo);
@@ -87,6 +88,7 @@ private NoticeService noticeService;
 			model.addAttribute("n_content",n_content);
 			model.addAttribute("n_writedate",n_writedate);
 			model.addAttribute("midx",midx_mn);
+			model.addAttribute("member_name",member_name);
 			viewPage = "redirect:/notice_board.do";
 			
 		}
