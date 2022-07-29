@@ -42,8 +42,13 @@ public class OrderController {
 		this.memberService = memberService;
 	}
 	
-	@Autowired
+	
 	private CartService cartService;
+	
+	@Autowired
+	public void setCartService(CartService cartService) {
+		this.cartService = cartService;
+	}
 	
 	
 	@PostMapping("/orderSheet.do")
@@ -88,10 +93,26 @@ public class OrderController {
 		return "order/orderList";
 	}
 	
-	@GetMapping("/orderListDetail.do")
+	@PostMapping("/orderListDetail.do")
 	public String orderListDetail() {
 		
 		return "order/orderListDetail";
+	}
+	
+	@PostMapping("/orderSuccess.do")
+	public String orderSuccess() {
+		
+		
+		
+		return "order/orderSuccess";
+	}
+	
+	@PostMapping("/orderWaitng.do")
+	public String orderWaiting() {
+		
+		
+		
+		return "order/orderWaiting";
 	}
 	
 	
