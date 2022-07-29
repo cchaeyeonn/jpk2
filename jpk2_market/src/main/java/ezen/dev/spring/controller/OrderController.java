@@ -76,13 +76,23 @@ public class OrderController {
 		out.flush();
 		return null;
 	}
-
+	
+		
 	
 	
 	
 	}
+	@GetMapping("/orderList.do")
+	public String orderList() {
+		
+		return "order/orderList";
+	}
 	
-	
+	@GetMapping("/orderListDetail.do")
+	public String orderListDetail() {
+		
+		return "order/orderListDetail";
+	}
 	
 	
 	

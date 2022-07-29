@@ -28,36 +28,26 @@
     
     <div id="cart_inner">
     <h2 style="text-align:center;">주문 내역</h2>
-    <hr style="width:65%;">
-    <div id="cart_1" style="float:left; width:60%; margin-right:103px;">   
+    <hr>
+    <div id="cart_1" style="float:left; margin-right:103px;">   
     <table id="target">
     <tr>
+    <td>주문 번호</td>
+    <td>주문 가격</td>
+    <td>결제 상태</td>
+    <td>주문 일자</td>
     </tr>
-    <c:forEach items="${cartList}" var="cartVo" varStatus="status">
+   <%--  <c:forEach items="${cartList}" var="cartVo" varStatus="status"> --%>
     <tr id="${cartVo.pbidx}_product_target">
-    <td>
-    <input type="checkbox" class="del-chk" name="pbidx" id="chk_${cartVo.pbidx}" value="${cartVo.pbidx}" checked>
-    </td>
-    <td>
-    <!-- 사진 -->
-    <div class="portfolio-item-caption d-flex2 align-items-center justify-content-center h-220 w-149">
-    <img class="img-fluid2" src="${pageContext.request.contextPath}/resources/product_image/${cartVo.p_system_filename}" alt="..."  />
-    </div>
-    </td>
-    <td>
-    <!-- 상품명 -->
-    ${cartVo.p_name}
-    </td>
+    <td>12165451</td>
     <td>
     <!-- 금액 -->
     <span class="price"><input type="hidden" id="${cartVo.pbidx}_price" value="${cartVo.p_price}"> ${cartVo.p_price}원</span>
     </td>
-    <td>
-    <!-- 삭제버튼 -->
-    <button id="btn_delete_${cartVo.pbidx}" type="button" value="${cartVo.pbidx}" style="border-radius: 5px; width: 22px; height: 26px; border-color: #c9c9c9;">X</button>
-    </td>
+    <td>yes or yes</td>
+    <td>주문 일자</td>
     </tr>
-    </c:forEach>
+<%--     </c:forEach> --%>
     </table>
     </div>
     </div>

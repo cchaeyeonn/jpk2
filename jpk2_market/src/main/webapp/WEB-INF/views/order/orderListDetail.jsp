@@ -1,201 +1,127 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>제품 상세 페이지</title>
-<style>
+<html lang="utf-8">
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+<title>주문서</title>
+        <!-- jQuery library (served from Google) -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
-	#product{
-		padding-left:10%;
-		padding-right:10%; 
-		height:1000px; 
-		padding-top:260px;
-		}
-	#product_img{
-			float:left; 
-			width:50%; 
-			height:50%;
-			
-			}
-	#product_detail{
-			float:right; 
-			width:50%; 
-			height:50%;
-			}
-/* 	#home_button{
-			padding-left:10%; 
-			padding-right:10%; 
-			text-align:center; 
-			float:center;
-			} */
-    .button box{
-            display : inline-block;
-    }
-    #product_subject{
-    font-size:13px;
-    color:#8f8f8f;
-    }
-    #product_price{
-    font-size:13px;
-    margin-top:39px;
-    }
-    .pd_dt{
-    float:left;
-    width:140px;
-    color:#8f8f8f;
-    font-size:15px;
-    }
-    .pd_hr{
-    margin: 1.2rem 0;
-    color: inherit;
-    opacity:0.05;
-    width:547px;
-    }
-    .pd_button{
-   	margin-left:430px;
-   	margin-top:22px;
-
-    }
-
-</style>
-
-<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/modal.css">
-<script src="http://code.jquery.com/jquery-latest.min.js"></script>
-<script>
-$(function(){
-	if("${productVo.p_type}"=="vegetable_fruit"){
-		$("#p_type").text("야채/과일");
-	}else if("${productVo.p_type}"=="meat"){
-		$("#p_type").text("정육");
-	}else if("${productVo.p_type}"=="fish_seafood"){
-		$("#p_type").text("생선/해산물");
-	}else if("${productVo.p_type}"=="bakery"){
-		$("#p_type").text("베이커리");
-	}else if("${productVo.p_type}"=="processedfood"){
-		$("#p_type").text("가공식품");
-	}else{
-		$("#p_type").text("기타");
-	}
-})
-</script>
-<script src="${pageContext.request.contextPath}/resources/js/cart.js "></script>
-
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="resources/assets/favicon.ico" />
+        
+        <!-- Font Awesome icons (free version)-->
+        <script src="resources/js/scripts.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="resources/css/styles.css" rel="stylesheet" />
+    <script type="text/javascript" charset="utf-8">
+     sessionStorage.setItem("contextpath", "${pageContext.request.contextPath}");
+	</script>
 </head>
 <body>
+    <jsp:include page="../header.jsp"></jsp:include>
+<div id="wrap" style="padding-top:239px; margin-left:414px; margin-right:401px;">
+<h1 align="center">주문상세내역</h1>
+<form>
+<div id="order-product">
+<!-- 장바구니에 있는 물건중 체크된 물건을 가져와서 foreach -->
+주문상품<p/>
+<hr>
+<table>
 
-    <!-- 헤더 연결 -->
-    <jsp:include page="../header.jsp"></jsp:include> 
-	<form name="cartAddForm" action="${pageContext.request.contextPath}/addCartProcess.do" method="post">
-	   <input type="hidden"  name="pidx_pc" value="${productVo.pidx} ">
-		<div id="product">
-		<div id="product_img">
-		<img class="img-fluid3" src="${pageContext.request.contextPath}/resources/product_image/${productVo.p_system_filename}"></div>
-		<div id="product_detail"><p/>
-		<h3>${productVo.p_name}</h3>
-		<div id="product_subject">${productVo.p_secondname}</div>
-		
-		<div id="product_price"><h3>${productVo.p_price}원</h3></div>
-		<hr class="pd_hr">
-		<dl>
-		<dt class="pd_dt">판매 단위</dt>
-		<dd class="pd_dd">${productVo.p_unit}</dd>
-		<dt class="pd_dt">중량/용량</dt>
-		<dd>${productVo.p_weight}</dd>
-		</dl>
-		<hr class="pd_hr">
-		
-		<dl>
-		<dt class="pd_dt">배송구분</dt>
-		<dd>${productVo.p_delivery}</dd>
-		</dl>
-		<hr class="pd_hr">
-		<dl>
-		<dt class="pd_dt">포장타입</dt>
-		<dd>${productVo.p_package}</dd>
-		</dl>
-		<hr class="pd_hr">
-		<dl>
-		<dt class="pd_dt">알레르기정보</dt>
-		<dd>${productVo.p_allergy}</dd>
-		</dl>
-		<hr class="pd_hr">
-		<dl>
-		<dt class="pd_dt">유통기한</dt>
-		<dd>${productVo.p_limitdate}</dd>
-		</dl>
-		<hr class="pd_hr">
-		<dl>
-		<dt class="pd_dt">타입</dt>
-		<dd><span id="p_type"></span></dd>
-		</dl>
-		<dl>
-		<dt class="pd_button">
-		<a class="open button" id="homebutton_1">장바구니 담기</a>
-		</dt>
-		</dl>
-		</div>
-		</div>
-		<!-- <div id="home_button"> -->
-		<%-- <a href="${pageContext.request.contextPath}/" id="homebutton_1">메인</a> --%>
-		<!-- <input type="button" id="homebutton_1" value="메인으로"></a> -->
-		<!-- <input type="button" id="btn-modal" value="장바구니"> -->
-		
-<!-- 모달 부분 시작 -->
-
-		<!-- <a class="open button" id="homebutton_1">장바구니 담기</a></div><p/> -->
-		<!--<a href="/spring/cart_insert.do"><input type="button" value="장바구니"></a></div><p/> -->
-		
-
-<!-- <div class="content">
-	<a class="open button">장바구니</a>
-</div> -->
-<div class="modal-background">
-  <div class="modal-content">
-  <div class="close area" style="width:10px; margin-left:367px;">X</div>
-  <div id="product-info">
-     ${productVo.p_name}
-    <hr>
-    
-    <b>${productVo.p_price}원</b>
-     
-    <div class="button box" style="float: right;">
-    <input type="button" id="btn_minus" value="-">
-    <input type="text" name="p_amount" id="pop_out" value="1" readonly="readonly" style="text-align:center; width: 48px;"/>
-    <input type="button" id="btn_plus" value="+">
-    </div>
-    </div>
-    <b>합계</b>
-    <input type="submit" id="btn_insert_cart" value="장바구니 담기" >
-  </div>
-</div>
-<!-- 모달 부분 끝 -->
-
-
-
-<!--     <div id="modal" class="modal-overlay">
-        <div class="modal-window">
-            <div class="title">
-                <h2>모달</h2>
-            </div>
-            <div class="close-area">X</div>
-            <div class="content">
-                <p>가나다라마바사 아자차카타파하</p>
-                <p>가나다라마바사 아자차카타파하</p>
-                <p>가나다라마바사 아자차카타파하</p>
-                <p>가나다라마바사 아자차카타파하</p>
-                
-            </div>
-        </div>
-    </div> -->
-    
+<tr>
+<td colspan="2">상품 이름</td><td>&nbsp;&nbsp;&nbsp;</td><td>개수</td><td>&nbsp;&nbsp;&nbsp;</td><td>상품 가격</td>
+</tr>
+<c:forEach items="${orderList}" var="orderVo" varStatus="status">
+   <script>
+   $(function(){
+	   $("#${orderVo.pbidx}_p_price").text("${orderVo.p_amount}"*"${orderVo.p_price}"+"원");
+   })
+   </script>
    
-
-
-	</form>
-    <!-- 푸터 연결 -->
+<tr>
+<td><div><img class="img-fluid4" src="${pageContext.request.contextPath}/resources/product_image/${orderVo.p_system_filename}" alt="..."  /></div></td>
+<td>${orderVo.p_name}</td><td>&nbsp;&nbsp;&nbsp;</td><td>${orderVo.p_amount}&nbsp;개</td><td>&nbsp;&nbsp;&nbsp;</td><td><span id="${orderVo.pbidx}_p_price"></span></td>
+</tr>
+</c:forEach>
+</table>
+</div>
+<div>
+결제 예정 금액<p/>
+<hr>
+<table>
+<tr>
+<td>상품 총 가격</td><td></td><td>상품 할인</td><td></td><td>배송비</td><td></td><td>총 결제 예정금액</td>
+</tr>
+<tr>
+<td><span id="sum_price">${sum_price}원</span></td><td>-</td><td><span id="sale_price">0원</span></td><td>+</td><td><span id="del_price"></span></td><td>=</td>
+<td><span id="total_price"></span>
+</td>
+</tr>
+</table>
+</div>
+<div id="orderer-info">
+<!-- 세션값에 있는 midx를 이용해서 주문자의 정보를 가져옴 -->
+구매자 정보<p/>
+<hr>
+<table>
+<tr>
+<td>성함</td><td id="member_name">${memberVo.member_name}</td>
+</tr>
+<tr>
+<td>휴대폰</td><td>${memberVo.member_phone}</td>
+</tr>
+<tr>
+<td>이메일</td><td>${memberVo.member_email}</td>
+</tr>
+</table>
+</div>
+<div id="delivery-info">
+<!-- 지도 api와 jQuery를 이용해서 정보를 기입하기 -->
+배송정보<p/>
+<hr>
+<div>
+      배송지<p/>
+      <label for="member_addr"> <input type="checkbox" id="member_addr" name="member_addr">기본 배송지 입력</label><p/>
+      <input type="text" id="postcode" name="member_addrcode" placeholder="우편번호" value="" readonly>
+       <input type="button" onclick="execDaumPostcode()" value="우편번호 찾기"><p/>
+        <input type="text" id="member_addr_1" name="member_addr1" value="" readonly placeholder="도로명주소"><input type="text" id="member_addr_2" name="member_addr2" placeholder="상세주소"><p/>
+        <div style="height:20px"><span id="result_member_addr" style="font-size:12px;"></span></div>
+</div>
+</div>
+<div id="pay-way">
+<!-- 결제수단을 선택하고 이에따라 아래에 나타나는 창이 다르게 -->
+결제 수단<p/>
+<hr>
+<div>
+임의 수단
+</div>
+</div>
+<div id="pay-term">
+ <div style="height:20px"><span id="result_order_term" style="font-size:12px;"></span></div>
+<a href="${pageContext.request.contextPath}/orderList.do"><input type="button" value="주문내역으로 돌아가기"></a>
+<a href="${pageContext.request.contextPath}/index.do"><input type="button" value="메인으로 돌아가기"></a>
+</div>
+</form>
+</div>
     <jsp:include page="../footer.jsp"></jsp:include>
+
+ <!-- Bootstrap core JS-->
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="/js/scripts.js"></script>
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <!-- * *                               SB Forms JS                               * *-->
+        <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script> 
 </body>
-<script src="${pageContext.request.contextPath}/resources/js/modal.js"></script>
 </html>
