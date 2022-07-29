@@ -57,6 +57,17 @@ public class CartController {
 		
 		return "cart/cart_main";
 	}
+	@PostMapping("/cart_addon.do")
+	public String cart_addon(Model model, HttpServletRequest request){
+		
+		HttpSession session = request.getSession();
+		Integer midx =Integer.parseInt(String.valueOf(session.getAttribute("midx")));
+		
+		List<CartVo> cartList = cartService.getCartList(midx);		
+		model.addAttribute("cartList", cartList);
+		
+		return "cart/cart_addon";
+	}
 	
 	@PostMapping("/addCartProcess.do")
 	public String productAddProcess( Integer pidx_pc , String p_amount, Integer midx_mc,  Model model, HttpServletRequest request)  {
