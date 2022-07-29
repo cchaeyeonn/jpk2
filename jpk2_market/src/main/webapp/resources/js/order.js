@@ -90,7 +90,8 @@
         	  alert(msg);
         	  
         	  alert(rsp.pay_method);
-        	  alert(rsp.pay_method.equals("card"));
+        	  var method = rsp.pay_method;
+        	  alert(typeof method);
         	if(rsp.pay_method.equals("card")||rsp.pay_method.equals("point")){  
         	 alert("i'm here");
         	
