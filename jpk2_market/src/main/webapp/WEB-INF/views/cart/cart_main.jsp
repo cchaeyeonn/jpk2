@@ -19,6 +19,13 @@
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script src="${pageContext.request.contextPath}/resources/js/cart.js "></script>
 
+
+<style>
+.price_r{
+	text-align:right;
+}
+
+</style>
 </head>
 <body>
     <!-- 헤더 연결 -->
@@ -26,7 +33,7 @@
  
     <form name="orderAddForm" action="${pageContext.request.contextPath}/orderSheet.do" method="post">
     
-    <div id="cart_inner">
+    <div id="cart_inner" style="width:1777px;">
     <h2 style="text-align:center;"> 장바구니</h2>
     
     <label for="chk_all"><input type="checkbox" id="chk_all" checked>전체 선택</label> ㅣ 
@@ -35,10 +42,10 @@
 	<!-- <input type="submit" class="btn btn-outline-success" value="주문하기"> -->
     <button id="cart_delete" type="button" value="선택 삭제">선택 삭제</button>
     
-    <hr style="width:65%;">
+    <hr style="width:82%;">
     
     
-    <div id="cart_1" style="float:left; width:60%; margin-right:103px;">   
+    <div id="cart_1" style="float:left; width:78%;">   
     <table id="target">
     <c:forEach items="${cartList}" var="cartVo" varStatus="status">
     <input type="hidden"  id="pidx_pc" value="${cartVo.pidx_pc} ">
@@ -337,29 +344,29 @@ $("#chk_all").change(function(){
     </c:forEach>
     </table>
     </div>
-    <div id="for_order" style="height:1040px;">
-    <table id="for_order_table" border="0" style="float:right; width:378px; height:238px; position: sticky; top:183px; right:0px; padding-top:80px; background-color:#fafafa;">
+    <div id="for_order" style="height:1040px; width:1273px;">
+    <table id="for_order_table" border="0" style="float:right; width:330px; height:238px; position: sticky; top:183px; right:0px; padding-top:80px; background-color:#fafafa;">
     <tr>
     <td>상품금액</td>
-    <td id="totalprice"><span id="totalprice_result"></span>
+    <td class="price_r" id="totalprice"><span id="totalprice_result"></span>
     <input type="hidden" id="sum_price" name="sum_price" value="0">
     </td>
     </tr>
     <tr>
     <td>상품할인금액</td>   
-    <td><span id="sale"></span></td>
+    <td class="price_r"><span id="sale"></span></td>
     </tr>
     <tr>
     <td>배송비</td>
-    <td><span id="delivery_fee"></span></td>
+    <td class="price_r"><span id="delivery_fee"></span></td>
     </tr>
     <tr>
     <td>결제예정금액</td>
-    <td><span id="total_pay_price"></span></td>
+    <td class="price_r"><span id="total_pay_price"></span></td>
     </tr>
     <tr>
     <td colspan="2">
-     <input type="submit" class="btn btn-outline-success" value="주문하기" style="width:378px;">
+     <input type="submit" class="btn btn-outline-success" value="주문하기" style="width:330px;">
     </td>
     <td></td>
     </tr>

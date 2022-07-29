@@ -107,20 +107,43 @@
 	 	
 	})
 	</script>
+	
+	
+<style>
+.td_info_l{
+	width:255px;
+}
+.order_price1{
+	min-width:130px;
+}
+.order_price2{
+	min-width:60px;
+}
+	
+	</style>
 </head>
+
+
+
 <body>
     <jsp:include page="../header.jsp"></jsp:include>
-<div id="wrap" style="padding-top:239px; margin-left:414px; margin-right:401px;">
+    
+    
+
+<div id="wrap" style=" width:1083px; min-height:1400px; padding-top:239px; margin-left:414px; margin-right:401px;">
 <h1 align="center">주문서</h1>
 <form action="${pageContext.request.contextPath}/index.do" method="get">
+
 <div id="order-product">
 <!-- 장바구니에 있는 물건중 체크된 물건을 가져와서 foreach -->
-주문상품<p/>
-<hr>
+<b>주문상품</b>
+<hr style="height: 3px; background-color: green;">
+
+
 <table>
 
 <tr>
-<td colspan="2">상품 이름</td><td>&nbsp;&nbsp;&nbsp;</td><td>개수</td><td>&nbsp;&nbsp;&nbsp;</td><td>상품 가격</td>
+<td colspan="2" class="td_info_l">상품 이름</td><td>&nbsp;&nbsp;&nbsp;</td><td>개수</td><td>&nbsp;&nbsp;&nbsp;</td><td>상품 가격</td>
 </tr>
 <c:forEach items="${orderList}" var="orderVo" varStatus="status">
    <script>
@@ -130,78 +153,152 @@
    </script>
    
 <tr>
-<td><div><img class="img-fluid4" src="${pageContext.request.contextPath}/resources/product_image/${orderVo.p_system_filename}" alt="..."  /></div></td>
-<td>${orderVo.p_name}</td><td>&nbsp;&nbsp;&nbsp;</td><td>${orderVo.p_amount}&nbsp;개</td><td>&nbsp;&nbsp;&nbsp;</td><td><span id="${orderVo.pbidx}_p_price"></span></td>
+	<td>
+	<div><img class="img-fluid4" src="${pageContext.request.contextPath}/resources/product_image/${orderVo.p_system_filename}" alt="..."  /></div></td>
+	<td>${orderVo.p_name}</td>
+	<td>&nbsp;&nbsp;&nbsp;</td>
+	<td>${orderVo.p_amount}&nbsp;개</td>
+	<td>&nbsp;&nbsp;&nbsp;</td>
+	<td><span id="${orderVo.pbidx}_p_price"></span>
+	</td>
 </tr>
 </c:forEach>
+
 </table>
 </div>
-<div>
-결제 예정 금액<p/>
-<hr>
+
+<div id="orderer-info" style="margin-top:50px;">
+<!-- 세션값에 있는 midx를 이용해서 주문자의 정보를 가져옴 -->
+주문자 정보
+<hr style="height: 3px; background-color: green;">
 <table>
 <tr>
-<td>상품 총 가격</td><td></td><td>상품 할인</td><td></td><td>배송비</td><td></td><td>총 결제 예정금액</td>
+<td class="td_info_l">성함</td>
+<td class="td_info_r" id="member_name">${memberVo.member_name}</td>
 </tr>
 <tr>
-<td><span id="sum_price">${sum_price}원</span></td><td>-</td><td><span id="sale_price">0원</span></td><td>+</td><td><span id="del_price"></span></td><td>=</td>
-<td><span id="total_price"></span>
+<td class="td_info_l">휴대폰</td>
+<td class="td_info_r">${memberVo.member_phone}</td>
+</tr>
+<tr>
+<td class="td_info_l">이메일</td>
+<td class="td_info_r">${memberVo.member_email}</td>
+</tr>
+</table>
+</div>
+
+
+<div id="delivery-info" style="margin-top:30px;">
+<!-- 지도 api와 jQuery를 이용해서 정보를 기입하기 -->
+배송정보
+<hr style="height: 3px; background-color: green;">
+<div>
+<table>
+      <tr>
+	      <td class="td_info_l">배송지</td>
+	      <td><label for="member_addr"> <input type="checkbox" id="member_addr" name="member_addr">기본 배송지 입력</label></td>
+      </tr>
+      <tr>
+      	<td class="td_info_l"></td>
+      	<td><input type="text" id="postcode" name="member_addrcode" placeholder="우편번호" value="" readonly>
+       <input type="button" onclick="execDaumPostcode()" value="우편번호 찾기"><p/></td>
+      </tr>
+      <tr>
+      	<td class="td_info_l"></td>
+      	<td><input type="text" id="member_addr_1" name="member_addr1" value="" readonly placeholder="도로명주소">
+	      	<input type="text" id="member_addr_2" name="member_addr2" placeholder="상세주소"><p/>
+	        <div style="height:20px"><span id="result_member_addr" style="font-size:12px;"></span></div></td>
+      </tr>
+      <tr>
+      	<td class="td_info_l"></td><td></td>
+      </tr>
+</table>
+</div>
+</div>
+
+
+<div style="margin-top:30px;">
+결제 예정 금액
+<hr style="height: 3px; background-color: green;">
+<table style="text-align:center;">
+<tr>
+<td class="td_info_l"></td>
+<td class="order_price1">상품 총 가격</td>
+<td class="order_price2"></td>
+<td class="order_price1">상품 할인</td>
+<td class="order_price2"></td>
+<td class="order_price1">배송비</td>
+<td class="order_price2"></td>
+<td class="order_price1">총 결제 예정금액</td>
+</tr>
+<tr>
+<td class="td_info_l"></td>
+<td class="order_price1"><span id="sum_price">${sum_price}원</span></td>
+<td class="order_price2">-</td>
+<td class="order_price1"><span id="sale_price">0원</span></td>
+<td class="order_price2">+</td>
+<td class="order_price1"><span id="del_price"></span></td>
+<td class="order_price2">=</td>
+<td class="order_price1"><span id="total_price"></span>
 <input type="hidden" id="total_price_" value="">
 </td>
 </tr>
 </table>
 </div>
-<div id="orderer-info">
-<!-- 세션값에 있는 midx를 이용해서 주문자의 정보를 가져옴 -->
-구매자 정보<p/>
-<hr>
+
+
+
+<div id="pay-way" style="margin-top:30px;">
+<!-- 결제수단을 선택하고 이에따라 아래에 나타나는 창이 다르게 -->
+결제 수단
+<hr style="height: 3px; background-color: green;">
+<div>
 <table>
 <tr>
-<td>성함</td><td id="member_name">${memberVo.member_name}</td>
-</tr>
-<tr>
-<td>휴대폰</td><td>${memberVo.member_phone}</td>
-</tr>
-<tr>
-<td>이메일</td><td>${memberVo.member_email}</td>
+<td class="order_price1"></td>
+<td class="order_price1"></td>
+<td><label><input type="radio"  name="method" value="card" checked> 신용카드</label>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td><label><input type="radio"  name="method" value="trans"> 실시간계좌이체</label>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td><label><input type="radio"  name="method" value="vbank"> 가상계좌</label></td>
+
 </tr>
 </table>
 </div>
-<div id="delivery-info">
-<!-- 지도 api와 jQuery를 이용해서 정보를 기입하기 -->
-배송정보<p/>
-<hr>
-<div>
-      배송지<p/>
-      <label for="member_addr"> <input type="checkbox" id="member_addr" name="member_addr">기본 배송지 입력</label><p/>
-      <input type="text" id="postcode" name="member_addrcode" placeholder="우편번호" value="" readonly>
-       <input type="button" onclick="execDaumPostcode()" value="우편번호 찾기"><p/>
-        <input type="text" id="member_addr_1" name="member_addr1" value="" readonly placeholder="도로명주소"><input type="text" id="member_addr_2" name="member_addr2" placeholder="상세주소"><p/>
-        <div style="height:20px"><span id="result_member_addr" style="font-size:12px;"></span></div>
 </div>
-</div>
-<div id="pay-way">
-<!-- 결제수단을 선택하고 이에따라 아래에 나타나는 창이 다르게 -->
-결제 수단<p/>
-<hr>
-<div>
-	<label><input type="radio"  name="method" value="card" checked> 신용카드</label>
-	<label><input type="radio"  name="method" value="trans"> 실시간계좌이체</label>
-	<label><input type="radio"  name="method" value="vbank"> 가상계좌</label>
 
-</div>
-</div>
-<div id="pay-term">
+
+<div id="pay-term" style="margin-top:30px;">
 <!-- 단순 체크 약관 유효성 검사를 통해 체크 된 경우에만 결제가 되도록 -->
-개인정보 수집/제공<p/>
-<hr>
-<div>
-<label for="order_term"><input type="checkbox" id="order_term" name="order_term"><b>결제진행 필수 동의</b></label></div><p/>
-<div>결제정보 수집,이용 및 처리 동의(필수) | 전자지급 결제대행 서비스 이용약관 동의(필수) </div>
- <div style="height:20px"><span id="result_order_term" style="font-size:12px;"></span></div>
- <input type="button" onclick="requestPay()" id="trigger" value="결제하기">
+개인정보 수집/제공
+<hr style="height: 3px; background-color: green;">
+
+<div style="margin-top:30px;">
+
+<table>
+<tr>
+	<td class="order_price1"></td>
+	<td class="order_price1"></td>
+	<td>
+		<div>
+			<label for="order_term"><input type="checkbox" id="order_term" name="order_term"><b>결제진행 필수 동의</b></label>
+		</div>
+	</td>
+</tr>
+<tr>
+	<td class="order_price1"></td>
+	<td class="order_price1"></td>
+	<td>결제정보 수집,이용 및 처리 동의(필수) | 전자지급 결제대행 서비스 이용약관 동의(필수)
+	 <div style="height:20px"><span id="result_order_term" style="font-size:12px;"></span></div></td>
+</tr>
+</table>
+</div>
+
+<div style="margin-left: 33%;">
+<input type="button" onclick="requestPay()" id="trigger" value="결제하기">
 <a href="${pageContext.request.contextPath}/cart_main.do"><input type="button" value="장바구니로 돌아가기"></a>
-<a href="${pageContext.request.contextPath}/index.do"><input type="button" value="메인으로 돌아가기"></a>
+<%-- <a href="${pageContext.request.contextPath}/index.do"><input type="button" value="메인으로 돌아가기"></a> --%>
+</div>
+
 </div>
 </form>
 </div>
