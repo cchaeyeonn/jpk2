@@ -284,7 +284,6 @@
 		</div>
 	</td>
 </tr>
-
 <tr>
 	<td class="order_price1"></td>
 	<td class="order_price1"></td>
