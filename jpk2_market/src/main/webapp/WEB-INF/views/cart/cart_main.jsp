@@ -32,6 +32,7 @@
     <label for="chk_all"><input type="checkbox" id="chk_all" checked>전체 선택</label> ㅣ 
     <!--<input type="button" value="선택 삭제" id="cart_delete">-->
 
+	<!-- <input type="submit" class="btn btn-outline-success" value="주문하기"> -->
     <button id="cart_delete" type="button" value="선택 삭제">선택 삭제</button>
     
     <hr style="width:65%;">
@@ -330,7 +331,7 @@ $("#chk_all").change(function(){
     </td>
     <td>
     <!-- 삭제버튼 -->
-    <button id="btn_delete_${cartVo.pbidx}" type="button" value="${cartVo.pbidx}">X</button>
+    <button id="btn_delete_${cartVo.pbidx}" type="button" value="${cartVo.pbidx}" style="border-radius: 5px; width: 22px; height: 26px; border-color: #c9c9c9;">X</button>
     </td>
     </tr>
     </c:forEach>

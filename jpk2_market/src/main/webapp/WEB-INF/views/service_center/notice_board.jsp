@@ -47,19 +47,21 @@
 <div id="table_button">
 <table border="1" style="text-align:center" class="table table-hover">
 <tr>
-<td></td>
+<!-- <td></td> -->
 <td>구분</td>
 <td>제목</td>
 <td>내용</td>
+<td>작성자</td>
 
 </tr>
 <c:forEach items="${noticeList}" var="noticeVo">
           
 <tr>
-<td id="stable_1">${noticeVo.nidx}</td>
+<%-- <td id="stable_1">${noticeVo.nidx}</td> --%>
 <td id="stable_2">[${noticeVo.n_category}]</td>
 <td id="stable_3"><a href="/spring/notice_detail.do?nidx=${noticeVo.nidx}">${noticeVo.n_title}</a></td>
 <td id="stable_4">${noticeVo.n_content}</td>
+<td>${noticeVo.midx_mn}</td>
 </tr>
  </c:forEach>
 </table>
