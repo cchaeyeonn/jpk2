@@ -116,6 +116,7 @@ public class MemberController {
 		return null;
 		}
 		
+		
 		long member_grade = resultMap.get("member_grade");
 		long midx = resultMap.get("midx");
 
@@ -133,23 +134,25 @@ public class MemberController {
 		String member_auth = memberService.getAuthInfo(member_id);
 		String member_name = memberService.getNameInfo(member_id);
 		System.out.println("인증값 "+member_auth);
-		String Success="Y";
-		if(member_auth.equals(Success)) {
-			session.setAttribute("member_id", member_id);
-			session.setAttribute("member_name", member_name);	
-			session.setAttribute("member_grade", member_grade);
+		
+		if(member_pw.length()==6) {
 			session.setAttribute("midx", midx);
-			session.setAttribute("result_", count);
-			session.setAttribute("pidx_pc_arr", pidx_pc_arr);
-			return "redirect:/index.do";
-			
-		}else if(member_pw.length()==6) {
 			response.setContentType("text/html; charset=UTF-8");
 			response.setCharacterEncoding("UTF-8");
 			PrintWriter out=response.getWriter();
 			out.println("<script>window.onload = function(){alert('임시 비밀번호로 로그인하셨습니다. 비밀번호를 변경해주세요.'); location.href='/spring/updatePw.do';}</script>");
 			out.flush();
 			return null;
+		}
+		
+		String Success="Y";
+		if(member_auth.equals(Success)) {
+			session.setAttribute("member_id", member_id);
+			session.setAttribute("member_name", member_name);	
+			session.setAttribute("member_grade", member_grade);
+			session.setAttribute("result_", count);
+			session.setAttribute("pidx_pc_arr", pidx_pc_arr);
+			return "redirect:/index.do";
 		}else{
 			response.setContentType("text/html; charset=UTF-8");
 			response.setCharacterEncoding("UTF-8");
