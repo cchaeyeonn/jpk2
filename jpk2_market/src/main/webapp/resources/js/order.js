@@ -1,19 +1,34 @@
-$(function(){
 
-  var ctx = getContextPath();
-  
-  
-  function getContextPath() {
-  return sessionStorage.getItem("contextpath");
-  
-  
-  
-}
-});
 		var IMP = window.IMP;
         IMP.init("imp42068652");
         var inputValue;
+        var ctx = getContextPath();
 
+  		function getContextPath() {
+ 		 return sessionStorage.getItem("contextpath");
+		 }
+		 
+		function pageGoPost(d){
+	    var insdoc = "";
+    
+		for (var i = 0; i < d.vals.length; i++) {
+	  insdoc+= "<input type='hidden' name='"+ d.vals[i][0] +"' value='"+ d.vals[i][1] +"'>";
+	}
+    
+	var goform = $("<form>", {
+	  method: "post",
+	  action: d.url,
+	  target: d.target,
+	  html: insdoc
+	}).appendTo("body");
+    
+	goform.submit();
+}
+
+		 
+		 
+		 
+		 
     function requestPay() {
      
     
@@ -72,23 +87,62 @@ $(function(){
           if (rsp.success) {
         	// 결제 성공 시 로직,
         	  var msg = '결제가 완료되었습니다.';
+        	  alert(msg);
         	  
+        	  alert(rsp.pay_method);
+        	  alert(rsp.pay_method.equals("card"));
+        	if(rsp.pay_method.equals("card")||rsp.pay_method.equals("point")){  
+        	 alert("i'm here");
         	
         	
+        	pageGoPost({
+        		url: ctx+"/orderSuccess.do",
+        		target: "_self",
+        		vals: [ 
+        		  	  ["pay_method",rsp.pay_method],
+        			  ["pay_amount",rsp.pay_amount],
+            		  ["pay_findate",rsp.paid_at]
+                ]
+          
+        
         	
+        	});
+
         	
+        	}else if(rsp.pay_method.equals("trans")||rsp.pay_method.equals("vbank")){
+	
+			pageGoPost({
+        		url: ctx+"/orderWaiting.do",
+        		target: "_self",
+        		vals: [ 
+        		  	  ["pay_method",pay_method],
+        			  ["pay_amount",pay_amount],
+            		  ["pay_findate",paid_at],
+            		  ["vbank_num",vbank_num],
+            		  ["vbank_name",vbank_name],
+            		  ["vbank_holder",vbank_holder],
+            		  ["vbank_date",vbank_date]
+                ]
+          
+        
         	
+        	});
+	
+	
+	
+			}
               
               
           } else {
         	// 결제 실패 시 로직,
         	  var msg = '결제에 실패하였습니다.';
         	  msg += '에러내용 : ' + rsp.error_msg;
+        	  alert(msg);
 
               
               
           }
-          alert(msg);
+          
       });
     }
 

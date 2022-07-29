@@ -15,7 +15,29 @@ public class OrderVo {
 	private String p_filename;
 	private String p_price;
 	private String p_system_filename;
+	private String pay_way;
+	private String pay_delyndate;
+	private String pay_findate;
 	
+	
+	public String getPay_way() {
+		return pay_way;
+	}
+	public void setPay_way(String pay_way) {
+		this.pay_way = pay_way;
+	}
+	public String getPay_delyndate() {
+		return pay_delyndate;
+	}
+	public void setPay_delyndate(String pay_delyndate) {
+		this.pay_delyndate = pay_delyndate;
+	}
+	public String getPay_findate() {
+		return pay_findate;
+	}
+	public void setPay_findate(String pay_findate) {
+		this.pay_findate = pay_findate;
+	}
 	public String getP_name() {
 		return p_name;
 	}

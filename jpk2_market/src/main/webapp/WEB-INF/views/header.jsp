@@ -102,7 +102,7 @@ a {
 <script>
 function cart(){
 	var frm = document.frm;
-	frm.action="/spring/cart_main.do";
+	frm.action="${pageContext.request.contextPath}/cart_main.do";
 	frm.method="POST";
 	frm.submit();
 	return;

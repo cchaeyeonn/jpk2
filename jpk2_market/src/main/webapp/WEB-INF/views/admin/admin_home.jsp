@@ -8,6 +8,15 @@
 	<title>관리자페이지</title>
 	
 </head>
+<script>
+function order(){
+	var frm = document.frm;
+	frm.action="${pageContext.request.contextPath}//orderListDetail.do";
+	frm.method="POST";
+	frm.submit();
+	return;
+}
+</script>
 <body>
 
 <!-- 헤더 연결 -->
@@ -27,7 +36,7 @@
 <input id="adh_button" type="button" class="btn btn-outline-success" value="상품등록페이지" onclick="location.href='${pageContext.request.contextPath}/productAdd.do'"><br>
 <input id="adh_button" type="button" class="btn btn-outline-success" value="내가 등록한 상품목록" onclick="location.href='${pageContext.request.contextPath}/adminProductList.do'"><br>
 <input id="adh_button" type="button" class="btn btn-outline-success" value="테스트 페이지1" onclick="location.href='${pageContext.request.contextPath}/orderList.do'"><br>
-<input id="adh_button" type="button" class="btn btn-outline-success" value="테스트 페이지2" onclick="location.href='${pageContext.request.contextPath}/orderListDetail.do'"><br>
+<input id="adh_button" type="button" class="btn btn-outline-success" value="테스트 페이지2" onclick="order()"><br>
 </div>
 
 <!--
