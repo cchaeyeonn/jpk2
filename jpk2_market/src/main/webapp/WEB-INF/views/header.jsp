@@ -96,6 +96,8 @@ a {
   display: grid;
   grid-template-columns: 1fr 3fr;
 } */
+
+
 </style>
 
 
@@ -108,6 +110,8 @@ function cart(){
 	return;
 }
 </script>
+
+
 </head>
 <body>
 <form id="frm" name="frm">
@@ -199,8 +203,9 @@ function cart(){
 			<li style="float: left;"><a href="#">특가/혜택</a></li>
 			<%-- <li><a href="/spring/cart_main.do?midx=${midx}" style="margin-left: 710px;"><input type="image" value="장바구니" src="resources/img/cart.png" width=30px; ></a></li> --%>
 
-
-			<!-- 마우스 올리면 이미지 변경 onmouseover 이벤트 -->
+				
+				
+				<!-- 마우스 올리면 이미지 변경 onmouseover 이벤트 -->
 			<li style="float: right; width: 0px;"><a
 				onclick="cart(${midx});" style="float: right;" id="cartbutton">
 					<img src="resources/img/cart.png"
