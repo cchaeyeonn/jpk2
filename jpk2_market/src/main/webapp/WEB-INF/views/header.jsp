@@ -216,23 +216,7 @@ function cart(){
                      }else{
                      }
                      }%>
-				<!-- <div id="cartDiv" style="display:none;">
-					<jsp:include page="./cart/cart_addon.jsp" flush="true">
-					<jsp:param name="p_system_filename" value="${p_system_filename}"/>
-					<jsp:param name="p_name" value="${p_name}"/>
-					<jsp:param name="p_price" value="${p_price}"/>
-					<jsp:param name="p_amount" value="${p_amount}"/>
-					<jsp:param name="cartList" value="${cartList}"/>
-					<c:set var = "cartList" value = "${cartList}"/>
-					</jsp:include>
-				<!-- <c:import url="/cart_addon.do" charEncoding="UTF-8">
-					<c:param name="p_system_filename" value="${p_system_filename}"/>
-					<c:param name="p_name" value="${p_name}"/>
-					<c:param name="p_price" value="${p_price}"/>
-					<c:param name="p_amount" value="${p_amount}"/>
-					<c:param name="cartList" value="${cartList}"/>
-				</c:import>
-					</div> -->
+	
                      </li>
 		</ul>
 
