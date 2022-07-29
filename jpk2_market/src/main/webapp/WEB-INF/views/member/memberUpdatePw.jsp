@@ -56,7 +56,7 @@
 
 <script>
   function check(){  
-  var fm = document.frm;   
+  var fm = document.frml;   
   if (fm.now_pw.value==""){
   		alert("비밀번호를 입력해주세요");
   		fm.now_pw.focus();
@@ -91,7 +91,7 @@
 
 
 <div id="updatePw_content">
-<form name="frm">
+<form name="frml">
 <div id="updatePw">
 <div id="updatePw_1"> 현재 비밀번호
 <p><input type="password" class="form-control" id="now_pw" name="now_pw" size="30" placeholder="현재 비밀번호를 입력해주세요"></p>

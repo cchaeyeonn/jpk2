@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 
 
-<title>아이디찾기</title>
+<title>비밀번호찾기</title>
 <style>
 	#findPw {
 	margin:auto; 

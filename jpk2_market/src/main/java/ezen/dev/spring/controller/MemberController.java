@@ -150,6 +150,7 @@ public class MemberController {
 			session.setAttribute("member_id", member_id);
 			session.setAttribute("member_name", member_name);	
 			session.setAttribute("member_grade", member_grade);
+			session.setAttribute("midx", midx);
 			session.setAttribute("result_", count);
 			session.setAttribute("pidx_pc_arr", pidx_pc_arr);
 			return "redirect:/index.do";
