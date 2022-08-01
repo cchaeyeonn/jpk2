@@ -3,7 +3,11 @@
         IMP.init("imp42068652");
         var inputValue;
         var ctx = getContextPath();
-
+        
+        var pbidx_array = [];
+        pbidx_array.push($("#"+pbidx+"_pbidx").val());
+        
+        
   		function getContextPath() {
  		 return sessionStorage.getItem("contextpath");
 		 }
@@ -92,7 +96,8 @@
         	  alert(rsp.pay_method);
         	  var method = rsp.pay_method;
         	  alert(typeof method);
-        	if(rsp.pay_method.equals("card")||rsp.pay_method.equals("point")){  
+
+        	if(method=="card"||method=="point"){  
         	 alert("i'm here");
         	
         	
@@ -101,28 +106,32 @@
         		target: "_self",
         		vals: [ 
         		  	  ["pay_method",rsp.pay_method],
-        			  ["pay_amount",rsp.pay_amount],
-            		  ["pay_findate",rsp.paid_at]
+        			  ["pay_amount",rsp.paid_amount],
+            		  ["pay_findate",rsp.paid_at],
+            		  ["status",rsp.status],
+            		  ["pbidx",pbidx_array]
                 ]
           
         
         	
         	});
 
-        	
-        	}else if(rsp.pay_method.equals("trans")||rsp.pay_method.equals("vbank")){
+        
+        	}else if(method=="trans"||method=="vbank"){
 	
 			pageGoPost({
         		url: ctx+"/orderWaiting.do",
         		target: "_self",
         		vals: [ 
-        		  	  ["pay_method",pay_method],
-        			  ["pay_amount",pay_amount],
-            		  ["pay_findate",paid_at],
-            		  ["vbank_num",vbank_num],
-            		  ["vbank_name",vbank_name],
-            		  ["vbank_holder",vbank_holder],
-            		  ["vbank_date",vbank_date]
+        		  	  ["pay_method",rsp.pay_method],
+        			  ["pay_amount",rsp.paid_amount],
+            		  ["pay_findate",rsp.paid_at],
+            		  ["vbank_num",rsp.vbank_num],
+            		  ["vbank_name",rsp.vbank_name],
+            		  ["vbank_holder",rsp.vbank_holder],
+            		  ["vbank_date",rsp.vbank_date],
+            		  ["status",rsp.status],
+            		  ["pbidx",pbidx_array]
                 ]
           
         

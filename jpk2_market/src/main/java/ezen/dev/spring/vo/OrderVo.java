@@ -5,7 +5,6 @@ public class OrderVo {
 	private String order_date;
 	private String order_delyn;
 	private String order_delyndate;
-	private int pbidx_pbo;
 	private int pbidx;
 	private String p_check;
 	private int p_amount;
@@ -13,13 +12,27 @@ public class OrderVo {
 	private int pidx_pc;
 	private String p_name;
 	private String p_filename;
-	private String p_price;
+	private int p_price;
 	private String p_system_filename;
 	private String pay_way;
 	private String pay_delyndate;
 	private String pay_findate;
+	private int midx_mo;
+	private int pbidx_co;
 	
 	
+	public int getPbidx_co() {
+		return pbidx_co;
+	}
+	public void setPbidx_co(int pbidx_co) {
+		this.pbidx_co = pbidx_co;
+	}
+	public int getMidx_mo() {
+		return midx_mo;
+	}
+	public void setMidx_mo(int midx_mo) {
+		this.midx_mo = midx_mo;
+	}
 	public String getPay_way() {
 		return pay_way;
 	}
@@ -50,10 +63,10 @@ public class OrderVo {
 	public void setP_filename(String p_filename) {
 		this.p_filename = p_filename;
 	}
-	public String getP_price() {
+	public int getP_price() {
 		return p_price;
 	}
-	public void setP_price(String p_price) {
+	public void setP_price(int p_price) {
 		this.p_price = p_price;
 	}
 	public String getP_system_filename() {
@@ -122,12 +135,7 @@ public class OrderVo {
 	public void setOrder_delyndate(String order_delyndate) {
 		this.order_delyndate = order_delyndate;
 	}
-	public int getPbidx_pbo() {
-		return pbidx_pbo;
-	}
-	public void setPbidx_pbo(int pbidx_pbo) {
-		this.pbidx_pbo = pbidx_pbo;
-	}
+	
 	
 	
 

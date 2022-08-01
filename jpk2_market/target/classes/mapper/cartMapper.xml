@@ -5,13 +5,12 @@
 <mapper namespace = "ezen.dev.spring.cart">
 
 	
-	
-
 	<select id="getCartList"  parameterType="Integer" resultType="cartVo">
 		<!-- select * from fm_member a inner JOIN fm_product_cart b on a.midx = b.midx_mc inner join fm_product c on a.midx = c.midx_mp where a.midx like #{midx} and p_delyn='N' -->
 		<!-- select * from fm_product_cart a inner join fm_member b on a.midx_mc = b.midx inner join fm_product c on a.midx_mc = c.midx_mp where b.midx like #{midx} and p_delyn='N' -->
-		select * from fm_product_cart a inner join fm_member b on a.midx_mc = b.midx inner join fm_product c on a.pidx_pc = c.pidx where b.midx like #{midx} and p_delyn='N'
+		select * from fm_product_cart a inner join fm_member b on a.midx_mc = b.midx inner join fm_product c on a.pidx_pc = c.pidx where b.midx like #{midx} and p_delyn='N' and a.p_check='N'
 	</select>
+
 
     <insert id="addCart" parameterType="cartVo">
 		insert into fm_product_cart(p_amount, midx_mc, pidx_pc) 
@@ -31,7 +30,7 @@
 	
 	<select id="cart_count" parameterType="int" resultType="int">
 		<!-- select count(*) from fm_product_cart where midx_mc=#{midx} -->
-		select count(*) from fm_product_cart a inner join fm_product b on a.pidx_pc = b.pidx where a.midx_mc = #{midx} and p_delyn='N' 
+		select count(*) from fm_product_cart a inner join fm_product b on a.pidx_pc = b.pidx where a.midx_mc = #{midx} and p_delyn='N' and a.p_check='N'
 	</select>
 	
 	<update id="updateCart" parameterType="cartVo">
@@ -51,5 +50,9 @@
 			#{pbidxList}
 		</foreach>
 	</select>
+	
+	<update id="del_Cart" parameterType="int">
+		update fm_product_cart set p_check = "Y" where midx_mc=#{midx_mc}
+	</update>
 
 </mapper>

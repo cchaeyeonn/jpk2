@@ -2,7 +2,9 @@ package ezen.dev.spring.controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.text.SimpleDateFormat;
 import java.util.Arrays;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -100,7 +102,50 @@ public class OrderController {
 	}
 	
 	@PostMapping("/orderSuccess.do")
-	public String orderSuccess() {
+	public String orderSuccess(@RequestParam("pay_method") String pay_method, 
+			@RequestParam("pay_amount") int paid_amount,@RequestParam("pay_findate") Long pay_at,
+			@RequestParam("status") String pay_status,
+			@RequestParam(value="pbidx", required=false) Integer[] pbidx,HttpServletRequest request) {
+		HttpSession session = request.getSession();
+		
+		for(Integer mmm : pbidx) {
+			System.out.println("pbidx: "+ mmm);}
+
+			List<Integer> pbidxList = Arrays.asList(pbidx);
+		
+		
+		
+		int midx_mo=Integer.parseInt(String.valueOf(session.getAttribute("midx")));
+		Long pay_findate = pay_at *1000;
+		Date date = new Date(pay_findate);
+		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		String date_ = format.format(date);
+		String orderpay_check;
+		if(pay_status.equals("paid")) {
+			 orderpay_check = "Y"; 
+			
+			
+		}else {
+			 orderpay_check = "N";
+		};
+		
+		
+		OrderVo orderVo = new OrderVo();
+		
+		for(int i=0; i<pbidxList.size();i++) {
+		
+		
+		orderVo.setPay_way(pay_method);
+		orderVo.setP_price(paid_amount);
+		orderVo.setPay_findate(date_);
+		orderVo.setP_check(orderpay_check);
+		orderVo.setMidx_mo(midx_mo);
+		orderVo.setPbidx_co(pbidxList.get(i));
+		
+		orderService.add_order(orderVo);
+		}
+		cartService.del_cart(midx_mo);
+		
 		
 		
 		
