@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace = "ezen.dev.spring.order">
+
+	
+	
+
+	
+
+    <insert id="add_order" parameterType="cartVo">
+		insert into fm_order(pay_way,orderpay_check,pay_price,pay_findate,midx_mo,pbidx_co) 
+		 values(#{pay_way}, #{p_check}, #{p_price},#{pay_findate},#{midx_mo},#{pbidx_co})
+	</insert>
+    
+    
+
+</mapper>

@@ -186,7 +186,11 @@ function cart(){
 												"${orderVo.p_amount}"
 														* "${orderVo.p_price}"
 														+ "원");
-									})
+									}
+									
+						  
+							
+							)
 						</script>
 
 						<tr>
@@ -203,6 +207,10 @@ function cart(){
 							<td>&nbsp;&nbsp;&nbsp;</td>
 							<td><span id="${orderVo.pbidx}_p_price"></span></td>
 						</tr>
+						
+						<input type="hidden" name="pbidx" id="${orderVo.pbidx }_pbidx" value="${orderVo.pbidx }">
+						
+						
 					</c:forEach>
 
 				</table>

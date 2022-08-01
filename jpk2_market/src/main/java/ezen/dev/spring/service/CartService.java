@@ -49,5 +49,13 @@ public class CartService {
 	public List<OrderVo> getSomeCartList(List<Integer> pbidxList) {
 		return cartDao.getSomeCartList(pbidxList);
 	}
+
+
+
+	public int del_cart(int midx_mc) {
+		return cartDao.del_Cart(midx_mc);
+		
+		
+	}
 	
 }

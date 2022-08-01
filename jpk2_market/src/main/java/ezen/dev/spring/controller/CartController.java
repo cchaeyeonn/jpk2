@@ -70,7 +70,7 @@ public class CartController {
 	}
 	
 	@PostMapping("/addCartProcess.do")
-	public String productAddProcess( Integer pidx_pc , String p_amount, Integer midx_mc,  Model model, HttpServletRequest request)  {
+	public String cartAddProcess( Integer pidx_pc , String p_amount, Integer midx_mc,  Model model, HttpServletRequest request)  {
 		
 		HttpSession session = request.getSession();
 		
