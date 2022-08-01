@@ -120,11 +120,7 @@
 			delivery_fee = 0;
 			$("#del_price").text(delivery_fee + "원");
 		}
-		total_fee = $
-		{
-			sum_price
-		}
-		+delivery_fee
+		total_fee = ${sum_price}+delivery_fee;
 		$("#total_price").text(total_fee + "원");
 		$("#total_price_").val(total_fee);
 
