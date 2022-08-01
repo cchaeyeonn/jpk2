@@ -8,83 +8,131 @@
 <link href="resources/css/service_center.css" rel="stylesheet" />
 
 <title>공지사항 글작성</title>
+<style>
+#notice_detail_inner{
+    width: 1050px;
+    margin: 0px auto;
+    font-size: 12px;
+    line-height: 18px;
+    padding-top: 188px;
+    
+}
+#notice_detail_top{
+    width: 100%;
+    padding: 50px 0px;
+}
+#notice_detail_header{
+    font-weight: 700;
+    font-size: 28px;
+    color: rgb(51, 51, 51);
+    line-height: 35px;
+    text-align: center;
+    letter-spacing: -1px;
+}
+#notice_detail_box{
+   margin-left: 181px;
+    min-height: 1040px;
+}
 
+</style>
 
 </head>
 <body>
 
     <!-- 헤더 연결 -->
     <jsp:include page="../header.jsp"></jsp:include> 
-	
-		<div id="servive_main_inner">
-			<div id="service_center_cate">
-	
-			<a href="/spring/notice_board.do" class="nav-link py-3 px-0 px-lg-3 rounded" id="open_notice">공지사항</a>
-			<a href="/spring/faq_board.do" class="nav-link py-3 px-0 px-lg-3 rounded" id="open_faq">자주하는 질문</a>
-			<!-- <a href="/spring/qna_board.do" class="nav-link py-3 px-0 px-lg-3 rounded" id="open_qna" >1:1 문의</a> -->
-		
-			</div>
-			
-			<form name="update" method="POST" action="${pageContext.request.contextPath}/notice_updateprocess.do?nidx=${noticeVo.nidx}">
-			
-			<table class="table table-hover">
-			
-			<tr>
-			<td>카테고리</td><td></td>
-			</tr>
-			
-			<tr>
-			<td>제목</td><td><input name="n_title" value="${noticeVo.n_title}" type="text" ></td>
-			</tr>
-			
-			<tr>
-			<td>내용</td><td><input name="n_content" value="${noticeVo.n_content}" type="text" ></td>
-			</tr>
-			
-			
-			</table>
-			<input type="submit" class="btn btn-outline-info" value="완료"/><input type="reset" class="btn btn-outline-into" value="리셋"/>
-			
-			
-<%-- 			<div>카테고리</div>
-			<div>제목 :</div>
-			<div><input name="n_title" value="${noticeVo.n_title}" type="text" ></div>
-			<div>내용 :</div>
-			<div><input name="n_content" value="${noticeVo.n_content}" type="text" ></div>
-			
-			<div>
-			<input type="submit" class="btn btn-outline-info" value="완료"/>
-			<input type="reset" class="btn btn-outline-into" value="리셋"/>
-			</div> --%>
-			
-			
-			</form>
-			
-			<%-- <form name="notice_modify_Form" action="/spring/notice_modifyProcess.do" method="post" >
-			<table>
-			<tr>
-				<td>카테고리</td>
-				<td><select name="n_category">
-					<option value="배송">배송</option>
-					<option value="기타">기타</option>
-				</select></td>
-			</tr>
-			<tr>
-			<td>제목</td>
-			<td><input type="text" name="n_title">${noticeVo.n_title}</td>
-			</tr>
-			<tr>
-			<td>내용</td>
-			<td><input type="text" name="n_content">${noticeVo.n_content}</td>
-			</tr>
-			<tr>
-			<td><input type="submit" value="작성하기"></td>
-			</tr>
-			</table> --%>
-			
-		</div>
-		
-	
+    
+        <div id="notice_detail_inner">
+       <div id="notice_detail_top">
+       <div id="notice_detail_header">공지사항 수정</div>
+       
+       </div>
+       
+       
+   
+      <div id="notice_detail_box">
+      
+         
+         <form name="update" method="POST" action="${pageContext.request.contextPath}/notice_updateprocess.do?nidx=${noticeVo.nidx}">
+         <table class="table table-striped">
+         <tr>
+            <td id="td_l">카테고리</td>
+            <td><select name="n_category">
+               <option value="배송">배송</option>
+               <option value="기타">기타</option>
+            </select></td>
+         </tr>
+         <tr>
+         <td id="td_l">제목</td>
+         <td><input type="text" name="n_title" value="${noticeVo.n_title}" class="form-control" style="width:560px;"></td>
+         </tr>
+         <tr>
+         <td id="td_l">내용</td>
+         <td><textarea input type="text" name="n_content" class="form-control" style="width:560px; height:300px;"><c:out value="${noticeVo.n_content}" /></textarea></td>
+         </tr>
+         <tr>
+         <td></td><td style="padding-left: 525px;"><input type="submit" value="수정하기" class="btn btn-primary" onclick="check();"></td>
+         </tr>
+         </table>
+   <%--       <table class="table table-hover">
+         
+         <tr>
+         <td>카테고리</td><td></td>
+         </tr>
+         
+         <tr>
+         <td>제목</td><td><input name="n_title" value="${noticeVo.n_title}" type="text" ></td>
+         </tr>
+         
+         <tr>
+         <td>내용</td><td style="white-space: pre-line;"><input name="n_content" value="${noticeVo.n_content}" type="text" ></td>
+         
+         </tr>
+         
+         
+         </table> --%>
+         <!-- <input type="submit" class="btn btn-outline-info" value="완료"/><input type="reset" class="btn btn-outline-into" value="리셋"/> -->
+         
+         
+<%--          <div>카테고리</div>
+         <div>제목 :</div>
+         <div><input name="n_title" value="${noticeVo.n_title}" type="text" ></div>
+         <div>내용 :</div>
+         <div><input name="n_content" value="${noticeVo.n_content}" type="text" ></div>
+         
+         <div>
+         <input type="submit" class="btn btn-outline-info" value="완료"/>
+         <input type="reset" class="btn btn-outline-into" value="리셋"/>
+         </div> --%>
+         
+         
+         </form>
+         
+         <%-- <form name="notice_modify_Form" action="/spring/notice_modifyProcess.do" method="post" >
+         <table>
+         <tr>
+            <td>카테고리</td>
+            <td><select name="n_category">
+               <option value="배송">배송</option>
+               <option value="기타">기타</option>
+            </select></td>
+         </tr>
+         <tr>
+         <td>제목</td>
+         <td><input type="text" name="n_title">${noticeVo.n_title}</td>
+         </tr>
+         <tr>
+         <td>내용</td>
+         <td><input type="text" name="n_content">${noticeVo.n_content}</td>
+         </tr>
+         <tr>
+         <td><input type="submit" value="작성하기"></td>
+         </tr>
+         </table> --%>
+         
+      </div>
+      </div>
+   
     <!-- 푸터 연결 -->
     <jsp:include page="../footer.jsp"></jsp:include>
 </body>

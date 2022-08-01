@@ -18,6 +18,7 @@
     color: #333;
     letter-spacing: -1px;
     margin-top: 35px;
+    
 }
 
 #notice_sub{
@@ -46,15 +47,19 @@
 }
 #td1{
 width:10%;
+border-bottom: 1px solid black;
 }
 #td2{
 width:16%;
+border-bottom: 1px solid black;
 }
 #td3{
 width:20%;
+border-bottom: 1px solid black;
 }
 #td4{
 width:3%;
+border-bottom: 1px solid black;
 }
 
 
