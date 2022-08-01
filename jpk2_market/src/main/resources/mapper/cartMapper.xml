@@ -5,8 +5,6 @@
 <mapper namespace = "ezen.dev.spring.cart">
 
 	
-	
-
 	<select id="getCartList"  parameterType="Integer" resultType="cartVo">
 		<!-- select * from fm_member a inner JOIN fm_product_cart b on a.midx = b.midx_mc inner join fm_product c on a.midx = c.midx_mp where a.midx like #{midx} and p_delyn='N' -->
 		<!-- select * from fm_product_cart a inner join fm_member b on a.midx_mc = b.midx inner join fm_product c on a.midx_mc = c.midx_mp where b.midx like #{midx} and p_delyn='N' -->

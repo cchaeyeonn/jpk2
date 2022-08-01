@@ -196,25 +196,16 @@ a:hover {
 	}
 	#forgot {
 		font-size: 0.95rem
-	} */
-}
+	} 
+}*/
 
+    
 
 </style>
-    <!-- jquery 스크립트 -->
+    <!-- jquery 스크립트(항상 최신버전의 제이쿼리를 사용한다) -->
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 
 
-
-
-  
-
-</head>
-
-
-<body oncontextmenu='return false' class='snippet-body'>
-<!-- 헤더연결 -->
-<jsp:include page="../header.jsp"></jsp:include>
 <script>
   function check(){  
   var fm = document.frms;   
@@ -233,12 +224,27 @@ a:hover {
   
     return;
   }  
-  </script>
-    <script>
+</script>
+  
+  
+<script>
 $(document).on('click','#trigger',function(){if($("#member_id").val() != "",$("#member_email").val() != ""){
         $("#trigger").hide();
         }});
 </script>
+
+
+
+</head>
+
+
+<body oncontextmenu='return false' class='snippet-body'>
+<!-- 헤더연결 -->
+<jsp:include page="../header.jsp"></jsp:include>
+
+
+
+
 	<div id="body_inner">
 		<div id="wrapper_inner">
 			<div class="wrapper bg-white">

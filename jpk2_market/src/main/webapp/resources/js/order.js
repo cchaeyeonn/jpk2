@@ -116,7 +116,7 @@
         	
         	});
 
-        	
+        
         	}else if(method=="trans"||method=="vbank"){
 	
 			pageGoPost({

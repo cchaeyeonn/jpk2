@@ -8,7 +8,114 @@
 
 
 <title>공지 상세</title>
+<style>
+/* #service_1{
+  padding: 5px 0 35px 1px;
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 35px;
+    color: #333;
+    letter-spacing: -1px;
+    margin-top: 35px;
+}
 
+#notice_sub{
+   border: 1px solid #f2f2f2;
+    border-bottom: 1;
+    FONT-WEIGHT: 100;
+    display: block;
+    overflow: hidden;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: -.3px;
+    padding: 0px -5px 3px 5px;
+    margin-left: -6px;
+    margin-right: 16px;
+    margin-top: -27px;
+}
+#open_notice{
+   border-bottom: 1px solid #f2f2f2;
+    background-color: #fafafa;
+    background-size: 6px 11px;
+    font-weight: 700;
+    color: #198754;
+} */
+
+#notice_detail_inner{
+    width: 1050px;
+    margin: 0px auto;
+    font-size: 12px;
+    line-height: 18px;
+    padding-top: 188px;
+    min-height: 893px;
+}
+#notice_detail_top{
+    width: 100%;
+    padding: 50px 0px;
+}
+#notice_detail_header{
+    font-weight: 700;
+    font-size: 28px;
+    color: rgb(51, 51, 51);
+    line-height: 35px;
+    text-align: center;
+    letter-spacing: -1px;
+}
+#notice_detail_header2{
+margin-top: 5px;
+    color: rgb(153, 153, 153);
+    line-height: 20px;
+    letter-spacing: -0.1px;
+    text-align: center;
+}
+#notice_detail_1{
+    margin-top: 20px;
+    border-top: 2px solid rgb(51, 51, 51);
+    color: rgb(51, 51, 51);
+}
+#notice_detail_2{
+display: flex;
+    flex-direction: row;
+    border-bottom: 1px solid rgb(244, 244, 244);
+}
+#notice_detail_3{
+    width: 130px;
+    padding: 13px 0px 13px 20px;
+    background-color: rgb(247, 245, 248);
+    border-top: 1px solid rgb(244, 244, 244);
+    text-align: left;
+    font-weight: 500;
+}
+#notice_detail_4{
+padding-left: 25px;
+    align-self: center;
+}
+#notice_detail_content{
+    padding: 30px 10px 100px;
+    border-bottom: 1px solid rgb(128, 128, 128);
+}
+#notice_detail_bottom{
+display: flex;
+    width: 100%;
+    padding: 20px 0px;
+    -webkit-box-pack: end;
+    justify-content: flex-end;
+}
+/* #notice_detail_button{
+display: block;
+    padding: 0px 10px;
+    text-align: center;
+    overflow: hidden;
+    width: 150px;
+    height: 42px;
+    border-radius: 0px;
+    color: rgb(255, 255, 255);
+    background-color: rgb(95, 0, 128);
+    border: 0px none;
+} */
+
+
+</style>
 <!-- service_style 가져오기 -->
 <link href="resources/css/service_center.css" rel="stylesheet" />
 
@@ -24,69 +131,125 @@
     <!-- 헤더 연결 -->
     <jsp:include page="../header.jsp"></jsp:include> 
     
-    <div id="servive_main_inner">
-		<div id="service_center_cate">
-		
-			<a href="/spring/notice_board.do" class="nav-link py-3 px-0 px-lg-3 rounded" id="open_notice">공지사항</a>
-			<a href="/spring/faq_board.do" class="nav-link py-3 px-0 px-lg-3 rounded" id="open_faq">자주하는 질문</a>
-			<!-- <a href="/spring/qna_board.do" class="nav-link py-3 px-0 px-lg-3 rounded" id="open_qna" >1:1 문의</a> -->
-		
-		</div>
-	
-		<form name="insertnotice_form" action="/spring/notice_writeProcess.do" method="post">
-		   <input type="hidden"  name="nidx" value="${noticeVo.nidx} ">
-			<div id="notice">
-			
-				<div id="notice_detail">
-				
-					<table id="notice_table" class="table table-striped" style="border:1px solid #dddddd; text-align: center; width: 1068px;">
-					<thead>
-						<tr>
-							<th colspan="2" style="background-color: #eeeeee; text-align: center;" id="sd_table1">공지사항</th>
-						</tr>
-					</thead>
-					
-					<tbody>
-					<tr>
-						<td style="width:20%;" id="nd_table1">번호</td><td colspan="2">${noticeVo.nidx}</td>
-					</tr>
-					
-					<tr>
-					<td id="sd_table1">구분</td><td colspan="2">[${noticeVo.n_category}]</td>
-					</tr>
-					<tr>
-					<td id="sd_table1">제목</td><td colspan="2">${noticeVo.n_title}</td>
-					</tr>
-					<tr>
-					<td id="sd_table1">내용</td><td colspan="2" style="height:200px; text-align: center;">${noticeVo.n_content}</td>
-					</tr>
-					</tbody>
-					</table>
-					<div style="padding-left:929px;">
-					
-					<c:if test="${member_grade != null}">
-					<c:if test="${member_grade >= 1}">
-	
-						<a class='btn btn-primary' href='/spring/notice_update.do?nidx=${noticeVo.nidx}'>수정하기</a>
-						<a class='btn btn-primary' href='/spring/notice_delyn.do?nidx=${noticeVo.nidx}'>삭제하기</a>
-	
-	
-					</c:if>
-					<a href="/spring/notice_board.do" class="btn btn-primary">글목록</a>
-			    </c:if>
-			    </div>
-				
-					
-				<!-- class='nav-link py-3 px-0 px-lg-3 rounded' style='display:inline;' -->
-	
-	
-				
-				</div>
-			</div>
-	
-	
-		</form>
-		</div>
+    <div id="notice_detail_inner">
+    <div id="notice_detail_top">
+       <div id="notice_detail_header">공지사항</div>
+       <div id="notice_detail_header2">jpk2의 새로운 소식들과 유용한 정보들을 한곳에서 확인하세요.</div>
+       </div>
+       
+       
+    <div id="notice_detail_1">
+          <div id="notice_detail_2">
+          <div id="notice_detail_3">카테고리</div>
+       <div id="notice_detail_4">${noticeVo.n_category}</div>
+       </div>
+       
+       <div id="notice_detail_2">
+       <div id="notice_detail_3">제목</div>
+       <div id="notice_detail_4">${noticeVo.n_title}</div>
+       </div>
+       
+     <div id="notice_detail_2">
+       <div id="notice_detail_3">작성자</div>
+       <div id="notice_detail_4">관리자</div>
+       </div>
+    <div id="notice_detail_content">
+       <div>
+       <p style="white-space: pre-line;">${noticeVo.n_content}</p>
+       </div></div>
+          <div style="padding-left: 780px; padding-top: 15px;">
+               
+               <c:if test="${member_grade != null}">
+               <c:if test="${member_grade >= 1}">
+   
+                  <a class='btn btn-primary' href='/spring/notice_update.do?nidx=${noticeVo.nidx}'>수정하기</a>
+                  <a class='btn btn-primary' href='/spring/notice_delyn.do?nidx=${noticeVo.nidx}'>삭제하기</a>
+   
+   
+               </c:if>
+               <div style="float: right;">
+               <a href="/spring/notice_board.do" class="btn btn-primary">글목록</a>
+               </div>
+             </c:if>
+             
+            
+       
+       
+<!--      <div id="notice_detail_7">
+       <div id="notice_detail_8">
+       <div id="notice_detail_title"></div>
+       <div id="notice_detail_title2"></div>
+       </div>
+    </div> -->
+     
+   </div>
+   </div>
+   </div>
+  <%--   
+ <div id="servive_main_inner">
+   <div id="service_center_cate">
+   <div id="service_1">고객센터</div>
+      <div id="notice_sub">   
+      <a href="${pageContext.request.contextPath}/notice_board.do" class="nav-link py-3 px-0 px-lg-3" id="open_notice">공지사항</a>
+      <a href="${pageContext.request.contextPath}/faq_board.do" class="nav-link py-3 px-0 px-lg-3" id="open_faq">자주하는 질문</a>
+      <!-- <a href="/spring/qna_board.do" class="nav-link py-3 px-0 px-lg-3 rounded" id="open_qna" >1:1 문의</a> -->
+      </div>
+   </div> 
+      <div id="notice_inner">
+      <form name="insertnotice_form" action="/spring/notice_writeProcess.do" method="post">
+         <input type="hidden"  name="nidx" value="${noticeVo.nidx} ">
+         <div id="notice">
+         
+            <div id="notice_detail">
+            
+               <table id="notice_table" class="table table-striped" style="border:1px solid #dddddd; text-align: center; width: 1068px;">
+               <thead>
+                  <tr>
+                     <th colspan="2" style="background-color: #eeeeee; text-align: center;" id="sd_table1">공지사항</th>
+                  </tr>
+               </thead>
+               
+               <tbody>
+               <tr>
+                  <td style="width:20%;" id="nd_table1">번호</td><td colspan="2">${noticeVo.nidx}</td>
+               </tr>
+               
+               <tr>
+               <td id="sd_table1">구분</td><td colspan="2">[${noticeVo.n_category}]</td>
+               </tr>
+               <tr>
+               <td id="sd_table1">제목</td><td colspan="2">${noticeVo.n_title}</td>
+               </tr>
+               <tr>
+               <td id="sd_table1">내용</td><td colspan="2" style="height:200px; text-align: center;">${noticeVo.n_content}</td>
+               </tr>
+               </tbody>
+               </table>
+               <div style="padding-left:929px;">
+               
+               <c:if test="${member_grade != null}">
+               <c:if test="${member_grade >= 1}">
+   
+                  <a class='btn btn-primary' href='/spring/notice_update.do?nidx=${noticeVo.nidx}'>수정하기</a>
+                  <a class='btn btn-primary' href='/spring/notice_delyn.do?nidx=${noticeVo.nidx}'>삭제하기</a>
+   
+   
+               </c:if>
+               <a href="/spring/notice_board.do" class="btn btn-primary">글목록</a>
+             </c:if>
+             </div>
+            
+               
+            <!-- class='nav-link py-3 px-0 px-lg-3 rounded' style='display:inline;' -->
+   
+   
+            
+            </div>
+         </div>
+   
+   
+      </form>
+      </div> --%>
     <!-- 푸터 연결 -->
     <jsp:include page="../footer.jsp"></jsp:include>
 </body>
