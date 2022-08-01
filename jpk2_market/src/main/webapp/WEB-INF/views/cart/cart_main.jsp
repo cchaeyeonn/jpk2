@@ -324,12 +324,13 @@ $("#chk_all").change(function(){
     <!-- 상품명 -->
     ${cartVo.p_name}
     </td>
-    <td>
+    <td id="count_button" style="padding-left:63px; width:346px;">
     <!-- 수량 버튼 -->
-    
-    <input type="button" type="button" id="${cartVo.pbidx}_btn_minus" value="-">
-    <input type="text"  id="${cartVo.pbidx}_pop_out" class="amount" value="${cartVo.p_amount}" readonly="readonly" style="text-align:center;"/>
-    <input type="button" type="button" id="${cartVo.pbidx}_btn_plus" value="+">
+    <div style="border:1px solid; width:161px; color:rgb(221,223,225); height:39px;">
+    <button type="button" type="button" id="${cartVo.pbidx}_btn_minus" value="-" style="border:1px; background-color:white;"><img src="resources/img/-_button.png"></button>
+    <input type="text" id="${cartVo.pbidx}_pop_out" class="amount" value="${cartVo.p_amount}" readonly="readonly" style="text-align:center; width:92px; border:1px solid rgb(221,223,225); height:38px;"/>
+    <button type="button" type="button" id="${cartVo.pbidx}_btn_plus" value="+" style="border:1px; background-color:white;"><img src="resources/img/+_button.png"></button>
+   </div>
    
     </td>
     <td>
@@ -338,13 +339,14 @@ $("#chk_all").change(function(){
     </td>
     <td>
     <!-- 삭제버튼 -->
-    <button id="btn_delete_${cartVo.pbidx}" type="button" value="${cartVo.pbidx}" style="border-radius: 5px; width: 22px; height: 26px; border-color: #c9c9c9;">X</button>
+    <button type="button" id="btn_delete_${cartVo.pbidx}"  value="${cartVo.pbidx}" style="border:1px; background-color:white;"><img src="resources/img/x_button.png"></button>
     </td>
     </tr>
     </c:forEach>
     </table>
     </div>
     <div id="for_order" style="height:1040px; width:1273px;">
+    <div style="width:330px; height:1040px; float:right;">
     <table id="for_order_table" border="0" style="float:right; width:330px; height:238px; position: sticky; top:183px; right:0px; padding-top:80px; background-color:#fafafa;">
     <tr>
     <td>상품금액</td>
@@ -371,6 +373,7 @@ $("#chk_all").change(function(){
     <td></td>
     </tr>
     </table>
+    </div>
     </div>
     </div>
      </form>
