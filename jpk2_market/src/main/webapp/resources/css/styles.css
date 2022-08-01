@@ -238,7 +238,7 @@ sup {
 
 a {
   /* color: #1abc9c; */
-  color: #15967d;
+  color: #595a5a;
   /* text-decoration: underline; */
 }
 a:hover {
@@ -1985,7 +1985,7 @@ progress {
   --bs-table-active-color: #212529;
   --bs-table-active-bg: rgba(0, 0, 0, 0.1);
   --bs-table-hover-color: #212529;
-  --bs-table-hover-bg: rgba(0, 0, 0, 0.075);
+  --bs-table-hover-bg: #fafafa;
   /* width: 100%; */
   margin-bottom: 1rem;
   color: #212529;

@@ -18,7 +18,7 @@ user-select: none;
 #service_center_cate{
 	
 	/* padding-top:200px; */
-	width:155px;
+	width:194px;
 	float:left;
 }
 	
@@ -30,7 +30,8 @@ user-select: none;
 
 
 #servive_main_inner{
-	margin-left:200px;
+	margin-left:324px;
+	margin-top: 40px;
 	min-height:1040px;
 }
 	
@@ -48,6 +49,7 @@ user-select: none;
 
 #stable_3{
 	width:300px;
+
 }
 
 #stable_4{
