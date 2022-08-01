@@ -18,14 +18,14 @@
 	</insert>
     
     <delete id="deleteCartInfo" parameterType="list">
-		delete from fm_product_cart where pbidx in 
+		delete from fm_product_cart where p_check='N'and pbidx in 
 		<foreach collection="list" item="cartidxList" open="(" separator="," close=")" >
 			#{cartidxList}
 		</foreach>
 	</delete>
 	
 	<delete id="deleteCartInfoOne" parameterType="Integer">
-		delete from fm_product_cart where pbidx = #{pbidx}
+		delete from fm_product_cart where pbidx = #{pbidx} and p_check='N'
 	</delete>
 	
 	<select id="cart_count" parameterType="int" resultType="int">
@@ -34,18 +34,18 @@
 	</select>
 	
 	<update id="updateCart" parameterType="cartVo">
-		update fm_product_cart set p_amount = p_amount+#{p_amount} where midx_mc=#{midx_mc} and pidx_pc=#{pidx_pc}
+		update fm_product_cart set p_amount = p_amount+#{p_amount} where midx_mc=#{midx_mc} and pidx_pc=#{pidx_pc} and p_check='N'
 	</update>
 	
 	<select id="cart_pidx_pc"  parameterType="int" resultType="Integer">
-		select pidx_pc from fm_product_cart a inner join fm_member b on a.midx_mc = b.midx inner join fm_product c on a.pidx_pc = c.pidx where b.midx like #{midx} and p_delyn='N'
+		select pidx_pc from fm_product_cart a inner join fm_member b on a.midx_mc = b.midx inner join fm_product c on a.pidx_pc = c.pidx where b.midx like #{midx} and p_delyn='N' and a.p_check='N'
 	</select>
 	
 	<update id="cart_amount" parameterType="cartVo">
-		update fm_product_cart set p_amount = #{p_amount} where midx_mc=#{midx_mc} and pidx_pc=#{pidx_pc}
+		update fm_product_cart set p_amount = #{p_amount} where midx_mc=#{midx_mc} and pidx_pc=#{pidx_pc} and p_check='N'
 	</update>
 	<select id="getSomeCartList"  parameterType="list" resultType="orderVo">
-			select * from fm_product_cart a inner join fm_member b on a.midx_mc = b.midx inner join fm_product c on a.pidx_pc = c.pidx where p_delyn='N' and pbidx in
+			select * from fm_product_cart a inner join fm_member b on a.midx_mc = b.midx inner join fm_product c on a.pidx_pc = c.pidx where p_delyn='N' and a.p_check='N' and pbidx in
 		<foreach collection="list" item="pbidxList" open="(" separator="," close=")" >
 			#{pbidxList}
 		</foreach>
