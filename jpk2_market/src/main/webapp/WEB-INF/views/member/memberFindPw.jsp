@@ -196,25 +196,46 @@ a:hover {
 	}
 	#forgot {
 		font-size: 0.95rem
-	} */
-}
+	} 
+}*/
 
+
+/* page-loading */
+  #loading {
+  	width: 100%;
+  	height: 100%;
+  	top: 0;
+  	left: 0;
+  	position: fixed;
+  	display: block;
+  	opacity: 0.6;
+  	background: #e4e4e4;
+  	z-index: 99;
+  	text-align: center;
+  }
+
+
+
+  #loading > img {
+  	position: absolute;
+  	top: 50%;
+  	left: 50%;
+  	z-index: 100;
+  }
+   #loading > p {
+    	position: absolute;
+    	top: 57%;
+    	left: 43%;
+    	z-index: 101;
+    }
+    
+    
 
 </style>
-    <!-- jquery 스크립트 -->
+    <!-- jquery 스크립트(항상 최신버전의 제이쿼리를 사용한다) -->
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 
 
-
-
-  
-
-</head>
-
-
-<body oncontextmenu='return false' class='snippet-body'>
-<!-- 헤더연결 -->
-<jsp:include page="../header.jsp"></jsp:include>
 <script>
   function check(){  
   var fm = document.frms;   
@@ -233,19 +254,51 @@ a:hover {
   
     return;
   }  
-  </script>
-    <script>
+</script>
+  
+  
+<script>
 $(document).on('click','#trigger',function(){if($("#member_id").val() != "",$("#member_email").val() != ""){
         $("#trigger").hide();
         }});
 </script>
+
+
+<script>
+$(document).ready(function() {
+
+	$('#loading').hide();
+	$('#trans').submit(function(){
+		alert("로딩");
+	    $('#loading').show();
+	    return true;
+	    });
+	});
+</script>
+
+</head>
+
+
+<body oncontextmenu='return false' class='snippet-body'>
+<!-- 헤더연결 -->
+<jsp:include page="../header.jsp"></jsp:include>
+
+
+
+<!--로딩바-->
+<div id="loading" style="margin-left: 0px;">
+    <img src="resources//img/loadingbar.gif">
+    <p>잠시기다려주세요.</p>
+</div>
+
+
 	<div id="body_inner">
 		<div id="wrapper_inner">
 			<div class="wrapper bg-white">
 				<div class="h2 text-center">비밀번호 찾기</div>
 				<div class="h4 text-muted text-center pt-2"></div>
 				
-				<form name="frms">
+				<form name="frms" id="trans">
 					<div class="form-group">
 						<div class="input-field1">
 							<!-- <span class="far fa-user p-2"></span> -->

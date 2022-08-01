@@ -16,7 +16,7 @@ body{
 #topButton {
 	position: fixed;
 	right: 2%;
-	bottom: 50px;
+	bottom: 135px;
 	display: none;
 	z-index: 999;
 }
@@ -102,7 +102,7 @@ body{
 
 	<!-- 누르면 상단으로 가는 top버튼 시작 -->
 	<div id="topButton" style="cursor: pointer">
-		<img src="resources//img/topbutton.png" id="topButtonImg">
+		<img src="resources//img/upbutton_ori.png" id="topButtonImg" style="width:58px; margin-right:7px;">
 	</div>
 	<!-- 누르면 상단으로 가는 top버튼 끝 -->
 
@@ -110,9 +110,11 @@ body{
 
 	<!-- Footer-->
 	<div id="footer">
+	<hr style="color:#eee;">
 		<div class="footer-top">
 			<div class="inner_footer">
 				<div class="footer_cc">
+				
 					<h2 class="tit_cc">고객센터</h2>
 					<div class="cc_view cc_call">
 						<h3>

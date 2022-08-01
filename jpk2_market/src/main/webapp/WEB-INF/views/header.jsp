@@ -183,7 +183,7 @@ function cart(){
 	<input type="hidden" value="${midx}" name="midx">
 	<!-- 카테고리, 장바구니 로고 시작 -->
 	<div class="fixed-top2" id="innerNav_1"
-		style="padding-top: 110px; height: 178px;">
+		style="padding-top: 110px; height: 178px; box-shadow: 0 3px 4px 0 rgb(0 0 0 / 6%);">
 		<ul class="menu" style="margin-top: 28px; width: 1323px;">
 			<li style="float: left;"><a href="#">전체 카테고리</a>
 				<ul class="depth_1">
