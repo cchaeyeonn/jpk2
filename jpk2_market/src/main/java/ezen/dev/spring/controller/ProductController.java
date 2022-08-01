@@ -1,5 +1,6 @@
 package ezen.dev.spring.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -46,6 +47,8 @@ public class ProductController {
 		List<ProductVo> productList = productService.getProductList();
 		//그러한 리스트를 model에 담음
 		model.addAttribute("productList",productList);
+		
+		
 		//그러한 값을 product_list.jsp에 뿌려줌
 		return "product/product_list";
 		}

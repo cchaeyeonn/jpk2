@@ -73,7 +73,7 @@ public class OrderController {
 		model.addAttribute("memberVo", memberVo);
 		model.addAttribute("orderList", orderList);
 		model.addAttribute("sum_price", sum_price);
-		
+		session.setAttribute("pbidxList", pbidxList);
 		return"order/orderSheet";}
 	else{
 		response.setContentType("text/html; charset=UTF-8");
@@ -105,17 +105,19 @@ public class OrderController {
 	public String orderSuccess(@RequestParam("pay_method") String pay_method, 
 			@RequestParam("pay_amount") int paid_amount,@RequestParam("pay_findate") Long pay_at,
 			@RequestParam("status") String pay_status,
-			@RequestParam(value="pbidx", required=false) Integer[] pbidx,HttpServletRequest request) {
+			HttpServletRequest request) {
 		HttpSession session = request.getSession();
 		
-		for(Integer mmm : pbidx) {
-			System.out.println("pbidx: "+ mmm);}
 
-			List<Integer> pbidxList = Arrays.asList(pbidx);
+			List<Integer> pbidxList = (List<Integer>)session.getAttribute("pbidxList");
 		
-		
+		System.out.println(pay_method);
+		System.out.println(paid_amount);
+		System.out.println(pay_at);
+		System.out.println(pay_status);
 		
 		int midx_mo=Integer.parseInt(String.valueOf(session.getAttribute("midx")));
+		int count = cartService.cart_count(midx_mo);
 		Long pay_findate = pay_at *1000;
 		Date date = new Date(pay_findate);
 		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
@@ -140,13 +142,15 @@ public class OrderController {
 		orderVo.setPay_findate(date_);
 		orderVo.setP_check(orderpay_check);
 		orderVo.setMidx_mo(midx_mo);
-		orderVo.setPbidx_co(pbidxList.get(i));
-		
+		orderVo.setPbidx_co(pbidxList.get(i));		
 		orderService.add_order(orderVo);
 		}
 		cartService.del_cart(midx_mo);
-		
-		
+		session.setAttribute("result_", count);
+		pbidxList.removeAll(pbidxList);
+		for(Integer mmm : pbidxList) {
+			System.out.println("pbidx: "+ mmm);}
+		session.setAttribute("pbidxList", pbidxList);
 		
 		
 		return "order/orderSuccess";
