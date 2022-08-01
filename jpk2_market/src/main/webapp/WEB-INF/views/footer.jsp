@@ -156,7 +156,7 @@ body{
 							href="">개인정보처리방침</a></li>
 						<li><a style="text-decoration: none;" class="link" href="">이용안내</a></li>
 					</ul>
-					법인명 (상호) : 주식회사 <span class="bar">I</span> 사업자등록번호 : 123-45-678910
+					법인명 (상호) : JPK2 <span class="bar">I</span> 사업자등록번호 : 123-45-678910
 					<a style="text-decoration: none;" href="" target="_blank"
 						class="link">사업자정보 확인</a> <br> 통신판매업 : 제 2022-전북전주-0627 호 <span
 						class="bar">I</span> 개인정보보호책임자 : <br> 주소 : 전북 전주시 <span
