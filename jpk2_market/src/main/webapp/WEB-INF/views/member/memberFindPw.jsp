@@ -199,36 +199,6 @@ a:hover {
 	} 
 }*/
 
-
-/* page-loading */
-  #loading {
-  	width: 100%;
-  	height: 100%;
-  	top: 0;
-  	left: 0;
-  	position: fixed;
-  	display: block;
-  	opacity: 0.6;
-  	background: #e4e4e4;
-  	z-index: 99;
-  	text-align: center;
-  }
-
-
-
-  #loading > img {
-  	position: absolute;
-  	top: 50%;
-  	left: 50%;
-  	z-index: 100;
-  }
-   #loading > p {
-    	position: absolute;
-    	top: 57%;
-    	left: 43%;
-    	z-index: 101;
-    }
-    
     
 
 </style>
@@ -264,17 +234,6 @@ $(document).on('click','#trigger',function(){if($("#member_id").val() != "",$("#
 </script>
 
 
-<script>
-$(document).ready(function() {
-
-	$('#loading').hide();
-	$('#trans').submit(function(){
-		alert("로딩");
-	    $('#loading').show();
-	    return true;
-	    });
-	});
-</script>
 
 </head>
 
@@ -285,12 +244,6 @@ $(document).ready(function() {
 
 
 
-<!--로딩바-->
-<div id="loading" style="margin-left: 0px;">
-    <img src="resources//img/loadingbar.gif">
-    <p>잠시기다려주세요.</p>
-</div>
-
 
 	<div id="body_inner">
 		<div id="wrapper_inner">
@@ -298,7 +251,7 @@ $(document).ready(function() {
 				<div class="h2 text-center">비밀번호 찾기</div>
 				<div class="h4 text-muted text-center pt-2"></div>
 				
-				<form name="frms" id="trans">
+				<form name="frms">
 					<div class="form-group">
 						<div class="input-field1">
 							<!-- <span class="far fa-user p-2"></span> -->

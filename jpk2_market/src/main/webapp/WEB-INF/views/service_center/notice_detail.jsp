@@ -167,7 +167,9 @@ display: block;
    
    
                </c:if>
+               <div style="float: right;">
                <a href="/spring/notice_board.do" class="btn btn-primary">글목록</a>
+               </div>
              </c:if>
              
             
