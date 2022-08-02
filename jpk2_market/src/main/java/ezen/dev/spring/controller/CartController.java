@@ -103,6 +103,9 @@ public class CartController {
 		model.addAttribute("productVo",productVo);
 		String viewPage="product/product_detail";
 		
+		for(Integer mmm : pidx_pc_arr) {
+			System.out.println("pidx: "+ mmm);}
+		
 		if(pidx_pc_arr.contains(pidx_pc) && result_!=0) {
 			result = cartService.updateCart(cartVo);
 			

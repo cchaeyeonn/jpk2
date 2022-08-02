@@ -3,6 +3,7 @@ package ezen.dev.spring.controller;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.HashMap;
@@ -68,7 +69,7 @@ public class OrderController {
 		for(Integer mmm : pbidx) {
 		System.out.println("pbidx: "+ mmm);}
 
-		List<Integer> pbidxList = Arrays.asList(pbidx);
+		List<Integer> pbidxList = new ArrayList<>( Arrays.asList(pbidx));
 		List<OrderVo> orderList = cartService.getSomeCartList(pbidxList);
 		model.addAttribute("memberVo", memberVo);
 		model.addAttribute("orderList", orderList);
@@ -110,18 +111,19 @@ public class OrderController {
 		
 
 			List<Integer> pbidxList = (List<Integer>)session.getAttribute("pbidxList");
-		
+			ArrayList<Integer> pidx_pc_arr = new ArrayList<Integer>();
+			pidx_pc_arr = (ArrayList<Integer>) session.getAttribute("pidx_pc_arr");
 		System.out.println(pay_method);
 		System.out.println(paid_amount);
 		System.out.println(pay_at);
 		System.out.println(pay_status);
 		
 		int midx_mo=Integer.parseInt(String.valueOf(session.getAttribute("midx")));
-		int count = cartService.cart_count(midx_mo);
 		Long pay_findate = pay_at *1000;
 		Date date = new Date(pay_findate);
 		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		String date_ = format.format(date);
+		System.out.println(date_);
 		String orderpay_check;
 		if(pay_status.equals("paid")) {
 			 orderpay_check = "Y"; 
@@ -146,11 +148,16 @@ public class OrderController {
 		orderService.add_order(orderVo);
 		}
 		cartService.del_cart(midx_mo);
+		int count = cartService.cart_count(midx_mo);
 		session.setAttribute("result_", count);
 		pbidxList.removeAll(pbidxList);
 		for(Integer mmm : pbidxList) {
 			System.out.println("pbidx: "+ mmm);}
 		session.setAttribute("pbidxList", pbidxList);
+		pidx_pc_arr.removeAll(pidx_pc_arr);
+		for(Integer mmm : pidx_pc_arr) {
+			System.out.println("pidx: "+ mmm);}
+		session.setAttribute("pidx_pc_arr", pidx_pc_arr);
 		
 		
 		return "order/orderSuccess";

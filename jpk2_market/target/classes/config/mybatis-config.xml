@@ -3,7 +3,7 @@
   "http://mybatis.org/dtd/mybatis-3-config.dtd">
 
 <configuration>
-
+	
 	<typeAliases>
 		<typeAlias alias="memberVo" type="ezen.dev.spring.vo.MemberVo"/>
 		<typeAlias alias="productVo" type="ezen.dev.spring.vo.ProductVo"/>
