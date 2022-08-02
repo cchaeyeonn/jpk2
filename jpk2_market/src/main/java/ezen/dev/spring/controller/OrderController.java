@@ -105,7 +105,7 @@ public class OrderController {
 	@PostMapping("/orderSuccess.do")
 	public String orderSuccess(@RequestParam("pay_method") String pay_method, 
 			@RequestParam("pay_amount") int paid_amount,@RequestParam("pay_findate") Long pay_at,
-			@RequestParam("status") String pay_status,
+			@RequestParam("status") String pay_status,@RequestParam("merchant_uid") String merchant_uid,
 			HttpServletRequest request) {
 		HttpSession session = request.getSession();
 		
@@ -117,6 +117,7 @@ public class OrderController {
 		System.out.println(paid_amount);
 		System.out.println(pay_at);
 		System.out.println(pay_status);
+		System.out.println(merchant_uid);
 		
 		int midx_mo=Integer.parseInt(String.valueOf(session.getAttribute("midx")));
 		Long pay_findate = pay_at *1000;
@@ -144,7 +145,8 @@ public class OrderController {
 		orderVo.setPay_findate(date_);
 		orderVo.setP_check(orderpay_check);
 		orderVo.setMidx_mo(midx_mo);
-		orderVo.setPbidx_co(pbidxList.get(i));		
+		orderVo.setPbidx_co(pbidxList.get(i));	
+		orderVo.setOrder_id(merchant_uid);
 		orderService.add_order(orderVo);
 		}
 		cartService.del_cart(midx_mo);

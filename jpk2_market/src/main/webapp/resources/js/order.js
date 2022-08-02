@@ -106,7 +106,8 @@
         		  	  ["pay_method",rsp.pay_method],
         			  ["pay_amount",rsp.paid_amount],
             		  ["pay_findate",rsp.paid_at],
-            		  ["status",rsp.status]
+            		  ["status",rsp.status],
+            		  ["merchant_uid",rsp.merchant_uid]
             		  
                 ]
           
@@ -128,7 +129,8 @@
             		  ["vbank_name",rsp.vbank_name],
             		  ["vbank_holder",rsp.vbank_holder],
             		  ["vbank_date",rsp.vbank_date],
-            		  ["status",rsp.status]
+            		  ["status",rsp.status],
+            		  ["merchant_uid",rsp.merchant_uid]
             		  
                 ]
           
