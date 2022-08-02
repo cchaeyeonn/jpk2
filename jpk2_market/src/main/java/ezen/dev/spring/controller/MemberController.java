@@ -240,7 +240,8 @@ public class MemberController {
 	HttpSession session = request.getSession();
 	Integer midx_ =Integer.parseInt(String.valueOf(session.getAttribute("midx")));
 	memberVo.setNow_pw(now_pw);
-	memberVo.setMember_pw(member_pw);
+	String encodedPassword =passwordEncoder.encode(member_pw);
+	memberVo.setMember_pw(encodedPassword);
 	memberVo.setMidx(midx_);
 	memberService.setUpdatePw(memberVo);
 	response.setContentType("text/html; charset=UTF-8");
