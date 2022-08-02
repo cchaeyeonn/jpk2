@@ -4,9 +4,7 @@
         var inputValue;
         var ctx = getContextPath();
         
-        var pbidx_array = [];
-        pbidx_array.push($("#"+pbidx+"_pbidx").val());
-        
+       
         
   		function getContextPath() {
  		 return sessionStorage.getItem("contextpath");
@@ -108,8 +106,8 @@
         		  	  ["pay_method",rsp.pay_method],
         			  ["pay_amount",rsp.paid_amount],
             		  ["pay_findate",rsp.paid_at],
-            		  ["status",rsp.status],
-            		  ["pbidx",pbidx_array]
+            		  ["status",rsp.status]
+            		  
                 ]
           
         
@@ -130,8 +128,8 @@
             		  ["vbank_name",rsp.vbank_name],
             		  ["vbank_holder",rsp.vbank_holder],
             		  ["vbank_date",rsp.vbank_date],
-            		  ["status",rsp.status],
-            		  ["pbidx",pbidx_array]
+            		  ["status",rsp.status]
+            		  
                 ]
           
         
