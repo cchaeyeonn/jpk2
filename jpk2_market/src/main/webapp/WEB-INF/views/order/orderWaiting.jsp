@@ -16,6 +16,15 @@
    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
    <!-- js파일 연결  -->
    <script src="${pageContext.request.contextPath}/resources/js/join.js "></script>
+   <script>
+   $(function(){
+	   if(${bank_num }==null){
+	  $("#vbank_info").css(display,none); 
+	   
+	  
+	   }
+   });
+   </script>
 </head>
 
 <body>
@@ -29,7 +38,36 @@
 		<br>
 		<p>주문하신 상품의</p>
 		<br>
-		<p>결제가 정상적으로 이루어 졌습니다.</p>
+		<p>주문이 정상적으로 이루어 졌습니다.</p>
+		<div id="vbank_info">
+		<table>
+		<tr>
+		<td>가상계좌 은행명
+		</td>
+		<td>가상계좌 예금주
+		</td>
+		<td>가상계좌 입금계좌번호
+		</td>
+		<td>가상계좌 입금기한
+		</td>
+		</tr>
+		
+		<tr>
+		<td>${bank_date }
+		</td>
+		<td>${bank_holder }
+		</td>
+		<td>${bank_name }
+		</td>
+		<td>${bank_num }
+		</td>
+		</tr>
+		</table>
+		
+		</div>
+		
+		
+		
 		<br> <a href="${pageContext.request.contextPath}/index.do">메인으로 이동하기</a>
 		<a href="${pageContext.request.contextPath}/orderList.do">주문내역 확인하기</a>
 	</div>
