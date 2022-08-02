@@ -167,6 +167,7 @@ public class MemberController {
 			session.invalidate();
 			return null;
 		}
+		
 		}else {
 			response.setContentType("text/html; charset=UTF-8");
 			response.setCharacterEncoding("UTF-8");
