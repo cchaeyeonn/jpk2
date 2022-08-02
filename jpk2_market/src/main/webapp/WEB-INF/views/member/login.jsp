@@ -230,9 +230,9 @@ catch(err){
 						<div class="input-field1">
 							<span class="far fa-user p-2"></span> <input type="text"
 								name="member_id" placeholder="아이디를 입력해주세요" required class="">
-								
 						</div>
 					</div>
+					
 					<div class="form-group">
 						<div class="input-field2">
 							<span class="fas fa-lock p-2"></span> <input type="password"
