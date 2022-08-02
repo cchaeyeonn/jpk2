@@ -167,6 +167,12 @@ public class MemberController {
 			session.invalidate();
 			return null;
 		}
+		}else {
+			response.setContentType("text/html; charset=UTF-8");
+			response.setCharacterEncoding("UTF-8");
+			PrintWriter out=response.getWriter();
+			out.println("<script>window.onload = function(){alert('잘못된 아이디 혹은 비밀번호입니다. 다시 확인해 주세요'); location.href='/spring/login.do';}</script>");
+			out.flush();
 		}
 		return null;
 	}
