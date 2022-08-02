@@ -199,25 +199,6 @@ catch(err){
 </head>
 <!-- 헤더연결 -->
 <jsp:include page="../header.jsp"></jsp:include>
-<script>
-  function check_login(){  
-  var fm = document.frmt;   
-  if (fm.member_id.value==""){
-  		alert("아이디를 입력해주세요");
-  		fm.member_id.focus();
-  		return;
-  }else if (fm.member_pw.value==""){
-  		alert("비밀번호를 입력해주세요");
-  		fm.member_pw.focus();
-  		return;
-  }
-  		fm.action = "<%=request.getContextPath()%>/loginProcess.do";
-  		fm.method = "post";
-  		fm.submit();  
-  
-    return;
-  }  
-</script>
 <body oncontextmenu='return false' class='snippet-body'>
 	<div id="body_inner">
 		<div id="wrapper_inner">
@@ -225,7 +206,7 @@ catch(err){
 				<div class="h2 text-center">로그인</div>
 				<div class="h4 text-muted text-center pt-2"></div>
 				
-				<form name="frmt">
+				<form name="frmt" action="<%=request.getContextPath()%>/loginProcess.do" method="post">
 					<div class="form-group">
 						<div class="input-field1">
 							<span class="far fa-user p-2"></span> <input type="text"
@@ -251,8 +232,8 @@ catch(err){
 								href="findPw.do">비밀번호 찾기</a>
 						</div>
 					</div>
-					<input type="button" class="btn btn-block text-center my-3"
-						value="로그인" onclick="check_login();"> <input
+					<input type="submit" class="btn btn-block text-center my-3"
+						value="로그인" > <input
 						style="margin-top: -6px !important; background-color: white; border-color: black; border: 1px solid; color: black;"
 						type="button" class="btn btn-block text-center my-3" value="회원가입"
 						onclick="location.href='join.do'">

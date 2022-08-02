@@ -59,6 +59,14 @@ public class ProductController {
 		model.addAttribute("productList",productList);
 		return "product/product_list_type";
 	}
+	@GetMapping("/productList_new.do")
+	public String getProductList_new(Model model) {
+		List<ProductVo> productList = productService.getProductListNew();
+		
+		model.addAttribute("productList",productList);
+		
+		return "product/product_list_type";
+	}
 	}
 	
 
