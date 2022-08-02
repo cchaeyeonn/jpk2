@@ -236,10 +236,9 @@ public class MemberController {
 	
 	
 	@PostMapping("/updatePwProcess.do")
-	public String updatePwProcess(@RequestParam("member_pw1") String member_pw,@RequestParam("now_pw") String now_pw, MemberVo memberVo, Model model,HttpServletRequest request,HttpServletResponse response) throws Exception {
+	public String updatePwProcess(@RequestParam("member_pw1") String member_pw, MemberVo memberVo, Model model,HttpServletRequest request,HttpServletResponse response) throws Exception {
 	HttpSession session = request.getSession();
 	Integer midx_ =Integer.parseInt(String.valueOf(session.getAttribute("midx")));
-	memberVo.setNow_pw(now_pw);
 	String encodedPassword =passwordEncoder.encode(member_pw);
 	memberVo.setMember_pw(encodedPassword);
 	memberVo.setMidx(midx_);
