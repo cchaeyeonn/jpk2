@@ -156,7 +156,7 @@ public class OrderController {
 		for(Integer mmm : pbidxList) {
 			System.out.println("pbidx: "+ mmm);}
 		session.setAttribute("pbidxList", pbidxList);
-		pidx_pc_arr.removeAll(pidx_pc_arr);
+		pidx_pc_arr = cartService.cart_pidx_pc(midx_mo);
 		for(Integer mmm : pidx_pc_arr) {
 			System.out.println("pidx: "+ mmm);}
 		session.setAttribute("pidx_pc_arr", pidx_pc_arr);
@@ -165,8 +165,79 @@ public class OrderController {
 		return "order/orderSuccess";
 	}
 	
-	@PostMapping("/orderWaitng.do")
-	public String orderWaiting() {
+	@PostMapping("/orderWaiting.do")
+	public String orderWaiting(@RequestParam("pay_method") String pay_method, 
+			@RequestParam("pay_amount") int paid_amount,@RequestParam("pay_findate") Long pay_at,
+			@RequestParam("status") String pay_status,@RequestParam("merchant_uid") String merchant_uid,
+			@RequestParam("vbank_num") String vbank_num,@RequestParam("vbank_name") String vbank_name,
+			@RequestParam("vbank_holder") String vbank_holder,@RequestParam("vbank_date") String vbank_date,
+			HttpServletRequest request) {
+		HttpSession session = request.getSession();
+		
+
+		List<Integer> pbidxList = (List<Integer>)session.getAttribute("pbidxList");
+		ArrayList<Integer> pidx_pc_arr = new ArrayList<Integer>();
+		pidx_pc_arr = (ArrayList<Integer>) session.getAttribute("pidx_pc_arr");
+	System.out.println(pay_method);
+	System.out.println(paid_amount);
+	System.out.println(pay_at);
+	System.out.println(pay_status);
+	System.out.println(merchant_uid);
+	System.out.println(vbank_date);
+	
+	int midx_mo=Integer.parseInt(String.valueOf(session.getAttribute("midx")));
+	Long pay_findate = pay_at *1000;
+	Date date = new Date(pay_findate);
+	SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+	String date_ = format.format(date);
+	System.out.println(date_);
+	String orderpay_check;
+	if(pay_status.equals("paid")) {
+		 orderpay_check = "Y"; 
+		
+		
+	}else if(pay_status.equals("ready")){
+		 orderpay_check = "W";
+		
+	}else if(pay_status.equals("failed")){
+		 orderpay_check = "F";
+			
+	} else{
+		 orderpay_check = "N";
+	};
+	
+	
+	OrderVo orderVo = new OrderVo();
+	
+	for(int i=0; i<pbidxList.size();i++) {
+	
+	
+	orderVo.setPay_way(pay_method);
+	orderVo.setP_price(paid_amount);
+	orderVo.setPay_findate(date_);
+	orderVo.setP_check(orderpay_check);
+	orderVo.setMidx_mo(midx_mo);
+	orderVo.setPbidx_co(pbidxList.get(i));	
+	orderVo.setOrder_id(merchant_uid);
+	orderService.add_order(orderVo);
+	}
+	cartService.del_cart(midx_mo);
+	int count = cartService.cart_count(midx_mo);
+	session.setAttribute("result_", count);
+	pbidxList.removeAll(pbidxList);
+	for(Integer mmm : pbidxList) {
+		System.out.println("pbidx: "+ mmm);}
+	session.setAttribute("pbidxList", pbidxList);
+	pidx_pc_arr = cartService.cart_pidx_pc(midx_mo);
+	for(Integer mmm : pidx_pc_arr) {
+		System.out.println("pidx: "+ mmm);}
+	session.setAttribute("pidx_pc_arr", pidx_pc_arr);
+		
+		
+		
+		
+		
+		
 		
 		
 		
