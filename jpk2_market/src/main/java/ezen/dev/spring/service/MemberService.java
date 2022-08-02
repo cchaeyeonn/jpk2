@@ -3,11 +3,13 @@ package ezen.dev.spring.service;
 import java.io.UnsupportedEncodingException;
 import java.util.HashMap;
 
+import javax.inject.Inject;
 import javax.mail.MessagingException;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.JavaMailSenderImpl;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import ezen.dev.spring.dao.MemberDao;
@@ -27,12 +29,15 @@ public class MemberService {
 		this.memberDao = memberDao;
 	}
 	
+    @Inject
+    PasswordEncoder passwordEncoder;
 	
 	//회원가입 처리 메소드:join()
 	public void join(MemberVo memberVo) throws Exception {
 		
 		String key = new TempKey().generateKey(20);
-		
+		String encodedPassword = passwordEncoder.encode(memberVo.getMember_pw());
+		memberVo.setMember_pw(encodedPassword);
 		memberVo.setMember_key(key);
 		
 		memberDao.joinMember(memberVo);
@@ -69,8 +74,8 @@ public class MemberService {
 	}
 	
 	
-	public HashMap<String, Long> login(HashMap<String,String> loginInfo) {
-		return memberDao.loginMember(loginInfo);
+	public MemberVo login(String member_id) {
+		return memberDao.loginMember(member_id);
 	}
 
 

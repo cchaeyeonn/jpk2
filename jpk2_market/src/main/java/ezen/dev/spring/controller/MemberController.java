@@ -8,6 +8,7 @@ import java.io.PrintWriter;
 
 import java.util.HashMap;
 
+import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -15,6 +16,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.PropertySource;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -48,7 +50,9 @@ public class MemberController {
 		
 	} 
 	
-	
+    @Inject
+    PasswordEncoder passwordEncoder;
+    
 	@GetMapping("/join.do")
 	public String join() {
 		return "member/join";
@@ -98,16 +102,13 @@ public class MemberController {
 	}
 	
 	@PostMapping("/loginProcess.do")
-	public String loginProcess(@RequestParam("member_id") String member_id,
-			 					@RequestParam("member_pw") String member_pw, 
+	public String loginProcess(@RequestParam("member_pw") String member_pw, @RequestParam("member_id") String member_id, 
 			 					HttpServletRequest request, HttpServletResponse response) throws IOException {
 		
 		HttpSession session = request.getSession();
-		HashMap<String, String> loginInfo = new HashMap<String, String>();
-		loginInfo.put("member_id", member_id);
-		loginInfo.put("member_pw", member_pw);
-		HashMap<String, Long> resultMap=memberService.login(loginInfo);
-		if(resultMap.get("midx")==null) {
+		MemberVo memberVo=memberService.login(member_id);
+		
+		if(memberVo == null) {
 		response.setContentType("text/html; charset=UTF-8");
 		response.setCharacterEncoding("UTF-8");
 		PrintWriter out=response.getWriter();
@@ -117,11 +118,12 @@ public class MemberController {
 		}
 		
 		
-		long member_grade = resultMap.get("member_grade");
-		long midx = resultMap.get("midx");
-
+		long member_grade = memberVo.getMember_grade();
+		long midx = memberVo.getMidx();
 		//Long형을 int형으로 변환
 		int midx_ = (int)midx;
+
+
 		//장바구니 정보 추가(한 매핑안에서 두개의 메소드가 진행되도록 구현)
 		int count = cartService.cart_count(midx_);
 
@@ -134,6 +136,8 @@ public class MemberController {
 		String member_auth = memberService.getAuthInfo(member_id);
 		String member_name = memberService.getNameInfo(member_id);
 		System.out.println("인증값 "+member_auth);
+		if(passwordEncoder.matches(member_pw, memberVo.getMember_pw())) {
+			
 		
 		if(member_pw.length()==6) {
 			session.setAttribute("midx", midx);
@@ -163,7 +167,14 @@ public class MemberController {
 			session.invalidate();
 			return null;
 		}
-		
+		}else {
+			response.setContentType("text/html; charset=UTF-8");
+			response.setCharacterEncoding("UTF-8");
+			PrintWriter out=response.getWriter();
+			out.println("<script>window.onload = function(){alert('잘못된 아이디 혹은 비밀번호입니다. 다시 확인해 주세요'); location.href='/spring/login.do';}</script>");
+			out.flush();
+		}
+		return null;
 	}
 	
 	@GetMapping("/memberInfo.do")

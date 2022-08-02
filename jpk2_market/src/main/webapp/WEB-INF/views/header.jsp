@@ -128,7 +128,7 @@ function cart(){
 		<div class="container">
 			<a class="navbar-brand" href="/spring/">JPK2</a>
 			<button
-				class="navbar-toggler text-uppercase font-weight-bold bg-primary text-black rounded"
+				class="navbar-toggler text-uppercase font-weight-bold bg-white text-black rounded"
 				type="button" data-bs-toggle="collapse"
 				data-bs-target="#navbarResponsive" aria-controls="navbarResponsive"
 				aria-expanded="false" aria-label="Toggle navigation"

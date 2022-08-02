@@ -13,8 +13,8 @@
 		select count(*) as member_auth, member_grade from member where member_id=#{member_id} and member_pw=#{member_pw}
 	</select> -->
 	
-	<select id="loginMember" parameterType="map" resultType="map">
-		select count(*) as member_auth, member_grade, midx from fm_member where member_id=#{member_id} and member_pw=#{member_pw};
+	<select id="loginMember" parameterType="string" resultType="memberVo">
+		select * from fm_member where member_id=#{member_id};
 	</select>
 	
 	<select id="getMemberInfo" parameterType="string" resultType="memberVo">
@@ -53,7 +53,7 @@
 	</update>
 	
 	<select id="checkPw" parameterType="memberVo" resultType="int">
-		select count(*) from fm_member where member_pw = #{now_pw} and midx=#{midx}
+		select count(*) from fm_member where midx=#{midx}
 	</select>
 		
 	<!-- 비밀번호 수정 -->

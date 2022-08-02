@@ -4,12 +4,14 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.PropertySource;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -17,6 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import ezen.dev.spring.service.AjaxService;
 import ezen.dev.spring.service.CartService;
+import ezen.dev.spring.service.MemberService;
 import ezen.dev.spring.vo.CartVo;
 import ezen.dev.spring.vo.MemberVo;
 
@@ -40,6 +43,16 @@ public class AjaxController {
 		this.cartService = cartService;
 		
 	} 
+	
+	private MemberService memberService;
+	
+	@Autowired
+	public void setMemberService(MemberService memberService){
+		this.memberService = memberService;
+	}
+	
+    @Inject
+    PasswordEncoder passwordEncoder;
 	
 	@PostMapping("/checkId.do")
 	public String checkId(@RequestParam("member_id") String id) {
@@ -68,18 +81,19 @@ public class AjaxController {
 		return result;
 	}
 	@PostMapping("/checkPw.do")
-	public String checkPw(MemberVo memberVo, @RequestParam("now_pw") String pw, HttpServletRequest request) {
+	public String checkPw(@RequestParam("now_pw") String pw, HttpServletRequest request) {
 		HttpSession session = request.getSession();
 		String result="N"; 
-		
-		memberVo.setNow_pw(pw);
+		String member_id=(String) session.getAttribute("member_id");
+		MemberVo memberVo = memberService.getMemberInfo(member_id);
+		if(passwordEncoder.matches(pw, memberVo.getMember_pw())) {
 		Integer midx_ =Integer.parseInt(String.valueOf(session.getAttribute("midx")));
 		memberVo.setMidx(midx_);
 		
 		int flag = ajaxService.checkPw(memberVo);
 		
 		if(flag == 1) result = "Y";
-		
+		}
 		return result;
 	}
 	
