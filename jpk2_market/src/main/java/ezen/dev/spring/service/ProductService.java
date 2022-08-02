@@ -33,5 +33,10 @@ public class ProductService {
 
 		return productDao.getProductListType(p_type);
 	}
+
+	public List<ProductVo> getProductListNew() {
+
+		return productDao.getProductListNew();
+	}
 	
 }

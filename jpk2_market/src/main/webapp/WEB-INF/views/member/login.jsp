@@ -199,25 +199,6 @@ catch(err){
 </head>
 <!-- 헤더연결 -->
 <jsp:include page="../header.jsp"></jsp:include>
-<!-- <script>
-  function check_login(){  
-  var fm = document.frmt;   
-  if (fm.member_id.value==""){
-  		alert("아이디를 입력해주세요");
-  		fm.member_id.focus();
-  		return;
-  }else if (fm.member_pw.value==""){
-  		alert("비밀번호를 입력해주세요");
-  		fm.member_pw.focus();
-  		return;
-  }
-  		fm.action = "<%=request.getContextPath()%>/loginProcess.do";
-  		fm.method = "post";
-  		fm.submit();  
-  
-    return;
-  }  
-</script> -->
 <body oncontextmenu='return false' class='snippet-body'>
 	<div id="body_inner">
 		<div id="wrapper_inner">

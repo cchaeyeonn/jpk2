@@ -196,7 +196,7 @@ function cart(){
 
 
 				</ul></li>
-			<li style="float: left;"><a href="#">신상품</a></li>
+			<li style="float: left;"><a href="/spring/productList_new.do">신상품</a></li>
 			<li style="float: left;"><a href="#">베스트</a></li>
 			<li style="float: left;"><a href="#">알뜰쇼핑</a></li>
 			<li style="float: left;"><a href="#">특가/혜택</a></li>

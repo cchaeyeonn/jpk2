@@ -13,5 +13,7 @@
 		<select id="getProductListType" parameterType="String" resultType="productVo">
 		select * from fm_product where p_delyn='N' and p_type=#{p_type}
 	</select>
-
+	<select id="getProductListNew" resultType="productVo">
+		select * from fm_product where p_delyn='N' order by pidx desc
+	</select>
 </mapper>

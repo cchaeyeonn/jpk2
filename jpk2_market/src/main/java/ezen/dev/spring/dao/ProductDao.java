@@ -34,6 +34,11 @@ public class ProductDao {
 
 		return sqlSession.selectList(MAPPER+".getProductListType", p_type);
 	}
+
+	public List<ProductVo> getProductListNew() {
+
+		return sqlSession.selectList(MAPPER+".getProductListNew");
+	}
 	
 
 
