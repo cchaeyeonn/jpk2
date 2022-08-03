@@ -58,11 +58,13 @@
 	$(function() {
 		$(document).on('click', '#member_addr', function() {
 			if ($("#member_addr").prop("checked")) {
+				$("#member_toMember").val("${memberVo.member_name}");
 				$("#postcode").val("${memberVo.member_addrcode}");
 				$("#member_addr_1").val("${memberVo.member_addr1}");
 				$("#member_addr_2").val("${memberVo.member_addr2}");
 
 			} else {
+				$("#member_toMember").val("");
 				$("#postcode").val("");
 				$("#member_addr_1").val("");
 				$("#member_addr_2").val("");
@@ -249,6 +251,11 @@ function cart(){
 							<td><label for="member_addr"> <input type="checkbox"
 									id="member_addr" name="member_addr">기본 배송지 입력
 							</label></td>
+						</tr>
+						<tr>
+							<td class="td_info_l"></td>
+							<td><input type="text" id="member_toMember" name="member_toMember"
+								placeholder="받는 사람" ></td>
 						</tr>
 						<tr>
 							<td class="td_info_l"></td>
