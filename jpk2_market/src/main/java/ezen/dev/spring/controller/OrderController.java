@@ -111,8 +111,13 @@ public class OrderController {
 		return "order/orderList";
 	}
 	
-	@PostMapping("/orderListDetail.do")
-	public String orderListDetail() {
+	@GetMapping("/orderListDetail.do")
+	public String orderListDetail(@RequestParam("order_id") String order_id, Model model, HttpServletRequest request) {
+		OrderVo orderVo = orderService.getOrderDetail(order_id);
+		//String[] pidx = orderVo.getP_name()
+		
+		
+		
 		
 		return "order/orderListDetail";
 	}
