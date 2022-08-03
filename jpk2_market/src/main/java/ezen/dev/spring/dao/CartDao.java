@@ -56,9 +56,9 @@ public class CartDao {
 
 		return sqlSession.selectList(MAPPER+".getSomeCartList", pbidxList);
 	}
-	public int del_Cart(int midx_mc) {
+	public int del_Cart(OrderVo orderVo) {
 		
-		return sqlSession.update(MAPPER+".del_Cart", midx_mc);
+		return sqlSession.update(MAPPER+".del_Cart", orderVo);
 	}	 
   
      
