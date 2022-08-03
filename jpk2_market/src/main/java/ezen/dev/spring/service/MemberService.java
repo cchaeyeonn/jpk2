@@ -117,7 +117,8 @@ public class MemberService {
 	public int setTempPw(MemberVo memberVo) throws Exception{
 		
 		String key = new TempKey().generateKey(6);
-		memberVo.setMember_pw(key);
+		String encodedPassword = passwordEncoder.encode(key);
+		memberVo.setMember_pw(encodedPassword);
 		String name = memberVo.getMember_id();
 		MailHandler sendMail = new MailHandler(mailSender);
 		sendMail.setSubject("[JPK2]"+name+"님께서 요청하신 임시 비밀번호가 생성되었습니다.");
