@@ -4,14 +4,7 @@
         var inputValue;
         var ctx = getContextPath();
         
-        var addr1;
-        var addr2;
-        var addrcode;
-        $("#member_addr_2").change(function(){
-        addr1 = $("#member_addr_1").val();
-        addr2 = $("#member_addr_2").val();
-        addrcode = $("#postcode").val();
-        });
+        
   		function getContextPath() {
  		 return sessionStorage.getItem("contextpath");
 		 }
@@ -45,6 +38,7 @@
                   addr1 = $("#member_addr_1").val();
                   addr2 = $("#member_addr_2").val();
                   postcode = $("#postcode").val();
+                  member_email = $("#member_email").val();
     		          if($("#member_addr_2").val() == ""){
     		           result = "상세주소를 입력해주세요";
     			       $("#result_member_addr").html(result).css("color", "red");
@@ -86,7 +80,7 @@
           merchant_uid: "merchant_"+ new Date().getTime(),
           name: "이니시스_jpk2",
           amount: price,
-          buyer_email: "kick8057@naver.com",
+          buyer_email: member_email,
           buyer_name: member_name,
           buyer_tel: "010-4457-8057",
           buyer_addr: addr1+addr2,
@@ -118,7 +112,7 @@
             		  ["merchant_uid",rsp.merchant_uid],
             		  ["addr1",addr1],
             		  ["addr2",addr2],
-            		  ["addrcode",addrcode]
+            		  ["addrcode",postcode]
             		  
                 ]
           
@@ -144,7 +138,7 @@
             		  ["merchant_uid",rsp.merchant_uid],
             		  ["addr1",addr1],
             		  ["addr2",addr2],
-            		  ["addrcode",addrcode]
+            		  ["addrcode",postcode]
             		  
                 ]
           

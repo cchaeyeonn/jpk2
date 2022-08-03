@@ -232,10 +232,11 @@ function cart(){
 					<tr>
 						<td class="td_info_l">이메일</td>
 						<td class="td_info_r">${memberVo.member_email}</td>
+						
 					</tr>
 				</table>
 			</div>
-
+				<input type="hidden" id ="member_email" value="${memberVo.member_email}">
 
 			<div id="delivery-info" style="margin-top: 30px;">
 				<!-- 지도 api와 jQuery를 이용해서 정보를 기입하기 -->
