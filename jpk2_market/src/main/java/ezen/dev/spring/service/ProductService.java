@@ -38,5 +38,9 @@ public class ProductService {
 
 		return productDao.getProductListNew();
 	}
+
+	public List<ProductVo> getProductListBest() {
+		return productDao.getProductListBest();
+	}
 	
 }

@@ -20,8 +20,37 @@ public class OrderVo {
 	private int midx_mo;
 	private int pbidx_co;
 	private String order_id;
+	private String vbank_num;
+	private String vbank_name;
+	private String vbank_holder;
+	private String vbank_date;
 	
 	
+	
+	public String getVbank_num() {
+		return vbank_num;
+	}
+	public void setVbank_num(String vbank_num) {
+		this.vbank_num = vbank_num;
+	}
+	public String getVbank_name() {
+		return vbank_name;
+	}
+	public void setVbank_name(String vbank_name) {
+		this.vbank_name = vbank_name;
+	}
+	public String getVbank_holder() {
+		return vbank_holder;
+	}
+	public void setVbank_holder(String vbank_holder) {
+		this.vbank_holder = vbank_holder;
+	}
+	public String getVbank_date() {
+		return vbank_date;
+	}
+	public void setVbank_date(String vbank_date) {
+		this.vbank_date = vbank_date;
+	}
 	public String getOrder_id() {
 		return order_id;
 	}

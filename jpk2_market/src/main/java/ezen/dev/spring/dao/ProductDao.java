@@ -39,6 +39,10 @@ public class ProductDao {
 
 		return sqlSession.selectList(MAPPER+".getProductListNew");
 	}
+
+	public List<ProductVo> getProductListBest() {
+		return sqlSession.selectList(MAPPER+".getProductListBest");
+	}
 	
 
 
