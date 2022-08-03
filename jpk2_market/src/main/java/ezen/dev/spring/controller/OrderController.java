@@ -146,6 +146,7 @@ public class OrderController {
 			 orderpay_check = "Y"; 
 			
 			
+			
 		}else {
 			 orderpay_check = "N";
 		};
