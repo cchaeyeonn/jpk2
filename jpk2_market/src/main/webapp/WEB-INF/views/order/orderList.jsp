@@ -115,7 +115,6 @@ width:8%;
       <tr>
          
          <td id="td1">주문 번호</td>
-         <td id="td2">주문 상품</td>
          <td id="td3">주문 가격</td>
          <td id="td4">결제 상태</td>
          <td id="td5">주문 일</td>
@@ -126,13 +125,13 @@ width:8%;
       <script>
 		$(function(){
 			if("${orderVo.orderpay_check}"=="Y"){
-				$("#orderpay_check").text("결제 완료");
+				$("#${orderVo.order_id}_orderpay_check").text("결제 완료");
 			}else if("${orderVo.orderpay_check}"=="W"){
-				$("#orderpay_check").text("결제 대기");
+				$("#${orderVo.order_id}_orderpay_check").text("결제 대기");
 			}else if("${orderVo.orderpay_check}"=="F"){
-				$("#orderpay_check").text("결제 실패");
+				$("#${orderVo.order_id}_orderpay_check").text("결제 실패");
 			}else{
-				$("#orderpay_check").text("주문 중 오류");
+				$("#${orderVo.order_id}_orderpay_check").text("주문 중 오류");
 			}
 		})
 		</script>
@@ -140,13 +139,10 @@ width:8%;
     	<tr id="target">
    			
    			<td id="td1">${orderVo.order_id }</td>
-   			<td id="td2">
-    			${orderVo.product }
-    		</td>
    	 		<td id="td3">
     			${orderVo.pay_price }
     		</td>
-   			<td id="td4"><span id="orderpay_check"></span></td>
+   			<td id="td4"><span id="${orderVo.order_id}_orderpay_check"></span></td>
     		<td id="td5">${orderVo.order_date}</td>
    		</tr>
      </c:forEach> 
