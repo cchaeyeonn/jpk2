@@ -43,7 +43,7 @@ public class MemberService {
 		memberDao.joinMember(memberVo);
 		
 		MailHandler sendMail = new MailHandler(mailSender);
-		sendMail.setSubject("서비스 이메일 인증");
+		sendMail.setSubject("[JPK2] 회원가입 인증 메일입니다.");
 		sendMail.setText(
 				new StringBuffer()
 				.append("<!DOCTYPE html>")
@@ -121,7 +121,7 @@ public class MemberService {
 
 		
 		MailHandler sendMail = new MailHandler(mailSender);
-		sendMail.setSubject("임시 비밀번호 안내");
+		sendMail.setSubject("[JPK2]+memberVo.getMember_name()+님께서 요청하신 임시 비밀번호가 생성되었습니다.");
 		sendMail.setText(
 				new StringBuffer()
 				.append("<h1>임시비밀번호가 주어집니다.</h1>")
@@ -136,7 +136,7 @@ public class MemberService {
 		return memberDao.setTempPw(memberVo);
 	}
 	
-
+	
 
 
 	public void setUpdatePw(MemberVo memberVo) {

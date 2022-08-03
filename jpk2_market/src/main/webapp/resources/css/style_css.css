@@ -10,50 +10,50 @@ user-select: none;
 
 /* 관리자 상품페이지 */
 #ad_productlist_inner {
-	min-height: 1040px;
-	padding-top: 230px;
-	text-align: center;
+   min-height: 1040px;
+   padding-top: 230px;
+   text-align: center;
 }
 
 #adl_button {
-	padding: 20px;
-	border-radius: 34px;
-	margin: 20px;
+   padding: 20px;
+   border-radius: 34px;
+   margin: 20px;
 }
 
 #product_t {
-	border: "2px";
-	width: "80%";
+   border: "2px";
+   width: "80%";
 }
 
 /* 관리자 메인화면 */
 #admin_home_inner{
-	min-height:1040px;
-	padding-top:230px;
-	text-align:center;
+   min-height:1040px;
+   padding-top:230px;
+   text-align:center;
 }
-	
+   
 #adh_button{
-	padding: 20px;
+   padding: 20px;
     border-radius: 34px;
     margin: 20px;
 }
-	
+   
 /* 관리자 회원리스트 */
 #ad_memberlist_inner{
-	min-height:1040px;
-	padding-top:230px;
-	text-align:center;
-	margin-left:320px;
-	margin-right:320px;
+   min-height:1040px;
+   padding-top:230px;
+   text-align:center;
+   margin-left:320px;
+   margin-right:320px;
 }
 
 #memberlist_table{
-	padding-left:285px;
+   padding-left:285px;
 }
 
 #adl_button{
-	padding: 20px;
+   padding: 20px;
     border-radius: 34px;
     margin: 20px;
 }
@@ -61,44 +61,44 @@ user-select: none;
 
 
 /* 카트메인,관리자 상품 추가 */
-#cart_inner{
-	min-height: 1040px;
-	padding-top: 200px;
-	padding-right:315px;
-	padding-left:315px;
-}
+ #cart_inner{
+   min-height: 1040px;
+   padding-top: 200px;
+   padding-right:315px;
+   padding-left:315px;
+} 
 #product{
-	padding-left:10%;
-	padding-right:10%; 
-	min-height:1250px; 
-	padding-top:260px;
+   padding-left:10%;
+   padding-right:10%; 
+   min-height:1250px; 
+   padding-top:260px;
 }
-		
+      
 #product_img{
-	float:left; 
-	width:50%; 
-	height:50%;
+   float:left; 
+   width:50%; 
+   height:50%;
 }
 #product_detail{
-	float:right; 
-	width:50%; 
-	height:50%;
+   float:right; 
+   width:50%; 
+   height:50%;
 }
 #home_button{
-	padding-left:10%; 
-	padding-right:10%; 
-	text-align:center; 
-	float:center;
+   padding-left:10%; 
+   padding-right:10%; 
+   text-align:center; 
+   float:center;
 }
 #target{
-	border-collapse : collapse;
-	width:100%;
-	height:100%;
+   border-collapse : collapse;
+   width:100%;
+   height:100%;
 }
 
 /* 카트메인 */
 #cart_delete{
-	border-color: #cdcdcd00;
+   border-color: #cdcdcd00;
     background-color: white;
     font-weight: bold;
     color: #198754;
