@@ -4,6 +4,75 @@
 <!DOCTYPE html>
 <html>
 <head>
+
+<style>
+
+#memberinfo_main_inner{
+    margin-left: 324px;
+    margin-top: 256px;
+    min-height: 1040px;
+}
+   
+#service_center_cate{
+   
+   /* padding-top:200px; */
+   width:194px;
+   float:left;
+}
+#service_1{
+  padding: 5px 0 35px 1px;
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 35px;
+    color: #333;
+    letter-spacing: -1px;
+    margin-top: -16px;
+    
+}
+
+#notice_sub{
+   border: 1px solid #f2f2f2;
+    border-bottom: 1;
+    FONT-WEIGHT: 100;
+    display: block;
+    overflow: hidden;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: -.3px;
+    padding: 0px -5px 3px 5px;
+    margin-left: -6px;
+    margin-right: 16px;
+    margin-top: -27px;
+}
+#open_info_modify{
+  border-bottom: 1px solid #f2f2f2;
+}
+#open_history{
+    border-bottom: 1px solid #f2f2f2;
+    border-bottom: 1px solid #f2f2f2;
+    background-color: #fafafa;
+    background-size: 6px 11px;
+    font-weight: 700;
+    color: #198754;
+}
+#td1{
+width:10%;
+
+}
+#td2{
+width:16%;
+
+}
+#td3{
+width:20%;
+
+}
+#td4{
+width:8%;
+
+}
+
+</style>
 <meta charset="UTF-8">
 <link href="resources/css/style_css.css" rel="stylesheet" />
 
@@ -23,35 +92,52 @@
 <body>
     <!-- 헤더 연결 -->
     <jsp:include page="../header.jsp"></jsp:include>
- 
-    <form>
     
-    <div id="cart_inner">
-    <h2 style="text-align:center;">주문 내역</h2>
-    <hr>
-    <div id="cart_1" style="float:left; margin-right:103px;">   
-    <table id="target">
-    <tr>
-    <td>주문 번호</td>
-    <td>주문 가격</td>
-    <td>결제 상태</td>
-    <td>주문 일자</td>
-    </tr>
-   <%--  <c:forEach items="${cartList}" var="cartVo" varStatus="status"> --%>
-    <tr id="${cartVo.pbidx}_product_target">
-    <td>12165451</td>
-    <td>
-    <!-- 금액 -->
-    <span class="price"><input type="hidden" id="${cartVo.pbidx}_price" value="${cartVo.p_price}"> ${cartVo.p_price}원</span>
-    </td>
-    <td>yes or yes</td>
-    <td>주문 일자</td>
-    </tr>
-<%--     </c:forEach> --%>
+     
+   <div id="memberinfo_main_inner">
+   <div id="service_center_cate">
+   <div id="service_1">마이페이지</div>
+      <div id="notice_sub">   
+      <a href="${pageContext.request.contextPath}/memberInfo.do" class="nav-link py-3 px-0 px-lg-3" id="open_info_modify">개인 정보 수정</a>
+      <a href="${pageContext.request.contextPath}/orderList.do" class="nav-link py-3 px-0 px-lg-3" id="open_history">주문 내역</a>
+      <a href="" class="nav-link py-3 px-0 px-lg-3" id="open_coupon">쿠폰</a>
+      <!-- <a href="/spring/qna_board.do" class="nav-link py-3 px-0 px-lg-3 rounded" id="open_qna" >1:1 문의</a> -->
+      </div>
+   </div>
+ 
+
+    
+    <div id="cart_inner2">
+    <h5 style="margin-top: 272px;">주문 내역</h5>
+
+<div id="table_button" style="width:962px;">
+   <table border="1" style="border-right:0px; border-left:0px; font-size: 14px; border-top: 2px solid #198754;" class="table table-hover">
+      <tr>
+         <td id="td1">주문 번호</td>
+         <td id="td2">주문 가격</td>
+         <td id="td3">결제 상태</td>
+         <td id="td4">주문 일</td>
+      </tr>
+      
+      <%-- <c:forEach items="${cartList}" var="cartVo" varStatus="status">  --%>
+    	<tr id="${cartVo.pbidx}_product_target">
+   			<td id="td1">12165451</td>
+   	 		<td id="td2">
+    			<span class="price"><input type="hidden" id="${cartVo.pbidx}_price" value="${cartVo.p_price}"> ${cartVo.p_price}원</span>
+    		</td>
+   			<td id="td3">yes or yes</td>
+    		<td id="td4">2022.08.03</td>
+   		</tr>
+    <%--  </c:forEach> --%>
     </table>
     </div>
-    </div>
-     </form>
+   </div>
+
+</div>
+
+
+
+   
     <!-- 푸터 연결 -->
     <jsp:include page="../footer.jsp"></jsp:include>
 </body>
