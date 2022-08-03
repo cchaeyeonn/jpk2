@@ -86,7 +86,19 @@ width:8%;
 </script>
 <!-- jquery 스크립트 -->
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
-<script src="${pageContext.request.contextPath}/resources/js/cart.js "></script>
+<script>
+$(function(){
+	if("${orderVo.orderpay_check}"=="Y"){
+		$("#orderpay_check").text("결제 완료");
+	}else if("${orderVo.orderpay_check}"=="W"){
+		$("#orderpay_check").text("결제 대기");
+	}else if("${orderVo.orderpay_check}"=="F"){
+		$("#orderpay_check").text("결제 실패");
+	}else{
+		$("#orderpay_check").text("주문 중 오류");
+	}
+})
+</script>
 
 </head>
 <body>
@@ -131,7 +143,7 @@ width:8%;
    	 		<td id="td3">
     			${orderVo.pay_price }
     		</td>
-   			<td id="td4">${orderVo.orderpay_check}</td>
+   			<td id="td4"><span id="orderpay_check"></span></td>
     		<td id="td5">${orderVo.order_date}</td>
    		</tr>
      </c:forEach> 
