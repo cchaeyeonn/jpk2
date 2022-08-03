@@ -93,7 +93,7 @@ width:8%;
     <!-- 헤더 연결 -->
     <jsp:include page="../header.jsp"></jsp:include>
     
-     
+<form>
    <div id="memberinfo_main_inner">
    <div id="service_center_cate">
    <div id="service_1">마이페이지</div>
@@ -135,9 +135,8 @@ width:8%;
 			}
 		})
 		</script>
-      
-    	<tr id="target">
-   			
+    
+    	<tr id="target"  onClick="location.href='${pageContext.request.contextPath}/orderListDetail.do?order=${orderVo.order_id}'">
    			<td id="td1">${orderVo.order_id }</td>
    	 		<td id="td3">
     			${orderVo.pay_price }
@@ -145,6 +144,7 @@ width:8%;
    			<td id="td4"><span id="${orderVo.order_id}_orderpay_check"></span></td>
     		<td id="td5">${orderVo.order_date}</td>
    		</tr>
+   		
      </c:forEach> 
     </table>
     </div>
@@ -154,7 +154,7 @@ width:8%;
 
 
 
-   
+   </form>
     <!-- 푸터 연결 -->
     <jsp:include page="../footer.jsp"></jsp:include>
 </body>
