@@ -141,6 +141,7 @@ public class MemberController {
 		
 		if(member_pw.length()==6) {
 			session.setAttribute("midx", midx);
+			session.setAttribute("member_id", member_id);
 			response.setContentType("text/html; charset=UTF-8");
 			response.setCharacterEncoding("UTF-8");
 			PrintWriter out=response.getWriter();

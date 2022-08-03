@@ -89,9 +89,7 @@ public class AjaxController {
 		Integer midx_ =Integer.parseInt(String.valueOf(session.getAttribute("midx")));
 		memberVo.setMidx(midx_);
 		if(passwordEncoder.matches(pw, memberVo.getMember_pw())) {
-		int flag = ajaxService.checkPw(memberVo);
-		
-		if(flag == 1) result = "Y";
+		result = "Y";
 		}
 		return result;
 	}
