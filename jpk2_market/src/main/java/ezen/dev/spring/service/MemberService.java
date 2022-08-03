@@ -119,7 +119,7 @@ public class MemberService {
 		String key = new TempKey().generateKey(6);
 		String encodedPassword = passwordEncoder.encode(key);
 		memberVo.setMember_pw(encodedPassword);
-		String name = memberVo.getMember_id();
+		String name = memberVo.getMember_name();
 		MailHandler sendMail = new MailHandler(mailSender);
 		sendMail.setSubject("[JPK2]"+name+"님께서 요청하신 임시 비밀번호가 생성되었습니다.");
 		sendMail.setText(

@@ -141,6 +141,7 @@ public class MemberController {
 		
 		if(member_pw.length()==6) {
 			session.setAttribute("midx", midx);
+			session.setAttribute("member_id", member_id);
 			response.setContentType("text/html; charset=UTF-8");
 			response.setCharacterEncoding("UTF-8");
 			PrintWriter out=response.getWriter();
@@ -221,8 +222,8 @@ public class MemberController {
 	}
 	
 	@RequestMapping(value="/findPwProcess.do",  method = RequestMethod.POST)
-	public String findPwProcess(MemberVo memberVo, HttpServletRequest request,@RequestParam("member_id") String member_id) throws Exception {
-	memberVo.setMember_id(member_id);
+	public String findPwProcess(MemberVo memberVo, HttpServletRequest request,@RequestParam("member_name") String member_name) throws Exception {
+	memberVo.setMember_name(member_name);
 	int set = memberService.setTempPw(memberVo);
 	if (set==0) {
 		return "member/memberFindPwFail";

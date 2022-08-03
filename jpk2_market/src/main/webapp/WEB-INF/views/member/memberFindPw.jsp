@@ -208,11 +208,17 @@ a:hover {
 
 <script>
   function check(){  
+<<<<<<< HEAD
 	var loading = false;
 	
   	var fm = document.frms;   
   	if (fm.member_id.value==""){
   		alert("아이디를 입력해주세요");
+=======
+  var fm = document.frms;   
+  if (fm.member_name.value==""){
+  		alert("이름 입력해주세요");
+>>>>>>> branch 'master' of https://github.com/cchaeyeonn/jpk2.git
   		fm.member_id.focus();
   		return;
   	}else if (fm.member_email.value==""){
@@ -232,8 +238,12 @@ a:hover {
   
   
 <script>
+<<<<<<< HEAD
 $(document).on('click','#trigger',function(){
 	if($("#member_id").val() != "",$("#member_email").val() != ""){
+=======
+$(document).on('click','#trigger',function(){if($("#member_name").val() != "",$("#member_email").val() != ""){
+>>>>>>> branch 'master' of https://github.com/cchaeyeonn/jpk2.git
         $("#trigger").hide();
         }});
 </script>
@@ -268,7 +278,7 @@ $(document).on('click','#trigger',function(){
 						<div class="input-field1">
 							<!-- <span class="far fa-user p-2"></span> -->
 								<!-- <input type="text" name="member_id" placeholder="아이디를 입력해주세요" required class=""> -->
-								<input type="text" id="member_id" name="member_id" size="30" placeholder="아이디를 입력해주세요">
+								<input type="text" id="member_name" name="member_name" size="30" placeholder="이름 입력해주세요">
 								
 						</div>
 					</div>
