@@ -208,28 +208,50 @@ a:hover {
 
 <script>
   function check(){  
-  var fm = document.frms;   
-  if (fm.member_id.value==""){
+<<<<<<< HEAD
+	var loading = false;
+	
+  	var fm = document.frms;   
+  	if (fm.member_id.value==""){
   		alert("아이디를 입력해주세요");
+=======
+  var fm = document.frms;   
+  if (fm.member_name.value==""){
+  		alert("이름 입력해주세요");
+>>>>>>> branch 'master' of https://github.com/cchaeyeonn/jpk2.git
   		fm.member_id.focus();
   		return;
-  }else if (fm.member_email.value==""){
+  	}else if (fm.member_email.value==""){
   		alert("이메일을 입력해주세요");
   		fm.member_email.focus();
   		return;
-  }
+  	}
+  		loading = true;
   		fm.action = "<%=request.getContextPath()%>/findPwProcess.do";
   		fm.method = "post";
   		fm.submit();  
+  		loading = false;
   
-    return;
+   	 return;
   }  
 </script>
   
   
 <script>
-$(document).on('click','#trigger',function(){if($("#member_id").val() != "",$("#member_email").val() != ""){
+<<<<<<< HEAD
+$(document).on('click','#trigger',function(){
+	if($("#member_id").val() != "",$("#member_email").val() != ""){
+=======
+$(document).on('click','#trigger',function(){if($("#member_name").val() != "",$("#member_email").val() != ""){
+>>>>>>> branch 'master' of https://github.com/cchaeyeonn/jpk2.git
         $("#trigger").hide();
+        }});
+</script>
+
+<script>
+$(document).on('click','#trigger',function(){
+	if($("#member_id").val() != "",$("#member_email").val() != ""){
+        $("#loadingbar").visible();
         }});
 </script>
 
@@ -256,7 +278,7 @@ $(document).on('click','#trigger',function(){if($("#member_id").val() != "",$("#
 						<div class="input-field1">
 							<!-- <span class="far fa-user p-2"></span> -->
 								<!-- <input type="text" name="member_id" placeholder="아이디를 입력해주세요" required class=""> -->
-								<input type="text" id="member_id" name="member_id" size="30" placeholder="아이디를 입력해주세요">
+								<input type="text" id="member_name" name="member_name" size="30" placeholder="이름 입력해주세요">
 								
 						</div>
 					</div>
@@ -283,8 +305,9 @@ $(document).on('click','#trigger',function(){if($("#member_id").val() != "",$("#
 					
 					
 					<input style="margin-top:20px;" type="button" id="trigger" class="btn btn-outline-success" value="확인" onclick="check();">
-					<!-- <i class="fas fa-spinner fa-10x fa-spin"></i> -->
-					<input style="margin-top:7px;" type="button" class="btn btn-outline-success" value="뒤로" onclick="location.href='login.do'">
+					<input type=text style="margin-top:7px; padding-left: 190px; padding-right: 193px;"class="btn btn-outline-success" value="뒤로" onclick="location.href='login.do'">
+					<input type="image" src="resources/img/loadingbar.gif" id="loadingbar" style="display:none; margin-top:7px; padding-left: 190px; padding-right: 193px;"class="btn btn-outline-success">
+					
 			
 				</form>
 			</div>

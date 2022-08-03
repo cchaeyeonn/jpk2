@@ -49,7 +49,7 @@
 		select * from fm_member where member_name=#{member_name} and member_email=#{member_email}
 	</select>
 	<update id="setTempPw">
-		update fm_member set member_pw=#{member_pw} where member_id=#{member_id} and member_email=#{member_email}
+		update fm_member set member_pw=#{member_pw} where member_name=#{member_name} and member_email=#{member_email}
 	</update>
 	
 	<select id="checkPw" parameterType="memberVo" resultType="int">
