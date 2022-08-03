@@ -25,8 +25,8 @@
 							$("#now_pw").val("").trigger("focus");
 						}else{
 							result = "";
-							$("#result_checkId").html(result).css("color", "red");
-							$("#member_id").trigger("focus");
+							$("#result_checkPw").html(result).css("color", "green");
+							$("#member_pw1").trigger("focus");
 						}
 					},
 					error: function(error){alert(error);}
@@ -46,7 +46,7 @@
            }
            
           else if(reg.test($("#member_password1").val())){
-        	  result = " ";
+        	  result = "";
    	       $("#result_password").html(result).css("color", "white");
           }
            return false;
