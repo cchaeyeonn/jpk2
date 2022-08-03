@@ -170,7 +170,7 @@ public class OrderController {
 			@RequestParam("pay_amount") int paid_amount,@RequestParam("pay_findate") Long pay_at,
 			@RequestParam("status") String pay_status,@RequestParam("merchant_uid") String merchant_uid,
 			@RequestParam("vbank_num") String vbank_num,@RequestParam("vbank_name") String vbank_name,
-			@RequestParam("vbank_holder") String vbank_holder,@RequestParam("vbank_date") Long vbank_date,
+			@RequestParam("vbank_holder") String vbank_holder,@RequestParam("vbank_date") String vbank_date,
 			HttpServletRequest request,Model model) {
 		HttpSession session = request.getSession();
 		
@@ -187,12 +187,12 @@ public class OrderController {
 	
 	int midx_mo=Integer.parseInt(String.valueOf(session.getAttribute("midx")));
 	Long pay_findate = pay_at *1000;
-	Long vbank_date_ = vbank_date*1000;
+	
 	Date date = new Date(pay_findate);
-	Date bank_date = new Date(vbank_date_);
+	
 	SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 	String date_ = format.format(date);
-	String bank_date_ = format.format(bank_date);
+
 	System.out.println(date_);
 	String orderpay_check;
 	if(pay_status.equals("paid")) {
@@ -222,7 +222,7 @@ public class OrderController {
 	orderVo.setMidx_mo(midx_mo);
 	orderVo.setPbidx_co(pbidxList.get(i));	
 	orderVo.setOrder_id(merchant_uid);
-	orderVo.setVbank_date(bank_date_);
+	orderVo.setVbank_date(vbank_date);
 	orderVo.setVbank_holder(vbank_holder);
 	orderVo.setVbank_name(vbank_name);
 	orderVo.setVbank_num(vbank_num);
@@ -242,7 +242,7 @@ public class OrderController {
 	session.setAttribute("pidx_pc_arr", pidx_pc_arr);
 		
 		
-	model.addAttribute("bank_date", bank_date_);
+	model.addAttribute("bank_date", vbank_date);
 	model.addAttribute("bank_holder", vbank_holder);
 	model.addAttribute("bank_name", vbank_name);
 	model.addAttribute("bank_num", vbank_num);
