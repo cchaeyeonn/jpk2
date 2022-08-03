@@ -161,6 +161,7 @@ public class OrderController {
 		session.setAttribute("pidx_pc_arr", pidx_pc_arr);
 		
 		
+	
 		return "order/orderSuccess";
 	}
 	

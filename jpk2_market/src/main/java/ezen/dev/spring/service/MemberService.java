@@ -117,18 +117,18 @@ public class MemberService {
 	public int setTempPw(MemberVo memberVo) throws Exception{
 		
 		String key = new TempKey().generateKey(6);
-		memberVo.setMember_pw(key);
-
-		
+		String encodedPassword = passwordEncoder.encode(key);
+		memberVo.setMember_pw(encodedPassword);
+		String name = memberVo.getMember_id();
 		MailHandler sendMail = new MailHandler(mailSender);
-		sendMail.setSubject("[JPK2]+memberVo.getMember_name()+님께서 요청하신 임시 비밀번호가 생성되었습니다.");
+		sendMail.setSubject("[JPK2]"+name+"님께서 요청하신 임시 비밀번호가 생성되었습니다.");
 		sendMail.setText(
 				new StringBuffer()
 				.append("<h1>임시비밀번호가 주어집니다.</h1>")
 				.append("임시비밀번호로 로그인 후 반드시 비밀번호를 변경해주세요.<p/>")
 				.append("임시비밀번호:")
 				.append(key)
-				.append("<a href='http://localhost:8080/spring/login.do'>로그인</a>")
+				.append("<a href='http://localhost:8090/spring/login.do'>로그인</a>")
 				.toString());
 		sendMail.setFrom("zoszo@jbnu.ac.kr", "jpk2");
 		sendMail.setTo(memberVo.getMember_email());
