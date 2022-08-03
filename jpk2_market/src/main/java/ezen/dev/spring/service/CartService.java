@@ -52,8 +52,8 @@ public class CartService {
 
 
 
-	public int del_cart(int midx_mc) {
-		return cartDao.del_Cart(midx_mc);
+	public int del_cart(OrderVo orderVo) {
+		return cartDao.del_Cart(orderVo);
 		
 		
 	}

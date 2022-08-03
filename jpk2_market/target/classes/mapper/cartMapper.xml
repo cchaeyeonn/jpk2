@@ -52,8 +52,8 @@
 	</select>
 	
 
-	<update id="del_Cart" parameterType="int">
-		update fm_product_cart set p_check = "Y" where midx_mc=#{midx_mc} and p_check='N'
+	<update id="del_Cart" parameterType="orderVo">
+		update fm_product_cart set p_check = "Y" where midx_mc=#{midx_mo} and pbidx=#{pbidx_co} and p_check='N'
 	</update>
 
 </mapper>

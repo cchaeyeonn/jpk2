@@ -148,13 +148,12 @@ public class OrderController {
 		orderVo.setPbidx_co(pbidxList.get(i));	
 		orderVo.setOrder_id(merchant_uid);
 		orderService.add_order(orderVo);
+		cartService.del_cart(orderVo);
 		}
-		cartService.del_cart(midx_mo);
+		
 		int count = cartService.cart_count(midx_mo);
 		session.setAttribute("result_", count);
 		pbidxList.removeAll(pbidxList);
-		for(Integer mmm : pbidxList) {
-			System.out.println("pbidx: "+ mmm);}
 		session.setAttribute("pbidxList", pbidxList);
 		pidx_pc_arr = cartService.cart_pidx_pc(midx_mo);
 		for(Integer mmm : pidx_pc_arr) {
@@ -228,8 +227,9 @@ public class OrderController {
 	orderVo.setVbank_num(vbank_num);
 	
 	orderService.add_order(orderVo);
+	cartService.del_cart(orderVo);
 	}
-	cartService.del_cart(midx_mo);
+	
 	int count = cartService.cart_count(midx_mo);
 	session.setAttribute("result_", count);
 	pbidxList.removeAll(pbidxList);
