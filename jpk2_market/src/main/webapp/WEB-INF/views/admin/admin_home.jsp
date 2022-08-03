@@ -80,7 +80,7 @@ function order(){
    <div id="admin_center_cate">
    <div id="admin_1">관리자 페이지</div>
       <div id="admin_sub">   
-      <a href="" class="nav-link py-3 px-0 px-lg-3" id="open_admin">통계</a>
+      <a href="${pageContext.request.contextPath}/admin.do" class="nav-link py-3 px-0 px-lg-3" id="open_admin">통계</a>
       <a href="${pageContext.request.contextPath}/productAdd.do" class="nav-link py-3 px-0 px-lg-3" id="admin_button">상품등록페이지</a>
       <a href="${pageContext.request.contextPath}/adminProductList.do" class="nav-link py-3 px-0 px-lg-3" id="admin_button">내가 등록한 상품목록</a>
       <a href="${pageContext.request.contextPath}/orderList.do" class="nav-link py-3 px-0 px-lg-3" id="admin_button">주문내역</a>
