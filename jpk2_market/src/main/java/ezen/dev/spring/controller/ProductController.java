@@ -67,6 +67,14 @@ public class ProductController {
 		
 		return "product/product_list_type";
 	}
+	@GetMapping("/productList_best.do")
+	public String getProductList_best(Model model) {
+		List<ProductVo> productList = productService.getProductListBest();
+		
+		model.addAttribute("productList",productList);
+		
+		return "product/product_list_type";
 	}
 	
+}
 

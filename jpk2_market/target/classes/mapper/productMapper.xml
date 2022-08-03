@@ -16,4 +16,7 @@
 	<select id="getProductListNew" resultType="productVo">
 		select * from fm_product where p_delyn='N' order by pidx desc
 	</select>
+	<select id="getProductListBest" resultType="productVo">
+	select *,sum(p_amount) as count from fm_product_cart a inner join fm_product b on a.pidx_pc = b.pidx where p_check like 'Y' group by(pidx_pc) order by count desc;
+	</select>
 </mapper>
