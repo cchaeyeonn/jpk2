@@ -4,8 +4,14 @@
         var inputValue;
         var ctx = getContextPath();
         
-       
-        
+        var addr1;
+        var addr2;
+        var addrcode;
+        $("#member_addr_2").change(function(){
+        addr1 = $("#member_addr_1").val();
+        addr2 = $("#member_addr_2").val();
+        addrcode = $("#postcode").val();
+        });
   		function getContextPath() {
  		 return sessionStorage.getItem("contextpath");
 		 }
@@ -77,7 +83,7 @@
       IMP.request_pay({ // param
           pg: "html5_inicis",
           pay_method: inputValue,
-          merchant_uid:  new Date().getTime(),
+          merchant_uid: "merchant_"+ new Date().getTime(),
           name: "이니시스_jpk2",
           amount: price,
           buyer_email: "kick8057@naver.com",
@@ -88,8 +94,10 @@
       }, function (rsp) { // callback
           if (rsp.success) {
         	// 결제 성공 시 로직,
-        	  var msg = '결제가 완료되었습니다.';
-        	  alert(msg);
+        	  
+          	 var msg = '결제가 완료되었습니다.';
+        
+      		  alert(msg);
         	  
         	  alert(rsp.pay_method);
         	  var method = rsp.pay_method;
@@ -107,7 +115,10 @@
         			  ["pay_amount",rsp.paid_amount],
             		  ["pay_findate",rsp.paid_at],
             		  ["status",rsp.status],
-            		  ["merchant_uid",rsp.merchant_uid]
+            		  ["merchant_uid",rsp.merchant_uid],
+            		  ["addr1",addr1],
+            		  ["addr2",addr2],
+            		  ["addrcode",addrcode]
             		  
                 ]
           
@@ -130,7 +141,10 @@
             		  ["vbank_holder",rsp.vbank_holder],
             		  ["vbank_date",rsp.vbank_date],
             		  ["status",rsp.status],
-            		  ["merchant_uid",rsp.merchant_uid]
+            		  ["merchant_uid",rsp.merchant_uid],
+            		  ["addr1",addr1],
+            		  ["addr2",addr2],
+            		  ["addrcode",addrcode]
             		  
                 ]
           
@@ -141,6 +155,11 @@
 	
 	
 			}
+        
+        
+        
+        	  
+        	  
               
               
           } else {

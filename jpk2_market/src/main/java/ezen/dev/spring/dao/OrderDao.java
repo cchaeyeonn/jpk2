@@ -34,6 +34,11 @@ public class OrderDao {
 	public List<OrderVo> getOrderList(Integer midx) {
 		return sqlSession.selectList(MAPPER+".getOrderList",midx);
 	}
+
+	public int getoidx(OrderVo orderVo) {
+		
+		return sqlSession.selectOne(MAPPER+".getoidx", orderVo);
+	}
 	
 
 

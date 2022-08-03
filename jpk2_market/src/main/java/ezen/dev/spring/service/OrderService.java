@@ -28,6 +28,12 @@ public class OrderService {
 		
 		return orderDao.getOrderList(midx);
 	}
+
+	public int getoidx(OrderVo orderVo) {
+		
+		return orderDao.getoidx(orderVo);
+		
+	}
 	
 
 }

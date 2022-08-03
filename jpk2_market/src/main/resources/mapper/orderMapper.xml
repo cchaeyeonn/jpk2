@@ -17,6 +17,11 @@
 		 values(#{pay_way}, #{p_check}, #{p_price},#{pay_findate},#{midx_mo},#{pbidx_co},#{order_id},#{vbank_num},#{vbank_name},#{vbank_holder},#{vbank_date})
 	</insert>
     
-    
-
+   
+	<select id="getoidx" resultType="int">
+		select oidx from fm_order where pbidx_co=#{pbidx_co}
+	</select>   
+   
+   
+   
 </mapper>

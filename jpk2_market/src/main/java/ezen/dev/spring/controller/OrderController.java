@@ -22,9 +22,11 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import ezen.dev.spring.service.CartService;
+import ezen.dev.spring.service.DelService;
 import ezen.dev.spring.service.MemberService;
 import ezen.dev.spring.service.OrderService;
 import ezen.dev.spring.vo.CartVo;
+import ezen.dev.spring.vo.DelVo;
 import ezen.dev.spring.vo.MemberVo;
 import ezen.dev.spring.vo.OrderVo;
 
@@ -51,6 +53,13 @@ public class OrderController {
 	@Autowired
 	public void setCartService(CartService cartService) {
 		this.cartService = cartService;
+	}
+	
+	private DelService delService;
+	
+	@Autowired
+	public void setDelService(DelService delService) {
+		this.delService = delService;
 	}
 	
 	
@@ -112,6 +121,7 @@ public class OrderController {
 	public String orderSuccess(@RequestParam("pay_method") String pay_method, 
 			@RequestParam("pay_amount") int paid_amount,@RequestParam("pay_findate") Long pay_at,
 			@RequestParam("status") String pay_status,@RequestParam("merchant_uid") String merchant_uid,
+			@RequestParam("addr1") String addr1,@RequestParam("addr2") String addr2,@RequestParam("addrcode") String addrcode,
 			HttpServletRequest request) {
 		HttpSession session = request.getSession();
 		
@@ -142,7 +152,7 @@ public class OrderController {
 		
 		
 		OrderVo orderVo = new OrderVo();
-		
+		DelVo delVo = new DelVo();
 		for(int i=0; i<pbidxList.size();i++) {
 		
 		
@@ -155,6 +165,12 @@ public class OrderController {
 		orderVo.setOrder_id(merchant_uid);
 		orderService.add_order(orderVo);
 		cartService.del_cart(orderVo);
+		int oidx = orderService.getoidx(orderVo);
+		delVo.setOidx_od(oidx);
+		delVo.setD_addr1(addr1);
+		delVo.setD_addr2(addr2);
+		delVo.setD_addrcode(addrcode);
+		delService.add_Del(delVo);
 		}
 		
 		int count = cartService.cart_count(midx_mo);
@@ -175,6 +191,7 @@ public class OrderController {
 	public String orderWaiting(@RequestParam("pay_method") String pay_method, 
 			@RequestParam("pay_amount") int paid_amount,@RequestParam("pay_findate") Long pay_at,
 			@RequestParam("status") String pay_status,@RequestParam("merchant_uid") String merchant_uid,
+			@RequestParam("addr1") String addr1,@RequestParam("addr2") String addr2,@RequestParam("addrcode") String addrcode,
 			@RequestParam("vbank_num") String vbank_num,@RequestParam("vbank_name") String vbank_name,
 			@RequestParam("vbank_holder") String vbank_holder,@RequestParam("vbank_date") String vbank_date,
 			HttpServletRequest request,Model model) {
@@ -217,7 +234,7 @@ public class OrderController {
 	
 	
 	OrderVo orderVo = new OrderVo();
-	
+	DelVo delVo = new DelVo();
 	for(int i=0; i<pbidxList.size();i++) {
 	
 	
@@ -235,6 +252,12 @@ public class OrderController {
 	
 	orderService.add_order(orderVo);
 	cartService.del_cart(orderVo);
+	int oidx = orderService.getoidx(orderVo);
+	delVo.setOidx_od(oidx);
+	delVo.setD_addr1(addr1);
+	delVo.setD_addr2(addr2);
+	delVo.setD_addrcode(addrcode);
+	delService.add_Del(delVo);
 	}
 	
 	int count = cartService.cart_count(midx_mo);
