@@ -53,13 +53,13 @@
 		</tr>
 		
 		<tr>
-		<td>${bank_date }
+		<td>${bank_name }
 		</td>
 		<td>${bank_holder }
 		</td>
-		<td>${bank_name }
-		</td>
 		<td>${bank_num }
+		</td>
+		<td>${bank_date }
 		</td>
 		</tr>
 		</table>
