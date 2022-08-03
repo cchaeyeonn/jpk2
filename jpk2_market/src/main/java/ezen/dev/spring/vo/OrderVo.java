@@ -24,9 +24,46 @@ public class OrderVo {
 	private String vbank_name;
 	private String vbank_holder;
 	private String vbank_date;
+	private int pay_price;
+	private String orderpay_check;
+	private String pay_delyn;
+	private int num;
+	private String product;
 	
 	
 	
+	
+	
+	public int getNum() {
+		return num;
+	}
+	public void setNum(int num) {
+		this.num = num;
+	}
+	public String getProduct() {
+		return product;
+	}
+	public void setProduct(String product) {
+		this.product = product;
+	}
+	public int getPay_price() {
+		return pay_price;
+	}
+	public void setPay_price(int pay_price) {
+		this.pay_price = pay_price;
+	}
+	public String getOrderpay_check() {
+		return orderpay_check;
+	}
+	public void setOrderpay_check(String orderpay_check) {
+		this.orderpay_check = orderpay_check;
+	}
+	public String getPay_delyn() {
+		return pay_delyn;
+	}
+	public void setPay_delyn(String pay_delyn) {
+		this.pay_delyn = pay_delyn;
+	}
 	public String getVbank_num() {
 		return vbank_num;
 	}

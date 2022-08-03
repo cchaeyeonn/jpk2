@@ -113,22 +113,28 @@ width:8%;
 <div id="table_button" style="width:962px;">
    <table border="1" style="border-right:0px; border-left:0px; font-size: 14px; border-top: 2px solid #198754;" class="table table-hover">
       <tr>
+         
          <td id="td1">주문 번호</td>
-         <td id="td2">주문 가격</td>
-         <td id="td3">결제 상태</td>
-         <td id="td4">주문 일</td>
+         <td id="td2">주문 상품</td>
+         <td id="td3">주문 가격</td>
+         <td id="td4">결제 상태</td>
+         <td id="td5">주문 일</td>
       </tr>
       
-      <%-- <c:forEach items="${cartList}" var="cartVo" varStatus="status">  --%>
-    	<tr id="${cartVo.pbidx}_product_target">
-   			<td id="td1">12165451</td>
-   	 		<td id="td2">
-    			<span class="price"><input type="hidden" id="${cartVo.pbidx}_price" value="${cartVo.p_price}"> ${cartVo.p_price}원</span>
+      <c:forEach items="${orderList}" var="orderVo" varStatus="status">  
+    	<tr id="target">
+   			
+   			<td id="td1">${orderVo.order_id }</td>
+   			<td id="td2">
+    			${orderVo.pbidx_co }
     		</td>
-   			<td id="td3">yes or yes</td>
-    		<td id="td4">2022.08.03</td>
+   	 		<td id="td3">
+    			${orderVo.pay_price }
+    		</td>
+   			<td id="td4">${orderVo.orderpay_check}</td>
+    		<td id="td5">${orderVo.order_date}</td>
    		</tr>
-    <%--  </c:forEach> --%>
+     </c:forEach> 
     </table>
     </div>
    </div>

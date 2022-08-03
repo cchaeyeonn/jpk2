@@ -30,6 +30,10 @@ public class OrderDao {
 		
 		return sqlSession.insert(MAPPER+".add_order", orderVo);
 	}
+
+	public List<OrderVo> getOrderList(Integer midx) {
+		return sqlSession.selectList(MAPPER+".getOrderList",midx);
+	}
 	
 
 

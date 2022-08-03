@@ -4,14 +4,17 @@
 
 <mapper namespace = "ezen.dev.spring.order">
 
-	
+	<select id="getOrderList"  parameterType="Integer" resultType="orderVo">
+		
+		select row_number() over(order by order_id desc) as num, order_id , group_concat(pbidx_co) as product , pay_price , pay_way , orderpay_check , pay_findate , order_date , midx_mo  from fm_order where midx_mo=#{midx} group by order_id;
+	</select>
 	
 
 	
 
     <insert id="add_order" parameterType="orderVo">
-		insert into fm_order(pay_way,orderpay_check,pay_price,pay_findate,midx_mo,pbidx_co,order_id) 
-		 values(#{pay_way}, #{p_check}, #{p_price},#{pay_findate},#{midx_mo},#{pbidx_co},#{order_id})
+		insert into fm_order(pay_way,orderpay_check,pay_price,pay_findate,midx_mo,pbidx_co,order_id,vbank_num,vbank_name,vbank_holder,vbank_date) 
+		 values(#{pay_way}, #{p_check}, #{p_price},#{pay_findate},#{midx_mo},#{pbidx_co},#{order_id},#{vbank_num},#{vbank_name},#{vbank_holder},#{vbank_date})
 	</insert>
     
     

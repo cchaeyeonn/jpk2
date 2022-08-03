@@ -91,7 +91,13 @@ public class OrderController {
 	
 	}
 	@GetMapping("/orderList.do")
-	public String orderList() {
+	public String orderList(Model model, HttpServletRequest request) {
+		
+		HttpSession session = request.getSession();
+		Integer midx =Integer.parseInt(String.valueOf(session.getAttribute("midx")));
+		
+		List<OrderVo> orderList = orderService.getOrderList(midx);		
+		model.addAttribute("orderList", orderList);
 		
 		return "order/orderList";
 	}

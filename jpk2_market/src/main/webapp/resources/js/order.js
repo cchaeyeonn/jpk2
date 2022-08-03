@@ -77,7 +77,7 @@
       IMP.request_pay({ // param
           pg: "html5_inicis",
           pay_method: inputValue,
-          merchant_uid: 'merchant_' + new Date().getTime(),
+          merchant_uid:  new Date().getTime(),
           name: "이니시스_jpk2",
           amount: price,
           buyer_email: "kick8057@naver.com",
