@@ -208,28 +208,40 @@ a:hover {
 
 <script>
   function check(){  
-  var fm = document.frms;   
-  if (fm.member_id.value==""){
+	var loading = false;
+	
+  	var fm = document.frms;   
+  	if (fm.member_id.value==""){
   		alert("아이디를 입력해주세요");
   		fm.member_id.focus();
   		return;
-  }else if (fm.member_email.value==""){
+  	}else if (fm.member_email.value==""){
   		alert("이메일을 입력해주세요");
   		fm.member_email.focus();
   		return;
-  }
+  	}
+  		loading = true;
   		fm.action = "<%=request.getContextPath()%>/findPwProcess.do";
   		fm.method = "post";
   		fm.submit();  
+  		loading = false;
   
-    return;
+   	 return;
   }  
 </script>
   
   
 <script>
-$(document).on('click','#trigger',function(){if($("#member_id").val() != "",$("#member_email").val() != ""){
+$(document).on('click','#trigger',function(){
+	if($("#member_id").val() != "",$("#member_email").val() != ""){
         $("#trigger").hide();
+        }});
+</script>
+
+<script>
+$(document).on('click','#trigger',function(){
+	if($("#member_id").val() != "",$("#member_email").val() != ""){
+        $("#loadingbar").visible();
         }});
 </script>
 
@@ -283,8 +295,9 @@ $(document).on('click','#trigger',function(){if($("#member_id").val() != "",$("#
 					
 					
 					<input style="margin-top:20px;" type="button" id="trigger" class="btn btn-outline-success" value="확인" onclick="check();">
-					<!-- <i class="fas fa-spinner fa-10x fa-spin"></i> -->
-					<input style="margin-top:7px;" type="button" class="btn btn-outline-success" value="뒤로" onclick="location.href='login.do'">
+					<input type=text style="margin-top:7px; padding-left: 190px; padding-right: 193px;"class="btn btn-outline-success" value="뒤로" onclick="location.href='login.do'">
+					<input type="image" src="resources/img/loadingbar.gif" id="loadingbar" style="display:none; margin-top:7px; padding-left: 190px; padding-right: 193px;"class="btn btn-outline-success">
+					
 			
 				</form>
 			</div>
