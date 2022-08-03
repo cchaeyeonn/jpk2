@@ -221,8 +221,8 @@ public class MemberController {
 	}
 	
 	@RequestMapping(value="/findPwProcess.do",  method = RequestMethod.POST)
-	public String findPwProcess(MemberVo memberVo, HttpServletRequest request,@RequestParam("member_id") String member_id) throws Exception {
-	memberVo.setMember_id(member_id);
+	public String findPwProcess(MemberVo memberVo, HttpServletRequest request,@RequestParam("member_name") String member_name) throws Exception {
+	memberVo.setMember_name(member_name);
 	int set = memberService.setTempPw(memberVo);
 	if (set==0) {
 		return "member/memberFindPwFail";

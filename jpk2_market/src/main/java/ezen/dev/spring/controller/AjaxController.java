@@ -86,10 +86,9 @@ public class AjaxController {
 		String result="N"; 
 		String member_id=(String) session.getAttribute("member_id");
 		MemberVo memberVo = memberService.getMemberInfo(member_id);
-		if(passwordEncoder.matches(pw, memberVo.getMember_pw())) {
 		Integer midx_ =Integer.parseInt(String.valueOf(session.getAttribute("midx")));
 		memberVo.setMidx(midx_);
-		
+		if(passwordEncoder.matches(pw, memberVo.getMember_pw())) {
 		int flag = ajaxService.checkPw(memberVo);
 		
 		if(flag == 1) result = "Y";
