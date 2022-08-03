@@ -86,19 +86,7 @@ width:8%;
 </script>
 <!-- jquery 스크립트 -->
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
-<script>
-$(function(){
-	if("${orderVo.orderpay_check}"=="Y"){
-		$("#orderpay_check").text("결제 완료");
-	}else if("${orderVo.orderpay_check}"=="W"){
-		$("#orderpay_check").text("결제 대기");
-	}else if("${orderVo.orderpay_check}"=="F"){
-		$("#orderpay_check").text("결제 실패");
-	}else{
-		$("#orderpay_check").text("주문 중 오류");
-	}
-})
-</script>
+
 
 </head>
 <body>
@@ -134,11 +122,26 @@ $(function(){
       </tr>
       
       <c:forEach items="${orderList}" var="orderVo" varStatus="status">  
+      
+      <script>
+		$(function(){
+			if("${orderVo.orderpay_check}"=="Y"){
+				$("#orderpay_check").text("결제 완료");
+			}else if("${orderVo.orderpay_check}"=="W"){
+				$("#orderpay_check").text("결제 대기");
+			}else if("${orderVo.orderpay_check}"=="F"){
+				$("#orderpay_check").text("결제 실패");
+			}else{
+				$("#orderpay_check").text("주문 중 오류");
+			}
+		})
+		</script>
+      
     	<tr id="target">
    			
    			<td id="td1">${orderVo.order_id }</td>
    			<td id="td2">
-    			${orderVo.pbidx_co }
+    			${orderVo.product }
     		</td>
    	 		<td id="td3">
     			${orderVo.pay_price }
