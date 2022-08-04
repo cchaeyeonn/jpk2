@@ -39,6 +39,10 @@ public class OrderDao {
 		
 		return sqlSession.selectOne(MAPPER+".getoidx", orderVo);
 	}
+
+	public OrderVo getOrderDetail(String order_id) {
+		return sqlSession.selectOne(MAPPER+".getOrderDetail",order_id);
+	}
 	
 
 

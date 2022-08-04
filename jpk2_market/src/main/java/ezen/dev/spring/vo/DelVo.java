@@ -7,7 +7,28 @@ public class DelVo {
 	private String d_status;
 	private String d_addrcode;
 	private int oidx_od;
+	private String d_to;
+	private String d_from;
+	private String d_tophone;
 	
+	public String getD_tophone() {
+		return d_tophone;
+	}
+	public void setD_tophone(String d_tophone) {
+		this.d_tophone = d_tophone;
+	}
+	public String getD_to() {
+		return d_to;
+	}
+	public void setD_to(String d_to) {
+		this.d_to = d_to;
+	}
+	public String getD_from() {
+		return d_from;
+	}
+	public void setD_from(String d_from) {
+		this.d_from = d_from;
+	}
 	public int getDidx() {
 		return didx;
 	}

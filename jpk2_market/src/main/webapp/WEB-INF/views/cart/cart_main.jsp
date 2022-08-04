@@ -326,9 +326,9 @@ $("#chk_all").change(function(){
     </td>
     <td id="count_button" style="padding-left:63px; width:346px;">
     <!-- 수량 버튼 -->
-    <div style="border:1px solid; width:161px; color:rgb(221,223,225); height:39px;">
+    <div style="border:1px solid; width:169px; color:rgb(221,223,225); height:40px;">
     <button type="button" type="button" id="${cartVo.pbidx}_btn_minus" value="-" style="border:1px; background-color:white;"><img src="resources/img/-_button.png"></button>
-    <input type="text" id="${cartVo.pbidx}_pop_out" class="amount" value="${cartVo.p_amount}" readonly="readonly" style="text-align:center; width:92px; border:1px solid rgb(221,223,225); height:38px;"/>
+    <input type="text" id="${cartVo.pbidx}_pop_out" class="amount" value="${cartVo.p_amount}" readonly="readonly" style="text-align:center; width:92px; border:0px solid rgb(221,223,225); height:38px;"/>
     <button type="button" type="button" id="${cartVo.pbidx}_btn_plus" value="+" style="border:1px; background-color:white;"><img src="resources/img/+_button.png"></button>
    </div>
    

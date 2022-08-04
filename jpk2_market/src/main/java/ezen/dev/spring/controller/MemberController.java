@@ -179,16 +179,7 @@ public class MemberController {
 		return null;
 	}
 	
-	@GetMapping("/memberInfo.do")
-	public String memberInfo(Model model, HttpServletRequest request) {
-		HttpSession session = request.getSession();
-		String member_id = (String)session.getAttribute("member_id");
-		
-		MemberVo memberVo = memberService.getMemberInfo(member_id);
-		model.addAttribute("memberVo", memberVo);
-		
-		return "member/memberInfo";
-	}
+
 	
 	@GetMapping("/logout.do")
 	public String logout(HttpServletRequest request) {
@@ -234,6 +225,17 @@ public class MemberController {
 	@GetMapping("/updatePw.do")
 	public String updatePw() {
 		return "member/memberUpdatePw";
+	}
+	
+	@GetMapping("/memberInfo.do")
+	public String memberInfo(Model model, HttpServletRequest request) {
+		HttpSession session = request.getSession();
+		String member_id = (String)session.getAttribute("member_id");
+		
+		MemberVo memberVo = memberService.getMemberInfo(member_id);
+		model.addAttribute("memberVo", memberVo);
+		
+		return "member/memberInfo";
 	}
 	
 	

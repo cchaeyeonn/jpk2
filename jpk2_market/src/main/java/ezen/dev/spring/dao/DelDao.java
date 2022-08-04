@@ -30,6 +30,12 @@ public class DelDao {
      
 	public int addDel(DelVo delVo) {
 		return sqlSession.insert(MAPPER+".addDel", delVo);
+	}
+
+
+
+	public DelVo getDelInfo(Integer oidx_od) {
+		return sqlSession.selectOne(MAPPER+".getDelInfo",oidx_od);
 	}	 
   
      

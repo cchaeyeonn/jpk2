@@ -58,11 +58,15 @@
 	$(function() {
 		$(document).on('click', '#member_addr', function() {
 			if ($("#member_addr").prop("checked")) {
+				$("#member_toMember").val("${memberVo.member_name}");
+				$("#member_toMemberPhone").val("${memberVo.member_phone}");
 				$("#postcode").val("${memberVo.member_addrcode}");
 				$("#member_addr_1").val("${memberVo.member_addr1}");
 				$("#member_addr_2").val("${memberVo.member_addr2}");
 
 			} else {
+				$("#member_toMember").val("");
+				$("#member_toMemberPhone").val("");
 				$("#postcode").val("");
 				$("#member_addr_1").val("");
 				$("#member_addr_2").val("");
@@ -232,10 +236,11 @@ function cart(){
 					<tr>
 						<td class="td_info_l">이메일</td>
 						<td class="td_info_r">${memberVo.member_email}</td>
+						
 					</tr>
 				</table>
 			</div>
-
+				<input type="hidden" id ="member_email" value="${memberVo.member_email}">
 
 			<div id="delivery-info" style="margin-top: 30px;">
 				<!-- 지도 api와 jQuery를 이용해서 정보를 기입하기 -->
@@ -248,6 +253,16 @@ function cart(){
 							<td><label for="member_addr"> <input type="checkbox"
 									id="member_addr" name="member_addr">기본 배송지 입력
 							</label></td>
+						</tr>
+						<tr>
+							<td class="td_info_l"></td>
+							<td><input type="text" id="member_toMember" name="member_toMember"
+								placeholder="받는 사람" ></td>
+						</tr>
+						<tr>
+							<td class="td_info_l"></td>
+							<td><input type="text" id="member_toMemberPhone" name="member_toMemberPhone"
+								placeholder="받는 사람의 휴대폰 번호" ></td>
 						</tr>
 						<tr>
 							<td class="td_info_l"></td>

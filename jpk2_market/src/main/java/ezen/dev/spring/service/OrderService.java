@@ -34,6 +34,10 @@ public class OrderService {
 		return orderDao.getoidx(orderVo);
 		
 	}
+
+	public OrderVo getOrderDetail(String order_id) {
+		return orderDao.getOrderDetail(order_id);
+	}
 	
 
 }

@@ -79,6 +79,12 @@ width:20%;
 width:3%;
 
 }
+#memberinfo_td {
+    padding: 0.5rem 0.5rem !important;
+    background-color: var(--bs-table-bg) !important;
+    border-bottom-width: 0rem !important;
+    box-shadow: inset 0 0 0 9999px var(--bs-table-accent-bg) !important;
+}
 </style>
 <meta charset="UTF-8">
 <title>회원정보</title>
@@ -100,10 +106,10 @@ width:3%;
    </div>
    
 <div id="memberinfo_inner">
-<h5 style="margin-top: 272px;">회원정보</h5>
+<h5 style="margin-top: 272px;">개인 정보 수정</h5>
 </div>
 
-<div id="table_button" style="width:962px;">
+<%-- <div id="table_button" style="width:962px;">
    <table border="1" style="border-right:0px; border-left:0px; font-size: 14px; border-top: 2px solid #198754;" class="table table-hover">
       <tr>
          <td id="td1">아이디</td>
@@ -126,9 +132,116 @@ width:3%;
    <a href="${pageContext.request.contextPath}/updatePw.do">비밀번호 변경&nbsp;&nbsp;|</a>&nbsp;&nbsp;
    <a href="${pageContext.request.contextPath}/deleteMember.do">회원탈퇴</a></p>
    
-   </div>
-   </div>
+   </div> --%>
+   
+   <div id="join_content">
+<form>
 
+   <div id="join_1">
+
+
+   <table id="memberinfo_table" border="1" style="border-right:0px; border-left:0px; font-size: 14px; border-top: 2px solid #198754;" class="table table-hover">
+      <tbody>
+         <tr>
+            <td id="memberinfo_td" style="width:138px;">아이디</td>
+            <td id="memberinfo_td" style="width:268px;"><input type="email" class="form-control" name="member_id" id="member_id" value="${memberVo.member_id }" maxlength="80" readonly></td>
+         </tr>
+<!--          <tr>
+            <td id="memberinfo_td"></td>
+            <td id="memberinfo_td"><div style="height:20px"><span id="result_checkId" style="font-size:12px;"></span></div></td>
+         </tr> -->
+         
+         <tr>
+            <td id="memberinfo_td">현재 비밀번호</td>
+            <td id="memberinfo_td"><input type="password" class="form-control" name="member_pw" id="member_password1" value="" maxlength="20" placeholder="비밀번호를 입력해 주세요"></td>
+         </tr>
+    <!--      <tr>
+            <td id="memberinfo_td"></td>   
+            <td id="memberinfo_td"><div style="height:20px"><span id="result_password1" style="font-size:12px;"></span></div></td>
+         </tr> -->
+         
+         <tr>
+            <td id="memberinfo_td">새 비밀번호</td>
+            <td id="memberinfo_td"><input type="password" class="form-control" name="member_pw2" id="member_password2" value="" maxlength="20" placeholder="새 비밀번호를 입력해 주세요"></td>
+         </tr>
+         
+            <tr>
+            <td id="memberinfo_td">새 비밀번호 확인</td>
+            <td id="memberinfo_td"><input type="password" class="form-control" name="member_pw2" id="member_password2" value="" maxlength="20" placeholder="새 비밀번호를 다시 입력해 주세요"></td>
+         </tr>
+ <!--         <tr>
+            <td id="memberinfo_td"></td>   
+            <td id="memberinfo_td"><div style="height:20px"><span id="result_password2" style="font-size:12px;"></span></div></td>
+         </tr> -->
+         
+         <tr>
+            <td id="memberinfo_td">이름</td>
+            <td id="memberinfo_td"><input type="text" class="form-control" id="member_name" name="member_name" maxlength="40" value="${memberVo.member_name }" readonly></td>
+         </tr>
+  <!--        <tr>
+            <td id="memberinfo_td"></td>   
+            <td id="memberinfo_td"><div style="height:20px"><span id="result_name" style="font-size:12px;"></span></div></td>
+         </tr> -->
+         
+         <tr>
+            <td id="memberinfo_td">이메일</td>
+            <td id="memberinfo_td"><input type="email" class="form-control" id="member_email" name="member_email" maxlength="80" value="${memberVo.member_email }" readonly ></td>
+         </tr>
+<!--          <tr>
+            <td id="memberinfo_td"></td>
+            <td id="memberinfo_td"><div style="height:20px"><span id="result_checkEmail" style="font-size:12px;"></span></div></td>
+         </tr> -->
+         
+         <tr>
+            <td id="memberinfo_td">휴대폰</td>
+            <td id="memberinfo_td"><input type="text" class="form-control" id="member_phone" name="member_phone"  value="${memberVo.member_phone }" autocomplete="off" ></td>
+         </tr>
+<!--          <tr>
+            <td id="memberinfo_td"></td>   
+            <td id="memberinfo_td"><div style="height:20px"><span id="result_phone" style="font-size:12px;"></span></div></td>
+         </tr> -->
+         
+         <tr>
+            <td id="memberinfo_td">주소</td>
+            <td id="memberinfo_td" style="width: 325px;"><input type="text" id="postcode" class="" name="member_addrcode" placeholder="우편번호" readonly style="height:37px; width:133px; text-align:center; border-radius:9px; font-size:13px;" value="${memberVo.member_addrcode }">
+            <input type="button" onclick="execDaumPostcode()" class="btn btn-outline-success" value="우편번호 찾기" style="margin-top:-3px; margin-left:2px; font-size:14px; width:126px;"></td><td id="memberinfo_td"></td>
+         </tr>
+     <!--     <tr><td id="memberinfo_td" style="height:8px;"></td><td id="memberinfo_td"></td></tr> -->
+         <tr>
+            <td id="memberinfo_td"></td>
+            <td id="memberinfo_td"><input type="text" id="member_addr_1" class="form-control" name="member_addr1" readonly placeholder="도로명주소" value="${memberVo.member_addr1}"><input type="text" id="member_addr_2" class="form-control" name="member_addr2" value="${memberVo.member_addr2}"></td>
+            <td id="memberinfo_td"></td>
+            <td id="memberinfo_td"><div style="height:20px"><span id="result_addr" style="font-size:12px;"></span></div></td>
+         </tr>
+     <!--     <tr><td id="memberinfo_td">&nbsp;</td><td id="memberinfo_td"></td></tr> -->
+         <tr>
+            <td id="memberinfo_td">성별</td>
+            <td id="memberinfo_td"><input type="radio" id="custom-control custom-radio" name="member_gender" value="m"> 남자 
+                <input type="radio" id="custom-control custom-radio" name="member_gender" value="f"> 여자</td>
+                <td id="memberinfo_td"><div style="height:20px"><span id="result_gender" style="font-size:12px;"></span></div></td>
+         </tr>
+        <!--  <tr><td id="memberinfo_td">&nbsp;</td><td id="memberinfo_td"></td></tr> -->
+         <tr>
+            <td id="memberinfo_td">생년월일</td>
+            <td id="memberinfo_td"><input type ="date" class="form-control" id="member_birth" name="member_birth" value="${memberVo.member_birth}" onclick="maxDate()"></td>
+            <td id="memberinfo_td"><div style="height:20px"><span id="result_birth" style="font-size:12px;"></span></div></td>
+         </tr>
+         </table>
+         
+  
+        
+        <!--  <td id="memberinfo_td"></td>
+         <td id="memberinfo_td"><input type="submit" class="btn btn-outline-success" id="trigger"  value="가입하기" style="margin-left:117px; margin-top:22px; width:353px;"></td> -->
+         <p style="padding-left: 489px;">
+  		 <a href="${pageContext.request.contextPath}/updatePw.do">비밀번호 변경&nbsp;&nbsp;|</a>&nbsp;&nbsp;
+  		 <a href="${pageContext.request.contextPath}/deleteMember.do">회원탈퇴</a></p>
+       
+
+
+   </div>
+   </form>
+   </div>
+</div>
    <!-- 푸터 연결 -->
    <jsp:include page="../footer.jsp"></jsp:include>
    
