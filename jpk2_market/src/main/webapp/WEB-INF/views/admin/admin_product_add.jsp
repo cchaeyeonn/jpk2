@@ -114,7 +114,7 @@
 	
 	<div id="admin_inner">
 	
-		<div id="table_button" style="width:962px;">
+		<div id="table_button" style="width:962px; min-height:1186px;">
 			<form name="productAddForm" action="${pageContext.request.contextPath}/addProductProcess.do" method="post" enctype="multipart/form-data">
 			<table>
 				<div id="product">
@@ -130,32 +130,40 @@
 					
 					<div id="product_detail">상품 제목<p/>
 						<input type="text" class="form-control" name="p_name">
-						<hr>
-						상품 부제목<p/>
-						<input type="text" class="form-control" name="p_secondname"><p/>
-						<hr>
-						상품 가격<p/>
-						<input type="text" class="form-control" name="p_price"><p/>
-						<hr>
-						상품 판매 단위<p/>
+						<br>
+						상품 부제목
+						<input type="text" class="form-control" name="p_secondname">
+						
+						<br>
+						상품 가격
+						<input type="text" class="form-control" name="p_price">
+						<br>
+						
+						상품 판매 단위
 						<input type="text" class="form-control" name="p_unit">
-						<hr>
-						상품 중량/용량<p/>
+						<br>
+						
+						상품 중량/용량
 						<input type="text" class="form-control" name="p_weight">
-						<hr>
-						배송 구분<p/>
+						<br>
+						
+						배송 구분
 						<input type="text" class="form-control" name="p_delivery">
-						<hr>
-						포장 타입<p/>
+						<br>
+						
+						포장 타입
 						<input type="text" class="form-control" name="p_package">
-						<hr>
-						알레르기 정보<p/>
+						<br>
+						
+						알레르기 정보
 						<input type="text" class="form-control" name="p_allergy">
-						<hr>
-						유통기한<p/>  
+						<br>
+						
+						유통기한
 						<input type="text" class="form-control" name="p_limitdate">
-						<hr>
-						타입<p/>
+						<br>
+						
+						타입<br>
 						<select name="p_type">
 							<option value="vegetable_fruit">채소/과일</option>
 							<option value="meat">정육</option>
@@ -165,12 +173,13 @@
 							<option value="processedfood">가공식품</option>
 							<option value="etc">기타</option>
 						</select>
-						<hr>
-						태그<p/>
+						<br><br>
+						
+						태그
 						<input type="text" class="form-control" name="p_tag">
 					</div>
 				</div>
-					<div id="home_button"><input type="submit" value="등록하기"></div><p/>
+					<div id="home_button"><input type="submit" class="btn btn-outline-success" value="등록하기"></div><p/>
 				</table>
 			</form>
 		</div>
