@@ -5,20 +5,8 @@
 <head>
 <script>
   function check(){  
-  var fm = document.frml;   
-  if (fm.now_pw.value==""){
-  		alert("비밀번호를 입력해주세요");
-  		fm.now_pw.focus();
-  		return;
-  }else if (fm.member_pw1.value==""){
-  		alert("변경할 비밀번호를 입력해주세요");
-  		fm.member_pw1.focus();
-  		return;
-  }else if (fm.member_pw2.value==""){
-  		alert("변경할 비밀번호를 입력해주세요");
-  		fm.member_pw2.focus();
-  		return;
-  }else if (fm.member_pw1.value!=fm.member_pw2.value){
+  var fm = document.frm1;   
+	if (fm.member_pw1.value!=fm.member_pw2.value){
 	  	alert("비밀번호가 일치하지않습니다");
 	  	fm.member_pw1.value="";
 	  	fm.member_pw2.value="";
@@ -34,7 +22,7 @@
 	  	
   		fm.action = "<%=request.getContextPath()%>/updateMemberInfoProcess.do";
   		fm.method = "post";
-  		fm.submit();  
+  		fm.submit();   
   
     return;
   }  
@@ -163,7 +151,7 @@ width:3%;
          
          <tr>
             <td id="memberinfo_td">현재 비밀번호</td>
-            <td id="memberinfo_td"><input type="password" class="form-control" name="now_pw" id="member_password1" value="" maxlength="20" placeholder="비밀번호를 입력해 주세요"></td>
+            <td id="memberinfo_td"><input type="password" class="form-control" name="now_pw" id="now_pw" value="" maxlength="20" placeholder="비밀번호를 입력해 주세요"></td>
          </tr>
  	     <tr>
             <td id="memberinfo_td"></td>   
@@ -172,12 +160,12 @@ width:3%;
          
          <tr>
             <td id="memberinfo_td">새 비밀번호</td>
-            <td id="memberinfo_td"><input type="password" class="form-control" name="member_pw1" id="member_password1" value="" maxlength="20" placeholder="새 비밀번호를 입력해 주세요"></td>
+            <td id="memberinfo_td"><input type="password" class="form-control" name="member_pw1" id="member_pw1" value="" maxlength="20" placeholder="새 비밀번호를 입력해 주세요"></td>
          </tr>
          
             <tr>
             <td id="memberinfo_td">새 비밀번호 확인</td>
-            <td id="memberinfo_td"><input type="password" class="form-control" name="member_pw2" id="member_password2" value="" maxlength="20" placeholder="새 비밀번호를 다시 입력해 주세요"></td>
+            <td id="memberinfo_td"><input type="password" class="form-control" name="member_pw2" id="member_pw2" value="" maxlength="20" placeholder="새 비밀번호를 다시 입력해 주세요"></td>
          </tr>
 			<tr>
             <td id="memberinfo_td"></td>   
@@ -243,7 +231,7 @@ width:3%;
         <!--  <td id="memberinfo_td"></td>
          <td id="memberinfo_td"><input type="submit" class="btn btn-outline-success" id="trigger"  value="가입하기" style="margin-left:117px; margin-top:22px; width:353px;"></td> -->
          <p style="padding-left: 489px;">
-  		 <a onclick="check();">회원정보 수정&nbsp;&nbsp;|</a>&nbsp;&nbsp;
+  		 <a><span  onclick="check();">회원정보 수정&nbsp;&nbsp;</span>|</a>&nbsp;&nbsp;
   		 <a href="${pageContext.request.contextPath}/deleteMember.do">회원탈퇴</a></p>
        
 
