@@ -114,8 +114,15 @@ public class OrderController {
 	@GetMapping("/orderListDetail.do")
 	public String orderListDetail(@RequestParam("order_id") String order_id, Model model, HttpServletRequest request) {
 		OrderVo orderVo = orderService.getOrderDetail(order_id);
-		//String[] pidx = orderVo.getP_name()
+		//String[] pidx_pc = orderVo.getP_name()
+		Integer oidx_od = orderVo.getOidx(); 
+		DelVo delVo = delService.getDelInfo(oidx_od);
 		
+		
+		
+		
+		model.addAttribute("delVo",delVo);
+		model.addAttribute("orderVo",orderVo);
 		
 		
 		

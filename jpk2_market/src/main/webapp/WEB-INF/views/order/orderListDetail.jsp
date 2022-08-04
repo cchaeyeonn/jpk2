@@ -51,11 +51,11 @@
 <hr>
 <table>
 <tr>
-<td>상품 총 가격</td><td></td><td>상품 할인</td><td></td><td>배송비</td><td></td><td>총 결제 금액</td>
+<td>상품 총 가격</td><td></td><td>상품 할인</td><td></td><td>배송비</td><td></td><td>총 결제 금액</td><td>걸재 수단</td>
 </tr>
 <tr>
 <td><span id="sum_price"></span></td><td>-</td><td><span id="sale_price">0원</span></td><td>+</td><td><span id="del_price"></span></td><td>=</td>
-<td><span id="total_price">${orderVo.pay_price}원</span>
+<td><span id="total_price">${orderVo.pay_price}원</span><td>${orderVo.pay_way}</td>
 </td>
 </tr>
 </table>
@@ -69,10 +69,13 @@
 <td>주문 번호</td><td id="d_from">${orderVo.order_id}</td>
 </tr>
 <tr>
-<td>보내는 사람</td><td id="d_from">${delVo.d_from}</td>
+<td>보내는 분</td><td id="d_from">${delVo.d_from}</td>
 </tr>
 <tr>
 <td>결제 일시</td><td>${orderVo.pay_findate}</td>
+</tr>
+<tr>
+<td>결제 수단</td><td>${orderVo.pay_way}</td>
 </tr>
 </table>
 </div>
@@ -82,26 +85,16 @@
 <hr>
 <table>
 <tr>
-<td>주문 번호</td><td id="d_from">${orderVo.order_id}</td>
+<td>받는 분</td><td id="d_from">${delVo.d_to}</td>
 </tr>
 <tr>
-<td>보내는 사람</td><td id="d_from">${delVo.d_from}</td>
+<td>휴대폰</td><td id="d_from">${delVo.d_tophone}</td>
 </tr>
 <tr>
-<td>결제 일시</td><td>${orderVo.pay_findate}</td>
+<td>주소</td><td>(${delVo.d_addrcode}) ${delVo.d_addr1} / ${delVo.d_addr2} </td>
 </tr>
 </table>
 </div>
-<div id="pay-way">
-<!-- 결제수단을 선택하고 이에따라 아래에 나타나는 창이 다르게 -->
-결제 수단<p/>
-<hr>
-<div>
-임의 수단
-</div>
-</div>
-<div id="pay-term">
- <div style="height:20px"><span id="result_order_term" style="font-size:12px;"></span></div>
 <a href="${pageContext.request.contextPath}/orderList.do"><input type="button" value="주문내역으로 돌아가기"></a>
 <a href="${pageContext.request.contextPath}/index.do"><input type="button" value="메인으로 돌아가기"></a>
 </div>

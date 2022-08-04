@@ -31,6 +31,12 @@ public class DelService {
 	public int add_Del(DelVo delVo) {
 		return delDao.addDel(delVo);
 	}
+
+
+
+	public DelVo getDelInfo(Integer oidx_od) {
+		return delDao.getDelInfo(oidx_od);
+	}
 	
 	
 }

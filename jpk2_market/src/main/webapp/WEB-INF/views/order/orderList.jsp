@@ -136,7 +136,7 @@ width:8%;
 		})
 		</script>
     
-    	<tr id="target"  onClick="location.href='${pageContext.request.contextPath}/orderListDetail.do?order=${orderVo.order_id}'">
+    	<tr id="target"  onClick="location.href='${pageContext.request.contextPath}/orderListDetail.do?order_id=${orderVo.order_id}'">
    			<td id="td1">${orderVo.order_id }</td>
    	 		<td id="td3">
     			${orderVo.pay_price }

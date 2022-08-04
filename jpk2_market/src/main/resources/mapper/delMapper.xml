@@ -11,6 +11,9 @@
 		insert into fm_del(d_addr1, d_addr2, d_addrcode, oidx_od, d_to, d_from, d_tophone) 
 		 values(#{d_addr1}, #{d_addr2}, #{d_addrcode}, #{oidx_od}, #{d_to}, #{d_from}, #{d_tophone})
 	</insert>
+	<select id="getDelInfo" parameterType="Integer" resultType="delVo">
+		select * from fm_del where oidx_od = #{oidx_od}
+	</select>
     
     
     
