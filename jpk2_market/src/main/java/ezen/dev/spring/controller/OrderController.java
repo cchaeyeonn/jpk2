@@ -200,6 +200,7 @@ public class OrderController {
 			@RequestParam("addr1") String addr1,@RequestParam("addr2") String addr2,@RequestParam("addrcode") String addrcode,
 			@RequestParam("vbank_num") String vbank_num,@RequestParam("vbank_name") String vbank_name,
 			@RequestParam("vbank_holder") String vbank_holder,@RequestParam("vbank_date") String vbank_date,
+			@RequestParam("server") String from, @RequestParam("receiver") String to,
 			HttpServletRequest request,Model model) {
 		HttpSession session = request.getSession();
 		
@@ -263,6 +264,8 @@ public class OrderController {
 	delVo.setD_addr1(addr1);
 	delVo.setD_addr2(addr2);
 	delVo.setD_addrcode(addrcode);
+	delVo.setD_to(to);
+	delVo.setD_from(from);
 	delService.add_Del(delVo);
 	}
 	

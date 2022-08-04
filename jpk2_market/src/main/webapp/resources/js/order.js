@@ -64,6 +64,13 @@
     		           $("#member_addrcode").focus();
     		           return false;
     		             }
+    		            
+    		           if($("#member_toMember").val() == ""){
+    		           result = "받는 사람을 입력해주세요";
+    			       $("#result_member_addr").html(result).css("color", "red");
+    		           $("#member_addrcode").focus();
+    		           return false;
+    		             }
    
     		          if(!$("input:checked[name='order_term']").is(":checked")){
     		           result = "필수 약관입니다. 동의해주세요";
