@@ -135,7 +135,7 @@ width:3%;
    </div> --%>
    
    <div id="join_content">
-<form name="joinForm" action="${pageContext.request.contextPath}/joinProcess.do" method="post">
+<form>
 
    <div id="join_1">
 
@@ -144,7 +144,7 @@ width:3%;
       <tbody>
          <tr>
             <td id="memberinfo_td" style="width:138px;">아이디</td>
-            <td id="memberinfo_td" style="width:268px;"><input type="email" class="form-control" name="member_id" id="member_id" value="" maxlength="80" ></td>
+            <td id="memberinfo_td" style="width:268px;"><input type="email" class="form-control" name="member_id" id="member_id" value="${memberVo.member_id }" maxlength="80" readonly></td>
          </tr>
 <!--          <tr>
             <td id="memberinfo_td"></td>
@@ -176,7 +176,7 @@ width:3%;
          
          <tr>
             <td id="memberinfo_td">이름</td>
-            <td id="memberinfo_td"><input type="text" class="form-control" id="member_name" name="member_name" maxlength="40" value="" ></td>
+            <td id="memberinfo_td"><input type="text" class="form-control" id="member_name" name="member_name" maxlength="40" value="${memberVo.member_name }" readonly></td>
          </tr>
   <!--        <tr>
             <td id="memberinfo_td"></td>   
@@ -185,7 +185,7 @@ width:3%;
          
          <tr>
             <td id="memberinfo_td">이메일</td>
-            <td id="memberinfo_td"><input type="email" class="form-control" id="member_email" name="member_email" maxlength="80" value="" ></td>
+            <td id="memberinfo_td"><input type="email" class="form-control" id="member_email" name="member_email" maxlength="80" value="${memberVo.member_email }" readonly ></td>
          </tr>
 <!--          <tr>
             <td id="memberinfo_td"></td>
@@ -194,7 +194,7 @@ width:3%;
          
          <tr>
             <td id="memberinfo_td">휴대폰</td>
-            <td id="memberinfo_td"><input type="text" class="form-control" id="member_phone" name="member_phone"  value="" autocomplete="off" ></td>
+            <td id="memberinfo_td"><input type="text" class="form-control" id="member_phone" name="member_phone"  value="${memberVo.member_phone }" autocomplete="off" ></td>
          </tr>
 <!--          <tr>
             <td id="memberinfo_td"></td>   
@@ -203,13 +203,13 @@ width:3%;
          
          <tr>
             <td id="memberinfo_td">주소</td>
-            <td id="memberinfo_td" style="width: 325px;"><input type="text" id="postcode" class="" name="member_addrcode" placeholder="우편번호" readonly style="height:37px; width:133px; text-align:center; border-radius:9px; font-size:13px;">
+            <td id="memberinfo_td" style="width: 325px;"><input type="text" id="postcode" class="" name="member_addrcode" placeholder="우편번호" readonly style="height:37px; width:133px; text-align:center; border-radius:9px; font-size:13px;" value="${memberVo.member_addrcode }">
             <input type="button" onclick="execDaumPostcode()" class="btn btn-outline-success" value="우편번호 찾기" style="margin-top:-3px; margin-left:2px; font-size:14px; width:126px;"></td><td id="memberinfo_td"></td>
          </tr>
      <!--     <tr><td id="memberinfo_td" style="height:8px;"></td><td id="memberinfo_td"></td></tr> -->
          <tr>
             <td id="memberinfo_td"></td>
-            <td id="memberinfo_td"><input type="text" id="member_addr_1" class="form-control" name="member_addr1" readonly placeholder="도로명주소"><input type="text" id="member_addr_2" class="form-control" name="member_addr2" ></td>
+            <td id="memberinfo_td"><input type="text" id="member_addr_1" class="form-control" name="member_addr1" readonly placeholder="도로명주소" value="${memberVo.member_addr1}"><input type="text" id="member_addr_2" class="form-control" name="member_addr2" value="${memberVo.member_addr2}"></td>
             <td id="memberinfo_td"></td>
             <td id="memberinfo_td"><div style="height:20px"><span id="result_addr" style="font-size:12px;"></span></div></td>
          </tr>
@@ -223,7 +223,7 @@ width:3%;
         <!--  <tr><td id="memberinfo_td">&nbsp;</td><td id="memberinfo_td"></td></tr> -->
          <tr>
             <td id="memberinfo_td">생년월일</td>
-            <td id="memberinfo_td"><input type ="date" class="form-control" id="member_birth" name="member_birth" value="" onclick="maxDate()"></td>
+            <td id="memberinfo_td"><input type ="date" class="form-control" id="member_birth" name="member_birth" value="${memberVo.member_birth}" onclick="maxDate()"></td>
             <td id="memberinfo_td"><div style="height:20px"><span id="result_birth" style="font-size:12px;"></span></div></td>
          </tr>
          </table>
