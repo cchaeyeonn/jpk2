@@ -39,6 +39,9 @@
                   addr2 = $("#member_addr_2").val();
                   postcode = $("#postcode").val();
                   member_email = $("#member_email").val();
+                  server = member_name;
+                  receiver = $("#member_toMember").val();
+                  
     		          if($("#member_addr_2").val() == ""){
     		           result = "상세주소를 입력해주세요";
     			       $("#result_member_addr").html(result).css("color", "red");
@@ -112,7 +115,9 @@
             		  ["merchant_uid",rsp.merchant_uid],
             		  ["addr1",addr1],
             		  ["addr2",addr2],
-            		  ["addrcode",postcode]
+            		  ["addrcode",postcode],
+            		  ["server",server],
+            		  ["receiver",receiver]
             		  
                 ]
           
@@ -138,7 +143,9 @@
             		  ["merchant_uid",rsp.merchant_uid],
             		  ["addr1",addr1],
             		  ["addr2",addr2],
-            		  ["addrcode",postcode]
+            		  ["addrcode",postcode],
+            		  ["server",server],
+            		  ["receiver",receiver]
             		  
                 ]
           
