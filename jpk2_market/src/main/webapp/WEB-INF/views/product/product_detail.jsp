@@ -194,7 +194,8 @@ $(function(){
     
     <b>${productVo.p_price}원</b>
      
-    <div class="button box" style="float: right;">
+    <div class="button box" style="float: right; width:110px;">
+    
     <input type="button" id="btn_minus" value="-">
     <input type="text" name="p_amount" id="pop_out" value="1" readonly="readonly" style="text-align:center; width: 48px;"/>
     <input type="button" id="btn_plus" value="+">
