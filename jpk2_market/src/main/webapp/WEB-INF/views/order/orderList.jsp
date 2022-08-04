@@ -56,7 +56,7 @@
     color: #198754;
 }
 #td1{
-width:10%;
+width:31%;
 
 }
 #td2{
@@ -68,7 +68,7 @@ width:20%;
 
 }
 #td4{
-width:8%;
+width:18%;
 
 }
 

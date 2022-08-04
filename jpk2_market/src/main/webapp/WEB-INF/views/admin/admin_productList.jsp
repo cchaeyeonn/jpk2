@@ -91,8 +91,8 @@
 
    
 
-	<div id="table_button" class="table table-hover" style="width:962px; margin-top:93px; text-align:center;">
-	<table id="product_t">
+	<div id="table_button"  style="width:962px; margin-top:93px; text-align:center;">
+	<table id="product_t" class="table table-hover">
 		<tr>
 			<th id="table_title">번호</th>
 			<th id="table_title">이름</th>
