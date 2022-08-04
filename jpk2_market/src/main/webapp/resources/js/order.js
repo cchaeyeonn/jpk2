@@ -101,7 +101,7 @@
           amount: price,
           buyer_email: member_email,
           buyer_name: member_name,
-          buyer_tel: "010-4457-8057",
+          buyer_tel: member_phone,
           buyer_addr: addr1+addr2,
           buyer_postcode: postcode
       }, function (rsp) { // callback
