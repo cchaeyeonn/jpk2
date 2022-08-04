@@ -245,7 +245,7 @@ public class MemberController {
 	String encodedPassword =passwordEncoder.encode(member_pw);
 	memberVo.setMember_pw(encodedPassword);
 	memberVo.setMidx(midx_);
-	memberService.setUpdateMemberInfo(memberVo);
+	memberService.setUpdatePw(memberVo);
 	response.setContentType("text/html; charset=UTF-8");
 	response.setCharacterEncoding("UTF-8");
 	PrintWriter out=response.getWriter();
@@ -258,14 +258,32 @@ public class MemberController {
 	
 	
 	@PostMapping("/updateMemberInfoProcess.do")
-	public String updateMemberInfoProcess(@RequestParam("member_pw1") String member_pw, @RequestParam("member_phone") String member_phone,
+	public String updateMemberInfoProcess(@RequestParam(value="member_pw1", required=false) String member_pw, @RequestParam("member_phone") String member_phone,
 			@RequestParam("member_addrcode") String member_addrcode, @RequestParam("member_addr1") String member_addr1, 
 			@RequestParam("member_addr2") String member_addr2, @RequestParam("member_birth") String member_birth, @RequestParam("member_gender") String member_gender, 
 			MemberVo memberVo, Model model,HttpServletRequest request,HttpServletResponse response) throws Exception {
 	HttpSession session = request.getSession();
 	Integer midx_ =Integer.parseInt(String.valueOf(session.getAttribute("midx")));
+	if(member_pw!="") {
 	String encodedPassword =passwordEncoder.encode(member_pw);
 	memberVo.setMember_pw(encodedPassword);
+	memberVo.setMidx(midx_);
+	memberVo.setMember_phone(member_phone);
+	memberVo.setMember_addrcode(member_addrcode);
+	memberVo.setMember_addr1(member_addr1);
+	memberVo.setMember_addr2(member_addr2);
+	memberVo.setMember_birth(member_birth);
+	memberVo.setMember_gender(member_gender);
+	memberService.setUpdatePw(memberVo);
+	memberService.setUpdateMemberInfo(memberVo);
+	response.setContentType("text/html; charset=UTF-8");
+	response.setCharacterEncoding("UTF-8");
+	PrintWriter out=response.getWriter();
+	out.println("<script>window.onload = function(){alert('회원정보가 변경되었습니다. 다시 로그인 해주세요.'); location.href='/spring/login.do';}</script>");
+	out.flush();
+	session.invalidate();
+	return null;
+	}else{
 	memberVo.setMidx(midx_);
 	memberVo.setMember_phone(member_phone);
 	memberVo.setMember_addrcode(member_addrcode);
@@ -280,8 +298,11 @@ public class MemberController {
 	out.println("<script>window.onload = function(){alert('회원정보가 변경되었습니다. 다시 로그인 해주세요.'); location.href='/spring/login.do';}</script>");
 	out.flush();
 	session.invalidate();
-
-	return null;
+	return null;}
+	
+	
+	
+	
 	}
 	
 	
