@@ -24,13 +24,13 @@
 	  	fm.member_pw2.value="";
 	  	fm.member_pw1.focus();
 	  	return;
-  }else if (fm.now_pw.value==fm.member_pw1.value){
+  }/* else if (fm.now_pw.value==fm.member_pw1.value){
 	  	alert("현재 비밀번호와 같은 비밀번호로 변경할 수 없습니다.");
 	  	fm.member_pw1.value="";
 	  	fm.member_pw2.value="";
 	  	fm.member_pw1.focus();
 	  	return;
-  }
+  } */
 	  	
   		fm.action = "<%=request.getContextPath()%>/updateMemberInfoProcess.do";
   		fm.method = "post";
