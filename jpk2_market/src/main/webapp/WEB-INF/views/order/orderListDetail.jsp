@@ -97,6 +97,7 @@
 </tr>
 </table>
 </div>
+<a href="${pageContext.request.contextPath}/refund.do"><input type="button" value="환불하기"></a>
 <a href="${pageContext.request.contextPath}/orderList.do"><input type="button" value="주문내역으로 돌아가기"></a>
 <a href="${pageContext.request.contextPath}/index.do"><input type="button" value="메인으로 돌아가기"></a>
 </div>
