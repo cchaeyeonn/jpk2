@@ -41,6 +41,7 @@
                   member_email = $("#member_email").val();
                   server = member_name;
                   receiver = $("#member_toMember").val();
+                  phone = $("#member_toMemberPhone").val();
                   
     		          if($("#member_addr_2").val() == ""){
     		           result = "상세주소를 입력해주세요";
@@ -71,6 +72,14 @@
     		           $("#member_addrcode").focus();
     		           return false;
     		             }
+    		           
+    		           if($("#member_toMemberPhone").val() == ""){
+    		           result = "받는 사람의 휴대폰 번호를 입력해주세요";
+    			       $("#result_member_addr").html(result).css("color", "red");
+    		           $("#member_addrcode").focus();
+    		           return false;
+    		             }  
+    		           
    
     		          if(!$("input:checked[name='order_term']").is(":checked")){
     		           result = "필수 약관입니다. 동의해주세요";
@@ -124,8 +133,8 @@
             		  ["addr2",addr2],
             		  ["addrcode",postcode],
             		  ["server",server],
-            		  ["receiver",receiver]
-            		  
+            		  ["receiver",receiver],
+            		  ["phone",phone]
                 ]
           
         
@@ -152,8 +161,8 @@
             		  ["addr2",addr2],
             		  ["addrcode",postcode],
             		  ["server",server],
-            		  ["receiver",receiver]
-            		  
+            		  ["receiver",receiver],
+            		  ["phone",phone]
                 ]
           
         

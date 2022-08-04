@@ -9,7 +9,14 @@ public class DelVo {
 	private int oidx_od;
 	private String d_to;
 	private String d_from;
+	private String d_tophone;
 	
+	public String getD_tophone() {
+		return d_tophone;
+	}
+	public void setD_tophone(String d_tophone) {
+		this.d_tophone = d_tophone;
+	}
 	public String getD_to() {
 		return d_to;
 	}

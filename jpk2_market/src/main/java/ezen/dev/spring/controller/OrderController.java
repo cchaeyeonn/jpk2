@@ -126,7 +126,8 @@ public class OrderController {
 	public String orderSuccess(@RequestParam("pay_method") String pay_method, 
 			@RequestParam("pay_amount") int paid_amount,@RequestParam("pay_findate") Long pay_at,
 			@RequestParam("status") String pay_status,@RequestParam("merchant_uid") String merchant_uid,
-			@RequestParam("addr1") String addr1,@RequestParam("addr2") String addr2,@RequestParam("addrcode") String addrcode,
+			@RequestParam("addr1") String addr1, @RequestParam("addr2") String addr2,@RequestParam("addrcode") String addrcode,
+			@RequestParam("server") String from, @RequestParam("receiver") String to, @RequestParam("phone") String tophone,
 			HttpServletRequest request) {
 		HttpSession session = request.getSession();
 		
@@ -176,6 +177,9 @@ public class OrderController {
 		delVo.setD_addr1(addr1);
 		delVo.setD_addr2(addr2);
 		delVo.setD_addrcode(addrcode);
+		delVo.setD_to(to);
+		delVo.setD_from(from);
+		delVo.setD_tophone(tophone);
 		delService.add_Del(delVo);
 		}
 		
@@ -200,7 +204,7 @@ public class OrderController {
 			@RequestParam("addr1") String addr1,@RequestParam("addr2") String addr2,@RequestParam("addrcode") String addrcode,
 			@RequestParam("vbank_num") String vbank_num,@RequestParam("vbank_name") String vbank_name,
 			@RequestParam("vbank_holder") String vbank_holder,@RequestParam("vbank_date") String vbank_date,
-			@RequestParam("server") String from, @RequestParam("receiver") String to,
+			@RequestParam("server") String from, @RequestParam("receiver") String to, @RequestParam("phone") String tophone,
 			HttpServletRequest request,Model model) {
 		HttpSession session = request.getSession();
 		
@@ -266,6 +270,7 @@ public class OrderController {
 	delVo.setD_addrcode(addrcode);
 	delVo.setD_to(to);
 	delVo.setD_from(from);
+	delVo.setD_tophone(tophone);
 	delService.add_Del(delVo);
 	}
 	
