@@ -137,10 +137,13 @@ public class MemberService {
 	}
 	
 	
-
-
 	public void setUpdatePw(MemberVo memberVo) {
 		memberDao.setUpdatePw(memberVo);
+		
+	}
+
+	public void setUpdateMemberInfo(MemberVo memberVo) {
+		memberDao.setUpdateMemberInfo(memberVo);
 		
 	}
 

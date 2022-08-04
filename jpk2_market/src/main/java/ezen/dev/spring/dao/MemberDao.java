@@ -73,10 +73,14 @@ public class MemberDao {
 	public int setTempPw(MemberVo memberVo) throws Exception{
 		return sqlSession.update(MAPPER+".setTempPw", memberVo);
 	}
-
-
+	
 	public void setUpdatePw(MemberVo memberVo) {
 		sqlSession.update(MAPPER+".setUpdatePw", memberVo);
+	}
+
+
+	public void setUpdateMemberInfo(MemberVo memberVo) {
+		sqlSession.update(MAPPER+".setUpdateMemberInfo", memberVo);
 		
 	}
 

@@ -58,7 +58,11 @@
 		
 	<!-- 비밀번호 수정 -->
 	<update id="setUpdatePw">
-		update fm_member set member_pw =#{member_pw} where midx = #{midx}
+		update fm_member set member_pw=#{member_pw} where midx = #{midx}
+	</update>
+	
+	<update id="setUpdateMemberInfo">
+		update fm_member set (member_pw, member_gender, member_addrcode, member_addr1, member_addr2, member_phone, member_birth)=(#{member_pw}, #{member_gender}, #{member_addrcode}, #{member_addr1}, #{member_addr2}, #{member_phone}, #{member_birth}) where midx = #{midx}
 	</update>
 	
 	
