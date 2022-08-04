@@ -50,7 +50,12 @@
 			#{pbidxList}
 		</foreach>
 	</select>
-	
+	<select id="getPayProduct" parameterType="list" resultType="cartVo">
+		select * from fm_product a inner JOIN fm_product_cart b ON a.pidx = b.pidx_pc where b.pbidx in
+		<foreach collection="list" item="pbidxList" open="(" separator="," close=")" >
+			#{pbidxList}
+		</foreach>
+	</select>
 
 	<update id="del_Cart" parameterType="orderVo">
 		update fm_product_cart set p_check = "Y" where midx_mc=#{midx_mo} and pbidx=#{pbidx_co} and p_check='N'

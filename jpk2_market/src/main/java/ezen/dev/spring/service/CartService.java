@@ -57,5 +57,12 @@ public class CartService {
 		
 		
 	}
+
+
+
+	public List<CartVo> getPayProduct(List<Integer> pbidxList) {
+
+		return cartDao.getPayProduct(pbidxList);
+	}
 	
 }

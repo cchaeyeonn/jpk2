@@ -114,13 +114,19 @@ public class OrderController {
 	@GetMapping("/orderListDetail.do")
 	public String orderListDetail(@RequestParam("order_id") String order_id, Model model, HttpServletRequest request) {
 		OrderVo orderVo = orderService.getOrderDetail(order_id);
-		//String[] pidx_pc = orderVo.getP_name()
+		String pidx_pc_1 = orderVo.getProduct();
+		String[] arr = pidx_pc_1.split(",");
+		int[] pidx_pc = Arrays.stream(arr).mapToInt(Integer::parseInt).toArray();
+		Integer[] pidx_pc2 = new Integer[arr.length];
+		
+		for(int i = 0; i<arr.length; i++) {
+			pidx_pc2[i] = pidx_pc[i];
+		}
+		List<Integer> pbidxList =Arrays.asList(pidx_pc2);
+		List<CartVo> cartList = cartService.getPayProduct(pbidxList);
 		Integer oidx_od = orderVo.getOidx(); 
 		DelVo delVo = delService.getDelInfo(oidx_od);
-		
-		
-		
-		
+		model.addAttribute("cartList",cartList);
 		model.addAttribute("delVo",delVo);
 		model.addAttribute("orderVo",orderVo);
 		

@@ -24,6 +24,7 @@
     <script type="text/javascript" charset="utf-8">
      sessionStorage.setItem("contextpath", "${pageContext.request.contextPath}");
 	</script>
+
 </head>
 <body>
     <jsp:include page="../header.jsp"></jsp:include>
@@ -36,27 +37,28 @@
 <hr>
 <table>
 <tr>
-<td colspan="2">상품 이름</td><td>&nbsp;&nbsp;&nbsp;</td><td>개수</td><td>&nbsp;&nbsp;&nbsp;</td><td>상품 가격</td>
+<td colspan="2">상품 이름</td><td>&nbsp;&nbsp;&nbsp;</td><td>개수</td><td>&nbsp;&nbsp;&nbsp;</td><td>상품 가격(개당)</td>
 </tr>
-<c:forEach items="${CartList}" var="cartVo" varStatus="status">  
+<c:forEach items="${cartList}" var="cartVo" varStatus="status">  
 <tr>
-<td><div><img class="img-fluid4" src="${pageContext.request.contextPath}/resources/product_image/${orderVo.p_system_filename}" alt="..."  /></div></td>
-<td>${cartVo.p_name}</td><td>&nbsp;&nbsp;&nbsp;</td><td>${cartVo.p_amount}&nbsp;개</td><td>&nbsp;&nbsp;&nbsp;</td><td><span id="${cartVo.pbidx}_p_price"></span></td>
+<td><div><img class="img-fluid4" src="${pageContext.request.contextPath}/resources/product_image/${cartVo.p_system_filename}" alt="..."  /></div></td>
+<td>${cartVo.p_name}</td><td>&nbsp;&nbsp;&nbsp;</td><td>${cartVo.p_amount}&nbsp;개</td><td>&nbsp;&nbsp;&nbsp;</td><td>${cartVo.p_price}&nbsp;원</td>
 </tr>
 </c:forEach>
 </table>
 </div>
 <div>
-결제 금액<p/>
+결제 정보<p/>
 <hr>
 <table>
 <tr>
-<td>상품 총 가격</td><td></td><td>상품 할인</td><td></td><td>배송비</td><td></td><td>총 결제 금액</td><td>걸재 수단</td>
+<td>총 결제 금액</td><td><span id="total_price">${orderVo.pay_price}원</span>
 </tr>
 <tr>
-<td><span id="sum_price"></span></td><td>-</td><td><span id="sale_price">0원</span></td><td>+</td><td><span id="del_price"></span></td><td>=</td>
-<td><span id="total_price">${orderVo.pay_price}원</span><td>${orderVo.pay_way}</td>
-</td>
+<td>상품 할인</td><td><span id="sale_price">0원</span></td>
+</tr>
+<tr>
+<td>결제 수단</td><td>${orderVo.pay_way}</td>
 </tr>
 </table>
 </div>

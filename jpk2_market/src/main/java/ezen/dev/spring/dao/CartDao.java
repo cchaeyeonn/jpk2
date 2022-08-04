@@ -59,6 +59,10 @@ public class CartDao {
 	public int del_Cart(OrderVo orderVo) {
 		
 		return sqlSession.update(MAPPER+".del_Cart", orderVo);
+	}
+	public List<CartVo> getPayProduct(List<Integer> pbidxList) {
+
+		return sqlSession.selectList(MAPPER+".getPayProduct", pbidxList);
 	}	 
   
      
