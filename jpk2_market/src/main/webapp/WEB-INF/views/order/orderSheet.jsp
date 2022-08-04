@@ -32,6 +32,7 @@
 	src="https://cdn.iamport.kr/js/iamport.payment-1.1.8.js"></script>
 <script>
 	var member_name = "<c:out value="${memberVo.member_name}" />";
+	var member_phone = "<c:out value="${memberVo.member_phone}" />";
 </script>
 <script src="${pageContext.request.contextPath}/resources/js/order.js "></script>
 
