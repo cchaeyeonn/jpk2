@@ -59,7 +59,38 @@
    border-bottom: 1px solid #f2f2f2;
 }
 
+.filebox .upload-name {
+    display: inline-block;
+    height: 40px;
+    padding: 0 10px;
+    vertical-align: middle;
+    border: 1px solid #dddddd;
+    width: 78%;
+    color: #999999;
+}
+.filebox label {
+    display: inline-block;
+    padding: 10px 20px;
+    color: #fff;
+    vertical-align: middle;
+    background-color: #999999;
+    cursor: pointer;
+    height: 40px;
+    margin-left: 10px;
+}
+.filebox input[type="file"] {
+    position: absolute;
+    width: 0;
+    height: 0;
+    padding: 0;
+    overflow: hidden;
+    border: 0;
+    display:none;
+}
 </style>
+
+
+
 </head>
 <body>
 
@@ -85,52 +116,62 @@
 	
 		<div id="table_button" style="width:962px;">
 			<form name="productAddForm" action="${pageContext.request.contextPath}/addProductProcess.do" method="post" enctype="multipart/form-data">
+			<table>
 				<div id="product">
-				<div id="product_img">상품 사진
-				<input type="file" name="p_filename"></div>
-				<div id="product_detail">상품 제목<p/>
-				<input type="text" name="p_name">
-				<hr>
-				상품 부제목<p/>
-				<input type="text" name="p_secondname"><p/>
-				<hr>
-				상품 가격<p/>
-				<input type="text" name="p_price"><p/>
-				<hr>
-				상품 판매 단위<p/>
-				<input type="text" name="p_unit">
-				<hr>
-				상품 중량/용량<p/>
-				<input type="text" name="p_weight">
-				<hr>
-				배송 구분<p/>
-				<input type="text" name="p_delivery">
-				<hr>
-				포장 타입<p/>
-				<input type="text" name="p_package">
-				<hr>
-				알레르기 정보<p/>
-				<input type="text" name="p_allergy">
-				<hr>
-				유통기한<p/>  
-				<input type="text" name="p_limitdate">
-				<hr>
-				타입<p/>
-				<select name="p_type">
-					<option value="vegetable_fruit">채소/과일</option>
-					<option value="meat">정육</option>
-					<option value="fish_seafood">생선/해산물</option>
-					<option value="snacks">과자</option>
-					<option value="bakery">베이커리</option>
-					<option value="processedfood">가공식품</option>
-					<option value="etc">기타</option>
-				</select>
-				<hr>
-				태그<p/>
-				<input type="text" name="p_tag">
+					<div id="product_img">상품 사진
+						<input type="file" name="p_filename">
+					</div>
+					
+					<!-- <div class="filebox">
+					    <input class="upload-name" value="첨부파일" placeholder="첨부파일">
+					    <label for="file">파일찾기</label> 
+					    <input type="file" id="file">
+					</div> -->
+					
+					<div id="product_detail">상품 제목<p/>
+						<input type="text" class="form-control" name="p_name">
+						<hr>
+						상품 부제목<p/>
+						<input type="text" class="form-control" name="p_secondname"><p/>
+						<hr>
+						상품 가격<p/>
+						<input type="text" class="form-control" name="p_price"><p/>
+						<hr>
+						상품 판매 단위<p/>
+						<input type="text" class="form-control" name="p_unit">
+						<hr>
+						상품 중량/용량<p/>
+						<input type="text" class="form-control" name="p_weight">
+						<hr>
+						배송 구분<p/>
+						<input type="text" class="form-control" name="p_delivery">
+						<hr>
+						포장 타입<p/>
+						<input type="text" class="form-control" name="p_package">
+						<hr>
+						알레르기 정보<p/>
+						<input type="text" class="form-control" name="p_allergy">
+						<hr>
+						유통기한<p/>  
+						<input type="text" class="form-control" name="p_limitdate">
+						<hr>
+						타입<p/>
+						<select name="p_type">
+							<option value="vegetable_fruit">채소/과일</option>
+							<option value="meat">정육</option>
+							<option value="fish_seafood">생선/해산물</option>
+							<option value="snacks">과자</option>
+							<option value="bakery">베이커리</option>
+							<option value="processedfood">가공식품</option>
+							<option value="etc">기타</option>
+						</select>
+						<hr>
+						태그<p/>
+						<input type="text" class="form-control" name="p_tag">
+					</div>
 				</div>
-				</div>
-				<div id="home_button"><input type="submit" value="등록하기"></div><p/>
+					<div id="home_button"><input type="submit" value="등록하기"></div><p/>
+				</table>
 			</form>
 		</div>
 	</div>
