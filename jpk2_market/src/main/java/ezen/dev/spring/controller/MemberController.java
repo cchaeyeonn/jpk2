@@ -88,7 +88,7 @@ public class MemberController {
 			response.setContentType("text/html; charset=UTF-8");
 			response.setCharacterEncoding("UTF-8");
 			PrintWriter out=response.getWriter();
-			out.println("<script>window.onload = function(){alert('잘못된 접근입니다. 다시 인증해수제요.'); location.href='/spring/';}</script>");
+			out.println("<script>window.onload = function(){alert('잘못된 접근입니다. 다시 인증해주세요.'); location.href='/spring/';}</script>");
 			out.flush();
 			return null;
 		}
@@ -239,7 +239,7 @@ public class MemberController {
 	}
 	
 	@PostMapping("/updatePwProcess.do")
-	public String updatePwProcess(@RequestParam("member_pw1") String member_pw, MemberVo memberVo, Model model,HttpServletRequest request,HttpServletResponse response) throws Exception {
+	public String updatePwProcess(@RequestParam("member_pw1") String member_pw, MemberVo memberVo, Model model,HttpServletRequest request, HttpServletResponse response) throws Exception {
 	HttpSession session = request.getSession();
 	Integer midx_ =Integer.parseInt(String.valueOf(session.getAttribute("midx")));
 	String encodedPassword =passwordEncoder.encode(member_pw);
@@ -303,6 +303,20 @@ public class MemberController {
 	
 	
 	
+	}
+	
+	@GetMapping("/memberDelyn.do")
+	public void memberDelyn(MemberVo memberVo, HttpServletRequest request, HttpServletResponse response) throws IOException {
+		HttpSession session = request.getSession();
+		Integer midx_ =Integer.parseInt(String.valueOf(session.getAttribute("midx")));
+		memberVo.setMidx(midx_);
+		memberService.memberDelyn(memberVo);
+		response.setContentType("text/html; charset=UTF-8");
+		response.setCharacterEncoding("UTF-8");
+		PrintWriter out=response.getWriter();
+		out.println("<script>window.onload = function(){alert('회원탈퇴가 성공적으로 이루어졌습니다. 그동안 저희 홈페이지를 사랑해주셔서 감사합니다.'); location.href='/spring/index.do';}</script>");
+		out.flush();
+		session.invalidate();
 	}
 	
 	
