@@ -241,8 +241,9 @@ padding: 81px 0px 92px 686px;
    <div id="service_center_cate">
    <div id="service_1">마이페이지</div>
       <div id="notice_sub">   
-      <a href="${pageContext.request.contextPath}/memberInfo.do" class="nav-link py-3 px-0 px-lg-3" id="open_info_modify">개인 정보 수정</a>
-      <a href="${pageContext.request.contextPath}/orderList.do" class="nav-link py-3 px-0 px-lg-3" id="open_history">주문 내역</a>
+       <a href="${pageContext.request.contextPath}/orderList.do" class="nav-link py-3 px-0 px-lg-3" id="open_history">주문 내역</a>
+       <a href="${pageContext.request.contextPath}/memberInfo.do" class="nav-link py-3 px-0 px-lg-3" id="open_info_modify">개인 정보 수정</a>
+     
       <a href="" class="nav-link py-3 px-0 px-lg-3" id="open_coupon">쿠폰</a>
       <!-- <a href="/spring/qna_board.do" class="nav-link py-3 px-0 px-lg-3 rounded" id="open_qna" >1:1 문의</a> -->
       </div>
@@ -278,8 +279,8 @@ padding: 81px 0px 92px 686px;
       </dl>
 
       <dl id="dl">
-      <dt id="dt">결제금액</dt>
-      <dd id="dd">${orderVo.pay_price }</dd>
+      <dt id="dt">상품금액</dt>
+      <dd id="dd">${cartVo.p_price }&nbsp;원</dd>
       </dl>
       
       <dl id="dl">
