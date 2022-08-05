@@ -238,7 +238,19 @@ flex: 1 1 0%;
          }
       })
       </script>
-      
+             <script>
+      $(function(){
+         if("${orderVo.d_status}"=="Y"){
+            $("#${orderVo.order_id}_orderlist_shipping").text("배송 완료");
+         }else if("${orderVo.d_status}"=="N"){
+            $("#${orderVo.order_id}_orderlist_shipping").text("배송 준비중");
+         }else if("${orderVo.d_status}"=="W"){
+            $("#${orderVo.order_id}_orderlist_shipping").text("배송중");
+         }else{
+            $("#${orderVo.order_id}_orderlist_shipping").text("주문 중 오류");
+         }
+      })
+      </script>
    <div id="orderlist_inner2">
    <div id="orderlist_1">
    <span id="order_date"><b>${orderVo.order_date}</b>&nbsp;(${orderVo.order_id })</span>
@@ -267,7 +279,7 @@ flex: 1 1 0%;
    
    
    <div id="orderlist_box_right">
-      <span id="orderlist_shipping">배송상태</span>
+      <span id="${orderVo.order_id}_orderlist_shipping"></span>
    </div>
    </div>
    
