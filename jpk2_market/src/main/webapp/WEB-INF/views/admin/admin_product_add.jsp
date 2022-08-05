@@ -87,6 +87,11 @@
     border: 0;
     display:none;
 }
+
+#input_half{
+	width:50%;
+	display:inline !important; 
+}
 </style>
 <script>
   function check(){  
@@ -177,16 +182,18 @@
 						<br>
 						
 						상품 판매 단위
-						<input type="number" class="form-control" name="p_unit">개
 						<br>
+						<input type="number" class="form-control" id="input_half" name="p_unit">개
+						<br><br>
 						
 						상품 중량/용량
-						<input type="number" class="form-control" name="p_weight1">
+						<br>
+						<input type="number" class="form-control" id="input_half"  name="p_weight1">
 						<select name="p_weight2">
 							<option value="KG">KG</option>
 							<option value="L">L</option>
 						</select>
-						<br>
+						<br><br>
 						
 						배송 구분
 						<select name="p_delivery">
@@ -194,7 +201,7 @@
 							<option value="낮배송">낮배송</option>
 							<option value="일반택배">일반택배</option>
 						</select>
-						<br>
+						<br><br>
 						
 						포장 타입
 						<select name="p_package">
@@ -202,7 +209,7 @@
 							<option value="비닐팩">비닐팩</option>
 							<option value="신선포장">신선포장</option>
 						</select>
-						<br>  
+						<br><br>
 						
 						알레르기 정보
 						<input type="text" class="form-control" name="p_allergy">
