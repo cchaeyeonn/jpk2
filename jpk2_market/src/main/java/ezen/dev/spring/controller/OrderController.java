@@ -105,7 +105,7 @@ public class OrderController {
 		HttpSession session = request.getSession();
 		Integer midx =Integer.parseInt(String.valueOf(session.getAttribute("midx")));
 		
-		List<OrderVo> orderList = orderService.getOrderList(midx);		
+		List<OrderVo> orderList = orderService.getOrderList(midx);
 		model.addAttribute("orderList", orderList);
 		
 		return "order/orderList";

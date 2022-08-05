@@ -84,7 +84,7 @@ function order(){
       <a href="${pageContext.request.contextPath}/productAdd.do" class="nav-link py-3 px-0 px-lg-3" id="admin_button">상품등록페이지</a>
       <a href="${pageContext.request.contextPath}/adminProductList.do" class="nav-link py-3 px-0 px-lg-3" id="admin_button">내가 등록한 상품목록</a>
       <a href="${pageContext.request.contextPath}/orderList.do" class="nav-link py-3 px-0 px-lg-3" id="admin_button">주문내역</a>
-      <input type="button" class="nav-link py-3 px-0 px-lg-3" value="주문상세페이지" id="admin_button" style="background-color: white; border: none;" onclick="order()">
+      <input type="button" class="nav-link py-3 px-0 px-lg-3" value="주문상세페이지" id="admin_button" style="background-color: white; border: none;" onclick="location.href='${pageContext.request.contextPath}/orderList.do'">
      <%--<a href="${pageContext.request.contextPath}/orderListDetail.do" class="nav-link py-3 px-0 px-lg-3" id="admin_button">주문상세페이지</a> --%>
       </div>
    </div>
