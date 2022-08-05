@@ -29,7 +29,7 @@ public class OrderVo {
 	private String pay_delyn;
 	private int num;
 	private String product;
-	
+	private String d_status;
 	
 	
 	
@@ -178,12 +178,6 @@ public class OrderVo {
 	public void setPidx_pc(int pidx_pc) {
 		this.pidx_pc = pidx_pc;
 	}
-	
-	
-	
-	
-	
-	
 	public int getOidx() {
 		return oidx;
 	}
@@ -207,6 +201,12 @@ public class OrderVo {
 	}
 	public void setOrder_delyndate(String order_delyndate) {
 		this.order_delyndate = order_delyndate;
+	}
+	public String getD_status() {
+		return d_status;
+	}
+	public void setD_status(String d_status) {
+		this.d_status = d_status;
 	}
 	
 	
