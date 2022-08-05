@@ -152,6 +152,16 @@ function cart(){
 .order_price2 {
 	min-width: 60px;
 }
+
+#ordersheet_title{
+	margin-top: 50px;
+	align:center;
+}
+
+#ordersheet_hr{
+	height: 3px; 
+	background-color: #a3a3a3;
+}
 </style>
 </head>
 
@@ -164,14 +174,14 @@ function cart(){
 
 	<div id="wrap"
 		style="width: 1083px; min-height: 1400px; padding-top: 239px; margin-left: 414px; margin-right: 401px;">
-		<h1 align="center">주문서</h1>
+		<h2 id="ordersheet_title" >주문서</h2>
 		<form action="${pageContext.request.contextPath}/index.do"
 			method="get" name="frmq">
 
 			<div id="order-product">
 				<!-- 장바구니에 있는 물건중 체크된 물건을 가져와서 foreach -->
 				<b>주문상품</b>
-				<hr style="height: 3px; background-color: green;">
+				<hr id="ordersheet_hr">
 
 
 				<table>
@@ -224,7 +234,7 @@ function cart(){
 			<div id="orderer-info" style="margin-top: 50px;">
 				<!-- 세션값에 있는 midx를 이용해서 주문자의 정보를 가져옴 -->
 				주문자 정보
-				<hr style="height: 3px; background-color: green;">
+				<hr id="ordersheet_hr">
 				<table>
 					<tr>
 						<td class="td_info_l">성함</td>
@@ -246,7 +256,7 @@ function cart(){
 			<div id="delivery-info" style="margin-top: 30px;">
 				<!-- 지도 api와 jQuery를 이용해서 정보를 기입하기 -->
 				배송정보
-				<hr style="height: 3px; background-color: green;">
+				<hr id="ordersheet_hr">
 				<div>
 					<table>
 						<tr>
@@ -294,7 +304,7 @@ function cart(){
 
 			<div style="margin-top: 30px;">
 				결제 예정 금액
-				<hr style="height: 3px; background-color: green;">
+				<hr id="ordersheet_hr">
 				<table style="text-align: center;">
 					<tr>
 						<td class="td_info_l"></td>
@@ -325,7 +335,7 @@ function cart(){
 			<div id="pay-way" style="margin-top: 30px;">
 				<!-- 결제수단을 선택하고 이에따라 아래에 나타나는 창이 다르게 -->
 				결제 수단
-				<hr style="height: 3px; background-color: green;">
+				<hr id="ordersheet_hr">
 				<div>
 					<table>
 						<tr>
@@ -347,7 +357,7 @@ function cart(){
 			<div id="pay-term" style="margin-top: 30px;">
 				<!-- 단순 체크 약관 유효성 검사를 통해 체크 된 경우에만 결제가 되도록 -->
 				개인정보 수집/제공
-				<hr style="height: 3px; background-color: green;">
+				<hr id="ordersheet_hr">
 
 				<div style="margin-top: 30px;">
 

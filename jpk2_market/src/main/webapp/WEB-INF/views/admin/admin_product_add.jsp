@@ -87,10 +87,55 @@
     border: 0;
     display:none;
 }
+
+#input_half{
+	width:50%;
+	display:inline !important; 
+}
 </style>
-
-
-
+<script>
+  function check(){  
+  var fm = document.frm2;   
+	if (fm.p_name.value=="";){
+		alert("상품제목을 입력해주세요");
+		fm.p_name.focus();
+		return false;
+	}else if(fm.p_price.value=="";){
+		alert("상품가격을 입력해주세요");
+		fm.p_price.focus();
+		return false;
+	}else if(fm.p_unit.value=="";){
+		alert("상품판매단위를 입력해주세요");
+		fm.p_unit.focus();
+		return false;
+	}else if(fm.p_weight1.value=="";){
+		alert("상품중량/용량을 입력해주세요");
+		fm.p_weight.focus();
+		return false;
+	}else if(fm.p_allergy.value=="";){
+		alert("상품의 알레르기 정보를 입력해주세요");
+		fm.p_allergy.focus();
+		return false;
+	}else if(fm.p_limitdate.value=="";){
+		alert("상품의 유통기한 정보를 입력해주세요");
+		fm.p_limitdate.focus();
+		return false;
+	}else if(fm.p_allergy.value=="";){
+		alert("상품의 알레르기 정보를 입력해주세요");
+		fm.p_allergy.focus();
+		return false;
+	}else if(fm.p_tag.value=="";){
+		alert("상품의 태그 정보를 선택해주세요");
+		fm.p_tag.focus();
+		return false;
+	}
+  		fm.action = "<%=request.getContextPath()%>/addProductProcess.do";
+  		fm.method = "post";
+  		fm.submit();   
+  
+    return;
+  }  
+  </script>
 </head>
 <body>
 
@@ -106,16 +151,13 @@
       <a href="${pageContext.request.contextPath}/productAdd.do" class="nav-link py-3 px-0 px-lg-3" id="open_admin">상품등록페이지</a>
       <a href="${pageContext.request.contextPath}/adminProductList.do" class="nav-link py-3 px-0 px-lg-3" id="admin_button">내가 등록한 상품목록</a>
       <a href="${pageContext.request.contextPath}/orderList.do" class="nav-link py-3 px-0 px-lg-3" id="admin_button">주문내역</a>
-      <input type="button" class="nav-link py-3 px-0 px-lg-3" value="주문상세페이지" id="admin_button" style="background-color: white; border: none;" onclick="order()">
-     <%--<a href="${pageContext.request.contextPath}/orderListDetail.do" class="nav-link py-3 px-0 px-lg-3" id="admin_button">주문상세페이지</a> --%>
+      <input type="button" class="nav-link py-3 px-0 px-lg-3" value="주문상세페이지" id="admin_button" style="background-color: white; border: none;" onclick="loction.href='${pageContext.request.contextPath}/orderListDetail.do'">
+     <%--<a href='${pageContext.request.contextPath}/orderListDetail.do' class="nav-link py-3 px-0 px-lg-3" id="admin_button">주문상세페이지</a> --%>
       </div>
    </div>
-
-	
 	<div id="admin_inner">
-	
 		<div id="table_button" style="width:962px; min-height:1186px;">
-			<form name="productAddForm" action="${pageContext.request.contextPath}/addProductProcess.do" method="post" enctype="multipart/form-data">
+			<form name="frm2" action="${pageContext.request.contextPath}/addProductProcess.do" method="post" enctype="multipart/form-data">
 			<table>
 				<div id="product">
 					<div id="product_img">상품 사진
@@ -136,24 +178,38 @@
 						
 						<br>
 						상품 가격
-						<input type="text" class="form-control" name="p_price">
+						<input type="number" class="form-control" name="p_price">
 						<br>
 						
 						상품 판매 단위
-						<input type="text" class="form-control" name="p_unit">
 						<br>
+						<input type="number" class="form-control" id="input_half" name="p_unit">개
+						<br><br>
 						
 						상품 중량/용량
-						<input type="text" class="form-control" name="p_weight">
 						<br>
+						<input type="number" class="form-control" id="input_half"  name="p_weight1">
+						<select name="p_weight2">
+							<option value="KG">KG</option>
+							<option value="L">L</option>
+						</select>
+						<br><br>
 						
 						배송 구분
-						<input type="text" class="form-control" name="p_delivery">
-						<br>
+						<select name="p_delivery">
+							<option value="새벽배송">새벽배송</option>
+							<option value="낮배송">낮배송</option>
+							<option value="일반택배">일반택배</option>
+						</select>
+						<br><br>
 						
 						포장 타입
-						<input type="text" class="form-control" name="p_package">
-						<br>  
+						<select name="p_package">
+							<option value="박스">박스</option>
+							<option value="비닐팩">비닐팩</option>
+							<option value="신선포장">신선포장</option>
+						</select>
+						<br><br>
 						
 						알레르기 정보
 						<input type="text" class="form-control" name="p_allergy">

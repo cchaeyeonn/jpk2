@@ -82,6 +82,8 @@
 		.bx-wrapper .bx-next:focus, .bx-wrapper .bx-next:hover {
 			background-position: -43px 0
 		}
+		
+
    
     </style>
 
@@ -136,6 +138,8 @@
            
 	</div>      
         
+        
+
         
 
         <!-- Contact Section -->
@@ -211,7 +215,7 @@
             </div>
         </section> -->
         
-        <div
+<!--         <div
   id="kakao-talk-channel-chat-button"
   data-channel-public-id="_tqFzxj"
   data-title="consult"
@@ -219,7 +223,7 @@
   data-color="yellow"
   data-shape="pc"
   data-support-multiple-densities="true"
-></div>
+></div> -->
         
 	<!-- 푸터 연결 -->
 	<jsp:include page="footer.jsp"></jsp:include>

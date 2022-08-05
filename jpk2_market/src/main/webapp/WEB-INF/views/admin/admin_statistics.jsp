@@ -93,14 +93,14 @@ function order(){
 
 <div id="admin_inner">
 <h5 style="margin-top: 272px;">매출 통계 <input type="button" value="고객별"><input type="button" value="상품별"></h5>
-<input type ="date" class="datepicker" id="startDate" >
+<input type ="date" class="datepicker" id="strtDate" value="">
 ~
-<input type ="date" class="datepicker" id="endDate" onclick="maxDate()">
+<input type ="date" class="datepicker" id="endDate" value="" onclick="maxDate()">
 <div>
-  <button name="filterDate" value="1">일주일</button>
-  <button name="filterDate" value="2">3개월</button>
-  <button name="filterDate" value="3">6개월</button>
-  <button name="filterDate" value="4">1개월</button>
+  <button name="filterDate" id="datefilter" value="1">일주일</button>
+  <button name="filterDate" id="datefilter" value="2">3개월</button>
+  <button name="filterDate" id="datefilter" value="3">6개월</button>
+  <button name="filterDate" id="datefilter"  value="4">1개월</button>
 </div>
 <div id="client" style="width:962px;">
    <table border="1" style="border-right:0px; border-left:0px; font-size: 14px; border-top: 2px solid #198754;" class="table table-hover">
