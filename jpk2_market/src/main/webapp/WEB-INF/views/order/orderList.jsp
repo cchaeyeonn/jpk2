@@ -250,7 +250,7 @@ flex: 1 1 0%;
          }else if("${orderVo.d_status}"=="W"){
             $("#${orderVo.order_id}_orderlist_shipping").text("배송중");
          }else{
-            $("#${orderVo.order_id}_orderlist_shipping").text("주문 중 오류");
+            $("#${orderVo.order_id}_orderlist_shipping").text("배송 중 오류");
          }
       })
       </script>
