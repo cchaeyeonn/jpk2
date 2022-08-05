@@ -34,5 +34,9 @@ public class AdminService {
 	public int delProduct(ProductVo productVo) {
 		return adminDao.delProduct(productVo);
 	}
+
+	public List<ProductVo> getAdminProductListDetail(ProductVo productVo) {
+		return adminDao.getAdminProductListDetail(productVo);
+	}
 	
 }

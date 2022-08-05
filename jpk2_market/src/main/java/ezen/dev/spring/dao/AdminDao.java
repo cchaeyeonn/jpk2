@@ -42,5 +42,9 @@ public class AdminDao {
 		return sqlSession.update(MAPPER+".delProduct",productVo);
 	}
 
+	public List<ProductVo> getAdminProductListDetail(ProductVo productVo) {
+		return sqlSession.selectList(MAPPER+".getAdminProductListDetail",productVo);
+	}
+
 
 }

@@ -131,6 +131,21 @@ public class AdminController {
 		
 		return "admin/admin_productList";
 	}
+	@GetMapping("/adminProductListDetail.do")
+	public String getAdminProductListDetail(Model model, HttpServletRequest request, @RequestParam("pidx") Integer pidx, ProductVo productVo) {
+		productVo.setPidx(pidx);
+		
+		List<ProductVo> productList = adminService.getAdminProductListDetail(productVo);
+		
+		model.addAttribute("productList", productList);
+		
+		return "admin/admin_productListDetail";
+	}
+	
+	
+	
+	
+	
 	@GetMapping("/adminProductDelyn.do")
 	public String delProduct(@RequestParam("pidx") Integer pidx, HttpServletRequest request) {
 		
