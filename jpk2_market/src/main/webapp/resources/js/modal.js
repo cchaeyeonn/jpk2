@@ -43,4 +43,3 @@ document.querySelectorAll(".close").forEach(element => element.addEventListener(
 	document.querySelector(".modal-background").style.display = "none";
         }));
 
-

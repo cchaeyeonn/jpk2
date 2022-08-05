@@ -74,6 +74,24 @@
     input[id="tab01"]:checked ~ .con1 {display:block;}
     input[id="tab02"]:checked ~ .con2 {display:block;}
     input[id="tab03"]:checked ~ .con3 {display:block;}
+    
+    #btn_insert_cart{
+    	float:right;
+    	width:50%;
+    	height: 45px;
+    	border-radius: 12px;
+    	border: 1px;
+    	border: 1px solid rgb(221, 221, 221);
+    }
+    
+    #btn_cart_cancel{
+    	float:left;
+    	width:50%;
+    	height: 45px;
+    	border-radius: 12px;
+    	border: 1px;
+    	border: 1px solid rgb(221, 221, 221);
+    }
 
 </style>
 
@@ -202,7 +220,10 @@ $(function(){
     </div>
     </div>
     <b>합계</b>
+    <div>
     <input type="submit" id="btn_insert_cart" value="장바구니 담기" >
+    <input type="button" class="close" id="btn_cart_cancel" value="취소" >
+    </div>
   </div>
 </div>
 <!-- 모달 부분 끝 -->
