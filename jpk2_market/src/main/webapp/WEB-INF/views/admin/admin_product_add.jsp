@@ -153,7 +153,7 @@
 						
 						포장 타입
 						<input type="text" class="form-control" name="p_package">
-						<br>
+						<br>  
 						
 						알레르기 정보
 						<input type="text" class="form-control" name="p_allergy">

@@ -6,7 +6,8 @@
 <meta charset="UTF-8">
 <link href="resources/css/style_css.css" rel="stylesheet" />
 	<title>관리자페이지</title>
-	
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script src="${pageContext.request.contextPath}/resources/js/statistics.js "></script>	
 </head>
 <script>
 function order(){
@@ -80,29 +81,110 @@ function order(){
    <div id="admin_center_cate">
    <div id="admin_1">관리자 페이지</div>
       <div id="admin_sub">   
-      <input type="button" class="nav-link py-3 px-0 px-lg-3" value="통계" id="admin_button_1" style="background-color: white; border: none;" onclick="location.href='${pageContext.request.contextPath}/statistics.do'">
+      <a href="${pageContext.request.contextPath}/statistics.do" class="nav-link py-3 px-0 px-lg-3" id="open_admin">통계</a>
       <a href="${pageContext.request.contextPath}/productAdd.do" class="nav-link py-3 px-0 px-lg-3" id="admin_button">상품등록페이지</a>
       <a href="${pageContext.request.contextPath}/adminProductList.do" class="nav-link py-3 px-0 px-lg-3" id="admin_button">내가 등록한 상품목록</a>
       <a href="${pageContext.request.contextPath}/orderList.do" class="nav-link py-3 px-0 px-lg-3" id="admin_button">주문내역</a>
       <input type="button" class="nav-link py-3 px-0 px-lg-3" value="주문상세페이지" id="admin_button" style="background-color: white; border: none;" onclick="location.href='${pageContext.request.contextPath}/orderList.do'">
-     <%--<a href="${pageContext.request.contextPath}/orderListDetail.do" class="nav-link py-3 px-0 px-lg-3" id="admin_button">주문상세페이지</a> --%>
+    
       </div>
    </div>
 
 
 <div id="admin_inner">
-
-</div>   
+<h5 style="margin-top: 272px;">매출 통계 <input type="button" value="고객별"><input type="button" value="상품별"></h5>
+<input type ="date" class="datepicker" id="startDate" >
+~
+<input type ="date" class="datepicker" id="endDate" onclick="maxDate()">
+<div>
+  <button name="filterDate" value="1">일주일</button>
+  <button name="filterDate" value="2">3개월</button>
+  <button name="filterDate" value="3">6개월</button>
+  <button name="filterDate" value="4">1개월</button>
+</div>
+<div id="client" style="width:962px;">
+   <table border="1" style="border-right:0px; border-left:0px; font-size: 14px; border-top: 2px solid #198754;" class="table table-hover">
+      <tr>
+         
+         <td id="td1">주문 번호</td>
+         <td id="td3">주문 가격</td>
+         <td id="td4">결제 상태</td>
+         <td id="td5">주문 일</td>
+      </tr>
+      
+    <%--   <c:forEach items="${orderList}" var="orderVo" varStatus="status">  
+      
+      <script>
+		$(function(){
+			if("${orderVo.orderpay_check}"=="Y"){
+				$("#${orderVo.order_id}_orderpay_check").text("결제 완료");
+			}else if("${orderVo.orderpay_check}"=="W"){
+				$("#${orderVo.order_id}_orderpay_check").text("결제 대기");
+			}else if("${orderVo.orderpay_check}"=="F"){
+				$("#${orderVo.order_id}_orderpay_check").text("결제 실패");
+			}else{
+				$("#${orderVo.order_id}_orderpay_check").text("주문 중 오류");
+			}
+		})
+		</script>
+    
+    	<tr id="target"  onClick="location.href='${pageContext.request.contextPath}/orderListDetail.do?order_id=${orderVo.order_id}'">
+   			<td id="td1">${orderVo.order_id }{$product.p_name}</td>
+   	 		<td id="td3">
+    			${orderVo.pay_price }
+    		</td>
+   			<td id="td4"><span id="${orderVo.order_id}_orderpay_check"></span></td>
+    		<td id="td5">${orderVo.order_date}</td>
+   		</tr>
+   		
+     </c:forEach>  --%>
+    </table>
+    </div>
+    <div id="product" style="width:962px;">
+    <table border="1" style="border-right:0px; border-left:0px; font-size: 14px; border-top: 2px solid #198754;" class="table table-hover">
+      <tr>
+         
+         <td id="td1">주문 번호</td>
+         <td id="td3">주문 가격</td>
+         <td id="td4">결제 상태</td>
+         <td id="td5">주문 일</td>
+      </tr>
+      
+    <%--   <c:forEach items="${orderList}" var="orderVo" varStatus="status">  
+      
+      <script>
+		$(function(){
+			if("${orderVo.orderpay_check}"=="Y"){
+				$("#${orderVo.order_id}_orderpay_check").text("결제 완료");
+			}else if("${orderVo.orderpay_check}"=="W"){
+				$("#${orderVo.order_id}_orderpay_check").text("결제 대기");
+			}else if("${orderVo.orderpay_check}"=="F"){
+				$("#${orderVo.order_id}_orderpay_check").text("결제 실패");
+			}else{
+				$("#${orderVo.order_id}_orderpay_check").text("주문 중 오류");
+			}
+		})
+		</script>
+    
+    	<tr id="target"  onClick="location.href='${pageContext.request.contextPath}/orderListDetail.do?order_id=${orderVo.order_id}'">
+   			<td id="td1">${orderVo.order_id }{$product.p_name}</td>
+   	 		<td id="td3">
+    			${orderVo.pay_price }
+    		</td>
+   			<td id="td4"><span id="${orderVo.order_id}_orderpay_check"></span></td>
+    		<td id="td5">${orderVo.order_date}</td>
+   		</tr>
+   		
+     </c:forEach>  --%>
+    </table>
+    </div>
+	</div>   
 
 <div id="table_button" style="width:962px;">
 
 </div>
 </div>
-<%-- <div id="admin_home_inner">     
 
-<h3>  관리자 페이지입니다 </h3>
-
-<hr/>
 
 <div id="adh_inner2">
 <input id="adh_button" type="button" class="btn btn-outline-success" value="회원목록보기" onclick="location.href='${pageContext.request.contextPath}/memberList.do'"><br>
