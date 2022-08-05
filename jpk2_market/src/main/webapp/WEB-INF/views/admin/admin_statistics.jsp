@@ -5,8 +5,11 @@
 <head>
 <meta charset="UTF-8">
 <link href="resources/css/style_css.css" rel="stylesheet" />
+<link rel="stylesheet" href="/resources/demos/style.css">
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 	<title>관리자페이지</title>
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script src="${pageContext.request.contextPath}/resources/js/statistics.js "></script>	
 </head>
 <script>
@@ -93,23 +96,22 @@ function order(){
 
 <div id="admin_inner">
 <h5 style="margin-top: 272px;">매출 통계 <input type="button" value="고객별"><input type="button" value="상품별"></h5>
-<input type ="date" class="datepicker" id="strtDate" value="">
-~
-<input type ="date" class="datepicker" id="endDate" value="" onclick="maxDate()">
+<input type="text" id="datepicker1"> ~
+<input type="text" id="datepicker2">
 <div>
-  <button name="filterDate" id="datefilter" value="1">일주일</button>
-  <button name="filterDate" id="datefilter" value="2">3개월</button>
-  <button name="filterDate" id="datefilter" value="3">6개월</button>
-  <button name="filterDate" id="datefilter"  value="4">1개월</button>
+  <button name="filterDate" id="datefilter1" value="1">일주일</button>
+  <button name="filterDate" id="datefilter2" value="2">3개월</button>
+  <button name="filterDate" id="datefilter3" value="3">6개월</button>
+  <button name="filterDate" id="datefilter4"  value="4">1개월</button>
 </div>
 <div id="client" style="width:962px;">
    <table border="1" style="border-right:0px; border-left:0px; font-size: 14px; border-top: 2px solid #198754;" class="table table-hover">
-      <tr>
-         
-         <td id="td1">주문 번호</td>
-         <td id="td3">주문 가격</td>
-         <td id="td4">결제 상태</td>
-         <td id="td5">주문 일</td>
+      <tr>        
+         <td>번호</td>
+         <td>고객명</td>
+         <td>구매수</td>
+         <td>누적금액</td>
+         <td>평균구매금액</td>
       </tr>
       
     <%--   <c:forEach items="${orderList}" var="orderVo" varStatus="status">  
@@ -144,10 +146,12 @@ function order(){
     <table border="1" style="border-right:0px; border-left:0px; font-size: 14px; border-top: 2px solid #198754;" class="table table-hover">
       <tr>
          
-         <td id="td1">주문 번호</td>
-         <td id="td3">주문 가격</td>
-         <td id="td4">결제 상태</td>
-         <td id="td5">주문 일</td>
+         <td>번호</td>
+         <td>상품명</td>
+         <td>판매량</td>
+         <td>단가</td>
+         <td>매출</td>
+         <td>매출비중</td>
       </tr>
       
     <%--   <c:forEach items="${orderList}" var="orderVo" varStatus="status">  
