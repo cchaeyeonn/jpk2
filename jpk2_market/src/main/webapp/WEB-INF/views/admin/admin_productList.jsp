@@ -64,6 +64,20 @@
 #table_title{
 	width:120px;
 }
+#orderlist_1{
+        display: flex;
+    /* padding: 8px 0px 13px; */
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    /* border-bottom: 1px solid rgb(221, 223, 225); */
+    float: right;
+}
+#order_date{
+font-size: 16px;
+    font-weight: 500;
+    line-height: 1.31;
+    color: rgb(51, 51, 51);
+}
 </style>
 
 </head>
@@ -90,8 +104,8 @@
 <div id="admin_inner">
 
    
-
-	<div id="table_button"  style="width:962px; margin-top:93px; text-align:center;">
+	
+	<div id="table_button"  style="width:1127px; margin-top:93px; text-align:center;">
 	<table id="product_t" class="table table-hover">
 		<tr>
 			<th id="table_title">번호</th>
@@ -109,6 +123,11 @@
 			<th id="table_title">삭제</th>
 		</tr>
 			<c:forEach var="productVo" items="${productList}">
+			   <tr>
+			   <td colspan="13"><div id="orderlist_1">
+   <a onClick="location.href='${pageContext.request.contextPath}/orderListDetail.do?order_id=${orderVo.order_id}'" id="order_detail">주문내역 상세보기</a>
+   </div></td>
+   </tr>
 			<form action="/spring/adminProductDelyn.do">
 				<tr>
 					<td>${productVo.pidx}</td><td>${productVo.p_name }</td><td>${productVo.p_secondname}</td><td>${productVo.p_price }</td><td>${productVo.p_unit }</td><td>${productVo.p_delivery }</td>
