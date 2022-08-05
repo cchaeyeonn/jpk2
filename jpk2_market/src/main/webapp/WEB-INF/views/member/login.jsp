@@ -97,7 +97,7 @@ body {
 	border: 1px solid #959595;
 }
 
-input {
+#login_input {
 	border: none;
 	outline: none;
 	box-shadow: none;
@@ -209,15 +209,15 @@ catch(err){
 				<form name="frmt" action="<%=request.getContextPath()%>/loginProcess.do" method="post">
 					<div class="form-group">
 						<div class="input-field1">
-							<span class="far fa-user p-2"></span> <input type="text"
-								name="member_id" placeholder="아이디를 입력해주세요" required class="">
+							<span class="far fa-user p-2"></span>
+							<input type="text" id="login_input" name="member_id" placeholder="아이디를 입력해주세요" required class="">
 						</div>
 					</div>
 					
 					<div class="form-group">
 						<div class="input-field2">
-							<span class="fas fa-lock p-2"></span> <input type="password"
-								name="member_pw" placeholder="비밀번호를 입력해주세요" required class="">
+							<span class="fas fa-lock p-2"></span> 
+							<input type="password" id="login_input" name="member_pw" placeholder="비밀번호를 입력해주세요" required class="">
 							
 								<i class="far fa-eye-slash"></i>
 								
