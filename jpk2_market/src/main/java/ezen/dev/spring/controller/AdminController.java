@@ -147,5 +147,21 @@ public class AdminController {
 		
 	}
 	
+	@GetMapping("/statistics.do")
+	//jsp에 추가된 파일의 이름만 가져옴
+	public String statistics(Model model, HttpServletRequest request) throws IllegalStateException, IOException {
+		
+		HttpSession session = request.getSession();
+		
+		String viewPage="admin/admin_statistics";
+
+		
+		
+		return viewPage;
+	}
+	
+	
+	
+	
 	
 }
