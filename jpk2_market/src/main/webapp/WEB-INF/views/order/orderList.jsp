@@ -152,6 +152,7 @@ width: 60px;
     color: rgb(51, 51, 51);
     font-weight: normal;
     padding-bottom: 10px;
+    padding-top: 10px;
 }
 
 #dd{
@@ -167,6 +168,8 @@ flex: 1 1 0%;
     -webkit-box-orient: vertical;
      width: 253px;
      font-size: 16px;
+    padding-bottom: 2px;
+    padding-top: 10px;
 }
 #orderlist_shipping{
     font-size: 16px;
@@ -249,10 +252,10 @@ flex: 1 1 0%;
     <img id="orderlist_img" class="img-fluid4" src="${pageContext.request.contextPath}/resources/product_image/${cartVo.p_system_filename}" alt="..."  />
 
    <div id="orderlist_content">
-      <dl id="dl">
+<!--       <dl id="dl">
       <dt id="dt">상품명</dt>
       <dd id="dd">과일잼</dd>
-      </dl>
+      </dl> -->
 
       <dl id="dl">
       <dt id="dt">결제금액</dt>
