@@ -54,7 +54,7 @@ public class AdminController {
 	@PostMapping("/addProductProcess.do")
 	//jsp에 추가된 파일의 이름만 가져옴
 	public String productAddProcess(@RequestParam("p_filename") MultipartFile uploadFile,
-			String p_name, String p_price, String p_unit, String p_weight, String p_delivery,
+			String p_name, String p_price, String p_unit, String p_weight1, String p_weight2, String p_delivery,
 			String p_package, String p_allergy, String p_limitdate, String p_type, String p_tag,
 			Integer midx_mp , String p_secondname, Model model, HttpServletRequest request) throws IllegalStateException, IOException {
 		
@@ -74,7 +74,7 @@ public class AdminController {
 		String realPath = request.getServletContext().getRealPath(upload_dir);
 		String fullPath = realPath+p_system_filename;
 		uploadFile.transferTo(new File(fullPath));
-		
+		String p_weight = p_weight1+p_weight2;
 		int result=0;
 		
 		//db에는 midx값이 unsigned이기 때문에 int가 아닌 integer를 사용함
