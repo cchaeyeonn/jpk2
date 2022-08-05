@@ -65,18 +65,28 @@
 	width:120px;
 }
 #orderlist_1{
-        display: flex;
-    /* padding: 8px 0px 13px; */
+    display: flex;
+    padding: 17px 0px 13px;
     -webkit-box-pack: justify;
-    justify-content: space-between;
-    /* border-bottom: 1px solid rgb(221, 223, 225); */
+    justify-content: flex-end;
+    border-bottom: 1px solid rgb(221, 223, 225);
     float: right;
+    width: 100%;
+}
 }
 #order_date{
 font-size: 16px;
     font-weight: 500;
     line-height: 1.31;
     color: rgb(51, 51, 51);
+}
+#line{
+    display: flex;
+    flex-direction: row;
+    width: 55%;
+    -webkit-box-align: center;
+    align-items: center;
+    border-bottom: 2px solid #198754;
 }
 </style>
 
@@ -103,10 +113,13 @@ font-size: 16px;
 
 <div id="admin_inner">
 
-   
+     <h5 style="margin-top: 52px;">내가 등록한 상품 목록</h5>
+
+   <div id="line"></div>
 	
-	<div id="table_button"  style="width:1127px; margin-top:93px; text-align:center;">
-	<table id="product_t" class="table table-hover">
+	<div id="table_button"  style="width:913px; margin-top:25px; text-align:center; font-size: 14px;">
+
+	<table id="product_t">
 		<tr>
 			<th id="table_title">번호</th>
 			<th id="table_title">이름</th>
@@ -125,12 +138,13 @@ font-size: 16px;
 			<c:forEach var="productVo" items="${productList}">
 			   <tr>
 			   <td colspan="13"><div id="orderlist_1">
-   <a onClick="location.href='${pageContext.request.contextPath}/orderListDetail.do?order_id=${orderVo.order_id}'" id="order_detail">주문내역 상세보기</a>
+   <a onClick="location.href='${pageContext.request.contextPath}/orderListDetail.do?order_id=${orderVo.order_id}'" id="order_detail">등록한 상품 상세보기</a>
    </div></td>
    </tr>
+   
 			<form action="/spring/adminProductDelyn.do">
 				<tr>
-					<td>${productVo.pidx}</td><td>${productVo.p_name }</td><td>${productVo.p_secondname}</td><td>${productVo.p_price }</td><td>${productVo.p_unit }</td><td>${productVo.p_delivery }</td>
+					<td>${productVo.pidx}</td><td>${productVo.p_name }</td><td>${productVo.p_secondname}</td><td>${productVo.p_price }&nbsp;원</td><td>${productVo.p_unit }</td><td>${productVo.p_delivery }</td>
 					<td>${productVo.p_weight }</td><td>${productVo.p_package }</td><td>${productVo.p_allergy }</td><td>${productVo.p_limitdate }</td>
 					<td>${productVo.p_type }</td><td>${productVo.p_tag }</td><td><input type="hidden" name="pidx" value="${productVo.pidx}"><input type="submit" value="삭제"></a></td>
 				</tr>
