@@ -117,8 +117,9 @@ public class AdminController {
 			model.addAttribute("p_secondname",p_secondname);
 			viewPage = "admin/admin_home";
 		}
-		return viewPage;
+		return "redirect:/adminProductList.do";
 	}
+	
 	@GetMapping("/adminProductList.do")
 	public String getProductList(Model model, HttpServletRequest request) {
 		
@@ -143,7 +144,7 @@ public class AdminController {
 		adminService.delProduct(productVo);
 
 
-		return "admin/admin_home";
+		return "redirect:/adminProductList.do";
 		
 	}
 	
