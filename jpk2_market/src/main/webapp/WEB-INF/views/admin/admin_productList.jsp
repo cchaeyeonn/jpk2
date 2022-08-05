@@ -141,6 +141,7 @@ font-size: 16px;
    <a onClick="location.href='${pageContext.request.contextPath}/orderListDetail.do?order_id=${orderVo.order_id}'" id="order_detail">등록한 상품 상세보기</a>
    </div></td>
    </tr>
+   
 			<form action="/spring/adminProductDelyn.do">
 				<tr>
 					<td>${productVo.pidx}</td><td>${productVo.p_name }</td><td>${productVo.p_secondname}</td><td>${productVo.p_price }&nbsp;원</td><td>${productVo.p_unit }</td><td>${productVo.p_delivery }</td>
