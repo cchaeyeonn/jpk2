@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import ezen.dev.spring.vo.MemberVo;
+import ezen.dev.spring.vo.ProductSearchVo;
 import ezen.dev.spring.vo.ProductVo;
 
 @Repository
@@ -42,6 +43,10 @@ public class ProductDao {
 
 	public List<ProductVo> getProductListBest() {
 		return sqlSession.selectList(MAPPER+".getProductListBest");
+	}
+
+	public List<ProductVo> getSearchProductList(ProductSearchVo productSearchVo) {
+		return sqlSession.selectList(MAPPER+".getSearchProductList", productSearchVo);
 	}
 	
 

@@ -19,4 +19,21 @@
 	<select id="getProductListBest" resultType="productVo">
 	select *,sum(p_amount) as count from fm_product_cart a inner join fm_product b on a.pidx_pc = b.pidx where p_check like 'Y' group by(pidx_pc) order by count desc;
 	</select>
+	<select id="getSearchProductList" parameterType="ProductSearchVo" resultType="productVo">
+		select * from fm_product 
+		  <choose>
+  			  <when test="searchType=='p_name' and searchName != null and searchName != '' ">
+  			   where p_delyn='N' AND p_name like CONCAT('%', #{searchName}, '%')
+ 			   </when>
+   			 <when test="searchType=='p_type' and searchName != null and searchName != '' ">
+   			  where p_delyn='N' AND p_type like CONCAT('%', #{searchName}, '%')
+   			</when>
+   			<when test="searchType=='p_tag' and searchName != null and searchName != '' ">
+   			where p_delyn='N' AND p_tag like CONCAT('%', #{searchName}, '%')
+   			 </when>
+    		<otherwise>
+     		where p_delyn='N'	 
+    		</otherwise>
+  			</choose>
+	</select>
 </mapper>

@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import ezen.dev.spring.service.AdminService;
 import ezen.dev.spring.service.ProductService;
 import ezen.dev.spring.vo.MemberVo;
+import ezen.dev.spring.vo.ProductSearchVo;
 import ezen.dev.spring.vo.ProductVo;
 
 @Controller
@@ -47,8 +48,6 @@ public class ProductController {
 		List<ProductVo> productList = productService.getProductList();
 		//그러한 리스트를 model에 담음
 		model.addAttribute("productList",productList);
-		
-		
 		//그러한 값을 product_list.jsp에 뿌려줌
 		return "product/product_list";
 		}
@@ -59,22 +58,29 @@ public class ProductController {
 		model.addAttribute("productList",productList);
 		return "product/product_list_type";
 	}
+	
 	@GetMapping("/productList_new.do")
 	public String getProductList_new(Model model) {
 		List<ProductVo> productList = productService.getProductListNew();
-		
 		model.addAttribute("productList",productList);
-		
-		return "product/product_list_type";
-	}
-	@GetMapping("/productList_best.do")
-	public String getProductList_best(Model model) {
-		List<ProductVo> productList = productService.getProductListBest();
-		
-		model.addAttribute("productList",productList);
-		
 		return "product/product_list_type";
 	}
 	
+	@GetMapping("/productList_best.do")
+	public String getProductList_best(Model model) {
+		List<ProductVo> productList = productService.getProductListBest();
+		model.addAttribute("productList",productList);
+		return "product/product_list_type";
+	}
+	
+	@GetMapping("/searchProductList.do")
+	public String getSearchProductList(Model model, @RequestParam(value="searchType", required=false) String searchType, @RequestParam(value="searchName", required=false) String searchName) {
+		ProductSearchVo productSearchVo = new ProductSearchVo();
+		productSearchVo.setSearchType(searchType);
+		productSearchVo.setSearchName(searchName);
+		List<ProductVo> productList = productService.getSearchProductList(productSearchVo);
+		model.addAttribute("productList",productList);
+		return "product/product_list_type";
+	}
 }
 
