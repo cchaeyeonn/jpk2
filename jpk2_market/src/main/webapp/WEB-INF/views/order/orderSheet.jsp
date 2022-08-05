@@ -155,12 +155,15 @@ function cart(){
 
 #ordersheet_title{
 	margin-top: 50px;
-	align:center;
+	text-align:center;
 }
 
 #ordersheet_hr{
 	height: 3px; 
 	background-color: #a3a3a3;
+}
+#member_addr_1{
+	width:293px;
 }
 </style>
 </head>
@@ -277,15 +280,13 @@ function cart(){
 						</tr>
 						<tr>
 							<td class="td_info_l"></td>
-							<td><input type="text" id="postcode" name="member_addrcode"
-								placeholder="우편번호" value="" readonly> <input
-								type="button" onclick="execDaumPostcode()" value="우편번호 찾기">
+							<td><input type="text" id="postcode" name="member_addrcode" placeholder="우편번호" value="" readonly>
+								<input type="button" class="btn btn-outline-success" onclick="execDaumPostcode()" value="우편번호 찾기">
 							<p /></td>
 						</tr>
 						<tr>
 							<td class="td_info_l"></td>
-							<td><input type="text" id="member_addr_1"
-								name="member_addr1" value="" readonly placeholder="도로명주소">
+							<td><input type="text" id="member_addr_1" name="member_addr1" value="" readonly placeholder="도로명주소">
 								<input type="text" id="member_addr_2" name="member_addr2"
 								placeholder="상세주소">
 							<p />

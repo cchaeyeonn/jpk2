@@ -219,7 +219,7 @@ input[id="del-chk3"]:checked + .del-chk3::before{
          <tr><td>&nbsp;</td><td></td></tr>
          <tr>
             <td>성별<span id="star">*</span></td>
-            <td><input type="radio" id="custom-control custom-radio" name="member_gender" value="m"> 남자 
+            <td><input type="radio" id="custom-control custom-radio" name="member_gender" value="m" checked> 남자 
                 <input type="radio" id="custom-control custom-radio" name="member_gender" value="f"> 여자</td>
                 <td><div style="height:20px"><span id="result_gender" style="font-size:12px;"></span></div></td>
          </tr>
@@ -236,34 +236,35 @@ input[id="del-chk3"]:checked + .del-chk3::before{
       <tr>
          <td>
          <input type="checkbox" id="chk_all" name="member_termall">
-         <label for="chk_all" class="chk_all"></label></td>
-         <td>이용약관에 대해 전체 동의합니다.</td>
+         <label for="chk_all" class="chk_all"></label>
+         </td>
+         <td id="join_ment">이용약관에 대해 전체 동의합니다.</td>
          </tr>
          
          <tr>
          <td></td>
-         <td>(선택항목에 동의하지 않은 경우도 회원가입 및 일반적인 서비스를 이용할 수 있습니다.)</td></tr>
+         <td id="join_ment">(선택항목에 동의하지 않은 경우도 회원가입 및 일반적인 서비스를 이용할 수 있습니다.)</td></tr>
          <tr><td>&nbsp;</td><td></td></tr>
          
          <tr>
          <td>
          <input type="checkbox" id="del-chk" class="del-chk" name="member_term1" value="1">
          <label for="del-chk" class="del-chk1"></label></td>
-         <td>이용약관 동의 (필수)&nbsp;&nbsp;&nbsp;&nbsp;<span id="terms">약관보기</span></td>
+         <td id="join_ment">이용약관 동의 (필수)&nbsp;&nbsp;&nbsp;&nbsp;<span id="terms">약관보기</span></td>
          </tr>
          
          <tr>
          <td>
          <input type="checkbox" id="del-chk2" class="del-chk" name="member_term2" value="1">
          <label for="del-chk2" class="del-chk2"></label></td>
-         <td>개인정보 수집·이용동의 (필수) &nbsp;&nbsp;&nbsp;&nbsp;<span id="terms">약관보기</span></td>
+         <td id="join_ment">개인정보 수집·이용동의 (필수) &nbsp;&nbsp;&nbsp;&nbsp;<span id="terms">약관보기</span></td>
          </tr>
          
          <tr>
          <td>
          <input type="checkbox" id="del-chk3" class="del-chk" name="member_term3" value="1" >
          <label for="del-chk3" class="del-chk3"></label></td>
-         <td>본인은 만 14세 이상입니다. (필수)</td>
+         <td id="join_ment">본인은 만 14세 이상입니다. (필수)</td>
          </tr>
          
          <tr>
