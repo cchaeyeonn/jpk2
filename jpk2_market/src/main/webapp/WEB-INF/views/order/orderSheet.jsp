@@ -344,10 +344,10 @@ function cart(){
 							<td class="order_price1"></td>
 							<td><label><input type="radio" name="method"
 									value="card" checked> 신용카드</label>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+							<!-- <td><label><input type="radio" name="method"
+									value="trans"> 실시간계좌이체</label>&nbsp;&nbsp;&nbsp;&nbsp;</td> -->
 							<td><label><input type="radio" name="method"
-									value="trans"> 실시간계좌이체</label>&nbsp;&nbsp;&nbsp;&nbsp;</td>
-							<td><label><input type="radio" name="method"
-									value="vbank"> 가상계좌</label></td>
+									value="vbank"> 무통장 입금</label></td>
 
 						</tr>
 					</table>
