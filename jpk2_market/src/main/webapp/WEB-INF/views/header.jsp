@@ -96,7 +96,16 @@ a {
   grid-template-columns: 1fr 3fr;
 } */
 
+.search{
+	display:inline;
+	padding-left:362px;
+}
 
+.search_input{
+	margin-top:5px;
+	border-radius: 15px;
+    border: 1px solid rgb(189 189 189);
+}
 </style>
 
 
@@ -203,7 +212,13 @@ function cart(){
 			<%-- <li><a href="/spring/cart_main.do?midx=${midx}" style="margin-left: 710px;"><input type="image" value="장바구니" src="resources/img/cart.png" width=30px; ></a></li> --%>
 
 				
-				
+			<li style="display:inline;">        
+				<!-- 검색창 -->
+		        <div class="search">
+				  <input type="text" class="search_input" placeholder="검색어 입력">
+				  <img style="width:20px;" src="resources/img/search.png">
+				</div>
+		</li>	
 				<!-- 마우스 올리면 이미지 변경 onmouseover 이벤트 -->
 			<li style="float: right; width: 0px;"><a
 				onclick="cart(${midx});" style="float: right;" id="cartbutton">
