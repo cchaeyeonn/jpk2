@@ -95,7 +95,7 @@ function order(){
 
 
 <div id="admin_inner">
-<h5 style="margin-top: 272px;">매출 통계 <input type="button" value="고객별"><input type="button" value="상품별"></h5>
+<h5 style="margin-top: 150px;">매출 통계 <input type="button" value="고객별"><input type="button" value="상품별"></h5>
 <input type="text" id="datepicker1"> ~
 <input type="text" id="datepicker2">
 <div>

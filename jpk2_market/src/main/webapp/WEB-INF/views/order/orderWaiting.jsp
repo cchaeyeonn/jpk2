@@ -92,8 +92,9 @@
 	</div>
 		
 		
-<%-- 		<br> <a href="${pageContext.request.contextPath}/index.do">메인으로 이동하기</a>
+<%--  		<br> <a href="${pageContext.request.contextPath}/index.do">메인으로 이동하기</a>
 		<a href="${pageContext.request.contextPath}/orderList.do">주문내역 확인하기</a> --%>
+		
 	</div>
 </div>
 <!-- 푸터 연결 -->
