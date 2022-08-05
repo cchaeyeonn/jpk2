@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import ezen.dev.spring.dao.AdminDao;
 import ezen.dev.spring.dao.ProductDao;
 import ezen.dev.spring.vo.MemberVo;
+import ezen.dev.spring.vo.ProductSearchVo;
 import ezen.dev.spring.vo.ProductVo;
 
 @Service
@@ -41,6 +42,10 @@ public class ProductService {
 
 	public List<ProductVo> getProductListBest() {
 		return productDao.getProductListBest();
+	}
+
+	public List<ProductVo> getSearchProductList(ProductSearchVo productSearchVo) {
+		return productDao.getSearchProductList(productSearchVo);
 	}
 	
 }
