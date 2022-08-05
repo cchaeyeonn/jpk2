@@ -22,7 +22,7 @@
 	</select>   
    
    <select id="getOrderDetail" resultType="orderVo">
-		select order_id , group_concat(pbidx_co) as product , pay_price , pay_way , orderpay_check , pay_findate , order_date , midx_mo, oidx  from fm_order where order_id=#{order_id} group by order_id;
+		select order_id , group_concat(pbidx_co) as product , pay_price , pay_way , orderpay_check , pay_findate , order_date , midx_mo, oidx, d_status from fm_order a inner join fm_del b on a.oidx = b.oidx_od where order_id=#{order_id} group by order_id;
    </select>
    
    

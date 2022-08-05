@@ -214,7 +214,20 @@ padding: 81px 0px 92px 686px;
 <script type="text/javascript" charset="utf-8">
    sessionStorage.setItem("contextpath", "${pageContext.request.contextPath}");
 </script>
-
+<script>
+      $(function(){
+         if("${orderVo.d_status}"=="Y"){
+            $("#${orderVo.order_id}_orderlist_shipping").text("배송 완료");
+         }else if("${orderVo.d_status}"=="N"){
+            $("#${orderVo.order_id}_orderlist_shipping").text("배송 준비중");
+         }else if("${orderVo.d_status}"=="W"){
+            $("#${orderVo.order_id}_orderlist_shipping").text("배송중");
+         }else{
+            $("#${orderVo.order_id}_orderlist_shipping").text("배송 중 오류");
+         }
+      })
+      </script> 
+   
 </head>
 <body>
    <!-- 헤더 연결 -->
@@ -274,11 +287,7 @@ padding: 81px 0px 92px 686px;
       <dd id="dd">${cartVo.p_amount }&nbsp;개</dd>
       </dl>
    </div>
-   
-   
-   <div id="orderlist_box_right">
-      <span id="orderlist_shipping">배송상태</span>
-   </div>
+
  
    </div>
      </c:forEach>
@@ -365,7 +374,7 @@ padding: 81px 0px 92px 686px;
             <br>
             <hr>
             <table>
-               <tr>
+               <tr>       
                   <td id="d_from">받는 분</td>
                   <td id="d_from2">${delVo.d_to}</td>
                </tr>
@@ -377,6 +386,10 @@ padding: 81px 0px 92px 686px;
                   <td id="d_from">주소</td>
                   <td id="d_from2">(${delVo.d_addrcode}) ${delVo.d_addr1} / ${delVo.d_addr2}
                   </td>
+               </tr>
+               <tr>
+              	  <td id="d_from">배송상태</td>
+              	  <td id="d_from2"><span id="${orderVo.order_id}_orderlist_shipping">${delVo.d_status}</span></td>
                </tr>
             </table>
          </div>
