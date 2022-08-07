@@ -5,7 +5,6 @@
         $("#datepicker1, #datepicker2").datepicker({
             minDate: new Date('2020-01-01'),
 			maxDate : 0,
-			showOn:"button",
         	buttonImage: "http://jqueryui.com/resources/demos/datepicker/images/calendar.gif",
         	buttonImageOnly: true,
         	changeMonth:true,
