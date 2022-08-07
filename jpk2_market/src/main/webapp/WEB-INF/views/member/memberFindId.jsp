@@ -103,6 +103,10 @@ body {
 	font-family: 'Poppins', sans-serif
 }
 
+#input_cover{
+    padding-left: 293px;
+}
+
 
 a {
 	text-decoration: none;
@@ -221,6 +225,7 @@ a:hover {
 						</div>
 					</div> -->
 					
+					<div id="input_cover">
 					<!-- <input type="button" class="btn btn-block text-center my-3" value="로그인" onclick="check_login();"> -->
 					<input style="margin-top:20px;" type="button" class="btn btn-outline-success" value="확인" onclick="check();">
 					<input style="margin-top:20px;" type="button" class="btn btn-outline-success" value="뒤로" onclick="location.href='login.do'">
@@ -228,6 +233,7 @@ a:hover {
 						type="button" class="btn btn-block text-center my-3" value="회원가입"
 						onclick="location.href='join.do'">
 					<p /> -->
+					</div>
 			
 				</form>
 			</div>
