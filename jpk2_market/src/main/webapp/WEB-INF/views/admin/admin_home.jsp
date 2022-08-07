@@ -35,7 +35,7 @@ function order(){
    
 } 
 #admin_1{
-  padding: 5px 0 35px 1px;
+  padding: 45px 0 35px 1px;
     font-weight: 700;
     font-size: 26px;
     line-height: 35px;
