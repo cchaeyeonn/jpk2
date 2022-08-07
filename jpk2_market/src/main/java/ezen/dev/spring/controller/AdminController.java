@@ -199,7 +199,7 @@ public class AdminController {
 	public String adminProductOk(@RequestParam Integer pidx, HttpServletResponse response) throws IOException{
 		int result = adminService.adminProductOk(pidx);
 		if(result==1) {
-		return "admin/super_adminCheckList";}
+		return "redirect:/adminProductCheck.do";}
 		else
 		{response.setContentType("text/html; charset=UTF-8");
 		response.setCharacterEncoding("UTF-8");
