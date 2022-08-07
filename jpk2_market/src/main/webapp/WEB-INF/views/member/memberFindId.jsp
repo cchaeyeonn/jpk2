@@ -94,13 +94,17 @@ body {
 	border: 1px solid #959595;
 }
 
-input {
+.findid_input {
 	border: none;
 	outline: none;
 	box-shadow: none;
 	width: 100%;
 	padding: 0px 2px;
 	font-family: 'Poppins', sans-serif
+}
+
+#input_cover{
+    padding-left: 293px;
 }
 
 
@@ -196,7 +200,7 @@ a:hover {
 						<div class="input-field1">
 							<!-- <span class="far fa-user p-2"></span> -->
 								<!-- <input type="text" name="member_id" placeholder="아이디를 입력해주세요" required class=""> -->
-								<input type="text" name="member_name" size="30" placeholder="이름을 입력해주세요">
+								<input type="text" name="member_name" class="findid_input" size="30" placeholder="이름을 입력해주세요">
 								
 						</div>
 					</div>
@@ -204,7 +208,7 @@ a:hover {
 						<div class="input-field2">
 							<!-- <span class="fas fa-lock p-2"></span>  -->
 							<!-- <input type="password" name="member_pw" placeholder="비밀번호를 입력해주세요" required class=""> -->
-							<input type="text" name="member_email" size="30" placeholder="이메일주소를 입력해주세요">
+							<input type="text" name="member_email" class="findid_input" size="30" placeholder="이메일주소를 입력해주세요">
 							
 								<!-- <i class="far fa-eye-slash"></i> -->
 								
@@ -221,13 +225,15 @@ a:hover {
 						</div>
 					</div> -->
 					
+					<div id="input_cover">
 					<!-- <input type="button" class="btn btn-block text-center my-3" value="로그인" onclick="check_login();"> -->
 					<input style="margin-top:20px;" type="button" class="btn btn-outline-success" value="확인" onclick="check();">
-					<input style="margin-top:7px;" type="button" class="btn btn-outline-success" value="뒤로" onclick="location.href='login.do'">
+					<input style="margin-top:20px;" type="button" class="btn btn-outline-success" value="뒤로" onclick="location.href='login.do'">
 					<!-- <input style="margin-top: -6px !important; background-color: white; border-color: black; border: 1px solid; color: black;"
 						type="button" class="btn btn-block text-center my-3" value="회원가입"
 						onclick="location.href='join.do'">
 					<p /> -->
+					</div>
 			
 				</form>
 			</div>

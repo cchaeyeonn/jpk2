@@ -22,7 +22,7 @@
 
 <style>
 .price_r{
-	text-align:right;
+   text-align:right;
 }
 
 </style>
@@ -34,12 +34,12 @@
     <form name="orderAddForm" action="${pageContext.request.contextPath}/orderSheet.do" method="post">
     
     <div id="cart_inner" style="width:1777px;">
-    <h2 style="text-align:center;"> 장바구니</h2>
+    <h2 style="text-align:center; margin-left: 100px;"> 장바구니</h2>
     
     <label for="chk_all"><input type="checkbox" id="chk_all" checked>전체 선택</label> ㅣ 
     <!--<input type="button" value="선택 삭제" id="cart_delete">-->
 
-	<!-- <input type="submit" class="btn btn-outline-success" value="주문하기"> -->
+   <!-- <input type="submit" class="btn btn-outline-success" value="주문하기"> -->
     <button id="cart_delete" type="button" value="선택 삭제">선택 삭제</button>
     
     <hr style="width:82%;">
@@ -120,39 +120,39 @@
             if(data == "N"){
                alert("db와 연동되지 않았습니다");
             }else{
-            	var sum_price = parseInt($("#sum_price").val());
-            	if(number<=1){
+               var sum_price = parseInt($("#sum_price").val());
+               if(number<=1){
                     $("#${cartVo.pbidx}_btn_minus").prop("disabled", true);
                     number=1;
                     }
                 
-            	
-            	
-            	if($("#chk_${cartVo.pbidx}").is(':checked')){
-            		sum_price -=  parseInt($(price).val());   
-            		$("#sum_price").val(sum_price);      
-            	       }
+               
+               
+               if($("#chk_${cartVo.pbidx}").is(':checked')){
+                  sum_price -=  parseInt($(price).val());   
+                  $("#sum_price").val(sum_price);      
+                      }
                     
-            	if(sum_price < 50000 && sum_price != 0){
-            	           delivery_fee = 3000;
-            	           $("#delivery_fee").text(delivery_fee+"원");
-            	        }else{
-            	           delivery_fee = 0;
-            	           $("#delivery_fee").text(delivery_fee+"원");
-            	        }
-            	       
-            	     
-            	       total_pay_price = sum_price-sale+delivery_fee;
-            	       
-            	       $("#totalprice_result").text(sum_price+"원");
-            	       $("#sale").text(sale+"원"); 
-            	       $("#total_pay_price").text(total_pay_price+"원");
-            	       
-            	       
-            	      	
-            	
-            	
-            	
+               if(sum_price < 50000 && sum_price != 0){
+                          delivery_fee = 3000;
+                          $("#delivery_fee").text(delivery_fee+"원");
+                       }else{
+                          delivery_fee = 0;
+                          $("#delivery_fee").text(delivery_fee+"원");
+                       }
+                      
+                    
+                      total_pay_price = sum_price-sale+delivery_fee;
+                      
+                      $("#totalprice_result").text(sum_price+"원");
+                      $("#sale").text(sale+"원"); 
+                      $("#total_pay_price").text(total_pay_price+"원");
+                      
+                      
+                        
+               
+               
+               
             }
             
          },
@@ -186,30 +186,30 @@ $("#${cartVo.pbidx}_btn_plus").click(function(){
             if(data == "N"){
                alert("db와 연동되지 않았습니다");
             }else{
-            	var sum_price = parseInt($("#sum_price").val());
-            	if(number>=2){
+               var sum_price = parseInt($("#sum_price").val());
+               if(number>=2){
                     $("#${cartVo.pbidx}_btn_minus").prop("disabled", false);}
-            	
-            	if($("#chk_${cartVo.pbidx}").is(':checked')){
-            		sum_price +=  parseInt($(price).val());
-            		$("#sum_price").val(sum_price);      
-            	       }
+               
+               if($("#chk_${cartVo.pbidx}").is(':checked')){
+                  sum_price +=  parseInt($(price).val());
+                  $("#sum_price").val(sum_price);      
+                      }
                     
-            	
-            	if(sum_price < 50000 && sum_price != 0){
-            	           delivery_fee = 3000;
-            	           $("#delivery_fee").text(delivery_fee+"원");
-            	        }else{
-            	           delivery_fee = 0;
-            	           $("#delivery_fee").text(delivery_fee+"원");
-            	        }
-            	       
-            	     
-            	       total_pay_price = sum_price-sale+delivery_fee;
-            	       
-            	       $("#totalprice_result").text(sum_price+"원");
-            	       $("#sale").text(sale+"원"); 
-            	       $("#total_pay_price").text(total_pay_price+"원");
+               
+               if(sum_price < 50000 && sum_price != 0){
+                          delivery_fee = 3000;
+                          $("#delivery_fee").text(delivery_fee+"원");
+                       }else{
+                          delivery_fee = 0;
+                          $("#delivery_fee").text(delivery_fee+"원");
+                       }
+                      
+                    
+                      total_pay_price = sum_price-sale+delivery_fee;
+                      
+                      $("#totalprice_result").text(sum_price+"원");
+                      $("#sale").text(sale+"원"); 
+                      $("#total_pay_price").text(total_pay_price+"원");
             }
             
          },
@@ -281,11 +281,11 @@ $("#chk_${cartVo.pbidx}").change(function(){
 });
 $("#chk_all").change(function(){
   if($("#chk_all").is(':checked')){
-	  location.reload();
-	  
-	  
+     location.reload();
+     
+     
   }else{
-	sum_price = 0;  
+   sum_price = 0;  
   }
    
   $("#sum_price").val(sum_price);

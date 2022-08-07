@@ -135,13 +135,17 @@ body {
    border: 1px solid #959595;
 }
 
-input {
+.findpw_input {
    border: none;
    outline: none;
    box-shadow: none;
    width: 100%;
    padding: 0px 2px;
    font-family: 'Poppins', sans-serif
+}
+
+#input_cover{
+	padding-left: 293px;
 }
 
 
@@ -274,7 +278,7 @@ function doloading(){
                   <div class="input-field1">
                      <!-- <span class="far fa-user p-2"></span> -->
                         <!-- <input type="text" name="member_id" placeholder="아이디를 입력해주세요" required class=""> -->
-                        <input type="text" id="member_name" name="member_name" size="30" placeholder="이름 입력해주세요">
+                        <input type="text" id="member_name" class="findpw_input" name="member_name" size="30" placeholder="이름 입력해주세요">
                         
                   </div>
                </div>
@@ -282,7 +286,7 @@ function doloading(){
                   <div class="input-field2">
                      <!-- <span class="fas fa-lock p-2"></span>  -->
                      <!-- <input type="password" name="member_pw" placeholder="비밀번호를 입력해주세요" required class=""> -->
-                     <input type="text" id="member_email" name="member_email" size="30" placeholder="이메일주소를 입력해주세요">
+                     <input type="text" id="member_email" class="findpw_input" name="member_email" size="30" placeholder="이메일주소를 입력해주세요">
                      
                          <!-- <i class="far fa-eye-slash"></i> -->
                         
@@ -299,11 +303,11 @@ function doloading(){
                   </div>
                </div> -->
                
-               
+               <div id="input_cover">
                <input style="margin-top:20px;" type="button" id="trigger" class="btn btn-outline-success" value="확인" onclick="check();">
-               <input style="margin-top:7px;" type="button" class="btn btn-outline-success" value="뒤로" onclick="location.href='login.do'">
+               <input style="margin-top:20px;" type="button" class="btn btn-outline-success" value="뒤로" onclick="location.href='login.do'">
                <input type="image" src="resources/img/loadingbar.gif" id="toloading" style="display:none; margin-top:7px; padding-left: 190px; padding-right: 193px; pointer-events: none;"class="btn btn-outline-success">
-               
+               </div>
          
             </form>
          </div>
