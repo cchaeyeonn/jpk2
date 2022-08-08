@@ -146,7 +146,7 @@ font-size: 16px;
 	   			</td>
    			</tr>
    
-			<form action="/spring/adminProductDelyn.do">
+			<form action="/spring/superAdminProductDelyn.do">
 			<tr>
 				<td>${productVo.pidx}</td>
 				<td>${productVo.p_name }</td>

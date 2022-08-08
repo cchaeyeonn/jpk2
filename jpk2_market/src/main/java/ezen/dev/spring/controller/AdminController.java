@@ -264,5 +264,19 @@ public class AdminController {
 		return null;
 		}
 	}
-	
+	@GetMapping("/superAdminProductDelyn.do")
+	public String delAdminProduct(@RequestParam("pidx") Integer pidx, HttpServletRequest request) {
+		
+		HttpSession session = request.getSession();
+		Integer midx_mp =Integer.parseInt(String.valueOf(session.getAttribute("midx")));
+		ProductVo productVo = new ProductVo();
+		
+		productVo.setMidx_mp(midx_mp);
+		productVo.setPidx(pidx);
+		adminService.delProduct(productVo);
+
+
+		return "redirect:/adminProductCheck.do";
+		
+	}
 }
