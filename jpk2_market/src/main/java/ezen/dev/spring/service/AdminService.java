@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import ezen.dev.spring.dao.AdminDao;
+import ezen.dev.spring.vo.AdminVo;
 import ezen.dev.spring.vo.MemberVo;
 import ezen.dev.spring.vo.ProductVo;
 
@@ -38,5 +39,41 @@ public class AdminService {
 	public List<ProductVo> getAdminProductListDetail(ProductVo productVo) {
 		return adminDao.getAdminProductListDetail(productVo);
 	}
-	
+
+	public List<ProductVo> getProductCheck() {
+		
+		return adminDao.getProductCheck();
+	}
+
+	public ProductVo getProductInfo(Integer pidx) {
+		return adminDao.getProductInfo(pidx);
+	}
+
+	public int adminProductOk(Integer pidx) {
+
+		return adminDao.adminProductOk(pidx);
+	}
+
+	public int adminMemberUp(Integer midx) {
+		return adminDao.adminMemberUp(midx);
+	}
+
+	public int adminMemberDelyn(Integer midx) {
+		return adminDao.adminMemberDelyn(midx);
+	}
+
+
+	public List<AdminVo> getStatisticsList(AdminVo adminVo) {
+		
+		return adminDao.getStatisticsList(adminVo);
+	}
+	public List<ProductVo> getBuyerList(Integer pidx) {
+		return adminDao.getBuyerList(pidx);
+	}
+
+	public ProductVo getBuyerDetail(ProductVo pVo) {
+		return adminDao.getBuyerDetail(pVo);
+
+	}
+
 }

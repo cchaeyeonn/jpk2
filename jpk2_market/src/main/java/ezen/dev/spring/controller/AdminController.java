@@ -2,10 +2,13 @@ package ezen.dev.spring.controller;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +20,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
 import ezen.dev.spring.service.AdminService;
+import ezen.dev.spring.vo.AdminVo;
 import ezen.dev.spring.vo.MemberVo;
 import ezen.dev.spring.vo.ProductVo;
 
@@ -37,11 +41,8 @@ public class AdminController {
 	
 	@GetMapping("/memberList.do")
 	public String getMemberList(Model model) {
-		
 		List<MemberVo> memberList = adminService.getMemberList();
-
 		model.addAttribute("memberList",memberList);
-		
 		return "admin/admin_memberList";
 	}
 	
@@ -132,20 +133,15 @@ public class AdminController {
 		
 		return "admin/admin_productList";
 	}
-	@GetMapping("/adminProductListDetail.do")
-	public String getAdminProductListDetail(Model model, HttpServletRequest request, @RequestParam("pidx") Integer pidx, ProductVo productVo) {
-		productVo.setPidx(pidx);
+	@GetMapping("/admin_productDetail.do")
+	public String getAdminProductDetail(Model model, HttpServletRequest request, @RequestParam("pidx") Integer pidx) {
 		
-		List<ProductVo> productList = adminService.getAdminProductListDetail(productVo);
+		ProductVo productVo= adminService.getProductInfo(pidx);
 		
-		model.addAttribute("productList", productList);
+		model.addAttribute("productVo", productVo);
 		
-		return "admin/admin_productListDetail";
+		return "admin/admin_productDetail";
 	}
-	
-	
-	
-	
 	
 	@GetMapping("/adminProductDelyn.do")
 	public String delProduct(@RequestParam("pidx") Integer pidx, HttpServletRequest request) {
@@ -163,21 +159,174 @@ public class AdminController {
 		
 	}
 	
-	@GetMapping("/statistics.do")
+	@PostMapping("/statistics.do")
 	//jsp에 추가된 파일의 이름만 가져옴
-	public String statistics(Model model, HttpServletRequest request) throws IllegalStateException, IOException {
+	public String statistics(@RequestParam(value="begin_date", required=false) String begin_date,
+			@RequestParam(value="end_date", required=false) String end_date,Model model, HttpServletRequest request) throws IllegalStateException, IOException {
+		SimpleDateFormat format = new SimpleDateFormat ( "yyyy-MM-dd");
+		Calendar time = Calendar.getInstance();
+		String year = String.valueOf(Calendar.getInstance().get(Calendar.YEAR));
+		String enddate = format.format(time.getTime());
+		String startdate = year+"-01-01";
 		
-		HttpSession session = request.getSession();
+		if(begin_date == null) {
+			begin_date = startdate;
+
+		};
 		
-		String viewPage="admin/admin_statistics";
+		if(end_date ==null) {
+			end_date = enddate;
+			
+		};
+		
+		AdminVo adminVo = new AdminVo();
+		System.out.println("begin_date:"+begin_date);
+		System.out.println("end_date:"+end_date);
+
+		adminVo.setBegin_date(begin_date);
+		adminVo.setEnd_date(end_date);
+		
+		
+		
+		List<AdminVo> statisticsList = adminService.getStatisticsList(adminVo);
+
+		
+		model.addAttribute("statisticsList",statisticsList);
+		model.addAttribute("adminVo", adminVo);
+		
+		
 
 		
 		
-		return viewPage;
+		return "admin/admin_statistics";
 	}
 	
+	@GetMapping("/adminProductCheck.do")
+	public String getProductCheckList(Model model, HttpServletRequest request, HttpServletResponse response) throws IOException {
+		HttpSession session = request.getSession();
+		Integer member_grade =Integer.parseInt(String.valueOf(session.getAttribute("member_grade")));
+		if(member_grade != 2) {
+			response.setContentType("text/html; charset=UTF-8");
+			response.setCharacterEncoding("UTF-8");
+			PrintWriter out=response.getWriter();
+			out.println("<script>window.onload = function(){alert('권한이 없습니다.'); location.href='/spring/admin.do';}</script>");
+			out.flush();
+			return null;
+		}else {
+		List<ProductVo> productList = adminService.getProductCheck();
+		model.addAttribute("productList",productList);
+		
+		return "admin/super_adminCheckList";}
+	}
 	
+	@GetMapping("/adminProductDetail.do")
+	public String product_Detail(@RequestParam Integer pidx, Model model, HttpServletRequest request){
+		ProductVo productVo = adminService.getProductInfo(pidx);
+		model.addAttribute("productVo",productVo);
+		return "admin/super_adminProductDetail";
+	}
 	
+	@GetMapping("/adminProductOk.do")
+	public String adminProductOk(@RequestParam Integer pidx, HttpServletResponse response) throws IOException{
+		int result = adminService.adminProductOk(pidx);
+		if(result==1) {
+		return "redirect:/adminProductCheck.do";}
+		else
+		{response.setContentType("text/html; charset=UTF-8");
+		response.setCharacterEncoding("UTF-8");
+		PrintWriter out=response.getWriter();
+		out.println("<script>window.onload = function(){alert('상품등록 중 오류가 발생했습니다. 다시 시도해 주세요'); location.href='/spring/adminProductCheck.do';}</script>");
+		out.flush();
+		return null;
+		}
+	}
 	
-	
+	@GetMapping("/adminMemberList.do")
+	public String getMemberList(Model model, HttpServletRequest request, HttpServletResponse response) throws IOException {
+		HttpSession session = request.getSession();
+		Integer member_grade =Integer.parseInt(String.valueOf(session.getAttribute("member_grade")));
+		if(member_grade != 2) {
+			response.setContentType("text/html; charset=UTF-8");
+			response.setCharacterEncoding("UTF-8");
+			PrintWriter out=response.getWriter();
+			out.println("<script>window.onload = function(){alert('권한이 없습니다.'); location.href='/spring/admin.do';}</script>");
+			out.flush();
+			return null;
+		}else {
+		List<MemberVo> memberList = adminService.getMemberList();
+		model.addAttribute("memberList",memberList);
+		
+		return "admin/super_adminMemberList";}
+	}
+	@GetMapping("/adminMemberUp.do")
+	public String adminMemberUp(@RequestParam("midx") Integer midx, HttpServletResponse response, @RequestParam("member_grade") Integer member_grade) throws IOException{
+		if(member_grade==1) {
+			response.setContentType("text/html; charset=UTF-8");
+			response.setCharacterEncoding("UTF-8");
+			PrintWriter out=response.getWriter();
+			out.println("<script>window.onload = function(){alert('이미 관리자입니다.'); location.href='/spring/adminMemberList.do';}</script>");
+			out.flush();
+			return null;	
+		}
+		int result = adminService.adminMemberUp(midx);
+		if(result==1) {
+		return "redirect:/adminMemberList.do";}
+		else
+		{response.setContentType("text/html; charset=UTF-8");
+		response.setCharacterEncoding("UTF-8");
+		PrintWriter out=response.getWriter();
+		out.println("<script>window.onload = function(){alert('관리자임명 중 오류가 발생했습니다. 다시 시도해 주세요'); location.href='/spring/adminMemberList.do';}</script>");
+		out.flush();
+		return null;
+		}
+		
+	}
+	@GetMapping("/adminMemberDelyn.do")
+	public String adminMemberDelyn(@RequestParam Integer midx, HttpServletResponse response) throws IOException{
+		int result = adminService.adminMemberDelyn(midx);
+		if(result==1) {
+		return "redirect:/adminMemberList.do";}
+		else
+		{response.setContentType("text/html; charset=UTF-8");
+		response.setCharacterEncoding("UTF-8");
+		PrintWriter out=response.getWriter();
+		out.println("<script>window.onload = function(){alert('회원정지 시도 중 오류가 발생했습니다. 다시 시도해 주세요'); location.href='/spring/adminMemberList.do';}</script>");
+		out.flush();
+		return null;
+		}
+	}
+	@GetMapping("/superAdminProductDelyn.do")
+	public String delAdminProduct(@RequestParam("pidx") Integer pidx, HttpServletRequest request) {
+		
+		HttpSession session = request.getSession();
+		Integer midx_mp =Integer.parseInt(String.valueOf(session.getAttribute("midx")));
+		ProductVo productVo = new ProductVo();
+		
+		productVo.setMidx_mp(midx_mp);
+		productVo.setPidx(pidx);
+		adminService.delProduct(productVo);
+
+
+		return "redirect:/adminProductCheck.do";
+		
+	}
+	@GetMapping("/adminBuyerList.do")
+	public String getBuyerList(@RequestParam("pidx") Integer pidx, Model model) {
+		List<ProductVo> productList = adminService.getBuyerList(pidx);
+		model.addAttribute("productList", productList);
+		
+		return "admin/admin_buyerList";
+		
+	}
+	@GetMapping("/adminBuyerDetail.do")
+	public String getBuyerDetail(@RequestParam("pidx") Integer pidx, @RequestParam("midx") Integer midx, Model model) {
+		ProductVo pVo = new ProductVo();
+		pVo.setPidx(pidx);
+		pVo.setMidx(midx);
+		ProductVo productVo = adminService.getBuyerDetail(pVo);
+		model.addAttribute("productVo", productVo);
+		
+		return "admin/admin_buyerDetail";
+		
+	}
 }

@@ -8,7 +8,7 @@
 
 <link href="resources/css/style_css.css" rel="stylesheet" />
 
-<title>내가 등록한 상품 목록</title>
+<title>등록된 회원 목록</title>
 
 <style>
 #admin_main_inner{
@@ -88,10 +88,9 @@ font-size: 16px;
     align-items: center;
     border-bottom: 2px solid #198754;
 }
-#product_t{
-width:95%
-}
 </style>
+
+</head>
 <script>
 function statistics(){
 	var frm = document.frm;
@@ -101,7 +100,6 @@ function statistics(){
 	return;
 }
 </script>
-</head>
 <body>
 <!-- 헤더 연결 -->
 <jsp:include page="../header.jsp"></jsp:include> 
@@ -124,7 +122,7 @@ function statistics(){
 
 <div id="admin_inner">
 
-     <h5 style="margin-top: 52px;">내가 등록한 상품 목록</h5>
+     <h5 style="margin-top: 52px;">등록된 회원 목록</h5>
 
    <div id="line"></div>
 	
@@ -132,37 +130,33 @@ function statistics(){
 
 	<table id="product_t">
 		<tr>
-			<th id="table_title">번호</th>
+			<th id="table_title">회원번호</th>
 			<th id="table_title">이름</th>
-			<!-- <th id="table_title">부제목</th> -->
-			<th id="table_title">가격</th>
-			<!-- <th id="table_title">판매단위</th>
-			<th id="table_title">배송</th>
-			<th id="table_title">용량</th>
-			<th id="table_title">포장</th>
-			<th id="table_title">알러지</th>
-			<th id="table_title">유통기한</th>
-			<th id="table_title">타입</th>
-			<th id="table_title">태그</th> -->
-			<th id="table_title">삭제</th>
+			<th id="table_title">아이디</th>
+			<th id="table_title">비밀번호</th>
+			<th id="table_title">회원등급</th>
+			<th id="table_title">전화번호</th>
+			<th id="table_title">이메일</th>
+			<th id="table_title">가입일시</th>
+			<th id="table_title">회원탈퇴여부</th>
+			<th id="table_title">회원탈퇴일</th>
+			<th id="table_title">회원정지</th>
+			<th id="table_title">관리자임명</th>
 		</tr>
-			<c:forEach var="productVo" items="${productList}">
-			<tr>
-				<td colspan="4">
-					<div id="orderlist_1">
-		   				<%-- <a style="cursor:pointer; margin-top:20px;"onClick="location.href='${pageContext.request.contextPath}/admin_productDetail.do?pidx=${productVo.pidx}'" ><b>등록한 상품 상세보기</b></a> --%>
-						<a id="inner_detail_button" style="cursor:pointer; margin-top:20px;"onClick="location.href='${pageContext.request.contextPath}/adminBuyerList.do?pidx=${productVo.pidx}'" >상품을 구매한 사람들</a>
-		   				<a id="inner_detail_button" style="cursor:pointer; margin-top:20px;"onClick="location.href='${pageContext.request.contextPath}/admin_productDetail.do?pidx=${productVo.pidx}'" >&nbsp;&nbsp;등록한 상품 상세보기</a>
-		   			</div>
-	   			</td>
-   			</tr>
+			<c:forEach var="memberVo" items="${memberList}">
+			   <tr>
+			   <td colspan="13"><div id="orderlist_1">
+   </div></td>
+   </tr>
    
-			<form action="${pageContext.request.contextPath}/adminProductDelyn.do">
-				<tr>
-					<td>${productVo.pidx}</td><td>${productVo.p_name }</td><%-- <td>${productVo.p_secondname}</td> --%><td>${productVo.p_price }&nbsp;원</td><%-- <td>${productVo.p_unit }</td><td>${productVo.p_delivery }</td>
-					<td>${productVo.p_weight }</td><td>${productVo.p_package }</td><td>${productVo.p_allergy }</td><td>${productVo.p_limitdate }</td>
-					<td>${productVo.p_type }</td><td>${productVo.p_tag }</td> --%><td><input type="hidden" name="pidx" value="${productVo.pidx}"><input type="submit" class="btn btn-secondary btn-sm" value="삭제"></a></td>
-				</tr>
+			<form>
+			<tr>
+			<td>${memberVo.midx }</td><td>${memberVo.member_name}</td><td>${memberVo.member_id}</td><td>${memberVo.member_pw}</td>
+			<td>${memberVo.member_grade}</td><td>${memberVo.member_phone}</td><td>${memberVo.member_email}</td>
+			<td>${memberVo.member_joindate}</td><td>${memberVo.member_delyn}</td><td>${memberVo.member_delyndate}</td>
+			<td><input type="button" value="회원정지" onclick="location.href='${pageContext.request.contextPath}/adminMemberDelyn.do?midx=${memberVo.midx}'"></td>
+			<td><input type="button" value="관리자임명" onclick="location.href='${pageContext.request.contextPath}/adminMemberUp.do?midx=${memberVo.midx}&member_grade=${memberVo.member_grade}'"></td>
+			</tr>
 			</form>
 		</c:forEach>	
 	</table>
@@ -170,7 +164,7 @@ function statistics(){
 </div>
 </div>
 
-<%-- <div id="ad_productlist_inner">
+<!-- <div id="ad_productlist_inner">
 	<h3>상품목록</h3>
 	<hr/>
 	<table id="product_t">
@@ -191,7 +185,7 @@ function statistics(){
 	
 	<input id="adl_button" type="button" class="btn btn-outline-success" value="관리자 메인페이지" onclick="location.href='/spring/admin.do'"><br>
 	
-</div> --%>
+</div> -->
 
 <!-- 푸터 연결 -->
 <jsp:include page="../footer.jsp"></jsp:include>

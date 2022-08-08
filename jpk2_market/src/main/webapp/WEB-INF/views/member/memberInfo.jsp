@@ -28,51 +28,7 @@
   }  
   </script>
 <style>
-/*  #memberinfo_inner{
-    min-height:1040px;
-   margin-left:315px; 
-   padding-top:260px;
-   margin-left:33%;
-   margin-right:33%;
-}  
- */
-#memberinfo_main_inner{
-    margin-left: 324px;
-    margin-top: 218px;
-    min-height: 1040px;
-}
-   
-#service_center_cate{
-   
-   /* padding-top:200px; */
-   width:194px;
-   float:left;
-}
-#service_1{
-  padding: 5px 0 35px 1px;
-    font-weight: 700;
-    font-size: 26px;
-    line-height: 35px;
-    color: #333;
-    letter-spacing: -1px;
-    margin-top: -16px;
-    
-}
 
-#notice_sub{
-   border: 1px solid #f2f2f2;
-    border-bottom: 1;
-    FONT-WEIGHT: 100;
-    display: block;
-    overflow: hidden;
-    font-size: 14px;
-    line-height: 20px;
-    letter-spacing: -.3px;
-    padding: 0px -5px 3px 5px;
-    margin-left: -6px;
-    margin-right: 16px;
-    margin-top: -27px;
-}
 #open_info_modify{
    border-bottom: 1px solid #f2f2f2;
     background-color: #fafafa;
@@ -80,27 +36,11 @@
     font-weight: 700;
     color: #198754;
 }
-#open_history{
-    border-bottom: 1px solid #f2f2f2;
+#open_history2{
+    border-bottom: 1px solid #f2f2f2 !important;
 }
 #open_coupon{
     border-bottom: 1px solid #f2f2f2;
-}
-#td1{
-width:10%;
-
-}
-#td2{
-width:16%;
-
-}
-#td3{
-width:20%;
-
-}
-#td4{
-width:3%;
-
 }
 #memberinfo_td {
     padding: 0.5rem 0.5rem !important;
@@ -108,8 +48,12 @@ width:3%;
     border-bottom-width: 0rem !important;
     box-shadow: inset 0 0 0 9999px var(--bs-table-accent-bg) !important;
 }
+
 </style>
 <meta charset="UTF-8">
+
+<link href="resources/css/mypage_css.css" rel="stylesheet" />
+
 <title>회원정보</title>
 </head>
 <body>
@@ -118,13 +62,13 @@ width:3%;
    <jsp:include page="../header.jsp"></jsp:include>
    
    <div id="memberinfo_main_inner">
-   <div id="service_center_cate">
-   <div id="service_1">마이페이지</div>
-      <div id="notice_sub">   
-      <a href="${pageContext.request.contextPath}/orderList.do" class="nav-link py-3 px-0 px-lg-3" id="open_history">주문 내역</a>
+   <div id="mypage_center_cate">
+   <div id="mypage_1">마이페이지</div>
+      <div id="mypage_sub">   
+      <a href="${pageContext.request.contextPath}/orderList.do" class="nav-link py-3 px-0 px-lg-3" id="open_history2">주문 내역</a>
       <a href="${pageContext.request.contextPath}/memberInfo.do" class="nav-link py-3 px-0 px-lg-3" id="open_info_modify">개인 정보 수정</a>
       
-      <a href="" class="nav-link py-3 px-0 px-lg-3" id="open_coupon">쿠폰</a>
+      <a href="#" onclick="alert('서비스 준비중입니다.')" class="nav-link py-3 px-0 px-lg-3" id="open_coupon">쿠폰</a>
       <!-- <a href="/spring/qna_board.do" class="nav-link py-3 px-0 px-lg-3 rounded" id="open_qna" >1:1 문의</a> -->
       </div>
    </div>

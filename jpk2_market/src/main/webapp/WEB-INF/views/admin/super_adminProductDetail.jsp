@@ -24,12 +24,12 @@
 			width:50%; 
 			height:50%;
 			}
-/* 	#home_button{
+	#home_button{
 			padding-left:10%; 
 			padding-right:10%; 
 			text-align:center; 
 			float:center;
-			} */
+			} 
     .button box{
             display : inline-block;
     }
@@ -66,7 +66,6 @@
     padding-right:10%;
     }
     
-    
     input[type="radio"] {display:none;}
     input[type="radio"] + label {display:inline-block;padding:20px;background:#f5f5f5;color:#999;font-size:14px; cursor:pointer;}
     input[type="radio"]:checked + label {background:#e1e1e1;color:#000;}
@@ -78,38 +77,20 @@
     
     #btn_insert_cart{
     	float:right;
-    	width:48%;
+    	width:50%;
     	height: 45px;
-    	border-radius: 5px;
+    	border-radius: 12px;
     	border: 1px;
     	border: 1px solid rgb(221, 221, 221);
-    	background-color: #198754;
-   		color: white;
     }
     
     #btn_cart_cancel{
     	float:left;
-    	width:48%;
+    	width:50%;
     	height: 45px;
-    	border-radius: 5px;
+    	border-radius: 12px;
     	border: 1px;
     	border: 1px solid rgb(221, 221, 221);
-    	
-    }
-    #for_sum_price{
-    width: 29%;
-    margin-left: 248px;
-    font-size: 26px;
-    font-weight: 700;
-    
-    }
-    
-    #modal_button{
-    padding: 22px 0 0 0;
-    }
-    #modal_sum{
-    padding: 16px 0 0 9px;
-    font-size: 19px;
     }
 
 </style>
@@ -133,7 +114,6 @@ $(function(){
 	}
 })
 </script>
-
 <script src="${pageContext.request.contextPath}/resources/js/cart.js "></script>
 
 </head>
@@ -141,7 +121,7 @@ $(function(){
 
     <!-- 헤더 연결 -->
     <jsp:include page="../header.jsp"></jsp:include> 
-	<form name="cartAddForm" action="${pageContext.request.contextPath}/addCartProcess.do" method="post">
+	<form>
 	   <input type="hidden"  name="pidx_pc" value="${productVo.pidx} ">
 		<div id="product">
 		<div id="product_img">
@@ -186,14 +166,15 @@ $(function(){
 		</dl>
 		<dl>
 		<dt class="pd_button">
-		<a class="open button" id="homebutton_1">장바구니 담기</a>
+	<!-- 	<a class="open button" id="homebutton_1">장바구니 담기</a> -->
+		<input type="button" id="homebutton_1" onclick="location.href='${pageContext.request.contextPath}/adminProductCheck.do'" value="뒤로">
 		</dt>
 		</dl>
 		</div>
 		</div>
 		
 		
-		
+<!-- 		
 		<div id="product_detail_inner">
 			<div class="tab_content">
 				<input type="radio" name="tabmenu" id="tab01" checked>
@@ -206,14 +187,13 @@ $(function(){
 				<div class="conbox con1">상세내용</div>
 				<div class="conbox con2">후기</div>
 				<div class="conbox con3">안내사항</div>
-			</div>
-		
-		</div>
+			</div> -->
+
 		<!-- <div id="home_button"> -->
 		<%-- <a href="${pageContext.request.contextPath}/" id="homebutton_1">메인</a> --%>
 		<!-- <input type="button" id="homebutton_1" value="메인으로"></a> -->
 		<!-- <input type="button" id="btn-modal" value="장바구니"> -->
-		
+
 <!-- 모달 부분 시작 -->
 
 		<!-- <a class="open button" id="homebutton_1">장바구니 담기</a></div><p/> -->
@@ -223,41 +203,29 @@ $(function(){
 <!-- <div class="content">
 	<a class="open button">장바구니</a>
 </div> -->
-<div class="modal-background">
-
+<%-- <div class="modal-background">
   <div class="modal-content">
-  <div class="close area" style="width:10px; margin-left:367px; cursor:pointer;">X</div>
+  <div class="close area" style="width:10px; margin-left:367px;">X</div>
   <div id="product-info">
      ${productVo.p_name}
-    
     <hr>
-
-    <b>${productVo.p_price}원</b>
-    <input type="hidden" id="for_price" value="${productVo.p_price}">
-    <div class="button box" style="float: right; width:140px;">
     
-     <!-- 수량 버튼 -->
-   <%--  <div style="border:1px solid; width:169px; color:rgb(221,223,225); height:40px;">
-    <button type="button" type="button" id="btn_minus" value="-" style="border:1px; background-color:white;"><img src="resources/img/-_button.png"></button>
-    <input type="text" id="pop_out" class="amount" value="${cartVo.p_amount}" readonly="readonly" style="text-align:center; width:92px; border:0px solid rgb(221,223,225); height:38px;"/>
-    <button type="button" type="button" id="btn_plus" value="+" style="border:1px; background-color:white;"><img src="resources/img/+_button.png"></button>
-   </div> --%>
-  	<div style="border:1px solid; width:123px; color:rgb(221,223,225); padding: 4px 8px 4px 11px; margin-top: -15px;">
-	<button type="button" id="btn_minus" value="-" style="border:1px; background-color:white;"><img src="resources/img/-_button.png"></button>
-    <input type="text" name="p_amount" id="pop_out" value="1" readonly="readonly" style="text-align:center; width: 29px; border:0px;"/>
-    <button type="button" id="btn_plus" value="+" style="border:1px; background-color:white;"><img src="resources/img/+_button.png"></button>
+    <b>${productVo.p_price}원</b>
+     
+    <div class="button box" style="float: right; width:110px;">
+    
+    <input type="button" id="btn_minus" value="-">
+    <input type="text" name="p_amount" id="pop_out" value="1" readonly="readonly" style="text-align:center; width: 48px;"/>
+    <input type="button" id="btn_plus" value="+">
     </div>
     </div>
-    </div>
-    <div id="modal_sum">
-    <b>합계</b><span id="for_sum_price"></span>
-    </div>
-    <div id="modal_button">
+    <b>합계</b>
+    <div>
     <input type="submit" id="btn_insert_cart" value="장바구니 담기" >
     <input type="button" class="close" id="btn_cart_cancel" value="취소" >
     </div>
   </div>
-</div>
+</div> --%>
 <!-- 모달 부분 끝 -->
 
 
@@ -285,6 +253,5 @@ $(function(){
     <!-- 푸터 연결 -->
     <jsp:include page="../footer.jsp"></jsp:include>
 </body>
-
 <script src="${pageContext.request.contextPath}/resources/js/modal.js"></script>
 </html>

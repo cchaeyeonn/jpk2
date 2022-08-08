@@ -11,7 +11,17 @@
 <script>
 function order(){
 	var frm = document.frm;
-	frm.action="${pageContext.request.contextPath}//orderListDetail.do";
+	frm.action="${pageContext.request.contextPath}/orderListDetail.do";
+	frm.method="POST";
+	frm.submit();
+	return;
+}
+</script>
+
+<script>
+function statistics(){
+	var frm = document.frm;
+	frm.action="${pageContext.request.contextPath}/statistics.do";
 	frm.method="POST";
 	frm.submit();
 	return;
@@ -80,13 +90,13 @@ function order(){
    <div id="admin_center_cate">
    <div id="admin_1">관리자 페이지</div>
       <div id="admin_sub">   
-      <input type="button" class="nav-link py-3 px-0 px-lg-3" value="통계" id="admin_button_1" style="background-color: white; border: none;" onclick="location.href='${pageContext.request.contextPath}/statistics.do'">
+      <input type="button" class="nav-link py-3 px-0 px-lg-3" value="통계" id="admin_button_1" style="background-color: white; border: none;" onclick=statistics()>
       <a href="${pageContext.request.contextPath}/productAdd.do" class="nav-link py-3 px-0 px-lg-3" id="admin_button">상품등록페이지</a>
       <a href="${pageContext.request.contextPath}/adminProductList.do" class="nav-link py-3 px-0 px-lg-3" id="admin_button">내가 등록한 상품목록</a>
-      <a href="${pageContext.request.contextPath}/orderList.do" class="nav-link py-3 px-0 px-lg-3" id="admin_button">주문내역</a>
-      <input type="button" class="nav-link py-3 px-0 px-lg-3" value="주문상세페이지" id="admin_button" style="background-color: white; border: none;" onclick="location.href='${pageContext.request.contextPath}/orderList.do'">
-     <%--<a href="${pageContext.request.contextPath}/orderListDetail.do" class="nav-link py-3 px-0 px-lg-3" id="admin_button">주문상세페이지</a> --%>
-      </div>
+      <a href="${pageContext.request.contextPath}/orderList.do" class="nav-link py-3 px-0 px-lg-3" id="admin_button">주문내역</a>     <%--<a href="${pageContext.request.contextPath}/orderListDetail.do" class="nav-link py-3 px-0 px-lg-3" id="admin_button">주문상세페이지</a> --%>
+      <a href="${pageContext.request.contextPath}/adminProductCheck.do" class="nav-link py-3 px-0 px-lg-3" id="admin_button">등록심사중인 상품목록</a>
+      <a href="${pageContext.request.contextPath}/adminMemberList.do" class="nav-link py-3 px-0 px-lg-3" id="admin_button">등록된 회원 목록</a> 
+   </div>
    </div>
 
 

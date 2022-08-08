@@ -31,34 +31,6 @@
   }  
   </script>
  
-<style>
-#notice_detail_inner{
-    width: 1050px;
-    margin: 0px auto;
-    font-size: 12px;
-    line-height: 18px;
-    padding-top: 188px;
-    min-height: 893px;
-}
-#notice_detail_top{
-    width: 100%;
-    padding: 50px 0px;
-}
-#notice_detail_header{
-    font-weight: 700;
-    font-size: 28px;
-    color: rgb(51, 51, 51);
-    line-height: 35px;
-    text-align: center;
-    letter-spacing: -1px;
-}
-#notice_write_box{
-   margin-left: 181px;
-    min-height: 1040px;
-}
-
-</style>
-
 </head>
 <body>
 

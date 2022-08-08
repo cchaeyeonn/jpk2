@@ -7,6 +7,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import ezen.dev.spring.vo.AdminVo;
 import ezen.dev.spring.vo.MemberVo;
 import ezen.dev.spring.vo.ProductVo;
 
@@ -45,6 +46,42 @@ public class AdminDao {
 	public List<ProductVo> getAdminProductListDetail(ProductVo productVo) {
 		return sqlSession.selectList(MAPPER+".getAdminProductListDetail",productVo);
 	}
+
+	public List<ProductVo> getProductCheck() {
+
+		return sqlSession.selectList(MAPPER+".getProductCheck");
+	}
+
+	public ProductVo getProductInfo(Integer pidx) {
+		return sqlSession.selectOne(MAPPER+".getProductInfo",pidx);
+	}
+
+	public int adminProductOk(Integer pidx) {
+		return sqlSession.update(MAPPER+".adminProductOk",pidx);
+	}
+
+	public int adminMemberUp(Integer midx) {
+		return sqlSession.update(MAPPER+".adminMemberUp",midx);
+	}
+
+	public int adminMemberDelyn(Integer midx) {
+		return sqlSession.update(MAPPER+".adminMemberDelyn",midx);
+	}
+
+	public List<ProductVo> getBuyerList(Integer pidx) {
+		return sqlSession.selectList(MAPPER+".getBuyerList",pidx);
+	}
+
+	public ProductVo getBuyerDetail(ProductVo pVo) {
+		return sqlSession.selectOne(MAPPER+".getBuyerDetail",pVo);
+	}
+
+
+	public List<AdminVo> getStatisticsList(AdminVo adminVo) {
+		
+		return sqlSession.selectList(MAPPER+".getStatisticsList", adminVo);
+	}
+
 
 
 }

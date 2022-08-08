@@ -150,13 +150,12 @@ body{
 				</div>
 				<div class="company">
 					<ul class="list">
-						<li><a style="text-decoration: none;" class="link" href="">소개</a></li>
-						<li><a style="text-decoration: none;" class="link" href=""
-							onclick="window.open(this.href, 'pop', 'width=1330,height=660,scrollbars=yes');return false;">소개영상</a></li>
-						<li><a style="text-decoration: none;" class="link" href="">이용약관</a></li>
+						<li><a style="text-decoration: none;" class="link" href="#" onclick="alert('서비스 준비중입니다.')">소개</a></li>
+						<li><a style="text-decoration: none;" class="link" href="#" onclick="alert('서비스 준비중입니다.')">소개영상</a></li>
+						<li><a style="text-decoration: none;" class="link" href="#" onclick="alert('서비스 준비중입니다.')">이용약관</a></li>
 						<li><a style="text-decoration: none;" class="link emph"
-							href="">개인정보처리방침</a></li>
-						<li><a style="text-decoration: none;" class="link" href="">이용안내</a></li>
+							href="#" onclick="alert('서비스 준비중입니다.')">개인정보처리방침</a></li>
+						<li><a style="text-decoration: none;" class="link" href="#" onclick="alert('서비스 준비중입니다.')">이용안내</a></li>
 					</ul>
 					법인명 (상호) : JPK2 <span class="bar">I</span> 사업자등록번호 : 123-45-678910
 					<a style="text-decoration: none;" href="" target="_blank"

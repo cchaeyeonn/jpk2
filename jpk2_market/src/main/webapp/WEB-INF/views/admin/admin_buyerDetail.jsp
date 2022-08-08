@@ -6,17 +6,186 @@
 <head>
 
 <style>
+#memberinfo_main_inner{
+    margin-left: 324px;
+    margin-top: 256px;
+    min-height: 1040px;
+}
+   
+#service_center_cate{
+   
+   /* padding-top:200px; */
+   width:194px;
+   float:left;
+}
+#service_1{
+  padding: 5px 0 35px 1px;
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 35px;
+    color: #333;
+    letter-spacing: -1px;
+    margin-top: -16px;
+    
+}
 
-
-/* #orderlist_2{
+#notice_sub{
+   border: 1px solid #f2f2f2;
+    border-bottom: 1;
+    FONT-WEIGHT: 100;
+    display: block;
+    overflow: hidden;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: -.3px;
+    padding: 0px -5px 3px 5px;
+    margin-left: -6px;
+    margin-right: 16px;
+    margin-top: -27px;
+}
+#open_info_modify{
+  border-bottom: 1px solid #f2f2f2;
+}
+#open_history{
+    border-bottom: 1px solid #f2f2f2;
+    border-bottom: 1px solid #f2f2f2;
+    background-color: #fafafa;
+    background-size: 6px 11px;
+    font-weight: 700;
+    color: #198754;
+}
+#line{
+    display: flex;
+    flex-direction: row;
+    width: 55%;
+    -webkit-box-align: center;
+    align-items: center;
+    border-bottom: 2px solid #198754;
+}
+ #orderlist_inner{
+/*     padding-top: 20px;
+    position: relative;
+    height: 100%; */
+    padding-left: 190px;
+} 
+#orderlist_inner2{
+   width: 875px;
+    /* padding: 14px 20px; */
+    margin-bottom: 14px;
+}
+#orderlist_1{
     display: flex;
     padding: 8px 0px 13px;
     -webkit-box-pack: justify;
     justify-content: space-between;
-    border-bottom: 0px solid rgb(221, 223, 225) !important;
+    /* border-bottom: 1px solid rgb(221, 223, 225); */
 }
- */
+#order_date{
+font-size: 16px;
+    font-weight: 500;
+    line-height: 1.31;
+    color: rgb(51, 51, 51);
+}
+#order_detail{
+    align-self: center;
+    padding-right: 10px;
+    line-height: 1.33;
+    font-size: 12px;
+    color: rgb(51, 51, 51);
+    background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMCIgaGVpZ2h0PSIxMCIgdmlld0JveD0iMCAwIDEwIDEwIj4KICAgIDxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj4KICAgICAgICA8ZyBzdHJva2U9IiMzMzMiPgogICAgICAgICAgPHBhdGggZD0iTTAgMEw0IDQgMCA4IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMTIxNS4wMDAwMDAsIC02OTkuMDAwMDAwKSB0cmFuc2xhdGUoMTk1LjAwMDAwMCwgNTczLjAwMDAwMCkgdHJhbnNsYXRlKDIzMC4wMDAwMDAsIDk2LjAwMDAwMCkgdHJhbnNsYXRlKDIwLjAwMDAwMCwgMTYuMDAwMDAwKSB0cmFuc2xhdGUoNjMwLjAwMDAwMCwgMTAuMDAwMDAwKSB0cmFuc2xhdGUoMTQ0LjAwMDAwMCwgNS4wMDAwMDApIi8+CiAgICAgICAgPC9nPgogICAgPC9nPgo8L3N2Zz4K) right center / 10px 10px no-repeat;
+    cursor: pointer;
+}
+#orderlist_box{
+    display: flex;
+    flex-direction: row;
+    -webkit-box-pack: justify;
+    /* justify-content: space-between; */
+    justify-content: flex-start;
+    padding: 14px 0px 16px;
+}
+#orderlist_box_left{
+    display: flex;
+    flex-direction: row;
+    -webkit-box-align: center;
+    align-items: center;
+}
+#orderlist_img{
+width: 60px;
+    height: 78px;
+    margin-right: 20px;
+    background-color: rgb(245, 245, 245);
+}
+#orderlist_content{
+    display: flex;
+    flex-direction: column;
+}
+#dl{
+    display: flex;
+    padding-top: 6px;
+    flex-direction: row;
+    color: rgb(0, 0, 0);
+    line-height: 20px;
+    margin-bottom: -10px;
+}
+#dt{
+    width: 95px;
+    line-height: 1.58;
+    margin-right: 10px;
+    font-size: 13px;
+    color: rgb(51, 51, 51);
+    font-weight: normal;
+    padding-bottom: 10px;
+}
 
+#dd{
+flex: 1 1 0%;
+    font-weight: 600;
+    color: rgb(51, 51, 51);
+    line-height: 1.36;
+    display: -webkit-box;
+    overflow: hidden;
+    word-break: break-all;
+    white-space: normal;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+     width: 275px;
+     font-size: 16px;
+}
+#orderlist_shipping{
+    font-size: 16px;
+    font-weight: 500;
+    text-align: right;
+    color: rgb(51, 51, 51);
+    margin-right: 20px;
+}
+#orderlist_box_right{
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    margin-left: 311px;
+    }
+#info{
+padding-top:71px;
+font-size:20px;
+}
+#d_from{
+font-size:16px;
+/* padding-right: 180px; */
+color: rgb(102, 102, 102);
+width: 187px;
+padding-bottom: 10px;
+
+}
+#d_from2{
+font-size:16px;
+padding-right: 180px;
+color: rgb(64, 64, 64);
+font-weight: 600;
+
+}
+#info_button{
+padding: 81px 0px 92px 686px;
+}
 </style>
 
 <meta charset="utf-8" />
@@ -24,9 +193,6 @@
    content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 <meta name="description" content="" />
 <meta name="author" content="" />
-
-<link href="resources/css/mypage_css.css" rel="stylesheet" />
-
 <title>주문서</title>
 <!-- jQuery library (served from Google) -->
 <script
@@ -50,14 +216,14 @@
 </script>
 <script>
       $(function(){
-         if("${orderVo.d_status}"=="Y"){
-            $("#${orderVo.order_id}_orderlist_shipping").text("배송 완료");
-         }else if("${orderVo.d_status}"=="N"){
-            $("#${orderVo.order_id}_orderlist_shipping").text("배송 준비중");
-         }else if("${orderVo.d_status}"=="W"){
-            $("#${orderVo.order_id}_orderlist_shipping").text("배송중");
+         if("${productVo.d_status}"=="Y"){
+            $("#${productVo.order_id}_orderlist_shipping").text("배송 완료");
+         }else if("${productVo.d_status}"=="N"){
+            $("#${productVo.order_id}_orderlist_shipping").text("배송 준비중");
+         }else if("${productVo.d_status}"=="W"){
+            $("#${productVo.order_id}_orderlist_shipping").text("배송중");
          }else{
-            $("#${orderVo.order_id}_orderlist_shipping").text("배송 중 오류");
+            $("#${productVo.order_id}_orderlist_shipping").text("배송 중 오류");
          }
       })
       </script> 
@@ -71,19 +237,8 @@
       style="padding-top: 239px; margin-left: 414px; margin-right: 401px;">
       <h1 align="center">주문상세내역</h1> -->
       <form>
-      <div id="orderlist_main_inner">
-   <div id="mypage_center_cate">
-   <div id="mypage_1">마이페이지</div>
-      <div id="mypage_sub">   
-       <a href="${pageContext.request.contextPath}/orderList.do" class="nav-link py-3 px-0 px-lg-3" id="open_history">주문 내역</a>
-       <a href="${pageContext.request.contextPath}/memberInfo.do" class="nav-link py-3 px-0 px-lg-3" id="open_info_modify">개인 정보 수정</a>
-     
-      <a href="" class="nav-link py-3 px-0 px-lg-3" id="open_coupon">쿠폰</a>
-      <!-- <a href="/spring/qna_board.do" class="nav-link py-3 px-0 px-lg-3 rounded" id="open_qna" >1:1 문의</a> -->
-      </div>
-   </div>
-      
-      
+      <div id="memberinfo_main_inner">
+            
           <div id="cart_inner2">
             <!-- 장바구니에 있는 물건중 체크된 물건을 가져와서 foreach -->
             <h5 style="margin-top: 272px;">주문 상세 내역</h5>
@@ -91,41 +246,30 @@
             <div id="line"></div>
                <div id="orderlist_inner">
                   <div id="orderlist_inner2">
-                  <div id="orderlist_2">
+                  <div id="orderlist_1">
                </div>
                
                   <div id="orderlist_inner2">
-      <div id="orderlist_2">
-   <span id="order_date"><b>${orderVo.order_id }</b></span>
-  <%--  <a onClick="location.href='${pageContext.request.contextPath}/orderListDetail.do?order_id=${orderVo.order_id}'" id="order_detail">주문내역 상세보기</a> --%>
+      <div id="orderlist_1">
+  <%--  <a onClick="location.href='${pageContext.request.contextPath}/orderListDetail.do?order_id=${productVo.order_id}'" id="order_detail">주문내역 상세보기</a> --%>
    </div>
-   
-<c:forEach items="${cartList}" var="cartVo" varStatus="status"> 
-   <div id="orderlistdetail_box">
+   <div id="orderlist_box">
   
   <div id="orderlist_box_left"></div>
-    <img id="orderlist_img" class="img-fluid4" src="${pageContext.request.contextPath}/resources/product_image/${cartVo.p_system_filename}" alt="..."  />
+    <img id="orderlist_img" class="img-fluid4" src="${pageContext.request.contextPath}/resources/product_image/${productVo.p_system_filename}" alt="..."  />
    
    <div id="orderlist_content">
       <dl id="dl">
-      <dt id="dt2">상품명</dt>
-      <dd id="dd2">${cartVo.p_name }</dd>
-      </dl>
-
-      <dl id="dl">
-      <dt id="dt2">상품금액</dt>
-      <dd id="dd2">${cartVo.p_price }&nbsp;원</dd>
+      <dt id="dt">상품명</dt>
+      <dd id="dd">${productVo.p_name }</dd>
       </dl>
       
       <dl id="dl">
-      <dt id="dt2">수량</dt>
-      <dd id="dd2">${cartVo.p_amount }&nbsp;개</dd>
+      <dt id="dt">수량</dt>
+      <dd id="dd">${productVo.p_amount }&nbsp;개</dd>
       </dl>
    </div>
-
- 
    </div>
-     </c:forEach>
    </div>
                
                
@@ -166,16 +310,12 @@
             <hr>
             <table>
                <tr>
-                  <td id="d_from">결제금액</td>
-                  <td id="d_from2"><span id="total_price">${orderVo.pay_price}원</span>
-               </tr>
-               <tr>
                   <td id="d_from">상품할인</td>
                   <td id="d_from2"><span id="sale_price">0원</span></td>
                </tr>
                <tr>
                   <td id="d_from">결제방법</td>
-                  <td id="d_from2">${orderVo.pay_way}</td>
+                  <td id="d_from2">${productVo.pay_way}</td>
                </tr>
             </table>
          </div>
@@ -187,19 +327,19 @@
             <table>
                <tr>
                   <td id="d_from">주문번호</td>
-                  <td id="d_from2">${orderVo.order_id}</td>
+                  <td id="d_from2">${productVo.order_id}</td>
                </tr>
                <tr>
                   <td id="d_from">보내는 분</td>
-                  <td id="d_from2">${delVo.d_from}</td>
+                  <td id="d_from2">${productVo.d_from}</td>
                </tr>
                <tr>
                   <td id="d_from">결제일시</td>
-                  <td id="d_from2">${orderVo.pay_findate}</td>
+                  <td id="d_from2">${productVo.pay_findate}</td>
                </tr>
 <%--                <tr>
                   <td id="d_from">결제방법</td>
-                  <td id="d_from2">${orderVo.pay_way}</td>
+                  <td id="d_from2">${productVo.pay_way}</td>
                </tr> --%>
             </table>
          </div>
@@ -211,29 +351,28 @@
             <table>
                <tr>       
                   <td id="d_from">받는 분</td>
-                  <td id="d_from2">${delVo.d_to}</td>
+                  <td id="d_from2">${productVo.d_to}</td>
                </tr>
                <tr>
                   <td id="d_from">휴대폰</td>
-                  <td id="d_from2">${delVo.d_tophone}</td>
+                  <td id="d_from2">${productVo.d_tophone}</td>
                </tr>
                <tr>
                   <td id="d_from">주소</td>
-                  <td id="d_from2">(${delVo.d_addrcode}) ${delVo.d_addr1} / ${delVo.d_addr2}
+                  <td id="d_from2">(${productVo.d_addrcode}) ${productVo.d_addr1} / ${productVo.d_addr2}
                   </td>
                </tr>
                <tr>
-                   <td id="d_from">배송상태</td>
-                   <td id="d_from2"><span id="${orderVo.order_id}_orderlist_shipping">${delVo.d_status}</span></td>
+              	  <td id="d_from">배송상태</td>
+              	  <td id="d_from2"><span id="${productVo.order_id}_orderlist_shipping">${productVo.d_status}</span></td>
                </tr>
             </table>
          </div>
          <div id="info_button">
       <%--  <a href="${pageContext.request.contextPath}/refund.do"><input
             type="button" value="환불하기"></a> --%> 
-            <a href="${pageContext.request.contextPath}/orderList.do">
-            <input type="button" class="btn btn-outline-success" value="주문내역으로 돌아가기"></a>
-            <%--  
+            <a href="${pageContext.request.contextPath}/adminBuyerList.do?pidx=${productVo.pidx }">
+            <input type="button" class="btn btn-outline-success" value="구매자목록으로 돌아가기"></a>            <%--  
             <a href="${pageContext.request.contextPath}/index.do">
             <input type="button" value="메인으로 돌아가기"></a> --%>
    </div>

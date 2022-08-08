@@ -8,7 +8,7 @@
 
 <link href="resources/css/style_css.css" rel="stylesheet" />
 
-<title>내가 등록한 상품 목록</title>
+<title>등록심사중인 상품들</title>
 
 <style>
 #admin_main_inner{
@@ -72,6 +72,7 @@
     border-bottom: 1px solid rgb(221, 223, 225);
     float: right;
     width: 100%;
+    margin-top:12px;
 }
 }
 #order_date{
@@ -87,9 +88,6 @@ font-size: 16px;
     -webkit-box-align: center;
     align-items: center;
     border-bottom: 2px solid #198754;
-}
-#product_t{
-width:95%
 }
 </style>
 <script>
@@ -124,7 +122,7 @@ function statistics(){
 
 <div id="admin_inner">
 
-     <h5 style="margin-top: 52px;">내가 등록한 상품 목록</h5>
+     <h5 style="margin-top: 52px;">등록심사중인 상품 목록</h5>
 
    <div id="line"></div>
 	
@@ -134,35 +132,46 @@ function statistics(){
 		<tr>
 			<th id="table_title">번호</th>
 			<th id="table_title">이름</th>
-			<!-- <th id="table_title">부제목</th> -->
+			<th id="table_title">부제목</th>
 			<th id="table_title">가격</th>
-			<!-- <th id="table_title">판매단위</th>
+			<th id="table_title">판매단위</th>
 			<th id="table_title">배송</th>
 			<th id="table_title">용량</th>
 			<th id="table_title">포장</th>
 			<th id="table_title">알러지</th>
 			<th id="table_title">유통기한</th>
 			<th id="table_title">타입</th>
-			<th id="table_title">태그</th> -->
-			<th id="table_title">삭제</th>
+			<th id="table_title">태그</th>
+			<th id="table_title">등록/삭제</th>
 		</tr>
 			<c:forEach var="productVo" items="${productList}">
 			<tr>
-				<td colspan="4">
+				<td colspan="13">
 					<div id="orderlist_1">
-		   				<%-- <a style="cursor:pointer; margin-top:20px;"onClick="location.href='${pageContext.request.contextPath}/admin_productDetail.do?pidx=${productVo.pidx}'" ><b>등록한 상품 상세보기</b></a> --%>
-						<a id="inner_detail_button" style="cursor:pointer; margin-top:20px;"onClick="location.href='${pageContext.request.contextPath}/adminBuyerList.do?pidx=${productVo.pidx}'" >상품을 구매한 사람들</a>
-		   				<a id="inner_detail_button" style="cursor:pointer; margin-top:20px;"onClick="location.href='${pageContext.request.contextPath}/admin_productDetail.do?pidx=${productVo.pidx}'" >&nbsp;&nbsp;등록한 상품 상세보기</a>
-		   			</div>
+			   			<a id="inner_detail_button" onClick="location.href='${pageContext.request.contextPath}/adminProductDetail.do?pidx=${productVo.pidx }'" id="s_product_detail">상품상세보기</a>
+			   		</div>
 	   			</td>
    			</tr>
    
-			<form action="${pageContext.request.contextPath}/adminProductDelyn.do">
-				<tr>
-					<td>${productVo.pidx}</td><td>${productVo.p_name }</td><%-- <td>${productVo.p_secondname}</td> --%><td>${productVo.p_price }&nbsp;원</td><%-- <td>${productVo.p_unit }</td><td>${productVo.p_delivery }</td>
-					<td>${productVo.p_weight }</td><td>${productVo.p_package }</td><td>${productVo.p_allergy }</td><td>${productVo.p_limitdate }</td>
-					<td>${productVo.p_type }</td><td>${productVo.p_tag }</td> --%><td><input type="hidden" name="pidx" value="${productVo.pidx}"><input type="submit" class="btn btn-secondary btn-sm" value="삭제"></a></td>
-				</tr>
+			<form action="/spring/superAdminProductDelyn.do">
+			<tr>
+				<td>${productVo.pidx}</td>
+				<td>${productVo.p_name }</td>
+				<td>${productVo.p_secondname}</td>
+				<td>${productVo.p_price }&nbsp;원</td>
+				<td>${productVo.p_unit }</td>
+				<td>${productVo.p_delivery }</td>
+				<td>${productVo.p_weight }</td>
+				<td>${productVo.p_package }</td>
+				<td>${productVo.p_allergy }</td>
+				<td>${productVo.p_limitdate }</td>
+				<td>${productVo.p_type }</td>
+				<td>${productVo.p_tag }</td>
+				<td>
+					<input type="button" onClick="location.href='${pageContext.request.contextPath}/adminProductOk.do?pidx=${productVo.pidx }'" value="확인">
+					<input type="hidden" name="pidx" value="${productVo.pidx}"><input type="submit" value="취소">
+				</td>
+			</tr>
 			</form>
 		</c:forEach>	
 	</table>

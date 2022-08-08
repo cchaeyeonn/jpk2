@@ -10,12 +10,22 @@
 	<title>관리자페이지</title>
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script></script>
 <script src="${pageContext.request.contextPath}/resources/js/statistics.js "></script>	
 </head>
 <script>
 function order(){
 	var frm = document.frm;
-	frm.action="${pageContext.request.contextPath}//orderListDetail.do";
+	frm.action="${pageContext.request.contextPath}/orderListDetail.do";
+	frm.method="POST";
+	frm.submit();
+	return;
+}
+</script>
+<script>
+function statistics(){
+	var frm = document.frm;
+	frm.action="${pageContext.request.contextPath}/statistics.do";
 	frm.method="POST";
 	frm.submit();
 	return;
@@ -79,30 +89,35 @@ function order(){
 <jsp:include page="../header.jsp"></jsp:include> 
        
        
-       
+<form name="frmt" action="${pageContext.request.contextPath}/statistics.do" method="post">  
 <div id="admin_main_inner">
    <div id="admin_center_cate">
    <div id="admin_1">관리자 페이지</div>
-      <div id="admin_sub">   
-      <a href="${pageContext.request.contextPath}/statistics.do" class="nav-link py-3 px-0 px-lg-3" id="open_admin">통계</a>
+       <div id="admin_sub">   
+      <input type="button" class="nav-link py-3 px-0 px-lg-3" value="통계" id="admin_button_1" style="background-color: white; border: none;" onclick=statistics()>
       <a href="${pageContext.request.contextPath}/productAdd.do" class="nav-link py-3 px-0 px-lg-3" id="admin_button">상품등록페이지</a>
       <a href="${pageContext.request.contextPath}/adminProductList.do" class="nav-link py-3 px-0 px-lg-3" id="admin_button">내가 등록한 상품목록</a>
-      <a href="${pageContext.request.contextPath}/orderList.do" class="nav-link py-3 px-0 px-lg-3" id="admin_button">주문내역</a>
-      <input type="button" class="nav-link py-3 px-0 px-lg-3" value="주문상세페이지" id="admin_button" style="background-color: white; border: none;" onclick="location.href='${pageContext.request.contextPath}/orderList.do'">
-    
-      </div>
+      <a href="${pageContext.request.contextPath}/orderList.do" class="nav-link py-3 px-0 px-lg-3" id="admin_button">주문내역</a>     <%--<a href="${pageContext.request.contextPath}/orderListDetail.do" class="nav-link py-3 px-0 px-lg-3" id="admin_button">주문상세페이지</a> --%>
+      <a href="${pageContext.request.contextPath}/adminProductCheck.do" class="nav-link py-3 px-0 px-lg-3" id="admin_button">등록심사중인 상품목록</a>
+      <a href="${pageContext.request.contextPath}/adminMemberList.do" class="nav-link py-3 px-0 px-lg-3" id="admin_button">등록된 회원 목록</a> 
+   </div>
    </div>
 
 
 <div id="admin_inner">
 <h5 style="margin-top: 150px;">매출 통계 <input type="button" value="고객별"><input type="button" value="상품별"></h5>
-<input type="text" id="datepicker1"> ~
-<input type="text" id="datepicker2">
+<div>
+  <button name="filterDate" type="button" id="datefilter1" value="1">일주일</button>
+  <button name="filterDate" type="button" id="datefilter2" value="2">3개월</button>
+  <button name="filterDate" type="button" id="datefilter3" value="3">6개월</button>
+  <button name="filterDate" type="button" id="datefilter4"  value="4">1년</button>
+</div>
+<input type="text" id="datepicker1" name="begin_date"> ~
+<input type="text" id="datepicker2" name="end_date">
+<input type="submit" value="조회">
 
-  <button name="filterDate" id="datefilter1" value="1">일주일</button>
-  <button name="filterDate" id="datefilter2" value="2">3개월</button>
-  <button name="filterDate" id="datefilter3" value="3">6개월</button>
-  <button name="filterDate" id="datefilter4"  value="4">1년</button>
+<input type="hidden" id="begin" value="${adminVo.begin_date}">
+<input type="hidden" id="end" value="${adminVo.end_date}">
 
 <div id="client" style="width:962px;">
    <table border="1" style="border-right:0px; border-left:0px; font-size: 14px; border-top: 2px solid #198754;" class="table table-hover">
@@ -110,36 +125,44 @@ function order(){
          <td>번호</td>
          <td>고객명</td>
          <td>구매수</td>
-         <td>누적금액</td>
-         <td>평균구매금액</td>
+         <td>판매량</td>
+         <td>단가</td>
+      <!--<td>누적금액</td>
+         <td>평균구매금액</td>-->
       </tr>
       
-    <%--   <c:forEach items="${orderList}" var="orderVo" varStatus="status">  
-      
-      <script>
-		$(function(){
-			if("${orderVo.orderpay_check}"=="Y"){
-				$("#${orderVo.order_id}_orderpay_check").text("결제 완료");
-			}else if("${orderVo.orderpay_check}"=="W"){
-				$("#${orderVo.order_id}_orderpay_check").text("결제 대기");
-			}else if("${orderVo.orderpay_check}"=="F"){
-				$("#${orderVo.order_id}_orderpay_check").text("결제 실패");
-			}else{
-				$("#${orderVo.order_id}_orderpay_check").text("주문 중 오류");
-			}
-		})
-		</script>
+      <c:forEach items="${statisticsList}" var="statisticsVo" varStatus="status">  
+      	<script>
+      		var arr = [];
+      		var midx = parseInt($("#${statisticsVo.num}_midx").val());
+      	
+      		var count;
+      	/* 	if(arr.indexOf(midx) < 0){
+      			arr.push(midx)
+      			count = 1;
+      		}else{
+      			count += 1; 
+      			
+      		} 
+      		$('#${statisticsVo.num}_count_midx').text(count);*/
+      	
+      	</script>
     
-    	<tr id="target"  onClick="location.href='${pageContext.request.contextPath}/orderListDetail.do?order_id=${orderVo.order_id}'">
-   			<td id="td1">${orderVo.order_id }{$product.p_name}</td>
-   	 		<td id="td3">
-    			${orderVo.pay_price }
+    	<tr id="target">
+   			<td id="td1">${statisticsVo.num}</td>
+   			<td id="td2">
+    			${statisticsVo.member_name }
     		</td>
-   			<td id="td4"><span id="${orderVo.order_id}_orderpay_check"></span></td>
-    		<td id="td5">${orderVo.order_date}</td>
+   	 		<td id="td3">
+    			<input type="hidden" id="${statisticsVo.num}_midx" value="${statisticsVo.midx }">
+    			<span >${statisticsVo.midx }</span>,${statisticsVo.pidx }
+    			<span id="${statisticsVo.num}_count_midx"></span>
+    		</td>
+   			<td id="td4">${statisticsVo.p_amount }</td>
+    		<td id="td5">${statisticsVo.p_price }</td>
    		</tr>
    		
-     </c:forEach>  --%>
+     </c:forEach>  
     </table>
     </div>
     <div id="product" style="width:962px;">
@@ -204,7 +227,7 @@ function order(){
 	<a href="/spring/index.do">메인페이지</a><br>
 	<a href="/spring/productAdd.do">상품등록페이지</a>-->
 </div>
-
+</form>     
 <!-- 푸터 연결 -->
 <jsp:include page="../footer.jsp"></jsp:include>
 

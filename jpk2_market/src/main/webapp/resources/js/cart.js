@@ -1,6 +1,15 @@
 $(function(){
 
   var ctx = getContextPath();
+  var sum_price=0;
+  sum_price = $("#for_price").val()*$('#pop_out').val();
+  
+  $('#for_sum_price').text(sum_price+"원");
+	
+
+  
+  
+  
   function getContextPath() {
   return sessionStorage.getItem("contextpath");
 }
@@ -95,7 +104,8 @@ $('#btn_minus').on('click',function(){
             number=1;
             }
             $('#pop_out').text(number);
-            
+            sum_price = $("#for_price").val()*$('#pop_out').val();
+  			$('#for_sum_price').text(sum_price+"원");
             });
 
     $('#btn_plus').on('click',function(){
@@ -112,7 +122,8 @@ $('#btn_minus').on('click',function(){
                     
                     }
     		$('#pop_out').text(number);
-    		
+    		sum_price = $("#for_price").val()*$('#pop_out').val();
+  			$('#for_sum_price').text(sum_price+"원");
     	   });
 	   
 

@@ -15,6 +15,7 @@
 		<typeAlias alias="DelVo" type="ezen.dev.spring.vo.DelVo"/>
 		<typeAlias alias="MailHandler" type="ezen.dev.spring.email.MailHandler"/>
 		<typeAlias alias="ProductSearchVo" type="ezen.dev.spring.vo.ProductSearchVo"/>
+		<typeAlias alias="AdminVo" type="ezen.dev.spring.vo.AdminVo"/>
 	</typeAliases>  
 
 </configuration>  
