@@ -132,7 +132,21 @@ function statistics(){
       </tr>
       
       <c:forEach items="${statisticsList}" var="statisticsVo" varStatus="status">  
-      
+      	<script>
+      		var arr = [];
+      		var midx = parseInt($("#${statisticsVo.num}_midx").text());
+      		
+      		var count;
+      		if(arr.indexOf(midx) < 0){
+      			arr.push(midx)
+      			count = 1;
+      		}else{
+      			count += 1; 
+      			
+      		}
+      		$('#${statisticsVo.num}_count_midx').text(count);
+      	
+      	</script>
     
     	<tr id="target">
    			<td id="td1">${statisticsVo.num}</td>
@@ -140,7 +154,8 @@ function statistics(){
     			${statisticsVo.member_name }
     		</td>
    	 		<td id="td3">
-    			${statisticsVo.midx },${statisticsVo.pidx }
+    			<span id="${statisticsVo.num}_midx">${statisticsVo.midx }</span>,${statisticsVo.pidx }
+    			<span id="${statisticsVo.num}_count_midx"></span>
     		</td>
    			<td id="td4">${statisticsVo.p_amount }</td>
     		<td id="td5">${statisticsVo.p_price }</td>
