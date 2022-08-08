@@ -66,6 +66,7 @@
     padding-right:10%;
     }
     
+    
     input[type="radio"] {display:none;}
     input[type="radio"] + label {display:inline-block;padding:20px;background:#f5f5f5;color:#999;font-size:14px; cursor:pointer;}
     input[type="radio"]:checked + label {background:#e1e1e1;color:#000;}
@@ -77,20 +78,38 @@
     
     #btn_insert_cart{
     	float:right;
-    	width:50%;
+    	width:48%;
     	height: 45px;
-    	border-radius: 12px;
+    	border-radius: 5px;
     	border: 1px;
     	border: 1px solid rgb(221, 221, 221);
+    	background-color: #198754;
+   		color: white;
     }
     
     #btn_cart_cancel{
     	float:left;
-    	width:50%;
+    	width:48%;
     	height: 45px;
-    	border-radius: 12px;
+    	border-radius: 5px;
     	border: 1px;
     	border: 1px solid rgb(221, 221, 221);
+    	
+    }
+    #for_sum_price{
+    width: 29%;
+    margin-left: 248px;
+    font-size: 26px;
+    font-weight: 700;
+    
+    }
+    
+    #modal_button{
+    padding: 22px 0 0 0;
+    }
+    #modal_sum{
+    padding: 16px 0 0 9px;
+    font-size: 19px;
     }
 
 </style>
@@ -215,17 +234,25 @@ $(function(){
 
     <b>${productVo.p_price}원</b>
     <input type="hidden" id="for_price" value="${productVo.p_price}">
-    <div class="button box" style="float: right; width:110px;">
-
-    <input type="button" id="btn_minus" value="-">
-    <input type="text" name="p_amount" id="pop_out" value="1" readonly="readonly" style="text-align:center; width: 48px;"/>
-    <input type="button" id="btn_plus" value="+">
+    <div class="button box" style="float: right; width:140px;">
+    
+     <!-- 수량 버튼 -->
+   <%--  <div style="border:1px solid; width:169px; color:rgb(221,223,225); height:40px;">
+    <button type="button" type="button" id="btn_minus" value="-" style="border:1px; background-color:white;"><img src="resources/img/-_button.png"></button>
+    <input type="text" id="pop_out" class="amount" value="${cartVo.p_amount}" readonly="readonly" style="text-align:center; width:92px; border:0px solid rgb(221,223,225); height:38px;"/>
+    <button type="button" type="button" id="btn_plus" value="+" style="border:1px; background-color:white;"><img src="resources/img/+_button.png"></button>
+   </div> --%>
+  	<div style="border:1px solid; width:123px; color:rgb(221,223,225); padding: 4px 8px 4px 11px; margin-top: -15px;">
+	<button type="button" id="btn_minus" value="-" style="border:1px; background-color:white;"><img src="resources/img/-_button.png"></button>
+    <input type="text" name="p_amount" id="pop_out" value="1" readonly="readonly" style="text-align:center; width: 29px; border:0px;"/>
+    <button type="button" id="btn_plus" value="+" style="border:1px; background-color:white;"><img src="resources/img/+_button.png"></button>
     </div>
     </div>
-    <div>
+    </div>
+    <div id="modal_sum">
     <b>합계</b><span id="for_sum_price"></span>
     </div>
-    <div>
+    <div id="modal_button">
     <input type="submit" id="btn_insert_cart" value="장바구니 담기" >
     <input type="button" class="close" id="btn_cart_cancel" value="취소" >
     </div>
