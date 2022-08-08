@@ -139,7 +139,7 @@ function statistics(){
     			${statisticsVo.member_name }
     		</td>
    	 		<td id="td3">
-    			구매수
+    			${statisticsVo.midx },${statisticsVo.pidx }
     		</td>
    			<td id="td4">${statisticsVo.p_amount }</td>
     		<td id="td5">${statisticsVo.p_price }</td>
