@@ -279,4 +279,12 @@ public class AdminController {
 		return "redirect:/adminProductCheck.do";
 		
 	}
+	@GetMapping("/adminBuyerList.do")
+	public String getBuyerList(@RequestParam("pidx") Integer pidx, Model model) {
+		List<ProductVo> productList = adminService.getBuyerList(pidx);
+		model.addAttribute("productList", productList);
+		
+		return "admin/admin_buyerList";
+		
+	}
 }
