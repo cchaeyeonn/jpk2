@@ -133,6 +133,14 @@ a {
    border-radius: 15px;
     border: 1px solid rgb(189 189 189);
 }
+
+#menu_cover{
+	width:100%;
+	margin-left:486px;
+	margin-right:483px;
+}
+
+
 </style>
 
 
@@ -232,8 +240,9 @@ function enterkey() {
    <input type="hidden" value="${midx}" name="midx">
    <!-- 카테고리, 장바구니 로고 시작 -->
    <div class="fixed-top2" id="innerNav_1"
-      style="padding-top: 110px; height: 178px; box-shadow: 0 3px 4px 0 rgb(0 0 0 / 6%); width:1903px;">
-      <ul class="menu" style="margin-top: 28px; width: 1323px;">
+      style="padding-top: 110px; height: 178px; box-shadow: 0 3px 4px 0 rgb(0 0 0 / 6%); width:100%;">
+      <div id="menu_cover">
+      <ul class="menu" style="margin-top: 28px; width:1280.78px;">
          <li style="float: left;"><a href="#">전체 카테고리</a>
             <ul class="depth_1">
                <li id="icon1"><a href="${pageContext.request.contextPath}/productList_type.do?type=vegetable_fruit">채소</a></li>
@@ -256,7 +265,7 @@ function enterkey() {
          <li style="display:inline;">        
             <!-- 검색창 -->
               <div class="search">
-                   <select name="searchType" >
+                   <select name="searchType" style="color: dimgrey; border: 1px solid #b6b6b6;">
                       <option value="p_name">상품명</option>
                       <option value="p_type">상품타입</option>
                       <option value="p_tag">상품태그</option>
@@ -284,7 +293,7 @@ function enterkey() {
    
                      </li>
       </ul>
-
+	</div>
    </div>
    <!-- 카테고리, 장바구니 로고 끝 -->
 </form>
