@@ -31,7 +31,7 @@
 	<update id="adminMemberUp" parameterType="Integer">
 		update fm_member set member_grade = 1 where midx= #{midx}
 	</update>
-	<update id="memberDelyn">
+	<update id="adminMemberDelyn">
 		update fm_member set member_delyn = 'F' where midx=#{midx}
 	</update>
 </mapper>

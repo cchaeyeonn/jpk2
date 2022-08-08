@@ -141,12 +141,12 @@ font-size: 16px;
    </div></td>
    </tr>
    
-			<form action="/spring/adminMemberDelyn.do">
+			<form>
 			<tr>
 			<td>${memberVo.midx }</td><td>${memberVo.member_name}</td><td>${memberVo.member_id}</td><td>${memberVo.member_pw}</td>
 			<td>${memberVo.member_grade}</td><td>${memberVo.member_phone}</td><td>${memberVo.member_email}</td>
 			<td>${memberVo.member_joindate}</td><td>${memberVo.member_delyn}</td><td>${memberVo.member_delyndate}</td>
-			<td><input type="submit" value="회원정지"></td>
+			<td><input type="button" value="회원정지" onclick="location.href='${pageContext.request.contextPath}/adminMemberDelyn.do?midx=${memberVo.midx}'"></td>
 			<td><input type="button" value="관리자임명" onclick="location.href='${pageContext.request.contextPath}/adminMemberUp.do?midx=${memberVo.midx}&member_grade=${memberVo.member_grade}'"></td>
 			</tr>
 			</form>
