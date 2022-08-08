@@ -293,5 +293,38 @@ public class AdminController {
 		return null;
 		}
 	}
-	
+	@GetMapping("/superAdminProductDelyn.do")
+	public String delAdminProduct(@RequestParam("pidx") Integer pidx, HttpServletRequest request) {
+		
+		HttpSession session = request.getSession();
+		Integer midx_mp =Integer.parseInt(String.valueOf(session.getAttribute("midx")));
+		ProductVo productVo = new ProductVo();
+		
+		productVo.setMidx_mp(midx_mp);
+		productVo.setPidx(pidx);
+		adminService.delProduct(productVo);
+
+
+		return "redirect:/adminProductCheck.do";
+		
+	}
+	@GetMapping("/adminBuyerList.do")
+	public String getBuyerList(@RequestParam("pidx") Integer pidx, Model model) {
+		List<ProductVo> productList = adminService.getBuyerList(pidx);
+		model.addAttribute("productList", productList);
+		
+		return "admin/admin_buyerList";
+		
+	}
+	@GetMapping("/adminBuyerDetail.do")
+	public String getBuyerDetail(@RequestParam("pidx") Integer pidx, @RequestParam("midx") Integer midx, Model model) {
+		ProductVo pVo = new ProductVo();
+		pVo.setPidx(pidx);
+		pVo.setMidx(midx);
+		ProductVo productVo = adminService.getBuyerDetail(pVo);
+		model.addAttribute("productVo", productVo);
+		
+		return "admin/admin_buyerDetail";
+		
+	}
 }

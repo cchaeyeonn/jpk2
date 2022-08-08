@@ -137,11 +137,18 @@ font-size: 16px;
 			<th id="table_title">삭제</th>
 		</tr>
 			<c:forEach var="productVo" items="${productList}">
-			   <tr>
-			   <td colspan="13"><div id="orderlist_1">
-   <a onClick="location.href='${pageContext.request.contextPath}/admin_productDetail.do?pidx=${productVo.pidx}'" >등록한 상품 상세보기</a>
-   </div></td>
-   </tr>
+			<tr>
+				<td colspan="13">
+					<div id="orderlist_1">
+<<<<<<< HEAD
+		   				<a style="cursor:pointer; margin-top:20px;"onClick="location.href='${pageContext.request.contextPath}/admin_productDetail.do?pidx=${productVo.pidx}'" ><b>등록한 상품 상세보기</b></a>
+=======
+						<a style="cursor:pointer; margin-top:20px;"onClick="location.href='${pageContext.request.contextPath}/adminBuyerList.do?pidx=${productVo.pidx}'" >상품을 구매한 사람들&nbsp;&nbsp;|</a>
+		   				<a style="cursor:pointer; margin-top:20px;"onClick="location.href='${pageContext.request.contextPath}/admin_productDetail.do?pidx=${productVo.pidx}'" >&nbsp;&nbsp;등록한 상품 상세보기</a>
+>>>>>>> branch 'master' of https://github.com/cchaeyeonn/jpk2.git
+		   			</div>
+	   			</td>
+   			</tr>
    
 			<form action="${pageContext.request.contextPath}/adminProductDelyn.do">
 				<tr>

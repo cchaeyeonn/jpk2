@@ -205,7 +205,7 @@ function enterkey() {
                            out.print("<a class='nav-link py-3 px-0 px-lg-3 rounded' href='"+request.getContextPath()+"/admin.do'>["+session.getAttribute("member_name")+"] 님</a>");
                            }
                         else if ((session.getAttribute("member_id") != null) && grade == 0){
-                           out.print("<a class='nav-link py-3 px-0 px-lg-3 rounded' href='"+request.getContextPath()+"/memberInfo.do'>["+session.getAttribute("member_name")+"] 님</a>");
+                           out.print("<a class='nav-link py-3 px-0 px-lg-3 rounded' href='"+request.getContextPath()+"/orderList.do'>["+session.getAttribute("member_name")+"] 님</a>");
                         }
                         %>
                </li>
@@ -248,8 +248,8 @@ function enterkey() {
             </ul></li>
          <li style="float: left;"><a href="/spring/productList_new.do">신상품</a></li>
          <li style="float: left;"><a href="/spring/productList_best.do">베스트</a></li>
-         <li style="float: left;"><a href="#">알뜰쇼핑</a></li>
-         <li style="float: left;"><a href="#">특가/혜택</a></li>
+         <li style="float: left;"><a href="#" onclick="alert('서비스 준비중입니다.')">알뜰쇼핑</a></li>
+         <li style="float: left;"><a href="#" onclick="alert('서비스 준비중입니다.')">특가/혜택</a></li>
          <%-- <li><a href="/spring/cart_main.do?midx=${midx}" style="margin-left: 710px;"><input type="image" value="장바구니" src="resources/img/cart.png" width=30px; ></a></li> --%>
 
             

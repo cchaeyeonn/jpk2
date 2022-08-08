@@ -62,9 +62,18 @@ public class AdminService {
 		return adminDao.adminMemberDelyn(midx);
 	}
 
+
 	public List<AdminVo> getStatisticsList(AdminVo adminVo) {
 		
 		return adminDao.getStatisticsList(adminVo);
+	}
+	public List<ProductVo> getBuyerList(Integer pidx) {
+		return adminDao.getBuyerList(pidx);
+	}
+
+	public ProductVo getBuyerDetail(ProductVo pVo) {
+		return adminDao.getBuyerDetail(pVo);
+
 	}
 
 }

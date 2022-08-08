@@ -205,7 +205,7 @@ $(function(){
 </div> -->
 <div class="modal-background">
   <div class="modal-content">
-  <div class="close area" style="width:10px; margin-left:367px;">X</div>
+  <div class="close area" style="width:10px; margin-left:367px; cursor:pointer;">X</div>
   <div id="product-info">
      ${productVo.p_name}
     <hr>

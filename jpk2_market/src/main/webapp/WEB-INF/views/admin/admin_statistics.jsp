@@ -19,7 +19,7 @@ var end_date = ${end_date};
 <script>
 function order(){
 	var frm = document.frm;
-	frm.action="${pageContext.request.contextPath}//orderListDetail.do";
+	frm.action="${pageContext.request.contextPath}/orderListDetail.do";
 	frm.method="POST";
 	frm.submit();
 	return;

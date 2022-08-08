@@ -214,7 +214,7 @@ flex: 1 1 0%;
       <a href="${pageContext.request.contextPath}/orderList.do" class="nav-link py-3 px-0 px-lg-3" id="open_history">주문 내역</a>
       <a href="${pageContext.request.contextPath}/memberInfo.do" class="nav-link py-3 px-0 px-lg-3" id="open_info_modify">개인 정보 수정</a>
       
-      <a href="" class="nav-link py-3 px-0 px-lg-3" id="open_coupon">쿠폰</a>
+      <a href="#" onclick="alert('서비스 준비중입니다.')" class="nav-link py-3 px-0 px-lg-3" id="open_coupon">쿠폰</a>
       <!-- <a href="/spring/qna_board.do" class="nav-link py-3 px-0 px-lg-3 rounded" id="open_qna" >1:1 문의</a> -->
       </div>
    </div>
