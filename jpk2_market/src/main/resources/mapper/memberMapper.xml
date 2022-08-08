@@ -14,7 +14,7 @@
 	</select> -->
 	
 	<select id="loginMember" parameterType="string" resultType="memberVo">
-		select * from fm_member where member_id=#{member_id} and member_delyn='N'
+		select * from fm_member where member_id=#{member_id} and member_delyn!="Y"
 	</select>
 	
 	<select id="getMemberInfo" parameterType="string" resultType="memberVo">

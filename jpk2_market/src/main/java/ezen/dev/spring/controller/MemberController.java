@@ -107,7 +107,7 @@ public class MemberController {
 		
 		HttpSession session = request.getSession();
 		MemberVo memberVo=memberService.login(member_id);
-		
+
 		if(memberVo == null) {
 		response.setContentType("text/html; charset=UTF-8");
 		response.setCharacterEncoding("UTF-8");
@@ -116,7 +116,7 @@ public class MemberController {
 		out.flush();
 		return null;
 		}
-		
+
 		
 		long member_grade = memberVo.getMember_grade();
 		long midx = memberVo.getMidx();
@@ -136,18 +136,22 @@ public class MemberController {
 		String member_auth = memberService.getAuthInfo(member_id);
 		String member_name = memberService.getNameInfo(member_id);
 		System.out.println("인증값 "+member_auth);
+
 		if(passwordEncoder.matches(member_pw, memberVo.getMember_pw())) {
 			
-		if(memberVo.getMember_delyn()=="F") {
-			response.setContentType("text/html; charset=UTF-8");
-			response.setCharacterEncoding("UTF-8");
-			PrintWriter out=response.getWriter();
-			out.println("<script>window.onload = function(){alert('관리자에 의해 정지된 계정입니다. 1대1문의를 이용해 주세요.'); location.href='/spring/index.do';}</script>");
-			out.flush();
-			session.invalidate();
-			return null;
-			
-		}
+			String member_delyn = memberVo.getMember_delyn();
+			String fail = "F";
+			if(member_delyn.equals(fail)) {
+				response.setContentType("text/html; charset=UTF-8");
+				response.setCharacterEncoding("UTF-8");
+				PrintWriter out=response.getWriter();
+				out.println("<script>window.onload = function(){alert('관리자에 의해 정지된 계정입니다. 1대1문의를 이용해 주세요.'); location.href='/spring/index.do';}</script>");
+				out.flush();
+				session.invalidate();
+				return null;
+				
+			}	
+		
 		if(member_pw.length()==6) {
 			session.setAttribute("midx", midx);
 			session.setAttribute("member_id", member_id);

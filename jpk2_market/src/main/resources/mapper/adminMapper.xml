@@ -32,6 +32,6 @@
 		update fm_member set member_grade = 1 where midx= #{midx}
 	</update>
 	<update id="adminMemberDelyn">
-		update fm_member set member_delyn = 'F' where midx=#{midx}
+		update fm_member set member_delyn = 'F', member_delyndate = now() where midx=#{midx}
 	</update>
 </mapper>
