@@ -65,4 +65,8 @@ public class AdminService {
 		return adminDao.getBuyerList(pidx);
 	}
 
+	public ProductVo getBuyerDetail(ProductVo pVo) {
+		return adminDao.getBuyerDetail(pVo);
+	}
+
 }

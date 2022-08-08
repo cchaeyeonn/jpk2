@@ -287,4 +287,15 @@ public class AdminController {
 		return "admin/admin_buyerList";
 		
 	}
+	@GetMapping("/adminBuyerDetail.do")
+	public String getBuyerDetail(@RequestParam("pidx") Integer pidx, @RequestParam("midx") Integer midx, Model model) {
+		ProductVo pVo = new ProductVo();
+		pVo.setPidx(pidx);
+		pVo.setMidx(midx);
+		ProductVo productVo = adminService.getBuyerDetail(pVo);
+		model.addAttribute("productVo", productVo);
+		
+		return "admin/admin_buyerDetail";
+		
+	}
 }

@@ -16,7 +16,7 @@ public class ProductVo {
 	private String p_tag;
 	private String p_system_filename;
 	private int midx_mp;
-	private String midx;
+	private int midx;
 	private String p_secondname;
 	private String member_name;
 	private String d_status;
@@ -31,10 +31,17 @@ public class ProductVo {
 	private String d_addrcode;
 	private String d_tophone;
 	private String d_to;
+	private String d_from;
 	
 	
 	
 	
+	public String getD_from() {
+		return d_from;
+	}
+	public void setD_from(String d_from) {
+		this.d_from = d_from;
+	}
 	public String getMember_name() {
 		return member_name;
 	}
@@ -209,10 +216,10 @@ public class ProductVo {
 	public void setP_secondname(String p_secondname) {
 		this.p_secondname = p_secondname;
 	}
-	public String getMidx() {
+	public int getMidx() {
 		return midx;
 	}
-	public void setMidx(String midx) {
+	public void setMidx(int midx) {
 		this.midx = midx;
 	}
 
