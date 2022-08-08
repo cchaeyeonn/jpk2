@@ -256,7 +256,7 @@ function enterkey() {
          <li style="display:inline;">        
             <!-- 검색창 -->
               <div class="search">
-                   <select name="searchType">
+                   <select name="searchType" >
                       <option value="p_name">상품명</option>
                       <option value="p_type">상품타입</option>
                       <option value="p_tag">상품태그</option>

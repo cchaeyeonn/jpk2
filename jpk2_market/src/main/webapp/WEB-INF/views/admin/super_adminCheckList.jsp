@@ -122,7 +122,7 @@ function statistics(){
 
 <div id="admin_inner">
 
-     <h5 style="margin-top: 52px;">등록한 상품 목록</h5>
+     <h5 style="margin-top: 52px;">등록심사중인 상품 목록</h5>
 
    <div id="line"></div>
 	
@@ -148,7 +148,7 @@ function statistics(){
 			<tr>
 				<td colspan="13">
 					<div id="orderlist_1">
-			   			<a onClick="location.href='${pageContext.request.contextPath}/adminProductDetail.do?pidx=${productVo.pidx }'" id="s_product_detail">상품상세보기</a>
+			   			<a id="inner_detail_button" onClick="location.href='${pageContext.request.contextPath}/adminProductDetail.do?pidx=${productVo.pidx }'" id="s_product_detail">상품상세보기</a>
 			   		</div>
 	   			</td>
    			</tr>

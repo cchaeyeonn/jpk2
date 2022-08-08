@@ -88,6 +88,9 @@ font-size: 16px;
     align-items: center;
     border-bottom: 2px solid #198754;
 }
+#product_t{
+width:95%
+}
 </style>
 
 </head>
@@ -132,7 +135,7 @@ font-size: 16px;
 			<tr>
 				<td colspan="13">
 					<div id="orderlist_1">
-		   				<a style="cursor:pointer; margin-top:20px;"onClick="location.href='${pageContext.request.contextPath}/adminBuyerDetail.do?pidx=${productVo.pidx}&midx=${productVo.midx}'" >&nbsp;&nbsp;주문내용 상세보기</a>
+		   				<a id="inner_detail_button" style="cursor:pointer; margin-top:20px;"onClick="location.href='${pageContext.request.contextPath}/adminBuyerDetail.do?pidx=${productVo.pidx}&midx=${productVo.midx}'" >&nbsp;&nbsp;주문내용 상세보기</a>
 		   			</div>
 	   			</td>
    			</tr>
