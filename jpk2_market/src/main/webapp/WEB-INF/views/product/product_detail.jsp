@@ -210,25 +210,20 @@ $(function(){
   <div class="close area" style="width:10px; margin-left:367px; cursor:pointer;">X</div>
   <div id="product-info">
      ${productVo.p_name}
+    
     <hr>
 
     <b>${productVo.p_price}원</b>
-     
+    <input type="hidden" id="for_price" value="${productVo.p_price}">
     <div class="button box" style="float: right; width:110px;">
-        <script>
-$(function(){
-	var sum_price=0;
-	sum_price=${productVo.p_price} * $("#pop_out").val();
-	$("#${productVo.pidx}_sum_price").text(sum_price);
-})
-</script>
+
     <input type="button" id="btn_minus" value="-">
     <input type="text" name="p_amount" id="pop_out" value="1" readonly="readonly" style="text-align:center; width: 48px;"/>
     <input type="button" id="btn_plus" value="+">
     </div>
     </div>
     <div>
-    <b>합계</b><span id="${productVo.pidx}_sum_price"></span>
+    <b>합계</b><span id="for_sum_price"></span>
     </div>
     <div>
     <input type="submit" id="btn_insert_cart" value="장바구니 담기" >

@@ -10,6 +10,7 @@
 	<title>관리자페이지</title>
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script></script>
 <script src="${pageContext.request.contextPath}/resources/js/statistics.js "></script>	
 </head>
 <script>

@@ -10,8 +10,22 @@ public class AdminVo {
 	private String member_name;
 	private int p_amount;
 	private int p_price;
+	private int midx;
+	private int pidx;
 	
 	
+	public int getMidx() {
+		return midx;
+	}
+	public void setMidx(int midx) {
+		this.midx = midx;
+	}
+	public int getPidx() {
+		return pidx;
+	}
+	public void setPidx(int pidx) {
+		this.pidx = pidx;
+	}
 	public String getMember_name() {
 		return member_name;
 	}
