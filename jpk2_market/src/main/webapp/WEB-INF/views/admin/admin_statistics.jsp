@@ -11,8 +11,11 @@
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script> 
-var begin_date = ${begin_date};
-var end_date = ${end_date};
+var begin_date = "<c:out value="${adminVo.begin_date}" />";
+alert("d"+${adminVo.begin_date});
+var end_date = "<c:out value="${adminVo.end_date}" />";
+alert("f"+${adminVo.end_date});
+
 </script>
 <script src="${pageContext.request.contextPath}/resources/js/statistics.js "></script>	
 </head>
