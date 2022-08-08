@@ -14,7 +14,7 @@
 var begin_date = "<c:out value="${adminVo.begin_date}" />";
 alert("d"+${adminVo.begin_date});
 var end_date = "<c:out value="${adminVo.end_date}" />";
-var end_date = ${adminVo.end_date};alert("f"+${adminVo.end_date});
+alert("f"+${adminVo.end_date});
 
 </script>
 <script src="${pageContext.request.contextPath}/resources/js/statistics.js "></script>	
