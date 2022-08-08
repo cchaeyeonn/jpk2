@@ -15,8 +15,13 @@
 		
 			
         });
-        $('#datepicker1').datepicker('setDate', '2022-01-01');
-        $('#datepicker2').datepicker('setDate', 'today');
+        
+        var begin = $("#begin").val();
+        var end = $("#end").val();
+        
+        
+        $('#datepicker1').datepicker('setDate', begin);
+        $('#datepicker2').datepicker('setDate', end);
          
          
          
