@@ -74,18 +74,17 @@ public class ProductController {
 	}
 	
 	@GetMapping("/searchProductList.do")
-	public String getSearchProductList(Model model, @RequestParam(value="searchType", required=false) String searchType, @RequestParam(value="searchName", required=false) String searchName) {
+	public String getSearchProductList(Model model, @RequestParam(value="searchType", required=false) String searchType, @RequestParam(value="searchName", required=false) String searchName, ProductVo productVo) {
 		ProductSearchVo productSearchVo = new ProductSearchVo();
 		productSearchVo.setSearchType(searchType);
 		productSearchVo.setSearchName(searchName);
 		List<ProductVo> productList = productService.getSearchProductList(productSearchVo);
-		if(productList == null) {
-			
+		if(productList.isEmpty()) {
 			return "product/product_list_null";
-			
 		}else {
-		model.addAttribute("productList",productList);
-		return "product/product_list_type";}
+			model.addAttribute("productList",productList);
+			return "product/product_list_type";
+		}
 	}
 }
 
