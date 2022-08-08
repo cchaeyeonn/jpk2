@@ -3,11 +3,6 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace = "ezen.dev.spring.admin">
-
-	<select id="getMemberList" resultType="memberVo">
-		select * from member
-	</select>
-	
 	<insert id="addProduct" parameterType="productVo">
 		insert into fm_product(p_name, p_filename, p_price, p_unit, p_weight, p_delivery, p_package, p_allergy, p_limitdate, p_type, p_tag, p_system_filename, midx_mp, p_secondname) 
 		 values(#{p_name}, #{p_filename}, #{p_price}, #{p_unit}, #{p_weight}, #{p_delivery}, #{p_package}, #{p_allergy}, #{p_limitdate}, #{p_type}, #{p_tag}, #{p_system_filename}, #{midx_mp}, #{p_secondname})
@@ -16,7 +11,27 @@
 		select * from fm_product a inner join fm_member b on a.midx_mp = b.midx where a.midx_mp = #{midx} and a.p_delyn = 'N'
 	</select>
 	<update id="delProduct" parameterType="productVo">
-		update fm_product set p_delyn = 'Y' where pidx= #{pidx} and midx_mp = #{midx_mp}
+		update fm_product set p_delyn = 'Y' where pidx= #{pidx}
 	</update>
-
+	<select id="getAdminProductListDetail" parameterType="Integer">
+		select * from fm_product a inner join fm_product_cart b on a.pidx = b.pidx_pc inner join fm_order c on b.pbidx = c.pbidx_co inner join fm_member d on c.midx_mo = d.midx inner join fm_del e on c.oidx=e.oidx_od where d.member_delyn like 'N' and pidx=#{pidx}
+	</select>
+	<select id="getProductCheck" resultType="productVo">
+		select * from fm_product where p_admincheck='N' and p_delyn='N' 
+	</select>
+	<select id="getProductInfo" resultType="productVo">
+		select * from fm_product where pidx=#{pidx}
+	</select>
+	<update id="adminProductOk" parameterType="Integer">
+		update fm_product set p_admincheck = 'Y' where pidx= #{pidx}
+	</update>
+	<select id="getMemberList" resultType="memberVo">
+		select * from fm_member where member_grade!=2
+	</select>
+	<update id="adminMemberUp" parameterType="Integer">
+		update fm_member set member_grade = 1 where midx= #{midx}
+	</update>
+	<update id="memberDelyn">
+		update fm_member set member_delyn = 'F' where midx=#{midx}
+	</update>
 </mapper>

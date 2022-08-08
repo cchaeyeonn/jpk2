@@ -8,7 +8,7 @@
 
 <link href="resources/css/style_css.css" rel="stylesheet" />
 
-<title>내가 등록한 상품 목록</title>
+<title>등록된 회원 목록</title>
 
 <style>
 #admin_main_inner{
@@ -103,18 +103,18 @@ font-size: 16px;
       <div id="admin_sub">   
       <a href="${pageContext.request.contextPath}/admin.do" class="nav-link py-3 px-0 px-lg-3" id="admin_button">통계</a>
       <a href="${pageContext.request.contextPath}/productAdd.do" class="nav-link py-3 px-0 px-lg-3" id="admin_button">상품등록페이지</a>
-      <a href="${pageContext.request.contextPath}/adminProductList.do" class="nav-link py-3 px-0 px-lg-3" id="open_admin">내가 등록한 상품목록</a>
+      <a href="${pageContext.request.contextPath}/adminProductList.do" class="nav-link py-3 px-0 px-lg-3" id="admin_button">내가 등록한 상품목록</a>
       <a href="${pageContext.request.contextPath}/orderList.do" class="nav-link py-3 px-0 px-lg-3" id="admin_button">주문내역</a>
+      <a href="${pageContext.request.contextPath}/adminProductCheck.do" class="nav-link py-3 px-0 px-lg-3" id="admin_button">등록심사중인 상품목록</a> 
+      <a href="${pageContext.request.contextPath}/adminMemberList.do" class="nav-link py-3 px-0 px-lg-3" id="open_admin">등록된 회원 목록</a>
      <%--<a href="${pageContext.request.contextPath}/orderListDetail.do" class="nav-link py-3 px-0 px-lg-3" id="admin_button">주문상세페이지</a> --%>
-           <a href="${pageContext.request.contextPath}/adminProductCheck.do" class="nav-link py-3 px-0 px-lg-3" id="admin_button">등록심사중인 상품목록</a>
-           <a href="${pageContext.request.contextPath}/adminMemberList.do" class="nav-link py-3 px-0 px-lg-3" id="admin_button">등록된 회원 목록</a>
       </div>
    </div>
 
 
 <div id="admin_inner">
 
-     <h5 style="margin-top: 52px;">내가 등록한 상품 목록</h5>
+     <h5 style="margin-top: 52px;">등록된 회원 목록</h5>
 
    <div id="line"></div>
 	
@@ -122,33 +122,33 @@ font-size: 16px;
 
 	<table id="product_t">
 		<tr>
-			<th id="table_title">번호</th>
+			<th id="table_title">회원번호</th>
 			<th id="table_title">이름</th>
-			<th id="table_title">부제목</th>
-			<th id="table_title">가격</th>
-			<th id="table_title">판매단위</th>
-			<th id="table_title">배송</th>
-			<th id="table_title">용량</th>
-			<th id="table_title">포장</th>
-			<th id="table_title">알러지</th>
-			<th id="table_title">유통기한</th>
-			<th id="table_title">타입</th>
-			<th id="table_title">태그</th>
-			<th id="table_title">삭제</th>
+			<th id="table_title">아이디</th>
+			<th id="table_title">비밀번호</th>
+			<th id="table_title">회원등급</th>
+			<th id="table_title">전화번호</th>
+			<th id="table_title">이메일</th>
+			<th id="table_title">가입일시</th>
+			<th id="table_title">회원탈퇴여부</th>
+			<th id="table_title">회원탈퇴일</th>
+			<th id="table_title">회원정지</th>
+			<th id="table_title">관리자임명</th>
 		</tr>
-			<c:forEach var="productVo" items="${productList}">
+			<c:forEach var="memberVo" items="${memberList}">
 			   <tr>
 			   <td colspan="13"><div id="orderlist_1">
-   <a onClick="location.href='${pageContext.request.contextPath}/admin_productDetail.do?pidx=${productVo.pidx}'" >등록한 상품 상세보기</a>
    </div></td>
    </tr>
    
-			<form action="${pageContext.request.contextPath}/adminProductDelyn.do">
-				<tr>
-					<td>${productVo.pidx}</td><td>${productVo.p_name }</td><td>${productVo.p_secondname}</td><td>${productVo.p_price }&nbsp;원</td><td>${productVo.p_unit }</td><td>${productVo.p_delivery }</td>
-					<td>${productVo.p_weight }</td><td>${productVo.p_package }</td><td>${productVo.p_allergy }</td><td>${productVo.p_limitdate }</td>
-					<td>${productVo.p_type }</td><td>${productVo.p_tag }</td><td><input type="hidden" name="pidx" value="${productVo.pidx}"><input type="submit" value="삭제"></a></td>
-				</tr>
+			<form action="/spring/adminMemberDelyn.do">
+			<tr>
+			<td>${memberVo.midx }</td><td>${memberVo.member_name}</td><td>${memberVo.member_id}</td><td>${memberVo.member_pw}</td>
+			<td>${memberVo.member_grade}</td><td>${memberVo.member_phone}</td><td>${memberVo.member_email}</td>
+			<td>${memberVo.member_joindate}</td><td>${memberVo.member_delyn}</td><td>${memberVo.member_delyndate}</td>
+			<td><input type="submit" value="회원정지"></td>
+			<td><input type="button" value="관리자임명" onclick="location.href='${pageContext.request.contextPath}/adminMemberUp.do?midx=${memberVo.midx}&member_grade=${memberVo.member_grade}'"></td>
+			</tr>
 			</form>
 		</c:forEach>	
 	</table>
@@ -156,7 +156,7 @@ font-size: 16px;
 </div>
 </div>
 
-<%-- <div id="ad_productlist_inner">
+<!-- <div id="ad_productlist_inner">
 	<h3>상품목록</h3>
 	<hr/>
 	<table id="product_t">
@@ -177,7 +177,7 @@ font-size: 16px;
 	
 	<input id="adl_button" type="button" class="btn btn-outline-success" value="관리자 메인페이지" onclick="location.href='/spring/admin.do'"><br>
 	
-</div> --%>
+</div> -->
 
 <!-- 푸터 연결 -->
 <jsp:include page="../footer.jsp"></jsp:include>

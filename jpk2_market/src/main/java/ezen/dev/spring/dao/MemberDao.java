@@ -11,7 +11,7 @@ import ezen.dev.spring.vo.MemberVo;
 @Repository
 public class MemberDao {
 
-	//MyBatis를 이용해서 DB작업: SqlSession 객체 필요
+	//MyBatis瑜� �씠�슜�빐�꽌 DB�옉�뾽: SqlSession 媛앹껜 �븘�슂
 	
 	private SqlSession sqlSession;
 	
@@ -23,7 +23,7 @@ public class MemberDao {
 	}
 	
 	public int joinMember(MemberVo memberVo) {
-		//sqlSession객체를 이용한 입력작업: insert("Mapper파일의 네임스페이스.id값", 입력값/입력객체)
+		//sqlSession媛앹껜瑜� �씠�슜�븳 �엯�젰�옉�뾽: insert("Mapper�뙆�씪�쓽 �꽕�엫�뒪�럹�씠�뒪.id媛�", �엯�젰媛�/�엯�젰媛앹껜)
 		
 		return sqlSession.insert(MAPPER+".joinMember", memberVo);
 	}
@@ -81,6 +81,11 @@ public class MemberDao {
 
 	public void setUpdateMemberInfo(MemberVo memberVo) {
 		sqlSession.update(MAPPER+".setUpdateMemberInfo", memberVo);
+		
+	}
+
+	public void memberDelyn(MemberVo memberVo) {
+		sqlSession.update(MAPPER+".memberDelyn", memberVo);
 		
 	}
 

@@ -17,6 +17,22 @@ public class ProductVo {
 	private String p_system_filename;
 	private int midx_mp;
 	private String p_secondname;
+	private String member_name;
+	private String d_status;
+	private String order_date;
+	private String order_id;
+	private String pay_way;
+	private String orderpay_check;
+	private String pay_findate;
+	private String p_amount;
+	private String d_addr1;
+	private String d_addr2;
+	private String d_addrcode;
+	private String d_tophone;
+	private String d_to;
+	
+	
+	
 	
 	public String getP_system_filename() {
 		return p_system_filename;

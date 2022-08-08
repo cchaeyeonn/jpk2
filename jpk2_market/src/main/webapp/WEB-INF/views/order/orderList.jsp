@@ -118,7 +118,7 @@ font-size: 16px;
     -webkit-box-pack: justify;
     /* justify-content: space-between; */
     justify-content: flex-start;
-    padding: 14px 0px 16px;
+    padding: 14px 40px 16px;
 }
 #orderlist_box_left{
     display: flex;
@@ -211,8 +211,9 @@ flex: 1 1 0%;
    <div id="service_center_cate">
    <div id="service_1">마이페이지</div>
       <div id="notice_sub">   
-      <a href="${pageContext.request.contextPath}/memberInfo.do" class="nav-link py-3 px-0 px-lg-3" id="open_info_modify">개인 정보 수정</a>
       <a href="${pageContext.request.contextPath}/orderList.do" class="nav-link py-3 px-0 px-lg-3" id="open_history">주문 내역</a>
+      <a href="${pageContext.request.contextPath}/memberInfo.do" class="nav-link py-3 px-0 px-lg-3" id="open_info_modify">개인 정보 수정</a>
+      
       <a href="" class="nav-link py-3 px-0 px-lg-3" id="open_coupon">쿠폰</a>
       <!-- <a href="/spring/qna_board.do" class="nav-link py-3 px-0 px-lg-3 rounded" id="open_qna" >1:1 문의</a> -->
       </div>
@@ -261,7 +262,7 @@ flex: 1 1 0%;
    </div>
    <div id="orderlist_box">
    <div id="orderlist_box_left"></div>
-    <img id="orderlist_img" class="img-fluid4" src="${pageContext.request.contextPath}/resources/product_image/${cartVo.p_system_filename}" alt="..."  />
+   <%--  <img id="orderlist_img" class="img-fluid4" src="${pageContext.request.contextPath}/resources/product_image/${cartVo.p_system_filename}" alt="..."  /> --%>
 
    <div id="orderlist_content">
 <!--       <dl id="dl">

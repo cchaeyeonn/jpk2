@@ -121,8 +121,9 @@ width:3%;
    <div id="service_center_cate">
    <div id="service_1">마이페이지</div>
       <div id="notice_sub">   
-      <a href="${pageContext.request.contextPath}/memberInfo.do" class="nav-link py-3 px-0 px-lg-3" id="open_info_modify">개인 정보 수정</a>
       <a href="${pageContext.request.contextPath}/orderList.do" class="nav-link py-3 px-0 px-lg-3" id="open_history">주문 내역</a>
+      <a href="${pageContext.request.contextPath}/memberInfo.do" class="nav-link py-3 px-0 px-lg-3" id="open_info_modify">개인 정보 수정</a>
+      
       <a href="" class="nav-link py-3 px-0 px-lg-3" id="open_coupon">쿠폰</a>
       <!-- <a href="/spring/qna_board.do" class="nav-link py-3 px-0 px-lg-3 rounded" id="open_qna" >1:1 문의</a> -->
       </div>
@@ -232,7 +233,7 @@ width:3%;
          <td id="memberinfo_td"><input type="submit" class="btn btn-outline-success" id="trigger"  value="가입하기" style="margin-left:117px; margin-top:22px; width:353px;"></td> -->
          <p style="padding-left: 489px;">
   		 <a><span  onclick="check();">회원정보 수정&nbsp;&nbsp;</span>|</a>&nbsp;&nbsp;
-  		 <a href="${pageContext.request.contextPath}/deleteMember.do">회원탈퇴</a></p>
+  		 <a href="${pageContext.request.contextPath}/memberDelyn.do">회원탈퇴</a></p>
        
 
 

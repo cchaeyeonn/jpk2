@@ -88,8 +88,8 @@ function order(){
       <a href="${pageContext.request.contextPath}/productAdd.do" class="nav-link py-3 px-0 px-lg-3" id="admin_button">상품등록페이지</a>
       <a href="${pageContext.request.contextPath}/adminProductList.do" class="nav-link py-3 px-0 px-lg-3" id="admin_button">내가 등록한 상품목록</a>
       <a href="${pageContext.request.contextPath}/orderList.do" class="nav-link py-3 px-0 px-lg-3" id="admin_button">주문내역</a>
-      <input type="button" class="nav-link py-3 px-0 px-lg-3" value="주문상세페이지" id="admin_button" style="background-color: white; border: none;" onclick="location.href='${pageContext.request.contextPath}/orderList.do'">
-    
+          <a href="${pageContext.request.contextPath}/adminProductCheck.do" class="nav-link py-3 px-0 px-lg-3" id="admin_button">등록심사중인 상품목록</a>
+          <a href="${pageContext.request.contextPath}/adminMemberList.do" class="nav-link py-3 px-0 px-lg-3" id="admin_button">등록된 회원 목록</a>
       </div>
    </div>
 
@@ -98,12 +98,12 @@ function order(){
 <h5 style="margin-top: 150px;">매출 통계 <input type="button" value="고객별"><input type="button" value="상품별"></h5>
 <input type="text" id="datepicker1"> ~
 <input type="text" id="datepicker2">
-<div>
+
   <button name="filterDate" id="datefilter1" value="1">일주일</button>
   <button name="filterDate" id="datefilter2" value="2">3개월</button>
   <button name="filterDate" id="datefilter3" value="3">6개월</button>
-  <button name="filterDate" id="datefilter4"  value="4">1개월</button>
-</div>
+  <button name="filterDate" id="datefilter4"  value="4">1년</button>
+
 <div id="client" style="width:962px;">
    <table border="1" style="border-right:0px; border-left:0px; font-size: 14px; border-top: 2px solid #198754;" class="table table-hover">
       <tr>        
@@ -197,7 +197,7 @@ function order(){
 <input id="adh_button" type="button" class="btn btn-outline-success" value="내가 등록한 상품목록" onclick="location.href='${pageContext.request.contextPath}/adminProductList.do'"><br>
 <input id="adh_button" type="button" class="btn btn-outline-success" value="테스트 페이지1" onclick="location.href='${pageContext.request.contextPath}/orderList.do'"><br>
 <input id="adh_button" type="button" class="btn btn-outline-success" value="테스트 페이지2" onclick="order()"><br>
-</div> --%>
+</div> 
 
 <!--
 	<a href="/spring/memberList.do">회원목록보기</a><br> 
