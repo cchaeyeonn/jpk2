@@ -180,7 +180,8 @@ public class AdminController {
 		};
 		
 		AdminVo adminVo = new AdminVo();
-
+		System.out.println("begin_date:"+begin_date);
+		System.out.println("end_date:"+end_date);
 
 		adminVo.setBegin_date(begin_date);
 		adminVo.setEnd_date(end_date);
@@ -191,8 +192,9 @@ public class AdminController {
 
 		
 		model.addAttribute("statisticsList",statisticsList);
-		model.addAttribute("begin_date", begin_date);
-		model.addAttribute("end_date", end_date);
+		model.addAttribute("adminVo", adminVo);
+		
+		
 
 		
 		

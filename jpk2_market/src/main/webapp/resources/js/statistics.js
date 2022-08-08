@@ -16,13 +16,12 @@
 			
         });
         
+        var begin = $("#begin").val();
+        var end = $("#end").val();
         
         
-        
-        
-        
-        $('#datepicker1').datepicker('setDate', begin_date);
-        $('#datepicker2').datepicker('setDate', end_date);
+        $('#datepicker1').datepicker('setDate', begin);
+        $('#datepicker2').datepicker('setDate', end);
          
          
          

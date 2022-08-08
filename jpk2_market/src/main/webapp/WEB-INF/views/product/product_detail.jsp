@@ -204,22 +204,21 @@ $(function(){
 	<a class="open button">장바구니</a>
 </div> -->
 <div class="modal-background">
+
   <div class="modal-content">
   <div class="close area" style="width:10px; margin-left:367px; cursor:pointer;">X</div>
   <div id="product-info">
      ${productVo.p_name}
     <hr>
-    
+
     <b>${productVo.p_price}원</b>
      
     <div class="button box" style="float: right; width:110px;">
-    
     <input type="button" id="btn_minus" value="-">
     <input type="text" name="p_amount" id="pop_out" value="1" readonly="readonly" style="text-align:center; width: 48px;"/>
     <input type="button" id="btn_plus" value="+">
     </div>
     </div>
-    <b>합계</b>
     <div>
     <input type="submit" id="btn_insert_cart" value="장바구니 담기" >
     <input type="button" class="close" id="btn_cart_cancel" value="취소" >
@@ -253,5 +252,6 @@ $(function(){
     <!-- 푸터 연결 -->
     <jsp:include page="../footer.jsp"></jsp:include>
 </body>
+
 <script src="${pageContext.request.contextPath}/resources/js/modal.js"></script>
 </html>
