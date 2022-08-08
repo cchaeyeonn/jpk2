@@ -140,7 +140,7 @@ font-size: 16px;
 			<tr>
 				<td colspan="13">
 					<div id="orderlist_1">
-		   				<a style="cursor:pointer; margin-top:20px;"onClick="location.href='${pageContext.request.contextPath}/admin_productDetail.do?pidx=${productVo.pidx}'" >등록한 상품 상세보기</a>
+		   				<a style="cursor:pointer; margin-top:20px;"onClick="location.href='${pageContext.request.contextPath}/admin_productDetail.do?pidx=${productVo.pidx}'" ><b>등록한 상품 상세보기</b></a>
 		   			</div>
 	   			</td>
    			</tr>
