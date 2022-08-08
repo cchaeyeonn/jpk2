@@ -29,11 +29,11 @@ user-select: none;
 } 
 
 
-#servive_main_inner{
+/* #servive_main_inner{
    margin-left:324px;
    margin-top: 40px;
    min-height:1040px;
-}
+} */
    
 #td_l{
    width:20%;
@@ -72,9 +72,9 @@ user-select: none;
 }
    
    
-#td_l{
+/* #td_l{
    width:20%;
-}
+} */
 
 /* faq css 시작 */
 .answer {
@@ -114,3 +114,250 @@ user-select: none;
   }
   
   /* faq css 끝 */
+  
+  
+  
+  /* notice_board css */
+  
+  #service_1{
+  padding: 5px 0 35px 1px;
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 35px;
+    color: #333;
+    letter-spacing: -1px;
+    margin-top: 35px;
+    
+}
+
+ #notice_sub{
+   border: 1px solid #f2f2f2;
+    border-bottom: 1;
+    FONT-WEIGHT: 100;
+    display: block;
+    overflow: hidden;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: -.3px;
+    padding: 0px -5px 3px 5px;
+    margin-left: -6px;
+    margin-right: 16px;
+    margin-top: -27px;
+} 
+
+
+/* #open_notice{
+   border-bottom: 1px solid #f2f2f2;
+    background-color: #fafafa;
+    background-size: 6px 11px;
+    font-weight: 700;
+    color: #198754;
+}
+#open_faq{
+   border-bottom: 1px solid #f2f2f2;
+} */
+#notice_td1{
+width:10%;
+border-bottom: 1px solid black;
+}
+#notice_td2{
+width:16%;
+border-bottom: 1px solid black;
+}
+#notice_td3{
+width:20%;
+border-bottom: 1px solid black;
+}
+#notice_td4{
+width:3%;
+border-bottom: 1px solid black;
+}
+
+ /* notice_board css 끝 */
+
+
+/* notice_detail css */
+
+/* #service_1{
+  padding: 5px 0 35px 1px;
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 35px;
+    color: #333;
+    letter-spacing: -1px;
+    margin-top: 35px;
+}
+
+#notice_sub{
+   border: 1px solid #f2f2f2;
+    border-bottom: 1;
+    FONT-WEIGHT: 100;
+    display: block;
+    overflow: hidden;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: -.3px;
+    padding: 0px -5px 3px 5px;
+    margin-left: -6px;
+    margin-right: 16px;
+    margin-top: -27px;
+}
+#open_notice{
+   border-bottom: 1px solid #f2f2f2;
+    background-color: #fafafa;
+    background-size: 6px 11px;
+    font-weight: 700;
+    color: #198754;
+} */
+
+#notice_detail_inner{
+    width: 1050px;
+    margin: 0px auto;
+    font-size: 12px;
+    line-height: 18px;
+    padding-top: 188px;
+    min-height: 893px;
+}
+ #notice_detail_top{
+    width: 100%;
+    padding: 50px 0px;
+} 
+#notice_detail_header{
+    font-weight: 700;
+    font-size: 28px;
+    color: rgb(51, 51, 51);
+    line-height: 35px;
+    text-align: center;
+    letter-spacing: -1px;
+}
+#notice_detail_header2{
+margin-top: 5px;
+    color: rgb(153, 153, 153);
+    line-height: 20px;
+    letter-spacing: -0.1px;
+    text-align: center;
+}
+#notice_detail_1{
+    margin-top: 20px;
+    border-top: 2px solid rgb(51, 51, 51);
+    color: rgb(51, 51, 51);
+}
+#notice_detail_2{
+display: flex;
+    flex-direction: row;
+    border-bottom: 1px solid rgb(244, 244, 244);
+}
+#notice_detail_3{
+    width: 130px;
+    padding: 13px 0px 13px 20px;
+    background-color: rgb(247, 245, 248);
+    border-top: 1px solid rgb(244, 244, 244);
+    text-align: left;
+    font-weight: 500;
+}
+#notice_detail_4{
+padding-left: 25px;
+    align-self: center;
+}
+#notice_detail_content{
+    padding: 30px 10px 100px;
+    border-bottom: 1px solid rgb(128, 128, 128);
+}
+#notice_detail_bottom{
+display: flex;
+    width: 100%;
+    padding: 20px 0px;
+    -webkit-box-pack: end;
+    justify-content: flex-end;
+}
+/* #notice_detail_button{
+display: block;
+    padding: 0px 10px;
+    text-align: center;
+    overflow: hidden;
+    width: 150px;
+    height: 42px;
+    border-radius: 0px;
+    color: rgb(255, 255, 255);
+    background-color: rgb(95, 0, 128);
+    border: 0px none;
+} */
+
+/* notice_detail css 끝*/
+
+/* notice_update css */
+/* #notice_detail_inner{
+    width: 1050px;
+    margin: 0px auto;
+    font-size: 12px;
+    line-height: 18px;
+    padding-top: 188px;
+    
+} */
+/* #notice_detail_top{
+    width: 100%;
+    padding: 50px 0px;
+} */
+/* #notice_detail_header{
+    font-weight: 700;
+    font-size: 28px;
+    color: rgb(51, 51, 51);
+    line-height: 35px;
+    text-align: center;
+    letter-spacing: -1px;
+} */
+#notice_detail_box{
+   margin-left: 181px;
+    min-height: 1040px;
+}
+/* notice_update css 끝*/
+
+/* notice_write css */
+
+/* #notice_detail_inner{
+    width: 1050px;
+    margin: 0px auto;
+    font-size: 12px;
+    line-height: 18px;
+    padding-top: 188px;
+    min-height: 893px;
+} */
+/* #notice_detail_top{
+    width: 100%;
+    padding: 50px 0px;
+} */
+/* #notice_detail_header{
+    font-weight: 700;
+    font-size: 28px;
+    color: rgb(51, 51, 51);
+    line-height: 35px;
+    text-align: center;
+    letter-spacing: -1px;
+} */
+#notice_write_box{
+   margin-left: 181px;
+    min-height: 1040px;
+}
+
+/* notice_write css 끝 */
+
+
+/* faq_board css */
+
+#faq_sub{
+   border: 1px solid #f2f2f2;
+    border-bottom: 1;
+    FONT-WEIGHT: 100;
+    display: block;
+    overflow: hidden;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: -.3px;
+    padding: 0px -5px 3px 5px;
+    margin-left: -6px;
+    margin-right: 16px;
+    margin-top: -27px;
+}
+
+/* faq_board css 끝 */
+

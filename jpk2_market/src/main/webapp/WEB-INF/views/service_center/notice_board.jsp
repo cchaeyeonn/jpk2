@@ -10,31 +10,7 @@
 
 <title>공지사항</title>
 <style>
-#service_1{
-  padding: 5px 0 35px 1px;
-    font-weight: 700;
-    font-size: 26px;
-    line-height: 35px;
-    color: #333;
-    letter-spacing: -1px;
-    margin-top: 35px;
-    
-}
 
-#notice_sub{
-   border: 1px solid #f2f2f2;
-    border-bottom: 1;
-    FONT-WEIGHT: 100;
-    display: block;
-    overflow: hidden;
-    font-size: 14px;
-    line-height: 20px;
-    letter-spacing: -.3px;
-    padding: 0px -5px 3px 5px;
-    margin-left: -6px;
-    margin-right: 16px;
-    margin-top: -27px;
-}
 #open_notice{
    border-bottom: 1px solid #f2f2f2;
     background-color: #fafafa;
@@ -45,22 +21,7 @@
 #open_faq{
    border-bottom: 1px solid #f2f2f2;
 }
-#td1{
-width:10%;
-border-bottom: 1px solid black;
-}
-#td2{
-width:16%;
-border-bottom: 1px solid black;
-}
-#td3{
-width:20%;
-border-bottom: 1px solid black;
-}
-#td4{
-width:3%;
-border-bottom: 1px solid black;
-}
+
 
 
 </style>
@@ -91,10 +52,10 @@ border-bottom: 1px solid black;
 <table border="1" style="border-right:0px; border-left:0px; font-size: 14px; border-top: 2px solid #198754;" class="table table-hover">
 <tr>
 <!-- <td></td> -->
-<td id="td1">구분</td>
-<td id="td2">제목</td>
+<td id="notice_td1">구분</td>
+<td id="notice_td2">제목</td>
 <!-- <td id="td3">내용</td> -->
-<td id="td4">작성자</td>
+<td id="notice_td4">작성자</td>
 
 </tr>
 <c:forEach items="${noticeList}" var="noticeVo">
