@@ -97,8 +97,9 @@
     	
     }
     #for_sum_price{
-    width: 29%;
-    margin-left: 248px;
+    /* width: 29%;
+    margin-left: 248px; */
+    float:right;
     font-size: 26px;
     font-weight: 700;
     
@@ -226,7 +227,7 @@ $(function(){
 <div class="modal-background">
 
   <div class="modal-content">
-  <div class="close area" style="width:10px; margin-left:367px; cursor:pointer;">X</div>
+  <div class="close area" style="width:10px; margin-left:433px; cursor:pointer;">X</div>
   <div id="product-info">
      ${productVo.p_name}
     
