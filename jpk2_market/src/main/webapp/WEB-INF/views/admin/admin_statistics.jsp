@@ -132,7 +132,6 @@ function statistics(){
       
       <c:forEach items="${statisticsList}" var="statisticsVo" varStatus="status">  
       
-     
     
     	<tr id="target">
    			<td id="td1">${statisticsVo.num}</td>
