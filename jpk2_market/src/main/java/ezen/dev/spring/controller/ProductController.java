@@ -79,8 +79,13 @@ public class ProductController {
 		productSearchVo.setSearchType(searchType);
 		productSearchVo.setSearchName(searchName);
 		List<ProductVo> productList = productService.getSearchProductList(productSearchVo);
+		if(productList == null) {
+			
+			return "product/product_list_null";
+			
+		}else {
 		model.addAttribute("productList",productList);
-		return "product/product_list_type";
+		return "product/product_list_type";}
 	}
 }
 

@@ -5,34 +5,34 @@
 <mapper namespace = "ezen.dev.spring.product">
 
 	<select id="getProductInfo" parameterType="String" resultType="productVo">
-		select * from fm_product where pidx=#{pidx}
+		select * from fm_product where pidx=#{pidx} and p_admincheck ='Y'
 	</select>
 	<select id="getProductList" resultType="productVo">
-		select * from fm_product where p_delyn='N'
+		select * from fm_product where p_delyn='N' and p_admincheck ='Y'
 	</select>
 		<select id="getProductListType" parameterType="String" resultType="productVo">
-		select * from fm_product where p_delyn='N' and p_type=#{p_type}
+		select * from fm_product where p_delyn='N' and p_type=#{p_type} and p_admincheck ='Y'
 	</select>
 	<select id="getProductListNew" resultType="productVo">
-		select * from fm_product where p_delyn='N' order by pidx desc
+		select * from fm_product where p_delyn='N' and p_admincheck ='Y' order by pidx desc
 	</select>
 	<select id="getProductListBest" resultType="productVo">
-	select *,sum(p_amount) as count from fm_product_cart a inner join fm_product b on a.pidx_pc = b.pidx where p_check like 'Y' group by(pidx_pc) order by count desc;
+	select *,sum(p_amount) as count from fm_product_cart a inner join fm_product b on a.pidx_pc = b.pidx where p_check like 'Y' and p_admincheck ='Y' group by(pidx_pc) order by count desc;
 	</select>
 	<select id="getSearchProductList" parameterType="ProductSearchVo" resultType="productVo">
 		select * from fm_product 
 		  <choose>
   			  <when test="searchType=='p_name' and searchName != null and searchName != '' ">
-  			   where p_delyn='N' AND p_name like CONCAT('%', #{searchName}, '%')
+  			   where p_delyn='N' AND p_name like CONCAT('%', #{searchName}, '%') and p_admincheck ='Y'
  			   </when>
    			 <when test="searchType=='p_type' and searchName != null and searchName != '' ">
-   			  where p_delyn='N' AND p_type like CONCAT('%', #{searchName}, '%')
+   			  where p_delyn='N' AND p_type like CONCAT('%', #{searchName}, '%') and p_admincheck ='Y'
    			</when>
    			<when test="searchType=='p_tag' and searchName != null and searchName != '' ">
-   			where p_delyn='N' AND p_tag like CONCAT('%', #{searchName}, '%')
+   			where p_delyn='N' AND p_tag like CONCAT('%', #{searchName}, '%') and p_admincheck ='Y'
    			 </when>
     		<otherwise>
-     		where p_delyn='N'	 
+     		where p_delyn='N' and p_admincheck ='Y'	 
     		</otherwise>
   			</choose>
 	</select>

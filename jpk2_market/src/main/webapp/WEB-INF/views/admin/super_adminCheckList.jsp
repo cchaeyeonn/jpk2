@@ -8,7 +8,7 @@
 
 <link href="resources/css/style_css.css" rel="stylesheet" />
 
-<title>내가 등록한 상품 목록</title>
+<title>등록심사중인 상품들</title>
 
 <style>
 #admin_main_inner{
@@ -103,18 +103,18 @@ font-size: 16px;
       <div id="admin_sub">   
       <a href="${pageContext.request.contextPath}/admin.do" class="nav-link py-3 px-0 px-lg-3" id="admin_button">통계</a>
       <a href="${pageContext.request.contextPath}/productAdd.do" class="nav-link py-3 px-0 px-lg-3" id="admin_button">상품등록페이지</a>
-      <a href="${pageContext.request.contextPath}/adminProductList.do" class="nav-link py-3 px-0 px-lg-3" id="open_admin">내가 등록한 상품목록</a>
+      <a href="${pageContext.request.contextPath}/adminProductList.do" class="nav-link py-3 px-0 px-lg-3" id="admin_button">내가 등록한 상품목록</a>
       <a href="${pageContext.request.contextPath}/orderList.do" class="nav-link py-3 px-0 px-lg-3" id="admin_button">주문내역</a>
+      <a href="${pageContext.request.contextPath}/adminProductCheck.do" class="nav-link py-3 px-0 px-lg-3" id="open_admin">등록심사중인 상품목록</a> 
+     <a href="${pageContext.request.contextPath}/adminMemberList.do" class="nav-link py-3 px-0 px-lg-3" id="admin_button">등록된 회원 목록</a>
      <%--<a href="${pageContext.request.contextPath}/orderListDetail.do" class="nav-link py-3 px-0 px-lg-3" id="admin_button">주문상세페이지</a> --%>
-           <a href="${pageContext.request.contextPath}/adminProductCheck.do" class="nav-link py-3 px-0 px-lg-3" id="admin_button">등록심사중인 상품목록</a>
-           <a href="${pageContext.request.contextPath}/adminMemberList.do" class="nav-link py-3 px-0 px-lg-3" id="admin_button">등록된 회원 목록</a>
       </div>
    </div>
 
 
 <div id="admin_inner">
 
-     <h5 style="margin-top: 52px;">내가 등록한 상품 목록</h5>
+     <h5 style="margin-top: 52px;">등록한 상품 목록</h5>
 
    <div id="line"></div>
 	
@@ -134,20 +134,20 @@ font-size: 16px;
 			<th id="table_title">유통기한</th>
 			<th id="table_title">타입</th>
 			<th id="table_title">태그</th>
-			<th id="table_title">삭제</th>
+			<th id="table_title">등록/삭제</th>
 		</tr>
 			<c:forEach var="productVo" items="${productList}">
 			   <tr>
 			   <td colspan="13"><div id="orderlist_1">
-   <a onClick="location.href='${pageContext.request.contextPath}/admin_productDetail.do?pidx=${productVo.pidx}'" >등록한 상품 상세보기</a>
+   <a onClick="location.href='${pageContext.request.contextPath}/adminProductDetail.do?pidx=${productVo.pidx }'" id="product_detail">상품상세보기</a>
    </div></td>
    </tr>
    
-			<form action="${pageContext.request.contextPath}/adminProductDelyn.do">
+			<form action="/spring/adminProductDelyn.do">
 				<tr>
 					<td>${productVo.pidx}</td><td>${productVo.p_name }</td><td>${productVo.p_secondname}</td><td>${productVo.p_price }&nbsp;원</td><td>${productVo.p_unit }</td><td>${productVo.p_delivery }</td>
 					<td>${productVo.p_weight }</td><td>${productVo.p_package }</td><td>${productVo.p_allergy }</td><td>${productVo.p_limitdate }</td>
-					<td>${productVo.p_type }</td><td>${productVo.p_tag }</td><td><input type="hidden" name="pidx" value="${productVo.pidx}"><input type="submit" value="삭제"></a></td>
+					<td>${productVo.p_type }</td><td>${productVo.p_tag }</td><td><input type="button" onClick="location.href='${pageContext.request.contextPath}/adminProductOk.do?pidx=${productVo.pidx }'" value="확인"><input type="hidden" name="pidx" value="${productVo.pidx}"><input type="submit" value="취소"></a></td>
 				</tr>
 			</form>
 		</c:forEach>	

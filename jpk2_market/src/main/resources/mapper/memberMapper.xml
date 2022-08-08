@@ -14,55 +14,58 @@
 	</select> -->
 	
 	<select id="loginMember" parameterType="string" resultType="memberVo">
-		select * from fm_member where member_id=#{member_id};
+		select * from fm_member where member_id=#{member_id} and member_delyn='N'
 	</select>
 	
 	<select id="getMemberInfo" parameterType="string" resultType="memberVo">
-		select * from fm_member where member_id=#{member_id}
+		select * from fm_member where member_id=#{member_id} and member_delyn='N'
 	</select>
 
 	<select id="checkId" parameterType="string" resultType="int">
-		select count(*) from fm_member where member_id=#{member_id}
+		select count(*) from fm_member where member_id=#{member_id} and member_delyn='N'
 	</select>
 	
 	<select id="checkEmail" parameterType="string" resultType="int">
-		select count(*) from fm_member where member_email=#{member_email}
+		select count(*) from fm_member where member_email=#{member_email} and member_delyn='N'
 	</select>
 
 	<select id="chkAuth" resultType="memberVo">
-		select * from fm_member where member_key=#{member_key}
+		select * from fm_member where member_key=#{member_key} and member_delyn='N'
 	</select>
 	
 	<update id="successAuth">
-		update fm_member set member_auth='Y' where member_id=#{member_id}
+		update fm_member set member_auth='Y' where member_id=#{member_id} and member_delyn='N'
 	</update>
 	
 	<select id="getAuthInfo" resultType="String">
-		select member_auth from fm_member where member_id=#{member_id}
+		select member_auth from fm_member where member_id=#{member_id} and member_delyn='N'
 	</select>
 	
 	<select id="getNameInfo" resultType="String">
-		select member_name from fm_member where member_id=#{member_id}
+		select member_name from fm_member where member_id=#{member_id} and member_delyn='N'
 	</select>
 	
 	<select id="getIdInfo" parameterType="map" resultType="memberVo">
-		select * from fm_member where member_name=#{member_name} and member_email=#{member_email}
+		select * from fm_member where member_name=#{member_name} and member_email=#{member_email} and member_delyn='N'
 	</select>
 	<update id="setTempPw">
-		update fm_member set member_pw=#{member_pw} where member_name=#{member_name} and member_email=#{member_email}
+		update fm_member set member_pw=#{member_pw} where member_name=#{member_name} and member_email=#{member_email} and member_delyn='N'
 	</update>
 	
 	<select id="checkPw" parameterType="memberVo" resultType="int">
-		select count(*) from fm_member where midx=#{midx}
+		select count(*) from fm_member where midx=#{midx} and member_delyn='N'
 	</select>
 		
 	<!-- 비밀번호 수정 -->
 	<update id="setUpdatePw">
-		update fm_member set member_pw=#{member_pw} where midx = #{midx}
+		update fm_member set member_pw=#{member_pw} where midx = #{midx} and member_delyn='N'
 	</update>
 	
 	<update id="setUpdateMemberInfo">
-		update fm_member set member_gender = #{member_gender}, member_addrcode = #{member_addrcode}, member_addr1 = #{member_addr1}, member_addr2 = #{member_addr2}, member_phone = #{member_phone}, member_birth = #{member_birth} where midx = #{midx}
+		update fm_member set member_gender = #{member_gender}, member_addrcode = #{member_addrcode}, member_addr1 = #{member_addr1}, member_addr2 = #{member_addr2}, member_phone = #{member_phone}, member_birth = #{member_birth} where midx = #{midx} and member_delyn='N'
+	</update>
+	<update id="memberDelyn">
+		update fm_member set member_delyn = 'Y' where midx=#{midx} and member_delyn='N'
 	</update>
 	
 	

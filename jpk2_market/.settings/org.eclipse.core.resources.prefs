@@ -13,6 +13,7 @@ encoding//src/main/java/ezen/dev/spring/dao/AdminDao.java=UTF-8
 encoding//src/main/java/ezen/dev/spring/dao/CartDao.java=UTF-8
 encoding//src/main/java/ezen/dev/spring/dao/DelDao.java=UTF-8
 encoding//src/main/java/ezen/dev/spring/dao/FaqDao.java=UTF-8
+encoding//src/main/java/ezen/dev/spring/dao/MemberDao.java=UTF-8
 encoding//src/main/java/ezen/dev/spring/dao/NoticeDao.java=UTF-8
 encoding//src/main/java/ezen/dev/spring/dao/OrderDao.java=UTF-8
 encoding//src/main/java/ezen/dev/spring/dao/ProductDao.java=UTF-8

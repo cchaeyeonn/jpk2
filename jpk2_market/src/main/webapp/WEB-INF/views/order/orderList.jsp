@@ -118,7 +118,7 @@ font-size: 16px;
     -webkit-box-pack: justify;
     /* justify-content: space-between; */
     justify-content: flex-start;
-    padding: 14px 0px 16px;
+    padding: 14px 40px 16px;
 }
 #orderlist_box_left{
     display: flex;
@@ -262,7 +262,7 @@ flex: 1 1 0%;
    </div>
    <div id="orderlist_box">
    <div id="orderlist_box_left"></div>
-    <img id="orderlist_img" class="img-fluid4" src="${pageContext.request.contextPath}/resources/product_image/${cartVo.p_system_filename}" alt="..."  />
+   <%--  <img id="orderlist_img" class="img-fluid4" src="${pageContext.request.contextPath}/resources/product_image/${cartVo.p_system_filename}" alt="..."  /> --%>
 
    <div id="orderlist_content">
 <!--       <dl id="dl">

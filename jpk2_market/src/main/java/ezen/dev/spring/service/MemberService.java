@@ -147,4 +147,10 @@ public class MemberService {
 		
 	}
 
+
+	public void memberDelyn(MemberVo memberVo) {
+		memberDao.memberDelyn(memberVo);
+		
+	}
+
 }

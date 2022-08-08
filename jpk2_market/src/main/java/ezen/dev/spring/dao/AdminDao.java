@@ -46,5 +46,27 @@ public class AdminDao {
 		return sqlSession.selectList(MAPPER+".getAdminProductListDetail",productVo);
 	}
 
+	public List<ProductVo> getProductCheck() {
+
+		return sqlSession.selectList(MAPPER+".getProductCheck");
+	}
+
+	public ProductVo getProductInfo(Integer pidx) {
+		return sqlSession.selectOne(MAPPER+".getProductInfo",pidx);
+	}
+
+	public int adminProductOk(Integer pidx) {
+		return sqlSession.update(MAPPER+".adminProductOk",pidx);
+	}
+
+	public int adminMemberUp(Integer midx) {
+		return sqlSession.update(MAPPER+".adminMemberUp",midx);
+	}
+
+	public int adminMemberDelyn(Integer midx) {
+		return sqlSession.update(MAPPER+".adminMemberDelyn",midx);
+	}
+
+
 
 }
