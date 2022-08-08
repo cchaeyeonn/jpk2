@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -19,6 +20,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
 import ezen.dev.spring.service.AdminService;
+import ezen.dev.spring.vo.AdminVo;
 import ezen.dev.spring.vo.MemberVo;
 import ezen.dev.spring.vo.ProductVo;
 
@@ -157,17 +159,44 @@ public class AdminController {
 		
 	}
 	
-	@GetMapping("/statistics.do")
+	@PostMapping("/statistics.do")
 	//jsp에 추가된 파일의 이름만 가져옴
-	public String statistics(Model model, HttpServletRequest request) throws IllegalStateException, IOException {
+	public String statistics(@RequestParam(value="begin_date", required=false) String begin_date,
+			@RequestParam(value="end_date", required=false) String end_date,Model model, HttpServletRequest request) throws IllegalStateException, IOException {
+		SimpleDateFormat format = new SimpleDateFormat ( "yyyy-MM-dd");
+		Calendar time = Calendar.getInstance();
+		String year = String.valueOf(Calendar.getInstance().get(Calendar.YEAR));
+		String enddate = format.format(time.getTime());
+		String startdate = year+"-01-01";
 		
-		HttpSession session = request.getSession();
+		if(begin_date == null) {
+			begin_date = startdate;
+
+		};
 		
-		String viewPage="admin/admin_statistics";
+		if(end_date ==null) {
+			end_date = enddate;
+			
+		};
+		
+		AdminVo adminVo = new AdminVo();
+
+
+		adminVo.setBegin_date(begin_date);
+		adminVo.setEnd_date(end_date);
+		
+		
+		
+		List<AdminVo> statisticsList = adminService.getStatisticsList(adminVo);
+
+		
+		model.addAttribute("statisticsList",statisticsList);
+		model.addAttribute("begin_date", begin_date);
+		model.addAttribute("end_date", end_date);
 
 		
 		
-		return viewPage;
+		return "admin/admin_statistics";
 	}
 	
 	@GetMapping("/adminProductCheck.do")

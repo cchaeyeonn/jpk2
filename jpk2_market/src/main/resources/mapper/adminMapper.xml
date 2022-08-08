@@ -7,7 +7,7 @@
 		insert into fm_product(p_name, p_filename, p_price, p_unit, p_weight, p_delivery, p_package, p_allergy, p_limitdate, p_type, p_tag, p_system_filename, midx_mp, p_secondname) 
 		 values(#{p_name}, #{p_filename}, #{p_price}, #{p_unit}, #{p_weight}, #{p_delivery}, #{p_package}, #{p_allergy}, #{p_limitdate}, #{p_type}, #{p_tag}, #{p_system_filename}, #{midx_mp}, #{p_secondname})
 	</insert>
-		<select id="getProductList" parameterType="Integer" resultType="productVo">
+	<select id="getProductList" parameterType="Integer" resultType="productVo">
 		select * from fm_product a inner join fm_member b on a.midx_mp = b.midx where a.midx_mp = #{midx} and a.p_delyn = 'N'
 	</select>
 	<update id="delProduct" parameterType="productVo">
@@ -34,4 +34,7 @@
 	<update id="adminMemberDelyn">
 		update fm_member set member_delyn = 'F' where midx=#{midx}
 	</update>
+	<select id="getStatisticsList" parameterType="adminVo" resultType="adminVo">
+		select * ,row_number() over(order by b.pay_price desc) as num from fm_member a inner join fm_order b on a.midx = b.midx_mo inner join fm_product_cart c on c.pbidx = b.pbidx_co inner join fm_product d on c.pidx_pc = d.pidx where a.member_delyn like 'N' and b.orderpay_check like 'Y' and DATE(b.pay_findate) BETWEEN #{begin_date} AND #{end_date} 
+	</select>
 </mapper>

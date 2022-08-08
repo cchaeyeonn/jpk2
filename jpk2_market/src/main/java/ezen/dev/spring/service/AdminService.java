@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import ezen.dev.spring.dao.AdminDao;
+import ezen.dev.spring.vo.AdminVo;
 import ezen.dev.spring.vo.MemberVo;
 import ezen.dev.spring.vo.ProductVo;
 
@@ -59,6 +60,11 @@ public class AdminService {
 
 	public int adminMemberDelyn(Integer midx) {
 		return adminDao.adminMemberDelyn(midx);
+	}
+
+	public List<AdminVo> getStatisticsList(AdminVo adminVo) {
+		
+		return adminDao.getStatisticsList(adminVo);
 	}
 
 }

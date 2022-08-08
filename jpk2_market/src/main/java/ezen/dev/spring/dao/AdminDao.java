@@ -7,6 +7,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import ezen.dev.spring.vo.AdminVo;
 import ezen.dev.spring.vo.MemberVo;
 import ezen.dev.spring.vo.ProductVo;
 
@@ -65,6 +66,12 @@ public class AdminDao {
 
 	public int adminMemberDelyn(Integer midx) {
 		return sqlSession.update(MAPPER+".adminMemberDelyn",midx);
+	}
+
+
+	public List<AdminVo> getStatisticsList(AdminVo adminVo) {
+		
+		return sqlSession.selectList(MAPPER+".getStatisticsList", adminVo);
 	}
 
 
