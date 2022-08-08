@@ -67,6 +67,14 @@ public class AdminDao {
 		return sqlSession.update(MAPPER+".adminMemberDelyn",midx);
 	}
 
+	public List<ProductVo> getBuyerList(Integer pidx) {
+		return sqlSession.selectList(MAPPER+".getBuyerList",pidx);
+	}
+
+	public ProductVo getBuyerDetail(ProductVo pVo) {
+		return sqlSession.selectOne(MAPPER+".getBuyerDetail",pVo);
+	}
+
 
 
 }

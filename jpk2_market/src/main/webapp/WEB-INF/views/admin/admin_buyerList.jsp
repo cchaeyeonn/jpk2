@@ -114,7 +114,7 @@ font-size: 16px;
 
 <div id="admin_inner">
 
-     <h5 style="margin-top: 52px;">내가 등록한 상품 목록</h5>
+     <h5 style="margin-top: 52px;">상품을 구매한 사람들</h5>
 
    <div id="line"></div>
 	
@@ -122,39 +122,25 @@ font-size: 16px;
 
 	<table id="product_t">
 		<tr>
-			<th id="table_title">번호</th>
 			<th id="table_title">이름</th>
-			<th id="table_title">부제목</th>
-			<th id="table_title">가격</th>
-			<th id="table_title">판매단위</th>
-			<th id="table_title">배송</th>
-			<th id="table_title">용량</th>
-			<th id="table_title">포장</th>
-			<th id="table_title">알러지</th>
-			<th id="table_title">유통기한</th>
-			<th id="table_title">타입</th>
-			<th id="table_title">태그</th>
-			<th id="table_title">삭제</th>
+			<th id="table_title">주문번호</th>
+			<th id="table_title">배송상태</th>
+			<th id="table_title">주문일자</th>
+			<th id="table_title">주문개수</th>
 		</tr>
 			<c:forEach var="productVo" items="${productList}">
 			<tr>
 				<td colspan="13">
 					<div id="orderlist_1">
-<<<<<<< HEAD
-		   				<a style="cursor:pointer; margin-top:20px;"onClick="location.href='${pageContext.request.contextPath}/admin_productDetail.do?pidx=${productVo.pidx}'" ><b>등록한 상품 상세보기</b></a>
-=======
-						<a style="cursor:pointer; margin-top:20px;"onClick="location.href='${pageContext.request.contextPath}/adminBuyerList.do?pidx=${productVo.pidx}'" >상품을 구매한 사람들&nbsp;&nbsp;|</a>
-		   				<a style="cursor:pointer; margin-top:20px;"onClick="location.href='${pageContext.request.contextPath}/admin_productDetail.do?pidx=${productVo.pidx}'" >&nbsp;&nbsp;등록한 상품 상세보기</a>
->>>>>>> branch 'master' of https://github.com/cchaeyeonn/jpk2.git
+		   				<a style="cursor:pointer; margin-top:20px;"onClick="location.href='${pageContext.request.contextPath}/adminBuyerDetail.do?pidx=${productVo.pidx}&midx=${productVo.midx}'" >&nbsp;&nbsp;주문내용 상세보기</a>
 		   			</div>
 	   			</td>
    			</tr>
    
-			<form action="${pageContext.request.contextPath}/adminProductDelyn.do">
+			<form>
 				<tr>
-					<td>${productVo.pidx}</td><td>${productVo.p_name }</td><td>${productVo.p_secondname}</td><td>${productVo.p_price }&nbsp;원</td><td>${productVo.p_unit }</td><td>${productVo.p_delivery }</td>
-					<td>${productVo.p_weight }</td><td>${productVo.p_package }</td><td>${productVo.p_allergy }</td><td>${productVo.p_limitdate }</td>
-					<td>${productVo.p_type }</td><td>${productVo.p_tag }</td><td><input type="hidden" name="pidx" value="${productVo.pidx}"><input type="submit" value="삭제"></a></td>
+					<td>${productVo.member_name}</td><td>${productVo.order_id}</td><td>${productVo.d_status}</td><td>${productVo.order_date}</td><td>${productVo.p_amount}&nbsp;개</td>
+					<td><input type="hidden" name="pidx" value="${productVo.pidx}"></td>
 				</tr>
 			</form>
 		</c:forEach>	
