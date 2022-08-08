@@ -372,8 +372,7 @@ padding: 81px 0px 92px 686px;
       <%--  <a href="${pageContext.request.contextPath}/refund.do"><input
             type="button" value="환불하기"></a> --%> 
             <a href="${pageContext.request.contextPath}/adminBuyerList.do?pidx=${productVo.pidx }">
-            <input type="button" class="btn btn-outline-success" value="구매자목록으로 돌아가기"></a>
-            <%--  
+            <input type="button" class="btn btn-outline-success" value="구매자목록으로 돌아가기"></a>            <%--  
             <a href="${pageContext.request.contextPath}/index.do">
             <input type="button" value="메인으로 돌아가기"></a> --%>
    </div>
