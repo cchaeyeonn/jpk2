@@ -45,7 +45,7 @@
     	            mode: 'horizontal', // 슬라이드 모드 ('fade', 'horizontal', 'vertical' 이 있음)
     	            /* autoControls: true, // 시작 및 중지버튼 */
     	            pager: true, // 페이지 표시 보여짐
-    			    autoHover: true,   // 마우스 호버시 정지 여부
+    			    autoHover: true   // 마우스 호버시 정지 여부
     	        });
     	    });
       
@@ -120,9 +120,9 @@
             
 	<!-- 이미지 슬라이드  -->
 	<ul class="bxslider">
-		<li><img src="resources/img/main_1.png" /></li>
-		<li><img src="resources/img/main_2.png" /></li>
-		<li><img src="resources/img/main_3.png" /></li>
+		<li><img style="width:100%;" src="resources/img/main_1.png" /></li>
+		<li><img style="width:100%;" src="resources/img/main_2.png" /></li>
+		<li><img style="width:100%;" src="resources/img/main_3.png" /></li>
 		<!-- <li><img src="/images/pic4.jpg" /></li> -->
 	</ul>
 
