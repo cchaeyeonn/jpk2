@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <html>
 <head>
 <meta charset="UTF-8">
@@ -124,42 +125,25 @@ function statistics(){
       <tr>        
          <td>번호</td>
          <td>고객명</td>
-         <td>구매수</td>
-         <td>판매량</td>
-         <td>단가</td>
-      <!--<td>누적금액</td>
-         <td>평균구매금액</td>-->
+         <td>구매회수</td>
+         <td>누적구매금액</td>
+         <td>평균구매금액</td>
+     
       </tr>
       
-      <c:forEach items="${statisticsList}" var="statisticsVo" varStatus="status">  
-      	<script>
-      		var arr = [];
-      		var midx = parseInt($("#${statisticsVo.num}_midx").val());
+      <c:forEach items="${statisticsList2}" var="statistics2Vo" varStatus="status">  
       	
-      		var count;
-      	/* 	if(arr.indexOf(midx) < 0){
-      			arr.push(midx)
-      			count = 1;
-      		}else{
-      			count += 1; 
-      			
-      		} 
-      		$('#${statisticsVo.num}_count_midx').text(count);*/
-      	
-      	</script>
     
     	<tr id="target">
-   			<td id="td1">${statisticsVo.num}</td>
+   			<td id="td1">${statistics2Vo.num}</td>
    			<td id="td2">
-    			${statisticsVo.member_name }
+    			${statistics2Vo.member_name }
     		</td>
    	 		<td id="td3">
-    			<input type="hidden" id="${statisticsVo.num}_midx" value="${statisticsVo.midx }">
-    			<span >${statisticsVo.midx }</span>,${statisticsVo.pidx }
-    			<span id="${statisticsVo.num}_count_midx"></span>
+    			${statistics2Vo.count }
     		</td>
-   			<td id="td4">${statisticsVo.p_amount }</td>
-    		<td id="td5">${statisticsVo.p_price }</td>
+   			<td id="td4">${statistics2Vo.sales }</td>
+    		<td id="td5"><span><fmt:formatNumber value="${statistics2Vo.sales/statistics2Vo.count}" type="number" pattern=".00"/>원</span></td>
    		</tr>
    		
      </c:forEach>  
@@ -177,32 +161,51 @@ function statistics(){
          <td>매출비중</td>
       </tr>
       
-    <%--   <c:forEach items="${orderList}" var="orderVo" varStatus="status">  
-      
-      <script>
-		$(function(){
-			if("${orderVo.orderpay_check}"=="Y"){
-				$("#${orderVo.order_id}_orderpay_check").text("결제 완료");
-			}else if("${orderVo.orderpay_check}"=="W"){
-				$("#${orderVo.order_id}_orderpay_check").text("결제 대기");
-			}else if("${orderVo.orderpay_check}"=="F"){
-				$("#${orderVo.order_id}_orderpay_check").text("결제 실패");
-			}else{
-				$("#${orderVo.order_id}_orderpay_check").text("주문 중 오류");
-			}
-		})
-		</script>
+    <c:forEach items="${statisticsList}" var="statisticsVo" varStatus="status">  
+      	<script>
+
+      	$(function(){
+ 			
+      		 let sum = 0;
+      		 let sales =0;
+      		 let ratio = 0;
+      	    $('input[name*="sales"]').each(function(){
+  
+      	        if(!isNaN($(this).val())){
+  
+      	            sum += parseInt($(this).val());
+      	            sales = ${statisticsVo.sales}
+      	            ratio = sales/sum*100;
+      	            ratio = ratio.toFixed(2);
+      	        }
+      	    });
+      	    
     
-    	<tr id="target"  onClick="location.href='${pageContext.request.contextPath}/orderListDetail.do?order_id=${orderVo.order_id}'">
-   			<td id="td1">${orderVo.order_id }{$product.p_name}</td>
-   	 		<td id="td3">
-    			${orderVo.pay_price }
+      	    $("#${statisticsVo.num}_ratio").text(ratio+"%");
+    
+     
+      		
+      		
+      	
+      	})
+      	</script>
+    	<tr id="target">
+   			<td id="td1">${statisticsVo.num}</td>
+   			<td id="td2">
+    			${statisticsVo.p_name }
     		</td>
-   			<td id="td4"><span id="${orderVo.order_id}_orderpay_check"></span></td>
-    		<td id="td5">${orderVo.order_date}</td>
+   	 		<td id="td3">
+    			${statisticsVo.p_amount }
+    		</td>
+   			<td id="td4">${statisticsVo.p_price }</td>
+    		<td id="td5">
+    		<span>${statisticsVo.sales}원</span>
+    		<input name="${statisticsVo.num}_sales" type="hidden" value="${statisticsVo.sales}">
+    		</td>
+    		<td id="td6"><span id="${statisticsVo.num}_ratio"></span></td>
    		</tr>
    		
-     </c:forEach>  --%>
+     </c:forEach> 
     </table>
     </div>
 	</div>   
