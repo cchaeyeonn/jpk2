@@ -189,9 +189,10 @@ public class AdminController {
 		
 		
 		List<AdminVo> statisticsList = adminService.getStatisticsList(adminVo);
-
+		List<AdminVo> statisticsList2 = adminService.getStatisticsList2(adminVo);
 		
 		model.addAttribute("statisticsList",statisticsList);
+		model.addAttribute("statisticsList2",statisticsList2);
 		model.addAttribute("adminVo", adminVo);
 		
 		
