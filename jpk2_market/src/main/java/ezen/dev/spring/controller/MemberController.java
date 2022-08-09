@@ -226,12 +226,14 @@ public class MemberController {
 	}
 	
 	@RequestMapping(value="/findPwProcess.do",  method = RequestMethod.POST)
-	public String findPwProcess(MemberVo memberVo, HttpServletRequest request, @RequestParam("member_name") String member_name) throws Exception {
+	public String findPwProcess(MemberVo memberVo, HttpServletRequest request, @RequestParam("member_name") String member_name, @RequestParam("member_email") String member_email) throws Exception {
 	memberVo.setMember_name(member_name);
-	int set = memberService.setTempPw(memberVo);
-	if (set==0) {
+	memberVo.setMember_email(member_email);
+	int result = memberService.authEmail(memberVo);
+	if (result==0) {
 		return "member/memberFindPwFail";
 	}
+	memberService.setTempPw(memberVo);
 	return "member/memberFindPwResult";
 	}
 	
