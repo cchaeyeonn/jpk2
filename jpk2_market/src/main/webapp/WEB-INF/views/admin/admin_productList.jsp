@@ -148,6 +148,7 @@ function statistics(){
 			<th id="table_title">유통기한</th>
 			<th id="table_title">타입</th>
 			<th id="table_title">태그</th> -->
+			<td id="table_title">승인 여부</td>
 			<td id="table_title"></td>
 			<td id="table_title"></td>
 		</tr>
@@ -166,8 +167,8 @@ function statistics(){
 				<tr>
 					<td id="td_center">${productVo.pidx}</td><td id="td_center">${productVo.p_name }</td><%-- <td>${productVo.p_secondname}</td> --%><td id="td_center">${productVo.p_price }&nbsp;원</td><%-- <td>${productVo.p_unit }</td><td>${productVo.p_delivery }</td>
 					<td>${productVo.p_weight }</td><td>${productVo.p_package }</td><td>${productVo.p_allergy }</td><td>${productVo.p_limitdate }</td>
-					<td>${productVo.p_type }</td><td>${productVo.p_tag }</td> --%><td><a id="inner_detail_button" style="cursor:pointer; margin-top:20px;"onClick="location.href='${pageContext.request.contextPath}/adminBuyerList.do?pidx=${productVo.pidx}'" >&nbsp;&nbsp;상품을 구매한 사람들</a><br>
-		   				<a id="inner_detail_button" style="cursor:pointer; margin-top:20px;"onClick="location.href='${pageContext.request.contextPath}/admin_productDetail.do?pidx=${productVo.pidx}'" >&nbsp;&nbsp;등록한 상품 상세보기</a></td><td id="td_center"><input type="hidden" name="pidx" value="${productVo.pidx}"><input style="font-size: 12px;" type="submit" class="btn btn-secondary btn-sm" value="삭제"></a></td>
+					<td>${productVo.p_type }</td><td>${productVo.p_tag }</td> --%><td id="td_center">${productVo.p_admincheck }</td><td><a id="inner_detail_button" style="cursor:pointer; margin-top:20px;"onClick="location.href='${pageContext.request.contextPath}/adminBuyerList.do?pidx=${productVo.pidx}'" >&nbsp;&nbsp;상품을 구매한 사람들</a><br>
+		   			<a id="inner_detail_button" style="cursor:pointer; margin-top:20px;"onClick="location.href='${pageContext.request.contextPath}/admin_productDetail.do?pidx=${productVo.pidx}'" >&nbsp;&nbsp;등록한 상품 상세보기</a></td><td id="td_center"><input type="hidden" name="pidx" value="${productVo.pidx}"><input style="font-size: 12px;" type="submit" class="btn btn-secondary btn-sm" value="삭제"></a></td>
 				</tr>
 			</form>
 		</c:forEach>	
