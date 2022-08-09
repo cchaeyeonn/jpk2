@@ -89,4 +89,8 @@ public class MemberDao {
 		
 	}
 
+	public int authEmail(MemberVo memberVo) {
+		return sqlSession.selectOne(MAPPER+".authEmail", memberVo);
+	}
+
 }

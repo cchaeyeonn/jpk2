@@ -48,7 +48,7 @@
 		select * from fm_product a inner join fm_product_cart b on a.pidx = b.pidx_pc inner join fm_order c on b.pbidx = c.pbidx_co inner join fm_member d on c.midx_mo = d.midx inner join fm_del e on c.oidx=e.oidx_od where d.member_delyn like 'N' and pidx=#{pidx}
 	</select>
 	<select id="getBuyerDetail" parameterType="productVo" resultType="productVo">
-		select * from fm_product a inner join fm_product_cart b on a.pidx = b.pidx_pc inner join fm_order c on b.pbidx = c.pbidx_co inner join fm_member d on c.midx_mo = d.midx inner join fm_del e on c.oidx=e.oidx_od where d.member_delyn like 'N' and pidx=#{pidx} and d.midx=#{midx}
+		select * from fm_product a inner join fm_product_cart b on a.pidx = b.pidx_pc inner join fm_order c on b.pbidx = c.pbidx_co inner join fm_member d on c.midx_mo = d.midx inner join fm_del e on c.oidx=e.oidx_od where d.member_delyn like 'N' and pidx=#{pidx} and d.midx=#{midx} and c.order_id=#{order_id}
 
 	</select>
 </mapper>

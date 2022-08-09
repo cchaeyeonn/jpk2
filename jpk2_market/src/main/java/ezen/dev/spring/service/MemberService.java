@@ -153,4 +153,9 @@ public class MemberService {
 		
 	}
 
+
+	public int authEmail(MemberVo memberVo) {
+		return memberDao.authEmail(memberVo);
+	}
+
 }

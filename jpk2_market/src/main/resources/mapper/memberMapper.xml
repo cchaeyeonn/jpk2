@@ -68,5 +68,7 @@
 		update fm_member set member_delyn = 'Y' where midx=#{midx} and member_delyn='N'
 	</update>
 	
-	
+	<select id="authEmail" parameterType="memberVo" resultType="int">
+		select count(*) from fm_member where member_name=#{member_name} and member_email=#{member_email} and member_delyn='N'
+	</select>
 </mapper>
