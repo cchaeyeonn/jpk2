@@ -21,7 +21,7 @@ $(function(){
 	$("#delete_notice").click(function(){
 		
 		alert("글이 삭제 되었습니다.");
-		
+	
 	});
 });
 </script>
