@@ -40,7 +40,7 @@
 	</select>
 	
 	<select id="getStatisticsList2" parameterType="adminVo" resultType="adminVo">		
-		select a.midx, a.member_name ,count(*) as count,sum(d.p_price*c.p_amount) as sales , row_number() over(order by a.midx desc) as num from fm_member a inner join fm_order b on a.midx = b.midx_mo inner join fm_product_cart c on c.pbidx = b.pbidx_co inner join fm_product d on c.pidx_pc = d.pidx where a.member_delyn like 'N' and b.orderpay_check like 'Y' and DATE(b.pay_findate) BETWEEN #{begin_date}AND #{end_date} group by midx ;
+		select a.midx, a.member_name ,count(distinct(b.order_id)) as count,sum(d.p_price*c.p_amount) as sales , row_number() over(order by a.midx desc) as num from fm_member a inner join fm_order b on a.midx = b.midx_mo inner join fm_product_cart c on c.pbidx = b.pbidx_co inner join fm_product d on c.pidx_pc = d.pidx where a.member_delyn like 'N' and b.orderpay_check like 'Y' and DATE(b.pay_findate) BETWEEN #{begin_date}AND #{end_date} group by midx ;
 				
 	</select>
 	
