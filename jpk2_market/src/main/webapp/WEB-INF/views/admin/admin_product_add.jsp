@@ -103,42 +103,43 @@ function statistics(){
 }
 </script>
 <script>
-  function check(){  
+  function check2(){  
   var fm = document.frm2;   
-	if (fm.p_name.value=="";){
+	if (fm.p_name.value==""){
 		alert("상품제목을 입력해주세요");
 		fm.p_name.focus();
 		return false;
-	}else if(fm.p_price.value=="";){
+	}else if(fm.p_price.value==""){
 		alert("상품가격을 입력해주세요");
 		fm.p_price.focus();
 		return false;
-	}else if(fm.p_unit.value=="";){
+	}else if(fm.p_unit.value==""){
 		alert("상품판매단위를 입력해주세요");
 		fm.p_unit.focus();
 		return false;
-	}else if(fm.p_weight1.value=="";){
+	}else if(fm.p_weight1.value==""){
 		alert("상품중량/용량을 입력해주세요");
 		fm.p_weight.focus();
 		return false;
-	}else if(fm.p_allergy.value=="";){
+	}else if(fm.p_allergy.value==""){
 		alert("상품의 알레르기 정보를 입력해주세요");
 		fm.p_allergy.focus();
 		return false;
-	}else if(fm.p_limitdate.value=="";){
+	}else if(fm.p_limitdate.value==""){
 		alert("상품의 유통기한 정보를 입력해주세요");
 		fm.p_limitdate.focus();
 		return false;
-	}else if(fm.p_allergy.value=="";){
+	}else if(fm.p_allergy.value==""){
 		alert("상품의 알레르기 정보를 입력해주세요");
 		fm.p_allergy.focus();
 		return false;
-	}else if(fm.p_tag.value=="";){
+	}else if(fm.p_tag.value==""){
 		alert("상품의 태그 정보를 선택해주세요");
 		fm.p_tag.focus();
 		return false;
 	}
   		fm.action = "<%=request.getContextPath()%>/addProductProcess.do";
+  		fm.enctype= "multipart/form-data";
   		fm.method = "post";
   		fm.submit();   
   
@@ -166,7 +167,7 @@ function statistics(){
    </div>
 	<div id="admin_inner">
 		<div id="table_button" style="width:962px; min-height:1186px;">
-			<form name="frm2" action="${pageContext.request.contextPath}/addProductProcess.do" method="post" enctype="multipart/form-data">
+			<form name="frm2">
 			<table>
 				<div id="product">
 					<div id="product_img">상품 사진
@@ -243,15 +244,16 @@ function statistics(){
 						태그
 						<input type="text" class="form-control" name="p_tag">
 					</div>
+					
 				</div>
-					<div id="home_button"><input type="submit" class="btn btn-outline-success" value="등록하기"></div><p/>
+					<div id="home_button"><input type="button" class="btn btn-outline-success" value="등록하기" onclick="check2();"></div> 
 				</table>
 			</form>
 		</div>
 	</div>
 	</div>
     
-    
+    <!-- -->
 	
     <!-- 푸터 연결 -->
     <jsp:include page="../footer.jsp"></jsp:include>
