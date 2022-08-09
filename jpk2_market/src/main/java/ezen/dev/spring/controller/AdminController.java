@@ -178,14 +178,15 @@ public class AdminController {
 			end_date = enddate;
 			
 		};
-		
+		HttpSession session = request.getSession();
+		Integer midx_mp =Integer.parseInt(String.valueOf(session.getAttribute("midx")));
 		AdminVo adminVo = new AdminVo();
 		System.out.println("begin_date:"+begin_date);
 		System.out.println("end_date:"+end_date);
 
 		adminVo.setBegin_date(begin_date);
 		adminVo.setEnd_date(end_date);
-		
+		adminVo.setMidx(midx_mp);
 		
 		
 		List<AdminVo> statisticsList = adminService.getStatisticsList(adminVo);
