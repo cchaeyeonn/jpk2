@@ -179,9 +179,9 @@ function statistics(){
 <div id="by_inner">
 	<div class="by_scon">
 		<input type="radio" name="bymenu" id="byclient" checked>
-		<label for="byclient">고객별</label>
+		<label style="border-top-left-radius: 20px;" for="byclient">고객별</label>
 		<input type="radio" name="bymenu" id="byproduct">
-		<label for="byproduct">상품별</label>
+		<label style="border-top-right-radius: 20px;" for="byproduct">상품별</label>
 	
 
 
