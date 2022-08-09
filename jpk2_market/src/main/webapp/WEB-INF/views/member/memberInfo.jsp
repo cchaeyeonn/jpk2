@@ -61,9 +61,9 @@
    <!-- 헤더 연결 -->
    <jsp:include page="../header.jsp"></jsp:include>
    
-   <div id="memberinfo_main_inner">
+   <div id="mypage_main_inner">
    <div id="mypage_center_cate">
-   <div id="mypage_1">마이페이지</div>
+   <div id="mypage_sub_title">마이페이지</div>
       <div id="mypage_sub">   
       <a href="${pageContext.request.contextPath}/orderList.do" class="nav-link py-3 px-0 px-lg-3" id="open_history2">주문 내역</a>
       <a href="${pageContext.request.contextPath}/memberInfo.do" class="nav-link py-3 px-0 px-lg-3" id="open_info_modify">개인 정보 수정</a>
@@ -74,7 +74,7 @@
    </div>
    
 <div id="memberinfo_inner">
-<h5 style="margin-top: 272px;">개인 정보 수정</h5>
+<h5 style="margin-top: 35px;">개인 정보 수정</h5>
 </div>
 
    <div id="join_content">

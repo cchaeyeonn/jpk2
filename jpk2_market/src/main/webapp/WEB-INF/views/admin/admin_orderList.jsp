@@ -6,8 +6,11 @@
 <head>
 
 <meta charset="UTF-8">
-<link href="resources/css/style_css.css" rel="stylesheet" />
+<!-- <link href="resources/css/style_css.css" rel="stylesheet" /> -->
+<link href="resources/css/mypage_css.css" rel="stylesheet" />
+
 <style>
+
 #admin_main_inner{
    margin-left:317px;
    min-height:1040px;
@@ -15,7 +18,7 @@
 }
 #admin_center_cate{
    
-   /* padding-top:200px; */
+   padding-top:91px;
    width:194px;
    float:left;
 }
@@ -30,7 +33,7 @@
     line-height: 35px;
     color: #333;
     letter-spacing: -1px;
-    margin-top: 35px;
+    margin-top: -55px;
     
 }
 #admin_sub{
@@ -71,12 +74,12 @@
     width: 100%;
     margin-top:12px;
 }
-}
 #order_date{
 font-size: 16px;
     font-weight: 500;
     line-height: 1.31;
     color: rgb(51, 51, 51);
+    margin-right: 347px;
 }
 #line{
     display: flex;
@@ -105,10 +108,10 @@ font-size: 16px;
     <jsp:include page="../header.jsp"></jsp:include>
     
 <form>
-   <div id="orderlist_main_inner">
+   <div id="admin_main_inner">
    <div id="admin_center_cate">
-   <div id="damin_1">관리자 페이지</div>
-      <div id="damin_sub">
+   <div id="admin_1">관리자 페이지</div>
+      <div id="admin_sub">
       <input type="button" class="nav-link py-3 px-0 px-lg-3" value="통계" id="admin_button_1" style="background-color: white; border: none;" onclick=statistics()>   
       <a href="${pageContext.request.contextPath}/productAdd.do" class="nav-link py-3 px-0 px-lg-3" id="admin_button">상품등록페이지</a>
       <a href="${pageContext.request.contextPath}/adminProductList.do" class="nav-link py-3 px-0 px-lg-3" id="admin_button">내가 등록한 상품목록</a>
@@ -121,7 +124,7 @@ font-size: 16px;
 
     
     <div id="admin_inner">
-    <h5 style="margin-top: 272px;">주문 내역</h5>
+    <h5 style="margin-top: 52.5px;">주문 내역</h5>
 
    <div id="line"></div>
    <div id="orderlist_inner">

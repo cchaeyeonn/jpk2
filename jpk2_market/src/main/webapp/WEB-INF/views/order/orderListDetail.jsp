@@ -71,9 +71,9 @@
       style="padding-top: 239px; margin-left: 414px; margin-right: 401px;">
       <h1 align="center">주문상세내역</h1> -->
       <form>
-      <div id="orderlist_main_inner">
+      <div id="mypage_main_inner">
    <div id="mypage_center_cate">
-   <div id="mypage_1">마이페이지</div>
+   <div id="mypage_sub_title">마이페이지</div>
       <div id="mypage_sub">   
        <a href="${pageContext.request.contextPath}/orderList.do" class="nav-link py-3 px-0 px-lg-3" id="open_history">주문 내역</a>
        <a href="${pageContext.request.contextPath}/memberInfo.do" class="nav-link py-3 px-0 px-lg-3" id="open_info_modify">개인 정보 수정</a>
@@ -86,7 +86,7 @@
       
           <div id="cart_inner2">
             <!-- 장바구니에 있는 물건중 체크된 물건을 가져와서 foreach -->
-            <h5 style="margin-top: 272px;">주문 상세 내역</h5>
+            <h5 style="margin-top: 35px;">주문 상세 내역</h5>
             
             <div id="line"></div>
                <div id="orderlist_inner">
