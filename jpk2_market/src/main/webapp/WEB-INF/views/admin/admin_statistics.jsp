@@ -10,10 +10,7 @@
 	<title>관리자페이지</title>
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-<script> 
-var begin_date = ${begin_date};
-var end_date = ${end_date};
-</script>
+<script></script>
 <script src="${pageContext.request.contextPath}/resources/js/statistics.js "></script>	
 </head>
 <script>
@@ -118,6 +115,10 @@ function statistics(){
 <input type="text" id="datepicker1" name="begin_date"> ~
 <input type="text" id="datepicker2" name="end_date">
 <input type="submit" value="조회">
+
+<input type="hidden" id="begin" value="${adminVo.begin_date}">
+<input type="hidden" id="end" value="${adminVo.end_date}">
+
 <div id="client" style="width:962px;">
    <table border="1" style="border-right:0px; border-left:0px; font-size: 14px; border-top: 2px solid #198754;" class="table table-hover">
       <tr>        
@@ -131,8 +132,21 @@ function statistics(){
       </tr>
       
       <c:forEach items="${statisticsList}" var="statisticsVo" varStatus="status">  
-      
-     
+      	<script>
+      		var arr = [];
+      		var midx = parseInt($("#${statisticsVo.num}_midx").val());
+      	
+      		var count;
+      	/* 	if(arr.indexOf(midx) < 0){
+      			arr.push(midx)
+      			count = 1;
+      		}else{
+      			count += 1; 
+      			
+      		} 
+      		$('#${statisticsVo.num}_count_midx').text(count);*/
+      	
+      	</script>
     
     	<tr id="target">
    			<td id="td1">${statisticsVo.num}</td>
@@ -140,7 +154,9 @@ function statistics(){
     			${statisticsVo.member_name }
     		</td>
    	 		<td id="td3">
-    			구매수
+    			<input type="hidden" id="${statisticsVo.num}_midx" value="${statisticsVo.midx }">
+    			<span >${statisticsVo.midx }</span>,${statisticsVo.pidx }
+    			<span id="${statisticsVo.num}_count_midx"></span>
     		</td>
    			<td id="td4">${statisticsVo.p_amount }</td>
     		<td id="td5">${statisticsVo.p_price }</td>

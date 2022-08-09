@@ -88,7 +88,20 @@ font-size: 16px;
     align-items: center;
     border-bottom: 2px solid #198754;
 }
+#product_t{
+width:95%
+}
 </style>
+
+<script>
+function statistics(){
+	var frm = document.frm;
+	frm.action="${pageContext.request.contextPath}/statistics.do";
+	frm.method="POST";
+	frm.submit();
+	return;
+}
+</script>
 
 </head>
 <body>
@@ -101,14 +114,13 @@ font-size: 16px;
    <div id="admin_center_cate">
    <div id="admin_1">관리자 페이지</div>
       <div id="admin_sub">   
-      <a href="${pageContext.request.contextPath}/admin.do" class="nav-link py-3 px-0 px-lg-3" id="admin_button">통계</a>
+      <input type="button" class="nav-link py-3 px-0 px-lg-3" value="통계" id="admin_button_1" style="background-color: white; border: none;" onclick=statistics()>
       <a href="${pageContext.request.contextPath}/productAdd.do" class="nav-link py-3 px-0 px-lg-3" id="admin_button">상품등록페이지</a>
-      <a href="${pageContext.request.contextPath}/adminProductList.do" class="nav-link py-3 px-0 px-lg-3" id="open_admin">내가 등록한 상품목록</a>
-      <a href="${pageContext.request.contextPath}/orderList.do" class="nav-link py-3 px-0 px-lg-3" id="admin_button">주문내역</a>
-     <%--<a href="${pageContext.request.contextPath}/orderListDetail.do" class="nav-link py-3 px-0 px-lg-3" id="admin_button">주문상세페이지</a> --%>
-           <a href="${pageContext.request.contextPath}/adminProductCheck.do" class="nav-link py-3 px-0 px-lg-3" id="admin_button">등록심사중인 상품목록</a>
-           <a href="${pageContext.request.contextPath}/adminMemberList.do" class="nav-link py-3 px-0 px-lg-3" id="admin_button">등록된 회원 목록</a>
-      </div>
+      <a href="${pageContext.request.contextPath}/adminProductList.do" class="nav-link py-3 px-0 px-lg-3" id="admin_button">내가 등록한 상품목록</a>
+      <a href="${pageContext.request.contextPath}/orderList.do" class="nav-link py-3 px-0 px-lg-3" id="admin_button">주문내역</a>     <%--<a href="${pageContext.request.contextPath}/orderListDetail.do" class="nav-link py-3 px-0 px-lg-3" id="admin_button">주문상세페이지</a> --%>
+      <a href="${pageContext.request.contextPath}/adminProductCheck.do" class="nav-link py-3 px-0 px-lg-3" id="admin_button">등록심사중인 상품목록</a>
+      <a href="${pageContext.request.contextPath}/adminMemberList.do" class="nav-link py-3 px-0 px-lg-3" id="admin_button">등록된 회원 목록</a> 
+   </div>
    </div>
 
 
@@ -132,7 +144,7 @@ font-size: 16px;
 			<tr>
 				<td colspan="13">
 					<div id="orderlist_1">
-		   				<a style="cursor:pointer; margin-top:20px;"onClick="location.href='${pageContext.request.contextPath}/adminBuyerDetail.do?pidx=${productVo.pidx}&midx=${productVo.midx}'" >&nbsp;&nbsp;주문내용 상세보기</a>
+		   				<a id="inner_detail_button" style="cursor:pointer; margin-top:20px;"onClick="location.href='${pageContext.request.contextPath}/adminBuyerDetail.do?pidx=${productVo.pidx}&midx=${productVo.midx}'" >&nbsp;&nbsp;주문내용 상세보기</a>
 		   			</div>
 	   			</td>
    			</tr>

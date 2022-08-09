@@ -7,30 +7,7 @@
 <meta charset="UTF-8">
 <link href="resources/css/service_center.css" rel="stylesheet" />
 <style>
-#service_1{
-  padding: 5px 0 35px 1px;
-    font-weight: 700;
-    font-size: 26px;
-    line-height: 35px;
-    color: #333;
-    letter-spacing: -1px;
-    margin-top: 35px;
-}
 
-#faq_sub{
-   border: 1px solid #f2f2f2;
-    border-bottom: 1;
-    FONT-WEIGHT: 100;
-    display: block;
-    overflow: hidden;
-    font-size: 14px;
-    line-height: 20px;
-    letter-spacing: -.3px;
-    padding: 0px -5px 3px 5px;
-    margin-left: -6px;
-    margin-right: 16px;
-    margin-top: -27px;
-}
 #open_faq{
    border-bottom: 1px solid #f2f2f2;
     background-color: #fafafa;
@@ -38,22 +15,6 @@
     font-weight: 700;
     color: #198754;
 }
-#open_faq{
-   border-bottom: 1px solid #f2f2f2;
-}
-#td1{
-width:10%;
-}
-#td2{
-width:16%;
-}
-#td3{
-width:20%;
-}
-#td4{
-width:3%;
-}
-
 
 </style>
 

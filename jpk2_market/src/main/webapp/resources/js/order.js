@@ -112,12 +112,12 @@
         
       		  alert(msg);
         	  
-        	  alert(rsp.pay_method);
+        	  
         	  var method = rsp.pay_method;
-        	  alert(typeof method);
+        	  
 
         	if(method=="card"||method=="point"){  
-        	 alert("i'm here");
+        	 
         	
         	
         	pageGoPost({
