@@ -9,7 +9,7 @@ user-select: none;
 }
 
 
-#servive_main_inner{
+#service_main_inner{
    margin-left:317px;
    min-height:1040px;
    padding-top:178px;
@@ -21,6 +21,32 @@ user-select: none;
    width:194px;
    float:left;
 }
+
+#service_sub_title{
+  padding: 5px 0 35px 1px;
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 35px;
+    color: #333;
+    letter-spacing: -1px;
+    margin-top: 35px;
+    
+}
+
+ #service_sub{
+   border: 1px solid #f2f2f2;
+    border-bottom: 1;
+    FONT-WEIGHT: 100;
+    display: block;
+    overflow: hidden;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: -.3px;
+    padding: 0px -5px 3px 5px;
+    margin-left: -6px;
+    margin-right: 16px;
+    margin-top: -27px;
+} 
    
 
 #table_button{
@@ -119,31 +145,7 @@ user-select: none;
   
   /* notice_board css */
   
-  #service_1{
-  padding: 5px 0 35px 1px;
-    font-weight: 700;
-    font-size: 26px;
-    line-height: 35px;
-    color: #333;
-    letter-spacing: -1px;
-    margin-top: 35px;
-    
-}
 
- #notice_sub{
-   border: 1px solid #f2f2f2;
-    border-bottom: 1;
-    FONT-WEIGHT: 100;
-    display: block;
-    overflow: hidden;
-    font-size: 14px;
-    line-height: 20px;
-    letter-spacing: -.3px;
-    padding: 0px -5px 3px 5px;
-    margin-left: -6px;
-    margin-right: 16px;
-    margin-top: -27px;
-} 
 
 
 /* #open_notice{
@@ -344,7 +346,7 @@ display: block;
 
 /* faq_board css */
 
-#faq_sub{
+/* #faq_sub{
    border: 1px solid #f2f2f2;
     border-bottom: 1;
     FONT-WEIGHT: 100;
@@ -357,7 +359,7 @@ display: block;
     margin-left: -6px;
     margin-right: 16px;
     margin-top: -27px;
-}
+} */
 
 /* faq_board css 끝 */
 
