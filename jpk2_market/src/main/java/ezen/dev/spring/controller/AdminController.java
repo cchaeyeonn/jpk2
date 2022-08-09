@@ -319,10 +319,11 @@ public class AdminController {
 		
 	}
 	@GetMapping("/adminBuyerDetail.do")
-	public String getBuyerDetail(@RequestParam("pidx") Integer pidx, @RequestParam("midx") Integer midx, Model model) {
+	public String getBuyerDetail(@RequestParam("pidx") Integer pidx, @RequestParam("midx") Integer midx, @RequestParam("order_id") String order_id, Model model) {
 		ProductVo pVo = new ProductVo();
 		pVo.setPidx(pidx);
 		pVo.setMidx(midx);
+		pVo.setOrder_id(order_id);
 		ProductVo productVo = adminService.getBuyerDetail(pVo);
 		model.addAttribute("productVo", productVo);
 		
