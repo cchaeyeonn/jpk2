@@ -145,7 +145,7 @@ body {
 }
 
 #input_cover{
-	padding-left: 293px;
+	padding-left: 33%;
 }
 
 
@@ -306,7 +306,7 @@ function doloading(){
                <div id="input_cover">
                <input style="margin-top:20px;" type="button" id="trigger" class="btn btn-outline-success" value="확인" onclick="check();">
                <input style="margin-top:20px;" type="button" class="btn btn-outline-success" value="뒤로" onclick="location.href='login.do'">
-               <input type="image" src="resources/img/loadingbar.gif" id="toloading" style="display:none; margin-top:7px; padding-left: 190px; padding-right: 193px; pointer-events: none;"class="btn btn-outline-success">
+               <input type="image" src="resources/img/loadingbar.gif" id="toloading" style="border:1px solid white; display:none; margin-top:7px; pointer-events: none;"class="btn btn-outline-success">
                </div>
          
             </form>
