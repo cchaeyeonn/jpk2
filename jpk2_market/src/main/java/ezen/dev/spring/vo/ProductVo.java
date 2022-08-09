@@ -32,10 +32,16 @@ public class ProductVo {
 	private String d_tophone;
 	private String d_to;
 	private String d_from;
+	private String p_admincheck;
 	
 	
 	
-	
+	public String getP_admincheck() {
+		return p_admincheck;
+	}
+	public void setP_admincheck(String p_admincheck) {
+		this.p_admincheck = p_admincheck;
+	}
 	public String getD_from() {
 		return d_from;
 	}

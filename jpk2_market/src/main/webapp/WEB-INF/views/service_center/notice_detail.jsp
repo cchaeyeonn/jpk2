@@ -16,7 +16,15 @@
 
 <%-- <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/modal.css"> --%>
 <%-- <script src="${pageContext.request.contextPath}/resources/js/cart.js "></script> --%>
-
+<script>
+$(function(){
+	$("#delete_notice").click(function(){
+		
+		alert("글이 삭제 되었습니다.");
+	
+	});
+});
+</script>
 </head>
 <body>
 
@@ -56,7 +64,7 @@
                <c:if test="${member_grade >= 1}">
    
                   <a class='btn btn-primary' href='/spring/notice_update.do?nidx=${noticeVo.nidx}'>수정하기</a>
-                  <a class='btn btn-primary' href='/spring/notice_delyn.do?nidx=${noticeVo.nidx}'>삭제하기</a>
+                  <a class='btn btn-primary' id="delete_notice" href='/spring/notice_delyn.do?nidx=${noticeVo.nidx}'>삭제하기</a>
    
    
                </c:if>

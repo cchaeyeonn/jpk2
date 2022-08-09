@@ -10,6 +10,15 @@
 <title>공지사항 글작성</title>
 
 </head>
+<script>
+function check(){
+	
+	alert("게시글이 수정되었습니다.");	
+	
+	
+}
+
+</script>
 <body>
 
     <!-- 헤더 연결 -->

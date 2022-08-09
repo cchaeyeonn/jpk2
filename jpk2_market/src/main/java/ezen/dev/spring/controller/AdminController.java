@@ -20,8 +20,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
 import ezen.dev.spring.service.AdminService;
+import ezen.dev.spring.service.OrderService;
 import ezen.dev.spring.vo.AdminVo;
 import ezen.dev.spring.vo.MemberVo;
+import ezen.dev.spring.vo.OrderVo;
 import ezen.dev.spring.vo.ProductVo;
 
 @Controller
@@ -32,6 +34,13 @@ public class AdminController {
 	@Autowired
 	public AdminController(AdminService adminService) {
 		this.adminService = adminService;
+	}
+	
+	private OrderService orderService;
+	
+	@Autowired
+	public void setOrderService(OrderService orderService) {
+		this.orderService=orderService;
 	}
 	
 	@GetMapping("/admin.do")
@@ -331,5 +340,16 @@ public class AdminController {
 		
 		return "admin/admin_buyerDetail";
 		
+	}
+	@GetMapping("/adminOrderList.do")
+	public String orderList(Model model, HttpServletRequest request) {
+		
+		HttpSession session = request.getSession();
+		Integer midx =Integer.parseInt(String.valueOf(session.getAttribute("midx")));
+		
+		List<OrderVo> orderList = orderService.getOrderList(midx);
+		model.addAttribute("orderList", orderList);
+		
+		return "admin/admin_orderList";
 	}
 }
