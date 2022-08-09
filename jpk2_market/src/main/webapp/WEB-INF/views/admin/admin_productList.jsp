@@ -62,7 +62,8 @@
 }
 
 #table_title{
-	width:120px;
+	width: 103px;
+    border-bottom: 2px solid #b3b3b3;
 }
 #orderlist_1{
     display: flex;
@@ -91,6 +92,9 @@ font-size: 16px;
 #product_t{
 width:95%
 }
+#td_center{
+padding-top: 17px;
+}
 </style>
 <script>
 function statistics(){
@@ -115,7 +119,7 @@ function statistics(){
       <input type="button" class="nav-link py-3 px-0 px-lg-3" value="통계" id="admin_button_1" style="background-color: white; border: none;" onclick=statistics()>
       <a href="${pageContext.request.contextPath}/productAdd.do" class="nav-link py-3 px-0 px-lg-3" id="admin_button">상품등록페이지</a>
       <a href="${pageContext.request.contextPath}/adminProductList.do" class="nav-link py-3 px-0 px-lg-3" id="admin_button">내가 등록한 상품목록</a>
-      <a href="${pageContext.request.contextPath}/orderList.do" class="nav-link py-3 px-0 px-lg-3" id="admin_button">주문내역</a>     <%--<a href="${pageContext.request.contextPath}/orderListDetail.do" class="nav-link py-3 px-0 px-lg-3" id="admin_button">주문상세페이지</a> --%>
+      <a href="${pageContext.request.contextPath}/adminOrderList.do" class="nav-link py-3 px-0 px-lg-3" id="admin_button">주문내역</a>     <%--<a href="${pageContext.request.contextPath}/orderListDetail.do" class="nav-link py-3 px-0 px-lg-3" id="admin_button">주문상세페이지</a> --%>
       <a href="${pageContext.request.contextPath}/adminProductCheck.do" class="nav-link py-3 px-0 px-lg-3" id="admin_button">등록심사중인 상품목록</a>
       <a href="${pageContext.request.contextPath}/adminMemberList.do" class="nav-link py-3 px-0 px-lg-3" id="admin_button">등록된 회원 목록</a> 
    </div>
@@ -128,14 +132,14 @@ function statistics(){
 
    <div id="line"></div>
 	
-	<div id="table_button"  style="width:913px; margin-top:25px; text-align:center; font-size: 14px;">
+	<div id="table_button"  style="width:920px; margin-top:19px; text-align:center; font-size: 14px;">
 
-	<table id="product_t">
+	<table class="table" id="product_t">
 		<tr>
-			<th id="table_title">번호</th>
-			<th id="table_title">이름</th>
+			<td id="table_title">번호</td>
+			<td id="table_title">이름</td>
 			<!-- <th id="table_title">부제목</th> -->
-			<th id="table_title">가격</th>
+			<td id="table_title">가격</td>
 			<!-- <th id="table_title">판매단위</th>
 			<th id="table_title">배송</th>
 			<th id="table_title">용량</th>
@@ -144,24 +148,26 @@ function statistics(){
 			<th id="table_title">유통기한</th>
 			<th id="table_title">타입</th>
 			<th id="table_title">태그</th> -->
-			<th id="table_title">삭제</th>
+			<td id="table_title"></td>
+			<td id="table_title"></td>
 		</tr>
 			<c:forEach var="productVo" items="${productList}">
-			<tr>
+			<%-- <tr>
 				<td colspan="4">
 					<div id="orderlist_1">
-		   				<%-- <a style="cursor:pointer; margin-top:20px;"onClick="location.href='${pageContext.request.contextPath}/admin_productDetail.do?pidx=${productVo.pidx}'" ><b>등록한 상품 상세보기</b></a> --%>
+		   				<a style="cursor:pointer; margin-top:20px;"onClick="location.href='${pageContext.request.contextPath}/admin_productDetail.do?pidx=${productVo.pidx}'" ><b>등록한 상품 상세보기</b></a>
 						<a id="inner_detail_button" style="cursor:pointer; margin-top:20px;"onClick="location.href='${pageContext.request.contextPath}/adminBuyerList.do?pidx=${productVo.pidx}'" >상품을 구매한 사람들</a>
 		   				<a id="inner_detail_button" style="cursor:pointer; margin-top:20px;"onClick="location.href='${pageContext.request.contextPath}/admin_productDetail.do?pidx=${productVo.pidx}'" >&nbsp;&nbsp;등록한 상품 상세보기</a>
 		   			</div>
 	   			</td>
-   			</tr>
+   			</tr> --%>
    
 			<form action="${pageContext.request.contextPath}/adminProductDelyn.do">
 				<tr>
-					<td>${productVo.pidx}</td><td>${productVo.p_name }</td><%-- <td>${productVo.p_secondname}</td> --%><td>${productVo.p_price }&nbsp;원</td><%-- <td>${productVo.p_unit }</td><td>${productVo.p_delivery }</td>
+					<td id="td_center">${productVo.pidx}</td><td id="td_center">${productVo.p_name }</td><%-- <td>${productVo.p_secondname}</td> --%><td id="td_center">${productVo.p_price }&nbsp;원</td><%-- <td>${productVo.p_unit }</td><td>${productVo.p_delivery }</td>
 					<td>${productVo.p_weight }</td><td>${productVo.p_package }</td><td>${productVo.p_allergy }</td><td>${productVo.p_limitdate }</td>
-					<td>${productVo.p_type }</td><td>${productVo.p_tag }</td> --%><td><input type="hidden" name="pidx" value="${productVo.pidx}"><input type="submit" class="btn btn-secondary btn-sm" value="삭제"></a></td>
+					<td>${productVo.p_type }</td><td>${productVo.p_tag }</td> --%><td><a id="inner_detail_button" style="cursor:pointer; margin-top:20px;"onClick="location.href='${pageContext.request.contextPath}/adminBuyerList.do?pidx=${productVo.pidx}'" >&nbsp;&nbsp;상품을 구매한 사람들</a><br>
+		   				<a id="inner_detail_button" style="cursor:pointer; margin-top:20px;"onClick="location.href='${pageContext.request.contextPath}/admin_productDetail.do?pidx=${productVo.pidx}'" >&nbsp;&nbsp;등록한 상품 상세보기</a></td><td id="td_center"><input type="hidden" name="pidx" value="${productVo.pidx}"><input style="font-size: 12px;" type="submit" class="btn btn-secondary btn-sm" value="삭제"></a></td>
 				</tr>
 			</form>
 		</c:forEach>	
