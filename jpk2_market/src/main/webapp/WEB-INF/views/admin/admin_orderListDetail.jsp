@@ -7,16 +7,84 @@
 
 <style>
 
-
-/* #orderlist_2{
-    display: flex;
-    padding: 8px 0px 13px;
-    -webkit-box-pack: justify;
-    justify-content: space-between;
-    border-bottom: 0px solid rgb(221, 223, 225) !important;
+#admin_main_inner{
+   margin-left:317px;
+   min-height:1040px;
+   padding-top:178px;
 }
- */
+#admin_center_cate{
+   
+   padding-top:91px;
+   width:194px;
+   float:left;
+}
+#table_button{
+   margin-left: 155px;
+   
+} 
+#admin_1{
+  padding: 5px 0 35px 1px;
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 35px;
+    color: #333;
+    letter-spacing: -1px;
+    margin-top: -55px;
+    
+}
+#admin_sub{
+   border: 1px solid #f2f2f2;
+    border-bottom: 1;
+    FONT-WEIGHT: 100;
+    display: block;
+    overflow: hidden;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: -.3px;
+    padding: 0px -5px 3px 5px;
+    margin-left: -6px;
+    margin-right: 16px;
+    margin-top: -27px;
+}
+#open_admin{
+   border-bottom: 1px solid #f2f2f2;
+    background-color: #fafafa;
+    background-size: 6px 11px;
+    font-weight: 700;
+    color: #198754;
+}
+#admin_button{
+   border-bottom: 1px solid #f2f2f2;
+}
 
+#table_title{
+	width:120px;
+}
+#orderlist_1{
+    display: flex;
+    padding: 17px 0px 13px;
+    -webkit-box-pack: justify;
+    justify-content: flex-end;
+    border-bottom: 1px solid rgb(221, 223, 225);
+    float: right;
+    width: 100%;
+    margin-top:12px;
+}
+#order_date{
+font-size: 16px;
+    font-weight: 500;
+    line-height: 1.31;
+    color: rgb(51, 51, 51);
+    margin-right: 347px;
+}
+#line{
+    display: flex;
+    flex-direction: row;
+    width: 55%;
+    -webkit-box-align: center;
+    align-items: center;
+    border-bottom: 2px solid #198754;
+}
 </style>
 
 <meta charset="utf-8" />
@@ -71,20 +139,21 @@
       style="padding-top: 239px; margin-left: 414px; margin-right: 401px;">
       <h1 align="center">주문상세내역</h1> -->
       <form>
-      <div id="mypage_main_inner">
-   <div id="mypage_center_cate">
-   <div id="mypage_sub_title">마이페이지</div>
-      <div id="mypage_sub">   
-       <a href="${pageContext.request.contextPath}/orderList.do" class="nav-link py-3 px-0 px-lg-3" id="open_history">주문 내역</a>
-       <a href="${pageContext.request.contextPath}/memberInfo.do" class="nav-link py-3 px-0 px-lg-3" id="open_info_modify">개인 정보 수정</a>
-     
-      <a href="" class="nav-link py-3 px-0 px-lg-3" id="open_coupon">쿠폰</a>
-      <!-- <a href="/spring/qna_board.do" class="nav-link py-3 px-0 px-lg-3 rounded" id="open_qna" >1:1 문의</a> -->
+   <div id="admin_main_inner">
+   <div id="admin_center_cate">
+   <div id="admin_1">관리자 페이지</div>
+      <div id="admin_sub">
+      <input type="button" class="nav-link py-3 px-0 px-lg-3" value="통계" id="admin_button_1" style="background-color: white; border: none;" onclick=statistics()>   
+      <a href="${pageContext.request.contextPath}/productAdd.do" class="nav-link py-3 px-0 px-lg-3" id="admin_button">상품등록페이지</a>
+      <a href="${pageContext.request.contextPath}/adminProductList.do" class="nav-link py-3 px-0 px-lg-3" id="admin_button">내가 등록한 상품목록</a>
+      <a href="${pageContext.request.contextPath}/adminOrderList.do" class="nav-link py-3 px-0 px-lg-3" id="admin_button">주문내역</a>     <%--<a href="${pageContext.request.contextPath}/orderListDetail.do" class="nav-link py-3 px-0 px-lg-3" id="admin_button">주문상세페이지</a> --%>
+      <a href="${pageContext.request.contextPath}/adminProductCheck.do" class="nav-link py-3 px-0 px-lg-3" id="admin_button">등록심사중인 상품목록</a>
+      <a href="${pageContext.request.contextPath}/adminMemberList.do" class="nav-link py-3 px-0 px-lg-3" id="admin_button">등록된 회원 목록</a> 
       </div>
    </div>
       
       
-          <div id="cart_inner2">
+          <div id="admin_inner">
             <!-- 장바구니에 있는 물건중 체크된 물건을 가져와서 foreach -->
             <h5 style="margin-top: 35px;">주문 상세 내역</h5>
             

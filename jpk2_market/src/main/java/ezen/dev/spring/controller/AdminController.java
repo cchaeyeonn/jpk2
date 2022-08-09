@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.text.SimpleDateFormat;
+import java.util.Arrays;
 import java.util.Calendar;
 import java.util.List;
 
@@ -20,8 +21,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
 import ezen.dev.spring.service.AdminService;
+import ezen.dev.spring.service.CartService;
+import ezen.dev.spring.service.DelService;
 import ezen.dev.spring.service.OrderService;
 import ezen.dev.spring.vo.AdminVo;
+import ezen.dev.spring.vo.CartVo;
+import ezen.dev.spring.vo.DelVo;
 import ezen.dev.spring.vo.MemberVo;
 import ezen.dev.spring.vo.OrderVo;
 import ezen.dev.spring.vo.ProductVo;
@@ -41,6 +46,20 @@ public class AdminController {
 	@Autowired
 	public void setOrderService(OrderService orderService) {
 		this.orderService=orderService;
+	}
+	
+	private CartService cartService;
+	
+	@Autowired
+	public void setCartService(CartService cartService) {
+		this.cartService = cartService;
+	}
+	
+	private DelService delService;
+	
+	@Autowired
+	public void setDelService(DelService delService) {
+		this.delService = delService;
 	}
 	
 	@GetMapping("/admin.do")
@@ -351,5 +370,28 @@ public class AdminController {
 		model.addAttribute("orderList", orderList);
 		
 		return "admin/admin_orderList";
+	}
+	@GetMapping("/admin_orderListDetail.do")
+	public String orderListDetail(@RequestParam("order_id") String order_id, Model model, HttpServletRequest request) {
+		OrderVo orderVo = orderService.getOrderDetail(order_id);
+		String pidx_pc_1 = orderVo.getProduct();
+		String[] arr = pidx_pc_1.split(",");
+		int[] pidx_pc = Arrays.stream(arr).mapToInt(Integer::parseInt).toArray();
+		Integer[] pidx_pc2 = new Integer[arr.length];
+		
+		for(int i = 0; i<arr.length; i++) {
+			pidx_pc2[i] = pidx_pc[i];
+		}
+		List<Integer> pbidxList =Arrays.asList(pidx_pc2);
+		List<CartVo> cartList = cartService.getPayProduct(pbidxList);
+		Integer oidx_od = orderVo.getOidx(); 
+		DelVo delVo = delService.getDelInfo(oidx_od);
+		model.addAttribute("cartList",cartList);
+		model.addAttribute("delVo",delVo);
+		model.addAttribute("orderVo",orderVo);
+		
+		
+		
+		return "admin/admin_orderListDetail";
 	}
 }

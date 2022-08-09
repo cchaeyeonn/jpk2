@@ -84,7 +84,7 @@ font-size: 16px;
 #line{
     display: flex;
     flex-direction: row;
-    width: 55%;
+    width: 59%;
     -webkit-box-align: center;
     align-items: center;
     border-bottom: 2px solid #198754;
@@ -132,7 +132,7 @@ function statistics(){
 
    <div id="line"></div>
 	
-	<div id="table_button"  style="width:920px; margin-top:19px; text-align:center; font-size: 14px;">
+	<div id="table_button"  style="width:983px; margin-top:5px; text-align:center; font-size: 14px;">
 
 	<table class="table" id="product_t">
 		<tr>
