@@ -136,8 +136,8 @@ a {
 
 #menu_cover{
 	width:100%;
-	margin-left:486px;
-	margin-right:483px;
+	/* margin-left:486px;
+	margin-right:483px; */
 }
 
 

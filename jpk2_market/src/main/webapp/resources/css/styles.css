@@ -11485,7 +11485,7 @@ html {
 }
 
 @media (min-width: 992px) {
-  #mainNav {
+  #mainNav .fixed-top2{
     padding-top: 1.5rem;
     padding-bottom: 1.5rem;
     transition: padding-top 0.3s, padding-bottom 0.3s;
