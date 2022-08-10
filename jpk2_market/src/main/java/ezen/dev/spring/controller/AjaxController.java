@@ -61,7 +61,7 @@ public class AjaxController {
 		
 		String result="N"; 
 		
-		if(id == null) {
+		if(id.isEmpty()) {
 			result="N"; 
 			
 		}else {

@@ -152,7 +152,7 @@ input[id="del-chk3"]:checked + .del-chk3::before{
       <tbody>
          <tr>
             <td style="width:138px;">아이디<span id="star">*</span></td>
-            <td style="width:268px;"><input type="email" class="form-control" name="member_id" id="member_id" value="" maxlength="80" placeholder="이메일 형식으로 입력해주세요"></td>
+            <td style="width:268px;"><input type="email" class="form-control" name="member_id" id="member_id" maxlength="80" placeholder="이메일 형식으로 입력해주세요"></td>
          </tr>
          <tr>
             <td></td>
@@ -161,7 +161,7 @@ input[id="del-chk3"]:checked + .del-chk3::before{
          
          <tr>
             <td>비밀번호<span id="star">*</span></td>
-            <td><input type="password" class="form-control" name="member_pw" id="member_password1" value="" maxlength="20" placeholder="8~16자 영문 숫자 조합으로 입력해주세요"></td>
+            <td><input type="password" class="form-control" name="member_pw" id="member_password1" maxlength="20" placeholder="8~16자 영문 숫자 조합으로 입력해주세요"></td>
          </tr>
          <tr>
             <td></td>   
@@ -170,7 +170,7 @@ input[id="del-chk3"]:checked + .del-chk3::before{
          
          <tr>
             <td>비밀번호확인<span id="star">*</span></td>
-            <td><input type="password" class="form-control" name="member_pw2" id="member_password2" value="" maxlength="20" placeholder="비밀번호를 한번 더 입력해주세요"></td>
+            <td><input type="password" class="form-control" name="member_pw2" id="member_password2" maxlength="20" placeholder="비밀번호를 한번 더 입력해주세요"></td>
          </tr>
          <tr>
             <td></td>   
@@ -179,7 +179,7 @@ input[id="del-chk3"]:checked + .del-chk3::before{
          
          <tr>
             <td>이름<span id="star">*</span></td>
-            <td><input type="text" class="form-control" id="member_name" name="member_name" maxlength="40" value="" placeholder="이름을 입력해주세요"></td>
+            <td><input type="text" class="form-control" id="member_name" name="member_name" maxlength="40" placeholder="이름을 입력해주세요"></td>
          </tr>
          <tr>
             <td></td>   
@@ -188,7 +188,7 @@ input[id="del-chk3"]:checked + .del-chk3::before{
          
          <tr>
             <td>이메일<span id="star">*</span></td>
-            <td><input type="email" class="form-control" id="member_email" name="member_email" maxlength="80" value="" placeholder="예) jpk2@naver.com"></td>
+            <td><input type="email" class="form-control" id="member_email" name="member_email" maxlength="80" placeholder="예) jpk2@naver.com"></td>
          </tr>
          <tr>
             <td></td>
