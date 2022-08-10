@@ -3,6 +3,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
    pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <head>
 <meta charset="utf-8" />
 <meta name="viewport"
@@ -116,17 +117,21 @@
 
 <script>
    $(function() {
+	   
+	   function priceToString(price) {
+		    return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+		}
       var delivery_fee = 0;
       var total_fee = 0;
       if ("${sum_price}" < 50000 && "${sum_price}" != 0) {
          delivery_fee = 3000;
-         $("#del_price").text(delivery_fee + "원");
+         $("#del_price").text(priceToString(delivery_fee) + "원");
       } else {
          delivery_fee = 0;
-         $("#del_price").text(delivery_fee + "원");
+         $("#del_price").text(priceToString(delivery_fee) + "원");
       }
       total_fee = ${sum_price}+delivery_fee;
-      $("#total_price").text(total_fee + "원");
+      $("#total_price").text(priceToString(total_fee) + "원");
       $("#total_price_").val(total_fee);
 
    })
@@ -200,9 +205,12 @@ function cart(){
                   <script>
                      $(
                            function() {
-                              $("#${orderVo.pbidx}_p_price").text(
+                        	   function priceToString(price) {
+                       		    return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+                       		}
+                              $("#${orderVo.pbidx}_p_price").text( priceToString(
                                     "${orderVo.p_amount}"
-                                          * "${orderVo.p_price}"
+                                          * "${orderVo.p_price}")
                                           + "원");
                            }
                            
@@ -319,7 +327,7 @@ function cart(){
                </tr>
                <tr>
                   <td class="td_info_l"></td>
-                  <td class="order_price1"><span id="sum_price">${sum_price}원</span></td>
+                  <td class="order_price1"><span id="sum_price"><fmt:formatNumber value="${sum_price}" pattern="#,###"/>원</span></td>
                   <td class="order_price2">-</td>
                   <td class="order_price1"><span id="sale_price">0원</span></td>
                   <td class="order_price2">+</td>

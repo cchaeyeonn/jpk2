@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>    
 <!DOCTYPE html> <!-- HTML5 적용 표시 -->
 <html>
 <head>
@@ -84,6 +85,9 @@
 					
 					<tr>
 					<td id="orderwaiting_td">가상계좌 입금기한</td><td>${bank_date }</td>
+					</tr>
+					<tr>
+					<td id="orderwaiting_td">결제금액</td><td><fmt:formatNumber value="${paid_amount}" pattern="#,###"/>원</td>
 					</tr>
 					
 				</table>
