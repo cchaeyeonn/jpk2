@@ -71,6 +71,7 @@ public class AjaxController {
 		if(flag == 1) result = "Y";
 		}
 		return result;
+		
 	}
 	@PostMapping("/checkEmail.do")
 	public String checkEmail(@RequestParam("member_email") String email) {
