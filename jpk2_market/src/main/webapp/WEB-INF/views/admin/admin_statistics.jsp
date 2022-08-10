@@ -167,7 +167,7 @@ function statistics(){
     			${statistics2Vo.count }
     		</td>
    			<td id="td4">${statistics2Vo.sales }</td>
-    		<td id="td5"><span><fmt:formatNumber value="${statistics2Vo.sales/statistics2Vo.count}" type="number" pattern=".00"/>원</span></td>
+    		<td id="td5"><span><fmt:formatNumber value="${statistics2Vo.sales/statistics2Vo.count}" type="number" pattern="#.##"/>원</span></td>
    		</tr>
    		
      </c:forEach>  
