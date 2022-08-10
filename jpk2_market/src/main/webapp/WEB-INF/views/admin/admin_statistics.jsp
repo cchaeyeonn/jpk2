@@ -77,8 +77,8 @@ function statistics(){
    
 }  
 
- #open_admin{
-   border-bottom: 1px solid #f2f2f2;
+ #admin_button_1{
+     border-bottom: 1px solid #f2f2f2;
     background-color: #fafafa;
     background-size: 6px 11px;
     font-weight: 700;
@@ -153,7 +153,8 @@ function statistics(){
       <div id="admin_center_cate">
    <div id="admin_sub_title">관리자 페이지</div>
       <div id="admin_sub">
-      <input type="button" class="nav-link py-3 px-0 px-lg-3" value="매출통계" id="admin_button_1" style="background-color: white; border: none;" onclick=statistics()>   
+      <a style="cursor:pointer;"class="nav-link py-3 px-0 px-lg-3" id="admin_button_1" onclick=statistics()>매출통계</a>
+     <!--  <input type="button" class="nav-link py-3 px-0 px-lg-3" value="매출통계" id="admin_button_1" style="background-color: white; border: none;" onclick=statistics()> -->   
       <a href="${pageContext.request.contextPath}/productAdd.do" class="nav-link py-3 px-0 px-lg-3" id="admin_button">상품등록</a>
       <a href="${pageContext.request.contextPath}/adminProductList.do" class="nav-link py-3 px-0 px-lg-3" id="admin_button">등록한 상품목록</a>
       <a href="${pageContext.request.contextPath}/adminOrderList.do" class="nav-link py-3 px-0 px-lg-3" id="admin_button">주문내역</a>     <%--<a href="${pageContext.request.contextPath}/orderListDetail.do" class="nav-link py-3 px-0 px-lg-3" id="admin_button">주문상세페이지</a> --%>
