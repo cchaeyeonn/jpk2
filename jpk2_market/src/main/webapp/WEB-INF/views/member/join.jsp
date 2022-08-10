@@ -165,7 +165,7 @@ input[id="del-chk3"]:checked + .del-chk3::before{
          </tr>
          <tr>
             <td></td>   
-            <td><div style="height:20px"><span id="result_password1" style="font-size:12px;"></span></div></td>
+            <td><div style="height:20px"><span id="result_password1" style="font-size:11px;"></span></div></td>
          </tr>
          
          <tr>
