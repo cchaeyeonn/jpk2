@@ -202,7 +202,11 @@ function statistics(){
 						<select name="p_weight2">
 							<option value="G" selected>G</option>
 							<option value="KG">KG</option>
+<<<<<<< HEAD
+							<option value="g">g</option>
+=======
 							<option value="mL">mL</option>
+>>>>>>> branch 'master' of https://github.com/cchaeyeonn/jpk2.git
 							<option value="L">L</option>
 						</select>
 						<br><br>

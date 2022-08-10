@@ -6,30 +6,32 @@
 <head>
 
 <style>
-#memberinfo_main_inner{
-    margin-left: 324px;
-    margin-top: 256px;
-    min-height: 1040px;
+#admin_main_inner{
+   margin-left:317px;
+   min-height:1040px;
+   padding-top:178px;
 }
+#admin_center_cate{
    
-#service_center_cate{
-   
-   /* padding-top:200px; */
+   padding-top:91px;
    width:194px;
    float:left;
 }
-#service_1{
+#table_button{
+   margin-left: 155px;
+   
+} 
+#admin_1{
   padding: 5px 0 35px 1px;
     font-weight: 700;
     font-size: 26px;
     line-height: 35px;
     color: #333;
     letter-spacing: -1px;
-    margin-top: -16px;
+    margin-top: -55px;
     
 }
-
-#notice_sub{
+#admin_sub{
    border: 1px solid #f2f2f2;
     border-bottom: 1;
     FONT-WEIGHT: 100;
@@ -193,6 +195,9 @@ padding: 81px 0px 92px 686px;
    content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 <meta name="description" content="" />
 <meta name="author" content="" />
+
+<link href="resources/css/mypage_css.css" rel="stylesheet" />
+
 <title>주문서</title>
 <!-- jQuery library (served from Google) -->
 <script
@@ -237,20 +242,32 @@ padding: 81px 0px 92px 686px;
       style="padding-top: 239px; margin-left: 414px; margin-right: 401px;">
       <h1 align="center">주문상세내역</h1> -->
       <form>
-      <div id="memberinfo_main_inner">
+      <div id="admin_main_inner">
+      <div id="admin_center_cate">
+   <div id="admin_1">관리자 페이지</div>
+      <div id="admin_sub">
+      <input type="button" class="nav-link py-3 px-0 px-lg-3" value="통계" id="admin_button_1" style="background-color: white; border: none;" onclick=statistics()>   
+      <a href="${pageContext.request.contextPath}/productAdd.do" class="nav-link py-3 px-0 px-lg-3" id="admin_button">상품등록페이지</a>
+      <a href="${pageContext.request.contextPath}/adminProductList.do" class="nav-link py-3 px-0 px-lg-3" id="admin_button">내가 등록한 상품목록</a>
+      <a href="${pageContext.request.contextPath}/adminOrderList.do" class="nav-link py-3 px-0 px-lg-3" id="admin_button">주문내역</a>     <%--<a href="${pageContext.request.contextPath}/orderListDetail.do" class="nav-link py-3 px-0 px-lg-3" id="admin_button">주문상세페이지</a> --%>
+      <a href="${pageContext.request.contextPath}/adminProductCheck.do" class="nav-link py-3 px-0 px-lg-3" id="admin_button">등록심사중인 상품목록</a>
+      <a href="${pageContext.request.contextPath}/adminMemberList.do" class="nav-link py-3 px-0 px-lg-3" id="admin_button">등록된 회원 목록</a> 
+      </div>
+   </div>
+      
             
-          <div id="cart_inner2">
+          <div id="admin_inner">
             <!-- 장바구니에 있는 물건중 체크된 물건을 가져와서 foreach -->
-            <h5 style="margin-top: 272px;">주문 상세 내역</h5>
+            <h5 style="margin-top: 53.5px;">구매자 리스트 - 주문 상세 내역</h5>
             
             <div id="line"></div>
                <div id="orderlist_inner">
                   <div id="orderlist_inner2">
-                  <div id="orderlist_1">
+                  <div id="orderlist_2">
                </div>
                
                   <div id="orderlist_inner2">
-      <div id="orderlist_1">
+      <div id="orderlist_2">
   <%--  <a onClick="location.href='${pageContext.request.contextPath}/orderListDetail.do?order_id=${productVo.order_id}'" id="order_detail">주문내역 상세보기</a> --%>
    </div>
    <div id="orderlist_box">
