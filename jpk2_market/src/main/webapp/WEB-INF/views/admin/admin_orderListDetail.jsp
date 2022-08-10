@@ -155,7 +155,7 @@ font-size: 16px;
       
           <div id="admin_inner">
             <!-- 장바구니에 있는 물건중 체크된 물건을 가져와서 foreach -->
-            <h5 style="margin-top: 35px;">주문 상세 내역</h5>
+            <h5 style="margin-top: 53.5px;">주문 상세 내역</h5>
             
             <div id="line"></div>
                <div id="orderlist_inner">

@@ -8,7 +8,7 @@
 
 <link href="resources/css/style_css.css" rel="stylesheet" />
 
-<title>내가 등록한 상품 목록</title>
+<title>구매자 리스트</title>
 
 <style>
 #admin_main_inner{
@@ -126,7 +126,7 @@ function statistics(){
 
 <div id="admin_inner">
 
-     <h5 style="margin-top: 52px;">상품을 구매한 사람들</h5>
+     <h5 style="margin-top: 52px;">구매자 리스트</h5>
 
    <div id="line"></div>
 	

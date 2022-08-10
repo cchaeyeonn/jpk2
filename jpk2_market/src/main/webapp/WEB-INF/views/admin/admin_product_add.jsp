@@ -201,6 +201,7 @@ function statistics(){
 						<input type="number" class="form-control" id="input_half"  name="p_weight1">
 						<select name="p_weight2">
 							<option value="KG">KG</option>
+							<option value="g">g</option>
 							<option value="L">L</option>
 						</select>
 						<br><br>
