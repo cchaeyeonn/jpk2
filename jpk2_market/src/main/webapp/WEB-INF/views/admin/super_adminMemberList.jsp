@@ -13,14 +13,14 @@
 
 <style>
 
-#line {
+/* #saml_line {
     display: flex;
     flex-direction: row;
     width: 66.5%;
     -webkit-box-align: center;
     align-items: center;
     border-bottom: 2px solid #198754;
-}
+} */
 
 
 </style>
@@ -59,7 +59,7 @@ function statistics(){
 
      <h5 style="margin-top: 52px;">등록된 회원 목록</h5>
 
-   <div id="line"></div>
+   <div id="saml_line"></div>
 	
 	<div id="table_button"  style="width:1098px; margin-top:25px; margin-left: 155px; text-align:center; font-size: 14px;">
 

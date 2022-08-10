@@ -41,6 +41,10 @@
    margin-left: 155px;
 } 
 
+#table_title{
+	width:120px;
+}
+
 #line{
     display: flex;
     flex-direction: row;
@@ -102,49 +106,208 @@
 width:95%
 }
 
-/* admin_buyerList css */
+/* admin_buyerList css 끝 */
 
+/* admin_orderList css */
 
-/* statistics 통계 css */
-.datebutton{
-    width: 50px;
-    height: 30px;
-    background-color: #dcebdb;
-    border: 1px solid white;
-    border-radius: 9px;
-    font-size: 13px;
+#aol_admin_center_cate{
+   
+   padding-top:91px;
+   width:194px;
+   float:left;
 }
 
-#datepicker1{
-	width: 171px !important;
-    display: inline;
-    height: 32px;
-}
-
-#datepicker2{
-	width: 171px !important;
-    display: inline;
-    height: 32px;
-}
-
-#datebutton_cover{
-	margin-bottom:10px;
-	margin-top: 14px;
-
-}
-
-.datebutton_search{
-	background-color: white;
-    border: 1px solid #8b8686;
-    width: 50px;
-    height: 30px;
-    background-color: #dcebdb;
-    border-radius: 9px;
-    font-size: 13px;
+#aol_admin_sub_title{
+  padding: 5px 0 35px 1px;
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 35px;
+    color: #333;
+    letter-spacing: -1px;
+    margin-top: -55px;
     
 }
 
-/* statistics 통계 css 끝 */
+#aol_order_date{
+font-size: 16px;
+    font-weight: 500;
+    line-height: 1.31;
+    color: rgb(51, 51, 51);
+    margin-right: 347px;
+}
+
+#adl_orderlist_1{
+    display: flex;
+    padding: 17px 0px 13px;
+    -webkit-box-pack: justify;
+    border-bottom: 1px solid rgb(221, 223, 225);
+    }
+/* admin_orderList css 끝 */
+
+
+/* admin_orderListDetail css */
+
+#aold_admin_center_cate{
+   
+   padding-top:91px;
+   width:194px;
+   float:left;
+}
+#aold_admin_sub_title{
+  padding: 5px 0 35px 1px;
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 35px;
+    color: #333;
+    letter-spacing: -1px;
+    margin-top: -55px;
+    
+}
+#aold_order_date{
+font-size: 16px;
+    font-weight: 500;
+    line-height: 1.31;
+    color: rgb(51, 51, 51);
+    margin-right: 347px;
+}
+/* admin_orderListDetail css 끝 */
+
+/* admin_product_add css  */
+
+#apa_table_button{
+   margin-left: 155px;
+   width:962px; 
+   min-height:1186px;
+   
+} 
+
+#apa_product{
+    padding-left: 10%;
+    padding-right: 10%;
+    min-height: 880px;
+    padding-top: 33px;
+}
+
+#apa_home_button{
+			padding-left:80%; 
+			padding-right:10%; 
+			text-align:center; 
+			float:center;
+			} 
+/* admin_product_add css 끝 */
+
+/* admin_productDetail, super_admin_productDetailcss  */
+
+	#product{
+		padding-left:10%;
+		padding-right:10%; 
+		height:1000px; 
+		padding-top:260px;
+		}
+	#product_img{
+			float:left; 
+			width:50%; 
+			height:50%;
+			
+			}
+	#product_detail{
+			float:right; 
+			width:50%; 
+			height:50%;
+			}
+	#home_button{
+			padding-left:10%; 
+			padding-right:10%; 
+			text-align:center; 
+			float:center;
+			} 
+    .button box{
+            display : inline-block;
+    }
+    #product_subject{
+    font-size:13px;
+    color:#8f8f8f;
+    }
+    #product_price{
+    font-size:13px;
+    margin-top:39px;
+    }
+    .pd_dt{
+    float:left;
+    width:140px;
+    color:#8f8f8f;
+    font-size:15px;
+    }
+    .pd_hr{
+    margin: 1.2rem 0;
+    color: inherit;
+    opacity:0.05;
+    width:547px;
+    }
+    .pd_button{
+   	margin-left:430px;
+   	margin-top:22px;
+
+    }
+    
+    #product_detail_inner{
+    width:100%;
+    min-height:1040px;
+    padding-left:10%;
+    padding-right:10%;
+    }
+    
+    input[type="radio"] {display:none;}
+    input[type="radio"] + label {display:inline-block;padding:20px;background:#f5f5f5;color:#999;font-size:14px; cursor:pointer;}
+    input[type="radio"]:checked + label {background:#e1e1e1;color:#000;}
+    
+    .conbox{width:100%;min-height:1040px;background:#f5f5f5;margin:0 auto;display:none;}
+    input[id="tab01"]:checked ~ .con1 {display:block;}
+    input[id="tab02"]:checked ~ .con2 {display:block;}
+    input[id="tab03"]:checked ~ .con3 {display:block;}
+    
+    #btn_insert_cart{
+    	float:right;
+    	width:50%;
+    	height: 45px;
+    	border-radius: 12px;
+    	border: 1px;
+    	border: 1px solid rgb(221, 221, 221);
+    }
+    
+    #btn_cart_cancel{
+    	float:left;
+    	width:50%;
+    	height: 45px;
+    	border-radius: 12px;
+    	border: 1px;
+    	border: 1px solid rgb(221, 221, 221);
+    }
+
+/* admin_productDetail css , super_admin_productDetailcss끝 */
+
+/* admin_productList css */
+
+#apl_table_title{
+	width: 103px;
+    border-bottom: 2px solid #b3b3b3;
+}
+
+#apl_line{
+    display: flex;
+    flex-direction: row;
+    width: 59%;
+    -webkit-box-align: center;
+    align-items: center;
+    border-bottom: 2px solid #198754;
+}
+#td_center{
+padding-top: 17px;
+}
+
+/* admin_productList css 끝*/
+
+
 
 /* admin product add 상품등록 css */
 
@@ -194,11 +357,9 @@ width:95%
 }
 /* admin product add 상품등록 css 끝*/
 
+
 /* super admin checklist 등록심사중인 상품 목록 css */
 
-#table_title{
-	width:120px;
-}
 
 #order_date{
 font-size: 16px;
@@ -209,7 +370,17 @@ font-size: 16px;
 
 /* super admin checklist 등록심사중인 상품 목록 css 끝*/
 
+
 /* super admin memberlist 등록 된 회원 목록 css */
+
+#saml_line {
+    display: flex;
+    flex-direction: row;
+    width: 66.5%;
+    -webkit-box-align: center;
+    align-items: center;
+    border-bottom: 2px solid #198754;
+}
 
 /* super admin memberlist 등록 된 회원 목록 css 끝 */
 
@@ -321,7 +492,8 @@ flex: 1 1 0%;
     display: flex;
     -webkit-box-align: center;
     align-items: center;
-    margin-left: 311px;
+    /* margin-left: 311px; */
+    margin-left: 341px;
     }
 #info{
 padding-top:71px;

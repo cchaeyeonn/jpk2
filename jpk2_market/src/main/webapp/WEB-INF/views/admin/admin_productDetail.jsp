@@ -4,10 +4,11 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<link href="resources/css/admin.css" rel="stylesheet" />
 <title>제품 상세 페이지</title>
 <style>
 
-	#product{
+/* 	#product{
 		padding-left:10%;
 		padding-right:10%; 
 		height:1000px; 
@@ -91,7 +92,7 @@
     	border-radius: 12px;
     	border: 1px;
     	border: 1px solid rgb(221, 221, 221);
-    }
+    } */
 
 </style>
 

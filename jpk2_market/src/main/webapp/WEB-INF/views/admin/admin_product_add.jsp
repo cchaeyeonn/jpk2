@@ -11,13 +11,13 @@
 
 <style>
 
-#apa_table_button{
+/* #apa_table_button{
    margin-left: 155px;
    width:962px; 
    min-height:1186px;
    
 } 
-
+ */
 /* 
 #table_button{
    margin-left: 155px;
@@ -151,7 +151,7 @@ function statistics(){
 		<div id="apa_table_button">
 			<form name="frm2">
 			<table>
-				<div id="product">
+				<div id="apa_product">
 					<div id="product_img">상품 사진
 						<input type="file" name="p_filename">
 					</div>
@@ -234,7 +234,7 @@ function statistics(){
 					</div>
 					
 				</div>
-					<div id="home_button"><input type="button" class="btn btn-outline-success" value="등록하기" onclick="check2();"></div> 
+					<div id="apa_home_button"><input type="button" class="btn btn-outline-success" value="등록하기" onclick="check2();"></div> 
 				</table>
 			</form>
 		</div>
