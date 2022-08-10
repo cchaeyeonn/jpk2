@@ -377,6 +377,9 @@ $("#chk_all").change(function(){
     </div>
     </div>
      </form>
+     
+     
+    
 
     <!-- 푸터 연결 -->
     <jsp:include page="../footer.jsp"></jsp:include>
