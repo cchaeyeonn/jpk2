@@ -26,7 +26,7 @@
 
                 document.getElementById('postcode').value = data.zonecode;	//우편번호
                 document.getElementById("member_addr_1").value = roadAddr;	//도로명주소
-                document.getElementById("member_addr_2").on("focus",true);			//상세주소 (창이꺼지면서 상세주소에 focus가 가도록)
+                document.getElementById("member_addr_2").focus();			//상세주소 (창이꺼지면서 상세주소에 focus가 가도록)
 
                
               }
