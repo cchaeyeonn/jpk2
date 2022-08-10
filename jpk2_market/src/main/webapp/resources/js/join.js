@@ -404,7 +404,6 @@
               result = "생년월일을 입력해주세요";
 	          $("#result_birth").html(result).css("color", "red");
 	          return false;
-
           }
           });
           
