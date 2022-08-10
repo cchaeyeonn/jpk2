@@ -213,7 +213,7 @@ input[id="del-chk3"]:checked + .del-chk3::before{
          <tr>
             <td></td>
             <td><input type="text" id="member_addr_1" class="form-control" name="member_addr1" readonly placeholder="도로명주소"><input type="text" id="member_addr_2" class="form-control" name="member_addr2" placeholder="상세주소"></td>
-            <td></td>
+           
             <td><div style="height:20px"><span id="result_addr" style="font-size:12px;"></span></div></td>
          </tr>
          <tr><td>&nbsp;</td><td></td></tr>
