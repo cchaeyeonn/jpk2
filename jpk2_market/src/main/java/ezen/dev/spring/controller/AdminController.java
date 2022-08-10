@@ -23,11 +23,13 @@ import org.springframework.web.multipart.MultipartFile;
 import ezen.dev.spring.service.AdminService;
 import ezen.dev.spring.service.CartService;
 import ezen.dev.spring.service.DelService;
+import ezen.dev.spring.service.NoticeService;
 import ezen.dev.spring.service.OrderService;
 import ezen.dev.spring.vo.AdminVo;
 import ezen.dev.spring.vo.CartVo;
 import ezen.dev.spring.vo.DelVo;
 import ezen.dev.spring.vo.MemberVo;
+import ezen.dev.spring.vo.NoticeVo;
 import ezen.dev.spring.vo.OrderVo;
 import ezen.dev.spring.vo.ProductVo;
 
@@ -62,8 +64,54 @@ public class AdminController {
 		this.delService = delService;
 	}
 	
+	private NoticeService noticeService;
+	
+	@Autowired
+	public void setNoticeService(NoticeService noticeService) {
+		this.noticeService = noticeService;
+	}
+	
+	
 	@GetMapping("/admin.do")
-	public String adminHome() {
+	public String adminHome(@RequestParam(value="begin_date", required=false) String begin_date,
+			@RequestParam(value="end_date", required=false) String end_date,Model model, HttpServletRequest request) {
+		SimpleDateFormat format = new SimpleDateFormat ( "yyyy-MM-dd");
+		Calendar time = Calendar.getInstance();
+		String year = String.valueOf(Calendar.getInstance().get(Calendar.YEAR));
+		String enddate = format.format(time.getTime());
+		String startdate = year+"-01-01";
+		
+		if(begin_date == null) {
+			begin_date = startdate;
+
+		};
+		
+		if(end_date ==null) {
+			end_date = enddate;
+			
+		};
+		HttpSession session = request.getSession();
+		Integer midx = Integer.parseInt(String.valueOf(session.getAttribute("midx")));
+		AdminVo adminVo = new AdminVo();
+		System.out.println("begin_date:"+begin_date);
+		System.out.println("end_date:"+end_date);
+
+		adminVo.setBegin_date(begin_date);
+		adminVo.setEnd_date(end_date);
+		adminVo.setMidx(midx);
+		
+		List<AdminVo> statisticsList = adminService.getStatisticsList(adminVo);
+		List<AdminVo> statisticsList2 = adminService.getStatisticsList2(adminVo);
+		List<ProductVo> productList = adminService.getProductList(midx);
+		List<NoticeVo> noticeList = noticeService.getNoticeList(); //서비스를 호출
+		
+		model.addAttribute("noticeList",noticeList);
+		model.addAttribute("statisticsList",statisticsList);
+		model.addAttribute("statisticsList2",statisticsList2);
+		model.addAttribute("adminVo", adminVo);
+		model.addAttribute("productList",productList);
+		
+		
 		return "admin/admin_home";
 	}
 	

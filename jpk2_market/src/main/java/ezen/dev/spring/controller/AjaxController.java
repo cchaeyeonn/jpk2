@@ -61,15 +61,13 @@ public class AjaxController {
 		
 		String result="N"; 
 		
-		if(id.isEmpty()) {
-			result="N"; 
-			
-		}else {
+		
 		
 		int flag = ajaxService.checkId(id);
 		
 		if(flag == 1) result = "Y";
-		}
+		
+
 		return result;
 		
 	}

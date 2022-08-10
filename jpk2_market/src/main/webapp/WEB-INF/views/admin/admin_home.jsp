@@ -59,11 +59,109 @@ function statistics(){
 
 
 <div id="admin_inner">
+    <table border="1" style="border-right:0px; border-left:0px; font-size: 14px; border-top: 2px solid #198754;" class="table table-hover">
+      <tr>
+         <td>번호</td>
+         <td>상품명</td>
+         <td>판매량</td>
+         <td>단가</td>
+         <td>매출</td>
+      </tr>
+    <c:forEach items="${statisticsList}" var="statisticsVo" varStatus="status">  
+      	<script>
 
+      	$(function(){
+ 			
+      		 let sum = 0;
+      		 let sales =0;
+      		 let ratio = 0;
+      	    $('input[name*="sales"]').each(function(){
+  
+      	        if(!isNaN($(this).val())){
+  
+      	            sum += parseInt($(this).val());
+      	            sales = ${statisticsVo.sales}
+      	            ratio = sales/sum*100;
+      	            ratio = ratio.toFixed(2);
+      	        }
+      	    });
+      	    $("#${statisticsVo.num}_ratio").text(ratio+"%");
+      	})
+      	</script>
+    	<tr id="target">
+   			<td id="td1">${statisticsVo.num}</td>
+   			<td id="td2">
+    			${statisticsVo.p_name }
+    		</td>
+   	 		<td id="td3">
+    			${statisticsVo.p_amount }
+    		</td>
+   			<td id="td4">${statisticsVo.p_price }</td>
+    		<td id="td5">
+    		<span>${statisticsVo.sales}원</span>
+    		<input name="${statisticsVo.num}_sales" type="hidden" value="${statisticsVo.sales}">
+    		</td>
+   		</tr>
+   		
+     </c:forEach> 
+    </table>
+	<table class="table" id="product_t">
+		<tr>
+			<td id="table_title">번호</td>
+			<td id="table_title">이름</td>
+			<!-- <th id="table_title">부제목</th> -->
+			<td id="table_title">가격</td>
+			<!-- <th id="table_title">판매단위</th>
+			<th id="table_title">배송</th>
+			<th id="table_title">용량</th>
+			<th id="table_title">포장</th>
+			<th id="table_title">알러지</th>
+			<th id="table_title">유통기한</th>
+			<th id="table_title">타입</th>
+			<th id="table_title">태그</th> -->
+			<td id="table_title">승인 여부</td>
+		</tr>
+			<c:forEach var="productVo" items="${productList}">
+			<%-- <tr>
+				<td colspan="4">
+					<div id="orderlist_1">
+		   				<a style="cursor:pointer; margin-top:20px;"onClick="location.href='${pageContext.request.contextPath}/admin_productDetail.do?pidx=${productVo.pidx}'" ><b>등록한 상품 상세보기</b></a>
+						<a id="inner_detail_button" style="cursor:pointer; margin-top:20px;"onClick="location.href='${pageContext.request.contextPath}/adminBuyerList.do?pidx=${productVo.pidx}'" >상품을 구매한 사람들</a>
+		   				<a id="inner_detail_button" style="cursor:pointer; margin-top:20px;"onClick="location.href='${pageContext.request.contextPath}/admin_productDetail.do?pidx=${productVo.pidx}'" >&nbsp;&nbsp;등록한 상품 상세보기</a>
+		   			</div>
+	   			</td>
+   			</tr> --%>
+   
+			<form action="${pageContext.request.contextPath}/adminProductDelyn.do">
+				<tr>
+					<td id="td_center">${productVo.pidx}</td><td id="td_center">${productVo.p_name }</td><%-- <td>${productVo.p_secondname}</td> --%><td id="td_center">${productVo.p_price }&nbsp;원</td><%-- <td>${productVo.p_unit }</td><td>${productVo.p_delivery }</td>
+					<td>${productVo.p_weight }</td><td>${productVo.p_package }</td><td>${productVo.p_allergy }</td><td>${productVo.p_limitdate }</td>
+					<td>${productVo.p_type }</td><td>${productVo.p_tag }</td> --%><td id="td_center">${productVo.p_admincheck }</td>
+				</tr>
+			</form>
+		</c:forEach>	
+	</table>
 </div>   
-
 <div id="table_button" style="width:962px;">
+<table border="1" style="border-right:0px; border-left:0px; font-size: 14px; border-top: 2px solid #198754;" class="table table-hover">
+<tr>
+<!-- <td></td> -->
+<td id="notice_td1">구분</td>
+<td id="notice_td2">제목</td>
+<td id="notice_td4">작성자</td>
 
+</tr>
+<c:forEach items="${noticeList}" var="noticeVo">
+          
+<tr>
+<%-- <td id="stable_1">${noticeVo.nidx}</td> --%>
+<td id="stable_2">[${noticeVo.n_category}]</td>
+<td id="stable_3"><a href="/spring/notice_detail.do?nidx=${noticeVo.nidx}">${noticeVo.n_title}</a></td>
+<%-- <td id="stable_4">${noticeVo.n_content}</td> --%>
+<td>관리자</td>
+</tr>
+ </c:forEach>
+</table>
 </div>
 </div>
 <%-- <div id="admin_home_inner">     
