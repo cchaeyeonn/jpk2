@@ -6,6 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <link href="resources/css/style_css.css" rel="stylesheet" />
+<link href="resources/css/admin.css" rel="stylesheet" />
 <link rel="stylesheet" href="/resources/demos/style.css">
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 	<title>관리자페이지</title>
@@ -34,56 +35,25 @@ function statistics(){
 </script>
 
 <style>
-#admin_main_inner{
-   margin-left:317px;
-   min-height:1040px;
-   padding-top:178px;
-}
-#admin_center_cate{
-   
-   /* padding-top:200px; */
-   width:194px;
-   float:left;
-}
-#table_button{
+
+/* #table_button{
    margin-left: 155px;
    
 } 
-#admin_1{
-  padding: 5px 0 35px 1px;
-    font-weight: 700;
-    font-size: 26px;
-    line-height: 35px;
-    color: #333;
-    letter-spacing: -1px;
-    margin-top: 35px;
-    
-}
-#admin_sub{
-   border: 1px solid #f2f2f2;
-    border-bottom: 1;
-    FONT-WEIGHT: 100;
-    display: block;
-    overflow: hidden;
-    font-size: 14px;
-    line-height: 20px;
-    letter-spacing: -.3px;
-    padding: 0px -5px 3px 5px;
-    margin-left: -6px;
-    margin-right: 16px;
-    margin-top: -27px;
-}
+
 #open_admin{
    border-bottom: 1px solid #f2f2f2;
     background-color: #fafafa;
     background-size: 6px 11px;
     font-weight: 700;
     color: #198754;
-}
-#admin_button{
+} */
+/* #admin_button{
    border-bottom: 1px solid #f2f2f2;
-}
+} */
 
+
+	/* 관리자페이지 통계에서 사용하는 input,label css */
     input[type="radio"] {display:none;}
     input[type="radio"] + label {background-color:#f5f5f5;color:#999;font-size:14px; cursor:pointer; width:65px; height:42px; padding-top:20px; padding-left:11px;}
     input[type="radio"]:hover + label{background-color:#cdcdcd;color:#999;font-size:14px; cursor:pointer; width:65px; height:42px; padding-top:20px; padding-left:11px;}
@@ -94,9 +64,10 @@ function statistics(){
     .bybox{ display:none;}
     input[id="byclient"]:checked ~ .bytable1 {display:block;}
     input[id="byproduct"]:checked ~ .bytable2 {display:block;}
+    /* 관리자페이지 통계에서 사용하는 input,label css 끝 */
     
     
-.datebutton{
+/* .datebutton{
     width: 50px;
     height: 30px;
     background-color: #dcebdb;
@@ -119,6 +90,8 @@ function statistics(){
 
 #datebutton_cover{
 	margin-bottom:10px;
+	margin-top: 14px;
+
 }
 
 .datebutton_search{
@@ -130,7 +103,7 @@ function statistics(){
     border-radius: 9px;
     font-size: 13px;
     
-}
+} */
 </style>
 
 <body>
@@ -140,23 +113,23 @@ function statistics(){
        
        
 <form name="frmt" action="${pageContext.request.contextPath}/statistics.do" method="post">  
-<div id="admin_main_inner">
-   <div id="admin_center_cate">
-   <div id="admin_1">관리자 페이지</div>
-       <div id="admin_sub">   
-      <input type="button" class="nav-link py-3 px-0 px-lg-3" value="통계" id="admin_button_1" style="background-color: white; border: none;" onclick=statistics()>
-      <a href="${pageContext.request.contextPath}/productAdd.do" class="nav-link py-3 px-0 px-lg-3" id="admin_button">상품등록페이지</a>
-      <a href="${pageContext.request.contextPath}/adminProductList.do" class="nav-link py-3 px-0 px-lg-3" id="admin_button">내가 등록한 상품목록</a>
+      <div id="admin_main_inner">
+      <div id="admin_center_cate">
+   <div id="admin_sub_title">관리자 페이지</div>
+      <div id="admin_sub">
+      <input type="button" class="nav-link py-3 px-0 px-lg-3" value="매출통계" id="admin_button_1" style="background-color: white; border: none;" onclick=statistics()>   
+      <a href="${pageContext.request.contextPath}/productAdd.do" class="nav-link py-3 px-0 px-lg-3" id="admin_button">상품등록</a>
+      <a href="${pageContext.request.contextPath}/adminProductList.do" class="nav-link py-3 px-0 px-lg-3" id="admin_button">등록한 상품목록</a>
       <a href="${pageContext.request.contextPath}/adminOrderList.do" class="nav-link py-3 px-0 px-lg-3" id="admin_button">주문내역</a>     <%--<a href="${pageContext.request.contextPath}/orderListDetail.do" class="nav-link py-3 px-0 px-lg-3" id="admin_button">주문상세페이지</a> --%>
       <a href="${pageContext.request.contextPath}/adminProductCheck.do" class="nav-link py-3 px-0 px-lg-3" id="admin_button">등록심사중인 상품목록</a>
       <a href="${pageContext.request.contextPath}/adminMemberList.do" class="nav-link py-3 px-0 px-lg-3" id="admin_button">등록된 회원 목록</a> 
+      </div>
    </div>
-   </div>
-
 
 <div id="admin_inner">
-<h5 style="margin-top: 39px;">매출 통계 </h5>
-<hr>
+    <h5 style="margin-top: 52.5px;">매출통계</h5>
+
+   <div id="line"></div>
 <div>
 	
 	
@@ -280,8 +253,6 @@ function statistics(){
 	</div>   
 	</div>
 
-<div id="table_button" style="width:962px;">
-</div>
 </div>
 </div>
 

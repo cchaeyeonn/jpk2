@@ -59,7 +59,7 @@ input {
 	border: none;
 	outline: none;
 	box-shadow: none;
-	width: 100%;
+	/* width: 100%; */
 	padding: 0px 2px;
 	font-family: 'Poppins', sans-serif
 }
