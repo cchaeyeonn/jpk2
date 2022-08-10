@@ -7,7 +7,7 @@
 }
 #admin_center_cate{
    
-   /* padding-top:200px; */
+   
    width:194px;
    float:left;
 }
@@ -37,6 +37,10 @@
     margin-top: -27px;
 }
 
+#table_button{
+   margin-left: 155px;
+} 
+
 #line{
     display: flex;
     flex-direction: row;
@@ -61,6 +65,44 @@
    border-bottom: 1px solid #f2f2f2;
 }
 
+/* admin_orderList , admin_orderListDetail , super adminCheckList 에서 사용 */
+
+#orderlist_1{
+    display: flex;
+    padding: 17px 0px 13px;
+    -webkit-box-pack: justify;
+    justify-content: flex-end;
+    border-bottom: 1px solid rgb(221, 223, 225);
+    float: right;
+    width: 100%;
+    margin-top:12px;
+
+}
+
+/* admin_orderList , admin_orderListDetail , super adminCheckList 에서 사용 끝*/
+
+/* admin_buyerList , admin_productList , super_adminMemberList 에서 사용 */
+
+#orderlist_3{
+    display: flex;
+    padding: 17px 0px 13px;
+    -webkit-box-pack: justify;
+    justify-content: flex-end;
+    border-bottom: 1px solid rgb(221, 223, 225);
+    float: right;
+    width: 100%;
+}
+
+/* admin_buyerList , admin_productList , super_adminMemberList 에서 사용 끝 */
+
+
+/* admin_buyerList css */
+
+#product_t{
+width:95%
+}
+
+/* admin_buyerList css */
 
 
 /* statistics 통계 css */
@@ -105,12 +147,6 @@
 /* statistics 통계 css 끝 */
 
 /* admin product add 상품등록 css */
-#table_button{
-   margin-left: 155px;
-   width:962px; 
-   min-height:1186px;
-   
-} 
 
 #open_admin{
    border-bottom: 1px solid #f2f2f2;
@@ -164,17 +200,6 @@
 	width:120px;
 }
 
-#orderlist_1{
-    display: flex;
-    padding: 17px 0px 13px;
-    -webkit-box-pack: justify;
-    justify-content: flex-end;
-    border-bottom: 1px solid rgb(221, 223, 225);
-    float: right;
-    width: 100%;
-    margin-top:12px;
-
-}
 #order_date{
 font-size: 16px;
     font-weight: 500;

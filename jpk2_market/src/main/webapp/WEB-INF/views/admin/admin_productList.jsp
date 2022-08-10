@@ -22,15 +22,7 @@
 	width: 103px;
     border-bottom: 2px solid #b3b3b3;
 }
-#orderlist_1{
-    display: flex;
-    padding: 17px 0px 13px;
-    -webkit-box-pack: justify;
-    justify-content: flex-end;
-    border-bottom: 1px solid rgb(221, 223, 225);
-    float: right;
-    width: 100%;
-}
+
 
 #line{
     display: flex;
@@ -106,7 +98,7 @@ function statistics(){
 			<c:forEach var="productVo" items="${productList}">
 			<%-- <tr>
 				<td colspan="4">
-					<div id="orderlist_1">
+					<div id="orderlist_3">
 		   				<a style="cursor:pointer; margin-top:20px;"onClick="location.href='${pageContext.request.contextPath}/admin_productDetail.do?pidx=${productVo.pidx}'" ><b>등록한 상품 상세보기</b></a>
 						<a id="inner_detail_button" style="cursor:pointer; margin-top:20px;"onClick="location.href='${pageContext.request.contextPath}/adminBuyerList.do?pidx=${productVo.pidx}'" >상품을 구매한 사람들</a>
 		   				<a id="inner_detail_button" style="cursor:pointer; margin-top:20px;"onClick="location.href='${pageContext.request.contextPath}/admin_productDetail.do?pidx=${productVo.pidx}'" >&nbsp;&nbsp;등록한 상품 상세보기</a>

@@ -11,27 +11,7 @@
 
 <title>구매자 리스트</title>
 
-<style>
 
-#table_button{
-   margin-left: 155px;
-   
-} 
-
-#orderlist_1{
-    display: flex;
-    padding: 17px 0px 13px;
-    -webkit-box-pack: justify;
-    justify-content: flex-end;
-    border-bottom: 1px solid rgb(221, 223, 225);
-    float: right;
-    width: 100%;
-}
-
-#product_t{
-width:95%
-}
-</style>
 
 <script>
 function statistics(){
@@ -83,7 +63,7 @@ function statistics(){
 			<c:forEach var="productVo" items="${productList}">
 			<tr>
 				<td colspan="13">
-					<div id="orderlist_1">
+					<div id="orderlist_3">
 		   				<a id="inner_detail_button" style="cursor:pointer; margin-top:20px;"onClick="location.href='${pageContext.request.contextPath}/adminBuyerDetail.do?pidx=${productVo.pidx}&midx=${productVo.midx}&order_id=${productVo.order_id}'" >&nbsp;&nbsp;주문내용 상세보기</a>
 		   			</div>
 	   			</td>

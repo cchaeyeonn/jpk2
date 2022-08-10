@@ -21,16 +21,7 @@
     align-items: center;
     border-bottom: 2px solid #198754;
 }
-#orderlist_1{
-    display: flex;
-    padding: 17px 0px 13px;
-    -webkit-box-pack: justify;
-    justify-content: flex-end;
-    border-bottom: 1px solid rgb(221, 223, 225);
-    float: right;
-    width: 100%;
 
-}
 
 </style>
 
@@ -89,7 +80,7 @@ function statistics(){
 		</tr>
 			<c:forEach var="memberVo" items="${memberList}">
 			   <tr>
-			   <td colspan="13"><div id="orderlist_1">
+			   <td colspan="13"><div id="orderlist_3">
    </div></td>
    </tr>
    
