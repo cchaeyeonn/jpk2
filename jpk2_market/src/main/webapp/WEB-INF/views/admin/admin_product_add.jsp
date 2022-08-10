@@ -10,6 +10,14 @@
 <title>제품 추가 페이지</title>
 
 <style>
+
+#apa_table_button{
+   margin-left: 155px;
+   width:962px; 
+   min-height:1186px;
+   
+} 
+
 /* 
 #table_button{
    margin-left: 155px;
@@ -140,7 +148,7 @@ function statistics(){
 	    <h5 style="margin-top: 52.5px;">상품등록</h5>
 
    <div id="line"></div>
-		<div id="table_button">
+		<div id="apa_table_button">
 			<form name="frm2">
 			<table>
 				<div id="product">
