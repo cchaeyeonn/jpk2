@@ -13,31 +13,31 @@
 
 <style>
 
-#table_button{
+/* #table_button{
    margin-left: 155px;
    
-} 
+}  */
 
-#table_title{
+/* #apl_table_title{
 	width: 103px;
     border-bottom: 2px solid #b3b3b3;
 }
+ */
 
-
-#line{
+/* #apl_line{
     display: flex;
     flex-direction: row;
     width: 59%;
     -webkit-box-align: center;
     align-items: center;
     border-bottom: 2px solid #198754;
-}
-#product_t{
+} */
+/* #product_t{
 width:95%
-}
-#td_center{
+} */
+/* #td_center{
 padding-top: 17px;
-}
+} */
 </style>
 <script>
 function statistics(){
@@ -73,16 +73,16 @@ function statistics(){
 
      <h5 style="margin-top: 52px;">등록한 상품 목록</h5>
 
-   <div id="line"></div>
+   <div id="apl_line"></div>
 	
 	<div id="table_button"  style="width:983px; margin-top:5px; text-align:center; font-size: 14px;">
 
 	<table class="table" id="product_t">
 		<tr>
-			<td id="table_title">번호</td>
-			<td id="table_title">이름</td>
+			<td id="apl_table_title">번호</td>
+			<td id="apl_table_title">이름</td>
 			<!-- <th id="table_title">부제목</th> -->
-			<td id="table_title">가격</td>
+			<td id="apl_table_title">가격</td>
 			<!-- <th id="table_title">판매단위</th>
 			<th id="table_title">배송</th>
 			<th id="table_title">용량</th>
@@ -91,9 +91,9 @@ function statistics(){
 			<th id="table_title">유통기한</th>
 			<th id="table_title">타입</th>
 			<th id="table_title">태그</th> -->
-			<td id="table_title">승인 여부</td>
-			<td id="table_title"></td>
-			<td id="table_title"></td>
+			<td id="apl_table_title">승인 여부</td>
+			<td id="apl_table_title"></td>
+			<td id="apl_table_title"></td>
 		</tr>
 			<c:forEach var="productVo" items="${productList}">
 			<%-- <tr>

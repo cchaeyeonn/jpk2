@@ -6,54 +6,90 @@
 <head>
 <meta charset="UTF-8">
 <link href="resources/css/style_css.css" rel="stylesheet" />
-<link href="resources/css/admin.css" rel="stylesheet" />
+<!--  <link href="resources/css/admin.css" rel="stylesheet" />  -->
 <link rel="stylesheet" href="/resources/demos/style.css">
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-	<title>관리자페이지</title>
+   <title>관리자페이지</title>
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script></script>
-<script src="${pageContext.request.contextPath}/resources/js/statistics.js "></script>	
+<script src="${pageContext.request.contextPath}/resources/js/statistics.js "></script>   
 </head>
 <script>
 function order(){
-	var frm = document.frm;
-	frm.action="${pageContext.request.contextPath}/orderListDetail.do";
-	frm.method="POST";
-	frm.submit();
-	return;
+   var frm = document.frm;
+   frm.action="${pageContext.request.contextPath}/orderListDetail.do";
+   frm.method="POST";
+   frm.submit();
+   return;
 }
 </script>
 <script>
 function statistics(){
-	var frm = document.frm;
-	frm.action="${pageContext.request.contextPath}/statistics.do";
-	frm.method="POST";
-	frm.submit();
-	return;
+   var frm = document.frm;
+   frm.action="${pageContext.request.contextPath}/statistics.do";
+   frm.method="POST";
+   frm.submit();
+   return;
 }
 </script>
 
 <style>
-
-/* #table_button{
-   margin-left: 155px;
+ #admin_main_inner{
+   margin-left:317px;
+   min-height:1040px;
+   padding-top:178px;
+} 
+ #admin_center_cate{
    
+   
+   width:194px;
+   float:left;
 } 
 
-#open_admin{
+ #admin_sub_title{
+  padding: 5px 0 35px 1px;
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 35px;
+    color: #333;
+    letter-spacing: -1px;
+    margin-top: 35px;
+    
+}
+#admin_sub{
+   border: 1px solid #f2f2f2;
+    border-bottom: 1;
+    FONT-WEIGHT: 100;
+    display: block;
+    overflow: hidden;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: -.3px;
+    padding: 0px -5px 3px 5px;
+    margin-left: -6px;
+    margin-right: 16px;
+    margin-top: -27px;
+}
+ 
+ #table_button{
+   margin-left: 155px;
+   
+}  
+
+ #open_admin{
    border-bottom: 1px solid #f2f2f2;
     background-color: #fafafa;
     background-size: 6px 11px;
     font-weight: 700;
     color: #198754;
-} */
-/* #admin_button{
+} 
+ #admin_button{
    border-bottom: 1px solid #f2f2f2;
-} */
+}  
 
 
-	/* 관리자페이지 통계에서 사용하는 input,label css */
+   /* 관리자페이지 통계에서 사용하는 input,label css */
     input[type="radio"] {display:none;}
     input[type="radio"] + label {background-color:#f5f5f5;color:#999;font-size:14px; cursor:pointer; width:65px; height:42px; padding-top:20px; padding-left:11px;}
     input[type="radio"]:hover + label{background-color:#cdcdcd;color:#999;font-size:14px; cursor:pointer; width:65px; height:42px; padding-top:20px; padding-left:11px;}
@@ -66,8 +102,8 @@ function statistics(){
     input[id="byproduct"]:checked ~ .bytable2 {display:block;}
     /* 관리자페이지 통계에서 사용하는 input,label css 끝 */
     
-    
-/* .datebutton{
+     
+ .datebutton{
     width: 50px;
     height: 30px;
     background-color: #dcebdb;
@@ -77,25 +113,25 @@ function statistics(){
 }
 
 #datepicker1{
-	width: 171px !important;
+   width: 171px !important;
     display: inline;
     height: 32px;
 }
 
 #datepicker2{
-	width: 171px !important;
+   width: 171px !important;
     display: inline;
     height: 32px;
 }
 
 #datebutton_cover{
-	margin-bottom:10px;
-	margin-top: 14px;
+   margin-bottom:10px;
+   margin-top: 14px;
 
 }
 
 .datebutton_search{
-	background-color: white;
+   background-color: white;
     border: 1px solid #8b8686;
     width: 50px;
     height: 30px;
@@ -103,7 +139,7 @@ function statistics(){
     border-radius: 9px;
     font-size: 13px;
     
-} */
+}  
 </style>
 
 <body>
@@ -131,8 +167,8 @@ function statistics(){
 
    <div id="line"></div>
 <div>
-	
-	
+   
+   
 <div id="datebutton_cover">
   <button name="filterDate" type="button" id="datefilter1" class="datebutton" value="1">일주일</button>
   <button name="filterDate" type="button" id="datefilter2" class="datebutton" value="2">3개월</button>
@@ -150,12 +186,12 @@ function statistics(){
 <br>
 
 <div id="by_inner">
-	<div class="by_scon">
-		<input type="radio" name="bymenu" id="byclient" checked>
-		<label style="border-top-left-radius: 20px;" for="byclient">고객별</label>
-		<input type="radio" name="bymenu" id="byproduct">
-		<label style="border-top-right-radius: 20px;" for="byproduct">상품별</label>
-	
+   <div class="by_scon">
+      <input type="radio" name="bymenu" id="byclient" checked>
+      <label style="border-top-left-radius: 20px;" for="byclient">고객별</label>
+      <input type="radio" name="bymenu" id="byproduct">
+      <label style="border-top-right-radius: 20px;" for="byproduct">상품별</label>
+   
 
 
 <input type="hidden" id="begin" value="${adminVo.begin_date}">
@@ -173,20 +209,20 @@ function statistics(){
       </tr>
       
       <c:forEach items="${statisticsList2}" var="statistics2Vo" varStatus="status">  
-      	
+         
     
-    	<tr id="target">
-   			<td id="td1">${statistics2Vo.num}</td>
-   			<td id="td2">
-    			${statistics2Vo.member_name }
-    		</td>
-   	 		<td id="td3">
-    			${statistics2Vo.count }
-    		</td>
-   			<td id="td4">${statistics2Vo.sales }</td>
-    		<td id="td5"><span><fmt:formatNumber value="${statistics2Vo.sales/statistics2Vo.count}" type="number" pattern="#.##"/>원</span></td>
-   		</tr>
-   		
+       <tr id="target">
+            <td id="td1">${statistics2Vo.num}</td>
+            <td id="td2">
+             ${statistics2Vo.member_name }
+          </td>
+             <td id="td3">
+             ${statistics2Vo.count }
+          </td>
+            <td id="td4">${statistics2Vo.sales }</td>
+          <td id="td5"><span><fmt:formatNumber value="${statistics2Vo.sales/statistics2Vo.count}" type="number" pattern="#.##"/>원</span></td>
+         </tr>
+         
      </c:forEach>  
     </table>
     </div>
@@ -204,54 +240,54 @@ function statistics(){
       </tr>
       
     <c:forEach items="${statisticsList}" var="statisticsVo" varStatus="status">  
-      	<script>
+         <script>
 
-      	$(function(){
- 			
-      		 let sum = 0;
-      		 let sales =0;
-      		 let ratio = 0;
-      	    $('input[name*="sales"]').each(function(){
+         $(function(){
+          
+             let sum = 0;
+             let sales =0;
+             let ratio = 0;
+             $('input[name*="sales"]').each(function(){
   
-      	        if(!isNaN($(this).val())){
+                 if(!isNaN($(this).val())){
   
-      	            sum += parseInt($(this).val());
-      	            sales = ${statisticsVo.sales}
-      	            ratio = sales/sum*100;
-      	            ratio = ratio.toFixed(2);
-      	        }
-      	    });
-      	    
+                     sum += parseInt($(this).val());
+                     sales = ${statisticsVo.sales}
+                     ratio = sales/sum*100;
+                     ratio = ratio.toFixed(2);
+                 }
+             });
+             
     
-      	    $("#${statisticsVo.num}_ratio").text(ratio+"%");
+             $("#${statisticsVo.num}_ratio").text(ratio+"%");
     
      
-      		
-      		
-      	
-      	})
-      	</script>
-    	<tr id="target">
-   			<td id="td1">${statisticsVo.num}</td>
-   			<td id="td2">
-    			${statisticsVo.p_name }
-    		</td>
-   	 		<td id="td3">
-    			${statisticsVo.p_amount }
-    		</td>
-   			<td id="td4">${statisticsVo.p_price }</td>
-    		<td id="td5">
-    		<span>${statisticsVo.sales}원</span>
-    		<input name="${statisticsVo.num}_sales" type="hidden" value="${statisticsVo.sales}">
-    		</td>
-    		<td id="td6"><span id="${statisticsVo.num}_ratio"></span></td>
-   		</tr>
-   		
+            
+            
+         
+         })
+         </script>
+       <tr id="target">
+            <td id="td1">${statisticsVo.num}</td>
+            <td id="td2">
+             ${statisticsVo.p_name }
+          </td>
+             <td id="td3">
+             ${statisticsVo.p_amount }
+          </td>
+            <td id="td4">${statisticsVo.p_price }</td>
+          <td id="td5">
+          <span>${statisticsVo.sales}원</span>
+          <input name="${statisticsVo.num}_sales" type="hidden" value="${statisticsVo.sales}">
+          </td>
+          <td id="td6"><span id="${statisticsVo.num}_ratio"></span></td>
+         </tr>
+         
      </c:forEach> 
     </table>
     </div>
-	</div>   
-	</div>
+   </div>   
+   </div>
 
 </div>
 </div>
@@ -267,9 +303,9 @@ function statistics(){
 </div>  --%>
 
 <!--
-	<a href="/spring/memberList.do">회원목록보기</a><br> 
-	<a href="/spring/index.do">메인페이지</a><br>
-	<a href="/spring/productAdd.do">상품등록페이지</a>-->
+   <a href="/spring/memberList.do">회원목록보기</a><br> 
+   <a href="/spring/index.do">메인페이지</a><br>
+   <a href="/spring/productAdd.do">상품등록페이지</a>-->
 </div>
 </form>     
 <!-- 푸터 연결 -->
