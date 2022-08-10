@@ -269,7 +269,8 @@ input[id="del-chk3"]:checked + .del-chk3::before{
          
          <tr>
          <td></td>
-         <td><input type="submit" class="btn btn-outline-success" id="trigger"  value="가입하기" style="margin-left:117px; margin-top:22px; width:353px;"></td>
+         <td><input type="submit" class="btn btn-outline-success" id="trigger"  value="가입하기" style="margin-left:117px; margin-top:22px; width:353px;">
+         <input type="image" src="resources/img/loadingbar.gif" id="toloading" style="border:1px solid white; display:none; margin-left:135px; margin-top:22px;  width:100px; pointer-events: none;"class="btn btn-outline-success"></td>
          
          
          </tr>

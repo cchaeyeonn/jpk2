@@ -65,8 +65,7 @@
 				
 				if(member_id == ""){
 					 result = "아이디를 입력해주세요";
-	     			  $("#result_checkId").html(result).css("color", "red");
-       			      $("#member_id").on("focus",true);       			      
+	     			  $("#result_checkId").html(result).css("color", "red");    			      
 					  return false;
 					
 				}
@@ -100,7 +99,6 @@
 				if(member_email == ""){
 					 result = "이메일을 입력해주세요";
 	     			  $("#result_checkEmail").html(result).css("color", "red");
-       			      $("#member_email").on("focus",true);
 					  return false;
 					
 				}
@@ -149,14 +147,12 @@
 		  if(member_id == ""){
 					 result = "아이디를 입력해주세요";
 	     			  $("#result_checkId").html(result).css("color", "red");
-       			      $("#member_id").on("focus",true);
 					  return false;
 					
 				}else if(!getMail.test($("#member_id").val())){
            result = "이메일 형식으로 입력하세요";
 	       $("#result_checkId").html(result).css("color", "red");
 	       $("#member_id").val("");
-           $("#member_id").on("focus",true);
            return false;
           }
           });
@@ -168,7 +164,6 @@
 	      if($("#member_password1").val() == ""){
            result = "비밀번호를 입력하세요";
 	       $("#result_password1").html(result).css("color", "red");
-           $("#member_password1").on("focus",true);
            return false;
              }
             });
@@ -179,7 +174,6 @@
 	       $("#result_password1").html(result).css("color", "red");
 	       $("#member_password1").val("");
 	       $("#member_password2").val("");
-           $("#member_password1").on("focus",true);
            }
            
           else if(reg.test($("#member_password1").val())){
@@ -202,7 +196,6 @@
              result = "아이디와 비밀번호가 같습니다";
 	       $("#result_password1").html(result).css("color", "red");
 	       $("#member_password1").val("");
-           $("#member_password1").on("focus",true);
                      return false;
            }
            });
@@ -213,7 +206,6 @@
           if($("#member_password2").val() == ""){
            result = "비밀번호 확인란을 입력해주세요";
 	       $("#result_password2").html(result).css("color", "red");
-           $("#member_password2").on("focus",true);
            return false;
              }
              });
@@ -225,7 +217,6 @@
 	          $("#result_password2").html(result).css("color", "red");
               $("#member_password1").val("");
               $("#member_password2").val("");
-              $("#member_password1").on("focus",true);
                }
 		   else if($("#member_password1").val() == $("#member_password2").val()){
 			   result = "비밀번호가 일치합니다.";
@@ -241,7 +232,6 @@
               result = "이름을 입력해주세요";
 	          $("#result_name").html(result).css("color", "red");
 	          $("#member_name").val("");
-              $("#member_name").on("focus",true);
           }
 			else if($("#member_name").val() != ""){
 				result = "이름이 참 멋지시네요.";
@@ -254,7 +244,6 @@
               result = "이름을 입력해주세요";
 	          $("#result_name").html(result).css("color", "red");
 	          $("#member_name").val("");
-              $("#member_name").on("focus",true);
               return false;
           }
 			});
@@ -263,14 +252,12 @@
 			if(member_email == ""){
 					 result = "이메일을 입력해주세요";
 	     			  $("#result_checkEmail").html(result).css("color", "red");
-       			      $("#member_email").on("focus",true);
 					  return false;
 					
 				}else if(!getMail.test($("#member_email").val())){
            result = "이메일 형식으로 입력하세요";
 	       $("#result_checkEmail").html(result).css("color", "red");
 	       $("#member_email").val("");
-           $("#member_email").on("focus",true);
            return false;
           }
           });
@@ -279,7 +266,7 @@
 			if($("#member_phone").val() == ""){
               result = "핸드폰 번호를 입력해주세요";
 	          $("#result_phone").html(result).css("color", "red");
-              $("#member_phone").on("focus",true);
+
               return false;
           }
           });
@@ -323,7 +310,7 @@
                 {
                     result = "유효하지 않은 전화번호 입니다.";
 	                $("#result_phone").html(result).css("color", "red");
-                    $("#member_phone").on("focus",true);
+
                 }
             }
             
@@ -333,7 +320,7 @@
                 result = "유효하지 않은 전화번호 입니다.";
 	                $("#result_phone").html(result).css("color", "red");
 	                $("#member_phone").val("");
-                    $("#member_phone").on("focus",true);
+
               }
             
             
@@ -344,7 +331,7 @@
           	if($("#member_phone").val() == ""){
               result = "핸드폰 번호를 입력해주세요";
 	          $("#result_phone").html(result).css("color", "red");
-              $("#member_phone").on("focus",true);
+
               return false;
           }
           });
@@ -443,17 +430,18 @@
 		   result = "";
 	          $("#result_term").html(result).css("color", "red"); 
 		  	//로딩중 버튼이 사라짐
-	   $(document).on('click','#trigger',function(){if($("input:checked[Name='member_termall']").is(":checked"), $("#member_birth").val() != "",
+	   $(document).on('click','#trigger',function(){if($("input:checked[Name='member_termall']").is(":checked",true), !getMail.test($("#member_email").val()), $("#member_birth").val() != "",
          $("#member_phone").val()!="", $("#member_addr_1").val() != "", $("#member_addr_2").val() != "",
          $("#member_email").val() != "", $("#member_name").val() != "", $("#member_password1").val() != "",
          $("#member_password2").val() != "",$("#member_id").val() != ""){
          $("#trigger").hide();
+         $("#toloading").show();
          }});
-		
 		
 	});
 
 
+		
 
 
 	      
