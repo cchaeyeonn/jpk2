@@ -85,13 +85,52 @@ function statistics(){
 }
 
     input[type="radio"] {display:none;}
-    input[type="radio"] + label {display:inline-block;padding:20px;background:#f5f5f5;color:#999;font-size:14px; cursor:pointer;}
-    input[type="radio"]:checked + label {background:#e1e1e1;color:#000;}
+    input[type="radio"] + label {background-color:#f5f5f5;color:#999;font-size:14px; cursor:pointer; width:65px; height:42px; padding-top:20px; padding-left:11px;}
+    input[type="radio"]:hover + label{background-color:#cdcdcd;color:#999;font-size:14px; cursor:pointer; width:65px; height:42px; padding-top:20px; padding-left:11px;}
+    
+    input[type="radio"]:checked + label {background-color:#dcebdbbf;color:#000; width:65px; height:42px; padding-top:20px; padding-left:11px;}
+    
     
     .bybox{ display:none;}
     input[id="byclient"]:checked ~ .bytable1 {display:block;}
     input[id="byproduct"]:checked ~ .bytable2 {display:block;}
     
+    
+.datebutton{
+    width: 50px;
+    height: 30px;
+    background-color: #dcebdb;
+    border: 1px solid white;
+    border-radius: 9px;
+    font-size: 13px;
+}
+
+#datepicker1{
+	width: 171px !important;
+    display: inline;
+    height: 32px;
+}
+
+#datepicker2{
+	width: 171px !important;
+    display: inline;
+    height: 32px;
+}
+
+#datebutton_cover{
+	margin-bottom:10px;
+}
+
+.datebutton_search{
+	background-color: white;
+    border: 1px solid #8b8686;
+    width: 50px;
+    height: 30px;
+    background-color: #dcebdb;
+    border-radius: 9px;
+    font-size: 13px;
+    
+}
 </style>
 
 <body>
@@ -121,23 +160,28 @@ function statistics(){
 <div>
 	
 	
-  <button name="filterDate" type="button" id="datefilter1" value="1">일주일</button>
-  <button name="filterDate" type="button" id="datefilter2" value="2">3개월</button>
-  <button name="filterDate" type="button" id="datefilter3" value="3">6개월</button>
-  <button name="filterDate" type="button" id="datefilter4"  value="4">1년</button>
+<div id="datebutton_cover">
+  <button name="filterDate" type="button" id="datefilter1" class="datebutton" value="1">일주일</button>
+  <button name="filterDate" type="button" id="datefilter2" class="datebutton" value="2">3개월</button>
+  <button name="filterDate" type="button" id="datefilter3" class="datebutton" value="3">6개월</button>
+  <button name="filterDate" type="button" id="datefilter4" class="datebutton" value="4">1년</button>
+</div>
   
 </div>
-<input type="text" id="datepicker1" name="begin_date"> ~
-<input type="text" id="datepicker2" name="end_date">
-<input type="submit" value="조회">
+<input type="text" id="datepicker1" name="begin_date" class="form-control"> ~
+<input type="text" id="datepicker2" name="end_date" class="form-control">
+<input type="submit" style="background-color: white; border: 1px solid #8b8686;" class="datebutton_search" value="조회">
 
 <br>
+
+<br>
+
 <div id="by_inner">
 	<div class="by_scon">
 		<input type="radio" name="bymenu" id="byclient" checked>
-		<label for="byclient">고객별</label>
+		<label style="border-top-left-radius: 20px;" for="byclient">고객별</label>
 		<input type="radio" name="bymenu" id="byproduct">
-		<label for="byproduct">상품별</label>
+		<label style="border-top-right-radius: 20px;" for="byproduct">상품별</label>
 	
 
 
