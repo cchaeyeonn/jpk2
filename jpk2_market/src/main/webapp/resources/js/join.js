@@ -66,7 +66,7 @@
 				if(member_id == ""){
 					 result = "아이디를 입력해주세요";
 	     			  $("#result_checkId").html(result).css("color", "red");
-       			      $("#member_id").focus();
+       			      $("#member_id").focus();       			      
 					  return false;
 					
 				}
@@ -364,8 +364,15 @@
               return false;
           }
           });
+          
+          $("#member_addr_2").focusout(function(){
+		   if($("#member_addr_2").val() != ""){
+				result = "";
+				$("#result_addr").html(result).css("color", "green");
+			}return false;
 		   
 		   
+		  }); 
             //성별 유효성 검사
             $(document).on('click','#trigger',function(){
 		   	if($("input[name=member_gender]:radio:checked").length < 1){
