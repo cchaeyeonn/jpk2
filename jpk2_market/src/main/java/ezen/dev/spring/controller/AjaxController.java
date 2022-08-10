@@ -57,20 +57,25 @@ public class AjaxController {
 	@PostMapping("/checkId.do")
 	public String checkId(@RequestParam("member_id") String id) {
 		
-		System.out.println("id: "+id);
+		System.out.println("id:"+id);
 		
 		String result="N"; 
+		
+		if(id == null) {
+			result="N"; 
+			
+		}else {
 		
 		int flag = ajaxService.checkId(id);
 		
 		if(flag == 1) result = "Y";
-		
+		}
 		return result;
 	}
 	@PostMapping("/checkEmail.do")
 	public String checkEmail(@RequestParam("member_email") String email) {
 		
-		System.out.println("email: "+email);
+		System.out.println("email:"+email);
 		
 		String result="N";
 		
