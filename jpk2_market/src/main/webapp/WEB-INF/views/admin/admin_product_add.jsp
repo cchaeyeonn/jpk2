@@ -121,9 +121,9 @@ function statistics(){
 		alert("상품중량/용량을 입력해주세요");
 		fm.p_weight.focus();
 		return false;
-	}else if(fm.p_allergy.value==""){
+	}else if(fm.p_delivery.value==""){
 		alert("상품의 알레르기 정보를 입력해주세요");
-		fm.p_allergy.focus();
+		fm.p_delivery.focus();
 		return false;
 	}else if(fm.p_limitdate.value==""){
 		alert("상품의 유통기한 정보를 입력해주세요");
@@ -200,7 +200,9 @@ function statistics(){
 						<br>
 						<input type="number" class="form-control" id="input_half"  name="p_weight1">
 						<select name="p_weight2">
+							<option value="G" selected>G</option>
 							<option value="KG">KG</option>
+							<option value="mL">mL</option>
 							<option value="L">L</option>
 						</select>
 						<br><br>
@@ -209,13 +211,13 @@ function statistics(){
 						<select name="p_delivery">
 							<option value="새벽배송">새벽배송</option>
 							<option value="낮배송">낮배송</option>
-							<option value="일반택배">일반택배</option>
+							<option value="일반택배" selected>일반택배</option>
 						</select>
 						<br><br>
 						
 						포장 타입
 						<select name="p_package">
-							<option value="박스">박스</option>
+							<option value="박스" selected>박스</option>
 							<option value="비닐팩">비닐팩</option>
 							<option value="신선포장">신선포장</option>
 						</select>
