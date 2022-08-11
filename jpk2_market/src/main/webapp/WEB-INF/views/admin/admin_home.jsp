@@ -51,8 +51,8 @@ function statistics(){
    </div>
 
 
-<div id="admin_inner">
-    <table border="1" style="border-right:0px; border-left:0px; font-size: 14px; border-top: 2px solid #198754;" class="table table-hover">
+<div id="admin_inner" style="height:33%; margin-top:50px; width:70%;">
+    <table border="1" style="border-right:0px; border-left:0px; font-size: 14px; border-top: 2px solid #198754; float:left; width:39%; height:50%;" class="table table-hover">
       <tr>
          <td>번호</td>
          <td>상품명</td>
@@ -60,7 +60,7 @@ function statistics(){
          <td>단가</td>
          <td>매출</td>
       </tr>
-    <c:forEach items="${statisticsList}" var="statisticsVo" varStatus="status"  begin="1" end="5">  
+    <c:forEach items="${statisticsList}" var="statisticsVo" varStatus="status"  begin="0" end="4">  
          <script>
 
          $(function(){
@@ -82,15 +82,15 @@ function statistics(){
          })
          </script>
        <tr id="target">
-            <td id="td1">${statisticsVo.num}</td>
-            <td id="td2">
+            <td id="td_center">${statisticsVo.num}</td>
+            <td id="td_center">
              ${statisticsVo.p_name }
           </td>
-             <td id="td3">
+             <td id="td_center">
              ${statisticsVo.p_amount }
           </td>
-            <td id="td4">${statisticsVo.p_price }</td>
-          <td id="td5">
+            <td id="td_center">${statisticsVo.p_price }</td>
+          <td id="td_center">
           <span>${statisticsVo.sales}원</span>
           <input name="${statisticsVo.num}_sales" type="hidden" value="${statisticsVo.sales}" >
           </td>
@@ -98,7 +98,7 @@ function statistics(){
          
      </c:forEach> 
     </table>
-   <table class="table" id="product_t">
+   <table class="table" id="product_t" style="border-right:0px; border-left:0px; font-size: 14px; border-top: 2px solid #198754; width:39%; height:50%; float:right;">
       <tr>
          <td id="table_title">번호</td>
          <td id="table_title">이름</td>
@@ -114,7 +114,7 @@ function statistics(){
          <th id="table_title">태그</th> -->
          <td id="table_title">승인 여부</td>
       </tr>
-         <c:forEach var="productVo" items="${productList}" begin="1" end="5">
+         <c:forEach var="productVo" items="${productList}" begin="0" end="4">
          <%-- <tr>
             <td colspan="4">
                <div id="orderlist_1">
@@ -135,8 +135,8 @@ function statistics(){
       </c:forEach>   
    </table>
 </div>   
-<div id="table_button" style="width:962px;">
-<table border="1" style="border-right:0px; border-left:0px; font-size: 14px; border-top: 2px solid #198754;" class="table table-hover">
+<div id="table_button" style="width:80%;">
+<table border="1" style="border-right:0px; border-left:0px; font-size: 14px; border-top: 2px solid #198754; width:900px;" class="table table-hover">
 <tr>
 <!-- <td></td> -->
 <td id="notice_td1">구분</td>
@@ -144,7 +144,7 @@ function statistics(){
 <td id="notice_td4">작성자</td>
 
 </tr>
-<c:forEach items="${noticeList}" var="noticeVo" begin="1" end="5">
+<c:forEach items="${noticeList}" var="noticeVo" begin="0" end="4">
           
 <tr>
 <%-- <td id="stable_1">${noticeVo.nidx}</td> --%>
