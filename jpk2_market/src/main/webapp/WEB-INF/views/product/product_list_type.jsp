@@ -50,15 +50,17 @@
 <script>
 $(function(){
 	if("${p_type}"=="vegetable_fruit"){
-		$("#p_list_title").text("야채/과일");
+		$("#p_list_title").text("채소/과일");
 	}else if("${p_type}"=="meat"){
 		$("#p_list_title").text("정육");
 	}else if("${p_type}"=="fish_seafood"){
-		$("#p_list_title").text("생선/해산물");
+		$("#p_list_title").text("수산/해산물");
 	}else if("${p_type}"=="bakery"){
 		$("#p_list_title").text("베이커리");
 	}else if("${p_type}"=="processedfood"){
-		$("#p_list_title").text("가공식품");
+		$("#p_list_title").text("샐러드/간편식");
+	}else if("${p_type}"=="snacks"){
+		$("#p_list_title").text("과자");
 	}else{
 		$("#p_list_title").text("기타");
 	}
