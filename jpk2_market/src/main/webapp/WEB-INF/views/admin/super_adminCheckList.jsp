@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>    
 <!DOCTYPE html>
 <html>
 <head>
@@ -118,7 +119,7 @@ function statistics(){
 				<td>${productVo.pidx}</td>
 				<td>${productVo.p_name }</td>
 				<td>${productVo.p_secondname}</td>
-				<td>${productVo.p_price }&nbsp;원</td>
+				<td><fmt:formatNumber value="${productVo.p_price }" pattern="#,###"/>&nbsp;원</td>
 				<td>${productVo.p_unit }</td>
 				<td>${productVo.p_delivery }</td>
 				<td>${productVo.p_weight }</td>

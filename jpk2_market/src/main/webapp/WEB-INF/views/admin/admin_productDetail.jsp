@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>    
 <!DOCTYPE html>
 <html>
 <head>
@@ -133,11 +134,11 @@ $(function(){
 		<h3>${productVo.p_name}</h3>
 		<div id="product_subject">${productVo.p_secondname}</div>
 		
-		<div id="product_price"><h3>${productVo.p_price}원</h3></div>
+		<div id="product_price"><h3><fmt:formatNumber value="${productVo.p_price}" pattern="#,###"/>원</h3></div>
 		<hr class="pd_hr">
 		<dl>
 		<dt class="pd_dt">판매 단위</dt>
-		<dd class="pd_dd">${productVo.p_unit}</dd>
+		<dd class="pd_dd"><fmt:formatNumber value="${productVo.p_unit}" pattern="#,###"/></dd>
 		<dt class="pd_dt">중량/용량</dt>
 		<dd>${productVo.p_weight}</dd>
 		</dl>

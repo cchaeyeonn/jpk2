@@ -3,6 +3,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
    pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <head>
 
 <style>
@@ -198,12 +199,12 @@ font-size: 16px;
 
       <dl id="dl">
       <dt id="dt2">상품금액</dt>
-      <dd id="dd2">${cartVo.p_price }&nbsp;원</dd>
+      <dd id="dd2"><fmt:formatNumber value="${cartVo.p_price }" pattern="#,###"/>&nbsp;원</dd>
       </dl>
       
       <dl id="dl">
       <dt id="dt2">수량</dt>
-      <dd id="dd2">${cartVo.p_amount }&nbsp;개</dd>
+      <dd id="dd2"><fmt:formatNumber value="${cartVo.p_amount }" pattern="#,###"/>&nbsp;개</dd>
       </dl>
    </div>
 
@@ -251,7 +252,7 @@ font-size: 16px;
             <table>
                <tr>
                   <td id="d_from">결제금액</td>
-                  <td id="d_from2"><span id="total_price">${orderVo.pay_price}원</span>
+                  <td id="d_from2"><span id="total_price"><fmt:formatNumber value="${orderVo.pay_price}" pattern="#,###"/>원</span>
                </tr>
                <tr>
                   <td id="d_from">상품할인</td>
