@@ -56,6 +56,7 @@ public class ProductController {
 	public String getProductList_type(Model model, @RequestParam("type") String p_type) {
 		List<ProductVo> productList = productService.getProductListType(p_type);
 		model.addAttribute("productList",productList);
+		model.addAttribute("p_type",p_type);
 		return "product/product_list_type";
 	}
 	
@@ -63,14 +64,14 @@ public class ProductController {
 	public String getProductList_new(Model model) {
 		List<ProductVo> productList = productService.getProductListNew();
 		model.addAttribute("productList",productList);
-		return "product/product_list_type";
+		return "product/product_list_new";
 	}
 	
 	@GetMapping("/productList_best.do")
 	public String getProductList_best(Model model) {
 		List<ProductVo> productList = productService.getProductListBest();
 		model.addAttribute("productList",productList);
-		return "product/product_list_type";
+		return "product/product_list_best";
 	}
 	
 	@GetMapping("/searchProductList.do")
