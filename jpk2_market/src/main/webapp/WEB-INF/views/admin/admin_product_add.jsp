@@ -236,10 +236,10 @@ function statistics(){
 							<option value="vegetable_fruit">채소·과일</option>
 							<option value="processedfood">샐러드·간편식</option>
 							<option value="meat">정육</option>
-							<option value="fish_seafood">생선·해산물</option>
+							<option value="fish_seafood">수산·해산물</option>
 							<option value="snacks">과자</option>
 							<option value="bakery">베이커리</option>
-							<option value="etc">음료·우유·커피</option>
+							<option value="etc">음료·유제품]</option>
 						</select>
 						<br><br>
 						
