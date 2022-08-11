@@ -236,11 +236,7 @@ private NoticeService noticeService;
 	@GetMapping("/notice_delyn.do")
 	public String delNotice(@RequestParam("nidx") Integer nidx, HttpServletRequest request) {
 		
-		HttpSession session = request.getSession();
-		Integer midx_mn =Integer.parseInt(String.valueOf(session.getAttribute("midx")));
 		NoticeVo noticeVo = new NoticeVo();
-		
-		noticeVo.setMidx_mn(midx_mn); 
 		noticeVo.setNidx(nidx);
 		noticeService.delNotice(noticeVo);
 
