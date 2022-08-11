@@ -42,7 +42,9 @@
 
     
     <div id="cart_inner2">
-    <h5 style="margin-top: 35px;">주문 내역</h5>
+    <h5 style="margin-top: 35px;">주문 내역<c:if test="${empty orderVo}">
+   주문내역이 없습니다
+   </c:if></h5>
 
    <div id="line"></div>
    <div id="orderlist_inner">
@@ -77,6 +79,7 @@
       </script>
    <div id="orderlist_inner2">
    <div id="orderlist_1">
+   
    <span id="order_date"><b>${orderVo.order_date}</b>&nbsp;(${orderVo.order_id })</span>
    <a onClick="location.href='${pageContext.request.contextPath}/orderListDetail.do?order_id=${orderVo.order_id}'" id="order_detail">주문내역 상세보기</a>
    </div>
