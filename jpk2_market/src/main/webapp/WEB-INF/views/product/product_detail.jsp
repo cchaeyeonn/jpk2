@@ -62,7 +62,7 @@
     }
     
     #product_detail_inner{
-   	width:1907px;
+   	width:1897px;
     min-height:1040px;
     padding-left:10%;
     padding-right:10%;
@@ -71,9 +71,9 @@
     
     input[type="radio"] {display:none;}
     input[type="radio"] + label {display:inline-block;padding:20px;background:#f5f5f5;color:#999;font-size:14px; cursor:pointer;}
-    input[type="radio"]:checked + label {background:#e1e1e1;color:#000;}
+    input[type="radio"]:checked + label {background:#a5cbb970;color:#000;}
     
-    .conbox{width:100%;min-height:1040px;background:#f5f5f5;margin:0 auto;display:none;}
+    .conbox{width:100%;min-height:1040px; margin:0 auto;display:none;}
     input[id="tab01"]:checked ~ .con1 {display:block;}
     input[id="tab02"]:checked ~ .con2 {display:block;}
     input[id="tab03"]:checked ~ .con3 {display:block;}
@@ -138,6 +138,12 @@ $(function(){
 	}else{
 		$("#p_type").text("기타");
 	}
+	
+	$("#tab02").click(function(){
+		alert("서비스 준비중입니다.");
+		
+	})
+	
 })
 </script>
 
@@ -203,16 +209,17 @@ $(function(){
 		
 		<div id="product_detail_inner">
 			<div class="tab_content">
-				<input type="radio" name="tabmenu" id="tab01" checked>
-				<label for="tab01">상세내용</label>
-				<input type="radio" name="tabmenu" id="tab02">
-				<label for="tab02">후기</label>
-				<input type="radio" name="tabmenu" id="tab03">
-				<label for="tab03">안내사항</label>
 				
-				<div class="conbox con1">상세내용</div>
-				<div class="conbox con2">후기</div>
-				<div class="conbox con3">안내사항</div>
+					<input type="radio" name="tabmenu" id="tab01" checked>
+					<label for="tab01">상세내용</label>
+					<input type="radio" name="tabmenu" id="tab03">
+					<label for="tab03">안내사항</label>
+					<input type="radio" name="tabmenu" id="tab02">
+					<label for="tab02">후기</label>	
+				
+					<div class="conbox con1"><img src="resources/img/melon.png"></div>
+					<div class="conbox con3"><img style="margin-left: 170px; margin-top: 65px;" src="resources/img/melon_info.png"></div>
+					<div class="conbox con2"></div>
 			</div>
 		
 		</div>
