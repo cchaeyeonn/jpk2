@@ -102,7 +102,7 @@
             <!-- 장바구니에 있는 물건중 체크된 물건을 가져와서 foreach -->
             <h5 style="margin-top: 53.5px;">구매자 리스트 - 주문 상세 내역</h5>
             
-            <div id="line"></div>
+            <div id="abd_line"></div>
                <div id="orderlist_inner">
                   <div id="orderlist_inner2">
                   <div id="orderlist_2">

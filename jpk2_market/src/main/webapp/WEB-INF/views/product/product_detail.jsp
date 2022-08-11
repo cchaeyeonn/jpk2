@@ -156,7 +156,7 @@ $(function(){
 		<hr class="pd_hr">
 		<dl>
 		<dt class="pd_dt">판매 단위</dt>
-		<dd class="pd_dd">${productVo.p_unit}</dd>
+		<dd class="pd_dd">${productVo.p_unit}개</dd>
 		<dt class="pd_dt">중량/용량</dt>
 		<dd>${productVo.p_weight}</dd>
 		</dl>

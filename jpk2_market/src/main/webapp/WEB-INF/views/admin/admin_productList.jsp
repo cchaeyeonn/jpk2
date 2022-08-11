@@ -90,7 +90,7 @@ function statistics(){
 
    <div id="apl_line"></div>
 	
-	<div id="table_button"  style="width:983px; margin-top:5px; text-align:center; font-size: 14px;">
+	<div id="table_button"  style="width:944px; margin-top:5px; text-align:center; font-size: 14px;">
 
 	<table class="table" id="product_t">
 		<tr>

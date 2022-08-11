@@ -127,7 +127,7 @@ body{
 					</div>
 					<div class="cc_view cc_kakao">
 						<h3>
-							<a class="tit" href="#none">카카오톡 문의</a>
+							<a class="tit" href="#none" onclick="alert('서비스 준비중입니다.')">카카오톡 문의</a>
 						</h3>
 						<script type="text/javascript">
 						<!-- 스크립트 들어가는 부분-->
@@ -140,7 +140,7 @@ body{
 					</div>
 					<div class="cc_view cc_qna">
 						<h3>
-							<a href="#none" onclick="" class="tit">1:1 문의</a>
+							<a href="#none" class="tit" onclick="alert('서비스 준비중입니다.')">1:1 문의</a>
 						</h3>
 						<dl class="list">
 							<dt>24시간 접수 가능</dt>
@@ -175,7 +175,7 @@ body{
 								src="https://res.kurly.com/pc/ico/1810/ico_blog.png"
 								alt="네이버블로그 바로가기"></a></li>
 						<li><a
-							href="https://www.youtube.com/channel/UCfpdjL5pl-1qKT7Xp4UQzQg"
+							href="https://www.youtube.com/"
 							class="link_sns lst" target="_blank"><img
 								src="https://res.kurly.com/pc/ico/1810/ico_youtube.png"
 								alt="유튜브 바로가기"></a></li>
