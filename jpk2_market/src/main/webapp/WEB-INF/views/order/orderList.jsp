@@ -42,13 +42,13 @@
 
     
     <div id="cart_inner2">
-    <h5 style="margin-top: 35px;">주문 내역<c:if test="${empty orderVo}">
-   주문내역이 없습니다
-   </c:if></h5>
+    <h5 style="margin-top: 35px;">주문 내역</h5>
 
    <div id="line"></div>
    <div id="orderlist_inner">
-   
+ 	 <c:if test="${empty orderList}">
+  		<h6> 주문내역이 없습니다</h6>
+ 	  </c:if>
       <c:forEach items="${orderList}" var="orderVo" varStatus="status">  
       
        <script>
