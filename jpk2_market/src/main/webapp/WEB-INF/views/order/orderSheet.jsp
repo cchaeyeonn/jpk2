@@ -194,13 +194,14 @@ function cart(){
 
             <table>
 
-               <tr>
-                  <td colspan="2" class="td_info_l">상품 이름</td>
+              <!--  <tr>
+               	  <td></td>
+                  <td class="td_info_l">상품 이름</td>
                   <td>&nbsp;&nbsp;&nbsp;</td>
                   <td>개수</td>
                   <td>&nbsp;&nbsp;&nbsp;</td>
                   <td>상품 가격</td>
-               </tr>
+               </tr> -->
                <c:forEach items="${orderList}" var="orderVo" varStatus="status">
                   <script>
                      $(

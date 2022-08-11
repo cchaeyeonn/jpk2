@@ -46,7 +46,16 @@
             $("#${productVo.order_id}_orderlist_shipping").text("배송 중 오류");
          }
       })
-      </script> 
+
+
+	function statistics(){
+		var frm = document.frm;
+		frm.action="${pageContext.request.contextPath}/statistics.do";
+		frm.method="POST";
+		frm.submit();
+		return;
+	}
+</script>
       
 <style>
 
