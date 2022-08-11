@@ -14,21 +14,13 @@
 	
 $.LoadingOverlay("show", {
 	background       : "rgba(0, 0, 0, 0.5)",
-	image            : "resources/img/loadingbar.gif",
+	image            : "",
 	maxSize          : 60,
-	fontawesome      : "",
+	fontawesome      : "fa fa-spinner fa-pulse fa-fw",
 	fontawesomeColor : "#FFFFFF",
 });
 
-
 $.LoadingOverlay("hide");
-
-$(document).ajaxSend(function(event, jqxhr, settings){
-    $.LoadingOverlay("show");
-});
-$(document).ajaxComplete(function(event, jqxhr, settings){
-    $.LoadingOverlay("hide");
-});
 
 </script>
 <!-- css 링크 받아오는 부분 -->
