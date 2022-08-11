@@ -345,6 +345,7 @@
 	          $("#result_addr").html(result).css("color", "red");
               return false;
           }
+          });
 		   $(document).on('click','#trigger',function(){
 		    if($("#member_addr_1").val() == ""){
               result = "주소를 입력해주세요";
