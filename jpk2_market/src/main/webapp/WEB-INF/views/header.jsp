@@ -5,7 +5,24 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<!-- 로딩창 관련 부분 -->
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/icons.css"/>
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/loadingoverlay.min.js"></script>
 
+<script type="text/javascript">
+
+	
+$.LoadingOverlay("show", {
+	background       : "rgba(0, 0, 0, 0.5)",
+	image            : "",
+	maxSize          : 60,
+	fontawesome      : "fa fa-spinner fa-pulse fa-fw",
+	fontawesomeColor : "#FFFFFF",
+});
+
+$.LoadingOverlay("hide");
+
+</script>
 <!-- css 링크 받아오는 부분 -->
 <link rel="stylesheet" type="text/css" href="./resources/css/style.css">
 
@@ -136,8 +153,8 @@ a {
 
 #menu_cover{
 	width:100%;
-	margin-left:486px;
-	margin-right:483px;
+	/* margin-left:486px;
+	margin-right:483px; */
 }
 
 
@@ -184,7 +201,7 @@ function enterkey() {
    <nav class="navbar navbar-expand-lg bg-white text-uppercase fixed-top"
       id="mainNav">
       <div class="container">
-         <a class="navbar-brand" href="/spring/">JPK2</a>
+         <a class="navbar-brand" href="/spring/">Fresh Market</a>
          <button
             class="navbar-toggler text-uppercase font-weight-bold bg-white text-black rounded"
             type="button" data-bs-toggle="collapse"
@@ -237,7 +254,7 @@ function enterkey() {
    </nav>
    <!-- 상단 로고, 로그인부분 끝-->
 
-   <input type="hidden" value="${midx}" name="midx">
+
    <!-- 카테고리, 장바구니 로고 시작 -->
    <div class="fixed-top2" id="innerNav_1"
       style="padding-top: 110px; height: 178px; box-shadow: 0 3px 4px 0 rgb(0 0 0 / 6%); width:100%;">
@@ -245,13 +262,13 @@ function enterkey() {
       <ul class="menu" style="margin-top: 28px; width:1280.78px;">
          <li style="float: left;"><a href="#">전체 카테고리</a>
             <ul class="depth_1">
-               <li id="icon1"><a href="${pageContext.request.contextPath}/productList_type.do?type=vegetable_fruit">채소</a></li>
-               <li id="icon2"><a href="${pageContext.request.contextPath}/productList_type.do?type=processedfood">과일</a></li>
+               <li id="icon1"><a href="${pageContext.request.contextPath}/productList_type.do?type=vegetable_fruit">채소·과일</a></li>
+               <li id="icon2"><a href="${pageContext.request.contextPath}/productList_type.do?type=processedfood">샐러드·간편식</a></li>
                <li id="icon3"><a href="${pageContext.request.contextPath}/productList_type.do?type=meat">정육</a></li>
-               <li id="icon4"><a href="${pageContext.request.contextPath}/productList_type.do?type=fish_seafood">생선/해산물</a></li>
+               <li id="icon4"><a href="${pageContext.request.contextPath}/productList_type.do?type=fish_seafood">수산·해산물</a></li>
                <li id="icon5"><a href="${pageContext.request.contextPath}/productList_type.do?type=snacks">과자</a></li>
                <li id="icon6"><a href="${pageContext.request.contextPath}/productList_type.do?type=bakery">베이커리</a></li>
-               <li id="icon7"><a href="${pageContext.request.contextPath}/productList_type.do?type=etc">음료</a></li>
+               <li id="icon7"><a href="${pageContext.request.contextPath}/productList_type.do?type=etc">음료·유제품</a></li>
 
 
             </ul></li>

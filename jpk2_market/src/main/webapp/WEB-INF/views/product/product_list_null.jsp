@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@page import="ezen.dev.spring.vo.ProductVo" %>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -79,7 +80,7 @@
 	                                <div id="p_list_info">
 	                                	<div style="color:#ababab; font-size:13px;">${productVo.p_delivery}</div>
 		                                <div style="font-size:22px;">${productVo.p_name}</div>
-		                          		<div style="font-weight:bold";>${productVo.p_price}원</div>
+		                          		<div style="font-weight:bold";><fmt:formatNumber value="${productVo.p_price}" pattern="#,###"/>원</div>
 		                          		<div style="color:#ababab; font-size:12px;">${productVo.p_secondname}</div>
 	                          		</div>
 	                                </div>

@@ -163,6 +163,7 @@
             		  ["server",server],
             		  ["receiver",receiver],
             		  ["phone",phone]
+            		 
                 ]
           
         
@@ -181,7 +182,7 @@
               
           } else {
         	// 결제 실패 시 로직,
-        	  var msg = '결제에 실패하였습니다.';
+        	  var msg = '결제에 실패하였습니다.\n';
         	  msg += '에러내용 : ' + rsp.error_msg;
         	  alert(msg);
 

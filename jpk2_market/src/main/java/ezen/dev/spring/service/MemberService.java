@@ -43,7 +43,7 @@ public class MemberService {
 		memberDao.joinMember(memberVo);
 		
 		MailHandler sendMail = new MailHandler(mailSender);
-		sendMail.setSubject("[JPK2] 회원가입 인증 메일입니다.");
+		sendMail.setSubject("[Fresh Market] 회원가입 인증 메일입니다.");
 		sendMail.setText(
 				new StringBuffer()
 				.append("<!DOCTYPE html>")
@@ -53,11 +53,11 @@ public class MemberService {
 				.append("<body>")
 				.append("<div style=\"font-family: 'Apple SD Gothic Neo', 'sans-serif' !important; width: 400px; height: 600px; border-top: 4px solid #02b875; padding: 30px 0; box-sizing: border-box;\">"
 						+"<h1 style=\"margin: 0; padding: 0 5px; font-size: 28px; font-weight: 400;\">"
-						+"<span style=\"font-size: 15px; margin: 0 0 10px 3px;\">JPK2</span><br />"
+						+"<span style=\"font-size: 15px; margin: 0 0 10px 3px;\">Fresh Market</span><br />"
 						+"<span style=\"color: #02b875\">메일인증</span> 안내입니다."
 						+"</h1>\n"+"<p style=\"font-size: 16px; line-height: 26px; margin-top: 50px; padding: 0 5px;\">"
 						+memberVo.getMember_name()+"님 안녕하세요.<br />"
-						+"JPK2에 가입해 주셔서 진심으로 감사드립니다.<br />"
+						+"Fresh Market에 가입해 주셔서 진심으로 감사드립니다.<br />"
 						+"아래 <b style=\"color: #02b875\">'메일 인증'</b> 버튼을 클릭하여 회원가입을 완료해 주세요.<br />"
 						+"감사합니다."+"</p>"
 						+"<a style=\"color: #FFF; text-decoration: none; text-align: center;\""
@@ -121,14 +121,31 @@ public class MemberService {
 		memberVo.setMember_pw(encodedPassword);
 		String name = memberVo.getMember_name();
 		MailHandler sendMail = new MailHandler(mailSender);
-		sendMail.setSubject("[JPK2]"+name+"님께서 요청하신 임시 비밀번호가 생성되었습니다.");
+		sendMail.setSubject("[Fresh Market]"+name+"님께서 요청하신 임시 비밀번호가 생성되었습니다.");
 		sendMail.setText(
 				new StringBuffer()
-				.append("<h1>임시비밀번호가 주어집니다.</h1>")
-				.append("임시비밀번호로 로그인 후 반드시 비밀번호를 변경해주세요.<p/>")
-				.append("임시비밀번호:")
-				.append(key)
-				.append("<a href='http://localhost:8090/spring/login.do'>로그인</a>")
+				.append("<!DOCTYPE html>")
+				.append("<html>")
+				.append("<head>")
+				.append("</head>")
+				.append("<body>")
+				.append("<div style=\"font-family: 'Apple SD Gothic Neo', 'sans-serif' !important; width: 600px; height: 600px; border-top: 4px solid #02b875; padding: 30px 0; box-sizing: border-box;\">"
+						+"<h1 style=\"margin: 0; padding: 0 5px; font-size: 28px; font-weight: 400;\">"
+						+"<span style=\"font-size: 15px; margin: 0 0 10px 3px;\">Fresh Market</span><br />"
+						+"<span style=\"color: #02b875\">임시비밀번호</span> 안내입니다."
+						+"</h1>\n"+"<p style=\"font-size: 16px; line-height: 26px; margin-top: 50px; padding: 0 5px;\">"
+						+name+"님 안녕하세요.<br />"
+						+name+"님께서 요청하신 임시비밀번호가 생성되었습니다.<br />"
+						+"<h3 style=\"margin-top:20px; margin-botton:20px;\">임시 비밀번호 : <b>"+key+"</b></h3>"						
+						+"아래 <b style=\"color: #02b875\">'로그인'</b> 버튼을 클릭하여 로그인 후 꼭 비밀번호를 변경하여 사용해 주세요<br />"
+						+"저희 Fresh Market은 관리자도 알 수 없도록 임시 비밀번호가 암호화되어 있습니다. "+"</p>"
+						+"<a style=\"color: #FFF; text-decoration: none; text-align: center;\""
+						+"href=\"http://localhost:8090/spring/login.do\">"
+						+"<p style=\"display: inline-block; width: 210px; height: 45px; margin: 30px 5px 40px; background: #02b875; line-height: 45px; vertical-align: middle; font-size: 16px;\">"
+						+"로그인</p>"
+						+"</a>"
+						+"<div style=\"border-top: 1px solid #DDD; padding: 5px;\"></div>"
+						+"</div>")
 				.toString());
 		sendMail.setFrom("zoszo@jbnu.ac.kr", "jpk2");
 		sendMail.setTo(memberVo.getMember_email());
@@ -151,6 +168,11 @@ public class MemberService {
 	public void memberDelyn(MemberVo memberVo) {
 		memberDao.memberDelyn(memberVo);
 		
+	}
+
+
+	public int authEmail(MemberVo memberVo) {
+		return memberDao.authEmail(memberVo);
 	}
 
 }

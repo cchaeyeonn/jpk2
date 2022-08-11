@@ -63,6 +63,12 @@
 				
 				let member_id = $("#member_id").val();
 				
+				if(member_id == ""){
+					 result = "아이디를 입력해주세요";
+	     			  $("#result_checkId").html(result).css("color", "red");    			      
+					  return false;
+					
+				}
 				$.ajax({
 					type:'post',
 					url:ctx+"/checkId.do",
@@ -89,6 +95,13 @@
 			$("#member_email").focusout(function(){
 				
 				let member_email = $("#member_email").val();
+				
+				if(member_email == ""){
+					 result = "이메일을 입력해주세요";
+	     			  $("#result_checkEmail").html(result).css("color", "red");
+					  return false;
+					
+				}
 				
 				$.ajax({
 					type:'post',
@@ -128,25 +141,18 @@
             });
 
 		  // 유효성 검사
-		  // 아이디 유효성 검사
-		  $(document).on('click','#trigger',function(){
-			
-		  if($("#member_id").val() == ""){
-           result = "아이디를 입력해주세요";
-	       $("#result_checkId").html(result).css("color", "red");
-           $("#member_id").focus();
-           
-           return false;
-          }
-          });
-          
+		 
           // 아이디 형식 유효성 검사
-          $(document).on('click','#trigger',function(){          
-          if(!getMail.test($("#member_id").val())){
+          $(document).on('click','#trigger',function(){   
+		  if(member_id == ""){
+					 result = "아이디를 입력해주세요";
+	     			  $("#result_checkId").html(result).css("color", "red");
+					  return false;
+					
+				}else if(!getMail.test($("#member_id").val())){
            result = "이메일 형식으로 입력하세요";
 	       $("#result_checkId").html(result).css("color", "red");
 	       $("#member_id").val("");
-           $("#member_id").focus();
            return false;
           }
           });
@@ -158,7 +164,6 @@
 	      if($("#member_password1").val() == ""){
            result = "비밀번호를 입력하세요";
 	       $("#result_password1").html(result).css("color", "red");
-           $("#member_password1").focus();
            return false;
              }
             });
@@ -169,7 +174,6 @@
 	       $("#result_password1").html(result).css("color", "red");
 	       $("#member_password1").val("");
 	       $("#member_password2").val("");
-           $("#member_password1").focus();
            }
            
           else if(reg.test($("#member_password1").val())){
@@ -192,7 +196,6 @@
              result = "아이디와 비밀번호가 같습니다";
 	       $("#result_password1").html(result).css("color", "red");
 	       $("#member_password1").val("");
-           $("#member_password1").focus();
                      return false;
            }
            });
@@ -203,7 +206,6 @@
           if($("#member_password2").val() == ""){
            result = "비밀번호 확인란을 입력해주세요";
 	       $("#result_password2").html(result).css("color", "red");
-           $("#member_password2").focus();
            return false;
              }
              });
@@ -215,7 +217,6 @@
 	          $("#result_password2").html(result).css("color", "red");
               $("#member_password1").val("");
               $("#member_password2").val("");
-              $("#member_password1").focus();
                }
 		   else if($("#member_password1").val() == $("#member_password2").val()){
 			   result = "비밀번호가 일치합니다.";
@@ -231,7 +232,6 @@
               result = "이름을 입력해주세요";
 	          $("#result_name").html(result).css("color", "red");
 	          $("#member_name").val("");
-              $("#member_name").focus();
           }
 			else if($("#member_name").val() != ""){
 				result = "이름이 참 멋지시네요.";
@@ -239,22 +239,25 @@
 			}return false;
           });
           
-			// 이메일 유효성 검사
-			$(document).on('click','#trigger',function(){
-			if($("#member_email").val() == ""){
-              result = "이메일을 입력해주세요";
-	          $("#result_checkEmail").html(result).css("color", "red");
-              $("#member_email").focus();
+           $(document).on('click','#trigger',function(){
+         	 if($("#member_name").val() == ""){
+              result = "이름을 입력해주세요";
+	          $("#result_name").html(result).css("color", "red");
+	          $("#member_name").val("");
               return false;
           }
-          });
+			});
 			// 이메일 형식 유효성 검사
 			$(document).on('click','#trigger',function(){
-			if(!getMail.test($("#member_email").val())){
+			if(member_email == ""){
+					 result = "이메일을 입력해주세요";
+	     			  $("#result_checkEmail").html(result).css("color", "red");
+					  return false;
+					
+				}else if(!getMail.test($("#member_email").val())){
            result = "이메일 형식으로 입력하세요";
 	       $("#result_checkEmail").html(result).css("color", "red");
 	       $("#member_email").val("");
-           $("#member_email").focus();
            return false;
           }
           });
@@ -263,7 +266,7 @@
 			if($("#member_phone").val() == ""){
               result = "핸드폰 번호를 입력해주세요";
 	          $("#result_phone").html(result).css("color", "red");
-              $("#member_phone").focus();
+
               return false;
           }
           });
@@ -307,7 +310,7 @@
                 {
                     result = "유효하지 않은 전화번호 입니다.";
 	                $("#result_phone").html(result).css("color", "red");
-                    $("#member_phone").focus();
+
                 }
             }
             
@@ -317,16 +320,32 @@
                 result = "유효하지 않은 전화번호 입니다.";
 	                $("#result_phone").html(result).css("color", "red");
 	                $("#member_phone").val("");
-                    $("#member_phone").focus();
+
               }
             
             
            }
        });
+         
+          $(document).on('click','#trigger',function(){
+          	if($("#member_phone").val() == ""){
+              result = "핸드폰 번호를 입력해주세요";
+	          $("#result_phone").html(result).css("color", "red");
+
+              return false;
+          }
+          });
           
           
           
 		   // 주소 유효성 검사
+		    $(document).on('click','#trigger',function(){
+		    if($("#postcode").val() == ""){
+              result = "주소를 입력해주세요";
+	          $("#result_addr").html(result).css("color", "red");
+              return false;
+          }
+          });
 		   $(document).on('click','#trigger',function(){
 		    if($("#member_addr_1").val() == ""){
               result = "주소를 입력해주세요";
@@ -339,8 +358,15 @@
               return false;
           }
           });
+          
+          $("#member_addr_2").focusout(function(){
+		   if($("#member_addr_2").val() != ""){
+				result = "";
+				$("#result_addr").html(result).css("color", "green");
+			}return false;
 		   
 		   
+		  }); 
             //성별 유효성 검사
             $(document).on('click','#trigger',function(){
 		   	if($("input[name=member_gender]:radio:checked").length < 1){
@@ -378,8 +404,7 @@
 		     if($("#member_birth").val() == ""){
               result = "생년월일을 입력해주세요";
 	          $("#result_birth").html(result).css("color", "red");
-	          
-
+	          return false;
           }
           });
           
@@ -412,17 +437,19 @@
 		   result = "";
 	          $("#result_term").html(result).css("color", "red"); 
 		  	//로딩중 버튼이 사라짐
-	   $(document).on('click','#trigger',function(){if($("input:checked[Name='member_termall']").is(":checked"), $("#member_birth").val() != "",
-         $("#member_phone").val()!="", $("#member_addr_1").val() != "", $("#member_addr_2").val() != "",
+	   $(document).on('click','#trigger',function(){
+	   if($("input:checked[Name='member_termall']").is(":checked",true), !getMail.test($("#member_email").val()), $("#member_birth").val() != "",
+         $("#member_phone").val()!="", $("#postcode").val() != "", $("#member_addr_1").val() != "", $("#member_addr_2").val() != "",
          $("#member_email").val() != "", $("#member_name").val() != "", $("#member_password1").val() != "",
          $("#member_password2").val() != "",$("#member_id").val() != ""){
          $("#trigger").hide();
+         $("#toloading").show();
          }});
-		
 		
 	});
 
 
+		
 
 
 	      

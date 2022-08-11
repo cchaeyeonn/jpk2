@@ -8,7 +8,7 @@
 	<meta name="description" content="" />
 	<meta name="author" content="" />
 	
-	<title>Rocket Kurly</title>
+	<title>Fresh Market</title>
 	
 	<!-- jQuery library (served from Google) -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>

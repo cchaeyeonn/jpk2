@@ -1,10 +1,10 @@
 @charset "UTF-8";
 
 /* mypage 공용 css */
-#orderlist_main_inner {
-	margin-left: 324px;
-	margin-top: 256px;
+#mypage_main_inner {
+	margin-left: 317px;
 	min-height: 1040px;
+	padding-top: 195px;
 }
 
 #mypage_center_cate {
@@ -13,14 +13,14 @@
 	float: left;
 }
 
-#mypage_1 {
+#mypage_sub_title {
 	padding: 5px 0 35px 1px;
 	font-weight: 700;
 	font-size: 26px;
 	line-height: 35px;
 	color: #333;
 	letter-spacing: -1px;
-	margin-top: -16px;
+	margin-top: 18px;
 }
 
 #mypage_sub {

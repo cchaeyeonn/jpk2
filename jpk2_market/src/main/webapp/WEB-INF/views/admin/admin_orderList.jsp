@@ -1,14 +1,126 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>  
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
 
 <meta charset="UTF-8">
-<link href="resources/css/style_css.css" rel="stylesheet" />
+<!-- <link href="resources/css/style_css.css" rel="stylesheet" /> -->
 <link href="resources/css/mypage_css.css" rel="stylesheet" />
+<link href="resources/css/admin.css" rel="stylesheet" />
 
+<style>
+
+/* #ad_orderlist_1{
+    display: flex;
+    padding: 17px 0px 13px;
+    -webkit-box-pack: justify;
+    border-bottom: 1px solid rgb(221, 223, 225);
+    } */
+/* #admin_main_inner{
+   margin-left:317px;
+   min-height:1040px;
+   padding-top:178px;
+} */
+/* #ao_admin_center_cate{
+   
+   padding-top:91px;
+   width:194px;
+   float:left;
+} */
+/* #table_button{
+   margin-left: 155px;
+   
+}  */
+/* #admin_1{
+  padding: 5px 0 35px 1px;
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 35px;
+    color: #333;
+    letter-spacing: -1px;
+    margin-top: -55px;
+    
+} */
+/* #admin_sub{
+   border: 1px solid #f2f2f2;
+    border-bottom: 1;
+    FONT-WEIGHT: 100;
+    display: block;
+    overflow: hidden;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: -.3px;
+    padding: 0px -5px 3px 5px;
+    margin-left: -6px;
+    margin-right: 16px;
+    margin-top: -27px;
+} */
+/* #open_admin{
+   border-bottom: 1px solid #f2f2f2;
+    background-color: #fafafa;
+    background-size: 6px 11px;
+    font-weight: 700;
+    color: #198754;
+} */
+/* #admin_button{
+   border-bottom: 1px solid #f2f2f2;
+}
+ */
+/* #table_title{
+	width:120px;
+} */
+/* #orderlist_1{
+    display: flex;
+    padding: 17px 0px 13px;
+    -webkit-box-pack: justify;
+    justify-content: flex-end;
+    border-bottom: 1px solid rgb(221, 223, 225);
+    float: right;
+    width: 100%;
+    margin-top:12px;
+} */
+/* #ao_order_date{
+font-size: 16px;
+    font-weight: 500;
+    line-height: 1.31;
+    color: rgb(51, 51, 51);
+    margin-right: 347px;
+}
+#line{
+    display: flex;
+    flex-direction: row;
+    width: 55%;
+    -webkit-box-align: center;
+    align-items: center;
+    border-bottom: 2px solid #198754;
+} */
+
+ #admin_button_1{
+     border-bottom: 1px solid #f2f2f2;
+    background-color: #fafafa;
+    background-size: 6px 11px;
+    font-weight: 700;
+    color: #198754;
+} 
+ #admin_button{
+   border-bottom: 1px solid #f2f2f2;
+}  
+
+
+</style>
+
+<script>
+function statistics(){
+   var frm = document.frm;
+   frm.action="${pageContext.request.contextPath}/statistics.do";
+   frm.method="POST";
+   frm.submit();
+   return;
+}
+</script>
 <title>주문 내역</title>
 
 
@@ -27,24 +139,26 @@
     <jsp:include page="../header.jsp"></jsp:include>
     
 <form>
-   <div id="mypage_main_inner">
-   <div id="mypage_center_cate">
-   <div id="mypage_sub_title">마이페이지</div>
-      <div id="mypage_sub">   
-      <a href="${pageContext.request.contextPath}/orderList.do" class="nav-link py-3 px-0 px-lg-3" id="open_history">주문 내역</a>
-      <a href="${pageContext.request.contextPath}/memberInfo.do" class="nav-link py-3 px-0 px-lg-3" id="open_info_modify">개인 정보 수정</a>
-      
-      <a href="#" onclick="alert('서비스 준비중입니다.')" class="nav-link py-3 px-0 px-lg-3" id="open_coupon">쿠폰</a>
-      <!-- <a href="/spring/qna_board.do" class="nav-link py-3 px-0 px-lg-3 rounded" id="open_qna" >1:1 문의</a> -->
+      <div id="admin_main_inner">
+      <div id="aol_admin_center_cate">
+   <div id="aol_admin_sub_title">관리자 페이지</div>
+      <div id="admin_sub">
+       <a style="cursor:pointer;"class="nav-link py-3 px-0 px-lg-3" id="admin_button" onclick=statistics()>매출통계</a>
+     <!--  <input type="button" class="nav-link py-3 px-0 px-lg-3" value="매출통계" id="admin_button_1" style="background-color: white; border: none;" onclick=statistics()> --> 
+      <a href="${pageContext.request.contextPath}/productAdd.do" class="nav-link py-3 px-0 px-lg-3" id="admin_button">상품등록</a>
+      <a href="${pageContext.request.contextPath}/adminProductList.do" class="nav-link py-3 px-0 px-lg-3" id="admin_button">등록한 상품목록</a>
+      <a href="${pageContext.request.contextPath}/adminOrderList.do" class="nav-link py-3 px-0 px-lg-3" id="admin_button_1">주문내역</a>     <%--<a href="${pageContext.request.contextPath}/orderListDetail.do" class="nav-link py-3 px-0 px-lg-3" id="admin_button">주문상세페이지</a> --%>
+      <a href="${pageContext.request.contextPath}/adminProductCheck.do" class="nav-link py-3 px-0 px-lg-3" id="admin_button">등록심사중인 상품목록</a>
+      <a href="${pageContext.request.contextPath}/adminMemberList.do" class="nav-link py-3 px-0 px-lg-3" id="admin_button">등록된 회원 목록</a> 
       </div>
    </div>
  
 
     
-    <div id="cart_inner2">
-    <h5 style="margin-top: 35px;">주문 내역</h5>
+    <div id="admin_inner">
+    <h5 style="margin-top: 52.5px;">주문 내역</h5>
 
-   <div id="line"></div>
+   <div id="aol_line"></div>
    <div id="orderlist_inner">
    
       <c:forEach items="${orderList}" var="orderVo" varStatus="status">  
@@ -76,9 +190,9 @@
       })
       </script>
    <div id="orderlist_inner2">
-   <div id="orderlist_1">
-   <span id="order_date"><b>${orderVo.order_date}</b>&nbsp;(${orderVo.order_id })</span>
-   <a onClick="location.href='${pageContext.request.contextPath}/orderListDetail.do?order_id=${orderVo.order_id}'" id="order_detail">주문내역 상세보기</a>
+   <div id="adl_orderlist_1">
+   <span id="aol_order_date"><b>${orderVo.order_date}</b>&nbsp;(${orderVo.order_id })</span>
+   <a onClick="location.href='${pageContext.request.contextPath}/admin_orderListDetail.do?order_id=${orderVo.order_id}'" id="order_detail">주문내역 상세보기</a>
    </div>
    <div id="orderlist_box">
    <div id="orderlist_box_left"></div>
@@ -92,7 +206,7 @@
 
       <dl id="dl">
       <dt id="dt">결제금액</dt>
-      <dd id="dd">${orderVo.pay_price }</dd>
+      <dd id="dd"><fmt:formatNumber value="${orderVo.pay_price }" pattern="#,###"/>원</dd>
       </dl>
       
       <dl id="dl">

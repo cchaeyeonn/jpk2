@@ -70,8 +70,8 @@ user-select: none;
 #product{
    padding-left:10%;
    padding-right:10%; 
-   min-height:1035px; 
-   padding-top:93px;
+   min-height:880px; 
+   padding-top:33px;
 }
       
 #product_img{
@@ -85,7 +85,7 @@ user-select: none;
    height:50%;
 }
 #home_button{
-   padding-left:10%; 
+   padding-left:80%; 
    padding-right:10%; 
    text-align:center; 
    float:center;

@@ -2,10 +2,12 @@ package ezen.dev.spring.controller;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.text.SimpleDateFormat;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +22,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import ezen.dev.spring.service.MemberService;
 import ezen.dev.spring.service.NoticeService;
+import ezen.dev.spring.vo.MemberVo;
 import ezen.dev.spring.vo.NoticeVo;
 import ezen.dev.spring.vo.ProductVo;
 
@@ -37,6 +40,12 @@ private NoticeService noticeService;
 		this.noticeService = noticeService;	//생성자
 	}
 	
+	private MemberService memberService;
+	@Autowired
+	public void setMemberService(MemberService memberService) {
+		this.memberService = memberService;
+	}
+	
 	//공지사항 리스트
 	@GetMapping("/notice_board.do")
 	public String service_center(Model model) {
@@ -52,7 +61,20 @@ private NoticeService noticeService;
 	
 	//공지사항 글쓰기
 	@GetMapping("/notice_write.do")
-	public String notice_write() {
+	public String notice_write(HttpServletRequest request, HttpServletResponse response) throws IOException {
+		
+		HttpSession session = request.getSession();
+		Integer member_grade = Integer.parseInt(String.valueOf(session.getAttribute("member_grade")));
+		
+			if(member_grade != 2) {
+				response.setContentType("text/html; charset=UTF-8");
+				response.setCharacterEncoding("UTF-8");
+				PrintWriter out=response.getWriter();
+				out.println("<script>window.onload = function(){alert('권한이 없습니다.'); location.href='/spring/notice_board.do';}</script>");
+				out.flush();
+				return null;
+		}
+		
 		
 		return "service_center/notice_write";
 	}
@@ -110,7 +132,17 @@ private NoticeService noticeService;
 
 	//공지사항 수정하기 이동
 	@GetMapping("/notice_update.do")
-	public String notice_modify(Model model, String nidx){
+	public String notice_modify(Model model, String nidx, HttpServletRequest request, HttpServletResponse response) throws IOException{
+		HttpSession session = request.getSession();
+		Integer member_grade = Integer.parseInt(String.valueOf(session.getAttribute("member_grade")));
+			if(member_grade != 2) {
+				response.setContentType("text/html; charset=UTF-8");
+				response.setCharacterEncoding("UTF-8");
+				PrintWriter out=response.getWriter();
+				out.println("<script>window.onload = function(){alert('권한이 없습니다.'); location.href='/spring/notice_board.do';}</script>");
+				out.flush();
+				return null;
+		}
 		NoticeVo noticeVo = noticeService.noticedetail(nidx);
 		model.addAttribute("noticeVo",noticeVo);
 		return "service_center/notice_update";

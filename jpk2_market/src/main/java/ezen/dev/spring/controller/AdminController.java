@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.text.SimpleDateFormat;
+import java.util.Arrays;
 import java.util.Calendar;
 import java.util.List;
 
@@ -20,8 +21,16 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
 import ezen.dev.spring.service.AdminService;
+import ezen.dev.spring.service.CartService;
+import ezen.dev.spring.service.DelService;
+import ezen.dev.spring.service.NoticeService;
+import ezen.dev.spring.service.OrderService;
 import ezen.dev.spring.vo.AdminVo;
+import ezen.dev.spring.vo.CartVo;
+import ezen.dev.spring.vo.DelVo;
 import ezen.dev.spring.vo.MemberVo;
+import ezen.dev.spring.vo.NoticeVo;
+import ezen.dev.spring.vo.OrderVo;
 import ezen.dev.spring.vo.ProductVo;
 
 @Controller
@@ -34,8 +43,75 @@ public class AdminController {
 		this.adminService = adminService;
 	}
 	
+	private OrderService orderService;
+	
+	@Autowired
+	public void setOrderService(OrderService orderService) {
+		this.orderService=orderService;
+	}
+	
+	private CartService cartService;
+	
+	@Autowired
+	public void setCartService(CartService cartService) {
+		this.cartService = cartService;
+	}
+	
+	private DelService delService;
+	
+	@Autowired
+	public void setDelService(DelService delService) {
+		this.delService = delService;
+	}
+	
+	private NoticeService noticeService;
+	
+	@Autowired
+	public void setNoticeService(NoticeService noticeService) {
+		this.noticeService = noticeService;
+	}
+	
+	
 	@GetMapping("/admin.do")
-	public String adminHome() {
+	public String adminHome(@RequestParam(value="begin_date", required=false) String begin_date,
+			@RequestParam(value="end_date", required=false) String end_date,Model model, HttpServletRequest request) {
+		SimpleDateFormat format = new SimpleDateFormat ( "yyyy-MM-dd");
+		Calendar time = Calendar.getInstance();
+		String year = String.valueOf(Calendar.getInstance().get(Calendar.YEAR));
+		String enddate = format.format(time.getTime());
+		String startdate = year+"-01-01";
+		
+		if(begin_date == null) {
+			begin_date = startdate;
+
+		};
+		
+		if(end_date ==null) {
+			end_date = enddate;
+			
+		};
+		HttpSession session = request.getSession();
+		Integer midx = Integer.parseInt(String.valueOf(session.getAttribute("midx")));
+		AdminVo adminVo = new AdminVo();
+		System.out.println("begin_date:"+begin_date);
+		System.out.println("end_date:"+end_date);
+
+		adminVo.setBegin_date(begin_date);
+		adminVo.setEnd_date(end_date);
+		adminVo.setMidx(midx);
+		
+		List<AdminVo> statisticsList = adminService.getStatisticsList(adminVo);
+		List<AdminVo> statisticsList2 = adminService.getStatisticsList2(adminVo);
+		List<ProductVo> productList = adminService.getProductList(midx);
+		List<NoticeVo> noticeList = noticeService.getNoticeList(); //서비스를 호출
+		
+		model.addAttribute("noticeList",noticeList);
+		model.addAttribute("statisticsList",statisticsList);
+		model.addAttribute("statisticsList2",statisticsList2);
+		model.addAttribute("adminVo", adminVo);
+		model.addAttribute("productList",productList);
+		
+		
 		return "admin/admin_home";
 	}
 	
@@ -178,20 +254,22 @@ public class AdminController {
 			end_date = enddate;
 			
 		};
-		
+		HttpSession session = request.getSession();
+		Integer midx_mp =Integer.parseInt(String.valueOf(session.getAttribute("midx")));
 		AdminVo adminVo = new AdminVo();
 		System.out.println("begin_date:"+begin_date);
 		System.out.println("end_date:"+end_date);
 
 		adminVo.setBegin_date(begin_date);
 		adminVo.setEnd_date(end_date);
-		
+		adminVo.setMidx(midx_mp);
 		
 		
 		List<AdminVo> statisticsList = adminService.getStatisticsList(adminVo);
-
+		List<AdminVo> statisticsList2 = adminService.getStatisticsList2(adminVo);
 		
 		model.addAttribute("statisticsList",statisticsList);
+		model.addAttribute("statisticsList2",statisticsList2);
 		model.addAttribute("adminVo", adminVo);
 		
 		
@@ -319,14 +397,49 @@ public class AdminController {
 		
 	}
 	@GetMapping("/adminBuyerDetail.do")
-	public String getBuyerDetail(@RequestParam("pidx") Integer pidx, @RequestParam("midx") Integer midx, Model model) {
+	public String getBuyerDetail(@RequestParam("pidx") Integer pidx, @RequestParam("midx") Integer midx, @RequestParam("order_id") String order_id, Model model) {
 		ProductVo pVo = new ProductVo();
 		pVo.setPidx(pidx);
 		pVo.setMidx(midx);
+		pVo.setOrder_id(order_id);
 		ProductVo productVo = adminService.getBuyerDetail(pVo);
 		model.addAttribute("productVo", productVo);
 		
 		return "admin/admin_buyerDetail";
 		
+	}
+	@GetMapping("/adminOrderList.do")
+	public String orderList(Model model, HttpServletRequest request) {
+		
+		HttpSession session = request.getSession();
+		Integer midx =Integer.parseInt(String.valueOf(session.getAttribute("midx")));
+		
+		List<OrderVo> orderList = orderService.getOrderList(midx);
+		model.addAttribute("orderList", orderList);
+		
+		return "admin/admin_orderList";
+	}
+	@GetMapping("/admin_orderListDetail.do")
+	public String orderListDetail(@RequestParam("order_id") String order_id, Model model, HttpServletRequest request) {
+		OrderVo orderVo = orderService.getOrderDetail(order_id);
+		String pidx_pc_1 = orderVo.getProduct();
+		String[] arr = pidx_pc_1.split(",");
+		int[] pidx_pc = Arrays.stream(arr).mapToInt(Integer::parseInt).toArray();
+		Integer[] pidx_pc2 = new Integer[arr.length];
+		
+		for(int i = 0; i<arr.length; i++) {
+			pidx_pc2[i] = pidx_pc[i];
+		}
+		List<Integer> pbidxList =Arrays.asList(pidx_pc2);
+		List<CartVo> cartList = cartService.getPayProduct(pbidxList);
+		Integer oidx_od = orderVo.getOidx(); 
+		DelVo delVo = delService.getDelInfo(oidx_od);
+		model.addAttribute("cartList",cartList);
+		model.addAttribute("delVo",delVo);
+		model.addAttribute("orderVo",orderVo);
+		
+		
+		
+		return "admin/admin_orderListDetail";
 	}
 }

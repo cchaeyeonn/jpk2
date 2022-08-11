@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,10 +9,11 @@
 <style>
 
 	#product{
-		padding-left:10%;
-		padding-right:10%; 
 		height:1000px; 
 		padding-top:260px;
+		margin-right:10%;
+		margin-left:10%;
+		width:1490px;
 		}
 	#product_img{
 			float:left; 
@@ -60,7 +62,7 @@
     }
     
     #product_detail_inner{
-    width:100%;
+   	width:1907px;
     min-height:1040px;
     padding-left:10%;
     padding-right:10%;
@@ -112,6 +114,10 @@
     padding: 16px 0 0 9px;
     font-size: 19px;
     }
+    #dd_allergy{
+    margin-bottom: 0.5rem;
+    margin-left: 140px;
+    }
 
 </style>
 
@@ -151,11 +157,11 @@ $(function(){
 		<h3>${productVo.p_name}</h3>
 		<div id="product_subject">${productVo.p_secondname}</div>
 		
-		<div id="product_price"><h3>${productVo.p_price}원</h3></div>
+		<div id="product_price"><h3><fmt:formatNumber value="${productVo.p_price}" pattern="#,###"/>원</h3></div>
 		<hr class="pd_hr">
 		<dl>
 		<dt class="pd_dt">판매 단위</dt>
-		<dd class="pd_dd">${productVo.p_unit}</dd>
+		<dd class="pd_dd">${productVo.p_unit}개</dd>
 		<dt class="pd_dt">중량/용량</dt>
 		<dd>${productVo.p_weight}</dd>
 		</dl>
@@ -173,7 +179,7 @@ $(function(){
 		<hr class="pd_hr">
 		<dl>
 		<dt class="pd_dt">알레르기정보</dt>
-		<dd>${productVo.p_allergy}</dd>
+		<dd id="dd_allergy">${productVo.p_allergy}</dd>
 		</dl>
 		<hr class="pd_hr">
 		<dl>
@@ -233,7 +239,7 @@ $(function(){
     
     <hr>
 
-    <b>${productVo.p_price}원</b>
+    <b> <fmt:formatNumber value="${productVo.p_price}" pattern="#,###"/> 원</b>
     <input type="hidden" id="for_price" value="${productVo.p_price}">
     <div class="button box" style="float: right; width:140px;">
     
@@ -279,6 +285,7 @@ $(function(){
         </div>
     </div> -->
     
+   
    
 
 

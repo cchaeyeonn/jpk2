@@ -303,7 +303,7 @@ public class OrderController {
 	model.addAttribute("bank_holder", vbank_holder);
 	model.addAttribute("bank_name", vbank_name);
 	model.addAttribute("bank_num", vbank_num);
-		
+	model.addAttribute("paid_amount", paid_amount);
 		
 		
 		

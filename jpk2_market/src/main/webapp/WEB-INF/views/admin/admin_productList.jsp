@@ -1,96 +1,57 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 
 <link href="resources/css/style_css.css" rel="stylesheet" />
+<link href="resources/css/admin.css" rel="stylesheet" />
 
-<title>내가 등록한 상품 목록</title>
+<title>등록한 상품 목록</title>
 
 <style>
-#admin_main_inner{
-   margin-left:317px;
-   min-height:1040px;
-   padding-top:178px;
-}
-#admin_center_cate{
-   
-   /* padding-top:200px; */
-   width:194px;
-   float:left;
-}
-#table_button{
+
+/* #table_button{
    margin-left: 155px;
    
-} 
-#admin_1{
-  padding: 5px 0 35px 1px;
-    font-weight: 700;
-    font-size: 26px;
-    line-height: 35px;
-    color: #333;
-    letter-spacing: -1px;
-    margin-top: 35px;
-    
+}  */
+
+/* #apl_table_title{
+	width: 103px;
+    border-bottom: 2px solid #b3b3b3;
 }
-#admin_sub{
-   border: 1px solid #f2f2f2;
-    border-bottom: 1;
-    FONT-WEIGHT: 100;
-    display: block;
-    overflow: hidden;
-    font-size: 14px;
-    line-height: 20px;
-    letter-spacing: -.3px;
-    padding: 0px -5px 3px 5px;
-    margin-left: -6px;
-    margin-right: 16px;
-    margin-top: -27px;
-}
-#open_admin{
-   border-bottom: 1px solid #f2f2f2;
+ */
+
+/* #apl_line{
+    display: flex;
+    flex-direction: row;
+    width: 59%;
+    -webkit-box-align: center;
+    align-items: center;
+    border-bottom: 2px solid #198754;
+} */
+/* #product_t{
+width:95%
+} */
+/* #td_center{
+padding-top: 17px;
+} */
+
+
+ #admin_button_1{
+     border-bottom: 1px solid #f2f2f2;
     background-color: #fafafa;
     background-size: 6px 11px;
     font-weight: 700;
     color: #198754;
-}
-#admin_button{
+} 
+ #admin_button{
    border-bottom: 1px solid #f2f2f2;
-}
+}  
 
-#table_title{
-	width:120px;
-}
-#orderlist_1{
-    display: flex;
-    padding: 17px 0px 13px;
-    -webkit-box-pack: justify;
-    justify-content: flex-end;
-    border-bottom: 1px solid rgb(221, 223, 225);
-    float: right;
-    width: 100%;
-}
-}
-#order_date{
-font-size: 16px;
-    font-weight: 500;
-    line-height: 1.31;
-    color: rgb(51, 51, 51);
-}
-#line{
-    display: flex;
-    flex-direction: row;
-    width: 55%;
-    -webkit-box-align: center;
-    align-items: center;
-    border-bottom: 2px solid #198754;
-}
-#product_t{
-width:95%
-}
 </style>
 <script>
 function statistics(){
@@ -108,34 +69,35 @@ function statistics(){
 
 
 
-<div id="admin_main_inner">
-   <div id="admin_center_cate">
-   <div id="admin_1">관리자 페이지</div>
-      <div id="admin_sub">   
-      <input type="button" class="nav-link py-3 px-0 px-lg-3" value="통계" id="admin_button_1" style="background-color: white; border: none;" onclick=statistics()>
-      <a href="${pageContext.request.contextPath}/productAdd.do" class="nav-link py-3 px-0 px-lg-3" id="admin_button">상품등록페이지</a>
-      <a href="${pageContext.request.contextPath}/adminProductList.do" class="nav-link py-3 px-0 px-lg-3" id="admin_button">내가 등록한 상품목록</a>
-      <a href="${pageContext.request.contextPath}/orderList.do" class="nav-link py-3 px-0 px-lg-3" id="admin_button">주문내역</a>     <%--<a href="${pageContext.request.contextPath}/orderListDetail.do" class="nav-link py-3 px-0 px-lg-3" id="admin_button">주문상세페이지</a> --%>
+      <div id="admin_main_inner">
+      <div id="admin_center_cate">
+   <div id="admin_sub_title">관리자 페이지</div>
+      <div id="admin_sub">
+       <a style="cursor:pointer;"class="nav-link py-3 px-0 px-lg-3" id="admin_button" onclick=statistics()>매출통계</a>
+     <!--  <input type="button" class="nav-link py-3 px-0 px-lg-3" value="매출통계" id="admin_button_1" style="background-color: white; border: none;" onclick=statistics()> -->
+      <a href="${pageContext.request.contextPath}/productAdd.do" class="nav-link py-3 px-0 px-lg-3" id="admin_button">상품등록</a>
+      <a href="${pageContext.request.contextPath}/adminProductList.do" class="nav-link py-3 px-0 px-lg-3" id="admin_button_1">등록한 상품목록</a>
+      <a href="${pageContext.request.contextPath}/adminOrderList.do" class="nav-link py-3 px-0 px-lg-3" id="admin_button">주문내역</a>     <%--<a href="${pageContext.request.contextPath}/orderListDetail.do" class="nav-link py-3 px-0 px-lg-3" id="admin_button">주문상세페이지</a> --%>
       <a href="${pageContext.request.contextPath}/adminProductCheck.do" class="nav-link py-3 px-0 px-lg-3" id="admin_button">등록심사중인 상품목록</a>
       <a href="${pageContext.request.contextPath}/adminMemberList.do" class="nav-link py-3 px-0 px-lg-3" id="admin_button">등록된 회원 목록</a> 
-   </div>
+      </div>
    </div>
 
 
 <div id="admin_inner">
 
-     <h5 style="margin-top: 52px;">내가 등록한 상품 목록</h5>
+     <h5 style="margin-top: 52px;">등록한 상품 목록</h5>
 
-   <div id="line"></div>
+   <div id="apl_line"></div>
 	
-	<div id="table_button"  style="width:913px; margin-top:25px; text-align:center; font-size: 14px;">
+	<div id="table_button"  style="width:944px; margin-top:5px; text-align:center; font-size: 14px;">
 
-	<table id="product_t">
+	<table class="table" id="product_t">
 		<tr>
-			<th id="table_title">번호</th>
-			<th id="table_title">이름</th>
+			<td id="apl_table_title">번호</td>
+			<td id="apl_table_title">이름</td>
 			<!-- <th id="table_title">부제목</th> -->
-			<th id="table_title">가격</th>
+			<td id="apl_table_title">가격</td>
 			<!-- <th id="table_title">판매단위</th>
 			<th id="table_title">배송</th>
 			<th id="table_title">용량</th>
@@ -144,24 +106,27 @@ function statistics(){
 			<th id="table_title">유통기한</th>
 			<th id="table_title">타입</th>
 			<th id="table_title">태그</th> -->
-			<th id="table_title">삭제</th>
+			<td id="apl_table_title">승인 여부</td>
+			<td id="apl_table_title"></td>
+			<td id="apl_table_title"></td>
 		</tr>
 			<c:forEach var="productVo" items="${productList}">
-			<tr>
+			<%-- <tr>
 				<td colspan="4">
-					<div id="orderlist_1">
-		   				<%-- <a style="cursor:pointer; margin-top:20px;"onClick="location.href='${pageContext.request.contextPath}/admin_productDetail.do?pidx=${productVo.pidx}'" ><b>등록한 상품 상세보기</b></a> --%>
+					<div id="orderlist_3">
+		   				<a style="cursor:pointer; margin-top:20px;"onClick="location.href='${pageContext.request.contextPath}/admin_productDetail.do?pidx=${productVo.pidx}'" ><b>등록한 상품 상세보기</b></a>
 						<a id="inner_detail_button" style="cursor:pointer; margin-top:20px;"onClick="location.href='${pageContext.request.contextPath}/adminBuyerList.do?pidx=${productVo.pidx}'" >상품을 구매한 사람들</a>
 		   				<a id="inner_detail_button" style="cursor:pointer; margin-top:20px;"onClick="location.href='${pageContext.request.contextPath}/admin_productDetail.do?pidx=${productVo.pidx}'" >&nbsp;&nbsp;등록한 상품 상세보기</a>
 		   			</div>
 	   			</td>
-   			</tr>
+   			</tr> --%>
    
 			<form action="${pageContext.request.contextPath}/adminProductDelyn.do">
 				<tr>
-					<td>${productVo.pidx}</td><td>${productVo.p_name }</td><%-- <td>${productVo.p_secondname}</td> --%><td>${productVo.p_price }&nbsp;원</td><%-- <td>${productVo.p_unit }</td><td>${productVo.p_delivery }</td>
+					<td id="td_center">${productVo.pidx}</td><td id="td_center">${productVo.p_name }</td><%-- <td>${productVo.p_secondname}</td> --%><td id="td_center"><fmt:formatNumber value="${productVo.p_price }" pattern="#,###"/>&nbsp;원</td><%-- <td>${productVo.p_unit }</td><td>${productVo.p_delivery }</td>
 					<td>${productVo.p_weight }</td><td>${productVo.p_package }</td><td>${productVo.p_allergy }</td><td>${productVo.p_limitdate }</td>
-					<td>${productVo.p_type }</td><td>${productVo.p_tag }</td> --%><td><input type="hidden" name="pidx" value="${productVo.pidx}"><input type="submit" class="btn btn-secondary btn-sm" value="삭제"></a></td>
+					<td>${productVo.p_type }</td><td>${productVo.p_tag }</td> --%><td id="td_center">${productVo.p_admincheck }</td><td><a id="inner_detail_button" style="cursor:pointer; margin-top:20px;"onClick="location.href='${pageContext.request.contextPath}/adminBuyerList.do?pidx=${productVo.pidx}'" >&nbsp;&nbsp;구매자 리스트</a><br>
+		   			<a id="inner_detail_button" style="cursor:pointer; margin-top:20px;"onClick="location.href='${pageContext.request.contextPath}/admin_productDetail.do?pidx=${productVo.pidx}'" >&nbsp;&nbsp;상품 상세보기</a></td><td id="td_center"><input type="hidden" name="pidx" value="${productVo.pidx}"><input style="font-size: 12px;" type="submit" class="btn btn-secondary btn-sm" value="삭제"></a></td>
 				</tr>
 			</form>
 		</c:forEach>	

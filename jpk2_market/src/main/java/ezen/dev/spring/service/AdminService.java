@@ -76,4 +76,8 @@ public class AdminService {
 
 	}
 
+	public List<AdminVo> getStatisticsList2(AdminVo adminVo) {
+		return adminDao.getStatisticsList2(adminVo);
+	}
+
 }

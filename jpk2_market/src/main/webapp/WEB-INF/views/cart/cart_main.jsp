@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>  
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -53,6 +54,10 @@
     <script>
     $(function(){
        
+    	function priceToString(price) {
+    	    return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+    	}	
+    	
        var sum_price = parseInt($("#sum_price").val());
        var sale = 0;
        var delivery_fee = 0;
@@ -68,18 +73,18 @@
        
       if(sum_price < 50000 && sum_price != 0){
            delivery_fee = 3000;
-           $("#delivery_fee").text(delivery_fee+"원");
+           $("#delivery_fee").text(priceToString(delivery_fee)+"원");
         }else{
            delivery_fee = 0;
-           $("#delivery_fee").text(delivery_fee+"원");
+           $("#delivery_fee").text(priceToString(delivery_fee)+"원");
         }
        
      
        total_pay_price = sum_price-sale+delivery_fee;
        
-       $("#totalprice_result").text(sum_price+"원");
-       $("#sale").text(sale+"원"); 
-       $("#total_pay_price").text(total_pay_price+"원");
+       $("#totalprice_result").text(priceToString(sum_price)+"원");
+       $("#sale").text(priceToString(sale)+"원"); 
+       $("#total_pay_price").text(priceToString(total_pay_price)+"원");
        
        
        let number = $('#${cartVo.pbidx}_pop_out').val();
@@ -135,18 +140,18 @@
                     
                if(sum_price < 50000 && sum_price != 0){
                           delivery_fee = 3000;
-                          $("#delivery_fee").text(delivery_fee+"원");
+                          $("#delivery_fee").text(priceToString(delivery_fee)+"원");
                        }else{
                           delivery_fee = 0;
-                          $("#delivery_fee").text(delivery_fee+"원");
+                          $("#delivery_fee").text(priceToString(delivery_fee)+"원");
                        }
                       
                     
                       total_pay_price = sum_price-sale+delivery_fee;
                       
-                      $("#totalprice_result").text(sum_price+"원");
-                      $("#sale").text(sale+"원"); 
-                      $("#total_pay_price").text(total_pay_price+"원");
+                      $("#totalprice_result").text(priceToString(sum_price)+"원");
+                      $("#sale").text(priceToString(sale)+"원"); 
+                      $("#total_pay_price").text(priceToString(total_pay_price)+"원");
                       
                       
                         
@@ -198,18 +203,18 @@ $("#${cartVo.pbidx}_btn_plus").click(function(){
                
                if(sum_price < 50000 && sum_price != 0){
                           delivery_fee = 3000;
-                          $("#delivery_fee").text(delivery_fee+"원");
+                          $("#delivery_fee").text(priceToString(delivery_fee)+"원");
                        }else{
                           delivery_fee = 0;
-                          $("#delivery_fee").text(delivery_fee+"원");
+                          $("#delivery_fee").text(priceToString(delivery_fee)+"원");
                        }
                       
                     
                       total_pay_price = sum_price-sale+delivery_fee;
                       
-                      $("#totalprice_result").text(sum_price+"원");
-                      $("#sale").text(sale+"원"); 
-                      $("#total_pay_price").text(total_pay_price+"원");
+                      $("#totalprice_result").text(priceToString(sum_price)+"원");
+                      $("#sale").text(priceToString(sale)+"원"); 
+                      $("#total_pay_price").text(priceToString(total_pay_price)+"원");
             }
             
          },
@@ -265,17 +270,17 @@ $("#chk_${cartVo.pbidx}").change(function(){
    
   if(sum_price < 50000 && sum_price != 0){
        delivery_fee = 3000;
-       $("#delivery_fee").text(delivery_fee+"원");
+       $("#delivery_fee").text(priceToString(delivery_fee)+"원");
     }else{
        delivery_fee = 0;
-       $("#delivery_fee").text(delivery_fee+"원");
+       $("#delivery_fee").text(priceToString(delivery_fee)+"원");
     }
    
    total_pay_price = sum_price-sale+delivery_fee;
    
-   $("#totalprice_result").text(sum_price+"원");
-   $("#sale").text(sale+"원"); 
-   $("#total_pay_price").text(total_pay_price+"원");
+   $("#totalprice_result").text(priceToString(sum_price)+"원");
+   $("#sale").text(priceToString(sale)+"원"); 
+   $("#total_pay_price").text(priceToString(total_pay_price)+"원");
    
     
 });
@@ -292,17 +297,17 @@ $("#chk_all").change(function(){
   
   if(sum_price < 50000 && sum_price != 0){
        delivery_fee = 3000;
-       $("#delivery_fee").text(delivery_fee+"원");
+       $("#delivery_fee").text(priceToString(delivery_fee)+"원");
     }else{
        delivery_fee = 0;
-       $("#delivery_fee").text(delivery_fee+"원");
+       $("#delivery_fee").text(priceToString(delivery_fee)+"원");
     }
    
    total_pay_price = sum_price-sale+delivery_fee;
    
-   $("#totalprice_result").text(sum_price+"원");
-   $("#sale").text(sale+"원"); 
-   $("#total_pay_price").text(total_pay_price+"원");
+   $("#totalprice_result").text(priceToString(sum_price)+"원");
+   $("#sale").text(priceToString(sale)+"원"); 
+   $("#total_pay_price").text(priceToString(total_pay_price)+"원");
   
 
 });
@@ -332,10 +337,11 @@ $("#chk_all").change(function(){
     <button type="button" type="button" id="${cartVo.pbidx}_btn_plus" value="+" style="border:1px; background-color:white;"><img src="resources/img/+_button.png"></button>
    </div>
    
+   
     </td>
     <td>
     <!-- 금액 -->
-    <span class="price"><input type="hidden" id="${cartVo.pbidx}_price" value="${cartVo.p_price}"> ${cartVo.p_price}원</span>
+    <span class="price"><input type="hidden" id="${cartVo.pbidx}_price" value="${cartVo.p_price}"> <fmt:formatNumber value="${cartVo.p_price}" pattern="#,###"/>원</span>
     </td>
     <td>
     <!-- 삭제버튼 -->
@@ -377,6 +383,9 @@ $("#chk_all").change(function(){
     </div>
     </div>
      </form>
+     
+     
+    
 
     <!-- 푸터 연결 -->
     <jsp:include page="../footer.jsp"></jsp:include>

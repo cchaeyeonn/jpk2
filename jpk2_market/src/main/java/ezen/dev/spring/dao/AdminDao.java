@@ -82,6 +82,10 @@ public class AdminDao {
 		return sqlSession.selectList(MAPPER+".getStatisticsList", adminVo);
 	}
 
+	public List<AdminVo> getStatisticsList2(AdminVo adminVo) {
+		return sqlSession.selectList(MAPPER+".getStatisticsList2", adminVo);
+	}
+
 
 
 }

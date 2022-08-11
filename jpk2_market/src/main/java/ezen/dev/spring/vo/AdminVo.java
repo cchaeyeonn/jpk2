@@ -12,8 +12,21 @@ public class AdminVo {
 	private int p_price;
 	private int midx;
 	private int pidx;
+	private int sales;
+	private int count;
 	
-	
+	public int getCount() {
+		return count;
+	}
+	public void setCount(int count) {
+		this.count = count;
+	}
+	public int getSales() {
+		return sales;
+	}
+	public void setSales(int sales) {
+		this.sales = sales;
+	}
 	public int getMidx() {
 		return midx;
 	}

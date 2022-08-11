@@ -1,0 +1,590 @@
+@charset "UTF-8";
+
+#admin_main_inner{
+   margin-left:317px;
+   min-height:1375px;
+   padding-top:178px;
+}
+#admin_center_cate{
+   
+   
+   width:194px;
+   float:left;
+}
+
+#admin_sub_title{
+  padding: 5px 0 35px 1px;
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 35px;
+    color: #333;
+    letter-spacing: -1px;
+    margin-top: 35px;
+    
+}
+#admin_sub{
+   border: 1px solid #f2f2f2;
+    border-bottom: 1;
+    FONT-WEIGHT: 100;
+    display: block;
+    overflow: hidden;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: -.3px;
+    padding: 0px -5px 3px 5px;
+    margin-left: -6px;
+    margin-right: 16px;
+    margin-top: -27px;
+}
+
+#table_button{
+   margin-left: 155px;
+} 
+
+#table_title{
+	width:120px;
+}
+
+#line{
+    display: flex;
+    flex-direction: row;
+    width: 55%;
+    -webkit-box-align: center;
+    align-items: center;
+    border-bottom: 2px solid #198754;
+}
+
+#admin_button{
+   border-bottom: 1px solid #f2f2f2;
+}
+
+#open_admin{
+   border-bottom: 1px solid #f2f2f2;
+    background-color: #fafafa;
+    background-size: 6px 11px;
+    font-weight: 700;
+    color: #198754;
+}
+#admin_button{
+   border-bottom: 1px solid #f2f2f2;
+}
+
+/* admin_orderList , admin_orderListDetail , super adminCheckList 에서 사용 */
+
+#orderlist_1{
+    display: flex;
+    padding: 17px 0px 13px;
+    -webkit-box-pack: justify;
+    justify-content: flex-end;
+    border-bottom: 1px solid rgb(221, 223, 225);
+    float: right;
+    width: 100%;
+    margin-top:12px;
+
+}
+
+/* admin_orderList , admin_orderListDetail , super adminCheckList 에서 사용 끝*/
+
+/* admin_buyerList , admin_productList , super_adminMemberList 에서 사용 */
+
+#orderlist_3{
+    display: flex;
+    padding: 17px 0px 13px;
+    -webkit-box-pack: justify;
+    justify-content: flex-end;
+    border-bottom: 1px solid rgb(221, 223, 225);
+    float: right;
+    width: 100%;
+}
+
+/* admin_buyerList , admin_productList , super_adminMemberList 에서 사용 끝 */
+
+
+/* admin_buyerList css */
+
+#product_t{
+width:95%
+}
+
+
+/* admin_buyerList css 끝 */
+
+/* admin_orderList css */
+
+#aol_admin_center_cate{
+   
+   padding-top:91px;
+   width:194px;
+   float:left;
+}
+
+#aol_admin_sub_title{
+  padding: 5px 0 35px 1px;
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 35px;
+    color: #333;
+    letter-spacing: -1px;
+    margin-top: -55px;
+    
+}
+
+#aol_order_date{
+font-size: 16px;
+    font-weight: 500;
+    line-height: 1.31;
+    color: rgb(51, 51, 51);
+    margin-right: 347px;
+}
+
+#adl_orderlist_1{
+    display: flex;
+    padding: 17px 0px 13px;
+    -webkit-box-pack: justify;
+    border-bottom: 1px solid rgb(221, 223, 225);
+    }
+    
+#aol_line{
+	display: flex;
+    flex-direction: row;
+    width: 53.5%;
+    -webkit-box-align: center;
+    align-items: center;
+    border-bottom: 2px solid #198754;
+}
+/* admin_orderList css 끝 */
+
+
+/* admin_orderListDetail css */
+
+#aold_admin_center_cate{
+   
+   padding-top:91px;
+   width:194px;
+   float:left;
+}
+#aold_admin_sub_title{
+  padding: 5px 0 35px 1px;
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 35px;
+    color: #333;
+    letter-spacing: -1px;
+    margin-top: -55px;
+    
+}
+#aold_order_date{
+font-size: 16px;
+    font-weight: 500;
+    line-height: 1.31;
+    color: rgb(51, 51, 51);
+    margin-right: 347px;
+}
+/* admin_orderListDetail css 끝 */
+
+/* admin_product_add css  */
+
+#apa_table_button{
+   margin-left: 155px;
+   width:962px; 
+   min-height:1186px;
+   
+} 
+
+#apa_product{
+    padding-left: 10%;
+    padding-right: 10%;
+    min-height: 880px;
+    padding-top: 33px;
+}
+
+#apa_home_button{
+			padding-left:80%; 
+			padding-right:10%; 
+			text-align:center; 
+			float:center;
+			} 
+#apa_line{
+    display: flex;
+    flex-direction: row;
+    width: 53%;
+    -webkit-box-align: center;
+    align-items: center;
+    border-bottom: 2px solid #198754;
+}
+/* admin_product_add css 끝 */
+
+/* admin_productDetail, super_admin_productDetailcss  */
+
+	#product{
+		padding-left:10%;
+		padding-right:10%; 
+		height:1000px; 
+		padding-top:260px;
+		}
+	#product_img{
+			float:left; 
+			width:50%; 
+			height:50%;
+			
+			}
+	#product_detail{
+			float:right; 
+			width:50%; 
+			height:50%;
+			}
+	#home_button{
+			padding-left:10%; 
+			padding-right:10%; 
+			text-align:center; 
+			float:center;
+			} 
+    .button box{
+            display : inline-block;
+    }
+    #product_subject{
+    font-size:13px;
+    color:#8f8f8f;
+    }
+    #product_price{
+    font-size:13px;
+    margin-top:39px;
+    }
+    .pd_dt{
+    float:left;
+    width:140px;
+    color:#8f8f8f;
+    font-size:15px;
+    }
+    .pd_hr{
+    margin: 1.2rem 0;
+    color: inherit;
+    opacity:0.05;
+    width:547px;
+    }
+    .pd_button{
+   	margin-left:430px;
+   	margin-top:22px;
+
+    }
+    
+    #product_detail_inner{
+    width:100%;
+    min-height:1040px;
+    padding-left:10%;
+    padding-right:10%;
+    }
+    
+    input[type="radio"] {display:none;}
+    input[type="radio"] + label {display:inline-block;padding:20px;background:#f5f5f5;color:#999;font-size:14px; cursor:pointer;}
+    input[type="radio"]:checked + label {background:#e1e1e1;color:#000;}
+    
+    .conbox{width:100%;min-height:1040px;background:#f5f5f5;margin:0 auto;display:none;}
+    input[id="tab01"]:checked ~ .con1 {display:block;}
+    input[id="tab02"]:checked ~ .con2 {display:block;}
+    input[id="tab03"]:checked ~ .con3 {display:block;}
+    
+    #btn_insert_cart{
+    	float:right;
+    	width:50%;
+    	height: 45px;
+    	border-radius: 12px;
+    	border: 1px;
+    	border: 1px solid rgb(221, 221, 221);
+    }
+    
+    #btn_cart_cancel{
+    	float:left;
+    	width:50%;
+    	height: 45px;
+    	border-radius: 12px;
+    	border: 1px;
+    	border: 1px solid rgb(221, 221, 221);
+    }
+
+/* admin_productDetail css , super_admin_productDetailcss끝 */
+
+/* admin_productList css */
+
+#apl_table_title{
+	width: 103px;
+    border-bottom: 2px solid #b3b3b3;
+}
+
+#apl_line{
+    display: flex;
+    flex-direction: row;
+    width: 56.5%;
+    -webkit-box-align: center;
+    align-items: center;
+    border-bottom: 2px solid #198754;
+}
+#td_center{
+padding-top: 17px;
+}
+
+/* admin_productList css 끝*/
+
+
+
+/* admin product add 상품등록 css */
+
+#open_admin{
+   border-bottom: 1px solid #f2f2f2;
+    background-color: #fafafa;
+    background-size: 6px 11px;
+    font-weight: 700;
+    color: #198754;
+}
+#admin_button{
+   border-bottom: 1px solid #f2f2f2;
+}
+
+.filebox .upload-name {
+    display: inline-block;
+    height: 40px;
+    padding: 0 10px;
+    vertical-align: middle;
+    border: 1px solid #dddddd;
+    width: 78%;
+    color: #999999;
+}
+.filebox label {
+    display: inline-block;
+    padding: 10px 20px;
+    color: #fff;
+    vertical-align: middle;
+    background-color: #999999;
+    cursor: pointer;
+    height: 40px;
+    margin-left: 10px;
+}
+.filebox input[type="file"] {
+    position: absolute;
+    width: 0;
+    height: 0;
+    padding: 0;
+    overflow: hidden;
+    border: 0;
+    display:none;
+}
+
+#input_half{
+	width:50%;
+	display:inline !important; 
+}
+/* admin product add 상품등록 css 끝*/
+
+
+/* super admin checklist 등록심사중인 상품 목록 css */
+
+
+#order_date{
+font-size: 16px;
+    font-weight: 500;
+    line-height: 1.31;
+    color: rgb(51, 51, 51);
+}
+
+/* super admin checklist 등록심사중인 상품 목록 css 끝*/
+
+
+/* super admin memberlist 등록 된 회원 목록 css */
+
+#saml_line {
+    display: flex;
+    flex-direction: row;
+    width: 65.5%;
+    -webkit-box-align: center;
+    align-items: center;
+    border-bottom: 2px solid #198754;
+}
+
+/* super admin memberlist 등록 된 회원 목록 css 끝 */
+
+
+/* admin buyerdetail 구매자리스트-주문상세내역 css */
+#open_info_modify{
+  border-bottom: 1px solid #f2f2f2;
+}
+#open_history{
+    border-bottom: 1px solid #f2f2f2;
+    border-bottom: 1px solid #f2f2f2;
+    background-color: #fafafa;
+    background-size: 6px 11px;
+    font-weight: 700;
+    color: #198754;
+}
+
+ #orderlist_inner{
+/*     padding-top: 20px;
+    position: relative;
+    height: 100%; */
+    padding-left: 190px;
+} 
+#orderlist_inner2{
+   width: 875px;
+    /* padding: 14px 20px; */
+    margin-bottom: 14px;
+}
+
+#order_date_admin_buyerdetail{
+font-size: 16px;
+    font-weight: 500;
+    line-height: 1.31;
+    color: rgb(51, 51, 51);
+} */
+#order_detail{
+    align-self: center;
+    padding-right: 10px;
+    line-height: 1.33;
+    font-size: 12px;
+    color: rgb(51, 51, 51);
+    background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMCIgaGVpZ2h0PSIxMCIgdmlld0JveD0iMCAwIDEwIDEwIj4KICAgIDxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj4KICAgICAgICA8ZyBzdHJva2U9IiMzMzMiPgogICAgICAgICAgPHBhdGggZD0iTTAgMEw0IDQgMCA4IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMTIxNS4wMDAwMDAsIC02OTkuMDAwMDAwKSB0cmFuc2xhdGUoMTk1LjAwMDAwMCwgNTczLjAwMDAwMCkgdHJhbnNsYXRlKDIzMC4wMDAwMDAsIDk2LjAwMDAwMCkgdHJhbnNsYXRlKDIwLjAwMDAwMCwgMTYuMDAwMDAwKSB0cmFuc2xhdGUoNjMwLjAwMDAwMCwgMTAuMDAwMDAwKSB0cmFuc2xhdGUoMTQ0LjAwMDAwMCwgNS4wMDAwMDApIi8+CiAgICAgICAgPC9nPgogICAgPC9nPgo8L3N2Zz4K) right center / 10px 10px no-repeat;
+    cursor: pointer;
+}
+#orderlist_box{
+    display: flex;
+    flex-direction: row;
+    -webkit-box-pack: justify;
+    /* justify-content: space-between; */
+    justify-content: flex-start;
+    padding: 14px 0px 16px;
+}
+#orderlist_box_left{
+    display: flex;
+    flex-direction: row;
+    -webkit-box-align: center;
+    align-items: center;
+}
+#orderlist_img{
+width: 60px;
+    height: 78px;
+    margin-right: 20px;
+    background-color: rgb(245, 245, 245);
+}
+#orderlist_content{
+    display: flex;
+    flex-direction: column;
+}
+#dl{
+    display: flex;
+    padding-top: 6px;
+    flex-direction: row;
+    color: rgb(0, 0, 0);
+    line-height: 20px;
+    margin-bottom: -10px;
+}
+#dt{
+    width: 95px;
+    line-height: 1.58;
+    margin-right: 10px;
+    font-size: 13px;
+    color: rgb(51, 51, 51);
+    font-weight: normal;
+    padding-bottom: 10px;
+}
+
+#dd{
+flex: 1 1 0%;
+    font-weight: 600;
+    color: rgb(51, 51, 51);
+    line-height: 1.36;
+    display: -webkit-box;
+    overflow: hidden;
+    word-break: break-all;
+    white-space: normal;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+     width: 275px;
+     font-size: 16px;
+}
+#orderlist_shipping{
+    font-size: 16px;
+    font-weight: 500;
+    text-align: right;
+    color: rgb(51, 51, 51);
+    margin-right: 20px;
+}
+#orderlist_box_right{
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    /* margin-left: 311px; */
+    margin-left: 341px;
+    }
+#info{
+padding-top:71px;
+font-size:20px;
+}
+#d_from{
+font-size:16px;
+/* padding-right: 180px; */
+color: rgb(102, 102, 102);
+width: 187px;
+padding-bottom: 10px;
+
+}
+#d_from2{
+font-size:16px;
+padding-right: 180px;
+color: rgb(64, 64, 64);
+font-weight: 600;
+
+}
+#info_button{
+padding: 81px 0px 92px 686px;
+}
+
+#abd_line{
+	display: flex;
+    flex-direction: row;
+    width: 53%;
+    -webkit-box-align: center;
+    align-items: center;
+    border-bottom: 2px solid #198754;
+}
+
+/* admin buyerdetail 구매자리스트-주문상세내역 css 끝 */
+
+/* admin_home 에서 사용*/
+#ah_admin_inner{
+	width:1093px;
+	margin-top:50px;
+	height:248px;
+}
+
+#table_cover{
+	width:1174px;
+}
+
+#admin_home_st{
+	border-right:0px;
+	 border-left:0px; 
+	 font-size: 14px; 
+	 border-top: 2px solid #198754; 
+	 float:left;
+	  width:39%;
+}
+
+#admin_home_product_t{
+	border-right:0px; 
+	border-left:0px; 
+	font-size: 14px; 
+	border-top: 2px solid #198754; 
+	width:39%; 
+	float:right;
+}
+
+#admin_home_table_button{
+}
+
+#admin_home_n{
+	
+	border-right:0px; 
+	border-left:0px;
+	font-size: 14px;
+	border-top: 2px solid #198754; 
+	width:900px;
+	margin-left:195px;
+}

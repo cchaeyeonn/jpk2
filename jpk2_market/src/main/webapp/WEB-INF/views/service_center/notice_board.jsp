@@ -33,10 +33,10 @@
    <!-- 헤더 연결 -->
    <jsp:include page="../header.jsp"></jsp:include>
    
-<div id="servive_main_inner">
+<div id="service_main_inner">
    <div id="service_center_cate">
-   <div id="service_1">고객센터</div>
-      <div id="notice_sub">   
+   <div id="service_sub_title">고객센터</div>
+      <div id="service_sub">   
       <a href="${pageContext.request.contextPath}/notice_board.do" class="nav-link py-3 px-0 px-lg-3" id="open_notice">공지사항</a>
       <a href="${pageContext.request.contextPath}/faq_board.do" class="nav-link py-3 px-0 px-lg-3" id="open_faq">자주하는 질문</a>
       <!-- <a href="/spring/qna_board.do" class="nav-link py-3 px-0 px-lg-3 rounded" id="open_qna" >1:1 문의</a> -->
