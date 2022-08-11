@@ -156,7 +156,9 @@ function statistics(){
 
     
     <div id="admin_inner">
-    <h5 style="margin-top: 52.5px;">주문 내역</h5>
+    <h5 style="margin-top: 52.5px;">주문 내역<c:if test="${empty orderVo}">
+   주문내역이 없습니다
+   </c:if></h5>
 
    <div id="aol_line"></div>
    <div id="orderlist_inner">
