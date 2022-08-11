@@ -193,7 +193,7 @@ $(function(){
 		</dl>
 		<dl>
 		<dt class="pd_button">
-		<a class="btn btn-outline-success" id="homebutton_1">장바구니 담기</a>
+		<a class="open button" id="homebutton_1">장바구니 담기</a>
 		</dt>
 		</dl>
 		</div>
