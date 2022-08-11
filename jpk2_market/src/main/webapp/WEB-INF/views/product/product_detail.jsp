@@ -9,10 +9,11 @@
 <style>
 
 	#product{
-		padding-left:10%;
-		padding-right:10%; 
 		height:1000px; 
 		padding-top:260px;
+		margin-right:10%;
+		margin-left:10%;
+		width:1490px;
 		}
 	#product_img{
 			float:left; 
@@ -61,7 +62,7 @@
     }
     
     #product_detail_inner{
-    width:100%;
+   	width:1907px;
     min-height:1040px;
     padding-left:10%;
     padding-right:10%;
@@ -188,7 +189,7 @@ $(function(){
 		</dl>
 		<dl>
 		<dt class="pd_button">
-		<a class="open button" id="homebutton_1">장바구니 담기</a>
+		<a class="btn btn-outline-success" id="homebutton_1">장바구니 담기</a>
 		</dt>
 		</dl>
 		</div>
