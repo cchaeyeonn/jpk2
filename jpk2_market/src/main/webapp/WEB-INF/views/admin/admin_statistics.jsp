@@ -220,8 +220,8 @@ function statistics(){
              <td id="td3">
              ${statistics2Vo.count }
           </td>
-            <td id="td4">${statistics2Vo.sales }</td>
-          <td id="td5"><span><fmt:formatNumber value="${statistics2Vo.sales/statistics2Vo.count}" type="number" pattern="#.##"/>원</span></td>
+            <td id="td4"><fmt:formatNumber value="${statistics2Vo.sales }" pattern="#,###"/></td>
+          <td id="td5"><span><fmt:formatNumber value="${statistics2Vo.sales/statistics2Vo.count}" type="number" pattern="#,###.##"/>원</span></td>
          </tr>
          
      </c:forEach>  
@@ -276,9 +276,9 @@ function statistics(){
              <td id="td3">
              ${statisticsVo.p_amount }
           </td>
-            <td id="td4">${statisticsVo.p_price }</td>
+            <td id="td4"><fmt:formatNumber value="${statisticsVo.p_price }" pattern="#,###"/></td>
           <td id="td5">
-          <span>${statisticsVo.sales}원</span>
+          <span><fmt:formatNumber value="${statisticsVo.sales}" pattern="#,###"/>원</span>
           <input name="${statisticsVo.num}_sales" type="hidden" value="${statisticsVo.sales}">
           </td>
           <td id="td6"><span id="${statisticsVo.num}_ratio"></span></td>
