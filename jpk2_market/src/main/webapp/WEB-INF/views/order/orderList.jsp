@@ -46,7 +46,9 @@
 
    <div id="line"></div>
    <div id="orderlist_inner">
-   
+ 	 <c:if test="${empty orderList}">
+  		<h6> 주문내역이 없습니다</h6>
+ 	  </c:if>
       <c:forEach items="${orderList}" var="orderVo" varStatus="status">  
       
        <script>
@@ -77,6 +79,7 @@
       </script>
    <div id="orderlist_inner2">
    <div id="orderlist_1">
+   
    <span id="order_date"><b>${orderVo.order_date}</b>&nbsp;(${orderVo.order_id })</span>
    <a onClick="location.href='${pageContext.request.contextPath}/orderListDetail.do?order_id=${orderVo.order_id}'" id="order_detail">주문내역 상세보기</a>
    </div>
