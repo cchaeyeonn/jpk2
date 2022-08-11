@@ -20,6 +20,7 @@ $.LoadingOverlay("show", {
 	fontawesomeColor : "#FFFFFF",
 });
 
+
 $.LoadingOverlay("hide");
 
 $(document).ajaxSend(function(event, jqxhr, settings){
