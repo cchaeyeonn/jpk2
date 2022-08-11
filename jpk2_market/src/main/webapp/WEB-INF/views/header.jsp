@@ -5,7 +5,24 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<!-- 로딩창 관련 부분 -->
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/icons.css"/>
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/loadingoverlay.min.js"></script>
 
+<script type="text/javascript">
+
+	
+$.LoadingOverlay("show", {
+	background       : "rgba(0, 0, 0, 0.5)",
+	image            : "",
+	maxSize          : 60,
+	fontawesome      : "fa fa-spinner fa-pulse fa-fw",
+	fontawesomeColor : "#FFFFFF",
+});
+
+$.LoadingOverlay("hide");
+
+</script>
 <!-- css 링크 받아오는 부분 -->
 <link rel="stylesheet" type="text/css" href="./resources/css/style.css">
 
