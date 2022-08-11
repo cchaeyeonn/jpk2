@@ -46,26 +46,8 @@
 	overflow:hidden; /* 부모를 벗어나지 않고 내부 이미지만 확대 */
 }  
 </style>
-<script src="http://code.jquery.com/jquery-latest.min.js"></script>
-<script>
-$(function(){
-	if("${p_type}"=="vegetable_fruit"){
-		$("#p_list_title").text("야채/과일");
-	}else if("${p_type}"=="meat"){
-		$("#p_list_title").text("정육");
-	}else if("${p_type}"=="fish_seafood"){
-		$("#p_list_title").text("생선/해산물");
-	}else if("${p_type}"=="bakery"){
-		$("#p_list_title").text("베이커리");
-	}else if("${p_type}"=="processedfood"){
-		$("#p_list_title").text("가공식품");
-	}else{
-		$("#p_list_title").text("기타");
-	}
-})
-</script>
 
-<title>Fresh Market</title>
+<title>${productVo.p_type}</title>
 </head>
 <body>
 
@@ -77,7 +59,7 @@ $(function(){
 	            <div class="container">
                 <!-- Portfolio Section Heading -->
                 <div id="container_inner">
-                <h2 id="p_list_title" class="page-section-heading text-center text-uppercase text-secondary mb-0"></h2>
+                <h2 id="p_list_title" class="page-section-heading text-center text-uppercase text-secondary mb-0">베스트</h2>
                 <!-- Icon Divider -->
                 <!-- <div class="divider-custom">
                     <div class="divider-custom-line"></div>
@@ -89,6 +71,7 @@ $(function(){
                     <!-- Portfolio Item 1 -->
                      <c:forEach items="${productList}" var="productVo">
 	                    <div class="col-md-6 col-lg-4 mb-5" >
+	                        
 	                        <div class="portfolio-item mx-auto" data-bs-toggle="modal">
 	                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-320 w-249">
 	                                <div class="portfolio-item-caption-content text-center text-black"><!-- <i class="fas fa-plus fa-3x"></i> -->
