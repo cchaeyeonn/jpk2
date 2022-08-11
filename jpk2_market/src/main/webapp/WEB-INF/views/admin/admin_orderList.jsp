@@ -154,14 +154,17 @@ function statistics(){
    </div>
  
 
-    
+   
     <div id="admin_inner">
     <h5 style="margin-top: 52.5px;">주문 내역</h5>
 
    <div id="aol_line"></div>
    <div id="orderlist_inner">
-   
+   <c:if test="${empty orderList}">
+  		<h6> 주문내역이 없습니다</h6>
+ 	  </c:if>
       <c:forEach items="${orderList}" var="orderVo" varStatus="status">  
+      
       
        <script>
       $(function(){
@@ -191,6 +194,7 @@ function statistics(){
       </script>
    <div id="orderlist_inner2">
    <div id="adl_orderlist_1">
+
    <span id="aol_order_date"><b>${orderVo.order_date}</b>&nbsp;(${orderVo.order_id })</span>
    <a onClick="location.href='${pageContext.request.contextPath}/admin_orderListDetail.do?order_id=${orderVo.order_id}'" id="order_detail">주문내역 상세보기</a>
    </div>
