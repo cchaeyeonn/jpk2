@@ -239,7 +239,7 @@ function statistics(){
 							<option value="fish_seafood">수산·해산물</option>
 							<option value="snacks">과자</option>
 							<option value="bakery">베이커리</option>
-							<option value="etc">음료·유제품]</option>
+							<option value="etc">음료·유제품</option>
 						</select>
 						<br><br>
 						
