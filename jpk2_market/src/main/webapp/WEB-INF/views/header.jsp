@@ -184,7 +184,7 @@ function enterkey() {
    <nav class="navbar navbar-expand-lg bg-white text-uppercase fixed-top"
       id="mainNav">
       <div class="container">
-         <a class="navbar-brand" href="/spring/">JPK2</a>
+         <a class="navbar-brand" href="/spring/">Fresh Market</a>
          <button
             class="navbar-toggler text-uppercase font-weight-bold bg-white text-black rounded"
             type="button" data-bs-toggle="collapse"
@@ -237,7 +237,7 @@ function enterkey() {
    </nav>
    <!-- 상단 로고, 로그인부분 끝-->
 
-   <input type="hidden" value="${midx}" name="midx">
+
    <!-- 카테고리, 장바구니 로고 시작 -->
    <div class="fixed-top2" id="innerNav_1"
       style="padding-top: 110px; height: 178px; box-shadow: 0 3px 4px 0 rgb(0 0 0 / 6%); width:100%;">
