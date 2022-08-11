@@ -113,6 +113,10 @@
     padding: 16px 0 0 9px;
     font-size: 19px;
     }
+    #dd_allergy{
+    margin-bottom: 0.5rem;
+    margin-left: 140px;
+    }
 
 </style>
 
@@ -174,7 +178,7 @@ $(function(){
 		<hr class="pd_hr">
 		<dl>
 		<dt class="pd_dt">알레르기정보</dt>
-		<dd>${productVo.p_allergy}</dd>
+		<dd id="dd_allergy">${productVo.p_allergy}</dd>
 		</dl>
 		<hr class="pd_hr">
 		<dl>
