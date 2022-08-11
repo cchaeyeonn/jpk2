@@ -161,7 +161,7 @@ function statistics(){
 	<div id="admin_inner">
 	    <h5 style="margin-top: 52.5px;">상품등록</h5>
 
-   <div id="line"></div>
+   <div id="apa_line"></div>
 		<div id="apa_table_button">
 			<form name="frm2">
 			<table>

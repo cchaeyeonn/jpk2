@@ -2,7 +2,7 @@
 
 #admin_main_inner{
    margin-left:317px;
-   min-height:1040px;
+   min-height:1375px;
    padding-top:178px;
 }
 #admin_center_cate{
@@ -106,6 +106,7 @@
 width:95%
 }
 
+
 /* admin_buyerList css 끝 */
 
 /* admin_orderList css */
@@ -142,6 +143,15 @@ font-size: 16px;
     -webkit-box-pack: justify;
     border-bottom: 1px solid rgb(221, 223, 225);
     }
+    
+#aol_line{
+	display: flex;
+    flex-direction: row;
+    width: 53.5%;
+    -webkit-box-align: center;
+    align-items: center;
+    border-bottom: 2px solid #198754;
+}
 /* admin_orderList css 끝 */
 
 
@@ -194,6 +204,14 @@ font-size: 16px;
 			text-align:center; 
 			float:center;
 			} 
+#apa_line{
+    display: flex;
+    flex-direction: row;
+    width: 53%;
+    -webkit-box-align: center;
+    align-items: center;
+    border-bottom: 2px solid #198754;
+}
 /* admin_product_add css 끝 */
 
 /* admin_productDetail, super_admin_productDetailcss  */
@@ -296,7 +314,7 @@ font-size: 16px;
 #apl_line{
     display: flex;
     flex-direction: row;
-    width: 59%;
+    width: 56.5%;
     -webkit-box-align: center;
     align-items: center;
     border-bottom: 2px solid #198754;
@@ -376,7 +394,7 @@ font-size: 16px;
 #saml_line {
     display: flex;
     flex-direction: row;
-    width: 66.5%;
+    width: 65.5%;
     -webkit-box-align: center;
     align-items: center;
     border-bottom: 2px solid #198754;
@@ -518,10 +536,19 @@ font-weight: 600;
 padding: 81px 0px 92px 686px;
 }
 
+#abd_line{
+	display: flex;
+    flex-direction: row;
+    width: 53%;
+    -webkit-box-align: center;
+    align-items: center;
+    border-bottom: 2px solid #198754;
+}
+
 /* admin buyerdetail 구매자리스트-주문상세내역 css 끝 */
 
 /* admin_home 에서 사용*/
-#admin_inner{
+#ah_admin_inner{
 	width:1093px;
 	margin-top:50px;
 	height:248px;

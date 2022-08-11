@@ -51,9 +51,9 @@ function statistics(){
    </div>
 
 <div id="table_cover">
-<div id="admin_inner">
+<div id="ah_admin_inner">
 <div>
-	<h4>매출 통계<span style="text-align:right; float: right;">상품 승인 여부</span></h4>
+	<h4>매출 통계<span style="text-align:right; margin-left: 370px;">상품 승인 여부</span></h4>
     <table border="1" id="admin_home_st" class="table table-hover">
       <tr>
          <td>번호</td>

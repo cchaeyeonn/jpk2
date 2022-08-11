@@ -158,7 +158,7 @@ function statistics(){
     <div id="admin_inner">
     <h5 style="margin-top: 52.5px;">주문 내역</h5>
 
-   <div id="line"></div>
+   <div id="aol_line"></div>
    <div id="orderlist_inner">
    
       <c:forEach items="${orderList}" var="orderVo" varStatus="status">  
