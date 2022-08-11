@@ -339,6 +339,12 @@
           
           
 		   // 주소 유효성 검사
+		    $(document).on('click','#trigger',function(){
+		    if($("#postcode").val() == ""){
+              result = "주소를 입력해주세요";
+	          $("#result_addr").html(result).css("color", "red");
+              return false;
+          }
 		   $(document).on('click','#trigger',function(){
 		    if($("#member_addr_1").val() == ""){
               result = "주소를 입력해주세요";
@@ -430,8 +436,9 @@
 		   result = "";
 	          $("#result_term").html(result).css("color", "red"); 
 		  	//로딩중 버튼이 사라짐
-	   $(document).on('click','#trigger',function(){if($("input:checked[Name='member_termall']").is(":checked",true), !getMail.test($("#member_email").val()), $("#member_birth").val() != "",
-         $("#member_phone").val()!="", $("#member_addr_1").val() != "", $("#member_addr_2").val() != "",
+	   $(document).on('click','#trigger',function(){
+	   if($("input:checked[Name='member_termall']").is(":checked",true), !getMail.test($("#member_email").val()), $("#member_birth").val() != "",
+         $("#member_phone").val()!="", $("#postcode").val() != "", $("#member_addr_1").val() != "", $("#member_addr_2").val() != "",
          $("#member_email").val() != "", $("#member_name").val() != "", $("#member_password1").val() != "",
          $("#member_password2").val() != "",$("#member_id").val() != ""){
          $("#trigger").hide();
