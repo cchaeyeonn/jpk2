@@ -165,6 +165,7 @@ function statistics(){
  	  </c:if>
       <c:forEach items="${orderList}" var="orderVo" varStatus="status">  
       
+      
        <script>
       $(function(){
          if("${orderVo.orderpay_check}"=="Y"){
