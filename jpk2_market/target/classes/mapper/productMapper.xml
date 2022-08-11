@@ -17,7 +17,7 @@
 		select * from fm_product where p_delyn='N' and p_admincheck ='Y' order by pidx desc
 	</select>
 	<select id="getProductListBest" resultType="productVo">
-	select *,sum(p_amount) as count from fm_product_cart a inner join fm_product b on a.pidx_pc = b.pidx where p_check like 'Y' and p_admincheck ='Y' group by(pidx_pc) order by count desc;
+	select *,sum(p_amount) as count from fm_product_cart a inner join fm_product b on a.pidx_pc = b.pidx where p_check like 'Y' and p_admincheck ='Y' and p_delyn='N' group by(pidx_pc) order by count desc;
 	</select>
 	<select id="getSearchProductList" parameterType="ProductSearchVo" resultType="productVo">
 		select * from fm_product 
