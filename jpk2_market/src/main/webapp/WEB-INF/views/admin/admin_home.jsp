@@ -50,9 +50,11 @@ function statistics(){
       </div>
    </div>
 
-
-<div id="admin_inner" style="height:33%; margin-top:50px; width:70%;">
-    <table border="1" style="border-right:0px; border-left:0px; font-size: 14px; border-top: 2px solid #198754; float:left; width:39%; height:50%;" class="table table-hover">
+<div id="table_cover">
+<div id="admin_inner">
+<div>
+	<h4>매출 통계</h4>
+    <table border="1" id="admin_home_st" class="table table-hover">
       <tr>
          <td>번호</td>
          <td>상품명</td>
@@ -98,7 +100,10 @@ function statistics(){
          
      </c:forEach> 
     </table>
-   <table class="table" id="product_t" style="border-right:0px; border-left:0px; font-size: 14px; border-top: 2px solid #198754; width:39%; height:50%; float:right;">
+    </div>
+    <div>
+    <h4>상품 승인 여부</h4>
+   <table class="table" id="admin_home_product_t">
       <tr>
          <td id="table_title">번호</td>
          <td id="table_title">이름</td>
@@ -134,9 +139,11 @@ function statistics(){
          </form>
       </c:forEach>   
    </table>
+   </div>
 </div>   
-<div id="table_button" style="width:80%;">
-<table border="1" style="border-right:0px; border-left:0px; font-size: 14px; border-top: 2px solid #198754; width:900px;" class="table table-hover">
+<div id="admin_home_table_button">
+<h4>공지사항</h4>
+<table border="1" id="admin_home_n" class="table table-hover">
 <tr>
 <!-- <td></td> -->
 <td id="notice_td1">구분</td>
@@ -155,6 +162,7 @@ function statistics(){
 </tr>
  </c:forEach>
 </table>
+</div>
 </div>
 </div>
 <%-- <div id="admin_home_inner">     

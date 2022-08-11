@@ -519,3 +519,44 @@ padding: 81px 0px 92px 686px;
 }
 
 /* admin buyerdetail 구매자리스트-주문상세내역 css 끝 */
+
+/* admin_home 에서 사용*/
+#admin_inner{
+	width:1093px;
+	margin-top:50px;
+	height:248px;
+}
+
+#table_cover{
+	width:1174px;
+}
+
+#admin_home_st{
+	border-right:0px;
+	 border-left:0px; 
+	 font-size: 14px; 
+	 border-top: 2px solid #198754; 
+	 float:left;
+	  width:39%;
+}
+
+#admin_home_product_t{
+	border-right:0px; 
+	border-left:0px; 
+	font-size: 14px; 
+	border-top: 2px solid #198754; 
+	width:39%; 
+	float:right;
+}
+
+#admin_home_table_button{
+}
+
+#admin_home_n{
+	
+	border-right:0px; 
+	border-left:0px;
+	font-size: 14px;
+	border-top: 2px solid #198754; 
+	width:900px;
+}
