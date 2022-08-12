@@ -84,7 +84,8 @@ public class ProductController {
 			return "product/product_list_null";
 		}else {
 			model.addAttribute("productList",productList);
-			return "product/product_list_type";
+			model.addAttribute("searchName",searchName);
+			return "product/product_list_search";
 		}
 	}
 }
