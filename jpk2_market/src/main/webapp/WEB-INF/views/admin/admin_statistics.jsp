@@ -212,6 +212,7 @@ function statistics(){
       <c:forEach items="${statisticsList2}" var="statistics2Vo" varStatus="status">  
          
     
+    
        <tr id="target">
             <td id="td1">${statistics2Vo.num}</td>
             <td id="td2">
