@@ -373,8 +373,8 @@ public class AdminController {
 		return null;
 		}
 	}
-	@GetMapping("/superAdminProductDelyn.do")
-	public String delAdminProduct(@RequestParam("pidx") Integer pidx, HttpServletRequest request) {
+	@GetMapping("/superAdminProductFail.do")
+	public String failAdminProduct(@RequestParam("pidx") Integer pidx, HttpServletRequest request) {
 		
 		HttpSession session = request.getSession();
 		Integer midx_mp =Integer.parseInt(String.valueOf(session.getAttribute("midx")));
@@ -382,7 +382,7 @@ public class AdminController {
 		
 		productVo.setMidx_mp(midx_mp);
 		productVo.setPidx(pidx);
-		adminService.delProduct(productVo);
+		adminService.failProduct(productVo);
 
 
 		return "redirect:/adminProductCheck.do";
@@ -437,9 +437,10 @@ public class AdminController {
 		model.addAttribute("cartList",cartList);
 		model.addAttribute("delVo",delVo);
 		model.addAttribute("orderVo",orderVo);
-		
+	
 		
 		
 		return "admin/admin_orderListDetail";
 	}
+	
 }

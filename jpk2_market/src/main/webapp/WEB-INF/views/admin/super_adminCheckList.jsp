@@ -114,7 +114,7 @@ function statistics(){
 	   			</td>
    			</tr>
    
-			<form action="/spring/superAdminProductDelyn.do">
+			<form action="/spring/superAdminProductFail.do">
 			<tr>
 				<td>${productVo.pidx}</td>
 				<td>${productVo.p_name }</td>

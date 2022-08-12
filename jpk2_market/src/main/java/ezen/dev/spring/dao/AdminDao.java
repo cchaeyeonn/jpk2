@@ -86,6 +86,10 @@ public class AdminDao {
 		return sqlSession.selectList(MAPPER+".getStatisticsList2", adminVo);
 	}
 
+	public int failProduct(ProductVo productVo) {
+		return sqlSession.update(MAPPER+".failProduct",productVo);
+	}
+
 
 
 }

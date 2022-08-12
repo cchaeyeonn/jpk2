@@ -79,5 +79,8 @@ public class AdminService {
 	public List<AdminVo> getStatisticsList2(AdminVo adminVo) {
 		return adminDao.getStatisticsList2(adminVo);
 	}
+	public int failProduct(ProductVo productVo) {
+		return adminDao.failProduct(productVo);
+	}
 
 }
