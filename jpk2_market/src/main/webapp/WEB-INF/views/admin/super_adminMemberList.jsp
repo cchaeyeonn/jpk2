@@ -8,7 +8,7 @@
 
 <link href="resources/css/style_css.css" rel="stylesheet" />
 <link href="resources/css/admin.css" rel="stylesheet" />
-
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <title>등록된 회원 목록</title>
 
 <style>
@@ -93,6 +93,17 @@ function statistics(){
 			<th id="table_title">관리자임명</th>
 		</tr>
 			<c:forEach var="memberVo" items="${memberList}">
+			<script>
+			$(function(){
+				if("${memberVo.member_delyn}"=="Y"){
+					$("#${memberVo.midx }_delyn").text("탈퇴한 회원");
+				}else if("${memberVo.member_delyn}"=="F"){
+					$("#${memberVo.midx }_delyn").text("정지된 회원");
+				}else{
+					$("#${memberVo.midx }_delyn").text("");
+				}
+			});
+			</script>
 			   <tr>
 			   <td colspan="13"><div id="orderlist_3">
    </div></td>
@@ -102,7 +113,7 @@ function statistics(){
 			<tr>
 			<td>${memberVo.midx }</td><td>${memberVo.member_name}</td><td>${memberVo.member_id}</td><%-- <td>${memberVo.member_pw}</td> --%>
 			<td>${memberVo.member_grade}</td><td>${memberVo.member_phone}</td><td>${memberVo.member_email}</td>
-			<td>${memberVo.member_joindate}</td><td>${memberVo.member_delyn}</td><td>${memberVo.member_delyndate}</td>
+			<td>${memberVo.member_joindate}</td><td><span id="${memberVo.midx }_delyn"></span></td><td>${memberVo.member_delyndate}</td>
 			<td><input type="button" value="회원정지" onclick="location.href='${pageContext.request.contextPath}/adminMemberDelyn.do?midx=${memberVo.midx}'"></td>
 			<td><input type="button" value="관리자임명" onclick="location.href='${pageContext.request.contextPath}/adminMemberUp.do?midx=${memberVo.midx}&member_grade=${memberVo.member_grade}'"></td>
 			</tr>
