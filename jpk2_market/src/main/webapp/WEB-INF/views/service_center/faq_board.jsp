@@ -44,7 +44,7 @@
             <button class="question" id="que-1">
                <span id="que-1-toggle">+</span><span>'JPK2'란 무엇인가요?</span>
             </button>
-            <div class="answer" id="ans-1">-그러게 말입니다.</div>
+            <div class="answer" id="ans-1">-"Fresh Market" 프로젝트를 만든 개발팀입니다.</div>
          </div>
          <div class="faq-content">
             <button class="question" id="que-2">

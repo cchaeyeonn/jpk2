@@ -138,7 +138,7 @@ $(function(){
 		<hr class="pd_hr">
 		<dl>
 		<dt class="pd_dt">판매 단위</dt>
-		<dd class="pd_dd"><fmt:formatNumber value="${productVo.p_unit}" pattern="#,###"/></dd>
+		<dd class="pd_dd"><fmt:formatNumber value="${productVo.p_unit}" pattern="#,###"/>개</dd>
 		<dt class="pd_dt">중량/용량</dt>
 		<dd>${productVo.p_weight}</dd>
 		</dl>
