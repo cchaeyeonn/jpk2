@@ -9,7 +9,7 @@
 
 <link href="resources/css/style_css.css" rel="stylesheet" />
 <link href="resources/css/admin.css" rel="stylesheet" />
-
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <title>등록한 상품 목록</title>
 
 <style>
@@ -122,10 +122,21 @@ function statistics(){
    			</tr> --%>
    
 			<form action="${pageContext.request.contextPath}/adminProductDelyn.do">
+		<script>
+			$(function(){
+				if("${productVo.p_admincheck}"=="Y"){
+					$("#${productVo.pidx}_admincheck").text("승인완료");
+				}else if("${productVo.p_admincheck}"=="N"){
+					$("#${productVo.pidx}_admincheck").text("심사중");
+				}else{
+					$("#${productVo.pidx}_admincheck").text("승인취소");
+				}
+			});
+			</script>
 				<tr>
 					<td id="td_center">${productVo.pidx}</td><td id="td_center">${productVo.p_name }</td><%-- <td>${productVo.p_secondname}</td> --%><td id="td_center"><fmt:formatNumber value="${productVo.p_price }" pattern="#,###"/>&nbsp;원</td><%-- <td>${productVo.p_unit }</td><td>${productVo.p_delivery }</td>
 					<td>${productVo.p_weight }</td><td>${productVo.p_package }</td><td>${productVo.p_allergy }</td><td>${productVo.p_limitdate }</td>
-					<td>${productVo.p_type }</td><td>${productVo.p_tag }</td> --%><td id="td_center">${productVo.p_admincheck }</td><td><a id="inner_detail_button" style="cursor:pointer; margin-top:20px;"onClick="location.href='${pageContext.request.contextPath}/adminBuyerList.do?pidx=${productVo.pidx}'" >&nbsp;&nbsp;구매자 리스트</a><br>
+					<td>${productVo.p_type }</td><td>${productVo.p_tag }</td> --%><td id="td_center"><span id="${productVo.pidx}_admincheck"></span></td><td><a id="inner_detail_button" style="cursor:pointer; margin-top:20px;"onClick="location.href='${pageContext.request.contextPath}/adminBuyerList.do?pidx=${productVo.pidx}'" >&nbsp;&nbsp;구매자 리스트</a><br>
 		   			<a id="inner_detail_button" style="cursor:pointer; margin-top:20px;"onClick="location.href='${pageContext.request.contextPath}/admin_productDetail.do?pidx=${productVo.pidx}'" >&nbsp;&nbsp;상품 상세보기</a></td><td id="td_center"><input type="hidden" name="pidx" value="${productVo.pidx}"><input style="font-size: 12px;" type="submit" class="btn btn-secondary btn-sm" value="삭제"></a></td>
 				</tr>
 			</form>

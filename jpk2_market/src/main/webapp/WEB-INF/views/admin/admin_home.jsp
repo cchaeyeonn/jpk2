@@ -7,7 +7,7 @@
 <link href="resources/css/style_css.css" rel="stylesheet" />
 <link href="resources/css/admin.css" rel="stylesheet" />
    <title>관리자페이지</title>
-   
+   <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 </head>
 <script>
 function order(){
@@ -119,6 +119,17 @@ function statistics(){
          <td id="table_title">승인 여부</td>
       </tr>
          <c:forEach var="productVo" items="${productList}" begin="0" end="4">
+         		<script>
+			$(function(){
+				if("${productVo.p_admincheck}"=="Y"){
+					$("#${productVo.pidx}_admincheck").text("승인완료");
+				}else if("${productVo.p_admincheck}"=="N"){
+					$("#${productVo.pidx}_admincheck").text("심사중");
+				}else{
+					$("#${productVo.pidx}_admincheck").text("승인취소");
+				}
+			});
+			</script>
          <%-- <tr>
             <td colspan="4">
                <div id="orderlist_1">
@@ -133,7 +144,7 @@ function statistics(){
             <tr>
                <td id="td_center">${productVo.pidx}</td><td id="td_center">${productVo.p_name }</td><%-- <td>${productVo.p_secondname}</td> --%><td id="td_center">${productVo.p_price }&nbsp;원</td><%-- <td>${productVo.p_unit }</td><td>${productVo.p_delivery }</td>
                <td>${productVo.p_weight }</td><td>${productVo.p_package }</td><td>${productVo.p_allergy }</td><td>${productVo.p_limitdate }</td>
-               <td>${productVo.p_type }</td><td>${productVo.p_tag }</td> --%><td id="td_center">${productVo.p_admincheck }</td>
+               <td>${productVo.p_type }</td><td>${productVo.p_tag }</td> --%><td id="td_center"><span id="${productVo.pidx}_admincheck"></span></td>
             </tr>
          </form>
       </c:forEach>   

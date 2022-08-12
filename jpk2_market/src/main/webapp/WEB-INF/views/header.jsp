@@ -288,7 +288,7 @@ function enterkey() {
                       <option value="p_tag">상품태그</option>
                    </select>
               <input type="text" name="searchName" class="search_input" id="search_input" placeholder="검색어 입력" onkeypress="enterkey()">
-               <img style="width:20px;" src="resources/img/search.png" onclick="search()">
+               <img style="width:20px; cursor: pointer;" src="resources/img/search.png" onclick="search()">
             </div>
       </li>   
             <!-- 마우스 올리면 이미지 변경 onmouseover 이벤트 -->
