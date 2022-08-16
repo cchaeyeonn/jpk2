@@ -279,25 +279,22 @@ function cart(){
                   </tr>
                   <tr>
                      <td class="td_info_l"></td>
-                     <td><input type="text" id="member_toMember" name="member_toMember"
-                        placeholder="받는 사람" ></td>
+                     <td><input type="text" id="member_toMember" name="member_toMember" class="form-control" placeholder="받는 사람" ></td>
                   </tr>
                   <tr>
                      <td class="td_info_l"></td>
-                     <td><input type="text" id="member_toMemberPhone" name="member_toMemberPhone"
-                        placeholder="받는 사람의 휴대폰 번호" ></td>
+                     <td><input type="text" id="member_toMemberPhone" name="member_toMemberPhone" class="form-control" placeholder="받는 사람의 휴대폰 번호" ></td>
                   </tr>
                   <tr>
                      <td class="td_info_l"></td>
-                     <td><input type="text" id="postcode" name="member_addrcode" placeholder="우편번호" value="" readonly>
+                     <td><input type="text" id="postcode" name="member_addrcode" placeholder="우편번호" class="form-control" value="" readonly>
                         <input type="button" class="btn btn-outline-success" onclick="execDaumPostcode()" value="우편번호 찾기">
                      <p /></td>
                   </tr>
                   <tr>
                      <td class="td_info_l"></td>
-                     <td><input type="text" id="member_addr_1" name="member_addr1" value="" readonly placeholder="도로명주소">
-                        <input type="text" id="member_addr_2" name="member_addr2"
-                        placeholder="상세주소">
+                     <td><input type="text" id="member_addr_1" name="member_addr1" value="" class="form-control" readonly placeholder="도로명주소">
+                        <input type="text" id="member_addr_2" name="member_addr2" class="form-control" placeholder="상세주소">
                      <p />
                         <div style="height: 20px">
                            <span id="result_member_addr" style="font-size: 12px;"></span>
