@@ -238,13 +238,14 @@ public class AdminController {
 	@PostMapping("/statistics.do")
 	//jsp에 추가된 파일의 이름만 가져옴
 	public String statistics(@RequestParam(value="begin_date", required=false) String begin_date,
-			@RequestParam(value="end_date", required=false) String end_date,Model model, HttpServletRequest request) throws IllegalStateException, IOException {
+			@RequestParam(value="end_date", required=false) String end_date,
+			@RequestParam(value="bymenu", required=false) String bymenu,Model model, HttpServletRequest request) throws IllegalStateException, IOException {
 		SimpleDateFormat format = new SimpleDateFormat ( "yyyy-MM-dd");
 		Calendar time = Calendar.getInstance();
 		String year = String.valueOf(Calendar.getInstance().get(Calendar.YEAR));
 		String enddate = format.format(time.getTime());
 		String startdate = year+"-01-01";
-		
+		System.out.println("bymenu:"+bymenu);
 		if(begin_date == null) {
 			begin_date = startdate;
 
@@ -271,7 +272,7 @@ public class AdminController {
 		model.addAttribute("statisticsList",statisticsList);
 		model.addAttribute("statisticsList2",statisticsList2);
 		model.addAttribute("adminVo", adminVo);
-		
+		model.addAttribute("bymenu", bymenu);
 		
 
 		

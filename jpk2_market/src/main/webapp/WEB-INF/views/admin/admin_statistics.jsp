@@ -33,6 +33,20 @@ function statistics(){
    return;
 }
 </script>
+<script>
+$(function(){
+	var menu = "${bymenu}";
+  	  if(menu=="" || menu=="client"){
+		$("#byclient").prop("checked",true);
+	} else if(menu=="product"){
+		$("#byproduct").prop("checked",true);
+		
+	};     
+	
+	
+	
+});
+</script>
 
 <style>
  #admin_main_inner{
@@ -188,9 +202,9 @@ function statistics(){
 
 <div id="by_inner">
    <div class="by_scon">
-      <input type="radio" name="bymenu" id="byclient" checked>
+      <input type="radio" name="bymenu" id="byclient" value="client">
       <label style="border-top-left-radius: 20px;" for="byclient">고객별</label>
-      <input type="radio" name="bymenu" id="byproduct">
+      <input type="radio" name="bymenu" id="byproduct" value="product">
       <label style="border-top-right-radius: 20px;" for="byproduct">상품별</label>
    
 
