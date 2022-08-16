@@ -152,6 +152,8 @@ function cart(){
 
 .order_price1 {
    min-width: 130px;
+   font-size: 20px;
+   font-weight: 700;
 }
 
 .order_price2 {
@@ -321,7 +323,7 @@ function cart(){
                   <td class="order_price2"></td>
                   <td class="order_price1">배송비</td>
                   <td class="order_price2"></td>
-                  <td class="order_price1">총 결제 예정금액</td>
+                  <td  class="order_price1">총 결제 예정금액</td>
                </tr>
                <tr>
                   <td class="td_info_l"></td>
@@ -331,7 +333,7 @@ function cart(){
                   <td class="order_price2">+</td>
                   <td class="order_price1"><span id="del_price"></span></td>
                   <td class="order_price2">=</td>
-                  <td class="order_price1"><span id="total_price"></span> <input
+                  <td style="color:#198754;" class="order_price1"><span id="total_price"></span> <input
                      type="hidden" id="total_price_" value=""></td>
                </tr>
             </table>
