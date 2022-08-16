@@ -14,10 +14,10 @@ user-select: none;
 }
 			
 /* 스크롤 막기 코드1 */
-html, body {
+/* html, body {
   overflow: auto;
   height: 100%;
-}
+} */
 
 .button {
   background-color: #ffffff;
