@@ -47,7 +47,8 @@
 }  
 </style>
 
-<title>${productVo.p_type}</title>
+<%-- <title>${productVo.p_type}</title> --%>
+<title>신상품</title>
 </head>
 <body>
 

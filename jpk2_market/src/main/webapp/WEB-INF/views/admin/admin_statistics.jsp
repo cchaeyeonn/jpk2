@@ -9,7 +9,7 @@
 <!--  <link href="resources/css/admin.css" rel="stylesheet" />  -->
 <link rel="stylesheet" href="/resources/demos/style.css">
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-   <title>관리자페이지</title>
+   <title>매출통계</title>
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script></script>

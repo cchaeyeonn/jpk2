@@ -195,7 +195,7 @@ catch(err){
 
 
 
-
+<title>로그인</title>
 </head>
 <!-- 헤더연결 -->
 <jsp:include page="../header.jsp"></jsp:include>

@@ -7,7 +7,7 @@
 <link href="resources/css/style_css.css" rel="stylesheet" />
 <link href="resources/css/admin.css" rel="stylesheet" />
 
-<title>제품 추가 페이지</title>
+<title>상품 등록</title>
 
 <style>
 

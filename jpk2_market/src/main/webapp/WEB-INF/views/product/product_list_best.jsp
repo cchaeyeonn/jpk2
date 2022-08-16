@@ -47,7 +47,8 @@
 }  
 </style>
 
-<title>${productVo.p_type}</title>
+<%-- <title>${productVo.p_type}</title> --%>
+<title>베스트 상품</title>
 </head>
 <body>
 
