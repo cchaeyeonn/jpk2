@@ -22,7 +22,8 @@ user-select: none;
 
 #footer .inner_footer {
 	overflow: hidden;
-	padding-bottom: 24px
+	padding-bottom: 24px;
+	margin-left: 89px;
 }
 
 #footer .footer_cc {
