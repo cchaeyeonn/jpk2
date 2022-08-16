@@ -221,7 +221,7 @@ function cart(){
                   </script>
 
                   <tr>
-                     <td>
+                     <td style="width:256px;">
                         <div>
                            <img class="img-fluid4"
                               src="${pageContext.request.contextPath}/resources/product_image/${orderVo.p_system_filename}"
