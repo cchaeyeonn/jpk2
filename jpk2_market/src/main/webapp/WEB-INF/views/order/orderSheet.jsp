@@ -229,9 +229,9 @@ function cart(){
                         </div>
                      </td>
                      <td>${orderVo.p_name}</td>
-                     <td>&nbsp;&nbsp;&nbsp;</td>
+                     <td style="width:90px;">&nbsp;&nbsp;&nbsp;</td>
                      <td>${orderVo.p_amount}&nbsp;개</td>
-                     <td>&nbsp;&nbsp;&nbsp;</td>
+                     <td style="width:90px;">&nbsp;&nbsp;&nbsp;</td>
                      <td><span id="${orderVo.pbidx}_p_price"></span></td>
                   </tr>
                   
