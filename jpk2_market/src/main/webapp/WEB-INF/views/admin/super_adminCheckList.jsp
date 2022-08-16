@@ -93,14 +93,14 @@ function statistics(){
 		<tr>
 			<th id="table_title">번호</th>
 			<th id="table_title">이름</th>
-			<th id="table_title">부제목</th>
+<!-- 			<th id="table_title">부제목</th> -->
 			<th id="table_title">가격</th>
 			<th id="table_title">판매단위</th>
 			<th id="table_title">배송</th>
 			<th id="table_title">용량</th>
 			<th id="table_title">포장</th>
-			<th id="table_title">알러지</th>
-			<th id="table_title">유통기한</th>
+<!-- 			<th id="table_title">알러지</th>
+			<th id="table_title">유통기한</th> -->
 			<th id="table_title">타입</th>
 			<th id="table_title">태그</th>
 			<th id="table_title">등록/삭제</th>
@@ -118,14 +118,14 @@ function statistics(){
 			<tr>
 				<td>${productVo.pidx}</td>
 				<td>${productVo.p_name }</td>
-				<td>${productVo.p_secondname}</td>
+<%-- 				<td>${productVo.p_secondname}</td> --%>
 				<td><fmt:formatNumber value="${productVo.p_price }" pattern="#,###"/>&nbsp;원</td>
 				<td>${productVo.p_unit }</td>
 				<td>${productVo.p_delivery }</td>
 				<td>${productVo.p_weight }</td>
 				<td>${productVo.p_package }</td>
-				<td>${productVo.p_allergy }</td>
-				<td>${productVo.p_limitdate }</td>
+<%-- 				<td>${productVo.p_allergy }</td>
+				<td>${productVo.p_limitdate }</td> --%>
 				<td>${productVo.p_type }</td>
 				<td>${productVo.p_tag }</td>
 				<td>
