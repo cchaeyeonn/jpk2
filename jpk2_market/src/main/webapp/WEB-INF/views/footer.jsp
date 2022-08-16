@@ -75,7 +75,7 @@ body{
       
       $(window).scroll(function() {
           // top button controll
-          if ($(this).scrollTop() > 500) { 	//500만큼 내려가면 topbutton 보임
+          if ($(this).scrollTop() > 300) { 	//500만큼 내려가면 topbutton 보임
               $('#topButton').fadeIn();
           } else {
               $('#topButton').fadeOut();
