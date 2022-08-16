@@ -129,10 +129,7 @@ body{
 						<h3>
 							<a class="tit" href="#none" onclick="alert('서비스 준비중입니다.')">카카오톡 문의</a>
 						</h3>
-						<script type="text/javascript">
-						<!-- 스크립트 들어가는 부분-->
-							
-						</script>
+
 						<dl class="list">
 							<dt>365고객센터</dt>
 							<dd>오전 7시 - 오후 7시</dd>
@@ -157,13 +154,12 @@ body{
 							href="#" onclick="alert('서비스 준비중입니다.')">개인정보처리방침</a></li>
 						<li><a style="text-decoration: none;" class="link" href="#" onclick="alert('서비스 준비중입니다.')">이용안내</a></li>
 					</ul>
-					법인명 (상호) : JPK2 <span class="bar">I</span> 사업자등록번호 : 123-45-678910
-					<a style="text-decoration: none;" href="" target="_blank"
-						class="link">사업자정보 확인</a> <br> 통신판매업 : 제 2022-전북전주-0627 호 <span
-						class="bar">I</span> 개인정보보호책임자 : <br> 주소 : 전북 전주시 <span
-						class="bar">I</span> 대표이사 : <br> 팩스: 070 - 7500 - 6098 <span
+					법인명 (상호) : Fresh Market <span class="bar">I</span> 사업자등록번호 : 123-45-678910
+					 <br> 통신판매업 : 제 2022-0627-0831 호 <span
+						class="bar">I</span> 개인정보보호책임자 : Fresh Market <br> 주소 : 전북 전주시 <span
+						class="bar">I</span> 대표이사 : Fresh Market <br> 팩스: 070 - 7500 - 6098 <span
 						class="bar">I</span> 이메일 : <a style="text-decoration: none;"
-						href="1234@naver.com" class="link">help@help.com</a> <br>
+						href="#none" class="link">Fresh Market@help.com</a> <br>
 
 					<ul class="list_sns">
 						<li><a href="https://instagram.com/" class="link_sns"
@@ -185,7 +181,7 @@ body{
 
 		</div>
 		<div class="footer_indemnification_clause">
-			<p class="txt">jpk2에서 판매되는 상품 중에는 jpk2에 입점한 개별 판매자가 판매하는
+			<p class="txt">Fresh Market에서 판매되는 상품 중에는 Fresh Market에 입점한 개별 판매자가 판매하는
 				마켓플레이스(오픈마켓) 상품이 포함되어 있습니다.</p>
 			<p class="txt">마켓플레이스(오픈마켓) 상품의 경우 컬리는 통신판매중개자로서 통신판매의 당사자가 아닙니다.
 				컬리는 해당 상품의 주문, 품질, 교환/환불 등 의무와 책임을 부담하지 않습니다.</p>
