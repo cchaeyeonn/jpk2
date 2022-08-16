@@ -144,8 +144,23 @@ $(function(){
 		
 	})
 	
+	
 })
+
+
 </script>
+<!-- <script>
+$('html').css("overflow", "hidden"); 
+$('#element').on('scroll touchmove mousewheel', function(event) { // 터치무브와 마우스휠 스크롤 방지
+    event.preventDefault();
+    event.stopPropagation();
+    return false;
+});
+
+$('html').css("overflow", "auto");
+$('#element').off('scroll touchmove mousewheel'); // 터치무브 및 마우스휠 스크롤 가능
+</script> -->
+
 
 <script src="${pageContext.request.contextPath}/resources/js/cart.js "></script>
 

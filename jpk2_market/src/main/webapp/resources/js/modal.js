@@ -38,6 +38,8 @@ window.addEventListener("keyup", e => {
 
 document.querySelectorAll(".open").forEach(element => element.addEventListener("click", () => {
 	document.querySelector(".modal-background").style.display = "flex";
+
+	
         }));
 document.querySelectorAll(".close").forEach(element => element.addEventListener("click", () => {
 	document.querySelector(".modal-background").style.display = "none";
