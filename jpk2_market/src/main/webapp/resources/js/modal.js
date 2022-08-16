@@ -38,10 +38,19 @@ window.addEventListener("keyup", e => {
 
 document.querySelectorAll(".open").forEach(element => element.addEventListener("click", () => {
 	document.querySelector(".modal-background").style.display = "flex";
-
+	document.documentElement.style.overflow = "auto";
+	document.documentElement.style.height = "100%";
+	document.body.style.overflow = "auto";
+	document.body.style.height = "100%";
+	
+	
 	
         }));
 document.querySelectorAll(".close").forEach(element => element.addEventListener("click", () => {
 	document.querySelector(".modal-background").style.display = "none";
+	document.documentElement.style.overflow = "";
+	document.documentElement.style.height = "";
+	document.body.style.overflow = "";
+	document.body.style.height = "";
         }));
 
