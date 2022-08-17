@@ -8,6 +8,8 @@
 <!-- 로딩창 관련 부분 -->
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/icons.css"/>
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/loadingoverlay.min.js"></script>
+
+<!-- 스크롤 메뉴 스크립트 -->
 <script>
 $(document).ready(function(){
 	  var currentPosition = parseInt($("#quickmenu").css("top"));
@@ -17,9 +19,8 @@ $(document).ready(function(){
 	  });
 	});
 </script>
+<!-- 로딩창 스크립트 -->
 <script type="text/javascript">
-
-	
 $.LoadingOverlay("show", {
 	background       : "rgba(0, 0, 0, 0.5)",
 	image            : "",
@@ -29,7 +30,6 @@ $.LoadingOverlay("show", {
 });
 
 $.LoadingOverlay("hide");
-
 </script>
 <!-- css 링크 받아오는 부분 -->
 <link rel="stylesheet" type="text/css" href="./resources/css/style.css">
