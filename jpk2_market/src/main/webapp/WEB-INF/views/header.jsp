@@ -328,6 +328,7 @@ function enterkey() {
    <!-- 카테고리, 장바구니 로고 끝 -->
    <div id="quickmenu">
   <ul id="quickmenu_ul">
+  	<li><a href="${pageContext.request.contextPath}/productList_best.do"><img src="resources/img/icon8.png" width=98px;></a></li>
     <li id="quickmenu_li"><%
                            if (session.getAttribute("member_id") == null){
                                 out.print("<a href='"+request.getContextPath()+"/join.do'>회원가입</a>");
