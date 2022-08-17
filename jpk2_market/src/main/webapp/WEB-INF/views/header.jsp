@@ -8,7 +8,15 @@
 <!-- 로딩창 관련 부분 -->
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/icons.css"/>
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/loadingoverlay.min.js"></script>
-
+<script>
+$(document).ready(function(){
+	  var currentPosition = parseInt($("#quickmenu").css("top"));
+	  $(window).scroll(function() {
+	    var position = $(window).scrollTop(); 
+	    $("#quickmenu").stop().animate({"top":position+currentPosition+"px"},500);
+	  });
+	});
+</script>
 <script type="text/javascript">
 
 	
@@ -156,8 +164,13 @@ a {
 	/* margin-left:486px;
 	margin-right:483px; */
 }
-
-
+#quickmenu {position:absolute;width:100px;top:60%;margin-top:-50px;right:10px;background:#fff;}
+#quickmenu ul {position:relative;float:left;width:100%;display:inline-block;*display:inline;border:1px solid #ddd;}
+#quickmenu ul li {float:center;width:100%;border-bottom:1px solid #ddd;text-align:center;display:inline-block;*display:inline;}
+#quickmenu ul li a {position:relative;float:center;width:100%;height:30px;line-height:30px;text-align:center;color:#999;font-size:9.5pt;}
+#quickmenu ul li a:hover {color:#000;}
+/* .quickmenu ul li:last-child {border-bottom:0;} */
+#quickmenu_ul{padding-left:0px;}
 </style>
 
 
@@ -313,6 +326,26 @@ function enterkey() {
 	</div>
    </div>
    <!-- 카테고리, 장바구니 로고 끝 -->
+   <div id="quickmenu">
+  <ul id="quickmenu_ul">
+    <li id="quickmenu_li"><%
+                           if (session.getAttribute("member_id") == null){
+                                out.print("<a href='"+request.getContextPath()+"/join.do'>회원가입</a>");
+                               }%> <% 
+                            if (session.getAttribute("member_grade") != null) {
+                               grade = (long)session.getAttribute("member_grade");
+                               }
+                        if ( grade >= 1){
+                           out.print("<a href='"+request.getContextPath()+"/admin.do'>관리자페이지</a>");
+                           }
+                        else if ((session.getAttribute("member_id") != null) && grade == 0){
+                           out.print("<a href='"+request.getContextPath()+"/orderList.do'>마이페이지</a>");
+                        }
+                        %></li>
+    <li id="quickmenu_li"><a href="${pageContext.request.contextPath}/notice_board.do">공지사항</a></li>
+    <li id="quickmenu_li"><a onclick="cart();">장바구니</a></li>
+  </ul>
+</div>
 </form>
 </body>
 </html>
