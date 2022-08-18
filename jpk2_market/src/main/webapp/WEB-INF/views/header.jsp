@@ -214,7 +214,7 @@ function enterkey() {
    <nav class="navbar navbar-expand-lg bg-white text-uppercase fixed-top"
       id="mainNav">
       <div class="container">
-         <a class="navbar-brand" href="/spring/">Fresh Market</a>
+         <a class="navbar-brand" href="${pageContext.request.contextPath}/">Fresh Market</a>
          <button
             class="navbar-toggler text-uppercase font-weight-bold bg-white text-black rounded"
             type="button" data-bs-toggle="collapse"
