@@ -306,7 +306,7 @@ function enterkey() {
       </li>   
             <!-- 마우스 올리면 이미지 변경 onmouseover 이벤트 -->
          <li style="float: right; width: 0px;"><a
-            onclick="cart(${midx});" style="float: right;" id="cartbutton">
+            onclick="cart();" style="float: right;" id="cartbutton">
                <img src="resources/img/cart.png"
                onmouseover="this.src='resources/img/cart2.png'; document.getElementById('cartDiv').style.display = 'block';"
                onmouseout="this.src='resources/img/cart.png'; document.getElementById('cartDiv').style.display = 'none';" alt="장바구니"
