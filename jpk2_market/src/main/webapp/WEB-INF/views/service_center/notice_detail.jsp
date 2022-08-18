@@ -63,13 +63,13 @@ $(function(){
                <c:if test="${member_grade != null}">
                <c:if test="${member_grade >= 1}">
    
-                  <a class='btn btn-primary' href='/spring/notice_update.do?nidx=${noticeVo.nidx}'>수정하기</a>
-                  <a class='btn btn-primary' id="delete_notice" href='/spring/notice_delyn.do?nidx=${noticeVo.nidx}'>삭제하기</a>
+                  <a class='btn btn-primary' href='${pageContext.request.contextPath}/notice_update.do?nidx=${noticeVo.nidx}'>수정하기</a>
+                  <a class='btn btn-primary' id="delete_notice" href='${pageContext.request.contextPath}/notice_delyn.do?nidx=${noticeVo.nidx}'>삭제하기</a>
    
    
                </c:if>
                <div style="float: right;">
-               <a href="/spring/notice_board.do" class="btn btn-primary">글목록</a>
+               <a href="${pageContext.request.contextPath}/notice_board.do" class="btn btn-primary">글목록</a>
                </div>
              </c:if>
              
