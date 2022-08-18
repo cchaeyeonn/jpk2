@@ -28,13 +28,7 @@
         
 
 
-	<script type="text/javascript">
-  function chatChannel() {
-    Kakao.Channel.chat({
-      channelPublicId: '_ZeUTxl',
-    })
-  }
-</script>
+
       <!-- 이미지 슬라이드 스크립트 -->
       <script>
       	$(document).ready(function () {

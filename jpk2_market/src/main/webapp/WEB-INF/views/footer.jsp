@@ -67,8 +67,6 @@ body{
   });
 </script>
 <!-- End Channel Plugin -->
-
-
 <!-- topbutton 스크립트 시작 -->
 <script>
      
