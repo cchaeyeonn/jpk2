@@ -65,7 +65,7 @@ public class MemberController {
 		response.setContentType("text/html; charset=UTF-8");
 		response.setCharacterEncoding("UTF-8");
 		PrintWriter out=response.getWriter();
-		out.println("<script>window.onload = function(){alert('인증메일이 발송되었습니다. 가입시 작성한 이메일을 확인해주세요.'); location.href='/spring/login.do';}</script>");
+		out.println("<script>window.onload = function(){alert('인증메일이 발송되었습니다. 가입시 작성한 이메일을 확인해주세요.'); location.href='"+request.getContextPath()+"/login.do';}</script>");
 		out.flush();
 		memberService.join(memberVo);
 		return null;
