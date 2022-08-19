@@ -183,7 +183,7 @@ function statistics(){
 							<%-- <td id="stable_1">${noticeVo.nidx}</td> --%>
 							<td id="stable_2">[${noticeVo.n_category}]</td>
 							<td id="stable_3"><a
-								href="/spring/notice_detail.do?nidx=${noticeVo.nidx}">${noticeVo.n_title}</a></td>
+								href="${pageContext.request.contextPath}/notice_detail.do?nidx=${noticeVo.nidx}">${noticeVo.n_title}</a></td>
 							<%-- <td id="stable_4">${noticeVo.n_content}</td> --%>
 							<td>관리자</td>
 						</tr>
