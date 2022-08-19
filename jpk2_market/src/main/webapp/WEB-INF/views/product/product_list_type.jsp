@@ -62,7 +62,7 @@ $(function(){
 	}else if("${p_type}"=="snacks"){
 		$("#p_list_title").text("과자");
 	}else{
-		$("#p_list_title").text("기타");
+		$("#p_list_title").text("음료/유제품");
 	}
 })
 </script>
