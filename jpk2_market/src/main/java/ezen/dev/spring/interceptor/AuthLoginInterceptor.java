@@ -25,6 +25,7 @@ public class AuthLoginInterceptor extends HandlerInterceptorAdapter{
 				out.println("<script>alert('로그인이 필요한 서비스입니다.'); location.href='"+request.getContextPath()+"/login.do';</script>");
 				out.flush();
 
+				
 				return false;
 			}
 			
