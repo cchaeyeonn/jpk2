@@ -107,7 +107,7 @@ body{
 
 
 	<!-- Footer-->
-	<div id="footer">
+	<div id="footer" style="padding-top: 40px;">
 	<hr style="color:#eee;">
 		<div class="footer-top">
 			<div class="inner_footer">
