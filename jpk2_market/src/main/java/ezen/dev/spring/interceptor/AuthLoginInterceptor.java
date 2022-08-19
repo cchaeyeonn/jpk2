@@ -22,11 +22,9 @@ public class AuthLoginInterceptor extends HandlerInterceptorAdapter{
 				response.setCharacterEncoding("UTF-8");
 				PrintWriter out=response.getWriter();
 				//존재하지 않는다면 alert를 띄우고 login 페이지로 이동시킴
-<<<<<<< HEAD
-				out.println("<script>alert('로그인이 필요한 서비스입니다.'); location.href='/login.do';</script>");
-=======
+
 				out.println("<script>alert('로그인이 필요한 서비스입니다.'); location.href='"+request.getContextPath()+"/login.do';</script>");
->>>>>>> branch 'master' of https://github.com/cchaeyeonn/jpk2.git
+
 				out.flush();
 
 				
