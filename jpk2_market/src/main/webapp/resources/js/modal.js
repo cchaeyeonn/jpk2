@@ -39,9 +39,9 @@ window.addEventListener("keyup", e => {
 document.querySelectorAll(".open").forEach(element => element.addEventListener("click", () => {
 	document.querySelector(".modal-background").style.display = "flex";
 	document.documentElement.style.overflow = "auto";	//html태그를 의미
-	document.documentElement.style.height = "100%";
+	document.documentElement.style.height = "";
 	document.body.style.overflow = "auto";	//body태그를 의미
-	document.body.style.height = "100%";
+	document.body.style.height = "";
 	
 	
 	
