@@ -151,6 +151,7 @@ public class AdminController {
 		String realPath = request.getServletContext().getRealPath(upload_dir);
 		String fullPath = realPath+p_system_filename;
 		uploadFile.transferTo(new File(fullPath));
+		System.out.println(fullPath);
 		String p_weight = p_weight1+p_weight2;
 		int result=0;
 		
