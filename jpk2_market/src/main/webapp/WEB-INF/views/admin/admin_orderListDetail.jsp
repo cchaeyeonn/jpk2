@@ -144,7 +144,15 @@ font-size: 16px;
          }
       })
       </script> 
-   
+   <script>
+function statistics(){
+   var frm = document.frm;
+   frm.action="${pageContext.request.contextPath}/statistics.do";
+   frm.method="POST";
+   frm.submit();
+   return;
+}
+</script>
 </head>
 <body>
    <!-- 헤더 연결 -->
@@ -158,7 +166,7 @@ font-size: 16px;
       <div id="aold_admin_center_cate">
    <div id="aold_admin_sub_title">관리자 페이지</div>
       <div id="admin_sub">
-       <a style="cursor:pointer;"class="nav-link py-3 px-0 px-lg-3" id="admin_button" onclick=statistics()>매출통계</a>
+       <a style="cursor:pointer;"class="nav-link py-3 px-0 px-lg-3" id="admin_button" onclick="statistics();">매출통계</a>
      <!--  <input type="button" class="nav-link py-3 px-0 px-lg-3" value="매출통계" id="admin_button_1" style="background-color: white; border: none;" onclick=statistics()> -->
       <a href="${pageContext.request.contextPath}/productAdd.do" class="nav-link py-3 px-0 px-lg-3" id="admin_button">상품등록</a>
       <a href="${pageContext.request.contextPath}/adminProductList.do" class="nav-link py-3 px-0 px-lg-3" id="admin_button">등록한 상품목록</a>
