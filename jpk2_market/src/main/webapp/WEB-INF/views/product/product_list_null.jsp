@@ -46,7 +46,7 @@
 	overflow:hidden; /* 부모를 벗어나지 않고 내부 이미지만 확대 */
 }  
 </style>
-
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <title>${productVo.p_type}</title>
 </head>
 <body>
@@ -59,7 +59,7 @@
 	            <div class="container">
                 <!-- Portfolio Section Heading -->
                 <div id="container_inner">
-                <h2 id="p_list_title" class="page-section-heading text-center text-uppercase text-secondary mb-0">검색된 상품이 존재하지 않습니다.</h2>
+                <h2 id="p_list_title" class="page-section-heading text-center text-uppercase text-secondary mb-0">"${searchName}"에 대한 상품이 존재하지 않습니다.</h2>
                 <!-- Icon Divider -->
                 <!-- <div class="divider-custom">
                     <div class="divider-custom-line"></div>

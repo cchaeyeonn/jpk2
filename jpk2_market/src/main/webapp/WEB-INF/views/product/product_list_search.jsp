@@ -46,7 +46,7 @@
 	overflow:hidden; /* 부모를 벗어나지 않고 내부 이미지만 확대 */
 }  
 </style>
-
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <title>${productVo.p_type}</title>
 </head>
 <body>
