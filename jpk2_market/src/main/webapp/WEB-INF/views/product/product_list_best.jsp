@@ -49,6 +49,7 @@
 
 <%-- <title>${productVo.p_type}</title> --%>
 <title>베스트 상품</title>
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
 </head>
 <body>
 
