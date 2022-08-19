@@ -173,7 +173,11 @@ a {
 #quickmenu_ul{padding-left:0px;}
 </style>
 
-
+  <script>
+function pop(){
+    	  alert('관리자 계정 : 514@naver.com 비밀번호 : a123456789')
+      }
+      </script>
 <script>
 function cart(){
    var frm = document.frm;
@@ -343,8 +347,10 @@ function enterkey() {
                            out.print("<a href='"+request.getContextPath()+"/orderList.do'>마이페이지</a>");
                         }
                         %></li>
+                       
     <li id="quickmenu_li"><a href="${pageContext.request.contextPath}/notice_board.do">공지사항</a></li>
     <li id="quickmenu_li"><a onclick="cart();">장바구니</a></li>
+    <li id="quickmenu_li"><a onclick="pop();">테스트 계정</a></li>
   </ul>
 </div>
 </form>

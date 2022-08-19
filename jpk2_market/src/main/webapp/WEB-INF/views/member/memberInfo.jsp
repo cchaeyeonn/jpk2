@@ -158,8 +158,8 @@
      <!--     <tr><td id="memberinfo_td">&nbsp;</td><td id="memberinfo_td"></td></tr> -->
          <tr>
             <td id="memberinfo_td">성별</td>
-            <td id="memberinfo_td"><input type="radio" id="custom-control custom-radio" name="member_gender" value="m" checked> 남자 
-                <input type="radio" id="custom-control custom-radio" name="member_gender" value="f"> 여자</td>
+            <td id="memberinfo_td"><input type="radio" id="custom-control custom-radio" name="member_gender" value="m" checked readonly> 남자 
+                <input type="radio" id="custom-control custom-radio" name="member_gender" value="f" readonly> 여자</td>
                 <td id="memberinfo_td"><div style="height:20px"><span id="result_gender" style="font-size:12px;"></span></div></td>
          </tr>
         <!--  <tr><td id="memberinfo_td">&nbsp;</td><td id="memberinfo_td"></td></tr> -->
