@@ -164,7 +164,7 @@ a {
 	/* margin-left:486px;
 	margin-right:483px; */
 }
-#quickmenu {position:absolute;width:100px;top:65%;margin-top:-87px;right:10px;background:#fff;}
+#quickmenu {position:absolute;width:100px;top:61%;margin-top:-87px;right:10px;background:#fff;}
 #quickmenu ul {position:relative;float:left;width:100%;display:inline-block;*display:inline;border:1px solid #ddd;}
 #quickmenu ul li {float:center;width:100%;border-bottom:1px solid #ddd;text-align:center;display:inline-block;*display:inline;}
 #quickmenu ul li a {position:relative;float:center;width:100%;height:30px;line-height:30px;text-align:center;color:#999;font-size:9.5pt;}
@@ -304,7 +304,7 @@ function enterkey() {
                       <option value="p_type">상품타입</option>
                       <option value="p_tag">상품태그</option>
                    </select>
-              <input type="text" name="searchName" class="search_input" id="search_input" placeholder="검색어 입력" onkeypress="enterkey()">
+              <input type="text" name="searchName" class="search_input" id="search_input" placeholder="  검색어 입력" onkeypress="enterkey()">
                <img style="width:20px; cursor: pointer;" src="resources/img/search.png" onclick="search()">
             </div>
       </li>   
