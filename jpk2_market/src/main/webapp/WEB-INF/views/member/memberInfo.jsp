@@ -3,6 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script>
   function check(){  
   var fm = document.frm1;   
@@ -26,7 +27,22 @@
   
     return;
   }  
+
   </script>
+  <script>
+   $(function(){
+	 var gender = "${memberVo.member_gender}"; 
+   	  if(gender=="m"){
+		$(".man").prop("checked",true);
+	} else if(gender=="f"){
+		$(".woman").prop("checked",true);
+		
+	};     
+	 
+	
+	
+   });
+   </script>
 <style>
 
 #open_info_modify{
@@ -158,14 +174,14 @@
      <!--     <tr><td id="memberinfo_td">&nbsp;</td><td id="memberinfo_td"></td></tr> -->
          <tr>
             <td id="memberinfo_td">성별</td>
-            <td id="memberinfo_td"><input type="radio" id="custom-control custom-radio" name="member_gender" value="m" checked readonly> 남자 
-                <input type="radio" id="custom-control custom-radio" name="member_gender" value="f" readonly> 여자</td>
+            <td id="memberinfo_td"><input type="radio" id="custom-control custom-radio" class="man" name="member_gender" value="m"  readonly> 남자 
+                <input type="radio" id="custom-control custom-radio" name="member_gender" class="woman" value="f" readonly> 여자</td>
                 <td id="memberinfo_td"><div style="height:20px"><span id="result_gender" style="font-size:12px;"></span></div></td>
          </tr>
         <!--  <tr><td id="memberinfo_td">&nbsp;</td><td id="memberinfo_td"></td></tr> -->
          <tr>
             <td id="memberinfo_td">생년월일</td>
-            <td id="memberinfo_td"><input type ="date" class="form-control" id="member_birth" name="member_birth" value="${memberVo.member_birth}" onclick="maxDate()"></td>
+            <td id="memberinfo_td"><input type ="date" class="form-control" id="member_birth" name="member_birth" value="${memberVo.member_birth}" onclick="maxDate()" readonly></td>
             <td id="memberinfo_td"><div style="height:20px"><span id="result_birth" style="font-size:12px;"></span></div></td>
          </tr>
          </table>
