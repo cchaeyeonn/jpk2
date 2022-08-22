@@ -443,7 +443,6 @@
          $("#member_email").val() != "", $("#member_name").val() != "", $("#member_password1").val() != "",
          $("#member_password2").val() != "",$("#member_id").val() != ""){
          $("#trigger").hide();
-         $("#toloading").show();
          }});
 		
 	});
