@@ -68,8 +68,10 @@
                 </div> -->
                <!--  Portfolio Grid Items -->
                 <div class="row justify-content-center">
+                <hr style="border:2px">
                     <!-- Portfolio Item 1 -->
-                     <c:forEach items="${productList}" var="productVo">
+                    <h2 id="p_list_title" class="page-section-heading text-center text-uppercase text-secondary mb-0" >대신 이런 상품은 어떠세요?</h2>
+                     <c:forEach items="${productList2}" var="productVo">
 	                    <div class="col-md-6 col-lg-4 mb-5" >
 	                        
 	                        <div class="portfolio-item mx-auto" data-bs-toggle="modal">

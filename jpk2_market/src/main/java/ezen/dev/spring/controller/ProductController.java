@@ -81,6 +81,8 @@ public class ProductController {
 		productSearchVo.setSearchName(searchName);
 		List<ProductVo> productList = productService.getSearchProductList(productSearchVo);
 		if(productList.isEmpty()) {
+			List<ProductVo> productList2 = productService.getProductListBest();
+			model.addAttribute("productList2",productList2);
 			model.addAttribute("searchName",searchName);
 			return "product/product_list_null";
 		}else {

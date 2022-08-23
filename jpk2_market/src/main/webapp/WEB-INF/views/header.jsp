@@ -4,7 +4,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+	<meta name="description" content="" />
+	<meta name="author" content="" />
 <!-- 로딩창 관련 부분 -->
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/icons.css"/>
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/loadingoverlay.min.js"></script>
@@ -165,13 +168,26 @@ a {
 	/* margin-left:486px;
 	margin-right:483px; */
 }
-#quickmenu {position:absolute;width:100px;top:61%;margin-top:-87px;right:10px;background:#fff;}
-#quickmenu ul {position:relative;float:left;width:100%;display:inline-block;*display:inline;border:1px solid #ddd;}
+#quickmenu {position:absolute;width:100px;top:61%;margin-top:-87px;right:10px;background:#fff;z-index:9999;}
+#quickmenu ul {position:relative;float:left;width:100%;display:inline-block;display:inline;border:1px solid #ddd;}
 #quickmenu ul li {float:center;width:100%;border-bottom:1px solid #ddd;text-align:center;display:inline-block;*display:inline;}
 #quickmenu ul li a {position:relative;float:center;width:100%;height:30px;line-height:30px;text-align:center;color:#999;font-size:9.5pt;}
 #quickmenu ul li a:hover {color:#000;}
 /* .quickmenu ul li:last-child {border-bottom:0;} */
 #quickmenu_ul{padding-left:0px;}
+
+@media screen and (max-width: 990px) {
+  #listes {
+    display: none;
+  }
+  .search {
+  	float:left;
+  	width:990px;
+  	padding-left:30px;
+  }
+  #innerNav_1 ul{
+  	margin-left:0px !important;
+  }
 </style>
 
   <script>
@@ -205,7 +221,7 @@ function enterkey() {
 }
 </script>
 </head>
-<body>
+<body style="min-width:350px">
 <form id="frm" name="frm">
    <!-- <div class="top_banner">
    <div class="banner_inner">
@@ -278,7 +294,7 @@ function enterkey() {
       style="padding-top: 110px; height: 178px; box-shadow: 0 3px 4px 0 rgb(0 0 0 / 6%); width:100%;">
       <div id="menu_cover">
       <ul class="menu" style="margin-top: 28px; width:1280.78px;">
-         <li style="float: left;"><a href="#">전체 카테고리</a>
+         <li id="listes" style="float: left;"><a href="#">전체 카테고리</a>
             <ul class="depth_1">
                <li id="icon1"><a href="${pageContext.request.contextPath}/productList_type.do?type=vegetable_fruit">채소·과일</a></li>
                <li id="icon2"><a href="${pageContext.request.contextPath}/productList_type.do?type=processedfood">샐러드·간편식</a></li>
@@ -290,10 +306,10 @@ function enterkey() {
 
 
             </ul></li>
-         <li style="float: left;"><a href="${pageContext.request.contextPath}/productList_new.do">신상품</a></li>
-         <li style="float: left;"><a href="${pageContext.request.contextPath}/productList_best.do">베스트</a></li>
-         <li style="float: left;"><a href="#" onclick="alert('서비스 준비중입니다.')">알뜰쇼핑</a></li>
-         <li style="float: left;"><a href="#" onclick="alert('서비스 준비중입니다.')">특가/혜택</a></li>
+         <li id="listes" style="float: left;"><a href="${pageContext.request.contextPath}/productList_new.do">신상품</a></li>
+         <li id="listes" style="float: left;"><a href="${pageContext.request.contextPath}/productList_best.do">베스트</a></li>
+         <li id="listes" style="float: left;"><a href="#" onclick="alert('서비스 준비중입니다.')">알뜰쇼핑</a></li>
+         <li id="listes" style="float: left;"><a href="#" onclick="alert('서비스 준비중입니다.')">특가/혜택</a></li>
          <%-- <li><a href="/spring/cart_main.do?midx=${midx}" style="margin-left: 710px;"><input type="image" value="장바구니" src="resources/img/cart.png" width=30px; ></a></li> --%>
 
             
@@ -356,4 +372,5 @@ function enterkey() {
 </div>
 </form>
 </body>
+
 </html>
