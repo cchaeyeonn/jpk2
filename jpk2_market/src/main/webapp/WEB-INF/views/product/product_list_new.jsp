@@ -67,7 +67,7 @@
 
                 <div id="container_inner">
                 <div id="container_header">
-                	<img src="${pageContext.request.contextPath}/resources/img/best_banner.png">
+                	<img src="${pageContext.request.contextPath}/resources/img/new_banner.png">
                 </div>
                 <h2 id="p_list_title" class="page-section-heading text-center text-uppercase text-secondary mb-0">신상품</h2>
                 <!-- Icon Divider -->
