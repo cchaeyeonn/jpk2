@@ -156,7 +156,8 @@ a {
 .search_input{
    margin-top:5px;
    border-radius: 15px;
-    border: 1px solid rgb(189 189 189);
+   border: 1px solid rgb(189 189 189);
+   text-indent:0.5em;
 }
 
 #menu_cover{
