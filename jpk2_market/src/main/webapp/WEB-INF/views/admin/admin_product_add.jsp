@@ -169,9 +169,10 @@ function statistics(){
 				<div id="apa_product">
 					<div id="product_img">상품 사진
 						<input type="file" id="files" name="p_filename">
+						<img id="image" style="width: 350px; margin-top: 15px;">
 					</div>
 					<div>
-						<img id="image">
+						
 					</div>
   <script>
   		document.getElementById("files").onchange = function () {

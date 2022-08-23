@@ -104,7 +104,7 @@
 <script>
 $(function(){
 	if("${productVo.p_type}"=="vegetable_fruit"){
-		$("#p_type").text("야채/과일");
+		$("#p_type").text("채소/과일");
 	}else if("${productVo.p_type}"=="meat"){
 		$("#p_type").text("정육");
 	}else if("${productVo.p_type}"=="fish_seafood"){
