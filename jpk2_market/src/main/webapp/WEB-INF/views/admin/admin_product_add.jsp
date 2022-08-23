@@ -137,6 +137,7 @@ function statistics(){
     return;
   }  
   </script>
+
 </head>
 <body>
 
@@ -167,9 +168,24 @@ function statistics(){
 			<table>
 				<div id="apa_product">
 					<div id="product_img">상품 사진
-						<input type="file" name="p_filename">
+						<input type="file" id="files" name="p_filename">
 					</div>
-					
+					<div>
+						<img id="image">
+					</div>
+  <script>
+  		document.getElementById("files").onchange = function () {
+	    var reader = new FileReader();
+
+	    reader.onload = function (e) {
+	        // get loaded data and render thumbnail.
+	        document.getElementById("image").src = e.target.result;
+	    };
+
+	    // read the image file as a data URL.
+	    reader.readAsDataURL(this.files[0]);
+	};
+  </script>					
 					<!-- <div class="filebox">
 					    <input class="upload-name" value="첨부파일" placeholder="첨부파일">
 					    <label for="file">파일찾기</label> 
