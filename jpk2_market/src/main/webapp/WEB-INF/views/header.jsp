@@ -173,8 +173,8 @@ a {
 #quickmenu ul li {float:center;width:100%;border-bottom:1px solid #ddd;text-align:center;display:inline-block;*display:inline;}
 #quickmenu ul li a {position:relative;float:center;width:100%;height:30px;line-height:30px;text-align:center;color:#999;font-size:9.5pt;}
 #quickmenu ul li a:hover {color:#000;}
-/* .quickmenu ul li:last-child {border-bottom:0;} */
-#quickmenu_ul{padding-left:0px;}
+#quickmenu_ul{padding-left:0px;
+			margin-bottom:0px !important;}
 
 @media screen and (max-width: 990px) {
   #listes {

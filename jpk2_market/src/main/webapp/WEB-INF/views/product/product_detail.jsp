@@ -5,6 +5,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<meta name="description" content="" />
+<meta name="author" content="" />
 <title>제품 상세 페이지</title>
 <style>
 
@@ -116,7 +119,153 @@
     }
     #dd_allergy{
     margin-bottom: 0.5rem;
-    margin-left: 140px;
+    margin-left: 140px;}
+    #melon_info_box{
+    text-align:center;
+    }
+    @media screen and (max-width: 990px) {
+    
+    #product{
+		height:650px; 
+		padding-top:260px;
+		margin-right:10%;
+		margin-left:10%;
+		width:500px;
+		font-size:11px !important;
+		}
+	#product_img{
+			float:left; 
+			width:430px; 
+			height:552px; 
+			
+			}
+	.img-fluid3{
+			margin-top:0px !important;
+			margin-bottom:0px !important;
+			margin-left:0px !important;
+			margin-right:0px !important;
+			}
+	#product_detail{
+			float:left; 
+			width:500px; 
+			height:100px;
+			}
+/* 	#home_button{
+			padding-left:10%; 
+			padding-right:10%; 
+			text-align:center; 
+			float:center;
+			} */
+    .button box{
+            display : inline-block;
+    }
+    #product_subject{
+    font-size:9px;
+    color:#8f8f8f;
+    }
+    #product_price{
+    font-size:9px;
+    margin-top:20px;
+    }
+    .pd_dt{
+    float:left;
+    width:500px;
+    color:#8f8f8f;
+    font-size:11px;
+    }
+    .pd_hr{
+    margin: 1.2rem 0;
+    color: inherit;
+    opacity:0.05;
+    width:500px;
+    }
+    .pd_button{
+   	margin-left:100px;
+   	margin-top:22px;
+
+    }
+    
+    #product_detail_inner{
+   	width:500px;
+    min-height:1040px;
+    padding-left:10%;
+    padding-right:10%;
+    }
+    
+    
+    input[type="radio"] {display:none;}
+    input[type="radio"] + label {display:inline-block;padding:20px;background:#f5f5f5;color:#999;font-size:9px; cursor:pointer;}
+    input[type="radio"]:checked + label {background:#a5cbb970;color:#000;}
+    
+    .conbox{width:500px; min-height:1040px; margin:0 auto;display:none;}
+    input[id="tab01"]:checked ~ .con1 {display:block;}
+    input[id="tab02"]:checked ~ .con2 {display:block;}
+    input[id="tab03"]:checked ~ .con3 {display:block;}
+    
+    #btn_insert_cart{
+    	float:left;
+    	width:400px;
+    	height: 45px;
+    	border-radius: 5px;
+    	border: 1px;
+    	border: 1px solid rgb(221, 221, 221);
+    	background-color: #198754;
+   		color: white;
+    }
+    
+    #btn_cart_cancel{
+    	float:left;
+    	width:400px;
+    	height: 45px;
+    	border-radius: 5px;
+    	border: 1px;
+    	border: 1px solid rgb(221, 221, 221);
+    	
+    }
+    #for_sum_price{
+    /* width: 29%;
+    margin-left: 248px; */
+    float:left;
+    font-size: 13px;
+    font-weight: 700;
+    
+    }
+    
+    #modal_button{
+    padding: 11px 0 0 0;
+    }
+    #modal_sum{
+    padding: 16px 0 0 9px;
+    font-size: 12px;
+    }
+    #dd_allergy{
+    margin-bottom: 0.5rem;
+    margin-left: 60px;}
+    #homebutton_1{
+    width:30px;
+    }
+    #product_detail_inner{
+    margin-top:1000px;
+    width:500px;
+    }
+    #melon{
+    width:500px;
+    }
+    #melon_info{
+    width:500px;
+    margin-left:0px;
+    margin-top:0px;
+    }
+    .modal-content{
+    width:450px;
+    padding:0px;
+    }
+    input[type="radio"]:checked + label{
+    height:30px;
+    }
+    input[type="radio"] + label{
+    height:30px;
+    }
     }
 
 </style>
@@ -222,8 +371,8 @@ $(function(){
 					<input type="radio" name="tabmenu" id="tab02">
 					<label for="tab02">후기</label>	
 				
-					<div class="conbox con1"><img src="resources/img/melon.png"></div>
-					<div class="conbox con3"><img style="margin-left: 170px; margin-top: 65px;" src="resources/img/melon_info.png"></div>
+					<div class="conbox con1"><img id="melon" src="resources/img/melon.png"></div>
+					<div class="conbox con3" id="melon_info_box"><img id="melon_info"  src="resources/img/melon_info.png"></div>
 					<div class="conbox con2"></div>
 			</div>
 		

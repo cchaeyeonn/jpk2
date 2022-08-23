@@ -172,6 +172,24 @@ function cart(){
 #member_addr_1{
    width:293px;
 }
+@media screen and (max-width: 990px){
+#wrap{
+width:550px !important;
+margin-left:50px !important;
+font-size:11px !important;
+}
+#order_price_table{
+width:500px !important;
+}
+.order_price1{
+font-size:11px !important;
+min-width:70px !important;
+}
+.order_price2{
+font-size:11px !important;
+min-width:70px !important;
+}
+}
 </style>
 </head>
 
@@ -314,7 +332,7 @@ function cart(){
          <div style="margin-top: 30px;">
             결제 예정 금액
             <hr id="ordersheet_hr">
-            <table style="text-align: center;">
+            <table id="order_price_table" style="text-align: center;">
                <tr>
                   <td class="td_info_l"></td>
                   <td class="order_price1">상품 총 가격</td>
@@ -393,7 +411,7 @@ function cart(){
                </table>
             </div>
 
-            <div style="margin-left: 38%; margin-top:2%; margin-bottom:9%;">
+            <div style="margin-left: 38%; margin-top:2%; margin-bottom:9%; text-align:center;">
                <input type="button" class="btn btn-outline-success" onclick="requestPay()" id="trigger"
                   value="결제하기">
                <input type="button" class="btn btn-outline-success" onclick="cart()" value="장바구니로 돌아가기">
