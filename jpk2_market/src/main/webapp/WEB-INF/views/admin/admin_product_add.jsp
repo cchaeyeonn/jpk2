@@ -250,13 +250,13 @@ function statistics(){
 						
 						타입<br>
 						<select name="p_type">
-							<option value="vegetable_fruit">채소·과일</option>
-							<option value="processedfood">샐러드·간편식</option>
-							<option value="meat">정육</option>
-							<option value="fish_seafood">수산·해산물</option>
-							<option value="snacks">과자</option>
-							<option value="bakery">베이커리</option>
-							<option value="etc">음료·유제품</option>
+							<option value="채소/과일">채소·과일</option>
+							<option value="샐러드/간편식">샐러드·간편식</option>
+							<option value="정육">정육</option>
+							<option value="수산/해산물">수산·해산물</option>
+							<option value="과자">과자</option>
+							<option value="베이커리">베이커리</option>
+							<option value="음료/유제품">음료·유제품</option>
 						</select>
 						<br><br>
 						
