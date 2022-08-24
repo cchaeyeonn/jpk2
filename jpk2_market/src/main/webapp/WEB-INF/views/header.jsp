@@ -366,8 +366,8 @@ function enterkey() {
                         %></li>
                        
     <li id="quickmenu_li"><a href="${pageContext.request.contextPath}/notice_board.do">공지사항</a></li>
-    <li id="quickmenu_li"><a onclick="cart();">장바구니</a></li>
-    <li id="quickmenu_li"><a onclick="pop();">테스트 계정</a></li>
+    <li id="quickmenu_li"><a onclick="cart();" style="cursor:pointer;">장바구니</a></li>
+    <li id="quickmenu_li"><a onclick="pop();" style="cursor:pointer;">테스트 계정</a></li>
   </ul>
 </div>
 </form>
