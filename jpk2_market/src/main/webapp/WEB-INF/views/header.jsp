@@ -192,7 +192,7 @@ a {
 
   <script>
 function pop(){
-    	  alert('관리자 계정 : 514@naver.com 비밀번호 : a123456789\n made by 김채연 권광원 박경재 조하람')
+    	  alert('관리자 계정 : 1129@naver.com 비밀번호 : wpffl123123\n made by 김채연 권광원 박경재 조하람')
       }
       </script>
 <script>

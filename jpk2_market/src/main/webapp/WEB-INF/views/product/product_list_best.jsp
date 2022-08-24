@@ -45,6 +45,11 @@
 	height:311px;
 	overflow:hidden; /* 부모를 벗어나지 않고 내부 이미지만 확대 */
 }  
+
+#container_header {
+	text-align:center;
+	margin-bottom:30px;
+} 
 </style>
 
 <%-- <title>${productVo.p_type}</title> --%>
@@ -61,6 +66,9 @@
 	            <div class="container">
                 <!-- Portfolio Section Heading -->
                 <div id="container_inner">
+                <div id="container_header">
+                	<img style="width:1168px;" src="${pageContext.request.contextPath}/resources/img/best_banner.png">
+                </div>
                 <h2 id="p_list_title" class="page-section-heading text-center text-uppercase text-secondary mb-0">베스트</h2>
                 <!-- Icon Divider -->
                 <!-- <div class="divider-custom">

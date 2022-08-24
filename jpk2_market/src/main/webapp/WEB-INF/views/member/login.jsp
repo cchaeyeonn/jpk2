@@ -163,6 +163,14 @@ a:hover {
 		font-size: 0.95rem
 	} */
 }
+
+@media screen and (max-width: 990px) {
+#quickmenu{
+	display:none;
+}
+
+}
+
 </style>
 <script type='text/javascript' src=''></script>
 <script type='text/javascript'
