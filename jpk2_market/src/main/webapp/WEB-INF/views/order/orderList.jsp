@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>  
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -95,7 +96,7 @@
 
       <dl id="dl">
       <dt id="dt">결제금액</dt>
-      <dd id="dd">${orderVo.pay_price }</dd>
+      <dd id="dd"><fmt:formatNumber value="${orderVo.pay_price }" pattern="#,###"/>원</dd>
       </dl>
       
       <dl id="dl">

@@ -25,7 +25,41 @@
 .price_r{
    text-align:right;
 }
-
+@media screen and (max-width: 990px){
+ #cart_inner{
+ width:550px !important;
+ padding-left:50px !important;
+ padding-right:50px !important;
+ margin:0px !important;
+ font-size:9px !important;
+ height:450px !important;
+ }
+ #cart_line{
+ width:550px !important;
+ }
+ #for_order{
+ width:550px !important;
+ height:450px !important;
+ }
+ #for_order_inner{
+ float:left !important;
+ height:450px !important;
+ }
+ #for_order_table{
+ width:550px !important;
+ float:left !important;
+ margin-left:0px !important;
+ }
+ #target{
+ width:550px !important;
+ }
+ #count_button{
+ padding-left:33px !important;
+ }
+ .price{
+ display:none;
+ }
+}
 </style>
 </head>
 <body>
@@ -43,7 +77,7 @@
    <!-- <input type="submit" class="btn btn-outline-success" value="주문하기"> -->
     <button id="cart_delete" type="button" value="선택 삭제">선택 삭제</button>
     
-    <hr style="width:82%;">
+    <hr id="cart_line" style="width:82%;">
     
     
     <div id="cart_1" style="float:left; width:78%;">   
@@ -313,7 +347,13 @@ $("#chk_all").change(function(){
 });
     });
     </script>
- 
+     <style>
+    @media screen and (max-width: 990px){
+    #${cartVo.pbidx}_product_target{
+    border-width:550px !important;
+    }
+    }
+    </style>
     <tr id="${cartVo.pbidx}_product_target">
     <td>
     <input type="checkbox" class="del-chk" name="pbidx" id="chk_${cartVo.pbidx}" value="${cartVo.pbidx}" checked>
@@ -324,12 +364,12 @@ $("#chk_all").change(function(){
     <img class="img-fluid2" src="${pageContext.request.contextPath}/resources/product_image/${cartVo.p_system_filename}" alt="..."  />
     </div>
     </td>
-    <td>
+    <td style="min-width:70px;">
     
     <!-- 상품명 -->
     ${cartVo.p_name}
     </td>
-    <td id="count_button" style="padding-left:63px; width:346px;">
+    <td id="count_button" style="padding-left:63px; width:346px; min-width:200px;">
     <!-- 수량 버튼 -->
     <div style="border:1px solid; width:169px; color:rgb(221,223,225); height:40px;">
     <button type="button" type="button" id="${cartVo.pbidx}_btn_minus" value="-" style="border:1px; background-color:white;"><img src="resources/img/-_button.png"></button>
@@ -352,7 +392,7 @@ $("#chk_all").change(function(){
     </table>
     </div>
     <div id="for_order" style="height:1040px; width:1273px;">
-    <div style="width:330px; height:1040px; float:right;">
+    <div id="for_order_inner" style="width:330px; height:1040px; float:right;">
     <table id="for_order_table" border="0" style="float:right; width:330px; height:238px; position: sticky; top:183px; right:0px; padding-top:80px; background-color:#fafafa;">
     <tr>
     <td>상품금액</td>
@@ -373,7 +413,7 @@ $("#chk_all").change(function(){
     <td class="price_r"><span id="total_pay_price"></span></td>
     </tr>
     <tr>
-    <td colspan="2">
+    <td colspan="2" style="text-align:center;">
      <input type="submit" class="btn btn-outline-success" value="주문하기" style="width:330px;">
     </td>
     <td></td>

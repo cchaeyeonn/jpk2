@@ -11,7 +11,7 @@
 
 <style>
 body{
-	min-width:850px;
+	min-width:350px;
 }
 #topButton {
 	position: fixed;
@@ -22,8 +22,13 @@ body{
 }
 
 #index_inner {
-	min-height: 1040px;
+	min-height: 350px;
 }
+@media screen and (max-width: 990px) {
+  #footer {
+    display: none;
+  }
+} 
 </style>
 <!-- Channel Plugin Scripts -->
 <script>
@@ -187,4 +192,5 @@ body{
 		</div>
 	</div>
 </body>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 </html>

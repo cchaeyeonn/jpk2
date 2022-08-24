@@ -3,6 +3,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
    pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <head>
 
 <style>
@@ -114,7 +115,7 @@
 
       <dl id="dl">
       <dt id="dt2">상품금액</dt>
-      <dd id="dd2">${cartVo.p_price }&nbsp;원</dd>
+      <dd id="dd2"><fmt:formatNumber value="${cartVo.p_price }" pattern="#,###"/>&nbsp;원</dd>
       </dl>
       
       <dl id="dl">
