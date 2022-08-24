@@ -115,7 +115,43 @@ input[id="del-chk3"]:checked + .del-chk3::before{
   }
 }
 /* 회원가입 약관 부분 끝 */
-
+@media screen and (max-width: 990px){
+	#join_content{
+	width:470px !important;
+	height:800px !important;
+	padding-top:200px !important;
+	margin-left:15px !important;
+	}
+	#join_1{
+	width:470px !important;
+	height:700px !important;
+	font-size:9px !important;
+	margin-left:15px !important;
+	}
+	#star_info{
+	float:left !important;
+	width:470px !important;
+	height:10px !important;
+	margin-left:15px !important;
+	}
+	#join_table{
+	width:470px !important;
+	height:500px !important;
+	margin-left:15px !important;	
+	}
+	#term_table{
+	width:470px !important;
+	height:200px !important;
+	margin-left:15px !important;	
+	}
+	#quickmenu{
+	display:none !important;
+	}
+	#trigger{
+	width:150px !important;
+	}
+	
+}
 
 </style>
 <!-- 외부 js에서 ${pageContext.request.contextPath}를 사용할 수 있게 세션에 값을 저장 -->
@@ -148,7 +184,7 @@ input[id="del-chk3"]:checked + .del-chk3::before{
    <h3 style="text-align:center; margin:29px;">회원가입</h3>
    <div id="star_info"><span id="star">*</span>필수입력사항</div>
    <hr style="margin-top: 0px; !important;">
-   <table>
+   <table id="join_table">
       <tbody>
          <tr>
             <td style="width:138px;">아이디<span id="star">*</span></td>
@@ -232,7 +268,7 @@ input[id="del-chk3"]:checked + .del-chk3::before{
          </table>
          
          <hr>
-         <table>
+         <table id="term_table">
       <tr>
          <td>
          <input type="checkbox" id="chk_all" name="member_termall">
