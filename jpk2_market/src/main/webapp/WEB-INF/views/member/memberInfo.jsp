@@ -191,7 +191,7 @@
         <!--  <td id="memberinfo_td"></td>
          <td id="memberinfo_td"><input type="submit" class="btn btn-outline-success" id="trigger"  value="가입하기" style="margin-left:117px; margin-top:22px; width:353px;"></td> -->
          <p style="padding-left: 489px;">
-  		 <a><span  onclick="check();">회원정보 수정&nbsp;&nbsp;</span>|</a>&nbsp;&nbsp;
+  		 <a onclick="check();" style="cursor:pointer;">회원정보 수정&nbsp;&nbsp;|</a>&nbsp;&nbsp;
   		 <a href="${pageContext.request.contextPath}/memberDelyn.do">회원탈퇴</a></p>
        
 

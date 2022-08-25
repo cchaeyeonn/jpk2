@@ -296,13 +296,13 @@ function enterkey() {
       <ul class="menu" style="margin-top: 28px; width:1280.78px;">
          <li id="listes" style="float: left;"><a href="#">전체 카테고리</a>
             <ul class="depth_1">
-               <li id="icon1"><a href="${pageContext.request.contextPath}/productList_type.do?type=vegetable_fruit">채소·과일</a></li>
-               <li id="icon2"><a href="${pageContext.request.contextPath}/productList_type.do?type=processedfood">샐러드·간편식</a></li>
-               <li id="icon3"><a href="${pageContext.request.contextPath}/productList_type.do?type=meat">정육</a></li>
-               <li id="icon4"><a href="${pageContext.request.contextPath}/productList_type.do?type=fish_seafood">수산·해산물</a></li>
-               <li id="icon5"><a href="${pageContext.request.contextPath}/productList_type.do?type=snacks">과자</a></li>
-               <li id="icon6"><a href="${pageContext.request.contextPath}/productList_type.do?type=bakery">베이커리</a></li>
-               <li id="icon7"><a href="${pageContext.request.contextPath}/productList_type.do?type=etc">음료·유제품</a></li>
+               <li id="icon1"><a href="${pageContext.request.contextPath}/productList_type.do?type=채소/과일">채소·과일</a></li>
+               <li id="icon2"><a href="${pageContext.request.contextPath}/productList_type.do?type=샐러드/간편식">샐러드·간편식</a></li>
+               <li id="icon3"><a href="${pageContext.request.contextPath}/productList_type.do?type=정육">정육</a></li>
+               <li id="icon4"><a href="${pageContext.request.contextPath}/productList_type.do?type=수산/해산물">수산·해산물</a></li>
+               <li id="icon5"><a href="${pageContext.request.contextPath}/productList_type.do?type=과자">과자</a></li>
+               <li id="icon6"><a href="${pageContext.request.contextPath}/productList_type.do?type=베이커리">베이커리</a></li>
+               <li id="icon7"><a href="${pageContext.request.contextPath}/productList_type.do?type=음료/유제품">음료·유제품</a></li>
 
 
             </ul></li>
@@ -366,8 +366,8 @@ function enterkey() {
                         %></li>
                        
     <li id="quickmenu_li"><a href="${pageContext.request.contextPath}/notice_board.do">공지사항</a></li>
-    <li id="quickmenu_li"><a onclick="cart();">장바구니</a></li>
-    <li id="quickmenu_li"><a onclick="pop();">테스트 계정</a></li>
+    <li id="quickmenu_li"><a onclick="cart();" style="cursor:pointer;">장바구니</a></li>
+    <li id="quickmenu_li"><a onclick="pop();" style="cursor:pointer;">테스트 계정</a></li>
   </ul>
 </div>
 </form>
